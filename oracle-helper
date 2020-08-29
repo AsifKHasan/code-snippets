@@ -1,0 +1,30 @@
+CREATE OR REPLACE DIRECTORY dmpdir AS 'c:\oraclexe\app\tmp';
+GRANT READ,WRITE ON DIRECTORY dmpdir TO hr;
+
+expdp SYSTEM/password SCHEMAS=hr DIRECTORY=dmpdir DUMPFILE=schema.dmp LOGFILE=expschema.log
+
+impdp SYSTEM/password SCHEMAS=hr DIRECTORY=dmpdir DUMPFILE=schema.dmp
+  REMAP_SCHEMA=hr:hrdev EXCLUDE=constraint, ref_constraint, index
+  TABLE_EXISTS_ACTION=replace LOGFILE=impschema.log
+  
+  
+  
+exp amanda@orcl PARFILE=amanda_exp.par
+imp amanda@orcl PARFILE=amanda_imp.par
+
+amanda_exp.par
+------------------
+file=amanda.dmp
+log=amanda_exp.log
+statistics=compute
+feedback=10000
+fromuser=amanda
+
+
+amanda_imp.par
+------------------
+file=amanda.dmp
+log=amanda_imp.log
+statistics=always
+fromuser=amanda
+touser=amanda

@@ -1,0 +1,33 @@
+# Influxdb
+brew services start influxdb
+influx
+
+# create database, user and grant access to user and Grafana
+CREATE DATABASE csb_db
+CREATE USER admin WITH PASSWORD 'admin' WITH ALL PRIVILEGES
+CREATE USER csb WITH PASSWORD 'csb'
+CREATE USER grafana WITH PASSWORD 'grafana'
+GRANT ALL ON csb_db TO csb
+GRANT READ ON csb_db TO grafana
+exit
+
+#Enable authentication in the [http] section of the configuration file /etc/influxdb/influxdb.conf:
+
+[http]
+enabled = true
+bind-address = ":8086"      # change to a specific interface if needed
+auth-enabled = true         # will enforce authentication
+
+
+influx -username admin -password admin -host localhost
+influx -username csb -password csb -host localhost
+
+drop measurement cbslog;
+
+
+
+# Grafana
+brew services start grafana
+
+http://localhost:3000
+admin/admin

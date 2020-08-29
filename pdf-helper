@@ -1,0 +1,27 @@
+
+
+NetHos Data Center Cabinet Entrust Tests of Intensity 8 and 9 Respectively
+
+
+
+
+qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
+qpdf --compression-level=9 --compress-streams=y --recompress-flate --optimize-images --linearize "sophos-xg-series-appliances-brna.pdf" "sophos-xg-series-appliances-brna-new.pdf"
+
+
+
+qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" --pages . 4-5 -- "ISO9001：2015 Certifite of HUAWEI -FM 669363 - pages_w.pdf"
+
+
+
+
+qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y "ADC User Guide.pdf" --pages . 166-355 -- "ADC User Guide - pages_x.pdf"
+
+
+qpdf --empty --pages "Onyx_ETH_UM.pdf" 1201-1500 -- "Onyx_ETH_UM - pages_w.pdf"
+qpdf --empty --pages "Onyx_ETH_UM.pdf" 1201-1600 -- "Onyx_ETH_UM - pages_x.pdf"
+qpdf --empty --pages "Onyx_ETH_UM.pdf" 1201-1622 -- "Onyx_ETH_UM - pages_y.pdf"
+qpdf --empty --pages "Onyx_ETH_UM.pdf" 1201-440 -- "Onyx_ETH_UM - pages_z.pdf"
+
+
+qpdf --split-pages=10 "NE05E and NE08E V300R005C10 Feature Description 01.pdf" out.pdf

@@ -1,0 +1,69 @@
+# utils and initializations
+setwd("~/Downloads")
+if(!exists("con")) source("./R-helper-doer-util")
+
+# get TtDestinationLog - only time columns and Sent records
+# select id, datetime, fetchedTime, createdOn, destinationStatus from TtDestinationLog where id = 'TT18147HFPT4';
+# select referenceNo, requestReceiveTime, providerRequestTime, providerResponseTime from SmsLog where referenceNo = 'TT18147HFPT4';
+
+ttdestinationlog <- dbGetQuery(con, "select * from TtDestinationLog")
+smslog <- dbGetQuery(con, "select * from SmsLog")
+
+# keep, format and rename only required column
+tt <- ttdestinationlog %>%
+    filter(destinationstatus == 'Sent') %>%
+    select(datetime, fetchedtime, createdon, id) %>%
+    mutate(
+        generatedOn = as.POSIXct(datetime, format="%y%m%d%H%M"),
+        pickedOn = as.POSIXct(fetchedtime, format="%y%m%d%H%M%S"),
+        swpReceivedOn = as.POSIXct(createdon)
+    ) %>%
+    select(generatedOn, pickedOn, swpReceivedOn, id)
+
+sms <- smslog %>%
+    filter(transtype == 'Teller Transaction') %>%
+    select(requestreceivetime, providerrequesttime, providerresponsetime, referenceno) %>%
+    mutate(
+        drwsReceivedOn = as.POSIXct(requestreceivetime),
+        msgRequestOn = as.POSIXct(providerrequesttime),
+        msgResponseOn = as.POSIXct(providerresponsetime)
+    ) %>%
+    select(referenceno, drwsReceivedOn, pickDelay, swpReceiveDelay)
+
+
+
+hour_minute <- function(x) {
+    strftime(as.POSIXct(x), "%H:%M")
+}
+
+# rename the columns and summarize
+ttlog <- ttdestinationlog %>%
+    filter(destinationstatus == 'Sent') %>%
+    select(datetime, fetchedtime, createdon) %>%
+    mutate(
+        generatedOn = as.POSIXct(datetime, format="%y%m%d%H%M"),
+        pickedOn = as.POSIXct(fetchedtime, format="%y%m%d%H%M%S"),
+        swpReceivedOn = as.POSIXct(createdon),
+        pickDelay = as.numeric(difftime(pickedOn, generatedOn, units = "secs")),
+        swpReceiveDelay = as.numeric(difftime(swpReceivedOn, generatedOn, units = "secs")) - 136
+    ) %>%
+    select(generatedOn, pickDelay, swpReceiveDelay) %>%
+    # uncomment for summarizing
+    # group_by(generatedOn = cut(generatedOn, breaks="5 min")) %>%
+    # summarize(n = n(), pickDelay = mean(pickDelay), swpReceiveDelay = mean(swpReceiveDelay)) %>%
+    # mutate(gDate = format(generatedOn, "%Y-%m-%d"), gTime = format(generatedOn, "%H:%M")) %>%
+    gather(key = "source", value = "delay", pickDelay, swpReceiveDelay) %>%
+    mutate(generatedOn = as.POSIXct(generatedOn))
+
+g <- delay_summary %>% ggplot(aes(generatedOn, delay, color = source)) +
+    geom_line() +
+    scale_x_datetime(date_labels = "%H:%M", date_breaks = "1 hour", date_minor_breaks = "15 min") +
+    theme(axis.text.y = element_text(size = 8), axis.text.x = element_text(size = 8, angle = 45, vjust = 0.50))
+
+g <- ttlog %>% ggplot(aes(x = cut(generatedOn, breaks="15 min"), delay, color = source)) +
+    geom_boxplot() +
+    # scale_x_datetime(labels = trans_format("as.POSIXct", date_format("%m-%d %H:%M")), breaks = date_breaks("1 hour")) +
+    #scale_x_discrete(labels = hour_minute(x=)) +
+    theme(axis.text.y = element_text(size = 8), axis.text.x = element_text(size = 6, angle = 45, vjust = 0.50))
+
+g

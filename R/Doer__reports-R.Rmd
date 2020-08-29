@@ -1,0 +1,202 @@
+---
+title: "Doer Reports in R"
+output:
+  html_document
+---
+
+## Dependency and Notes
+
+    > `install.packages("tidyverse")`
+    > `install.packages("dplyr")`
+    > `install.packages("ggplot2")`
+    > `install.packages("grid")`
+    > `install.packages("plotly")`
+    > `install.packages("RPostgreSQL")`
+    > `install.packages("sqldf")`
+    > `install.packages("ggthemes")`
+    > `install.packages("ggrepel")`
+    > `install.packages("gridExtra")`
+    > `install.packages("glue")`
+    > `install.packages("stringr")`
+    > `install.packages("stringi")`
+    > `install.packages("scales")`
+    > `install.packages("flextable")`
+    > `install.packages("officer")`
+
+Load the **tidyverse** library for dplyr, ggplot2 and other things
+Load the **dplyr** library for dplyr
+Load the **ggplot2** library for ggplot2
+Load the **ggplot2** library for plot grid manipulation
+Load the **plotly** library for plotly
+Load the **RPostgreSQL** library for accessing database
+Load the **sqldf** library for sql support in data frames
+Load the **ggthemes** library for graph themes
+Load the **ggrepel** library for text placement in graphs
+Load the **gridExtra** library for layouting graphs
+Load the **glue** library for string formatting
+Load the **stringr** library for string operations
+Load the **stringi** library for string operations
+Load the **scales** library for axis label scaling
+Load the **flextable** library for axis label scaling
+Load the **officer** library for formatting tables/cells
+
+```{r warning=FALSE}
+#library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(grid)
+library(plotly)
+library(RPostgreSQL)
+library(sqldf)
+library(ggthemes)
+library(ggrepel)
+library(gridExtra)
+library(glue)
+library(stringr)
+library(stringi)
+library(scales)
+library(flextable)
+library(officer)
+```
+
+define the parameters for the report
+```{r}
+fromdate <- "Jun-01-2017"
+todate <- "Dec-31-2017"
+agentname_pattern <- "%"
+branchname_pattern <- "S%"
+```
+
+define the query for the reportß
+```{r}
+sql <- glue("select r.branchOid, r.agentOid, b.branchName, a.agentName, r.servicePointOid, count(*), sum(r.actualAmountInBdt)
+from 	Remittance r join Agent a on r.agentOid = a.oid join Branch b on r.branchOid = b.oid
+where r.applicationDate between '{fromdate}' and '{todate}' and a.agentName like '{agentname_pattern}' and b.branchName like '{branchname_pattern}'
+group by r.branchOid, r.agentOid, b.branchName, a.agentName, r.servicePointOid;")
+```
+
+set the connection password and other settings
+```{r}
+dbname <- "agrani"
+host <- "192.168.0.74"
+port <- 5432
+user <- "absprod"
+pw <- {"absprod"}
+```
+
+load the PostgreSQL driver
+```{r}
+drv <- dbDriver("PostgreSQL")
+```
+
+create a connection to the postgres database
+```{r}
+con <- dbConnect(drv, dbname = dbname, host = host, port = port, user = user, password = pw)
+```
+
+removes the password
+```{r}
+rm(pw)
+```
+
+check for the existence of Remittance table (postgres makes names lowercase)
+```{r}
+dbExistsTable(con, "remittance")
+```
+
+get the data into a data frame
+```{r}
+remittance <- dbGetQuery(con, sql)
+```
+
+make a ggplot
+```{r}
+g1 <- remittance %>% ggplot(aes(x = agentname, y = sum))
+```
+
+make a bar/column chart where y axis is agent and x axis is amount
+```{r}
+p <- g1 + 
+  geom_col() +
+  ylab("Amount in BDT") +
+  xlab("Agent") +
+  scale_y_continuous(labels = comma) +
+  scale_x_discrete(labels = wrap_format(15)) +
+  geom_label(aes(label=comma(sum, nsmall=2)), size=2, position=position_dodge(width=0.9), vjust=0.50) +
+  ggtitle(glue("Remittance by Agent between {fromdate} and {todate}")) +
+  facet_grid(branchname ~ ., scales = "free_y", space = "free_y", switch = "y", shrink=TRUE, labeller = label_wrap_gen(width=15)) +
+  coord_fixed(ratio = 0.1) + 
+  coord_flip(expand = FALSE) + 
+  theme(strip.text.y = element_text(size = 8, angle = 180, hjust = 0), axis.text.y = element_text(size = 8))
+
+#(gg <- ggplotly(p))
+p
+```
+
+make a bar/column chart where x axis is agent and y axis is amount
+```{r}
+p <- g1 + 
+  geom_col() +
+  #geom_text_repel() +
+  ylab("Amount in BDT") +
+  xlab("Agent") +
+  scale_y_continuous(labels = comma) +
+  scale_x_discrete(labels = wrap_format(15)) +
+  geom_label(aes(label=comma(sum, nsmall=2)), size=2, position=position_dodge(width=0.9), vjust=0.50) +
+  ggtitle(glue("Remittance by Agent between {fromdate} and {todate}")) +
+  #facet_wrap(~branchname, scales = "free_x", shrink=TRUE) +
+  facet_grid(~branchname, scales = "free_x", space = "free_x", shrink=TRUE) +
+  theme(strip.text.x = element_text(size = 8, angle = 90, vjust = 0.50), axis.text.y = element_text(size = 8), axis.text.x = element_text(size = 8, angle = 45, vjust = 0.50))
+
+#(gg <- ggplotly(p))
+p
+```
+
+Get the ggplot grob
+```{r eval=FALSE, include=FALSE}
+gp <- ggplotGrob(p)
+#grid.ls(grid.force(gp))
+
+# Edit the grob
+gp <- editGrob(grid.force(gp), gPath("GRID.stripGrob", "GRID.text"), grep = TRUE, global = TRUE, just = "right", x = unit(0, "npc"))
+
+# Draw it
+grid.newpage()
+grid.draw(gp)
+```
+
+make a tabular view of the data
+```{r}
+h <- data.frame(
+  col_keys = c("branchname", "agentname", "count", "sum"),
+  h1 = c("Branch", "Agent", "Disbursement", "Disbursement"),
+  h2 = c("Branch", "Agent", "#", "BDT"), stringsAsFactors = FALSE)
+
+t <- remittance %>% 
+  arrange(branchname) %>% 
+  regulartable(col_keys = c("branchname", "agentname", "count", "sum" )) %>% 
+  set_header_df(mapping = h, key = "col_keys") %>% 
+  merge_h(part = "header") %>% 
+  merge_v(j = "branchname", part = "header") %>% 
+  merge_v(j = "agentname", part = "header") %>% 
+  merge_v(j = c("branchname")) %>% 
+  bg(bg = "gray70", part = "header") %>% 
+  color(color = "gray30", part = "header") %>% 
+  bold(part = "header") %>% 
+  fontsize(size = 12, part = "header") %>% 
+  color(i = ~ sum <= 0, color="red") %>% 
+  padding(padding.left = 4, part = "all") %>% 
+  padding(j = "sum", padding.right = 4, part = "all") %>% 
+  align(j = "branchname", align = "left", part = "all" ) %>% 
+  align(j = "agentname", align = "left", part = "all" ) %>% 
+  align(j = "count", align = "center", part = "all" ) %>% 
+  align(j = "sum", align = "right", part = "all" ) %>% 
+  set_formatter(sum = function(x) comma(x), count = function(x) comma(x, nsmall=0)) %>% 
+  border_outer(border = fp_border(color="gray"), part = "all") %>% 
+  border_inner_h(border = fp_border(color="lightgray"), part = "all") %>% 
+  border_inner_v(border = fp_border(color="lightgray"), part = "header") %>% 
+  autofit()
+
+t
+#print(t, preview = "html")
+```

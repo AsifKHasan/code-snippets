@@ -1,0 +1,19 @@
+# change management in dataset
+1. We have two datasets -
+1a. data__2019-11-28.csv which is a set of data (one data in one row) for November 28, 2019. We will call this set V1
+1b. data__2019-11-29.csv which is another set of data (one data in one row) for November 29, 2019. We will call this set V2
+2. There are changes between V1 and V2. It is like that V2 is an incremental update on V1
+3. We need to generate a V3 where V1 is updated with the changes in V2
+4. The idea is to find out what will be the fastest way to do this and then code it
+
+# data visualization
+1. We have a dataset in Google sheet - HR&Admin__2020-01__attendance-log. This is log from office entry/exit door device- https://docs.google.com/spreadsheets/d/1YsTJcb83ZgCyNYFUye38xkvRm4LcxRmY_W1VHPSgTOc/edit#gid=1177265077
+2. Figure out a way to read the data and use it for subsequent visualization
+3. What could be the best visualization possible from this set of data if anyone wants to use this data from a user's viewpoint
+4. The idea is to identify and generate all the questions/requirement that could be asked from this dataset. At least twenty (20) different requirements.
+5. Then develop the visualization system (if time permits)
+
+# data acquisition, validation and aggregation - conveyance bills
+1. Each month employees share individual Google sheet with HR. The sheet is the employee's conveyance and other expense sheet for that month
+2. Find ways to create a new Google sheet for HR which will be used as an index to list and locate all the Google sheets that were shared by employees for the month
+3. .... this assignment will be expanded as you progress ....

@@ -1,0 +1,4 @@
+# when we have a Git repo locally and we want to associate with a remote repo
+git remote add origin https://spectrum.repositoryhosting.com/git/spectrum/conjunto-angular-app.git
+git push origin master
+git branch --set-upstream-to=origin/master master

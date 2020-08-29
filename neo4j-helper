@@ -1,0 +1,26 @@
+gdb = GraphDatabase('http://localhost:7474', username='neo4j', password='Neo4j')
+applications = gdb.labels.get("Application")
+application = gdb.nodes.filter(Q("name", "eq", 'antarika-service'))
+
+q="""match (n:Application) where n.name = 'anatrika-service' return ID(n)"""
+count = gdb.query(q)
+
+
+
+select 		* 
+from 		AntarikaRequestLog 
+where 		serviceName = 'collector-service' and
+			requestJson like '%"requestType":"bill-collection/gas-jalalabad/v1/validate-gas-jalalabad-utilitybill"% 
+order by 	requestReceivedOn, 
+			responseSentOn
+
+
+select servicename, count(*) from AntarikaRequestLog group by servicename
+
+
+
+match (n)-[r]-() delete r;
+match (n) delete n;
+match (n) return n;
+
+

@@ -1,0 +1,5 @@
+export GOPATH=/Users/asif.hasan/Documents/code/go
+cd $GOPATH
+cd src/hello
+
+go build

@@ -1,0 +1,5 @@
+# list docker machines
+docker container ls -a
+
+# drop docker images/machines
+docker container rm container-id

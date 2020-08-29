@@ -1,0 +1,86 @@
+# utils and initializations
+setwd("~/Downloads")
+if(!exists("con")) source("./R-helper-doer-util")
+
+# load doer theme
+source("./R-helper-doer-theme")
+
+# get Remittance, Agent and Branch data
+remittance <- dbGetQuery(con, "select * from Remittance")
+agent <- dbGetQuery(con, "select oid, agentName from Agent")
+branch <- dbGetQuery(con, "select oid, branchName from Branch")
+exchangehouse <- dbGetQuery(con, "select oid, exhouseName from ExchangeHouse;")
+
+# keep only the Disbursed cases with meaningful fields
+df_r <- remittance %>% filter(status == "Disbursed") %>% select(oid, photoid, photoidtype, recipientmobileno, recipientname, recipientgender, sendername, applicationdate, amount, actualamountinbdt, approvedon, approvalactivityseconds, disbursedon, sendercountry, branchoid, agentoid, exhouseoid)
+
+# summarize by applicationdate
+df_r <- df_r %>% group_by(applicationdate) %>% summarise(n = n(), total = sum(actualamountinbdt))
+
+
+# join for names for Branch, Agent, exchangehouse
+#df_r <- df_r %>% left_join(branch, by = c("branchoid" = "oid"))
+#df_r <- df_r %>% left_join(agent, by = c("agentoid" = "oid"))
+#df_r <- df_r %>% left_join(exchangehouse, by = c("exhouseoid" = "oid"))
+
+# add month, year, day columns
+df_r <- df_r %>%
+    mutate(year = as.numeric(as.POSIXlt(applicationdate)$year+1900),
+        mm = as.numeric(as.POSIXlt(applicationdate)$mon+1),
+        month = factor(mm, levels = as.character(1:12), labels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), ordered=TRUE),
+        wd = as.POSIXlt(applicationdate)$wday + 1,
+        weekday = factor(wd, levels = rev(1:7), labels = rev(c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")), ordered = TRUE),
+        mday = as.numeric(as.POSIXlt(applicationdate)$mday),
+        yday = as.numeric(as.POSIXlt(applicationdate)$yday),
+        yearmonth = format(applicationdate,"%b %Y"),
+        yearmonthf = factor(yearmonth),
+        week = as.numeric(format(applicationdate,"%U")))
+
+df_r <- df_r %>%
+    group_by(yearmonthf) %>%
+    mutate(monthweek=1+week-min(week))
+
+# summarize by yearmonthf
+monthly_summary <- df_r %>% group_by(year, month) %>% summarise(n = sum(n), total = sum(total))
+
+# Calendar plot
+g <- df_r %>% ggplot(aes(monthweek, weekday, fill = n)) +
+  geom_tile(colour = "white") +
+  facet_grid(year~month) +
+  scale_fill_gradient(low="gray90", high="darkseagreen") +
+  ggtitle("Remittance Heatmap in Calendar") +
+  xlab("Week of Month") +
+  ylab("") +
+  #coord_fixed(ratio=1) +
+  geom_text(aes(label=mday), size=2) +
+  doer_theme()
+
+g
+(p <- ggplotly(g))
+
+
+
+
+
+
+
+# plot line with month in X axis and count in Y axis and years as colors
+g <- df_r %>% filter(year == 2018) %>% ggplot(aes(x = applicationdate, y = n))
+g1 <- g + geom_col() +
+    scale_x_date(date_breaks = "1 day", date_labels = "%a\n%d") +
+    geom_label(aes(label=comma(n, nsmall=2)), size=2, position=position_dodge(width=0.9), vjust=0.50) +
+    theme(axis.text.x = element_text(size = 8)) +
+    facet_grid(. ~ year + month) +
+    #facet_wrap(~ year + month, ncol = 3) +
+    coord_fixed(ratio=0.3)
+g1
+
+    #scale_x_discrete(labels = format("%a, %b %d, %Y")) +
+    #scale_x_date() +
+    #scale_x_date(date_labels = "%a, %b %d, %Y") +
+    #scale_x_discrete("Month", labels = c("01" = "Jan", "02" = "Feb", "03" = "Mar", "04" = "Apr", "05" = "May", "06" = "Jun", "07" = "Jul", "08" = "Aug", "09" = "Sep", "10" = "Oct", "11" = "Nov", "12" = "Dec")) +
+    #facet_grid(year ~ mm, scales = "free_x", space = "free_x", shrink=TRUE) +
+    #facet_wrap(year ~ month, scales = "free_x", shrink=TRUE)
+    #facet_grid(year ~ mm, scales = "free_x", space = "free_x", shrink=TRUE) +
+g
+#

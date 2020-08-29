@@ -1,0 +1,25 @@
+https://chrisbolman.com/strategy-develop-effective-framework/
+
+select table_name, num_rows from all_tables where owner = 'AMANDA' and num_rows > 0 order by table_name;
+
+select table_name, to_number(extractvalue(xmltype(dbms_xmlgen.getxml('select count(*) c from '||owner||'.'||table_name)),'/ROWSET/ROW/C')) as count
+from all_tables
+where owner = 'AMANDA'
+order by table_name;
+
+
+select object_name
+from   all_objects
+where  owner = 'AMANDA'
+and    object_type = 'FUNCTION';
+
+
+select * from validfolder where foldergroupcode = 55 order by foldertype;
+select * from validfoldergroup;
+select * from validsub order by subdesc;
+select * from validfoldersub order by subcode;
+
+
+select * from defaultaccountbillfee;
+select * from validaccountbillfee;
+select * from accountbillfee;

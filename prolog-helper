@@ -1,0 +1,49 @@
+%% cd /Users/asif.hasan/Documents/code/prolog
+swipl
+
+likes(sam,dahl).
+likes(sam,chop_suey).
+likes(sam,pizza).
+likes(sam,chips).
+likes(sam,curry).
+
+
+assertz((a(X):-
+     b(X), c(X), d(X))).
+assertz((a(X):-
+     c(X), d(X))).
+assertz((a(X):-
+     d(X))).
+assertz(b(1)).
+assertz(b(a)).
+assertz(b(2)).
+assertz(b(3)).
+assertz(d(10)).
+assertz(d(11)).
+assertz(c(3)).
+assertz(c(4)).
+
+
+assertz(word(determiner,a)).
+assertz(word(determiner,every)).
+assertz(word(noun,criminal)).
+assertz(word(noun,'big kahuna burger')).
+assertz(word(verb,eats)).
+assertz(word(verb,likes)).
+
+assertz((sentence(Word1,Word2,Word3,Word4,Word5):-
+   word(determiner,Word1),
+   word(noun,Word2),
+   word(verb,Word3),
+   word(determiner,Word4),
+   word(noun,Word5))).
+
+a  \=  a
+’a’  \=  a
+A  \=  a
+f(a)  \=  a
+f(a)  \=  A
+f(A)  \=  f(a)
+g(a,B,c)  \=  g(A,b,C)
+g(a,b,c)  \=  g(A,C)
+f(X)  \=  X
