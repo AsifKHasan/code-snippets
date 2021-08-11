@@ -1,0 +1,54 @@
+{
+    "month": "Feb19",
+    "refno": "19/610",
+    "date": "March 18, 2019",
+    "totalamount": "69,000.00",
+    "totalamountinwords": "sixty-nine thousand taka, zero paisa",
+    "salary": [
+        {
+            "name": "Abdur Rab Marjan",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121070019420",
+            "payable": "18,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nafis Ahmed",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121030016112",
+            "payable": "11,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nusrat Jahan Mahmud",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040021269",
+            "payable": "16,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Fahim Shahriar",
+            "unit": "Software Services",
+            "type": "",
+            "account": "2141217010359",
+            "payable": "12,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Mahabub Al Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "2141214010360",
+            "payable": "12,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

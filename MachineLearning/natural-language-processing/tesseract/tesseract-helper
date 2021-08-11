@@ -1,0 +1,54 @@
+brew install tesseract --with-all-languages
+
+
+# NID Card
+# Segmentation
+m=11
+for e in {0..4}
+do
+    ./segment.py --image input/2691651478589-p1.jpg --outprefix output/segmented/2691651478589-p1 --threshold 150 --morphpixels ${m} --epsilonpct ${e}
+done
+
+# preprocessing
+./preprocess.py --image output/segmented/2691651478589-p1-s0-m11-e1.0.png --outprefix output/processed/2691651478589-p1-s0-m11-e1.0-processed --threshold 150
+./preprocess.py --image output/segmented/2691651478589-p1-s1-m11-e1.0.png --outprefix output/processed/2691651478589-p1-s1-m11-e1.0-processed --threshold 150
+
+
+# OCR
+#for i in "black ""clean" "closed" "dilated" "eroded" "open" "thresh"
+for i in "black" "clean"
+do
+    ./ocr.py --image output/processed/2691651478589-p1-s0-m11-e1.0-processed-${i}.png --outprefix output/text/2691651478589-p1-s0-m11-e1.0-${i} --lang ben
+    ./ocr.py --image output/processed/2691651478589-p1-s1-m11-e1.0-processed-${i}.png --outprefix output/text/2691651478589-p1-s0-m11-e1.0-${i} --lang ben
+done
+
+tesseract output/processed/2691651478589-p1-s0-m11-e1.0-processed.png output/text/2691651478589-p1-s0-m11-e1.0 -l ben
+tesseract output/processed/2691651478589-p1-s1-m11-e1.0-processed.png output/text/2691651478589-p1-s1-m11-e1.0 -l ben
+
+
+
+
+# শ্বাশ্বতী
+./detectline.py --image images/Shashoti/Shashoti.jpg --outprefix images/Shashoti/Shashoti --threshold 200
+
+for i in {135..165}
+do
+    LINE=1;TH=$i
+    rm -f Shashoti-line-${LINE}-${TH}.txt
+    ./preprocess.py --image images/Shashoti/Shashoti-line-${LINE}.png --outprefix Shashoti-line-${LINE} --threshold ${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-clean.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-closed.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-dilated.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-edged.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-eroded.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-open.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+    ./ocr.py --image Shashoti-line-${LINE}-thresh.png --lang ben --outprefix Shashoti-line-${LINE}-${TH}
+done
+
+
+tesseract Shashoti-line-${LINE}-thresh.png Shashoti-lines -l ben
+
+
+
+pdftocairo -tiff Accounting_Module.pdf
+tesseract tiflist abc

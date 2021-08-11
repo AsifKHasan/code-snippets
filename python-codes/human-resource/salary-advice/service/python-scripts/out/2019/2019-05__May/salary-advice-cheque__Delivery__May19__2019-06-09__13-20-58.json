@@ -1,0 +1,18 @@
+{
+    "month": "May19",
+    "wing": "Delivery",
+    "date": "June 09, 2019",
+    "totalamount": "16,000.00",
+    "totalamountinwords": "sixteen thousand taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Active Network",
+            "name": "Miskatun Nahar",
+            "account": "2141218009897",
+            "payable": "16,000.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

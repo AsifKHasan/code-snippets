@@ -1,0 +1,45 @@
+{
+    "month": "Feb19",
+    "refno": "19/612",
+    "date": "March 19, 2019",
+    "totalamount": "102,584.00",
+    "totalamountinwords": "one lakh, two thousand, five hundred and eighty-four taka, zero paisa",
+    "salary": [
+        {
+            "name": "Laboni Das",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121080019783",
+            "payable": "24,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Nazmul Hasan",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090019023",
+            "payable": "23,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Raqibul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040017494",
+            "payable": "34,584.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nasima Aktar",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010019197",
+            "payable": "21,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "month": "Feb19",
+    "refno": "19/617",
+    "date": "March 27, 2019",
+    "totalamount": "304,388.00",
+    "totalamountinwords": "three lakh, four thousand, three hundred and eighty-eight taka, zero paisa",
+    "salary": [
+        {
+            "name": "Md. Rokonuzzaman",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090018919",
+            "payable": "52,115.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Monjur Ahmed",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010009684",
+            "payable": "55,563.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shaikh Tojibul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040009682",
+            "payable": "54,659.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Manzur Alam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090011442",
+            "payable": "45,469.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Shariful Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010015369",
+            "payable": "40,734.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "S.M. Azharul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121070001496",
+            "payable": "55,848.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

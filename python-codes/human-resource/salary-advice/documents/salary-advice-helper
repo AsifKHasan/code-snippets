@@ -1,0 +1,18 @@
+API     : generate-salary-advice
+Method  : POST
+Payload : JSON
+Request :
+{
+    "head" : {
+        "login" : "user",
+        "request-time" : "yyyy-mm-ddThh:mm:ss"
+    },
+    "body" : {
+        "month" : "Nov18",
+        "pay-through" : "Bank/Cheque/Cash",
+        "filter" : "None/BdREN/Software Services",
+        "wing" : "Acquisition/Delivery/Operations"
+    }
+}
+
+Response :

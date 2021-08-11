@@ -1,0 +1,45 @@
+{
+    "month": "Nov18",
+    "refno": "18/588",
+    "date": "December 22, 2018",
+    "totalamount": "521,701.00",
+    "totalamountinwords": "five lakh, twenty-one thousand, seven hundred and one taka, zero paisa",
+    "salary": [
+        {
+            "name": "Fakhrul Islam",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010001102",
+            "payable": "138,583.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Mohammad Sabbir Ahmed",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010000928",
+            "payable": "115,917.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shamsuddin Pappu",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121030000413",
+            "payable": "109,947.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Rezaul Karim",
+            "unit": "Project Management Office",
+            "type": "",
+            "account": "14121090000882",
+            "payable": "157,254.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

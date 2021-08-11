@@ -1,0 +1,90 @@
+{
+    "month": "Jan19",
+    "refno": "19/598",
+    "date": "February 10, 2019",
+    "totalamount": "252,294.00",
+    "totalamountinwords": "two lakh, fifty-two thousand, two hundred and ninety-four taka, zero paisa",
+    "salary": [
+        {
+            "name": "Md. Shahidul Islam",
+            "unit": "Finance & Accounts",
+            "type": "Support Staff",
+            "account": "14121080019226",
+            "payable": "13,900.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Jahangir Alam",
+            "unit": "HR & Admin",
+            "type": "Support Staff",
+            "account": "14121020019253",
+            "payable": "14,750.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Rezaul Karim",
+            "unit": "HR & Admin",
+            "type": "Support Staff",
+            "account": "14121020019205",
+            "payable": "13,900.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Imran Sarker",
+            "unit": "HR & Admin",
+            "type": "Support Staff",
+            "account": "14121040019431",
+            "payable": "11,700.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Alamin Hossain Razib",
+            "unit": "HR & Admin",
+            "type": "Support Staff",
+            "account": "14121060019227",
+            "payable": "11,600.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Rezaul Karim",
+            "unit": "Project Management Office",
+            "type": "",
+            "account": "14121090000882",
+            "payable": "158,311.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Abul Kashem",
+            "unit": "Supply Chain Management",
+            "type": "Support Staff",
+            "account": "14121090019711",
+            "payable": "9,300.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Arif Hossain",
+            "unit": "Supply Chain Management",
+            "type": "Support Staff",
+            "account": "14121040019266",
+            "payable": "7,733.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Chan Miah",
+            "unit": "Supply Chain Management",
+            "type": "Support Staff",
+            "account": "14121020007716",
+            "payable": "11,100.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

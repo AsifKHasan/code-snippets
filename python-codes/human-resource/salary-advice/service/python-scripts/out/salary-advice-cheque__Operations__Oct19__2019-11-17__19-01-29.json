@@ -1,0 +1,18 @@
+{
+    "month": "Oct19",
+    "wing": "Operations",
+    "date": "November 17, 2019",
+    "totalamount": "49,444.00",
+    "totalamountinwords": "forty-nine thousand, four hundred and forty-four taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "Finance & Accounts",
+            "name": "Md. Ashaduzzaman",
+            "account": "",
+            "payable": "49,444.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

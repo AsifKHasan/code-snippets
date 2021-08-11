@@ -1,0 +1,18 @@
+{
+    "month": "Feb19",
+    "wing": "Delivery",
+    "date": "March 24, 2019",
+    "totalamount": "48,000.00",
+    "totalamountinwords": "forty-eight thousand taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Datacenter & Infrastructure",
+            "name": "Md. Salman Hossan",
+            "account": "",
+            "payable": "48,000.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

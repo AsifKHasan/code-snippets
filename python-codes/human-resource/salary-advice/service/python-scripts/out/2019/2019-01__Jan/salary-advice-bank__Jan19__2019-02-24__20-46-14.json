@@ -1,0 +1,144 @@
+{
+    "month": "Jan19",
+    "refno": "19/601",
+    "date": "February 24, 2019",
+    "totalamount": "576,428.00",
+    "totalamountinwords": "five lakh, seventy-six thousand, four hundred and twenty-eight taka, zero paisa",
+    "salary": [
+        {
+            "name": "Saqeeb Redwanur Rahman",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121020001842",
+            "payable": "49,928.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Kaji Shahjahan Omar",
+            "unit": "Marketing & Documentation",
+            "type": "",
+            "account": "14121020009701",
+            "payable": "49,099.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Sadia Nasrin Haque",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121080011602",
+            "payable": "83,660.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Robiul Awoul",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121030011812",
+            "payable": "68,135.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Saleh Ahammed",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121060017214",
+            "payable": "57,709.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Murshadul Islam",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121010021256",
+            "payable": "30,375.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Rajib Chowdhury",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121030016027",
+            "payable": "29,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Abdullah Al Mamun",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121080022399",
+            "payable": "18,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "MD. Rezaul Islam",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121070021362",
+            "payable": "18,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nur-E-Asma Tabassum",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121070022451",
+            "payable": "25,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Kamanashis Tusar Suvra Barua (Nishu)",
+            "unit": "Systems",
+            "type": "",
+            "account": "12021090029104",
+            "payable": "43,781.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Kazal PK",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121070001646",
+            "payable": "60,757.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Ferdous Ara ruma",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121030009748",
+            "payable": "26,500.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Moyen Uddin",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121030020562",
+            "payable": "8,484.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "SM Touhidul Islam Al-Amin",
+            "unit": "Supply Chain Management",
+            "type": "",
+            "account": "2141213010007",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

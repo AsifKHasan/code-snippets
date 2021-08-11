@@ -1,0 +1,18 @@
+{
+    "month": "Feb19",
+    "wing": "Operations",
+    "date": "March 28, 2019",
+    "totalamount": "160,861.00",
+    "totalamountinwords": "one lakh, sixty thousand, eight hundred and sixty-one taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "Project Management Office",
+            "name": "Md. Rezaul Karim",
+            "account": "14121090000882",
+            "payable": "160,861.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

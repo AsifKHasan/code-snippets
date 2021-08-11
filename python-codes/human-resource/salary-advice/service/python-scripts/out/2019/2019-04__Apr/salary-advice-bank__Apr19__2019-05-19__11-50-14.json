@@ -1,0 +1,63 @@
+{
+    "month": "Apr19",
+    "refno": "19/636",
+    "date": "May 19, 2019",
+    "totalamount": "486,684.00",
+    "totalamountinwords": "four lakh, eighty-six thousand, six hundred and eighty-four taka, zero paisa",
+    "salary": [
+        {
+            "name": "Fakhrul Islam",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010001102",
+            "payable": "136,396.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Mohammad Sabbir Ahmed",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010000928",
+            "payable": "114,312.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Kaji Shahjahan Omar",
+            "unit": "Marketing & Documentation",
+            "type": "",
+            "account": "14121020009701",
+            "payable": "49,099.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shihan Zaman",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121020012869",
+            "payable": "61,696.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Mashrurul Hakim",
+            "unit": "Operations & Maintenance",
+            "type": "",
+            "account": "14121070020174",
+            "payable": "49,907.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "A.K.M. Rakibul Hasan",
+            "unit": "Systems",
+            "type": "",
+            "account": "14121070017138",
+            "payable": "75,274.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "month": "Oct19",
+    "wing": "Acquisition",
+    "date": "November 17, 2019",
+    "totalamount": "19,562.00",
+    "totalamountinwords": "nineteen thousand, five hundred and sixty-two taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Acquisition",
+            "unit": "Enterprise Products",
+            "name": "Md. Raihan Ur Rashid",
+            "account": "",
+            "payable": "19,562.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

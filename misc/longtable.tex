@@ -1,0 +1,226 @@
+\documentclass{article}
+\usepackage{longtable,lscape}
+\usepackage{rotating}
+\usepackage{multirow,multicol}
+\usepackage[breaklinks]{hyperref}
+
+\newcommand{\Msun}{{\rm M}_{\odot}}
+\newcommand{\brems}{{bremsstrahlung}\xspace}
+\newcommand{\Mvir}{{\rm M_{vir}}}
+\newcommand{\Rvir}{{\rm R_{vir}}}
+\newcommand{\Vvir}{{\rm V_{vir}}}
+\newcommand{\Tvir}{{\rm T_{vir}}}
+\newcommand{\LX}{{{\rm L_X}\,}}
+\newcommand{\rhoc}{\rho_{\rm crit}}
+\newcommand{\dd}{{\rm {d}}}
+\newcommand{\DF}{{\small DF}\xspace}
+
+\begin{document}
+\title{\LaTeX{} document demonstrating use of longtable}
+\author{Manodeep Sinha \\
+  \multicolumn{1}{p{.7\textwidth}}{\centering\emph{Department of Physics \& Astronomy,
+  	Vanderbilt University, Nashville, TN 37235. USA.}}}
+
+\maketitle
+
+\begin{center}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\arraystretch}{0.79}
+\scriptsize
+\begin{longtable}{rcrrrrr}
+\caption[Portrait, single page table]{Single page Table - in Portrait mode. The data
+are taken from Sinha \& Holley-Bockelmann 2009, MNRAS, 397, 190 }
+\label{table:mergersims} \\
+
+\hline \hline \\[-2ex]
+   \multicolumn{1}{c}{\textbf{Gas}} &
+   \multicolumn{1}{c}{\textbf{Merger Type}} &
+   \multicolumn{1}{c}{\textbf{b}} &
+   \multicolumn{1}{c}{\textbf{Eccentricity }} &
+   \multicolumn{1}{c}{\textbf{Orbital Energy}} &
+   \multicolumn{1}{c}{\textbf{Primary Vel.}} &
+   \multicolumn{1}{c}{\textbf{Secondary Vel.}}  \\[0.8ex] 
+   \multicolumn{1}{c}{\textbf{--}} &
+   \multicolumn{1}{c}{\textbf{--}} &
+   \multicolumn{1}{c}{\textbf{[kpc]}} &
+   \multicolumn{1}{c}{\textbf{--}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{56}}$ erg]}} &
+   \multicolumn{1}{c}{\textbf{[km/s]}} &
+   \multicolumn{1}{c}{\textbf{[km/s]}} \\[0.5ex]\hline \hline \\[-2ex]
+\endfirsthead
+
+\multirow{12}{*}{\begin{sideways}{\Large{1\% gas}} \end{sideways}}
+& 1:1  & 2.3   & 2.99 & 2864.6  & 137.8 &  137.8 \\
+& 1:1  & 22.8  & 2.95 & 2864.6  & 137.8 &  137.8 \\
+& 1:1  & 114.3 & 2.78 & 2864.6  & 137.8 &  137.8 \\
+& 1:1  & 2.3   & 0.06 & -1432.3 & 68.9  &  68.9 \\
+& 1:1  & 22.8  & 0.18 & -1432.3 & 68.9  &  68.9\\
+& 1:1  & 114.3 & 0.41 & -1432.3 & 68.9  & 68.9 \\
+& 3:1  & 1.9   & 0.06 & -542.0  & 29.5  & 92.2\\
+& 3:1  & 19.4  & 0.20 & -542.0  & 29.5  & 92.2\\
+& 3:1  & 96.8  & 0.44 & -542.0  & 29.5  & 92.2\\
+& 10:1 & 1.7   & 0.07 & -188.5  & 10.5  & 108.9\\
+& 10:1 & 16.7  & 0.21 & -188.5  & 10.5  & 108.9\\
+& 10:1 & 83.7  & 0.48 & -188.5  & 10.5  & 108.9\\[0.1ex]\hline\\[0.1ex]
+\multirow{12}{*}{\begin{sideways}{\Large{10\% gas}} \end{sideways}}
+& 1:1   & 2.3   & 2.99 & 3397.9  & 143.9 & 143.9\\
+& 1:1   & 22.8  & 2.95 & 3397.9  & 143.9 & 143.9\\
+& 1:1   & 114.3 & 2.78 & 3397.9  & 143.9 & 143.9\\
+& 1:1   & 2.3   & 0.05 & -1698.9 & 71.9  & 71.9 \\
+& 1:1   & 22.8  & 0.18 & -1698.9 & 71.9  & 71.9 \\
+& 1:1   & 114.3 & 0.41 & -1698.9 & 71.9  & 71.9 \\
+& 3:1   & 1.9   & 0.06 & -642.9  & 30.8  & 96.3\\
+& 3:1   & 19.4  & 0.20 & -642.9  & 30.8  & 96.3\\
+& 3:1   & 96.8  & 0.44 & -642.9  & 30.8  & 96.3\\
+& 10:1  & 1.7   & 0.07 & -223.6  & 10.9  & 113.6\\
+& 10:1  & 16.7  & 0.21 & -223.6  & 10.9  & 113.6\\
+& 10:1  & 83.7  & 0.48 & -223.6  & 10.9  & 113.6\\[0.1ex]\hline\\[0.1ex]
+\multirow{12}{*}{\begin{sideways}{\Large{18\% gas}} \end{sideways}}
+& 1:1   & 2.3   & 2.99 & 3910.1  & 149.0 & 149.0\\*
+& 1:1   & 22.8  & 2.95 & 3910.1  & 149.0 & 149.0\\*
+& 1:1   & 114.3 & 2.78 & 3910.1  & 149.0 & 149.0\\*
+& 1:1   & 2.3   & 0.05 & -1955.1 & 74.5  & 74.5\\*
+& 1:1   & 22.8  & 0.18 & -1955.1 & 74.5  & 74.5\\*
+& 1:1   & 114.3 & 0.41 & -1955.1 & 74.5  & 74.5\\*
+& 3:1   & 1.9   & 0.06 & -739.8  & 31.9  & 99.7\\*
+& 3:1   & 19.4  & 0.20 & -739.8  & 31.9  & 99.7\\*
+& 3:1   & 96.8  & 0.44 & -739.8  & 31.9  & 99.7\\*
+& 10:1  & 1.7   & 0.07 & -257.3  & 11.3  & 117.6\\*
+& 10:1  & 16.7  & 0.21 & -257.3  & 11.3  & 117.6\\*
+& 10:1  & 83.7  & 0.48 & -257.3  & 11.3  & 117.6\\*[0.3ex]\hline \hline \\[-2ex]
+\end{longtable}
+\normalsize
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\renewcommand{\arraystretch}{1.0}
+\end{center}
+
+\begin{landscape}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\arraystretch}{0.81}
+\scriptsize
+
+\begin{longtable}{cccccccccc}
+\caption[Landscape multiple page table]{Landscape multiple page table. The data
+are taken from Sinha \& Holley-Bockelmann 2009, MNRAS, 397, 190 but some rows are
+replicated to make a multi-page table. }
+\label{table:mergers} \\
+
+\hline \hline \\[-2ex]
+   \multicolumn{1}{c}{\textbf{Gas Content}} &
+   \multicolumn{1}{c}{\textbf{Peak L$\mathbf{_{\rm X}}$}\footnotemark[2]} &
+   \multicolumn{1}{c}{\textbf{Peak Shock L$\mathbf{_{\rm X}}$}\footnotemark[3]} &
+   \multicolumn{1}{c}{\textbf{Unb. gas mass}}  &
+   \multicolumn{1}{c}{\textbf{Total unb. mass}} &
+   \multicolumn{1}{c}{\textbf{Hot Gas}} &
+   \multicolumn{1}{c}{\textbf{R$_{\rm \mathbf{vir}}$}} &
+   \multicolumn{1}{c}{\textbf{Gas within \textbf{R$_{\rm \mathbf{vir}}$}}} &
+   \multicolumn{1}{c}{\textbf{DM  within \textbf{R$_{\rm \mathbf{vir}}$}}} &
+   \multicolumn{1}{c}{\textbf{Remnant L$_\mathbf{\rm X}$}} \\[0.8ex] 
+   \multicolumn{1}{c}{\textbf{--}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{40}}$ erg/s]}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{38}}$ erg/s]}} &
+   \multicolumn{1}{c}{$\mathbf{ [10^{10} \,\Msun ]}$} &
+   \multicolumn{1}{c}{$\mathbf{ [10^{10} \,\Msun ]}$} &
+   \multicolumn{1}{c}{\textbf{[\%]}} &
+   \multicolumn{1}{c}{\textbf{[kpc]}} &
+   \multicolumn{1}{c}{\textbf{[\%]}} &
+   \multicolumn{1}{c}{\textbf{[\%]}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{40}}$ erg/s]}} \\[0.5ex]\hline \hline \\[-2ex]
+\endfirsthead
+
+
+\multicolumn{8}{c}{{\tablename} \thetable{} -- Continued}\\[0.5ex]
+  \hline \hline \\[-2ex]
+   \multicolumn{1}{c}{\textbf{Gas Content}} &
+   \multicolumn{1}{c}{\textbf{Peak L$\mathbf{_{\rm X}}$}} &
+   \multicolumn{1}{c}{\textbf{Peak Shock L$\mathbf{_{\rm X}}$}} &
+   \multicolumn{1}{c}{\textbf{Unb. gas mass}}  &
+   \multicolumn{1}{c}{\textbf{Total unb. mass}} &
+   \multicolumn{1}{c}{\textbf{Hot Gas}} &
+   \multicolumn{1}{c}{\textbf{R$_{\rm \mathbf{vir}}$}} &
+   \multicolumn{1}{c}{\textbf{Gas within \textbf{R$_{\rm \mathbf{vir}}$}}} &
+   \multicolumn{1}{c}{\textbf{DM  within \textbf{R$_{\rm \mathbf{vir}}$}}} &
+   \multicolumn{1}{c}{\textbf{Remnant L$_\mathbf{\rm X}$}} \\[0.8ex] 
+   \multicolumn{1}{c}{\textbf{--}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{40}}$ erg/s]}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{38}}$ erg/s]}} &
+   \multicolumn{1}{c}{$\mathbf{ [10^{10} \,\Msun ]}$} &
+   \multicolumn{1}{c}{$\mathbf{ [10^{10} \,\Msun ]}$} &
+   \multicolumn{1}{c}{\textbf{[\%]}} &
+   \multicolumn{1}{c}{\textbf{[kpc]}} &
+   \multicolumn{1}{c}{\textbf{[\%]}} &
+   \multicolumn{1}{c}{\textbf{[\%]}} &
+   \multicolumn{1}{c}{\textbf{[$\mathbf{10^{40}}$ erg/s]}} \\[0.5ex]\hline \hline \\[-2ex]
+\endhead
+
+\multicolumn{8}{c}{{Continued on Next Page\ldots}} \\
+\endfoot
+
+\hline\hline\\[-4.0ex] 
+\endlastfoot
+\multirow{15}{*}{\begin{sideways}{\Large{1\% gas}}\end{sideways}}
+& 0.82   &  0.25   & 0.57 & 44.9 & 51.0 & --     &  --  & -- & 0.03\\
+& 0.54   &  0.09   & 0.56 & 17.5 & 55.2 & --     &  --  & -- & 0.04\\
+& 0.27   &  0.005  & 0.35 & 9.3  & 71.8 & --     &  --  & -- & 0.1\\
+& 1.17   &  0.19   & 0.29 & 2.03 & 80.2 & 248.1  & 58.1 & 58.4 & 0.13\\
+& 0.81   &  0.15   & 0.27 & 1.95 & 82.1 & 247.6  & 59.1 & 57.8 & 0.11\\
+& 0.42   &  0.03   & 0.27 & 2.6  & 84.8 & 246.3  & 55.2 & 56.7 & 0.09\\
+& 0.50   &  0.08   & 0.14 & 3.6  & 84.2 & 224.4  & 62.9 & 65.1 & 0.07\\
+& 0.40   &  0.04   & 0.12 & 2.5  & 84.6 & 224.4  & 62.0 & 65.2 & 0.07\\
+& 0.42   &  0.03   & 0.27 & 2.6  & 84.8 & 246.3  & 55.2 & 56.7 & 0.09\\
+& 0.50   &  0.08   & 0.14 & 3.6  & 84.2 & 224.4  & 62.9 & 65.1 & 0.07\\
+& 0.40   &  0.04   & 0.12 & 2.5  & 84.6 & 224.4  & 62.0 & 65.2 & 0.07\\
+& 0.20   &  0.009  & 0.09 & 2.9  & 83.6 & 222.1  & 56.8 & 63.0 & 0.07\\
+& 0.23   &  0.004  & 0.03 & 2.0  & 90.7 & 218.9  & 68.4 & 72.8 & 0.07\\
+& 0.19   &  0.008  & 0.02 & 1.4  & 90.3 & 218.4  & 67.4 & 72.1 & 0.07\\
+& 0.13   &  0.001  & 0.03 & 1.6  & 85.6 & 218.4  & 64.4 & 72.3 & 0.08\\[0.3ex]\hline\\[0.3ex]
+\multirow{15}{*}{\begin{sideways}{\Large{10\% gas}}\end{sideways}}
+& 90.5  & 14.4    & 7.4  & 33.9 & 52.6 & 217.5  & 25.5 & 39.1 & 3.0\\
+& 41.7  &  6.0    & 6.1  & 24.5 & 52.9 & --     &  --  &  --  & 3.3\\
+& 23.1  &  0.5    & 5.1  & 12.9 & 59.3 & --     &  --  &  --  & 9.0\\
+& 79.3  &  18.7   & 3.05 & 4.36 & 79.4 & 251.3  & 53.8 & 60.4 & 12.5\\
+& 71.9  &  10.2   & 2.84 & 4.16 & 80.9 & 248.6  & 53.3 & 58.3 & 9.5\\
+& 34.5  &  1.7    & 2.06 & 3.86 & 83.3 & 246.7  & 49.8 & 57.1 & 8.1\\
+& 44.0  &  7.6    & 1.4  &  4.2 & 82.2 & 224.4  & 56.0 & 64.9 & 6.2\\
+& 36.0  &  3.4    & 1.2  &  3.3 & 83.6 & 225.3  & 55.3 & 65.8 & 6.8\\
+& 34.5  &  1.7    & 2.06 & 3.86 & 83.3 & 246.7  & 49.8 & 57.1 & 8.1\\
+& 44.0  &  7.6    & 1.4  &  4.2 & 82.2 & 224.4  & 56.0 & 64.9 & 6.2\\
+& 36.0  &  3.4    & 1.2  &  3.3 & 83.6 & 225.3  & 55.3 & 65.8 & 6.8\\
+& 18.9  &  0.4    & 0.84 &  2.8 & 84.3 & 223.9  & 52.2 & 64.6 & 5.6\\
+& 26.5  &  0.4    & 0.22 &  2.0 & 85.2 & 216.6  & 58.7 & 70.4 & 5.5\\
+& 16.4  &  0.2    & 0.22 &  1.4 & 88.4 & 217.1  & 57.7 & 71.0 & 5.8\\
+& 11.2  &  0.1    & 0.23 &  1.6 & 84.5 & 215.7  & 55.1 & 69.7 & 6.4\\[0.3ex]\hline\\[0.3ex]
+\multirow{15}{*}{\begin{sideways}{\Large{18\% gas}}\end{sideways}}
+& 228.2 & 59.7    & 11.9  & 39.4  & 47.8 & 223.0  & 29.1 & 42.3 & 10.8 \\*
+& 153.2 & 26.2    & 9.7   & 36.2  & 55.5 & --     & --   & --   & 10.3\\*
+& 78.7  &  1.8    & 6.4   & 14.7  & 70.8 & --     & --   & --   & 27.6\\*
+& 268.3 & 30.7    & 5.0   & 6.1   & 81.9 & 250.4  & 58.2 & 59.7 & 44.0\\*
+& 227.4 & 26.3    & 4.7   & 5.8   & 83.1 & 251.8  & 57.8 & 60.6 & 35.0\\*
+& 113.1 & 7.1     & 3.4   & 4.9   & 85.9 & 248.6  & 54.0 & 58.3 & 28.2\\*
+& 193.5 & 20.8    & 2.3   &  4.7  & 85.6 & 224.8  & 59.5 & 65.3 & 22.2\\*
+& 108.4 & 14.2    & 2.1   &  3.9  & 86.2 & 224.4  & 58.5 & 65.2 & 23.2\\*
+& 113.1 & 7.1     & 3.4   & 4.9   & 85.9 & 248.6  & 54.0 & 58.3 & 28.2\\*
+& 193.5 & 20.8    & 2.3   &  4.7  & 85.6 & 224.8  & 59.5 & 65.3 & 22.2\\*
+& 108.4 & 14.2    & 2.1   &  3.9  & 86.2 & 224.4  & 58.5 & 65.2 & 23.2\\*
+& 61.8  & 1.8     & 1.6   &  3.9  & 86.7 & 223.9  & 54.6 & 64.6 & 19.6\\*
+& 84.5  & 3.5     & 0.39  &  1.9  & 91.6 & 218.4  & 62.6 & 72.2 & 18.4\\*
+& 54.8  & 1.7     & 0.38  &  1.6  & 90.8 & 216.6  & 60.7 & 70.4 & 19.3\\*
+& 35.8  & 0.3     & 0.45  &  2.8  & 89.1 & 217.5  & 58.7 & 71.5 & 21.4\\*
+
+\footnotetext[2]{L$_{\rm X}$ is calculated by using only the particles that have
+$T_{\rm gas} > 10^{5.2}$ K  and $\rho < 0.01 $ M$_\odot /pc^{-3}$.}
+\footnotetext[3]{Shock L$_{\rm X}$ is obtained by adding the L$_{\rm X}$ for
+the particles that exceed a threshold for $\frac{\dd S}{\dd t}$. The threshold,
+in code units, is $10^{10}, 3\times10^9$ and $2\times10^9$ for $1\%, 10\%$
+and $18\%$ gas fractions.}
+\end{longtable}
+
+\normalsize
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\renewcommand{\arraystretch}{1.0}
+\end{landscape}
+
+\section{Improvements}
+If you have any suggestions for improving this document, please send them to me at \href{mailto:manodeep@gmail.com}{manodeep@gmail.com}
+
+\end{document}

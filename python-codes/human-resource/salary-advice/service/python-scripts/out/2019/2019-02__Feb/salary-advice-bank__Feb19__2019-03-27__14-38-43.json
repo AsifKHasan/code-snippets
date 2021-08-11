@@ -1,0 +1,27 @@
+{
+    "month": "Feb19",
+    "refno": "19/616",
+    "date": "March 27, 2019",
+    "totalamount": "217,096.00",
+    "totalamountinwords": "two lakh, seventeen thousand and ninety-six taka, zero paisa",
+    "salary": [
+        {
+            "name": "Md. Monirul Islam",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121010009749",
+            "payable": "107,311.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Anowarul Islam",
+            "unit": "Supply Chain Management",
+            "type": "",
+            "account": "14121010001512",
+            "payable": "109,785.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

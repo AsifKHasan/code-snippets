@@ -1,0 +1,18 @@
+{
+    "month": "Oct18",
+    "wing": "Delivery",
+    "date": "November 20, 2018",
+    "totalamount": "40,282.00",
+    "totalamountinwords": "forty thousand, two hundred and eighty-two taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Software Services",
+            "name": "Md. Ashraful Islam",
+            "account": "14121040019450",
+            "payable": "40,282.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+argparse
+PyYAML
+lxml
+httplib2
+yamllint
+
+pandas
+numpy
+
+matplotlib
+calmap
+
+oauth2client
+PyDrive
+python-docx
+pygsheets
+
+pillow
+
+progress
+tqdm
+termcolor
+colorama
+
+pysvg-py3
+python-chess
+
+# xlsxwriter
+# openpyxl

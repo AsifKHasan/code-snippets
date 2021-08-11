@@ -1,0 +1,29 @@
+Apr19 - last ref used 656
+
+python salary-advice-cash.py --month "Oct19" --wing Acquisition
+python salary-advice-cash.py --month "Oct19" --wing Delivery
+python salary-advice-cash.py --month "Oct19" --wing Operations
+
+python salary-advice-cheque.py --month "Oct19" --wing Acquisition
+
+python salary-advice-cheque.py --month "Oct19" --wing Delivery
+
+python salary-advice-cheque.py --month "Oct19" --wing Operations
+
+
+python salary-advice-bank-bdren.py --month "Oct19" --refno 19/695
+python salary-advice-bank.py --month "Oct19" --refno 19/695
+python salary-advice-bank-software-services.py --month "Oct19" --refno 19/696
+
+
+
+python latex2pdf.py --latexfile python templates/salary-advice-bank.tex --datafile python out/2019-01__Jan/salary-advice-bank__Jan19__2019-02-24__20-46-14.json --pdffile python out/2019-01__Jan/salary-advice-bank__Jan19__2019-02-24__20-46-14__new-bank-account.pdf
+
+
+# UI parameters
+month = drop down with the last used value pre-selected
+mode = radio (cash, bank, cheque) - cash pre-selected
+
+bank account = drop down with the last used value pre-selected
+bank-for = radio (no filter, software-services, BdRen) - no-filter pre selected
+ref-no = user entry last used value entered with a warning tip that you may need to change it

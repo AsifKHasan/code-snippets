@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+"jinja2" = "*"
+latexbuild = "*"
+latex = "*"
+django = "==2.1"
+djangorestframework = "*"
+pygsheets = "*"
+"num2words" = "*"
+django-cors-headers = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"

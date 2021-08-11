@@ -1,0 +1,36 @@
+{
+    "month": "EidBonus-May19",
+    "wing": "Operations",
+    "date": "May 21, 2019",
+    "totalamount": "19,200.00",
+    "totalamountinwords": "nineteen thousand, two hundred taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "Project Management Office",
+            "name": "Jayanta Das",
+            "account": "0156.105.15781-DBBL",
+            "payable": "6,400.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Project Management Office",
+            "name": "Md. Rabiul Islam",
+            "account": "16310531213 - DBBL",
+            "payable": "6,400.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Project Management Office",
+            "name": "Md. Shahidul Islam",
+            "account": "2181510038600-DBBL",
+            "payable": "6,400.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

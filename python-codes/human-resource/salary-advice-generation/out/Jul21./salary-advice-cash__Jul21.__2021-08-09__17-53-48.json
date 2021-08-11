@@ -1,0 +1,89 @@
+{
+    "wing": "Operations",
+    "month": "Jul21.",
+    "date": "August 09, 2021",
+    "totalamount": "68,333.00",
+    "totalamountinwords": "sixty-eight thousand, three hundred and thirty-three taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Lipon Nokrek",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "13,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Mrs. Fuzirannasa",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "7,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Golam Rabbi",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "9,000.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Imran Hossain",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "4,833.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Md. Nur Islam",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "5,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Md. Shamim",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "14,000.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Admin",
+            "name": "Shakina Begum",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "5,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Supply Chain Management",
+            "name": "Raihan Hosssain",
+            "type": "Support Staff",
+            "account": "",
+            "payable": "8,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        }
+    ]
+}

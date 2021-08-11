@@ -1,0 +1,27 @@
+{
+    "month": "Jan19",
+    "refno": "19/602",
+    "date": "February 24, 2019",
+    "totalamount": "214,555.00",
+    "totalamountinwords": "two lakh, fourteen thousand, five hundred and fifty-five taka, zero paisa",
+    "salary": [
+        {
+            "name": "Md. Sharafat Hossain",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040011581",
+            "payable": "111,740.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Kamruzzaman Tanim",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090011215",
+            "payable": "102,815.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

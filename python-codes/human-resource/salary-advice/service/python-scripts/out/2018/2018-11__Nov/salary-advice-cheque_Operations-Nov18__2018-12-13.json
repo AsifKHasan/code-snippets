@@ -1,0 +1,18 @@
+{
+    "month": "Nov18",
+    "wing": "Operations",
+    "date": "December 13, 2018",
+    "totalamount": "13,900.00",
+    "totalamountinwords": "thirteen thousand, nine hundred taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Md. Rezaul Karim",
+            "account": "14121020019205",
+            "payable": "13,900.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "month": "Apr19",
+    "wing": "Delivery",
+    "date": "May 09, 2019",
+    "totalamount": "60,050.00",
+    "totalamountinwords": "sixty thousand and fifty taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Datacenter & Infrastructure",
+            "name": "Md. Mahasin Alam",
+            "account": "",
+            "payable": "33,750.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Delivery",
+            "unit": "Operations & Maintenance",
+            "name": "Mohammad Harun-Ar-Rashid",
+            "account": "14121040002242",
+            "payable": "26,300.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

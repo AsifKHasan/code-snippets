@@ -1,0 +1,36 @@
+{
+    "month": "Nov18",
+    "refno": "18/589",
+    "date": "December 22, 2018",
+    "totalamount": "433,696.00",
+    "totalamountinwords": "four lakh, thirty-three thousand, six hundred and ninety-six taka, zero paisa",
+    "salary": [
+        {
+            "name": "Saiful Islam Sumon",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121020000885",
+            "payable": "144,850.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Ashish Kumar Das",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121070001731",
+            "payable": "164,167.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Jakir Hossain",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121050001567",
+            "payable": "124,679.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+    "month": "Jan19",
+    "wing": "Operations",
+    "date": "February 10, 2019",
+    "totalamount": "75,359.00",
+    "totalamountinwords": "seventy-five thousand, three hundred and fifty-nine taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "Finance & Accounts",
+            "name": "Arman Miah",
+            "payable": "8,400.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Lipon Nokrek",
+            "payable": "10,700.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Md. Dulon Mia",
+            "payable": "5,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Md. Kamal Uddin",
+            "payable": "7,100.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Most. Hajera Begum",
+            "payable": "5,000.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Mrs. Fuzirannasa",
+            "payable": "6,800.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Raihan Hosssain",
+            "payable": "5,000.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "HR & Admin",
+            "name": "Suhag Mia",
+            "payable": "3,333.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Supply Chain Management",
+            "name": "Md. Delwar Hossain",
+            "payable": "11,226.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Supply Chain Management",
+            "name": "Md. Saiful Haque",
+            "payable": "6,500.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Operations",
+            "unit": "Supply Chain Management",
+            "name": "Mohammad Khokon Mia",
+            "payable": "5,800.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        }
+    ]
+}
