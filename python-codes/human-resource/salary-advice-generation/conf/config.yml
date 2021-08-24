@@ -20,8 +20,8 @@ master-data:
   - Operations
 selection:
   selected-account: '14111060000068'
-  selected-filter: None
-  selected-mode: Bank
+  selected-filter: Software
+  selected-mode: Cash
   selected-month: Jul21.
-  selected-reference: 21/884
+  selected-reference: 21/891
   selected-wing: Operations
