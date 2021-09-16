@@ -1,0 +1,26 @@
+---
+title: "R practice for TonuBhai"
+output: html_notebook
+---
+
+## Dependency and Notes
+* install **openxlsx** package
+
+    > `install.packages("openxlsx")`
+
+Set the working directory to where the sample xlsx files are.
+```{r}
+setwd('/Users/asif.hasan/Downloads')
+```
+
+Load the **openxlsx** library for reading xlsx file.
+```{r}
+library(openxlsx)
+```
+
+Load the two files into two data frames.
+```{r}
+df1 <- read.xlsx("Test_File1.xlsx")
+df2 <- read.xlsx("Test_File2.xlsx")
+```
+

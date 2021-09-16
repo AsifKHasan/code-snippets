@@ -1,0 +1,27 @@
+{
+    "month": "Nov18",
+    "wing": "Delivery",
+    "date": "December 10, 2018",
+    "totalamount": "17,129.00",
+    "totalamountinwords": "seventeen thousand, one hundred and twenty-nine taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Active Network",
+            "name": "Aqib Asifur Rahman",
+            "account": "",
+            "payable": "5,129.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Delivery",
+            "unit": "Active Network",
+            "name": "Md. Azizul Hakim",
+            "account": "",
+            "payable": "12,000.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

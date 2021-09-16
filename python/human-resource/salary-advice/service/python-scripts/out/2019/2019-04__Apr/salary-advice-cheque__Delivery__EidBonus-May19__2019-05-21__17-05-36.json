@@ -1,0 +1,18 @@
+{
+    "month": "EidBonus-May19",
+    "wing": "Delivery",
+    "date": "May 21, 2019",
+    "totalamount": "30,000.00",
+    "totalamountinwords": "thirty thousand taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Datacenter & Infrastructure",
+            "name": "Md. Rejwan Ull Alam",
+            "account": "",
+            "payable": "30,000.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

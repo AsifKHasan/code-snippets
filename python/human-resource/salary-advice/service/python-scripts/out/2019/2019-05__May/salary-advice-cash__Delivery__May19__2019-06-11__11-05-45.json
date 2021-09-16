@@ -1,0 +1,17 @@
+{
+    "month": "May19",
+    "wing": "Delivery",
+    "date": "June 11, 2019",
+    "totalamount": "15,000.00",
+    "totalamountinwords": "fifteen thousand taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Software Services",
+            "name": "Muhsinur Rahman Chowdhury",
+            "payable": "15,000.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        }
+    ]
+}

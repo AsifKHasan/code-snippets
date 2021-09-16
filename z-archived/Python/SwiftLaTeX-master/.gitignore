@@ -1,0 +1,12 @@
+*.pyc
+venv/
+__pycache__/
+.hg
+*.bak
+*.orig
+*.c
+*.cc
+*.h
+*.bak.js
+.idea/
+.DS_Store

@@ -1,0 +1,25 @@
+{
+    "month": "EidBonus-May19",
+    "wing": "Delivery",
+    "date": "May 21, 2019",
+    "totalamount": "6,750.00",
+    "totalamountinwords": "six thousand, seven hundred and fifty taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Software Services",
+            "name": "Muhsinur Rahman Chowdhury",
+            "payable": "3,750.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Delivery",
+            "unit": "Software Services",
+            "name": "Rished Ali Mimo",
+            "payable": "3,000.00",
+            "paythrough": "Cash",
+            "paystatus": "In Process"
+        }
+    ]
+}

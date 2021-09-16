@@ -1,0 +1,72 @@
+{
+    "month": "Nov18",
+    "refno": "18/587",
+    "date": "December 15, 2018",
+    "totalamount": "464,552.00",
+    "totalamountinwords": "four lakh, sixty-four thousand, five hundred and fifty-two taka, zero paisa",
+    "salary": [
+        {
+            "name": "Md. Rokonuzzaman",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090018919",
+            "payable": "64,520.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Monjur Ahmed",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010009684",
+            "payable": "70,800.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shahida Begum",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121030008013",
+            "payable": "80,483.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shaikh Tojibul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040009682",
+            "payable": "70,800.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Manzur Alam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090011442",
+            "payable": "58,940.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Shariful Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010015369",
+            "payable": "50,782.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "S.M. Azharul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121070001496",
+            "payable": "68,227.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

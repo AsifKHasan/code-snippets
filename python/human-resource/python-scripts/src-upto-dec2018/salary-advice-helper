@@ -1,0 +1,11 @@
+./salary-advice-cash.py --month Dec18 --wing Acquisition
+./salary-advice-cash.py --month Dec18 --wing Delivery
+./salary-advice-cash.py --month Dec18 --wing Operations
+
+./salary-advice-cheque.py --month Dec18 --wing Acquisition
+./salary-advice-cheque.py --month Nov18 --wing Delivery
+./salary-advice-cheque.py --month Dec18 --wing Operations
+
+./salary-advice-bank-bdren.py --month Dec18 --refno 19/590
+./salary-advice-bank-software-services.py --month Dec18 --refno 19/595
+./salary-advice-bank.py --month Dec18 --refno 19/596

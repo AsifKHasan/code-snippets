@@ -1,0 +1,54 @@
+{
+    "month": "Mar19",
+    "refno": "19/626",
+    "date": "April 18, 2019",
+    "totalamount": "628,665.00",
+    "totalamountinwords": "six lakh, twenty-eight thousand, six hundred and sixty-five taka, zero paisa",
+    "salary": [
+        {
+            "name": "Fakhrul Islam",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010001102",
+            "payable": "136,396.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Mohammad Sabbir Ahmed",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010000928",
+            "payable": "114,312.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Monirul Islam",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121010009749",
+            "payable": "107,311.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Rezaul Karim",
+            "unit": "Project Management Office",
+            "type": "",
+            "account": "14121090000882",
+            "payable": "160,861.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Anowarul Islam",
+            "unit": "Supply Chain Management",
+            "type": "",
+            "account": "14121010001512",
+            "payable": "109,785.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

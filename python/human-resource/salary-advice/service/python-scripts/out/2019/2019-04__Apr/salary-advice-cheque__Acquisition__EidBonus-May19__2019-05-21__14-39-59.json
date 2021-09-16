@@ -1,0 +1,18 @@
+{
+    "month": "EidBonus-May19",
+    "wing": "Acquisition",
+    "date": "May 21, 2019",
+    "totalamount": "10,500.00",
+    "totalamountinwords": "ten thousand, five hundred taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Acquisition",
+            "unit": "Enterprise Products",
+            "name": "Syed Md. Manzur Murshed",
+            "account": "",
+            "payable": "10,500.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

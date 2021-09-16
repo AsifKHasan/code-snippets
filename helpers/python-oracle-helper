@@ -1,0 +1,10 @@
+import json
+
+with open('./out/schema-diff__out.json') as f:
+    data = json.load(f)
+
+
+a6 = data['amanda6']['ACCOUNTBILL'].keys()
+a7 = data['amanda7']['ACCOUNTBILL'].keys()
+list(set(a7).union(a6))
+list(set().union(a6, a7))

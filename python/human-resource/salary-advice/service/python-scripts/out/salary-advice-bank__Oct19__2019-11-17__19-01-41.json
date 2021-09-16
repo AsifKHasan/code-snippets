@@ -1,0 +1,126 @@
+{
+    "month": "Oct19",
+    "refno": "19/695",
+    "date": "November 17, 2019",
+    "totalamount": "449,188.00",
+    "totalamountinwords": "four lakh, forty-nine thousand, one hundred and eighty-eight taka, zero paisa",
+    "salary": [
+        {
+            "name": "Syed Md. Manzur Murshed",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "2141212011139",
+            "payable": "41,180.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Murshadul Islam",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121010021256",
+            "payable": "38,623.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Rajib Chowdhury",
+            "unit": "Systems",
+            "type": "",
+            "account": "14121030016027",
+            "payable": "34,545.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nur-E-Asma Tabassum",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121070022451",
+            "payable": "33,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Muhammad Aminur Rahman",
+            "unit": "Active Network",
+            "type": "",
+            "account": "2141211011081",
+            "payable": "37,487.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Mahasin Alam",
+            "unit": "Datacenter & Infrastructure",
+            "type": "",
+            "account": "2141218011091",
+            "payable": "34,583.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Samim Hosen",
+            "unit": "Datacenter & Infrastructure",
+            "type": "",
+            "account": "14121050018695",
+            "payable": "36,552.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Sanjoy Kumar Saha",
+            "unit": "Systems",
+            "type": "",
+            "account": "14121010018990",
+            "payable": "44,583.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Ferdous Ara ruma",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121030009748",
+            "payable": "36,545.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Tahmina Azad Sajia",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "2141211011361",
+            "payable": "18,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Sayeda Fatema Ferdousi",
+            "unit": "HR & Admin",
+            "type": "",
+            "account": "2141218007701",
+            "payable": "39,545.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Asma ul Husna",
+            "unit": "HR & Admin",
+            "type": "",
+            "account": "11321010017184",
+            "payable": "39,545.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Lubna Saha",
+            "unit": "Project Management Office",
+            "type": "",
+            "account": "2141213011328",
+            "payable": "15,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+# replace all contents within []() including the brackets with SPACE
+S: [ ]*\[.+\][ ]*
+R: SPACE
+
+# replace all contents within () including the brackets with SPACE
+S: [ ]*\(.+\)[ ]*
+R: SPACE
+
+# replace all contents within ‘’ including the quotes with SPACE
+S: [ ]*[‘'].+[’'][ ]*
+R: SPACE
+
+# replace কি০ with a NL
+S: [, ]*কি০[ ]*
+R: \n
+
+# replace কি০ with a NL
+S: [ ]*তু০[ ]*
+R: \n
+
+# replace দ্র০ with a NL
+S: [ ]*দ্র০[ ]*
+R: \n
+
+# replace যে০ with a NL
+S: [ ]*যে০[ ]*
+R: \n
+
+# replace more than two SPACEs with a single SPACE
+S: [ ]{2,20}
+R: SPACE
+
+# remove SPACES from end of line
+S: [ ]+\n
+R: \n
+
+# remove SPACES from beginning of line
+S: \n[ ]+
+R: \n
+
+# remove blank lines
+S: \n\n
+R: \n
+
+# if a line begins with , merge it with earlier line
+S: \n,
+S: ,
+
+# if a line ends with ,;.:?- remove them
+S: [,.;:?-]\n
+S: \n
+
+# remove SPACE before ,
+S:  ,
+S: ,
+
+
+
+s = """অঋণ
+অঋণিতা, অঋণিত্ব
+অংশিত
+অংশিতা, অংশিত্ব
+অংশীদার
+অংশীদারি, +ত্ব
+অংশুমালী
+অংশুল, +তা
+অকথন
+অকথনীয়, +তা
+অকথিত
+অকথ্য, +তা
+অকথ্যকথন
+অকপট, +তা"""

@@ -1,0 +1,121 @@
+{
+    "month": "Oct18",
+    "refno": "18/577",
+    "date": "November 14, 2018",
+    "totalamount": "114,000.00",
+    "totalamountinwords": "one lakh, fourteen thousand taka, zero paisa",
+    "salary": [
+        {
+            "name": "M.K.Nafis Iqbul",
+            "type": "BdREN",
+            "account": "14121070020579",
+            "payable": "13,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Laxman Somodder",
+            "type": "BdREN",
+            "account": "2160212008842",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Aytullah Khan",
+            "type": "BdREN",
+            "account": "2224212003243",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Kanon Miah",
+            "type": "BdREN",
+            "account": "14121020022378",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Mahafuz Parvez",
+            "type": "BdREN",
+            "account": "2197212007411",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Manik Molla",
+            "type": "BdREN",
+            "account": "14121010022379",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Moshfiqur Rahman",
+            "type": "BdREN",
+            "account": "2161218010924",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Nazrul Islam",
+            "type": "BdREN",
+            "account": "15821040022666",
+            "payable": "5,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Zahid Hasan",
+            "type": "BdREN",
+            "account": "2197214007369",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Zubair Hossaoin",
+            "type": "BdREN",
+            "account": "21321040008167",
+            "payable": "6,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Rofiq Sikder Manik",
+            "type": "BdREN",
+            "account": "20321050004876",
+            "payable": "10,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Sohel Rana",
+            "type": "BdREN",
+            "account": "2174212009018",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Sujon Kumar",
+            "type": "BdREN",
+            "account": "2175217012172",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Zibon Kumar Ray",
+            "type": "BdREN",
+            "account": "2169211005908",
+            "payable": "8,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,102 @@
+Feb19 - last ref used 617
+
+Bank account - 14111060000068 (primary)
+Bank account - 14131050002359 (secondary)
+
+./salary-advice-cash.py --month Feb19 --wing Acquisition
+./salary-advice-cash.py --month Feb19 --wing Delivery
+./salary-advice-cash.py --month Feb19 --wing Operations
+
+./salary-advice-cheque.py --month Feb19 --wing Acquisition
+./salary-advice-cheque.py --month Feb19 --wing Delivery
+./salary-advice-cheque.py --month Feb19 --wing Operations
+
+./salary-advice-bank.py --month Feb19 --refno 19/616
+./salary-advice-bank-software-services.py --month Feb19 --refno 19/617
+./salary-advice-bank-bdren.py --month Feb19 --refno 19/608
+
+
+
+./latex2pdf.py --latexfile ./templates/salary-advice-bank.tex --datafile ./out/2019-01__Jan/salary-advice-bank__Jan19__2019-02-24__20-46-14.json --pdffile ./out/2019-01__Jan/salary-advice-bank__Jan19__2019-02-24__20-46-14__new-bank-account.pdf
+./latex2pdf.py --latexfile ./templates/salary-advice-bank-software-services.tex --datafile ./out/2019-01__Jan/salary-advice-bank-software-services__Jan19__2019-02-24__20-46-33.json --pdffile ./out/2019-01__Jan/salary-advice-bank-software-services__Jan19__2019-02-24__20-46-33__new-bank-account.pdf
+
+
+
+A -> 0
+B -> 1
+C -> 2
+D -> 3
+E -> 4
+F -> 5
+G -> 6
+H -> 7
+I -> 8
+J -> 9
+K -> 10
+L -> 11
+M -> 12
+N -> 13
+O -> 14
+P -> 15
+Q -> 16
+R -> 17
+S -> 18
+T -> 19
+U -> 20
+V -> 21
+W -> 22
+X -> 23
+Y -> 24
+Z -> 25
+AA -> 26
+AB -> 27
+AC -> 28
+AD -> 29
+AE -> 30
+AF -> 31
+AG -> 32
+AH -> 33
+AI -> 34
+AJ -> 35
+AK -> 36
+AL -> 37
+AM -> 38
+AN -> 39
+AO -> 40
+AP -> 41
+AQ -> 42
+AR -> 43
+AS -> 44
+AT -> 45
+AU -> 46
+AV -> 47
+AW -> 48
+AX -> 49
+AY -> 50
+AZ -> 51
+BA -> 52
+BB -> 53
+BC -> 54
+BD -> 55
+BE -> 56
+BF -> 57
+BG -> 58
+BH -> 59
+BI -> 60
+BJ -> 61
+BK -> 62
+BL -> 63
+BM -> 64
+BN -> 65
+BO -> 66
+BP -> 67
+BQ -> 68
+BR -> 69
+BS -> 70
+BT -> 71
+BU -> 72
+BV -> 73
+BW -> 74
+BX -> 75
+BY -> 76
+BZ -> 77

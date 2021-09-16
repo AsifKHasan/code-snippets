@@ -1,0 +1,90 @@
+{
+    "month": "Jan19",
+    "refno": "19/600",
+    "date": "February 18, 2019",
+    "totalamount": "171,584.00",
+    "totalamountinwords": "one lakh, seventy-one thousand, five hundred and eighty-four taka, zero paisa",
+    "salary": [
+        {
+            "name": "Abdur Rab Marjan",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121070019420",
+            "payable": "18,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Laboni Das",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121080019783",
+            "payable": "24,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Nazmul Hasan",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090019023",
+            "payable": "23,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Raqibul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040017494",
+            "payable": "34,584.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nafis Ahmed",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121030016112",
+            "payable": "11,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nasima Aktar",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010019197",
+            "payable": "21,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nusrat Jahan Mahmud",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121040021269",
+            "payable": "16,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Fahim Shahriar",
+            "unit": "Software Services",
+            "type": "",
+            "account": "2141217010359",
+            "payable": "12,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Mahabub Al Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "2141214010360",
+            "payable": "12,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,153 @@
+{
+    "month": "Jan19",
+    "refno": "19/603",
+    "date": "February 26, 2019",
+    "totalamount": "790,939.00",
+    "totalamountinwords": "seven lakh, ninety thousand, nine hundred and thirty-nine taka, zero paisa",
+    "salary": [
+        {
+            "name": "Aliul Hamid",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121030020595",
+            "payable": "28,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Arif Ullah",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121040017026",
+            "payable": "30,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Nazmus Sakib",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010016028",
+            "payable": "20,167.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Kazi Md. Mohsin",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "13521060039250",
+            "payable": "30,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Ibrahim Ibna md. Liaquat Ullah",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121010010654",
+            "payable": "101,201.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Murshid Sarker",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121060018567",
+            "payable": "68,992.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shihan Zaman",
+            "unit": "Active Network",
+            "type": "",
+            "account": "14121020012869",
+            "payable": "61,696.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Mohammad Main Uddin",
+            "unit": "Datacenter & Infrastructure",
+            "type": "",
+            "account": "14121050001497",
+            "payable": "122,615.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Mashrurul Hakim",
+            "unit": "Operations & Maintenance",
+            "type": "",
+            "account": "14121070020174",
+            "payable": "49,907.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Mohammad Harun-Ar-Rashid",
+            "unit": "Operations & Maintenance",
+            "type": "",
+            "account": "14121040002242",
+            "payable": "26,300.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "A.K.M. Rakibul Hasan",
+            "unit": "Systems",
+            "type": "",
+            "account": "14121070017138",
+            "payable": "75,274.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Anisur Rahman",
+            "unit": "Systems",
+            "type": "",
+            "account": "14121090017830",
+            "payable": "63,091.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Siddiqur Rahman",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121080000873",
+            "payable": "34,871.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Rizia Aktar",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "10421040043982",
+            "payable": "33,000.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Sharif Mohammad Bin Safi",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121010007005",
+            "payable": "22,025.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Motaleb Hossain",
+            "unit": "Supply Chain Management",
+            "type": "",
+            "account": "14121090001527",
+            "payable": "23,800.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

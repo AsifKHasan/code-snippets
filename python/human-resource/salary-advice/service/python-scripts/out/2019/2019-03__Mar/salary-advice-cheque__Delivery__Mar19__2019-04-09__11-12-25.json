@@ -1,0 +1,27 @@
+{
+    "month": "Mar19",
+    "wing": "Delivery",
+    "date": "April 09, 2019",
+    "totalamount": "163,349.00",
+    "totalamountinwords": "one lakh, sixty-three thousand, three hundred and forty-nine taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Datacenter & Infrastructure",
+            "name": "Mohammad Main Uddin",
+            "account": "14121050001497",
+            "payable": "122,615.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        },
+        {
+            "wing": "Delivery",
+            "unit": "Software Services",
+            "name": "Md. Shariful Islam",
+            "account": "14121010015369",
+            "payable": "40,734.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

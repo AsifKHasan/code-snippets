@@ -1,0 +1,27 @@
+{
+    "month": "Jan19",
+    "refno": "19/607",
+    "date": "March 06, 2019",
+    "totalamount": "250,708.00",
+    "totalamountinwords": "two lakh, fifty thousand, seven hundred and eight taka, zero paisa",
+    "salary": [
+        {
+            "name": "Fakhrul Islam",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010001102",
+            "payable": "136,396.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Mohammad Sabbir Ahmed",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121010000928",
+            "payable": "114,312.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

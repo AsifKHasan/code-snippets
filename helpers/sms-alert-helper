@@ -1,0 +1,47 @@
+export SMSALERT_SOURCE=/Users/asif.hasan/projects/Celloscope/sms-alert
+export DB_SCRIPT=${SMSALERT_SOURCE}/services/antarika/script
+export VAR_PREFIX=/Users/asif.hasan
+export DEPLOYMENT_HOST=192.168.0.110
+
+#00_common,		01_antarika,	02_cecurity
+#03_envico,		05_corecorrect
+#11_swp,		12_inklusion,	13_drws
+
+export PRODUCT=00_common; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=01_antarika;  export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=02_cecurity; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=03_envico; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=05_corecorrect; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=11_swp; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=12_inklusion; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+export PRODUCT=13_drws; export TEST_REGRESS=${SMSALERT_SOURCE}/tests/regression/${PRODUCT}/python; export TEST_STRESS=${SMSALERT_SOURCE}/tests/stress/${PRODUCT}/python
+
+
+# get a token
+TOKEN=$(./access_token.py http://192.168.0.115:9005/cecurity/)
+echo $TOKEN
+
+# Regression tests
+cd ${TEST_REGRESS}/request_validity
+./request_validity.sh
+
+cd script
+./service_test_fail_empty_body.py -v http://192.168.0.115:9000/antarika/ postgres/generic-select/v1/select
+
+
+cd ${TEST_REGRESS}/dbscript-validator/script
+./dbscript_validator.py ${DB_SCRIPT}/postgres/01-table/
+
+cd ${TEST_REGRESS}/crud_workflow/script
+./workflow_test_crud_bank.py
+
+
+# Stress tests
+cd ${TEST_STRESS}/postgres/generic-select-v1/select
+./stress_test.py
+
+
+#antarika,cecurity,envico,corecorrect,swp,inklusion,drws
+(export PRODUCT=antarika; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse) && (export PRODUCT=cecurity; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse) && (export PRODUCT=envico; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse) && (export PRODUCT=corecorrect; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse) && (export PRODUCT=swp; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse) && (export PRODUCT=inklusion; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse) && (export PRODUCT=drws; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle build; gradle eclipse)
+
+(export PRODUCT=antarika; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse) && (export PRODUCT=cecurity; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse) && (export PRODUCT=envico; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse) && (export PRODUCT=corecorrect; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse) && (export PRODUCT=swp; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse) && (export PRODUCT=inklusion; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse) && (export PRODUCT=drws; cd ${SMSALERT_SOURCE}/services/${PRODUCT}/java; gradle clean; gradle cleanEclipse)

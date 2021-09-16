@@ -1,0 +1,18 @@
+{
+    "month": "Nov18",
+    "wing": "Delivery",
+    "date": "December 09, 2018",
+    "totalamount": "155,729.00",
+    "totalamountinwords": "one lakh, fifty-five thousand, seven hundred and twenty-nine taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Delivery",
+            "unit": "Software Services",
+            "name": "Md. Sharafat Hossain",
+            "account": "14121040011581",
+            "payable": "155,729.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

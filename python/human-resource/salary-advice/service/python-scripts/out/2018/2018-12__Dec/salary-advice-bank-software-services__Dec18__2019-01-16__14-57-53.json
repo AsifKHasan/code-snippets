@@ -1,0 +1,45 @@
+{
+    "month": "Dec18",
+    "refno": "19/593",
+    "date": "January 16, 2019",
+    "totalamount": "189,969.00",
+    "totalamountinwords": "one lakh, eighty-nine thousand, nine hundred and sixty-nine taka, zero paisa",
+    "salary": [
+        {
+            "name": "Md. Rokonuzzaman",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090018919",
+            "payable": "50,520.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Manzur Alam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121090011442",
+            "payable": "44,940.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Shariful Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121010015369",
+            "payable": "40,282.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "S.M. Azharul Islam",
+            "unit": "Software Services",
+            "type": "",
+            "account": "14121070001496",
+            "payable": "54,227.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

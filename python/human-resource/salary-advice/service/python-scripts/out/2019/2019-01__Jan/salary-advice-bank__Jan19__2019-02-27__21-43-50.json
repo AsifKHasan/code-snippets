@@ -1,0 +1,54 @@
+{
+    "month": "Jan19",
+    "refno": "19/605",
+    "date": "February 27, 2019",
+    "totalamount": "396,002.00",
+    "totalamountinwords": "three lakh, ninety-six thousand and two taka, zero paisa",
+    "salary": [
+        {
+            "name": "Aminul Quader Khalili",
+            "unit": "Enterprise Products",
+            "type": "",
+            "account": "14121030001530",
+            "payable": "57,333.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Monirul Islam",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121010009749",
+            "payable": "122,311.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Shamsuddin Pappu",
+            "unit": "Finance & Accounts",
+            "type": "",
+            "account": "14121030000413",
+            "payable": "51,348.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Anowarul Islam",
+            "unit": "Supply Chain Management",
+            "type": "",
+            "account": "14121010001512",
+            "payable": "109,785.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        },
+        {
+            "name": "Md. Azadul Karim",
+            "unit": "Supply Chain Management",
+            "type": "",
+            "account": "11321060000915",
+            "payable": "55,225.00",
+            "paythrough": "Bank",
+            "paystatus": "In Process"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "month": "Nov18",
+    "wing": "Operations",
+    "date": "January 19, 2019",
+    "totalamount": "13,000.00",
+    "totalamountinwords": "thirteen thousand taka, zero paisa",
+    "salary": [
+        {
+            "wing": "Operations",
+            "unit": "Finance & Accounts",
+            "name": "Moyen Uddin",
+            "account": "14121030020562",
+            "payable": "13,000.00",
+            "paythrough": "Cheque",
+            "paystatus": "In Process"
+        }
+    ]
+}

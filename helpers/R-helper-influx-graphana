@@ -1,0 +1,66 @@
+install.packages("sqldf")
+install.packages("influxdbr")
+install.packages("xts")
+
+setwd('/Users/asif.hasan/Downloads/sms-alert/db-backup')
+
+library(readr)
+cbsresponselog <- read_csv("cbsresponselog.csv")
+cbsrequestlog <- read_csv("cbsrequestlog.csv")
+smspulllog <- read_csv("smspulllog.csv")
+dedestinationlog <- read_csv("dedestinationlog.csv")
+ttdestinationlog <- read_csv("ttdestinationlog.csv")
+
+# rearrange columns
+smspulllog <- smspulllog[c("createdon", "pulltype", "noofrecord", "lockedrecords", "errorrecords", "remainingrecords", "processtime", "roundtriptime", "networktime", "avgprocesstime", "avgroundtriptime")]
+cbsrequestlog <- cbsrequestlog[c("requestdate", "requesttype", "requeststatus", "requestid")]
+cbsresponselog <- cbsresponselog[c("responsedate", "responsestatus", "requestid")]
+
+# merge cbsrequestlog and cbsresponselog into cbslog
+cbslog <- merge(cbsrequestlog, cbsresponselog, by.x = "requestid", by.y = "requestid", all.x = "true")
+
+# add time difference between response and request
+cbslog$lag <- difftime(cbslog$responsedate, cbslog$requestdate)
+
+# mark response errors with error occurence
+cbslog$responsestatus[cbslog$responsestatus != "Request received"]  <- "ERR"
+cbslog$responsestatus[cbslog$responsestatus == "Request received"]  <- "OK"
+cbslog$responsestatus[is.na(cbslog$responsestatus)]  <- "ERR"
+cbslog$lag[is.na(cbslog$lag)]  <- 0
+
+# reorder and remove column
+cbslog <- cbslog[c("requestdate", "requesttype", "responsestatus", "lag")]
+
+
+
+
+# sqldf
+library(sqldf)
+cbserr <- subset(cbsresponselog, is.na(responsedetail), select=c(responsedate))
+
+
+# Influxdb
+library(influxdbr)
+influx <- influx_connection(scheme = c("http"), host = "localhost", port = 8086, user = "csb", pass = "csb")
+influx_write(cbslog, con = influx, db = "csb_db", "cbslog", time_col = "requestdate", tag_cols = c("responsestatus", "requesttype"))
+x <- influx_query(influx, db = "csb_db", query = "SELECT * FROM cbslog", timestamp_format = "u")
+
+SELECT COUNT(*) FROM cbslog where responsestatus = 1 group by time(1h);
+SELECT sum("errors") FROM cbslog WHERE time >= 1513772037000ms and time <= 1514376837000ms GROUP BY time(10m);
+
+
+
+
+
+# make an xts
+cbserr.xts <- xts(cbserr$errors, as.POSIXct(cbserr$responsedate, tz = "Asia/Dhaka"))
+
+# align time down
+align.time.down=function(x,n){index(x)=index(x)-n;align.time(x,n)}
+
+
+hourly.errors <- period.apply(cbserr.xts, endpoints(cbserr.xts, "hours"), sum)
+hourly.errors <- align.time.down(hourly.errors, 60 * 60)
+
+# write the xts
+write.zoo(hourly.errors, file="hourly-cbs-error-count.csv", sep=",")
