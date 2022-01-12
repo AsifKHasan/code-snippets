@@ -1,7 +1,6 @@
 master-data:
   bank-accounts:
-  - 14131050002359
-  - 14111060000068
+  - 4002-778881-000
   modes:
   - Cash
   - Cheque
@@ -15,7 +14,7 @@ master-data:
   - May22.
   - Jun22.
 selection:
-  selected-account: '14111060000068'
-  selected-mode: Cheque
+  selected-account: 4002-778881-000
+  selected-mode: Bank
   selected-month: Dec21.
   selected-reference: 22/001
