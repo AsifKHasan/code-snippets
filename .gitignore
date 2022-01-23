@@ -130,3 +130,4 @@ dmypy.json
 
 # custom
 credential.json
+config.yml
