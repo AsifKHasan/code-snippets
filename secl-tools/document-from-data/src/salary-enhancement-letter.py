@@ -39,6 +39,7 @@ DATA_PROCESSORS = {
             {'column': 6, 'key': 'stage'},
             {'column': 11, 'key': 'salary'},
             {'column': 12, 'key': 'increment'},
+            {'column': 15, 'key': 'currentgrade'},
             {'column': 16, 'key': 'promotion'},
             {'column': 17, 'key': 'grade'},
             {'column': 18, 'key': 'designation'},
@@ -49,7 +50,7 @@ DATA_PROCESSORS = {
 DATA_SERIALIZERS = {
     'salary-enhancement': {
         'output-dir': '../out/salary-enhancement',
-        'output-file': 'salary-enhancement-commands.txt'
+        'output-file': 'salary-enhancement-commands.bat'
     }
 }
 
@@ -117,7 +118,11 @@ def process_data(source_data):
     data = []
     for row in raw_data:
         columns = {}
+        if row[6] == 'finalized':
+            for col_spec in se_data_processor_spec['columns']:
+                columns[col_spec['key']] = row[col_spec['column']]
 
+            data.append(columns)
 
     # wrap the data in a processed-data object
     processed_data = {'data': data}
@@ -129,6 +134,40 @@ def process_data(source_data):
     output data for salary enhancement doument generation
 '''
 def output_data(processed_data):
+    se_output_spec = DATA_SERIALIZERS['salary-enhancement']
+
+    data = processed_data['data']
+
+    content = []
+    content.append('set INPUT_FILE="../../template/salary-enhancement/HR__salary-enhancement-template__2022.odt"')
+    content.append('')
+
+    # ooo_fieldreplace command line for each data row
+    temp_files = []
+    for item in data:
+        OUTPUT_FILE = f"../../out/salary-enhancement/tmp/HR__salary-enhancement__2022__{item['sequence']}.odt"
+        temp_files.append(OUTPUT_FILE)
+
+        if item["promotion"] == 'Yes':
+            item["promotion"] = ' with promotion'
+        else:
+            item["promotion"] = ''
+            item["grade"] = item["currentgrade"]
+
+        str = f'python ../../bin/ooo_fieldreplace -i %INPUT_FILE% -o {OUTPUT_FILE} sequence="{item["sequence"]}" name="{item["name"]}" salutation="{item["salutation"]}" wing="{item["wing"]}" unit="{item["unit"]}" supervisor="{item["supervisor"]}" salary="{item["salary"]}" increment="{item["increment"]}" promotion="{item["promotion"]}" grade="{item["grade"]}" designation="{item["designation"]}"'
+        content.append(str)
+
+    # ooo_fieldreplace command line for the final odt
+    OUTPUT_FILE = f"../../out/salary-enhancement/HR__salary-enhancement__2022.odt"
+    str = f'python ../../bin/ooo_CAT -o {OUTPUT_FILE} {" ".join(temp_files)}'
+
+    content.append('')
+    content.append(str)
+
+    # output file path
+    output_path = f"{se_output_spec['output-dir']}/{se_output_spec['output-file']}"
+    with open(output_path, 'w') as f:
+        print('\n'.join(content), file=f)
 
     return
 
