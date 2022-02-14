@@ -20,10 +20,10 @@ DATA_CONNECTORS = {
 
 DATA_SOURCES = {
     'gsheet': {
-        'sheet': 'spectrum__salary-revision__2022',
-        'worksheet': 'spectrum-2022',
+        'sheet': 'celloscope__salary-revision__2022',
+        'worksheet': 'celloscope-2022',
         'start_row': 4,
-        'data-range': 'A5:S'
+        'data-range': 'A5:U'
     }
 }
 
@@ -31,18 +31,12 @@ DATA_PROCESSORS = {
     'salary-enhancement': {
         'columns': [
             {'column': 0, 'key': 'sequence'},
-            {'column': 1, 'key': 'name'},
-            {'column': 2, 'key': 'salutation'},
-            {'column': 3, 'key': 'wing'},
-            {'column': 4, 'key': 'unit'},
-            {'column': 5, 'key': 'supervisor'},
-            {'column': 6, 'key': 'stage'},
-            {'column': 11, 'key': 'salary'},
-            {'column': 12, 'key': 'increment'},
-            {'column': 15, 'key': 'currentgrade'},
-            {'column': 16, 'key': 'promotion'},
-            {'column': 17, 'key': 'grade'},
-            {'column': 18, 'key': 'designation'},
+            {'column': 1, 'key': 'salutation'},
+            {'column': 2, 'key': 'name'},
+            {'column': 13, 'key': 'salary'},
+            {'column': 14, 'key': 'increment'},
+            {'column': 16, 'key': 'effective-from'},
+            {'column': 19, 'key': 'designation'},
         ]
     }
 }
@@ -118,7 +112,7 @@ def process_data(source_data):
     data = []
     for row in raw_data:
         columns = {}
-        if row[6] == 'finalized':
+        if row[20] == 'yes':
             for col_spec in se_data_processor_spec['columns']:
                 columns[col_spec['key']] = row[col_spec['column']]
 
@@ -143,26 +137,20 @@ def output_data(processed_data):
     # create the tmp directory
     content.append('if not exist "../../out/salary-enhancement/tmp" mkdir "../../out/salary-enhancement/tmp"')
 
-    content.append('set INPUT_FILE="../../template/salary-enhancement/HR__salary-enhancement-template__2022.odt"')
+    content.append('set INPUT_FILE="../../template/salary-enhancement/celloscope__salary-enhancement-template__2022.odt"')
     content.append('')
 
     # ooo_fieldreplace command line for each data row
     temp_files = []
     for item in data:
-        OUTPUT_FILE = f"../../out/salary-enhancement/tmp/HR__salary-enhancement__2022__{item['sequence']}.odt"
+        OUTPUT_FILE = f"../../out/salary-enhancement/tmp/celloscope__salary-enhancement__2022__{item['sequence']}.odt"
         temp_files.append(OUTPUT_FILE)
 
-        if item["promotion"] == 'Yes':
-            item["promotion"] = ' with promotion'
-        else:
-            item["promotion"] = ''
-            item["grade"] = item["currentgrade"]
-
-        str = f'python ../../bin/ooo_fieldreplace -i %INPUT_FILE% -o {OUTPUT_FILE} sequence="{item["sequence"]}" name="{item["name"]}" salutation="{item["salutation"]}" wing="{item["wing"]}" unit="{item["unit"]}" supervisor="{item["supervisor"]}" salary="{item["salary"]}" increment="{item["increment"]}" promotion="{item["promotion"]}" grade="{item["grade"]}" designation="{item["designation"]}"'
+        str = f'python ../../bin/ooo_fieldreplace -i %INPUT_FILE% -o {OUTPUT_FILE} sequence="{item["sequence"]}" name="{item["name"]}" salutation="{item["salutation"]}" salary="{item["salary"]}" increment="{item["increment"]}" designation="{item["designation"]}" effectivefrom="{item["effective-from"]}"'
         content.append(str)
 
     # ooo_fieldreplace command line for the final odt
-    OUTPUT_FILE = f"../../out/salary-enhancement/HR__salary-enhancement__2022.odt"
+    OUTPUT_FILE = f"../../out/salary-enhancement/celloscope__salary-enhancement__2022.odt"
     str = f'python ../../bin/ooo_CAT -o {OUTPUT_FILE} {" ".join(temp_files)}'
 
     content.append('')
