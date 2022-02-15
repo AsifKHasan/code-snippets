@@ -3,18 +3,16 @@
     generate templated salary enhancement document (letter) from data
 '''
 
-import gspread
-
-from google.oauth2 import service_account
-from google.auth.transport.requests import AuthorizedSession
-from google.auth.transport.urllib3 import AuthorizedHttp
-
+import os
 from pprint import pprint
 
+from helper.google.google_helper import *
+from helper.openoffice.odt.odt_helper import *
+from helper.logger import *
 
 DATA_CONNECTORS = {
     'Google': {
-        'credntial-json': '../conf/credential.json'
+        'credential-json': '../conf/credential.json'
     }
 }
 
@@ -33,18 +31,23 @@ DATA_PROCESSORS = {
             {'column': 0, 'key': 'sequence'},
             {'column': 1, 'key': 'salutation'},
             {'column': 2, 'key': 'name'},
-            {'column': 13, 'key': 'salary'},
-            {'column': 14, 'key': 'increment'},
-            {'column': 16, 'key': 'effective-from'},
-            {'column': 19, 'key': 'designation'},
+            {'column': 7, 'key': 'designation'},
+            {'column': 16, 'key': 'salary'},
+            {'column': 17, 'key': 'increment'},
+            {'column': 19, 'key': 'effective-from'},
         ]
     }
 }
 
 DATA_SERIALIZERS = {
     'salary-enhancement': {
+        'input-template': '../template/salary-enhancement/celloscope__salary-enhancement-template__2022.odt',
         'output-dir': '../out/salary-enhancement',
-        'output-file': 'salary-enhancement-commands.bat'
+        'output-file-pattern': 'celloscope__salary-enhancement__2022__{0}__{1}.odt',
+        'pdf-output-for-files': True,
+        'merge-files': True,
+        'merged-file-pattern': 'celloscope__salary-enhancement__2022.odt',
+        'pdf-output-for-merged-file': True,
     }
 }
 
@@ -55,25 +58,9 @@ DATA_SERIALIZERS = {
 def authenticate_to_data_service():
     google_data_connector_spec = DATA_CONNECTORS['Google']
 
-    # get credentials for service-account
-    credentials = service_account.Credentials.from_service_account_file(google_data_connector_spec['credntial-json'])
-    scoped_credentials = credentials.with_scopes(
-                                                [
-                                                    "https://spreadsheets.google.com/feeds",
-                                                    'https://www.googleapis.com/auth/spreadsheets',
-                                                    "https://www.googleapis.com/auth/drive.file",
-                                                    "https://www.googleapis.com/auth/drive"
-                                                ]
-                                            )
-
-    # using gspread for proxying the gsheet API's
-    client = gspread.authorize(scoped_credentials)
-
-    # authed_session = AuthorizedSession(credentials)
-    # response = authed_session.get('https://www.googleapis.com/storage/v1/b')
-
-    # authed_http = AuthorizedHttp(credentials)
-    # response = authed_http.request('GET', 'https://www.googleapis.com/storage/v1/b')
+    debug('authenticating with Google')
+    client = connector_client(google_data_connector_spec)
+    debug('authenticating with Google ... done')
 
     # wrap the connector in a data-connector object
     data_connector = {'client': client}
@@ -87,12 +74,9 @@ def authenticate_to_data_service():
 def acquire_data(data_connector):
     gsheet_data_source_spec = DATA_SOURCES['gsheet']
 
-    # get the worksheet where the data is
-    gsheet = data_connector['client'].open(title=gsheet_data_source_spec['sheet'])
-    ws = gsheet.worksheet(title=gsheet_data_source_spec['worksheet'])
-
-    # get values in the specified range
-    values = ws.get_values(gsheet_data_source_spec['data-range'])
+    debug('acquiring data')
+    values = gsheet_data(data_connector['client'], gsheet_data_source_spec)
+    debug('acquiring data ... done')
 
     # wrap the data in a source-data object
     source_data = {'data': values}
@@ -108,6 +92,7 @@ def process_data(source_data):
 
     raw_data = source_data['data']
 
+    debug('processing data')
     # the data is in a list (rows) of list (columns)
     data = []
     for row in raw_data:
@@ -117,6 +102,8 @@ def process_data(source_data):
                 columns[col_spec['key']] = row[col_spec['column']]
 
             data.append(columns)
+
+    debug('processing data ... done')
 
     # wrap the data in a processed-data object
     processed_data = {'data': data}
@@ -131,35 +118,45 @@ def output_data(processed_data):
     se_output_spec = DATA_SERIALIZERS['salary-enhancement']
 
     data = processed_data['data']
+    tmp_dir = se_output_spec['output-dir'] + '/tmp'
 
-    content = []
+    # crete directories in case they do not exist
+    os.makedirs(tmp_dir, exist_ok=True)
 
-    # create the tmp directory
-    content.append('if not exist "../../out/salary-enhancement/tmp" mkdir "../../out/salary-enhancement/tmp"')
+    debug('generating output')
 
-    content.append('set INPUT_FILE="../../template/salary-enhancement/celloscope__salary-enhancement-template__2022.odt"')
-    content.append('')
-
-    # ooo_fieldreplace command line for each data row
+    # generate files for each data row
     temp_files = []
     for item in data:
-        OUTPUT_FILE = f"../../out/salary-enhancement/tmp/celloscope__salary-enhancement__2022__{item['sequence']}.odt"
-        temp_files.append(OUTPUT_FILE)
+        temp_file_path = tmp_dir + '/' + se_output_spec['output-file-pattern'].format(item['sequence'], item['name'].lower().replace(' ', '-'))
+        temp_files.append(temp_file_path)
 
-        str = f'python ../../bin/ooo_fieldreplace -i %INPUT_FILE% -o {OUTPUT_FILE} sequence="{item["sequence"]}" name="{item["name"]}" salutation="{item["salutation"]}" salary="{item["salary"]}" increment="{item["increment"]}" designation="{item["designation"]}" effectivefrom="{item["effective-from"]}"'
-        content.append(str)
+        debug(f'.. generating odt for {item["name"]}')
+        # generate the file
+        fields = {"sequence": item["sequence"], "name": item["name"], "salutation": item["salutation"], "salary": item["salary"], "increment": item["increment"], "designation": item["designation"], "effectivefrom": item["effective-from"]}
+        replace_fields(se_output_spec['input-template'], temp_file_path, fields)
+        debug(f'.. generating odt for {item["name"]} ... done')
 
-    # ooo_fieldreplace command line for the final odt
-    OUTPUT_FILE = f"../../out/salary-enhancement/celloscope__salary-enhancement__2022.odt"
-    str = f'python ../../bin/ooo_CAT -o {OUTPUT_FILE} {" ".join(temp_files)}'
+        # generate pdf if instructed to do so
+        if se_output_spec['pdf-output-for-files']:
+            debug(f'.. generating pdf from {temp_file_path}')
+            generate_pdf(temp_file_path, tmp_dir)
+            debug(f'.. generating pdf from {temp_file_path} ... done')
 
-    content.append('')
-    content.append(str)
+    # merge files if instructed to do so
+    if se_output_spec['merge-files']:
+        output_file_path = se_output_spec['output-dir'] + '/' + se_output_spec['merged-file-pattern'].format()
+        debug('merging odt files')
+        merge_files(temp_files, output_file_path)
+        debug('merging odt files ... done')
 
-    # output file path
-    output_path = f"{se_output_spec['output-dir']}/{se_output_spec['output-file']}"
-    with open(output_path, 'w') as f:
-        print('\n'.join(content), file=f)
+    # generate pdf if instructed to do so
+    if se_output_spec['pdf-output-for-merged-file']:
+        debug('generating pdf from merged odt')
+        generate_pdf(output_file_path, se_output_spec["output-dir"])
+        debug('generating pdf from merged odt ... done')
+
+    debug('generating output ... done')
 
     return
 
