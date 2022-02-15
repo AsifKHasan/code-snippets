@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 '''
-    generate templated salary enhancement document (letter) from data
+    generate templated transfer document (letter) from data
 '''
 
 import os
@@ -18,41 +18,41 @@ DATA_CONNECTORS = {
 
 DATA_SOURCES = {
     'gsheet': {
-        'sheet': 'celloscope__salary-revision__2022',
-        'worksheet': 'celloscope-2022',
-        'start_row': 4,
-        'data-range': 'A5:U'
+        'sheet': 'HR__transfer-letters-notices',
+        'worksheet': 'spectrum-2022',
+        'data-range': 'A3:L'
     }
 }
 
 DATA_PROCESSORS = {
-    'salary-enhancement': {
+    'transfer-notice': {
         'columns': [
             {'column': 0, 'key': 'sequence'},
             {'column': 1, 'key': 'salutation'},
             {'column': 2, 'key': 'name'},
-            {'column': 7, 'key': 'designation'},
-            {'column': 16, 'key': 'salary'},
-            {'column': 17, 'key': 'increment'},
-            {'column': 19, 'key': 'effective-from'},
+            {'column': 3, 'key': 'effective-from'},
+            {'column': 4, 'key': 'address'},
+            {'column': 7, 'key': 'from-unit'},
+            {'column': 8, 'key': 'to-unit'},
+            {'column': 9, 'key': 'supervisor'},
+            {'column': 10, 'key': 'supervisor-designation'},
         ],
-        'filter-column': 20,
+        'filter-column': 11,
         'filter-value': 'yes',
     }
 }
 
 DATA_SERIALIZERS = {
-    'salary-enhancement': {
-        'input-template': '../template/salary-enhancement/celloscope__salary-enhancement-template__2022.odt',
-        'output-dir': '../out/salary-enhancement',
-        'output-file-pattern': 'celloscope__salary-enhancement__2022__{0}__{1}.odt',
+    'transfer-notice': {
+        'input-template': '../template/transfer-notice/HR__transfer-notice-template__2022.odt',
+        'output-dir': '../out/transfer-notice',
+        'output-file-pattern': 'spectrum__transfer-notice__2022__{0}__{1}.odt',
         'pdf-output-for-files': True,
         'merge-files': True,
-        'merged-file-pattern': 'celloscope__salary-enhancement__2022.odt',
+        'merged-file-pattern': 'spectrum__transfer-notice__2022.odt',
         'pdf-output-for-merged-file': True,
     }
 }
-
 
 ''' authenticate to data service
 '''
@@ -130,9 +130,8 @@ def output_data(output_processor, processed_data):
         temp_file_path = tmp_dir + '/' + se_output_spec['output-file-pattern'].format(item['sequence'], item['name'].lower().replace(' ', '-'))
         temp_files.append(temp_file_path)
 
-        debug(f'.. generating odt for {item["name"]}')
         # generate the file
-        fields = {"sequence": item["sequence"], "name": item["name"], "salutation": item["salutation"], "salary": item["salary"], "increment": item["increment"], "designation": item["designation"], "effectivefrom": item["effective-from"]}
+        fields = {"sequence": item["sequence"], "salutation": item["salutation"], "name": item["name"], "effectivefrom": item["effective-from"], "address": item["address"], "fromunit": item["from-unit"], "tounit": item["to-unit"], "supervisor": item["supervisor"], "superdesignation": item["supervisor-designation"]}
         replace_fields(se_output_spec['input-template'], temp_file_path, fields)
         debug(f'.. generating odt for {item["name"]} ... done')
 
@@ -168,7 +167,7 @@ if __name__ == '__main__':
     source_data = acquire_data('gsheet', data_connector)
 
     # get processed data from the raw data
-    processed_data = process_data('salary-enhancement', source_data)
+    processed_data = process_data('transfer-notice', source_data)
 
     # serialize final output from data
-    output_data('salary-enhancement', processed_data)
+    output_data('transfer-notice', processed_data)
