@@ -4,13 +4,17 @@
 '''
 
 import subprocess
+import platform
 
 from ooopy.OOoPy        import OOoPy
 from ooopy.Transformer  import Transformer
 import ooopy.Transforms as     Transforms
 
 
-LIBREOFFICE_EXECUTABLE = 'C:/Program Files/LibreOffice/program/soffice.exe'
+if platform.system() == 'Windows':
+    LIBREOFFICE_EXECUTABLE = 'C:/Program Files/LibreOffice/program/soffice.exe'
+else:
+    LIBREOFFICE_EXECUTABLE = 'soffice.exe'
 
 ''' given an input template odt and field value list, outputs a file with fields replaced with values
 '''
