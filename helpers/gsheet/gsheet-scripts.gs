@@ -1,49 +1,3 @@
-// do some work on a list of worksheets
-function workOnWorksheets() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-
-  var sheetnames_to_work_on = ['G.5.2-operational-acceptance-tests-(oat)', 'G.6-training-(trn)'];
-//  var sheetnames_to_work_on = ['0-coverpage', 'header-coverpage', 'header-odd', 'footer-odd'];
-//  var sheetnames_to_work_on = ['A.1-br-organization', 'A.2-br-organogram', 'A.3-vision-&-mission-statement-of-br', 'A.4-current-status-of-ticketing-&-reservation', 'A.5-brits-stakeholders', 'A.6-objectives-of-project', 'A.7-scope-of-work', 'A.8-human-resource-&-logistic-supports-from-br', 'A.9-acronyms-used-in-technical-requirements', 'B.1-introduction', 'B.2-centralized-databased-system', 'B.3-n-tier-architecture', 'B.4-brits-interface-architecture', 'B.5-brits-network-architecture', 'B.6-integration-with-internal-&-external-systems', 'C-general-philosophy-for-implementation-of-brits', 'D.1-requirements-definition', 'F-minimum-technology-(non-functional)-requirements', 'G-project-management-requirements', 'G.5-testing-&-quality-assurance-requirement'];
-  // var sheetnames_to_work_on = ['E.1-general-business-rules-for-tickets-(gr)', 'E.2-passenger-registration-with-brits-(pr)', 'E.3-ticket-quota-allotment-(ta)', 'E.4-counter-tickets-(ctickets)-(ct)', 'E.5-electronic-tickets-(etickets)-(et)', 'E.6-portable-point-of-sales-ticket-(ptickets)-(pt)', 'E.7-ticket-vending-machine-(vtickets)-(vt)', 'E.8-payment-&-collection-(pc)', 'E.9-giant-screen-displays-train-tracker-(gps)-&-analytics-(gs)', 'E.10-br-portal-(bp)', 'E.11-br-mobile-apps-(ma)', 'E.12-service-kiosks-(sk)', 'E.13-call-centre-(cc)', 'E.14-reports-requirements-(rt)', 'E.15-br-work-admin-center', 'F.1-basic-characteristics-of-software-architecture-(csa)', 'F.2-operational-business-rules-configuration-(brc)', 'F.3-language-dates-&-numbers-(ldn)', 'F.4-graphical-user-interface-requirements-(gui)', 'F.S-access-&-authentication-requirements-(acc)', 'F.6-server-workstation-os-software-requirements-(sws)', 'F.7-software-coding-convention-(scc)', 'F.8-database-requirements-&-optimization-(dro)', 'F.9-storage-requirements-(sto)', 'F.10-integration-requirements-(int)', 'F.11-reporting-visualization-&-dashboard-(rvd)', 'F.12-message-&-notification-technology-(mnt)', 'F.13-system-management-&-monitoring-(smm)', 'F.14-security-requirements-(sec)', 'F.15-hardware-requirements-(hwr)', 'F.16-sizing-&-performance-requirements-(per)', 'G.1-implementation-planning-(imp)', 'G.2-use-project-management-tools-(pmt)', 'G.2-documentation-requirements-(doc)', 'G.3-management-&-maintenance-(mam)', 'G.4-reports-(rpt)', 'G.5.1-user-acceptance-tests-(uat)', 'G.5.2-operational-acceptance-tests-(oat)', 'G.6-training-(trn)', 'G.7-terms-&-conditions-of-application-software-(tcs)', 'G.8-team-qualifications-&-experience-(tea)', 'G.9-other-avenues-for-revenue-generation-(rev)'];
-
-  for (var i = 0; i < sheetnames_to_work_on.length; i++) {
-    var ws = ss.getSheetByName(sheetnames_to_work_on[i]);
-    // do some work on the worksheet
-
-    // addRequirementAtThirdRow(ws);
-
-    // conditionalFormatingOnReviewNotes(ws);
-
-    // removeTrailingBlankRows(ws);
-    // removeTrailingBlankColumns(ws);
-    //
-    // addComplianceColumnsAtTheEnd(ws);
-    //
-    // addReviewNotesColumn(ws, 1);
-
-
-    // addTendererResponseColumnsAtTheEnd(ws);
-
-    addFormatResponseColumns(ws);
-
-    //
-    // formatSecondRow(ws);
-    // setContentBorder(ws);
-  }
-};
-
-function rowOfMatchingValue(ws, column, value){
-  var data = ws.getDataRange().getValues();
-  for (var i = 0; i < data.length; i++) {
-    if (data[i][column - 1] == value) {
-      return i + 1;
-    }
-  }
-
-  return -1;
-}
-
 // add one column before the last column, change 3rd last (MET) column, change 2nd last (Reference) column, change last (Section) column
 function addFormatResponseColumns(ws) {
     var total_rows = ws.getMaxRows();
@@ -88,6 +42,7 @@ function addFormatResponseColumns(ws) {
     ws.getRange(tabularDataStartRow, index).setValue("Section");
 }
 
+
 // add Tenderer's Response columns at the end
 function addTendererResponseColumnsAtTheEnd(ws) {
   var last_col_with_data = ws.getLastColumn();
@@ -98,6 +53,7 @@ function addTendererResponseColumnsAtTheEnd(ws) {
   formatBookReferenceColumn(ws, last_col_with_data + 2);
   formatSectionReferenceColumn(ws, last_col_with_data + 3);
 };
+
 
 // format Tenderer's Response column width 400, left, with formatting (blank - Yellow)
 function formatResponseColumn(ws, index) {
@@ -127,6 +83,7 @@ function formatResponseColumn(ws, index) {
   ws.setConditionalFormatRules(rules);
 };
 
+
 // format Book Reference column width 200, left, with formatting (blank - Yellow)
 function formatBookReferenceColumn(ws, index) {
   var total_rows = ws.getMaxRows();
@@ -154,6 +111,7 @@ function formatBookReferenceColumn(ws, index) {
 
   ws.setConditionalFormatRules(rules);
 };
+
 
 // format Section Reference column width 200, left, with formatting (blank - Yellow)
 function formatSectionReferenceColumn(ws, index) {
@@ -183,6 +141,7 @@ function formatSectionReferenceColumn(ws, index) {
   ws.setConditionalFormatRules(rules);
 };
 
+
 // add a 3rd row with heading Requirements
 function addRequirementAtThirdRow(ws) {
     ws.insertRowBefore(3);
@@ -193,6 +152,7 @@ function addRequirementAtThirdRow(ws) {
     var range = ws.getRange(3, 2, 3, total_columns - 1);
     range.mergeAcross();
 }
+
 
 // add conditional formatting for review-notes column
 function conditionalFormatingOnReviewNotes(ws) {
@@ -214,6 +174,7 @@ function conditionalFormatingOnReviewNotes(ws) {
 
 }
 
+
 // format the second row
 function formatSecondRow(ws) {
   var last_col_with_data = ws.getLastColumn();
@@ -229,6 +190,7 @@ function formatSecondRow(ws) {
   ws.setFrozenRows(2);
 };
 
+
 // border from b3 to bottom-right
 function setContentBorder(ws) {
   var total_rows = ws.getMaxRows();
@@ -236,6 +198,7 @@ function setContentBorder(ws) {
   var range = ws.getRange(3, 2, total_rows - 2, last_col_with_data - 1);
   range.setBorder(true, true, true, true, true, true, '#b7b7b7', SpreadsheetApp.BorderStyle.SOLID);
 };
+
 
 // add review-notes column as the first column, width 100, left
 function addReviewNotesColumn(ws, index) {
@@ -267,6 +230,7 @@ function addReviewNotesColumn(ws, index) {
   ws.setConditionalFormatRules(rules);
 };
 
+
 // add compliaance columns at the end
 function addComplianceColumnsAtTheEnd(ws) {
   var last_col_with_data = ws.getLastColumn();
@@ -278,6 +242,7 @@ function addComplianceColumnsAtTheEnd(ws) {
   formatReferenceDocumentColumn(ws, last_col_with_data + 3);
   formatSectionColumn(ws, last_col_with_data + 4);
 };
+
 
 // format column Section width 200, left, with formatting (blank - Yellow)
 function formatSectionColumn(ws, index) {
@@ -307,6 +272,7 @@ function formatSectionColumn(ws, index) {
   ws.setConditionalFormatRules(rules);
 };
 
+
 // format column Reference document width 250, left, with formatting (blank - Yellow)
 function formatReferenceDocumentColumn(ws, index) {
   var total_rows = ws.getMaxRows();
@@ -335,6 +301,7 @@ function formatReferenceDocumentColumn(ws, index) {
   ws.setConditionalFormatRules(rules);
 };
 
+
 // format column Compliance note width 330, left, with formatting (blank - Yellow)
 function formatComplianceNoteColumn(ws, index) {
   var total_rows = ws.getMaxRows();
@@ -362,6 +329,7 @@ function formatComplianceNoteColumn(ws, index) {
 
   ws.setConditionalFormatRules(rules);
 };
+
 
 // format column Complied? width 70, centered, with validation (Yes, No, Partial) and formatting (Yes - Green, Blank/Partial - Yellow, No - Red)
 function formatCompliedColumn(ws, index) {
