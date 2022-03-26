@@ -1,0 +1,22 @@
+# create a new SSH key
+ssh-keygen -t ed25519 -C "asif.hasan@gmail.com"
+
+# Start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+
+# add SSH private key to the ssh-agent
+ssh-add ~/.ssh/id_ed25519
+
+# copy the SSH public key to clipboard
+cat ~/.ssh/id_ed25519.pub
+
+
+# migrate to SSH from HTTPS
+git remote set-url origin git@github.com:AsifKHasan/algorithms-with-games.git
+git remote set-url origin git@github.com:AsifKHasan/automatigo.git
+git remote set-url origin git@github.com:AsifKHasan/bangla-language.git
+git remote set-url origin git@github.com:AsifKHasan/code-snippets.git
+git remote set-url origin git@github.com:AsifKHasan/data-driven-documents.git
+git remote set-url origin git@github.com:AsifKHasan/doculaboration.git
+git remote set-url origin git@github.com:AsifKHasan/gsheet-to-docx.git
+git remote set-url origin git@github.com:AsifKHasan/visualization-explorations.git
