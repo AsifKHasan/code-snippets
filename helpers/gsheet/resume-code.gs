@@ -1,3 +1,54 @@
+// returns a list of ss_data (spreadsheet name + organization) from the *-toc* sheet based on some filtering criteria
+function select_resume_spreadsheets_from_toc(ss, ws){
+  // get the ss_names based on some criteria from the current spreadsheet *-toc* worksheet
+  var toc_data = ws.getRange('A5:X').getValues();
+  var column_map = RESUME_WS_COLUMN_INDEX[ws.getName()];
+
+  var ss_data_list = [];
+  toc_data.forEach(function(row, index){
+    var row_num = index + 5;
+    // we must have a value in link column
+    if (row[column_map['link'] - 1] != ''){
+      // now we apply custom filters
+
+      // let us select only Spectrum scm employees
+      // if (row[column_map['organization'] - 1] == 'Spectrum'){
+      // if (row[column_map['organization'] - 1] == 'Spectrum' && row[column_map['unit'] - 1] == 'dc-infra'){
+      // if (row[column_map['heading'] - 1] == 'A.S.M Estiuk Sadick'){
+      if (row[column_map['process'] - 1] == 'Yes'){
+      // if (row_num >= 248 && row_num <= 288){
+      // if (true){
+        var ss_name = row[column_map['link'] - 1];
+        var ss_org = row[column_map['organization'] - 1];
+        ss_data_list.push([ss_name, ss_org, row_num])
+      };
+    };
+  });
+
+  return ss_data_list;
+};
+
+
+// update links in *-toc* worksheet
+function update_toc_worksheet_links(ss_name=undefined) {
+  if (ss_name == undefined){
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+  } else {
+    var ss = open_spreadsheet(ss_name);
+  };
+
+  if (ss != null){
+    var ws_name = '-toc';
+    var ws = ss.getSheetByName(ws_name);
+    if (ws != null){
+      link_cells(ws, 'F56:F154', 'E56:E154', null);
+    } else {
+      Logger.log(` .. ERROR .. Worksheet ${key} not found`);
+    }
+  };
+};
+
+
 // create worksheet *00-layout-new*
 function create_00_layout_worksheet(ss_name=undefined){
   var ws_name = '00-layout';
@@ -71,7 +122,7 @@ function update_00_layout_worksheet_links(ss_name=undefined){
 
         var cell = ws.getRange(key);
         if (cell == null){
-          Logger.log(`Cell ${key} not found`);
+          Logger.log(`ERROR: Cell ${key} not found`);
           return;
         }
         if ('cell-value' in value){
@@ -88,7 +139,7 @@ function update_00_layout_worksheet_links(ss_name=undefined){
       }
 
     } else {
-      Logger.log(`Worksheet ${ws_name} not found`);
+      Logger.log(`ERROR: Worksheet ${ws_name} not found`);
     }
   };
 };
@@ -118,7 +169,7 @@ function update_00_layout_worksheet_content(ss_name=undefined){
       for (const [key, value] of Object.entries(WORKKSHEET_CONTENTS[ws_name])) {
         var cell = ws.getRange(key);
         if (cell == null){
-          Logger.log(`Cell ${key} not found`);
+          Logger.log(`ERROR: Cell ${key} not found`);
           return;
         }
         if ('cell-value' in value){
@@ -126,22 +177,20 @@ function update_00_layout_worksheet_content(ss_name=undefined){
         };
       };
     } else {
-      Logger.log(`Worksheet ${ws_name} not found`);
+      Logger.log(`ERROR: Worksheet ${ws_name} not found`);
     };
   };
 };
 
 
-function update_00_layout_worksheet_photo(ss_name){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
+function update_00_layout_worksheet_photo(ss_name, ss_org){
+  var ss = open_spreadsheet(ss_name);
+  var org = ss_org.toLowerCase();
 
   if (ss != null){
     var ws_name = '00-layout';
     var ws = ss.getSheetByName(ws_name);
+
     if (ws != null){
       // check if the worksheet has at least 50 rows having content
       var min_rows_that_must_have_content = 50;
@@ -151,34 +200,36 @@ function update_00_layout_worksheet_photo(ss_name){
         return;
       }
 
-      // formula is in cell J7
-      var cell = ws.getRange('J7');
+      // formula is in a specific cell
+      var cell_A1 = 'J7';
+      var cell = ws.getRange(cell_A1);
+
       if (cell == null){
-        Logger.log(`Cell ${key} not found`);
+        Logger.log(` .. ERROR .. Cell ${cell_A1} not found`);
         return;
       } else {
-        // this is the link we need =image("https://spectrum-bd.biz/data/photo/photo__Khandakar.Asif.Hasan.png", 3)
+        // this is the link we need =image("https://spectrum-bd.biz/data/photo/spectrum/photo__Khandakar.Asif.Hasan.png", 3)
         var name_without_space = ss_name.replace('Résumé__', '');
-        var formula = `=image("https://spectrum-bd.biz/data/photo/photo__${name_without_space}.png", 3)`;
+        var formula = `=image("https://spectrum-bd.biz/data/photo/${org}/photo__${name_without_space}.png", 3)`;
         cell.setFormula(formula);
       }
     } else {
-      Logger.log(`Worksheet ${ws_name} not found`);
+      Logger.log(`.. ERROR .. Worksheet ${ws_name} not found`);
     };
+  } else {
+    Logger.log(`.. ERROR .. Spreadsheet ${ss_name} not found`);
   };
 };
 
 
-function update_00_layout_worksheet_signature(ss_name){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
+function update_00_layout_worksheet_signature(ss_name, ss_org){
+  var ss = open_spreadsheet(ss_name);
+  var org = ss_org.toLowerCase();
 
   if (ss != null){
     var ws_name = '00-layout';
     var ws = ss.getSheetByName(ws_name);
+
     if (ws != null){
       // check if the worksheet has at least 50 rows having content
       var min_rows_that_must_have_content = 50;
@@ -188,20 +239,24 @@ function update_00_layout_worksheet_signature(ss_name){
         return;
       }
 
-      // formula is in cell I44
-      var cell = ws.getRange('I44');
+      // formula is in a specific cell
+      var cell_A1 = 'I44';
+      var cell = ws.getRange(cell_A1);
+
       if (cell == null){
-        Logger.log(`Cell ${key} not found`);
+        Logger.log(` .. ERROR .. Cell ${cell_A1} not found`);
         return;
       } else {
-  // this is the link we need =image("https://spectrum-bd.biz/data/signature/signature__Khandakar.Asif.Hasan.png", 3)
+        // this is the link we need =image("https://spectrum-bd.biz/data/signature/spectrum/signature__Khandakar.Asif.Hasan.png", 3)
         var name_without_space = ss_name.replace('Résumé__', '');
-        var formula = `=image("https://spectrum-bd.biz/data/signature/signature__${name_without_space}.png", 3)`;
+        var formula = `=image("https://spectrum-bd.biz/data/signature/${org}/signature__${name_without_space}.png", 3)`;
         cell.setFormula(formula);
       }
     } else {
-      Logger.log(`Worksheet ${ws_name} not found`);
+      Logger.log(`.. ERROR .. Worksheet ${ws_name} not found`);
     };
+  } else {
+    Logger.log(`.. ERROR .. Spreadsheet ${ss_name} not found`);
   };
 };
 
@@ -382,40 +437,32 @@ function update_06_job_history_worksheet(ss_name=undefined){
 };
 
 
-// update links in *-toc* worksheet
-function update_links_toc_worksheet(ss_name=undefined) {
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
+function update_01_personal_worksheet_photo(ss_name, ss_org){
+  var ss = open_spreadsheet(ss_name);
+  var org = ss_org.toLowerCase();
 
   if (ss != null){
-    var ws_name = '-toc';
+    var ws_name = '01-personal';
     var ws = ss.getSheetByName(ws_name);
+
     if (ws != null){
-      link_cells(ws, 'F3', null);
+      // formula is in a specific cell
+      var cell_A1 = 'E3';
+      var cell = ws.getRange(cell_A1);
+
+      if (cell == null){
+        Logger.log(` .. ERROR .. Cell ${cell_A1} not found`);
+        return;
+      } else {
+        // this is the link we need =image("https://spectrum-bd.biz/data/photo/spectrum/photo__Khandakar.Asif.Hasan.png", 3)
+        var name_without_space = ss_name.replace('Résumé__', '');
+        var formula = `=image("https://spectrum-bd.biz/data/photo/${org}/photo__${name_without_space}.png", 3)`;
+        cell.setFormula(formula);
+      }
     } else {
-      Logger.log(`Worksheet ${key} not found`);
-    }
-  };
-};
-
-
-// create missing resume files from a template
-function create_resumes_from_template(ss_name, template_ss, folder){
-  var file = get_unique_file_by_name(ss_name);
-
-  // make sure we do not have any spreadsheet named ss_name
-  if (file != null){
-    if (file.getMimeType() == 'application/vnd.google-apps.spreadsheet'){
-      Logger.log(`ERROR: Spreadsheet ${ss_name} already exists`);
-      return;
+      Logger.log(`.. ERROR .. Worksheet ${ws_name} not found`);
     };
-  };
-
-  var ss = copy_file_to(template_ss, ss_name, folder);
-  if (ss == null){
-    Logger.log(`ERROR: Spreadsheet ${ss_name} could not be created`);
+  } else {
+    Logger.log(`.. ERROR .. Spreadsheet ${ss_name} not found`);
   };
 };

@@ -1,5 +1,116 @@
+// do some work on a list of worksheets
+function work_on_worksheets(ss=undefined) {
+  if(ss == undefined){
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+  }
+
+  var worksheet_names_to_work_on = RESUME_WS_NAMES;
+
+  for (var i = 0; i < worksheet_names_to_work_on.length; i++) {
+    var ws = ss.getSheetByName(worksheet_names_to_work_on[i]);
+    // do some work on the worksheet
+    get_and_write_column_size(ws);
+  }
+};
+
+
+// link cell to a worksheet, optionally set cell value
+function link_cell_to_worksheet(ss, cell, ws_name_to_link) {
+    if (ss == null ){
+      Logger.log(` .. ERROR .. spreadsheet is null`);
+      return;
+    }
+
+    if (cell == null ){
+      Logger.log(` .. ERROR .. cell is null`);
+      return;
+    }
+
+    var ws_to_link = ss.getSheetByName(ws_name_to_link);
+    if (ws_to_link == null ){
+      Logger.log(` .. ERROR .. worksheet ${ws_name_to_link} not found`);
+      return;
+    }
+
+    Logger.log(` .. linking ${cell.getA1Notation()} to worksheet : ${ws_name_to_link}`);
+    var link = `=HYPERLINK("#gid=${ws_to_link.getSheetId()}","${cell.getValue()}")`;
+    cell.setFormula(link);
+};
+
+
+// link cell to a worksheet, optionally set cell value
+function link_cell_to_spreadsheet(ss, cell, ss_name_to_link) {
+    if (ss == null){
+      Logger.log(` .. ERROR .. spreadsheet is null`);
+      return;
+    }
+
+    if (cell == null ){
+      Logger.log(` .. ERROR .. cell is null`);
+      return;
+    }
+
+    var ss_to_link = open_spreadsheet(ss_name_to_link);
+    if (ss_to_link == null ){
+      Logger.log(` .. ERROR .. spreadsheet ${ss_name_to_link} not found`);
+      return;
+    }
+
+    Logger.log(` .. linking ${cell.getA1Notation()} to spreadsheet : ${ss_name_to_link}`);
+    var link = `=HYPERLINK("${ss_to_link.getUrl()}","${cell.getValue()}")`;
+    cell.setFormula(link);
+};
+
+
+// get a range and link each cell with the spreadsheet/worksheet named in the cell
+// if worksheet does not exist create it with a base template
+function link_cells(ws, range_spec, helper_range_spec, template_ws_name) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+
+  if (template_ws_name != null) {
+    var template_ws = ss.getSheetByName(template_ws_name);
+  }
+
+  var range = ws.getRange(range_spec);
+  var helper_range = ws.getRange(helper_range_spec);
+  var numRows = range.getNumRows();
+  var numCols = range.getNumColumns();
+  for (var i = 1; i <= numRows; i++) {
+    for (var j = 1; j <= numCols; j++) {
+      var cell = range.getCell(i, j);
+      var helper_cell = helper_range.getCell(i, j);
+      var cell_value = cell.getValue();
+      var helper_cell_value = helper_cell.getValue();
+
+      if (cell_value == ''){
+        continue;
+      }
+
+      // now the link can be to a spreadsheet or a worksheet, helper_cell_value will tell us
+      if (helper_cell_value == 'gsheet'){
+        // a spreadsheet is to be linked, see if there is a worksheet with cell_value
+        link_cell_to_spreadsheet(ss, cell, cell_value);
+      } else if (helper_cell_value == 'table'){
+        // a worksheet is to be linked, see if there is a worksheet with cell_value
+        var ws_name_to_link = ss.getSheetByName(cellValue);
+        if (ws_name_to_link == null && template_ws != null) {
+          var ws_to_link = duplicate_worksheet(ss, template_ws, cell_value);
+        }
+
+        // do the link
+        if (ws_to_link != null) {
+          link_cell_to_worksheet(ss, cell, ws_to_link);
+        } else {
+          Logger.log(` .. ERROR .. worksheet : ${cell_value} could not be linked`);
+        };
+      };
+    };
+  };
+};
+
+
 // add review-notes column as the first column, width 100, left
-function addConditionalFormattingForBlankCells(ws, range_spec_list) {
+function add_conditional_formatting_for_blank_cells(ws, range_spec_list) {
   // get the ranges
   var range_list = [];
   for (i = 0; i < range_spec_list.length; i++) {
@@ -48,29 +159,6 @@ function add_review_notes_column(ws, index=1) {
   rules.push(rule);
 
   ws.setConditionalFormatRules(rules);
-};
-
-
-// link cell to an worksheet, optionally set cell value
-function link_cell_to_worksheet(ss, cell, ws_name_to_link) {
-    if (ss == null ){
-      Logger.log(`ERROR: spreadsheet is null`);
-      return;
-    }
-
-    if (cell == null ){
-      Logger.log(`ERROR: cell is null`);
-      return;
-    }
-
-    var ws_to_link = ss.getSheetByName(ws_name_to_link);
-    if (ws_to_link == null ){
-      Logger.log(`worksheet ${ws_name_to_link} not found`);
-      return;
-    }
-
-    var link = `=HYPERLINK("#gid=${ws_to_link.getSheetId()}","${cell.getValue()}")`;
-    cell.setFormula(link);
 };
 
 
@@ -126,40 +214,6 @@ function get_and_write_column_width_in_inches() {
     cell.setHorizontalAlignment("center");
     cell.setNumberFormat("0.00");
     cell.setValue(column_size_in);
-  }
-};
-
-
-// get a range and link each cell with the worksheet named in the cell
-// if worksheet does not exit create it with a base template
-function link_cells(ws, range_spec, template_worksheet_name) {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-
-  if (template_worksheet_name != null) {
-    var template_ws = ss.getSheetByName(template_worksheet_name);
-  }
-
-  var range = ws.getRange(range_spec);
-  var numRows = range.getNumRows();
-  var numCols = range.getNumColumns();
-  for (var i = 1; i <= numRows; i++) {
-    for (var j = 1; j <= numCols; j++) {
-      var cell = range.getCell(i, j);
-      var cellValue = cell.getValue();
-      Logger.log(cell.getA1Notation() + ': row = ' + i + ', col = ' + j + ', value = ' + cellValue);
-      // see if there is a worksheet with cellValue
-      var worksheet_to_link = ss.getSheetByName(cellValue);
-      if (worksheet_to_link == null && template_worksheet_name != null) {
-        var worksheet_to_link = duplicateWorksheet(ss, template_ws, cellValue);
-      }
-
-      // do the link
-      if (worksheet_to_link != null) {
-        linkToWorksheet(cell, worksheet_to_link);
-      } else {
-        Logger.log('worksheet : ' + cellValue + ' could not be linked');
-      }
-    }
   }
 };
 

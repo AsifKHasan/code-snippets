@@ -1,3 +1,52 @@
+// do some work on a list of sheets
+function work_on_spreadsheets() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var toc_ws_name = '-toc';
+  var ws = ss.getSheetByName(toc_ws_name);
+
+  // get sheets to work on
+  var ss_data_to_work_on = select_resume_spreadsheets_from_toc(ss, ws);
+
+  // var template_ss = get_unique_file_by_name('Résumé__template');
+  // var blank_resume_folder = DriveApp.getFolderById('1JltNCjefWmSMZHHQtON_fSTpkHh2W9rP');
+
+  ss_data_to_work_on.forEach(function(ss_data){
+    var ss_name = ss_data[0];
+    var ss_org = ss_data[1];
+    var row_num = ss_data[2];
+    Logger.log(`PROCESSING ${row_num} .. ${ss_org} : ${ss_name}`);
+
+    // create_ss_from_template(ss_name, template_ss, blank_resume_folder);
+
+    Logger.log(`DONE ..... ${row_num} .. ${ss_org} : ${ss_name}`);
+  });
+};
+
+
+// update all worksheets with the given spec
+function update_all_worksheets(ss_name=undefined){
+  if (ss_name == undefined){
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+  } else {
+    var ss = open_spreadsheet(ss_name);
+  };
+
+  if (ss == null){
+    Logger.log(` .. ERROR .. Spreadsheet ${ss_name} not found`);
+    return;
+  }
+
+  var update_spec = {'font-family': 'Calibri', 'font-size': 10, 'valign': 'top', 'merge': false};
+
+  // get all the worksheets
+  ss.getSheets().forEach(function(ws){
+    var range = ws.getRange(1, 1, ws.getMaxRows(), ws.getMaxColumns());
+    work_on_range(ss, range, update_spec)
+    Logger.log(` .. Worksheet ${ws.getName()} updated`);
+  });
+};
+
+
 // resize columns in each worksheet as per spec
 function resize_columns_in_worksheets(ss_name=undefined, ws_column_specs){
   if (ss_name == undefined){
@@ -7,12 +56,11 @@ function resize_columns_in_worksheets(ss_name=undefined, ws_column_specs){
   };
 
   if (ss == null){
-    Logger.log(`ERROR: Spreadsheet ${ss_name} not found`);
+    Logger.log(` .. ERROR .. Spreadsheet ${ss_name} not found`);
     return;
   }
 
   // get all the worksheets
-
   ss.getSheets().forEach(function(ws){
     var ws_name = ws.getName();
     if (ws_name in ws_column_specs){
@@ -23,8 +71,8 @@ function resize_columns_in_worksheets(ss_name=undefined, ws_column_specs){
       };
     };
   });
-
 };
+
 
 
 // write column sizes for each worksheet
@@ -47,6 +95,7 @@ function write_column_size_in_worksheets(ss_name=undefined){
   };
 
 };
+
 
 // create a Worksheet in the specific position with specified parameters
 function create_worksheet(ss_name=undefined, ws_name, ws_index=undefined, ws_rows, ws_columns, ws_column_sizes=undefined){

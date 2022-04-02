@@ -1,3 +1,4 @@
+// ="Résumé__"&de_space(C57)
 function de_space(text){
   var without_space = text.replace(/\s+/g, '.').replace(/[.][.]+/g, '.');
   return without_space;
@@ -5,14 +6,14 @@ function de_space(text){
 
 function photo_link_from_name(name){
   // this is the link we need =image("https://spectrum-bd.biz/data/photo/photo__Khandakar.Asif.Hasan.png", 3)
-  var name_without_space = deSpace(name);
+  var name_without_space = de_space(name);
   var link = `=image("https://spectrum-bd.biz/data/photo/photo__${name_without_space}.png", 3)`;
   return link;
 };
 
 function signature_link_from_name(name){
   // this is the link we need =image("https://spectrum-bd.biz/data/signature/signature__Khandakar.Asif.Hasan.png", 3)
-  var name_without_space = deSpace(name);
+  var name_without_space = de_space(name);
   var link = `=image("https://spectrum-bd.biz/data/signature/signature__${name_without_space}.png", 3)`;
   return link;
 };
@@ -24,11 +25,21 @@ function run_test(){
 
 // work on a range - merge, value, formula, alignment, bgcolor, border, notes etc.
 function work_on_range(ss, range, work_spec){
-  // see if it is a single cell or a range to merge
-  if (range.getHeight() > 1 || range.getWidth() > 1){
+  // see if the range is to be merged
+  var merge = true;
+  if ('merge' in work_spec){
+    merge = work_spec['merge'];
+  };
+
+  // see if it is a single cell or a range
+  if (range.getHeight() == 1 || range.getWidth() == 1){
+    merge = false;
+  };
+
+  if (merge == true){
     if (range.isPartOfMerge() == false){
       range.merge();
-    }
+    };
   };
 
   // value
@@ -44,6 +55,21 @@ function work_on_range(ss, range, work_spec){
   // halign
   if ('halign' in work_spec){
     range.setHorizontalAlignment(work_spec['halign']);
+  };
+
+  // valign
+  if ('valign' in work_spec){
+    range.setVerticalAlignment(work_spec['valign']);
+  };
+
+  // font-family
+  if ('font-family' in work_spec){
+    range.setFontFamily(work_spec['font-family']);
+  };
+
+  // font-size
+  if ('font-size' in work_spec){
+    range.setFontSize(work_spec['font-size']);
   };
 
   // weight
@@ -63,7 +89,7 @@ function work_on_range(ss, range, work_spec){
 
   // ws-link
   if ('ws-link' in work_spec){
-    linkCellToWorksheet(ss, range, work_spec['ws-link'])
+    link_cell_to_worksheet(ss, range, work_spec['ws-link'])
   };
 
   // notes
@@ -71,6 +97,14 @@ function work_on_range(ss, range, work_spec){
     range.setNote(work_spec['notes']);
   };
 
+};
+
+function show_html() {
+  var t = HtmlService.createTemplateFromFile('index');
+  t.data = list_worksheets();
+  t.evaluate();
+  var ui = SpreadsheetApp.getUi();
+  ui.showSidebar(t);
 };
 
 
@@ -85,11 +119,23 @@ function row_of_matching_value(ws, column, value){
   return -1;
 };
 
+// return a QA summary on data which is a two dimesional array of rows and columns
+// output is an array of rows containing array [is_row_blank, blank_col_count]
+function qa_summary_on_data(data){
+  let data_qa_summary = [];
+  data.forEach((row, row_index) => {
+    let is_row_blank = true;
+    let blank_col_count = 0;
+    row.forEach((col, col_index) => {
+      if (col == ''){
+        blank_col_count++;
+      } else {
+        is_row_blank = false;
+      };
+    });
 
-function show_html() {
-  var t = HtmlService.createTemplateFromFile('index');
-  t.data = listWorksheets();
-  t.evaluate();
-  var ui = SpreadsheetApp.getUi();
-  ui.showSidebar(t);
+    data_qa_summary.push([is_row_blank, blank_col_count]);
+  });
+
+  return data_qa_summary;
 };
