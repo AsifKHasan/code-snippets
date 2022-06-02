@@ -1,27 +1,63 @@
+LETTER_TO_COLUMN = {
+  'A' : 1,
+  'B' : 2,
+  'C' : 3,
+  'D' : 4,
+  'E' : 5,
+  'F' : 6,
+  'G' : 7,
+  'H' : 8,
+  'I' : 9,
+  'J' : 10,
+  'K' : 11,
+  'L' : 12,
+  'M' : 13,
+  'N' : 14,
+  'O' : 15,
+  'P' : 16,
+  'Q' : 17,
+  'R' : 18,
+  'S' : 19,
+  'T' : 20,
+  'U' : 21,
+  'V' : 22,
+  'W' : 23,
+  'X' : 24,
+  'Y' : 25,
+  'Z' : 26,
+};
+
+
+COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
 // ="Résumé__"&de_space(C57)
 function de_space(text){
   var without_space = text.replace(/\s+/g, '.').replace(/[.][.]+/g, '.');
   return without_space;
 };
 
+
 function photo_link_from_name(name){
-  // this is the link we need =image("https://spectrum-bd.biz/data/photo/photo__Khandakar.Asif.Hasan.png", 3)
+  // this is the link we need =image("https://spectrum-bd.biz/data/artifacts/photo/photo__Khandakar.Asif.Hasan.png", 3)
   var name_without_space = de_space(name);
-  var link = `=image("https://spectrum-bd.biz/data/photo/photo__${name_without_space}.png", 3)`;
+  var link = `=image("https://spectrum-bd.biz/data/artifacts/photo/photo__${name_without_space}.png", 3)`;
   return link;
 };
 
+
 function signature_link_from_name(name){
-  // this is the link we need =image("https://spectrum-bd.biz/data/signature/signature__Khandakar.Asif.Hasan.png", 3)
+  // this is the link we need =image("https://spectrum-bd.biz/data/artifacts/signature/signature__Khandakar.Asif.Hasan.png", 3)
   var name_without_space = de_space(name);
-  var link = `=image("https://spectrum-bd.biz/data/signature/signature__${name_without_space}.png", 3)`;
+  var link = `=image("https://spectrum-bd.biz/data/signature/artifacts/signature__${name_without_space}.png", 3)`;
   return link;
 };
+
 
 function run_test(){
   var link = signatureLinkFromName('Abdullah-Al-Hossain Bin Sarwar');
   Logger.log(link);
 };
+
 
 // work on a range - merge, value, formula, alignment, bgcolor, border, notes etc.
 function work_on_range(ss, range, work_spec){
@@ -99,6 +135,7 @@ function work_on_range(ss, range, work_spec){
 
 };
 
+
 function show_html() {
   var t = HtmlService.createTemplateFromFile('index');
   t.data = list_worksheets();
@@ -119,23 +156,14 @@ function row_of_matching_value(ws, column, value){
   return -1;
 };
 
-// return a QA summary on data which is a two dimesional array of rows and columns
-// output is an array of rows containing array [is_row_blank, blank_col_count]
-function qa_summary_on_data(data){
-  let data_qa_summary = [];
-  data.forEach((row, row_index) => {
-    let is_row_blank = true;
-    let blank_col_count = 0;
-    row.forEach((col, col_index) => {
-      if (col == ''){
-        blank_col_count++;
-      } else {
-        is_row_blank = false;
-      };
-    });
 
-    data_qa_summary.push([is_row_blank, blank_col_count]);
-  });
+// find and replace text within a sheet
+function search_replace_texts(ss, serach_for, replace_with){
+  var tf = ss.createTextFinder(serach_for);
+  tf.matchCase(true);
+  tf.matchEntireCell(false);
+  tf.ignoreDiacritics(true);
+  tf.matchFormulaText(true);
 
-  return data_qa_summary;
+  tf.replaceAllWith(replace_with);
 };

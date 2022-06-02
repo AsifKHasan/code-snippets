@@ -1,5 +1,5 @@
 // do some work on a list of sheets
-function work_on_spreadsheets() {
+function qa_work_on_spreadsheets() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var toc_ws_name = '-toc';
   var ws = ss.getSheetByName(toc_ws_name);
@@ -37,6 +37,481 @@ function work_on_spreadsheets() {
 };
 
 
+// check 06-job-history worksheet
+function check_06_job_history_worksheet(ss){
+  var ws_name = '06-job-history';
+  var logs = [];
+  var ss_url = ss.getUrl();
+  var ws = ss.getSheetByName(ws_name);
+
+  if (ws == null){
+    let msg = `worksheet ${ws_name} not found`;
+    logs.push(qa_error(msg, ss_url));
+    return logs;
+  }
+
+  // no point in going forward if column count does not match
+  if (ws.getMaxColumns() != RESUME_WS_QA['worksheets'][ws_name]['column-count']){
+    return logs;
+  }
+
+  var ws_url = `${ss_url}#gid=${ws.getSheetId()}`;
+
+  if (!('block-data' in RESUME_WS_QA['worksheets'][ws_name])){
+    return logs;
+  };
+
+  var block_spec = RESUME_WS_QA['worksheets'][ws_name]['block-data'];
+  var block_range_spec = block_spec['block-range-spec'];
+  var header_row_count = block_spec['header-rows'];
+  var marker_column = block_spec['marker-column'];
+  var marker = block_spec['marker'];
+  var blank_rows_between_blocks = block_spec['blank-rows-between-blocks'];
+  var min_blocks = block_spec['min-blocks'];
+
+  var block_data = ws.getRange(block_range_spec).getValues();
+  // identify the blocks by finding the markers, blocks starts at the markers
+  var blocks = qa_summary_on_blocks(block_data, block_spec);
+
+  blocks.forEach((block, index) => {
+    // the data is in groups, group data is in first column, the other columns are child data
+    var block_start_row = block['starts-at'] + header_row_count + 1;
+    var block_end_row = block['ends-at'] + header_row_count + 1;
+    var data = block_data.slice(block['starts-at'], block['ends-at'] + 1);
+    var group_data = data.map(d => d[0]);
+    var child_data = data.map(d => d.slice(1));
+    var groups = qa_summary_on_group(group_data, child_data);
+
+    // check for gaps between blocks
+    if (index < (blocks.length - 1)){
+      var row_gaps_with_next_block = blocks[index+1]['starts-at'] - blocks[index]['ends-at'] - 1;
+      if (blank_rows_between_blocks != row_gaps_with_next_block){
+        let msg = `Blocks should have ${blank_rows_between_blocks} empty row(s) between them, found ${row_gaps_with_next_block} empty row(s) between blocks ${index} and ${index+1}]`;
+        logs.push(qa_warn(msg, ws_url, ws_name));
+      }
+    };
+
+    // the end-index of the last group is the block's end-index
+    block['range'] = `B${block_start_row}:D${block_end_row}`;
+    Logger.log(` .. block ${index} found at ${block['range']}`)
+
+    groups.forEach((group, index) => {
+      var range_a1 = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      Logger.log(` .... ${group['group-name']} found at ${range_a1}`);
+    });
+
+    // now do the specific QA checks
+    // number of groups
+    var groups_expected = 4;
+    var group_names_expected = ['Organization', 'Position', 'YYYY-Mon','Job Summary'];
+    var group_names_found = groups.map(d => d[0]).join(', ');
+    if (groups.length != groups_expected){
+      let msg = `Block expected to have ${groups_expected} groups [${group_names_expected}], but has ${groups.length} groups [${group_names_found}]`;
+      logs.push(qa_error(msg, ws_url, ws_name, block['range']));
+    };
+
+    // ------------------------------------------------------------------------
+    // the first group Organization
+    if (groups.length > 0){
+      var group = groups[0];
+      var expected_group_name = 'Organization';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      if (group['group-name'] != expected_group_name){
+        let msg = `The first group must be ${expected_group_name}, found ${group['group-name']}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let data_rows_found = 0;
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // first data column can not be blank
+        if (data_row['data'][0] == ''){
+          let msg = `${expected_group_name} name missing`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        };
+      });
+    };
+    // the first group Organization
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the second group Position
+    if (groups.length > 1){
+      var group = groups[1];
+      var expected_group_name = 'Position';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      if (group['group-name'] != expected_group_name){
+        let msg = `The second group must be ${expected_group_name}, found ${group['group-name']}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // first data column can not be blank
+        if (data_row['data'][0] == ''){
+          let msg = `${expected_group_name} name missing`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        };
+      });
+    };
+    // the second group Position
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the third group Date
+    if (groups.length > 2){
+      var group = groups[2];
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      var group_name = group['group-name'];
+
+      // the group name must be a valid data
+      if (isNaN(Date.parse(group_name))){
+        let msg = `The third group must be a valid date, found ${group_name}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let group_data_found = group['data-summary'].length;
+      let min_data_rows_expected = 1;
+      if (min_data_rows_expected > group_data_found){
+        let msg = `Group ${group_name} : At least ${min_data_rows_expected} expected, found ${group_data_found} child entries`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let data_rows_found = 0;
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // if the row is blank
+        if (data_row['is-row-blank'] == true){
+            let msg = `NO DATA`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        } else {
+          data_rows_found++;
+
+          // if one or more column is blank
+          if (data_row['blank-col-count'] > 0){
+            let msg = `some columns are missing values`;
+            logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+          };
+        };
+      });
+    };
+    // the third group Date
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the fourth group Job Summary
+    if (groups.length > 3){
+      var group = groups[3];
+      var expected_group_name = 'Job Summary';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      var group_name = group['group-name'];
+      if (group_name != expected_group_name){
+        let msg = `The fourth group must be ${expected_group_name}, found ${group_name}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let group_data_found = group['data-summary'].length;
+      let min_data_rows_expected = 10;
+      if (min_data_rows_expected > group_data_found){
+        let msg = `Group ${group_name} : At least ${min_data_rows_expected} expected, found ${group_data_found} child entries`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let data_rows_found = 0;
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // if the row is blank
+        if (data_row['is-row-blank'] == true){
+            let msg = `NO DATA`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        } else {
+          data_rows_found++;
+
+          // if one or more column is blank
+          if (data_row['blank-col-count'] > 0){
+            let msg = `some columns are missing values`;
+            logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+          };
+        };
+      });
+    };
+    // the fourth group Job Summary
+    // ------------------------------------------------------------------------
+  });
+
+  return logs;
+};
+
+
+// check 07-project-roles worksheet
+function check_07_project_roles_worksheet(ss){
+  var ws_name = '07-project-roles';
+  var logs = [];
+  var ss_url = ss.getUrl();
+  var ws = ss.getSheetByName(ws_name);
+
+  if (ws == null){
+    let msg = `worksheet ${ws_name} not found`;
+    logs.push(qa_error(msg, ss_url));
+    return logs;
+  }
+
+  // no point in going forward if column count does not match
+  if (ws.getMaxColumns() != RESUME_WS_QA['worksheets'][ws_name]['column-count']){
+    return logs;
+  }
+
+  var ws_url = `${ss_url}#gid=${ws.getSheetId()}`;
+
+  if (!('block-data' in RESUME_WS_QA['worksheets'][ws_name])){
+    return logs;
+  };
+
+  var block_spec = RESUME_WS_QA['worksheets'][ws_name]['block-data'];
+  var block_range_spec = block_spec['block-range-spec'];
+  var header_row_count = block_spec['header-rows'];
+  var marker_column = block_spec['marker-column'];
+  var marker = block_spec['marker'];
+  var blank_rows_between_blocks = block_spec['blank-rows-between-blocks'];
+  var min_blocks = block_spec['min-blocks'];
+
+  var block_data = ws.getRange(block_range_spec).getValues();
+  var blocks = qa_summary_on_blocks(block_data, block_spec);
+
+  blocks.forEach((block, index) => {
+    // the data is in groups, group data is in first column, the other columns are child data
+    var block_start_row = block['starts-at'] + header_row_count + 1;
+    var block_end_row = block['ends-at'] + header_row_count + 1;
+    var data = block_data.slice(block['starts-at'], block['ends-at'] + 1);
+    var group_data = data.map(d => d[0]);
+    var child_data = data.map(d => d.slice(1));
+    var groups = qa_summary_on_group(group_data, child_data);
+
+    // check for gaps between blocks
+    if (index < (blocks.length - 1)){
+      var row_gaps_with_next_block = blocks[index+1]['starts-at'] - blocks[index]['ends-at'] - 1;
+      if (blank_rows_between_blocks != row_gaps_with_next_block){
+        let msg = `Blocks should have ${blank_rows_between_blocks} empty row(s) between them, found ${row_gaps_with_next_block} empty row(s) between blocks ${index} and ${index+1}]`;
+        logs.push(qa_warn(msg, ws_url, ws_name));
+      }
+    };
+
+    // the end-index of the last group is the block's end-index
+    block['range'] = `B${block_start_row}:D${block_end_row}`;
+    Logger.log(` .. block ${index} found at ${block['range']}`)
+
+    groups.forEach((group, index) => {
+      var range_a1 = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      Logger.log(` .... ${group['group-name']} found at ${range_a1}`);
+    });
+
+    // now do the specific QA checks
+    // number of groups
+    var groups_expected = 6;
+    var group_names_expected = ['Project/Product', 'Client', 'YYYY-Mon', 'Project Brief', 'Role(s) Performed', 'Activities/Tasks Performed'];
+    var group_names_found = groups.map(d => d[0]).join(', ');
+    if (groups.length != groups_expected){
+      let msg = `Block expected to have ${groups_expected} groups [${group_names_expected}], but has ${groups.length} groups [${group_names_found}]`;
+      logs.push(qa_error(msg, ws_url, ws_name, block['range']));
+    };
+
+    // ------------------------------------------------------------------------
+    // the first group Project/Product
+    if (groups.length > 0){
+      var group = groups[0];
+      var expected_group_name = 'Project/Product';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      if (group['group-name'] != expected_group_name){
+        let msg = `The first group must be ${expected_group_name}, found ${group['group-name']}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let data_rows_found = 0;
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // first data column can not be blank
+        if (data_row['data'][0] == ''){
+          let msg = `${expected_group_name} name missing`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        };
+      });
+    };
+    // the first group Project/Product
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the second group Client
+    if (groups.length > 1){
+      var group = groups[1];
+      var expected_group_name = 'Client';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      if (group['group-name'] != expected_group_name){
+        let msg = `The second group must be ${expected_group_name}, found ${group['group-name']}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // first data column can not be blank
+        if (data_row['data'][0] == ''){
+          let msg = `${expected_group_name} name missing`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        };
+      });
+    };
+    // the second group Client
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the third group Date
+    if (groups.length > 2){
+      var group = groups[2];
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      var group_name = group['group-name'];
+
+      // the group name must be a valid data
+      if (isNaN(Date.parse(group_name))){
+        let msg = `The third group must be a valid date, found ${group_name}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let group_data_found = group['data-summary'].length;
+      let min_data_rows_expected = 1;
+      if (min_data_rows_expected > group_data_found){
+        let msg = `Group ${group_name} : At least ${min_data_rows_expected} expected, found ${group_data_found} child entries`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let data_rows_found = 0;
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // if the row is blank
+        if (data_row['is-row-blank'] == true){
+            let msg = `NO DATA`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        } else {
+          data_rows_found++;
+
+          // if one or more column is blank
+          if (data_row['blank-col-count'] > 0){
+            let msg = `some columns are missing values`;
+            logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+          };
+        };
+      });
+    };
+    // the third group Date
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the fourth group Project Brief
+    if (groups.length > 3){
+      var group = groups[3];
+      var expected_group_name = 'Project Brief';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      if (group['group-name'] != expected_group_name){
+        let msg = `The fourth group must be ${expected_group_name}, found ${group['group-name']}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // first data column can not be blank
+        if (data_row['data'][0] == ''){
+          let msg = `${expected_group_name} missing`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        };
+      });
+    };
+    // the fourth group Project Brief
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the fifth group Role(s) Performed
+    if (groups.length >= 4){
+      var group = groups[4];
+      var expected_group_name = 'Role(s) Performed';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      if (group['group-name'] != expected_group_name){
+        let msg = `The fifth group must be ${expected_group_name}, found ${group['group-name']}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // first data column can not be blank
+        if (data_row['data'][0] == ''){
+          let msg = `${expected_group_name} missing`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        };
+      });
+    };
+    // the fifth group Role(s) Performed
+    // ------------------------------------------------------------------------
+
+
+    // ------------------------------------------------------------------------
+    // the sixth group Activities/Tasks Performed
+    if (groups.length >= 5){
+      var group = groups[5];
+      var expected_group_name = 'Activities/Tasks Performed';
+      var group_range = `B${block_start_row + group['starts-at']}:D${block_start_row + group['ends-at']}`;
+      var group_name = group['group-name'];
+      if (group_name != expected_group_name){
+        let msg = `The sixth group must be ${expected_group_name}, found ${group_name}`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let group_data_found = group['data-summary'].length;
+      let min_data_rows_expected = 10;
+      if (min_data_rows_expected > group_data_found){
+        let msg = `Group ${group_name} : At least ${min_data_rows_expected} expected, found ${group_data_found} child entries`;
+        logs.push(qa_error(msg, ws_url, ws_name, group_range));
+      };
+
+      let data_rows_found = 0;
+      group['data-summary'].forEach((data_row, data_row_index) => {
+        let row_num = block_start_row + group['starts-at'] + data_row_index;
+
+        // if the row is blank
+        if (data_row['is-row-blank'] == true){
+            let msg = `NO DATA`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+        } else {
+          data_rows_found++;
+
+          // if one or more column is blank
+          if (data_row['blank-col-count'] > 0){
+            let msg = `some columns are missing values`;
+            logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+          };
+        };
+      });
+    };
+    // the sixth group Activities/Tasks Performed
+    // ------------------------------------------------------------------------
+  });
+
+  return logs;
+};
+
+
 // check resume spreadsheet
 function check_resume_spreadsheet(ss){
   var logs = [];
@@ -68,7 +543,7 @@ function check_resume_spreadsheet(ss){
     if ('num-columns' in ws_spec){
       Logger.log(`...... checking for num-columns`);
       if (ws_spec['num-columns'] != ws.getMaxColumns()){
-        let msg = `${ws_spec['mum-columns']} required, but found ${ws.getMaxColumns()} columns`;
+        let msg = `${ws_spec['num-columns']} required, but found ${ws.getMaxColumns()} columns`;
         logs.push(qa_error(msg, ws_url, ws_name));
 
         // if column cound does not match, we do not do further QA on this worksheet
@@ -91,15 +566,15 @@ function check_resume_spreadsheet(ss){
       for (const [cell_a1, error] of Object.entries(ws_spec['error-on-blank'])){
         let cell = ws.getRange(cell_a1);
         if (cell == null){
-          let msg = `Cell ${cell_a1} NOT FOUND`;
-          logs.push(qa_error(msg, ws_url, ws_name));
+          let msg = `Cell NOT FOUND`;
+          logs.push(qa_error(msg, ws_url, ws_name, cell_a1));
           continue;
         };
 
         // if the cell is blank
         if (ws.getRange(cell_a1).getValue() == ''){
-          let msg = `Cell ${cell_a1} - ${error}`;
-          logs.push(qa_error(msg, ws_url, ws_name));
+          let msg = `${error}`;
+          logs.push(qa_error(msg, ws_url, ws_name, cell_a1));
         };
       };
     };
@@ -118,15 +593,15 @@ function check_resume_spreadsheet(ss){
 
         // if the row is blank
         if (row[0] == true){
-            let msg = `Row ${row_num} : NO DATA`;
-          logs.push(qa_error(msg, ws_url, ws_name));
+            let msg = `NO DATA`;
+          logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
         } else {
           data_rows_found++;
 
           // if one or more column is blank
           if (row[1] > 0){
-            let msg = `Row ${row_num} : some coumns are missing values`;
-            logs.push(qa_error(msg, ws_url, ws_name));
+            let msg = `some columns are missing values`;
+            logs.push(qa_warn(msg, ws_url, ws_name, `Row ${row_num}`));
           };
         };
       });
@@ -138,82 +613,58 @@ function check_resume_spreadsheet(ss){
     };
 
 
+    // check for grouped data (parent-child)
+    if ('grouped-data' in ws_spec){
+      Logger.log(`...... checking for grouped-data`);
+      let grouped_data_spec = ws_spec['grouped-data'];
+      let header_row_count = grouped_data_spec['header-rows'];
+
+      let group_range_spec = grouped_data_spec['group-range-spec'];
+      let min_groups_expected = grouped_data_spec['min-groups'];
+
+      let data_range_spec = grouped_data_spec['data-range-spec'];
+      let min_data_rows_expected = grouped_data_spec['min-data-rows'];
+
+      let group_qa_summary = qa_summary_on_group(ws.getRange(group_range_spec).getValues(), ws.getRange(data_range_spec).getValues());
+      // Logger.log(group_qa_summary);
+
+      let groups_found = group_qa_summary.length;
+      if (min_groups_expected > groups_found){
+        let msg = `At least ${min_groups_expected} expected, found ${groups_found} groups`;
+        logs.push(qa_error(msg, ws_url, ws_name));
+      };
+
+      group_qa_summary.forEach((group, group_index) => {
+        let group_name = group['group-name'];
+        let group_data_found = group['data-summary'].length;
+
+        if (min_data_rows_expected > group_data_found){
+          let msg = `Group ${group_name} : At least ${min_data_rows_expected} expected, found ${group_data_found} child entries`;
+          logs.push(qa_warn(msg, ws_url, ws_name));
+        };
+
+        let data_rows_found = 0;
+        group['data-summary'].forEach((data_row, data_row_index) => {
+          let row_num = group['starts-at'] + data_row_index + header_row_count + 1;
+
+          // if the row is blank
+          if (data_row['is-row-blank'] == true){
+              let msg = `NO DATA`;
+            logs.push(qa_error(msg, ws_url, ws_name, `Row ${row_num}`));
+          } else {
+            data_rows_found++;
+
+            // if one or more column is blank
+            if (data_row['blank-col-count'] > 0){
+              let msg = `some columns are missing values`;
+              logs.push(qa_warn(msg, ws_url, ws_name, `Row ${row_num}`));
+            };
+          };
+        });
+      });
+    };
+
   };
 
   return logs;
-};
-
-
-// generate QA report for the resume
-function prepare_qa_report(ss_name, qa_report_folder_id){
-  var current_time = new Date();
-  var qa_report_name = `${ss_name.replace('Résumé__', 'résumé-qa-report__')}__${current_time.toISOString().slice(0, 10)}`;
-  var qa_report_template_name = 'résumé-qa-report-template';
-
-  if (ss_name != undefined){
-    var ss = open_spreadsheet(ss_name);
-  };
-
-  if (ss == null){
-    return;
-  }
-  var qa_logs = [];
-
-  // each qa log is a list {where, location, kind, description}
-  // check the sheet and everything and get the logs
-  var check_function_name_list = [
-    'check_resume_spreadsheet',
-  ];
-
-  check_function_name_list.forEach(function(func){
-    Logger.log(`.. running .... ${func}`);
-    var logs = this[func](ss);
-    qa_logs.push(...logs);
-    Logger.log(`.. finished ... ${func}`);
-  });
-
-  // write qa logs, create the qa-report gsheet first
-  var template_ss = get_unique_file_by_name(qa_report_template_name);
-  var folder = DriveApp.getFolderById(qa_report_folder_id);
-  if (template_ss != null){
-    var qa_report_file = create_ss_from_template(qa_report_name, template_ss, folder);
-  } else {
-    Logger.log(`.. ERROR : QA log template ${qa_report_template_name} could not be opened`);
-    return;
-  };
-
-  //write the logs in the *resume-qa-report* worksheet
-  var qa_report_ss = SpreadsheetApp.open(qa_report_file);
-  var ws = qa_report_ss.getSheetByName('resume-qa-report');
-  var start_row = 3;
-  var num_rows = qa_logs.length;
-  var start_col = 2;
-  var num_cols = 5;
-
-  // make sure we have enough rows for writing the logs
-  if (ws.getMaxRows() < (qa_logs.length + 3)){
-    // insert rows after row 3
-    var rows_to_insert = (qa_logs.length + 3) - ws.getMaxRows() - 1;
-    if (rows_to_insert > 0){
-      ws.insertRowsAfter(3, rows_to_insert);
-    }
-  };
-
-  var range = ws.getRange(start_row, start_col, num_rows, num_cols);
-  range.setValues(qa_logs);
-
-  // get error and warning counts
-  var error_count = 0;
-  var warning_count = 0;
-  qa_logs.forEach(function(log){
-    if (log[2] == 'error'){
-      error_count = error_count + 1;
-    };
-    if (log[2] == 'warning'){
-      warning_count = warning_count + 1;
-    };
-  });
-
-  Logger.log(`.. QA report ${qa_report_name} prepared`);
-  return {'error-count': error_count, 'warning-count': warning_count, 'qa-report-name': qa_report_file};
 };

@@ -1,11 +1,14 @@
 RESUME_WS_QA = {
   'worksheets': {
     '-toc': {
-      'num-columns': 20,
+      'num-columns': 22,
+    },
+    '-toc-new': {
+      'num-columns': 25,
     },
     '00-layout': {
       'num-columns': 10,
-      'num-rows': 50,
+      'num-rows': 53,
     },
     '01-personal': {
       'num-columns': 5,
@@ -28,10 +31,12 @@ RESUME_WS_QA = {
     },
     '02-career-highlight': {
       'num-columns': 4,
-      'data-rows': {
-        'range-spec': 'B3:D',
+      'grouped-data': {
         'header-rows': 2,
-        'min-entries': 10,
+        'group-range-spec': 'B3:B',
+        'min-groups': 3,
+        'data-range-spec': 'C3:D',
+        'min-data-rows': 5,
       },
     },
     '03-education': {
@@ -44,25 +49,45 @@ RESUME_WS_QA = {
     },
     '04-managerial-expertise': {
       'num-columns': 4,
-      'data-rows': {
-        'range-spec': 'B4:D',
+      'grouped-data': {
         'header-rows': 3,
-        'min-entries': 10,
+        'group-range-spec': 'B4:B',
+        'min-groups': 3,
+        'data-range-spec': 'C4:D',
+        'min-data-rows': 5,
       },
     },
     '05-technical-expertise': {
       'num-columns': 4,
-      'data-rows': {
-        'range-spec': 'B4:D',
+      'grouped-data': {
         'header-rows': 3,
-        'min-entries': 30,
+        'group-range-spec': 'B4:B',
+        'min-groups': 10,
+        'data-range-spec': 'C4:D',
+        'min-data-rows': 10,
       },
     },
     '06-job-history': {
       'num-columns': 4,
+      'block-data': {
+        'header-rows': 2,
+        'block-range-spec': 'B3:D',
+        'marker-column': 0,
+        'marker': 'Organization',
+        'blank-rows-between-blocks': 1,
+        'min-blocks': 1,
+      },
     },
     '07-project-roles': {
       'num-columns': 4,
+      'block-data': {
+        'header-rows': 2,
+        'block-range-spec': 'B3:D',
+        'marker-column': 0,
+        'marker': 'Project/Product',
+        'blank-rows-between-blocks': 1,
+        'min-blocks': 1,
+      },
     },
     '08-training': {
       'num-columns': 4,
@@ -129,6 +154,22 @@ RESUME_WS_QA = {
         'range-spec': 'B3:B',
         'header-rows': 2,
         'min-entries': 2,
+      },
+    },
+    'z-header': {
+      'num-columns': 3,
+      'data-rows': {
+        'range-spec': 'B3:C',
+        'header-rows': 2,
+        'min-entries': 1,
+      },
+    },
+    'z-footer': {
+      'num-columns': 3,
+      'data-rows': {
+        'range-spec': 'B3:C',
+        'header-rows': 2,
+        'min-entries': 1,
       },
     },
   }

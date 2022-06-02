@@ -1,41 +1,104 @@
 // do some work on a list of sheets
 function work_on_spreadsheets() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var toc_ws_name = '-toc';
-  var ws = ss.getSheetByName(toc_ws_name);
+  var this_ss = SpreadsheetApp.getActiveSpreadsheet();
+  var toc_ws_name = '-toc-new';
+  var toc_ws = this_ss.getSheetByName(toc_ws_name);
+
+  // link_cells(toc_ws, 'F102:F', 'E102:E', null)
+  // return;
 
   // get sheets to work on
-  var ss_data_to_work_on = select_resume_spreadsheets_from_toc(ss, ws);
+  // var ss_data_to_work_on = select_resume_spreadsheets_from_toc(this_ss, toc_ws);
+  var ss_data_to_work_on = get_spreadsheets_to_work_on();
 
   // var template_ss = get_unique_file_by_name('Résumé__template');
-  // var blank_resume_folder = DriveApp.getFolderById('1JltNCjefWmSMZHHQtON_fSTpkHh2W9rP');
+  // var target_resume_folder = DriveApp.getFolderById('19qaw26Oq_i1t_sK2lcU5gLeNVszc8Pch');
 
-  ss_data_to_work_on.forEach(function(ss_data){
+  // get worksheet to import
+  // var ss_to_import_from = open_spreadsheet('Résumé__template')
+  // var job_history_ws = ss_to_import_from.getSheetByName('06-job-history');
+  // var project_roles_ws = ss_to_import_from.getSheetByName('07-project-roles');
+
+  ss_data_to_work_on.forEach(function(ss_data, index){
     var ss_name = ss_data[0];
     var ss_org = ss_data[1];
     var row_num = ss_data[2];
-    Logger.log(`PROCESSING ${row_num} .. ${ss_org} : ${ss_name}`);
+    Logger.log(`PROCESSING ${index} : ${row_num} .. ${ss_org} : ${ss_name}`);
 
-    // create_ss_from_template(ss_name, template_ss, blank_resume_folder);
+    var ss = open_spreadsheet(ss_name);
+    if (ss == null){
+      Logger.log(` .. ERROR .. ${index} : Spreadsheet ${ss_name} not found`);
+      return;
+    }
 
-    Logger.log(`DONE ..... ${row_num} .. ${ss_org} : ${ss_name}`);
+
+    // do_miscellaneous_things(ss);
+    // search_replace_texts(ss, 'https://spectrum-bd.biz/data/artifacts/signature/signature', 'https://spectrum-bd.biz/data/artifacts/signature/spectrum/signature');
+    // search_replace_texts(ss, 'https://spectrum-bd.biz/data/i', 'https://spectrum-bd.biz/data/artifacts/i');
+    // search_replace_texts(ss, 'https://spectrum-bd.biz/data/s', 'https://spectrum-bd.biz/data/artifacts/s');
+    // search_replace_texts(ss, 'https://spectrum-bd.biz/data/p', 'https://spectrum-bd.biz/data/artifacts/p');
+    // search_replace_texts(ss, '.png", 3)', '.png", 1)');
+
+
+    // CREATE Rsume gsheet - BEGIN
+    // create_ss_from_template(ss_name, template_ss, target_resume_folder)
+    // CREATE Rsume gsheet - BEGIN
+
+    // MOVE worksheet - BEGIN
+    // move_worksheet_to_end(ss, '-toc');
+    // MOVE worksheet - END
+
+    // work on *-new-toc* - BEGIN
+    new_toc_from_toc(ss);
+    // update_new_toc(ss);
+    // update_new_toc_links(ss);
+    // work on *-new-toc* - END
+
+    // REMOVE named worksheet - BEGIN
+    // remove_worksheet(ss, ws_name_to_remove='-toc-new');
+    // REMOVE named worksheet - END
+
+    // IMPORT worksheets into ss to a specific location - BEGIN
+    // import_worksheet(ss, ws_to_import=job_history_ws, index=8);
+    // import_worksheet(ss, ws_to_import=project_roles_ws, index=9);
+    // IMPORT worksheets into ss to a specific location - END
+    //
+    // ALL WORKSHEET FORMATTING - BEGIN
+    // update_all_worksheets(ss);
+    // ALL WORKSHEET FORMATTING - END
+    //
+    // RESIZE WORKSHEET COLUMNS, ORDER WORKSHEETS - BEGIN
+    // resize_columns_in_worksheets(ss, RESUME_WS_SPECS);
+    // write_column_size_in_worksheets(ss);
+    // order_worksheets(ss);
+    // RESIZE WORKSHEET COLUMNS, ORDER WORKSHEETS - END
+    //
+    // SPECIFIC to *00-layout* WORKSHEET - BEGIN
+    // update_00_layout_worksheet_structure(ss)
+    // update_00_layout_worksheet_photo(ss_name, ss_org);
+    // update_00_layout_worksheet_signature(ss_name, ss_org);
+    // update_00_layout_worksheet_links(ss_name);
+    // SPECIFIC to *01-personal* WORKSHEET - END
+    //
+    // SPECIFIC to *01-personal* WORKSHEET - BEGIN
+    // update_01_personal_worksheet_photo(ss_name, ss_org);
+    // SPECIFIC to *01-personal* WORKSHEET - END
+
+    // SPECIFIC to *06-job-history* WORKSHEET - BEGIN
+    // update_06_job_history_worksheet(ss_name);
+    // SPECIFIC to *06-job-history* WORKSHEET - END
+
+    // SPECIFIC to *01-project-roles* WORKSHEET - BEGIN
+    // update_07_project_roles_worksheet(ss_name);
+    // SPECIFIC to *01-project-roles* WORKSHEET - END
+
+    Logger.log(`DONE ..... ${index} : ${row_num} .. ${ss_org} : ${ss_name}`);
   });
 };
 
 
 // update all worksheets with the given spec
-function update_all_worksheets(ss_name=undefined){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
-
-  if (ss == null){
-    Logger.log(` .. ERROR .. Spreadsheet ${ss_name} not found`);
-    return;
-  }
-
+function update_all_worksheets(ss){
   var update_spec = {'font-family': 'Calibri', 'font-size': 10, 'valign': 'top', 'merge': false};
 
   // get all the worksheets
@@ -48,68 +111,43 @@ function update_all_worksheets(ss_name=undefined){
 
 
 // resize columns in each worksheet as per spec
-function resize_columns_in_worksheets(ss_name=undefined, ws_column_specs){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
-
-  if (ss == null){
-    Logger.log(` .. ERROR .. Spreadsheet ${ss_name} not found`);
-    return;
-  }
-
+function resize_columns_in_worksheets(ss, ws_column_specs){
   // get all the worksheets
   ss.getSheets().forEach(function(ws){
-    var ws_name = ws.getName();
+    let ws_name = ws.getName();
     if (ws_name in ws_column_specs){
-      for (const [key, value] of Object.entries(ws_column_specs[ws_name])) {
-        // Logger.log('column ' + key + ' size ' + value);
-        index = LETTER_TO_COLUMN[key];
-        ws.setColumnWidth(index, value);
+      let ws_column_spec = ws_column_specs[ws_name];
+      if ('num-columns' in ws_column_spec){
+        // see if the number of columns matches
+        if (ws_column_spec['num-columns'] == ws.getMaxColumns()) {
+          for (const [key, value] of Object.entries(ws_column_spec['columns'])) {
+            let index = LETTER_TO_COLUMN[key];
+            ws.setColumnWidth(index, value);
+          };
+        } else {
+          Logger.log(` .. WARN .. ${ws_name} expected ${ws_column_spec['num-columns']} columns, found ${ws.getMaxColumns()} columns`);
+        };
       };
     };
   });
 };
 
 
-
 // write column sizes for each worksheet
-function write_column_size_in_worksheets(ss_name=undefined){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
-
-  if (ss == null){
-    Logger.log(`ERROR: Spreadsheet ${ss_name} not found`);
-    return;
-  }
-
+function write_column_size_in_worksheets(ss){
   // get all the worksheets
   var ws_list = ss.getSheets();
   for (var i = 0; i < ws_list.length; i++) {
+    Logger.log(` .. PROCESSING .. Worksheet ${ws_list[i].getName()}`);
     get_and_write_column_size(ws_list[i]);
+    Logger.log(` .. DONE ........ Worksheet ${ws_list[i].getName()}`);
   };
 
 };
 
 
 // create a Worksheet in the specific position with specified parameters
-function create_worksheet(ss_name=undefined, ws_name, ws_index=undefined, ws_rows, ws_columns, ws_column_sizes=undefined){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
-
-  if (ss == null){
-    Logger.log(`ERROR: Spreadsheet ${ss_name} not found`);
-    return;
-  }
-
+function create_worksheet(ss, ws_name, ws_index=undefined, ws_rows, ws_columns, ws_column_sizes=undefined){
   // check if the worksheet already exists or not
   var ws = ss.getSheetByName(ws_name);
   if (ws != null){
@@ -146,36 +184,21 @@ function create_worksheet(ss_name=undefined, ws_name, ws_index=undefined, ws_row
 
 
 // rename Worksheets of a Spreadsheet - the name map is a dict
-function rename_worksheets(ss_name=undefined, name_map){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
+function rename_worksheets(ss, name_map){
+  for (const [key, value] of Object.entries(name_map)) {
+    var ws = ss.getSheetByName(key);
+    if (ws != null){
+      ws.setName(value);
+      Logger.log(`Worksheet ${key} renamed to ${value}`);
+    } else {
+      Logger.log(`Worksheet ${key} not found`);
+    }
   };
-
-  if (ss != null){
-    for (const [key, value] of Object.entries(name_map)) {
-      var ws = ss.getSheetByName(key);
-      if (ws != null){
-        ws.setName(value);
-        Logger.log(`Worksheet ${key} renamed to ${value}`);
-      } else {
-        Logger.log(`Worksheet ${key} not found`);
-      }
-    };
-
-  }
 };
 
 
 // list all worksheet
-function list_worksheets(ss_name=undefined){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
-
+function list_worksheets(ss){
   var ws_name_list = [];
   var ws_list = ss.getSheets();
 
@@ -190,64 +213,77 @@ function list_worksheets(ss_name=undefined){
 
 
 // for ordering worksheets in a Google sheet
-function order_worksheets(ss_name=undefined) {
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
+function order_worksheets(ss) {
+  var ws_name_list = [];
+  var ws_list = ss.getSheets();
+
+  for (var i = 0; i < ws_list.length; i++) {
+    ws_name_list.push(ws_list[i].getName());
   }
 
-  if (ss != null){
-    var ws_name_list = [];
-    var ws_list = ss.getSheets();
+  ws_name_list.sort();
 
-    for (var i = 0; i < ws_list.length; i++) {
-      ws_name_list.push(ws_list[i].getName());
-    }
-
-    ws_name_list.sort();
-
-    ws_name_list.forEach(function(e, i){
-      Logger.log(i + ' worksheet : ' + e);
-      ss.setActiveSheet(ss.getSheetByName(e));
-      ss.moveActiveSheet(i+1);
-    });
-  }
+  ws_name_list.forEach(function(e, i){
+    // Logger.log(i + ' worksheet : ' + e);
+    ss.setActiveSheet(ss.getSheetByName(e));
+    ss.moveActiveSheet(i+1);
+  });
 };
 
 
 // duplicate a Worksheet
-function duplicate_worksheet(ss_name=undefined, ws_name, duplicate_ws_name){
-  if (ss_name == undefined){
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-  } else {
-    var ss = open_spreadsheet(ss_name);
-  };
+function duplicate_worksheet(ss, ws_name, duplicate_ws_name){
+  // get the worksheet to duplicate
+  var ws = ss.getSheetByName(ws_name);
+  if (ws === null){
+    Logger.log(`ERROR: ${ws_name} not found`);
+    return null;
+  }
 
-  if (ss != null){
-    // get the worksheet to duplicate
-    var ws = ss.getSheetByName(ws_name);
-    if (ws == null){
-      Logger.log(`ERROR: ${ws_name} not found`);
-      return;
-    }
+  var ws_pos = ws.getIndex();
 
-    var ws_pos = ws.getIndex();
+  // duplicate the worksheet, see if the worksheet already exists or not
+  var duplicate_ws = ss.getSheetByName(duplicate_ws_name);
+  if (duplicate_ws != null){
+    Logger.log(`WARN: ${duplicate_ws_name} already exists`);
+    return null;
+  }
 
-    // duplicate the worksheet, see if the worksheet already exists or not
-    var duplicate_ws = ss.getSheetByName(duplicate_ws_name);
-    if (duplicate_ws != null){
-      Logger.log(`WARN: ${duplicate_ws_name} already exists`);
-      return;
-    }
+  // now do the duplication
+  var duplicate_ws = ws.copyTo(ss).setName(duplicate_ws_name);
+  duplicate_ws.activate();
+  ss.moveActiveSheet(ws_pos+1);
 
-    // now do the duplication
-    var duplicate_ws = ws.copyTo(ss).setName(duplicate_ws_name);
-    duplicate_ws.activate();
-    ss.moveActiveSheet(ws_pos+1);
+  return duplicate_ws;
+};
 
-    return duplicate_ws;
-  };
+
+// import ws_to_import into *ss* in position *index*
+function import_worksheet(ss, ws_to_import, index=-1){
+  // first check whether the worksheet already exists or not
+  var ws_name_to_import = ws_to_import.getName();
+  var ws = ss.getSheetByName(ws_name_to_import);
+  if (ws != null){
+    Logger.log(`.. WARN : worksheet ${ws_name_to_import} EXISTS`)
+    return;
+  }
+
+  Logger.log(`.. INFO : importing worksheet ${ws_name_to_import}`)
+  var ws = ws_to_import.copyTo(ss);
+  ws.setName(ws_to_import.getName());
+  ss.setActiveSheet(ws);
+  if (index != -1){
+    ss.moveActiveSheet(index);
+  }
+};
+
+
+// remove worksheet by name
+function remove_worksheet(ss, ws_name_to_remove){
+  var ws_to_remove = ss.getSheetByName(ws_name_to_remove);
+  if (ws_to_remove != null){
+    ss.deleteSheet(ws_to_remove);
+  }
 };
 
 
@@ -301,8 +337,7 @@ function copy_sheets() {
 
 
 // move a sheet to End
-function move_worksheet_to_end(ws_name) {
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
+function move_worksheet_to_end(ss, ws_name) {
     var ws = ss.getSheetByName(ws_name);
     var sheet_count = ss.getNumSheets();
 

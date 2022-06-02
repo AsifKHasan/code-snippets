@@ -52,12 +52,13 @@ function get_unique_file_by_name(file_name) {
   if (files.hasNext()) {
     var file = files.next();
   } else {
+    Logger.log(`ERROR : No file with the name : ${file_name}`);
     return null;
   }
 
   // if there are more files, report duplicate
   if (files.hasNext()) {
-    Logger.log(`There are more than one file with the name : ${file_name}`);
+    Logger.log(`WARN  : There are more than one file with the name : ${file_name}`);
     return null;
   }
 

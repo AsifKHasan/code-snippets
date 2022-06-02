@@ -32,7 +32,7 @@ function link_cell_to_worksheet(ss, cell, ws_name_to_link) {
       return;
     }
 
-    Logger.log(` .. linking ${cell.getA1Notation()} to worksheet : ${ws_name_to_link}`);
+    // Logger.log(` .. linking ${cell.getA1Notation()} to worksheet : ${ws_name_to_link}`);
     var link = `=HYPERLINK("#gid=${ws_to_link.getSheetId()}","${cell.getValue()}")`;
     cell.setFormula(link);
 };
@@ -88,7 +88,7 @@ function link_cells(ws, range_spec, helper_range_spec, template_ws_name) {
 
       // now the link can be to a spreadsheet or a worksheet, helper_cell_value will tell us
       if (helper_cell_value == 'gsheet'){
-        // a spreadsheet is to be linked, see if there is a worksheet with cell_value
+        // a spreadsheet is to be linked
         link_cell_to_spreadsheet(ss, cell, cell_value);
       } else if (helper_cell_value == 'table'){
         // a worksheet is to be linked, see if there is a worksheet with cell_value
@@ -130,6 +130,7 @@ function add_conditional_formatting_for_blank_cells(ws, range_spec_list) {
   ws.setConditionalFormatRules(rules);
 };
 
+
 // add review-notes column as the first column, width 100, left
 function add_review_notes_column(ws, index=1) {
   ws.insertColumns(index);
@@ -169,13 +170,18 @@ function get_and_write_column_size(ws=undefined) {
     var ws = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   }
 
-  var numColumns = ws.getMaxColumns();
-  for (i = 2; i <= numColumns; i++) {
-    var column_size_pixel = ws.getColumnWidth(i);
-    // put the value in the first row of that column
-    cell = ws.getRange(1, i);
-    cell.setHorizontalAlignment("center").setNumberFormat("0").setValue(column_size_pixel);
+  let start_column = 2;
+  let row_index = 1;
+  var num_columns = ws.getMaxColumns();
+  let range_spec = `${COLUMN_TO_LETTER[start_column]}${row_index}:${COLUMN_TO_LETTER[num_columns]}${row_index}`;
+  Logger.log(` .... ${num_columns} columns found, update range ${range_spec}`);
+
+  let column_sizes_in_pixel = [];
+  for (var i = start_column; i <= num_columns; i++) {
+    column_sizes_in_pixel.push(ws.getColumnWidth(i));
   }
+  Logger.log(` .... updating range ${range_spec} with ${column_sizes_in_pixel}`);
+  ws.getRange(range_spec).setHorizontalAlignment("center").setNumberFormat("0").setValues([column_sizes_in_pixel]);
 };
 
 
@@ -228,6 +234,7 @@ function remove_trailing_blank_columns(ws) {
     ws.deleteColumns(last_col_with_data + 1, total_cols - last_col_with_data);
   }
 };
+
 
 // remove all trailing rows from a worksheet where all cells are blank
 function remove_trailing_blank_rows(ws) {
