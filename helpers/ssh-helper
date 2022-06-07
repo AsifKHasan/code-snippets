@@ -10,6 +10,8 @@ ssh-add ~/.ssh/id_ed25519
 # copy the SSH public key to clipboard
 clip < ~/.ssh/id_ed25519.pub
 cat ~/.ssh/id_ed25519.pub
+xclip -sel clip < ~/.ssh/id_ed25519.pub
+
 
 # migrate to SSH from HTTPS
 git remote set-url origin git@github.com:AsifKHasan/algorithms-with-games.git
