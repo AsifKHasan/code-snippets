@@ -1,5 +1,28 @@
-// work on files
-function work_on_files(){
+// traverse a folder
+function start_folder_iteration(){
+  // this is SAU-CAS
+  var folder_id_to_traverse = '18GGvxjGZFxAW1rLItIAR6CzJHAQh_GX9';
+  var folder_to_traverse = DriveApp.getFolderById(folder_id_to_traverse);
+  if (folder_to_traverse){
+    // get the absolute location
+    var parent_path = get_parent_path(folder_to_traverse);
+    Logger.log(`traversing folder ${folder_to_traverse.getName()} at ${parent_path}`);
+
+    var object_list = [];
+    iterate_folder(folder_to_traverse, parent_path, object_list);
+
+    // persist
+    work_on_objects(object_list);
+
+  } else {
+    Logger.log(`ERROR: folder ${folder_id_to_traverse} NOT FOUND`);
+  };
+
+};
+
+
+// work on objects
+function work_on_objects(object_list){
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
   var detail_output_ws_name = 'z-file-details';
@@ -15,34 +38,33 @@ function work_on_files(){
   range_to_clear.clearContent();
 
 
-  var file_names_to_work_on = get_file_names_to_work_on();
   var detail_output_row_num = 3;
   var permission_output_row_num = 3;
-  file_names_to_work_on.forEach(function(entry){
-    var file_seq = entry['seq'];
-    var file_name = entry['name'];
-    Logger.log(`PROCESSING ${file_seq} : ${file_name}`);
+  object_list.forEach(function(entry, index){
+    var obj_seq = index;
+    var obj_name = entry['object'].getName();
+    Logger.log(`PROCESSING ${obj_seq} : ${obj_name}`);
 
-    // get file data
-    var file_data = get_file_data(file_name, file_seq);
+    // get obj data
+    var obj_data = get_object_data(entry['object'], entry['is-folder'], entry['parent-path'], obj_seq);
 
-    if (file_data != null){
+    if (obj_data != null){
       // show/output file data
-      Logger.log(`... parent            : ${file_data['parent']}`);
-      Logger.log(`... url               : ${file_data['url']}`);
-      Logger.log(`... type              : ${file_data['type']}`);
-      Logger.log(`... owner name        : ${file_data['owner-name']}`);
-      Logger.log(`... owner email       : ${file_data['owner-email']}`);
-      Logger.log(`... access            : ${file_data['access']}`);
-      Logger.log(`... worksheets        : ${file_data['worksheets']}`);
-      Logger.log(`... size              : ${file_data['size']}KB`);
-      Logger.log(`... created           : ${file_data['created']}`);
-      Logger.log(`... last-modified     : ${file_data['last-modified']}`);
-      Logger.log(`... editors-can-share : ${file_data['editors-can-share']}`);
+      // Logger.log(`... parent            : ${obj_data['parent']}`);
+      // Logger.log(`... url               : ${obj_data['url']}`);
+      // Logger.log(`... type              : ${obj_data['type']}`);
+      // Logger.log(`... owner name        : ${obj_data['owner-name']}`);
+      // Logger.log(`... owner email       : ${obj_data['owner-email']}`);
+      // Logger.log(`... access            : ${obj_data['access']}`);
+      // Logger.log(`... worksheets        : ${obj_data['worksheets']}`);
+      // Logger.log(`... size              : ${obj_data['size']}KB`);
+      // Logger.log(`... created           : ${obj_data['created']}`);
+      // Logger.log(`... last-modified     : ${obj_data['last-modified']}`);
+      // Logger.log(`... editors-can-share : ${obj_data['editors-can-share']}`);
 
       // detail output to gsheet
-      var values = [file_data['seq'], file_data['name'], file_data['parent'], file_data['url'], file_data['type'], file_data['owner-name'], file_data['owner-email'],
-                    file_data['access'], file_data['worksheets'], file_data['size'], file_data['created'], file_data['last-modified'], file_data['editors-can-share']];
+      var values = [obj_data['seq'], obj_data['name'], obj_data['parent'], obj_data['url'], obj_data['type'], obj_data['owner-name'], obj_data['owner-email'],
+                    obj_data['access'], obj_data['worksheets'], obj_data['size'], obj_data['created'], obj_data['last-modified'], obj_data['editors-can-share']];
 
       var range_spec = `A${detail_output_row_num}:M${detail_output_row_num}`;
       var range = detail_output_ws.getRange(range_spec);
@@ -51,7 +73,7 @@ function work_on_files(){
       detail_output_row_num++;
 
       // permission output to gsheet
-      var permissions = file_data['permissions'];
+      var permissions = obj_data['permissions'];
       var permission_size = permissions.length;
       var range_spec = `A${permission_output_row_num}:E${permission_output_row_num + permission_size - 1}`;
       var range = permission_output_ws.getRange(range_spec);
@@ -61,121 +83,139 @@ function work_on_files(){
 
     };
 
-    Logger.log(`DONE       ${file_seq} : ${file_name}`);
+    Logger.log(`DONE       ${obj_seq} : ${obj_name}`);
   });
 
 };
 
-// given a file name, return relavant data
-function get_file_data(file_name, seq){
-  var drive_file = get_unique_file_by_name(file_name);
-  if (drive_file === null){
+
+// given an object, return relavant data
+function get_object_data(obj, is_folder, parent_folder, seq){
+  if (obj === null){
     return null;
   };
 
-  var file_data = {'seq': seq, 'name': file_name};
+  var obj_name = obj.getName();
+  var obj_data = {'seq': seq, 'name': obj_name, 'is-folder': is_folder};
 
   // parent folder
+  obj_data['parent'] = parent_folder;
+
+  // url
+  obj_data['url'] = obj.getUrl();
+
+  // type
+  if (obj_data['is-folder'] === true){
+    obj_data['type'] = 'folder';
+  } else {
+    if (obj.getMimeType() in MIME_TYPES){
+      obj_data['type'] = MIME_TYPES[obj.getMimeType()];
+    } else {
+      obj_data['type'] = obj.getMimeType();
+    }
+  }
+
+  // owner
+  var owner = obj.getOwner();
+  obj_data['owner-name'] = owner.getName();
+  obj_data['owner-email'] = owner.getEmail();
+
+  // access
+  obj_data['access'] = obj.getSharingAccess();
+
+  // worksheets only if it is a gsheet
+  // if (file_data['type'] === 'gsheet'){
+  //   var ss = open_spreadsheet(file_name);
+  //   if (ss != null){
+  //     file_data['worksheets'] = ss.getNumSheets();
+  //   };
+  // };
+
+  // size
+  obj_data['size'] = obj.getSize() / 1024;
+
+  // created
+  obj_data['created'] = obj.getDateCreated();
+
+  // last-modified
+  obj_data['last-modified'] = obj.getLastUpdated();
+
+  // editors-can-share
+  if (obj.isShareableByEditors()){
+    obj_data['editors-can-share'] = 'Yes';
+  } else {
+    obj_data['editors-can-share'] = '';
+  }
+
+  // permissions
+  var permissions = [];
+  permissions.push([seq, obj_name, obj_data['owner-name'], obj_data['owner-email'], 'owner']);
+
+  var editors = obj.getEditors();
+  editors.forEach(function(user){
+    permissions.push([seq, obj_name, user.getName(), user.getEmail(), 'editor']);
+  });
+
+  var viewers = obj.getViewers();
+  viewers.forEach(function(user){
+    permissions.push([seq, obj_name, user.getName(), user.getEmail(), 'viewer']);
+  });
+
+  // var commenters = obj.getCommenters();
+  // commenters.forEach(function(user){
+  //   permissions.push([seq, obj_name, user.getName(), user.getEmail(), 'commenter']);
+  // });
+
+  obj_data['permissions'] = permissions;
+
+  return obj_data;
+};
+
+
+// traverse a folder
+function iterate_folder(folder_to_traverse, parent_path, object_list){
+  object_list.push({'object': folder_to_traverse, 'parent-path': parent_path, 'is-folder': true});
+  var this_folder_path = `${parent_path}/${folder_to_traverse.getName()}`;
+
+  // first we iterate files
+  var files = folder_to_traverse.getFiles();
+  while (files.hasNext()) {
+    var file = files.next();
+    object_list.push({'object': file, 'parent-path': this_folder_path, 'is-folder': false});
+  };
+
+  // first we iterate files
+  var folders = folder_to_traverse.getFolders();
+  while (folders.hasNext()) {
+    var folder = folders.next();
+    iterate_folder(folder, this_folder_path, object_list);
+  };
+};
+
+
+// get full parent path of a drive file
+function get_parent_path(folder){
   var parents = [];
-  var parent_iter = drive_file.getParents();
+  var parent_iter = folder.getParents();
   while (parent_iter.hasNext()) {
     var folder = parent_iter.next();
-    // Logger.log(folder.getName());
     parents.push(folder.getName());
     var parent_iter = folder.getParents();
   };
 
   parents.reverse();
-  file_data['parent'] = parents.join('/');
+  parent_path = parents.join('/');
 
-  // url
-  file_data['url'] = drive_file.getUrl();
-
-  // type
-  file_data['type'] = MIME_TYPES[drive_file.getMimeType()];
-
-  // owner
-  var owner = drive_file.getOwner();
-  file_data['owner-name'] = owner.getName();
-  file_data['owner-email'] = owner.getEmail();
-
-  // access
-  file_data['access'] = drive_file.getSharingAccess();
-
-  // worksheets only if it is a gsheet
-  if (file_data['type'] === 'gsheet'){
-    var ss = open_spreadsheet(file_name);
-    if (ss != null){
-      file_data['worksheets'] = ss.getNumSheets();
-    };
-  };
-
-  // size
-  file_data['size'] = drive_file.getSize() / 1024;
-
-  // created
-  file_data['created'] = drive_file.getDateCreated();
-
-  // last-modified
-  file_data['last-modified'] = drive_file.getLastUpdated();
-
-  // editors-can-share
-  if (drive_file.isShareableByEditors()){
-    file_data['editors-can-share'] = 'Yes';
-  } else {
-    file_data['editors-can-share'] = '';
-  }
-
-  // permissions
-  var permissions = [];
-  permissions.push([seq, file_name, file_data['owner-name'], file_data['owner-email'], 'owner']);
-
-  var editors = drive_file.getEditors();
-  editors.forEach(function(user){
-    permissions.push([seq, file_name, user.getName(), user.getEmail(), 'editor']);
-  });
-
-  var viewers = drive_file.getViewers();
-  viewers.forEach(function(user){
-    permissions.push([seq, file_name, user.getName(), user.getEmail(), 'viewer']);
-  });
-
-  // var commenters = drive_file.getCommenters();
-  // commenters.forEach(function(user){
-  //   permissions.push([seq, file_name, user.getName(), user.getEmail(), 'commenter']);
-  // });
-
-  file_data['permissions'] = permissions;
-
-  return file_data;
+  return parent_path;
 };
 
-
-// get list of file names to process
-function get_file_names_to_work_on() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var name_ws_name = 'z-file-list';
-  var name_ws = ss.getSheetByName(name_ws_name);
-
-  var name_data = name_ws.getRange('A3:C').getValues();
-
-  var file_names = [];
-  name_data.forEach(function(row, index){
-    // we take only the values which has Process Yes
-    if (row[NAME_LIST_COLUMNS.Process] === 'Yes'){
-      var entry = {'seq': row[NAME_LIST_COLUMNS.Seq], 'name': row[NAME_LIST_COLUMNS.FolderFileName]};
-      file_names.push(entry);
-    };
-  });
-
-  return file_names;
-};
 
 const NAME_LIST_COLUMNS = {
   Process: 0,
   Seq: 1,
   FolderFileName: 2,
 };
+
 
 const MIME_TYPES = {
 'application/vnd.google-apps.audio'        : 'audio',
