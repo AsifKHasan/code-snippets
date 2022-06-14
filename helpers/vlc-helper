@@ -1,0 +1,12 @@
+"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" --sout "#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:std{access=file,mux=raw,dst=C:\Temp\music\SachinDevBarman\SachinDevBarman__AjiRateKeAmare.mp3}" "C:\Temp\music\SachinDevBarman\SachinDevBarman__AjiRateKeAmare.flv"
+
+"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" --sout "#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:std{access=file,mux=raw,dst=C:\Temp\music\SachinDevBarman\SachinDevBarman__DakleKokilRojBihane.mp3}" "C:\Temp\music\SachinDevBarman\SachinDevBarman__DakleKokilRojBihane.flv"
+
+"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" --sout "#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:std{access=file,mux=raw,dst=C:\Temp\music\SachinDevBarman\SachinDevBarman__EiKanonerPhoolNiye.mp3}" "C:\Temp\music\SachinDevBarman\SachinDevBarman__EiKanonerPhoolNiye.flv"
+
+"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" --sout "#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:std{access=file,mux=raw,dst=C:\Temp\music\SachinDevBarman\SachinDevBarman__EPotheAjEsoPriya.mp3}" "C:\Temp\music\SachinDevBarman\SachinDevBarman__EPotheAjEsoPriya.flv"
+
+"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" --sout "#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:std{access=file,mux=raw,dst=C:\Temp\\CatStevens__MorningHasBroken.mp3}" "C:\Temp\\CatStevens__MorningHasBroken.mp4"
+
+"C:\Program Files (x86)\VideoLAN\VLC\vlc.exe" --sout "#transcode{vcodec=none,acodec=mp3,ab=128,channels=2,samplerate=44100}:std{access=file,mux=raw,dst=AngurBala__AashileEBhangaGhare.mp4}" "AngurBala__AashileEBhangaGhare.mp4"
+

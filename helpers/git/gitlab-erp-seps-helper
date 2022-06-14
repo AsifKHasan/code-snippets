@@ -1,0 +1,238 @@
+cd /home/asif/projects/spectrum/erp-seps
+D:\projects\spectrum\erp-seps
+
+# create project directories
+mkdir grp-app
+mkdir grp-data
+mkdir grp-devops
+mkdir grp-legacy
+mkdir grp-proto
+mkdir grp-scripts
+mkdir grp-service
+mkdir grp-testing
+mkdir grp-web
+
+
+# clone repositories
+git clone git@gitlab.com:erp71/seps.git
+
+
+pushd grp-app
+git clone git@gitlab.com:erp71/grp-app/grp-global-app.git
+git clone git@gitlab.com:erp71/grp-app/grp-mobile-app-android.git
+git clone git@gitlab.com:erp71/grp-app/grp-mobile-app-ios.git
+git clone git@gitlab.com:erp71/grp-app/mem-app.git
+popd
+
+
+pushd grp-data
+git clone git@gitlab.com:erp71/grp-data/daas-accounts.git
+git clone git@gitlab.com:erp71/grp-data/data-service.git
+popd
+
+
+pushd grp-devops
+git clone git@gitlab.com:erp71/grp-devops/ast-deployment-script.git
+git clone git@gitlab.com:erp71/grp-devops/automated-deployment.git
+git clone git@gitlab.com:erp71/grp-devops/automation-scripts.git
+git clone git@gitlab.com:erp71/grp-devops/cmn-automatic-deployment.git
+git clone git@gitlab.com:erp71/grp-devops/database-migration-script.git
+git clone git@gitlab.com:erp71/grp-devops/devops-pipeline-cokreates.git
+git clone git@gitlab.com:erp71/grp-devops/devops-tsd-to-ddl.git
+git clone git@gitlab.com:erp71/grp-devops/dummy-microservice-eureka.git
+git clone git@gitlab.com:erp71/grp-devops/dummy-microservice-nodeservice.git
+git clone git@gitlab.com:erp71/grp-devops/dummy-microservice-nodeservice1.git
+git clone git@gitlab.com:erp71/grp-devops/dummy-microservice-zuul.git
+git clone git@gitlab.com:erp71/grp-devops/dummy-springboot-repo.git
+git clone git@gitlab.com:erp71/grp-devops/environment-setup.git
+git clone git@gitlab.com:erp71/grp-devops/grp-jenkins-scripts.git
+popd
+
+
+pushd grp-legacy
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-auth-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-entitlement-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-event-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-file-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-gateway-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-general-setup-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-inventory-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-libraries-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-meeting-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-notification-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-organogram-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-party-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-pds-search-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-pds-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-registry-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-security-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-user-search-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-bcc-user-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-inventory-inspection.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-jasper-report.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-ui-bcc-frontend-service.git
+git clone git@gitlab.com:erp71/grp-legacy/bcc-ui-bcc-ui-service.git
+popd
+
+
+pushd grp-proto
+git clone git@gitlab.com:erp71/grp-proto/mem-inv.git
+popd
+
+
+pushd grp-scripts
+git clone git@gitlab.com:erp71/grp-scripts/cmn-enothi-integration.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-schema-visualizer.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-sdd-generation-api.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-sdd-generation-dd.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-sdd-generation-ux.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-srs-generation.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-tsd-to-ddl.git
+git clone git@gitlab.com:erp71/grp-scripts/cmn-user-manual-generation.git
+popd
+
+
+pushd grp-service
+git clone git@gitlab.com:erp71/grp-service/acc-service-acc-vat-tax-ait.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-budget.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-central-accounts.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-chart-of-accounts.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-common.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-earned-revenue.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-expenditure.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-fund-management.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-inventory.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-loan-management.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-payroll-management.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-pension.git
+git clone git@gitlab.com:erp71/grp-service/acc-service-report.git
+git clone git@gitlab.com:erp71/grp-service/ast-com-acq-service.git
+git clone git@gitlab.com:erp71/grp-service/astprc-cmn-master-service.git
+git clone git@gitlab.com:erp71/grp-service/astprc-employee-service.git
+git clone git@gitlab.com:erp71/grp-service/astprc-report-service.git
+git clone git@gitlab.com:erp71/grp-service/astprc-sec-master-service.git
+git clone git@gitlab.com:erp71/grp-service/aud-service-common.git
+git clone git@gitlab.com:erp71/grp-service/aud-service-coordination.git
+git clone git@gitlab.com:erp71/grp-service/aud-service-delegation.git
+git clone git@gitlab.com:erp71/grp-service/aud-service-followup.git
+git clone git@gitlab.com:erp71/grp-service/aud-service-report.git
+git clone git@gitlab.com:erp71/grp-service/aud-service-reporting.git
+git clone git@gitlab.com:erp71/grp-service/bud-service-adjustment.git
+git clone git@gitlab.com:erp71/grp-service/bud-service-common.git
+git clone git@gitlab.com:erp71/grp-service/bud-service-projection.git
+git clone git@gitlab.com:erp71/grp-service/bud-service-report.git
+git clone git@gitlab.com:erp71/grp-service/cmn-cfg-service.git
+git clone git@gitlab.com:erp71/grp-service/cmn-core-service.git
+git clone git@gitlab.com:erp71/grp-service/cmn-item-service.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-calendar.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-config-server.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-configuration.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-configuration-git.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-document-generation.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-eureka.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-file-management.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-filemanager.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-global.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-hystrix.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-item.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-notification.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-organogram.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-organogram-global.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-organogram-v2.git
+git clone git@gitlab.com:erp71/grp-service/cmn-service-zuul.git
+git clone git@gitlab.com:erp71/grp-service/event-service-core.git
+git clone git@gitlab.com:erp71/grp-service/event-service-doc-management.git
+git clone git@gitlab.com:erp71/grp-service/event-service-event-details.git
+git clone git@gitlab.com:erp71/grp-service/event-service-guest.git
+git clone git@gitlab.com:erp71/grp-service/event-service-invitee.git
+git clone git@gitlab.com:erp71/grp-service/event-service-master-settings.git
+git clone git@gitlab.com:erp71/grp-service/event-service-notifications.git
+git clone git@gitlab.com:erp71/grp-service/event-service-venue.git
+git clone git@gitlab.com:erp71/grp-service/grp-prj-models.git
+git clone git@gitlab.com:erp71/grp-service/grp-prj-service.git
+git clone git@gitlab.com:erp71/grp-service/grp-service-client.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-acr.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-approval-engine.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-approval-engine-stakeholder.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-attendance.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-award-publication.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-circulation-engine.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-configuration.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-data-importer.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-data-importer-stakeholder.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-disciplinary-action.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-doc-management.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-doc-management-stakeholder.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-leave.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-loan.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-payroll.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-pension-retirement.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-pim.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-pim-new.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-promotion.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-role-management.git
+git clone git@gitlab.com:erp71/grp-service/hrm-service-training.git
+git clone git@gitlab.com:erp71/grp-service/inv-approval-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-audit-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-catalogue-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-configuration-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-entitlement-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-inspection-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-item-in-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-item-out-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-party-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-report-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-requisition-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-store-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-transfer-service.git
+git clone git@gitlab.com:erp71/grp-service/inv-uom-service.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-access-control.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-accounts.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-circulation.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-doc-management.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-event-log.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-groups.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-guests.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-invitees.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-master-settings.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-meeting-details.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-meetings.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-schedule.git
+git clone git@gitlab.com:erp71/grp-service/mem-service-zipkin.git
+git clone git@gitlab.com:erp71/grp-service/prc-app-req-service.git
+git clone git@gitlab.com:erp71/grp-service/prc-app-service.git
+git clone git@gitlab.com:erp71/grp-service/prc-core-procure-service.git
+git clone git@gitlab.com:erp71/grp-service/prc-mstr-service.git
+git clone git@gitlab.com:erp71/grp-service/prc-report-service.git
+git clone git@gitlab.com:erp71/grp-service/prj-service-goals.git
+git clone git@gitlab.com:erp71/grp-service/sec-service.git
+git clone git@gitlab.com:erp71/grp-service/sec-service-auth.git
+git clone git@gitlab.com:erp71/grp-service/sec-service-auth-test.git
+git clone git@gitlab.com:erp71/grp-service/sec-service-resource.git
+popd
+
+
+pushd grp-testing
+git clone git@gitlab.com:erp71/grp-testing/automated-testing.git
+popd
+
+
+pushd grp-web
+git clone git@gitlab.com:erp71/grp-web/acc-web.git
+git clone git@gitlab.com:erp71/grp-web/asset-skeleton-web.git
+git clone git@gitlab.com:erp71/grp-web/ast-web.git
+git clone git@gitlab.com:erp71/grp-web/aud-web.git
+git clone git@gitlab.com:erp71/grp-web/bud-web.git
+git clone git@gitlab.com:erp71/grp-web/cmn-general-web.git
+git clone git@gitlab.com:erp71/grp-web/cmn-office-web.git
+git clone git@gitlab.com:erp71/grp-web/cmn-service-sso-web.git
+git clone git@gitlab.com:erp71/grp-web/cmn-ux-guideline.git
+git clone git@gitlab.com:erp71/grp-web/cmn-web.git
+git clone git@gitlab.com:erp71/grp-web/event-web.git
+git clone git@gitlab.com:erp71/grp-web/grp-prj-webui.git
+git clone git@gitlab.com:erp71/grp-web/hrm-web-v2.git
+git clone git@gitlab.com:erp71/grp-web/mem-web.git
+git clone git@gitlab.com:erp71/grp-web/prc-web.git
+git clone git@gitlab.com:erp71/grp-web/sec-web.git
+popd

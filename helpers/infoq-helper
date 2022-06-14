@@ -1,0 +1,9 @@
+C:\Programs\rtmpdump-2.3\rtmpdump.exe -r rtmpe://video.infoq.com/cfx/st/presentations/11-oct-springdatajpa.mp4 -o "C:\Temp\Spring Data JPA - Repositories Done Right.flv"
+
+
+16:34:08:382	--:--:--	NetConnection.Connect.Success ( rtmpe://video.infoq.com/cfx/st/ ) 
+16:34:09:122	--:--:--	NetStream.Play.Start ( presentations/10-oct-datastores ) 
+16:34:09:126	--:--:--	NetStream.Play.Reset ( presentations/10-oct-datastores ) 
+16:34:09:130	--:--:--	NetConnection.URI  ( rtmpe://video.infoq.com:1935/cfx/st ) 
+16:34:09:130	--:--:--	NetStream.First.Byte
+16:34:09:273	--:--:--	NetStream.Buffer.Full
