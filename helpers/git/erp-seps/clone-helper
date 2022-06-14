@@ -1,5 +1,7 @@
 cd /home/asif/projects/spectrum/erp-seps
-D:\projects\spectrum\erp-seps
+cd D:\projects\spectrum\erp-seps
+
+start-ssh-agent.cmd
 
 # create project directories
 mkdir grp-app

@@ -1,0 +1,229 @@
+cd /home/asif/projects/spectrum/erp-seps
+
+cd D:\projects\spectrum\erp-seps
+start-ssh-agent.cmd
+
+# pull repositories
+pushd seps
+git pull
+popd
+
+pushd grp-app
+pushd grp-global-app & git pull & popd
+pushd grp-mobile-app-android & git pull & popd
+pushd grp-mobile-app-ios & git pull & popd
+pushd mem-app & git pull & popd
+popd
+
+
+pushd grp-data
+pushd daas-accounts & git pull & popd
+pushd data-service & git pull & popd
+popd
+
+
+pushd grp-devops
+pushd ast-deployment-script & git pull & popd
+pushd automated-deployment & git pull & popd
+pushd automation-scripts & git pull & popd
+pushd cmn-automatic-deployment & git pull & popd
+pushd database-migration-script & git pull & popd
+pushd devops-pipeline-cokreates & git pull & popd
+pushd devops-tsd-to-ddl & git pull & popd
+pushd dummy-microservice-eureka & git pull & popd
+pushd dummy-microservice-nodeservice & git pull & popd
+pushd dummy-microservice-nodeservice1 & git pull & popd
+pushd dummy-microservice-zuul & git pull & popd
+pushd dummy-springboot-repo & git pull & popd
+pushd environment-setup & git pull & popd
+pushd grp-jenkins-scripts & git pull & popd
+popd
+
+
+pushd grp-legacy
+pushd bcc-bcc-auth-service & git pull & popd
+pushd bcc-bcc-entitlement-service & git pull & popd
+pushd bcc-bcc-event-service & git pull & popd
+pushd bcc-bcc-file-service & git pull & popd
+pushd bcc-bcc-gateway-service & git pull & popd
+pushd bcc-bcc-general-setup-service & git pull & popd
+pushd bcc-bcc-inventory-service & git pull & popd
+pushd bcc-bcc-libraries-service & git pull & popd
+pushd bcc-bcc-meeting-service & git pull & popd
+pushd bcc-bcc-notification-service & git pull & popd
+pushd bcc-bcc-organogram-service & git pull & popd
+pushd bcc-bcc-party-service & git pull & popd
+pushd bcc-bcc-pds-search-service & git pull & popd
+pushd bcc-bcc-pds-service & git pull & popd
+pushd bcc-bcc-registry-service & git pull & popd
+pushd bcc-bcc-security-service & git pull & popd
+pushd bcc-bcc-user-search-service & git pull & popd
+pushd bcc-bcc-user-service & git pull & popd
+pushd bcc-inventory-inspection & git pull & popd
+pushd bcc-jasper-report & git pull & popd
+pushd bcc-ui-bcc-frontend-service & git pull & popd
+pushd bcc-ui-bcc-ui-service & git pull & popd
+popd
+
+
+pushd grp-proto
+pushd mem-inv & git pull & popd
+popd
+
+
+pushd grp-scripts
+pushd cmn-enothi-integration & git pull & popd
+pushd cmn-schema-visualizer & git pull & popd
+pushd cmn-sdd-generation-api & git pull & popd
+pushd cmn-sdd-generation-dd & git pull & popd
+pushd cmn-sdd-generation-ux & git pull & popd
+pushd cmn-srs-generation & git pull & popd
+pushd cmn-tsd-to-ddl & git pull & popd
+pushd cmn-user-manual-generation & git pull & popd
+popd
+
+
+pushd grp-service
+pushd acc-service-acc-vat-tax-ait & git pull & popd
+pushd acc-service-budget & git pull & popd
+pushd acc-service-central-accounts & git pull & popd
+pushd acc-service-chart-of-accounts & git pull & popd
+pushd acc-service-common & git pull & popd
+pushd acc-service-earned-revenue & git pull & popd
+pushd acc-service-expenditure & git pull & popd
+pushd acc-service-fund-management & git pull & popd
+pushd acc-service-inventory & git pull & popd
+pushd acc-service-loan-management & git pull & popd
+pushd acc-service-payroll-management & git pull & popd
+pushd acc-service-pension & git pull & popd
+pushd acc-service-report & git pull & popd
+pushd ast-com-acq-service & git pull & popd
+pushd astprc-cmn-master-service & git pull & popd
+pushd astprc-employee-service & git pull & popd
+pushd astprc-report-service & git pull & popd
+pushd astprc-sec-master-service & git pull & popd
+pushd aud-service-common & git pull & popd
+pushd aud-service-coordination & git pull & popd
+pushd aud-service-delegation & git pull & popd
+pushd aud-service-followup & git pull & popd
+pushd aud-service-report & git pull & popd
+pushd aud-service-reporting & git pull & popd
+pushd bud-service-adjustment & git pull & popd
+pushd bud-service-common & git pull & popd
+pushd bud-service-projection & git pull & popd
+pushd bud-service-report & git pull & popd
+pushd cmn-cfg-service & git pull & popd
+pushd cmn-core-service & git pull & popd
+pushd cmn-item-service & git pull & popd
+pushd cmn-service & git pull & popd
+pushd cmn-service-calendar & git pull & popd
+pushd cmn-service-config-server & git pull & popd
+pushd cmn-service-configuration & git pull & popd
+pushd cmn-service-configuration-git & git pull & popd
+pushd cmn-service-document-generation & git pull & popd
+pushd cmn-service-eureka & git pull & popd
+pushd cmn-service-file-management & git pull & popd
+pushd cmn-service-filemanager & git pull & popd
+pushd cmn-service-global & git pull & popd
+pushd cmn-service-hystrix & git pull & popd
+pushd cmn-service-item & git pull & popd
+pushd cmn-service-notification & git pull & popd
+pushd cmn-service-organogram & git pull & popd
+pushd cmn-service-organogram-global & git pull & popd
+pushd cmn-service-organogram-v2 & git pull & popd
+pushd cmn-service-zuul & git pull & popd
+pushd event-service-core & git pull & popd
+pushd event-service-doc-management & git pull & popd
+pushd event-service-event-details & git pull & popd
+pushd event-service-guest & git pull & popd
+pushd event-service-invitee & git pull & popd
+pushd event-service-master-settings & git pull & popd
+pushd event-service-notifications & git pull & popd
+pushd event-service-venue & git pull & popd
+pushd grp-prj-models & git pull & popd
+pushd grp-prj-service & git pull & popd
+pushd grp-service-client & git pull & popd
+pushd hrm-service-acr & git pull & popd
+pushd hrm-service-approval-engine & git pull & popd
+pushd hrm-service-approval-engine-stakeholder & git pull & popd
+pushd hrm-service-attendance & git pull & popd
+pushd hrm-service-award-publication & git pull & popd
+pushd hrm-service-circulation-engine & git pull & popd
+pushd hrm-service-configuration & git pull & popd
+pushd hrm-service-data-importer & git pull & popd
+pushd hrm-service-data-importer-stakeholder & git pull & popd
+pushd hrm-service-disciplinary-action & git pull & popd
+pushd hrm-service-doc-management & git pull & popd
+pushd hrm-service-doc-management-stakeholder & git pull & popd
+pushd hrm-service-leave & git pull & popd
+pushd hrm-service-loan & git pull & popd
+pushd hrm-service-payroll & git pull & popd
+pushd hrm-service-pension-retirement & git pull & popd
+pushd hrm-service-pim & git pull & popd
+pushd hrm-service-pim-new & git pull & popd
+pushd hrm-service-promotion & git pull & popd
+pushd hrm-service-role-management & git pull & popd
+pushd hrm-service-training & git pull & popd
+pushd inv-approval-service & git pull & popd
+pushd inv-audit-service & git pull & popd
+pushd inv-catalogue-service & git pull & popd
+pushd inv-configuration-service & git pull & popd
+pushd inv-entitlement-service & git pull & popd
+pushd inv-inspection-service & git pull & popd
+pushd inv-item-in-service & git pull & popd
+pushd inv-item-out-service & git pull & popd
+pushd inv-party-service & git pull & popd
+pushd inv-report-service & git pull & popd
+pushd inv-requisition-service & git pull & popd
+pushd inv-store-service & git pull & popd
+pushd inv-transfer-service & git pull & popd
+pushd inv-uom-service & git pull & popd
+pushd mem-service-access-control & git pull & popd
+pushd mem-service-accounts & git pull & popd
+pushd mem-service-circulation & git pull & popd
+pushd mem-service-doc-management & git pull & popd
+pushd mem-service-event-log & git pull & popd
+pushd mem-service-groups & git pull & popd
+pushd mem-service-guests & git pull & popd
+pushd mem-service-invitees & git pull & popd
+pushd mem-service-master-settings & git pull & popd
+pushd mem-service-meeting-details & git pull & popd
+pushd mem-service-meetings & git pull & popd
+pushd mem-service-schedule & git pull & popd
+pushd mem-service-zipkin & git pull & popd
+pushd prc-app-req-service & git pull & popd
+pushd prc-app-service & git pull & popd
+pushd prc-core-procure-service & git pull & popd
+pushd prc-mstr-service & git pull & popd
+pushd prc-report-service & git pull & popd
+pushd prj-service-goals & git pull & popd
+pushd sec-service & git pull & popd
+pushd sec-service-auth & git pull & popd
+pushd sec-service-auth-test & git pull & popd
+pushd sec-service-resource & git pull & popd
+popd
+
+
+pushd grp-testing
+pushd automated-testing & git pull & popd
+popd
+
+
+pushd grp-web
+pushd acc-web & git pull & popd
+pushd asset-skeleton-web & git pull & popd
+pushd ast-web & git pull & popd
+pushd aud-web & git pull & popd
+pushd bud-web & git pull & popd
+pushd cmn-general-web & git pull & popd
+pushd cmn-office-web & git pull & popd
+pushd cmn-service-sso-web & git pull & popd
+pushd cmn-ux-guideline & git pull & popd
+pushd cmn-web & git pull & popd
+pushd event-web & git pull & popd
+pushd grp-prj-webui & git pull & popd
+pushd hrm-web-v2 & git pull & popd
+pushd mem-web & git pull & popd
+pushd prc-web & git pull & popd
+pushd sec-web & git pull & popd
+popd

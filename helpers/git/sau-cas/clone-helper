@@ -1,6 +1,8 @@
 cd /home/asif/projects/spectrum/secl-cas/sau
 cd D:\projects\spectrum\secl-cas\sau
 
+start-ssh-agent.cmd
+
 git clone git@gitlab.com:secl-cas/sau/01-public-api.git
 git clone git@gitlab.com:secl-cas/sau/02-public-web.git
 git clone git@gitlab.com:secl-cas/sau/03-admin-api.git
@@ -9,39 +11,3 @@ git clone git@gitlab.com:secl-cas/sau/05-mobile.git
 git clone git@gitlab.com:secl-cas/sau/06-report.git
 git clone git@gitlab.com:secl-cas/sau/07-document.git
 git clone git@gitlab.com:secl-cas/sau/08-nginx.git
-
-
-
-
-cd /home/asif/projects/spectrum/secl-cas/sau
-pushd 01-public-api
-git pull
-popd
-
-pushd 02-public-web
-git pull
-popd
-
-pushd 03-admin-api
-git pull
-popd
-
-pushd 04-admin-web
-git pull
-popd
-
-pushd 05-mobile
-git pull
-popd
-
-pushd 06-report
-git pull
-popd
-
-pushd 07-document
-git pull
-popd
-
-pushd 08-nginx
-git pull
-popd
