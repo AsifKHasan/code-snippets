@@ -11,3 +11,4 @@ pushd 05-mobile & git pull & popd
 pushd 06-report & git pull & popd
 pushd 07-document & git pull & popd
 pushd 08-nginx & git pull & popd
+pushd 09-sms & git pull & popd

@@ -11,3 +11,4 @@ git clone git@gitlab.com:secl-cas/sau/05-mobile.git
 git clone git@gitlab.com:secl-cas/sau/06-report.git
 git clone git@gitlab.com:secl-cas/sau/07-document.git
 git clone git@gitlab.com:secl-cas/sau/08-nginx.git
+git clone git@gitlab.com:secl-cas/sau/09-sms.git
