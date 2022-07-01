@@ -1,0 +1,40 @@
+{
+  "new-page": true,
+  "keep-with-next": true,
+  "keep-with-previous": true,
+
+  "style": "Figure",
+  "style": "Table",
+
+  "content": "out-of-cell",
+  "table-spacing": "no-spacing",
+  "repeat-rows": 1,
+
+  "page-number": "short",
+  "page-number": "long",
+}
+
+{
+  "footnote": {
+    "*": "এস, আর, ও নং ২০-আইন/২০০৮, তারিখঃ ২৭ জানুয়ারি, ২০০৮ দ্বারা ৩১ জানুয়ারি, ২০০৮ তারিখকে উক্ত আইন কার্যকর হইয়াছে।"
+  }
+}
+
+{
+  "footnote": {
+    "১": "পাবলিক প্রকিউরমেন্ট (দ্বিতীয় সংশোধন) আইন, ২০০৯ (২০০৯ সনের ৬৫নং আইন) এর ২ ধারা বলে সন্নিবেশিত।",
+  },
+}
+
+{
+  "footnote": {
+    "১": "দফা ১৬ পাবলিক প্রকিউরমেন্ট (সংশোধন) আইন, ২০১৬ (২০১৬ সনের ৩৭নং আইন)-এর ২(কে) ধারাবলে প্রতিস্থাপিত।",
+    "২": "দফা ২৪ পাবলিক প্রকিউরমেন্ট (সংশোধন) আইন, ২০১৬ (২০১৬ সনের ৩নং আইন)-এর ২(খ) ধারাবলে প্রতিস্থাপিত।",
+  },
+}
+
+
+footnotes in cell contents are defined as FN#xyz where xyz is the footnote key
+
+note_json = '{"footnote": {"*": "এস, আর, ও নং ২০-আইন/২০০৮, তারিখঃ ২৭ জানুয়ারি, ২০০৮ দ্বারা ৩১ জানুয়ারি, ২০০৮ তারিখকে উক্ত আইন কার্যকর হইয়াছে।"}}'
+note_dict = json.loads(note_json)
