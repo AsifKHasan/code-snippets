@@ -1,8 +1,13 @@
 # pdf pages as png
-pdftocairo -png -r 300 তারাশঙ্কর-বন্দ্যোপাধ্যায়__কবি.pdf abc
+pdftocairo -png -r 300 PPA-2006__PPR-2008__2019-01.pdf abc
 
 # ocr an image for text
-tesseract abc/abc-06.png abc-06 -l ben
+tesseract abc-001.png abc-001 -l ben
+
+for f in *;
+do
+  tesseract "$f" "$f" -l ben
+done
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
 qpdf --compression-level=9 --compress-streams=y --recompress-flate --optimize-images --linearize "sophos-xg-series-appliances-brna.pdf" "sophos-xg-series-appliances-brna-new.pdf"
