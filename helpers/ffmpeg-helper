@@ -1,3 +1,16 @@
+pip install webrtcvad
+pip install rhasspy-silence
+pip install pydub
+
+
+sox "C:\Users\Asif Hasan\Downloads\audio\somoy-tv.wav" -t raw - | python -m rhasspysilence --quiet --split-dir "C:\Users\Asif Hasan\Downloads\audio\splits" --silence-seconds 1
+sox "C:\Users\Asif Hasan\Downloads\audio\somoy-tv.wav" -t raw - | python -m rhasspysilence --min-seconds 5
+
+
+
+
+
+
 youtube-dl https://www.youtube.com/watch?v=SETrurolzMo
 ffmpeg -i somoy-tv.mp4 somoy-tv.wav
 sox somoy-tv.wav somoy-tv-.wav silence 1 1.0 0% 1 2.0 0% : newfile : restart
@@ -14,17 +27,37 @@ ffmpeg -i set-2-3.MOV set-2-3.wav
 sox set-1-1.wav set-1-1-.wav silence 1 0.5 2% 1 2.0 2% : newfile : restart
 
 
-asr_test_commandline.py --audio-file-path C:\Users\Asif\Downloads\audio\somoy-tv.wav --reference-text="আমি বাংলা ভাষায় কথা" | clip
+asr_test_commandline.py --audio-file-path "C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-1.wav" | clip
 
 https://nlp.celloscope.net/nlp/dataset/v1/audio/text-to-speech?text="আমি বাংলা ভাষায় কথা"
 
 
-curl -H 'Accept: application/json' -H 'Content-Type: application/json' -X POST -d'{"referenceText": ""}' -F logo=@filename [URL] https://nlp.celloscope.net/nlp/dataset/v1/audio/speech-to-text  | python -m json.tool
+audio    : C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-0.wav
+duration :   6.47 secoonds
+Processing took 2.15 seconds
+পদ্মা সেতুর পর সবার নজর এখন কর্ণফুলী ট্যানালের দিকে এটি এখন আর স্বপ্ন নয় অনেকটাই বাস্তব।
 
+audio    : C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-1.wav
+duration :   5.77 secoonds
+Processing took 1.92 seconds
+চট্টগ্রামে কর্ণফুলী নদীর তলদেশে নির্মাণাধীন দক্ষিণ এশিয়ার প্রথমেই টানের এখন দৃশ্যবাদ
 
+audio    : C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-2.wav
+duration :   5.63 secoonds
+Processing took 2.01 seconds
+কনসিটি টুটাল মডেলের টানেলটি 86 ভাগ কাজ শেষ চলছে আগামী ডিসেম্বরের চালু
 
+audio    : C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-3.wav
+duration :   4.42 secoonds
+Processing took 1.68 seconds
+এরপরই প্রথমবারের মতো টানেল চোখে প্রবেশ করবে বাংলাদেশ
 
-recognized text : 
-পদ্মা সেতুর পর সবার নজর এখন কর্ণফুলী টানেলের দিকে এটি এখন আর স্বপ্ন নয় অনেকটাই বাস্তব চট্টগ্রামে কর্ণফুলী নদীর তলদেশের নির্মাণাধীন দক্ষিণ এশিয়ার প্রথমেই টানের এখন দৃশ্যবাদ বন সিটি টানেলটি 86 ভাগ কাজ শেষ চলছে আগাপি ডিসেম্বরের পরের চালুর তোড়জোড়জোড় এরপর এই প্রথমবারের মতো টানেল যুগে প্রবেশ করবে বাংলাদেশ
-Processing took 6.51 seconds
-Similarity with reference text is -1415.79%
+audio    : C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-5.wav
+duration :  17.06 secoonds
+Processing took 4.35 seconds
+3. 4 কিলোমিটার দীর্ঘ টানেলের নির্মাণ কাজ শুরু হয় 2016 সালে সাঙ্গাহের ওয়ান সিটি টু টাউন আদলের এই টানেল চালু হলে দেশি-বিদেশি বিনিয়োগ বৃদ্ধির পাশাপাশি দক্ষিণ চট্টগ্রামের শিল্পায়ন আবাসন পর্যটন শিল্পের নতুন দোয়া খুলবে বলছেন ব্যবসায়ীরা
+
+audio    : C:/Users/Asif Hasan/Downloads/audio/splits/somoy-tv-6.wav
+duration :  38.81 secoonds
+Processing took 8.08 seconds
+এই টানে চালু হওয়ার পরের দিন থেকেই যে এটা বিরাট একটা শহর উপর সেটা নয় কিন্তু ধীরে ধীরে বিরাট একটা পরিবর্তন আমরা আশা প্রত্যাশা করতেছি এবং সেটা একেবারে একটি কক্সবাজার পর্যন্ত এটা বিস্তৃত হবে বাংলাদেশ এবং চীনের যৌথ অর্থায়নে প্রায় 10374 কোটি টাকার প্রকল্পটি বাস্তবায়ন করছে চায়না কমিউনিকেশন কনস্ট্রাকশন কোম্পানির যমুনা নিয়েও
