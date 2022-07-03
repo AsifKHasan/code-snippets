@@ -1,0 +1,8 @@
+# conver MOV video to WAV audio
+ffmpeg -i set-1-1.MOV set-1-1.wav
+ffmpeg -i set-1-2.MOV set-1-2.wav
+ffmpeg -i set-2-1.MOV set-2-1.wav
+ffmpeg -i set-2-2.MOV set-2-2.wav
+ffmpeg -i set-2-3.MOV set-2-3.wav
+
+# split WAV audio into smaller parts when voice is paused
