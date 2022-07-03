@@ -1,4 +1,9 @@
-# conver MOV video to WAV audio
+youtube-dl https://www.youtube.com/watch?v=SETrurolzMo
+ffmpeg -i somoy-tv.mp4 somoy-tv.wav
+sox somoy-tv.wav somoy-tv-.wav silence 1 1.0 0% 1 2.0 0% : newfile : restart
+
+
+# convert MOV video to WAV audio
 ffmpeg -i set-1-1.MOV set-1-1.wav
 ffmpeg -i set-1-2.MOV set-1-2.wav
 ffmpeg -i set-2-1.MOV set-2-1.wav
@@ -7,3 +12,19 @@ ffmpeg -i set-2-3.MOV set-2-3.wav
 
 # split WAV audio into smaller parts when voice is paused
 sox set-1-1.wav set-1-1-.wav silence 1 0.5 2% 1 2.0 2% : newfile : restart
+
+
+asr_test_commandline.py --audio-file-path C:\Users\Asif\Downloads\audio\somoy-tv.wav --reference-text="আমি বাংলা ভাষায় কথা" | clip
+
+https://nlp.celloscope.net/nlp/dataset/v1/audio/text-to-speech?text="আমি বাংলা ভাষায় কথা"
+
+
+curl -H 'Accept: application/json' -H 'Content-Type: application/json' -X POST -d'{"referenceText": ""}' -F logo=@filename [URL] https://nlp.celloscope.net/nlp/dataset/v1/audio/speech-to-text  | python -m json.tool
+
+
+
+
+recognized text : 
+পদ্মা সেতুর পর সবার নজর এখন কর্ণফুলী টানেলের দিকে এটি এখন আর স্বপ্ন নয় অনেকটাই বাস্তব চট্টগ্রামে কর্ণফুলী নদীর তলদেশের নির্মাণাধীন দক্ষিণ এশিয়ার প্রথমেই টানের এখন দৃশ্যবাদ বন সিটি টানেলটি 86 ভাগ কাজ শেষ চলছে আগাপি ডিসেম্বরের পরের চালুর তোড়জোড়জোড় এরপর এই প্রথমবারের মতো টানেল যুগে প্রবেশ করবে বাংলাদেশ
+Processing took 6.51 seconds
+Similarity with reference text is -1415.79%
