@@ -6,3 +6,4 @@ ffmpeg -i set-2-2.MOV set-2-2.wav
 ffmpeg -i set-2-3.MOV set-2-3.wav
 
 # split WAV audio into smaller parts when voice is paused
+sox set-1-1.wav set-1-1-.wav silence 1 0.5 2% 1 2.0 2% : newfile : restart
