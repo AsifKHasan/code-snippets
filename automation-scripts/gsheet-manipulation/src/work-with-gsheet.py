@@ -3,13 +3,20 @@
 import argparse
 
 from gsheet.gsheet_util import *
+
 from task.gsheet_tasks import *
+from task.resume_tasks import *
+
 from helper.logger import *
 
 def do_something(gsheet):
     # bulk_duplicate_worksheet(gsheet)
-    order_worksheets(gsheet)
-    link_cells_to_worksheet(gsheet)
+    # order_worksheets(gsheet)
+    # link_cells_to_worksheet(gsheet)
+
+    # BEGIN resume related
+    create_06_job_history_new(gsheet)
+    # END   resume related
 
 
 if __name__ == '__main__':

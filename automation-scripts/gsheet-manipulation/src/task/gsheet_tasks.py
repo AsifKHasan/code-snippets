@@ -70,10 +70,6 @@ def link_cells_to_worksheet(gsheet):
 
                 except WorksheetNotFound as e:
                     warn(f".. [{cell.value}] is not a valid worksheet .. skipping")
-
-
-
-
     
     except WorksheetNotFound as e:
         error(f"worksheet {worksheet_name} not found")
