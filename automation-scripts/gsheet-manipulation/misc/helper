@@ -1,5 +1,7 @@
 cd D:\projects\asif@github\code-snippets\automation-scripts\gsheet-manipulation
-work-with-gsheet.bat PPA-2006__2019-01
+cd /home/asif/projects/asif@github/code-snippets/automation-scripts/gsheet-manipulation
 
+
+work-with-gsheet.bat PPA-2006__2019-01
 work-with-gsheet.bat Résumé__Khandakar.Asif.Hasan
 work-with-gsheet.bat Résumé__Md.Jamal.Uddin
