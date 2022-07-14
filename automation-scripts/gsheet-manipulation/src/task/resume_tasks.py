@@ -6,8 +6,6 @@ from gspread_formatting import *
 
 from pprint import pprint
 
-from gsheet.gsheet_util import *
-
 from helper.utils import *
 from helper.logger import *
 
@@ -28,8 +26,8 @@ GROUP_VALUE_INDEX = {
 }
 
 JOB_HISTORY_NEW_WS_SPECS = {
-  'num-columns': 8,
-  'frozen-rows': 2,
+  'num-columns': 5,
+  'frozen-rows': 3,
   'frozen-columns': 0,
 
   'columns': {
@@ -46,8 +44,8 @@ JOB_HISTORY_NEW_WS_SPECS = {
     'D1:D': {'weight': 'normal', 'halign': 'center', 'merge': False},
     'E1:E': {'weight': 'normal', 'halign': 'left', 'merge': False},
 
-    'B3:B': {'format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
-    'C3:C': {'format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
+    'B3:B': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
+    'C3:C': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
 
     'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
     'B2:E2': {'value': 'content', 'weight': 'bold', 'halign': 'left'},
@@ -72,7 +70,7 @@ JOB_HISTORY_NEW_WS_SPECS = {
 def create_06_job_history_new(gsheet):
     # get job-histories data from 06-job-history
     job_history_ws_name = '06-job-history'
-    job_history_ws = gsheet.worksheet(job_history_ws_name)
+    job_history_ws = gsheet.gspread_sheet.worksheet(job_history_ws_name)
     if job_history_ws is None:
         error(f".. worksheet {job_history_ws_name} not found")
         return
@@ -82,45 +80,54 @@ def create_06_job_history_new(gsheet):
 
     # duplicate the *06-job-history* as *06-job-history-NEW* worksheet
     target_ws_name = '06-job-history-NEW'
-    info(f"duplicating worksheet {job_history_ws_name} as {target_ws_name}")
+    info(f"duplicating .. worksheet {job_history_ws_name} as {target_ws_name}")
     target_ws = job_history_ws.duplicate(new_sheet_name=target_ws_name)
     if target_ws:
-        info(f"duplicated  worksheet {job_history_ws_name} as {target_ws_name}")
+        info(f"duplicated  .. worksheet {job_history_ws_name} as {target_ws_name}")
     else:
         error(f"could not duplicate   {job_history_ws_name} as {target_ws_name}")
         return
 
+    col_count = target_ws.col_count
+    row_count = target_ws.row_count
+
     # add 4 new columns at the end (after D) E, F, G, H
-    # target_ws.add_cols(4)
+    info(f"adding .. 4 new columns at E-H")
     target_ws.insert_cols([[], [], [], []], 2)
+    col_count = col_count + 3
+    info(f"added  .. 4 new columns at E-H")
+
 
     # add job_histories.count * 3 + rows at the end
     # HACK - for safety add 1000 rows at the end
     # target_ws.add_rows(job_histories.length * 3 + 1)
+    info(f"adding .. 1000 new rows at the end")
     target_ws.add_rows(1000)
+    row_count = row_count + 1000
+    info(f"added  .. 1000 new rows at the end")
 
 
     # for each column
+    info(f"resizing .. columns")
     for key, value in JOB_HISTORY_NEW_WS_SPECS['columns'].items():
         # resize the columns
+        debug(f".. resizing column {key} to {value['size']}")
         set_column_width(target_ws, key, value['size'])
+
+    info(f"resized  .. columns")
 
 
     # iterate over ranges and apply specs
-    for key, value in JOB_HISTORY_NEW_WS_SPECS['ranges'].items():
-        range = target_ws.range(key)
-        if range is None:
-            warn(f"WARN:  Range {key} not found")
-            continue
-        else:
-            # debug(f".. Range {key} found")
-            work_on_range(range=range, work_spec=value)
+    info(f"formatting .. pre-defined ranges")
+    count = gsheet.work_on_ranges(target_ws, range_work_specs=JOB_HISTORY_NEW_WS_SPECS['ranges'])
+    info(f"formatted  .. {count} pre-defined ranges")
 
 
     # iterate job-histories and create range_work_specs
     range_work_specs = {}
     current_row = 4
     index = 0
+    info(f"generating .. dynamic ranges")
     for job_history in job_histories:
         block_start_row = current_row
 
@@ -167,14 +174,16 @@ def create_06_job_history_new(gsheet):
         
         # From
         range_spec = f"B{block_start_row}:B{block_end_row}"
-        val = quote_number(job_history['from'])
-        debug(f".. From : {job_history['from']} -> {val}")
+        # val = quote_number(job_history['from'])
+        val = job_history['from']
+        # debug(f".. From : {job_history['from']} -> {val}")
         range_work_specs[range_spec] = {'value': val, 'border-color': '#b7b7b7'}
 
         # To 
         range_spec = f"C{block_start_row}:C{block_end_row}"
-        val = quote_number(job_history['to'])
-        debug(f".. To   : {job_history['to']} -> {val}")
+        # val = quote_number(job_history['to'])
+        val = job_history['to']
+        # debug(f".. To   : {job_history['to']} -> {val}")
         range_work_specs[range_spec] = {'value': val, 'border-color': '#b7b7b7'}
 
         # border around column D and E
@@ -184,49 +193,45 @@ def create_06_job_history_new(gsheet):
         index = index + 1
 
 
-    # iterate over ranges and apply specs
-    for key, value in range_work_specs.items():
-        range = target_ws.range(key)
-        if range is None:
-            warn(f"WARN:  Range {key} not found")
-            continue
-        else:
-            # debug(f".. Range {key} found")
-            work_on_range(range=range, work_spec=value)
+    info(f"generated  .. {index} dynamic ranges")
 
+    # iterate over ranges and apply specs
+    info(f"formatting .. dynamic ranges")
+    count = gsheet.work_on_ranges(target_ws, range_work_specs=range_work_specs)
+    info(f"formatted  .. {count} dynamic ranges")
 
     # remove last 3 columns
-    target_ws.deleteColumns(6, 3)
+    info(f"removing .. last 3 columns")
+    target_ws.delete_columns(6, 8)
+    col_count = col_count - 3
+    info(f"removed  .. last 3 columns")
 
     # remove all trailing blank rows
-    remove_trailing_blank_rows(target_ws)
+    info(f"removing .. trailing blank rows")
+    gsheet.remove_trailing_blank_rows(target_ws, row_count)
+    info(f"removed  .. trailing blank rows")
 
     # clear conditional formatting
-    target_ws.clearConditionalFormatRules()
+    info(f"clearing .. all conditional formatting")
+    gsheet.clear_conditional_format_rules(target_ws)
+    info(f"cleared  .. all conditional formatting")
 
-    total_rows = target_ws.getMaxRows()
-    total_columns = target_ws.getMaxColumns()
+    # conditional formatting for blank cells
+    info(f"adding .. conditional formatting for blank cells")
+    gsheet.add_conditional_formatting_for_blank_cells(target_ws, JOB_HISTORY_NEW_WS_SPECS['cell-empty-markers'])
+    info(f"added  .. conditional formatting for blank cells")
 
-    # conditional formats
-    range = target_ws.getRange(3, 1, total_rows - 2, total_columns)
+    # conditional formatting review-notes
+    info(f"adding .. conditional formatting for review-notes")
+    gsheet.add_conditional_formatting_for_review_notes(target_ws, row_count, col_count)
+    info(f"added  .. conditional formatting for review-notes")
 
-    # conditional formatting
-    add_conditional_formatting_for_blank_cells(target_ws, job_history_NBR_BSW_WS_SPECS['cell-empty-markers'])
-
-    # review-notes
-    rules = target_ws.getConditionalFormatRules()
-    rule = SpreadsheetApp.newConditionalFormatRule()
-        .setRanges([range])
-        .whenFormulaSatisfied("=not(isblank($A:$A))")
-        .setBackground('#f4cccc')
-        .build()
-    rules.push(rule)
-
-    target_ws.setConditionalFormatRules(rules)
-
-    target_ws.setFrozenRows(job_history_NBR_BSW_WS_SPECS['frozen-rows'])
-    target_ws.setFrozenColumns(job_history_NBR_BSW_WS_SPECS['frozen-columns'])
-
+    info(f"freezing .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns")
+    try:
+        target_ws.freeze(JOB_HISTORY_NEW_WS_SPECS['frozen-rows'], JOB_HISTORY_NEW_WS_SPECS['frozen-columns'])
+        info(f"freezed  .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns")
+    except Exception as e:
+        warn(str(e))
 
     
 

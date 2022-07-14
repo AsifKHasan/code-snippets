@@ -2,9 +2,9 @@
 
 import argparse
 
-from gsheet.gsheet_util import *
+from google.google_service import GoogleService
+from google.google_sheet import GoogleSheet
 
-from task.gsheet_tasks import *
 from task.resume_tasks import *
 
 from helper.logger import *
@@ -24,6 +24,7 @@ if __name__ == '__main__':
     ap.add_argument("-g", "--gsheet", required=True, help="gsheet name to work with")
     args = vars(ap.parse_args())
 
-    gsheet = open_gsheet(gsheet_name=args["gsheet"])
+    google_service = GoogleService('../conf/credential.json')
+    gsheet = GoogleSheet.open(google_service, gsheet_name=args["gsheet"])
     if gsheet:
         do_something(gsheet)
