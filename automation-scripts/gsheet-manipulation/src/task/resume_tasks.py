@@ -110,7 +110,7 @@ def create_06_job_history_new(gsheet):
     for key, value in JOB_HISTORY_NEW_WS_SPECS['ranges'].items():
         range = target_ws.range(key)
         if range is None:
-            # debug(f"WARN:  Range {key} not found")
+            warn(f"WARN:  Range {key} not found")
             continue
         else:
             # debug(f".. Range {key} found")
@@ -188,44 +188,44 @@ def create_06_job_history_new(gsheet):
     for key, value in range_work_specs.items():
         range = target_ws.range(key)
         if range is None:
-            # debug(f"WARN:  Range {key} not found")
+            warn(f"WARN:  Range {key} not found")
             continue
         else:
             # debug(f".. Range {key} found")
             work_on_range(range=range, work_spec=value)
 
 
-    # # remove last 3 columns
-    # target_ws.deleteColumns(6, 3)
+    # remove last 3 columns
+    target_ws.deleteColumns(6, 3)
 
-    # # remove all trailing blank rows
-    # remove_trailing_blank_rows(target_ws)
+    # remove all trailing blank rows
+    remove_trailing_blank_rows(target_ws)
 
-    # # clear conditional formatting
-    # target_ws.clearConditionalFormatRules()
+    # clear conditional formatting
+    target_ws.clearConditionalFormatRules()
 
-    # total_rows = target_ws.getMaxRows()
-    # total_columns = target_ws.getMaxColumns()
+    total_rows = target_ws.getMaxRows()
+    total_columns = target_ws.getMaxColumns()
 
-    # # conditional formats
-    # range = target_ws.getRange(3, 1, total_rows - 2, total_columns)
+    # conditional formats
+    range = target_ws.getRange(3, 1, total_rows - 2, total_columns)
 
-    # # conditional formatting
-    # add_conditional_formatting_for_blank_cells(target_ws, job_history_NBR_BSW_WS_SPECS['cell-empty-markers'])
+    # conditional formatting
+    add_conditional_formatting_for_blank_cells(target_ws, job_history_NBR_BSW_WS_SPECS['cell-empty-markers'])
 
-    # # review-notes
-    # rules = target_ws.getConditionalFormatRules()
-    # rule = SpreadsheetApp.newConditionalFormatRule()
-    #     .setRanges([range])
-    #     .whenFormulaSatisfied("=not(isblank($A:$A))")
-    #     .setBackground('#f4cccc')
-    #     .build()
-    # rules.push(rule)
+    # review-notes
+    rules = target_ws.getConditionalFormatRules()
+    rule = SpreadsheetApp.newConditionalFormatRule()
+        .setRanges([range])
+        .whenFormulaSatisfied("=not(isblank($A:$A))")
+        .setBackground('#f4cccc')
+        .build()
+    rules.push(rule)
 
-    # target_ws.setConditionalFormatRules(rules)
+    target_ws.setConditionalFormatRules(rules)
 
-    # target_ws.setFrozenRows(job_history_NBR_BSW_WS_SPECS['frozen-rows'])
-    # target_ws.setFrozenColumns(job_history_NBR_BSW_WS_SPECS['frozen-columns'])
+    target_ws.setFrozenRows(job_history_NBR_BSW_WS_SPECS['frozen-rows'])
+    target_ws.setFrozenColumns(job_history_NBR_BSW_WS_SPECS['frozen-columns'])
 
 
     
