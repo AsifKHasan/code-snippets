@@ -3,38 +3,6 @@
 import re
 
 
-'''split text into lines and remove spaces and any special character from the begining
-'''
-def split_and_dress(value):
-    lines = value.split('\n')
-    regex = r'^[-\s•]+'
-    lines = [re.sub(regex, '', s) for s in lines]
-    regex = r'[\s]+$'
-    lines = [re.sub(regex, '', s) for s in lines]
-
-    return lines
-
-
-
-''' hex string to RGB color tuple
-'''
-def hex_to_color(hex):
-    h = hex.lstrip('#')
-    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
-
-
-
-''' hex string to RGBA
-'''
-def hex_to_rgba(hex):
-    h = hex.lstrip('#')
-    if len(h) == 6:
-        h = h + '00'
-
-    color = tuple(int(h[i:i+2], 16) for i in (0, 2, 4, 6))
-    return {"red": color[0]/255, "green": color[1]/255, "blue": color[2]/255, "alpha": color[3]/255}
-
-
 
 ''' build a repeatCell from work_spec
 ''' 
@@ -45,6 +13,14 @@ def repeatcell_from_work_spec(range, work_spec):
     formula = None
     if 'formula' in work_spec:
         # range.setFormula(work_spec['formula'])
+        pass
+
+
+    # border-color
+    border_color = None
+    if 'border-color' in work_spec:
+        # range.setBorder(true, true, true, true, false, false, work_spec['border-color'], SpreadsheetApp.BorderStyle.SOLID)
+        # fields.append('userEnteredFormat.borders')
         pass
 
 
@@ -104,14 +80,6 @@ def repeatcell_from_work_spec(range, work_spec):
     if 'bgcolor' in work_spec:
         bg_color = work_spec['bgcolor']
         fields.append('userEnteredFormat.backgroundColor')
-
-
-    # border-color
-    border_color = None
-    if 'border-color' in work_spec:
-        # range.setBorder(true, true, true, true, false, false, work_spec['border-color'], SpreadsheetApp.BorderStyle.SOLID)
-        # fields.append('userEnteredFormat.borders')
-        pass
 
 
     # wrap
@@ -176,3 +144,35 @@ def conditional_format_rule(ranges, condition_type, condition_values, format):
 
     return rule
     
+
+
+'''split text into lines and remove spaces and any special character from the begining
+'''
+def split_and_dress(value):
+    lines = value.split('\n')
+    regex = r'^[-\s•]+'
+    lines = [re.sub(regex, '', s) for s in lines]
+    regex = r'[\s]+$'
+    lines = [re.sub(regex, '', s) for s in lines]
+
+    return lines
+
+
+
+''' hex string to RGB color tuple
+'''
+def hex_to_color(hex):
+    h = hex.lstrip('#')
+    return tuple(int(h[i:i+2], 16) for i in (0, 2, 4))
+
+
+
+''' hex string to RGBA
+'''
+def hex_to_rgba(hex):
+    h = hex.lstrip('#')
+    if len(h) == 6:
+        h = h + '00'
+
+    color = tuple(int(h[i:i+2], 16) for i in (0, 2, 4, 6))
+    return {"red": color[0]/255, "green": color[1]/255, "blue": color[2]/255, "alpha": color[3]/255}
