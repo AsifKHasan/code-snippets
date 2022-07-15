@@ -32,7 +32,7 @@ def hex_to_rgba(hex):
         h = h + '00'
 
     color = tuple(int(h[i:i+2], 16) for i in (0, 2, 4, 6))
-    return {'red': color[0]/255, 'green': color[1]/255, 'blue': color[2]/255, 'alpha': color[3]/255}
+    return {"red": color[0]/255, "green": color[1]/255, "blue": color[2]/255, "alpha": color[3]/255}
 
 
 
@@ -149,3 +149,30 @@ def repeatcell_from_work_spec(range, work_spec):
         'fields': ','.join(fields)
       }
     }
+
+
+
+''' build a boolean conditional format rule
+    ranges is a list
+    condition_type is enum (https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/other#ConditionType)
+    condition_values is a list of strings
+    format is a dict
+''' 
+def conditional_format_rule(ranges, condition_type, condition_values, format):
+    rule = {"addConditionalFormatRule": {
+                "rule": {
+                    "ranges" : ranges,
+                    "booleanRule": {
+                        "condition": {
+                            "type": condition_type,
+                            "values": [{"userEnteredValue": v} for v in condition_values]
+                        },
+                        "format": format
+                    }
+                },
+                "index": 0
+            }
+        }
+
+    return rule
+    

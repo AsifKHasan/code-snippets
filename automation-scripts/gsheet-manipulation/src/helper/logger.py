@@ -29,6 +29,9 @@ def error(msg, console=True, nesting_level=0):
 def log(level, msg, console=True, nesting_level=0):
     now = time.time()
     nesting_leader = ".." * nesting_level
+    if nesting_leader != '':
+        nesting_leader = nesting_leader + ' '
+        
     data = {'type': level, 'time': datetime.now().isoformat(), 'msg': f"{nesting_leader}{msg}"}
 
     if console:

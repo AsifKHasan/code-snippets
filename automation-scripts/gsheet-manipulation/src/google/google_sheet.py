@@ -9,7 +9,7 @@ from helper.utils import *
 from helper.logger import *
 
 
-COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
 ''' Google sheet wrapper
 '''
@@ -120,9 +120,9 @@ class GoogleSheet(object):
 
         row_to_delete_from = rows_with_value + 1
         rows_to_delete = row_count - rows_with_value
-        debug(f".. deleting : {rows_to_delete} rows starting from row {row_to_delete_from}")
+        debug(f"  .. deleting : {rows_to_delete} rows starting from row {row_to_delete_from}")
         worksheet.delete_rows(row_to_delete_from, row_count)
-        debug(f".. deleted  : {rows_to_delete} rows starting from row {row_to_delete_from}")
+        debug(f"  .. deleted  : {rows_to_delete} rows starting from row {row_to_delete_from}")
 
 
 
@@ -138,7 +138,9 @@ class GoogleSheet(object):
     ''' conditional formatting for blank cells
     '''
     def add_conditional_formatting_for_blank_cells(self, worksheet, range_specs):
-        pass
+        ranges = [a1_range_to_grid_range(range_spec, sheet_id=worksheet.id) for range_spec in range_specs] 
+        rule = conditional_format_rule(ranges=ranges, condition_type="BLANK", condition_values=[], format={"backgroundColor": hex_to_rgba("#fff2cc")})
+        self.update_in_batch(rule)
 
 
 
@@ -146,16 +148,10 @@ class GoogleSheet(object):
     '''
     def add_conditional_formatting_for_review_notes(self, worksheet, row_count, col_count):
         range_spec = f"A3:{COLUMN_TO_LETTER[col_count]}"
-        range = a1_range_to_grid_range(range_spec)
+        range = a1_range_to_grid_range(range_spec, sheet_id=worksheet.id)
 
-        condition = BooleanCondition('CUSTOM_FORMULA', ['=not(isblank($A:$A))'])
-        cell_format = CellFormat(backgroundColor=Color.fromHex('#f4cccc'))
-        boolean_rule = BooleanRule(condition=condition, format=cell_format)
-        rule = ConditionalFormatRule(ranges=[range], booleanRule=boolean_rule)
-
-        rules = get_conditional_format_rules(worksheet)
-        rules.append(rule)
-        rules.save()
+        rule = conditional_format_rule(ranges=[range], condition_type="CUSTOM_FORMULA", condition_values=["=not(isblank($A:$A))"], format={"backgroundColor": hex_to_rgba("#f4cccc")})
+        self.update_in_batch(rule)
 
 
 
@@ -167,9 +163,11 @@ class GoogleSheet(object):
         values = []
         merges = []
         for range_spec, work_spec in range_work_specs.items():
+            # value
             if 'value' in work_spec:
                 values.append({'range': range_spec, 'values': [[work_spec['value']]]})
 
+            # merge
             merge = True
             if 'merge' in work_spec:
                 merge = work_spec['merge']
@@ -177,6 +175,7 @@ class GoogleSheet(object):
             if merge:
                 merges.append({'mergeCells': {'range': a1_range_to_grid_range(range_spec, sheet_id=worksheet.id), 'mergeType': 'MERGE_ALL'}})
 
+            # formats
             repeat_cell = repeatcell_from_work_spec(a1_range_to_grid_range(range_spec, sheet_id=worksheet.id), work_spec)
             if repeat_cell:
                 formats.append(repeat_cell)

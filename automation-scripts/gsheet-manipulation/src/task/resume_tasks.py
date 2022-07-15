@@ -72,7 +72,7 @@ def create_06_job_history_new(gsheet):
     job_history_ws_name = '06-job-history'
     job_history_ws = gsheet.gspread_sheet.worksheet(job_history_ws_name)
     if job_history_ws is None:
-        error(f".. worksheet {job_history_ws_name} not found")
+        error(f"worksheet {job_history_ws_name} not found", nesting_level=1)
         return
 
     # get the job-history list
@@ -80,54 +80,54 @@ def create_06_job_history_new(gsheet):
 
     # duplicate the *06-job-history* as *06-job-history-NEW* worksheet
     target_ws_name = '06-job-history-NEW'
-    info(f"duplicating .. worksheet {job_history_ws_name} as {target_ws_name}")
+    info(f"duplicating .. worksheet {job_history_ws_name} as {target_ws_name}", nesting_level=1)
     target_ws = job_history_ws.duplicate(new_sheet_name=target_ws_name)
     if target_ws:
-        info(f"duplicated  .. worksheet {job_history_ws_name} as {target_ws_name}")
+        info(f"duplicated  .. worksheet {job_history_ws_name} as {target_ws_name}", nesting_level=1)
     else:
-        error(f"could not duplicate   {job_history_ws_name} as {target_ws_name}")
+        error(f"could not duplicate   {job_history_ws_name} as {target_ws_name}", nesting_level=1)
         return
 
     col_count = target_ws.col_count
     row_count = target_ws.row_count
 
     # add 4 new columns at the end (after D) E, F, G, H
-    info(f"adding .. 4 new columns at E-H")
+    info(f"adding .. 4 new columns at E-H", nesting_level=1)
     target_ws.insert_cols([[], [], [], []], 2)
-    col_count = col_count + 3
-    info(f"added  .. 4 new columns at E-H")
+    col_count = col_count + 4
+    info(f"added  .. 4 new columns at E-H", nesting_level=1)
 
 
     # add job_histories.count * 3 + rows at the end
     # HACK - for safety add 1000 rows at the end
     # target_ws.add_rows(job_histories.length * 3 + 1)
-    info(f"adding .. 1000 new rows at the end")
+    info(f"adding .. 1000 new rows at the end", nesting_level=1)
     target_ws.add_rows(1000)
     row_count = row_count + 1000
-    info(f"added  .. 1000 new rows at the end")
+    info(f"added  .. 1000 new rows at the end", nesting_level=1)
 
 
     # for each column
-    info(f"resizing .. columns")
+    info(f"resizing .. columns", nesting_level=1)
     for key, value in JOB_HISTORY_NEW_WS_SPECS['columns'].items():
         # resize the columns
-        debug(f".. resizing column {key} to {value['size']}")
+        debug(f".. resizing column {key} to {value['size']}", nesting_level=2)
         set_column_width(target_ws, key, value['size'])
 
-    info(f"resized  .. columns")
+    info(f"resized  .. columns", nesting_level=1)
 
 
     # iterate over ranges and apply specs
-    info(f"formatting .. pre-defined ranges")
+    info(f"formatting .. pre-defined ranges", nesting_level=1)
     count = gsheet.work_on_ranges(target_ws, range_work_specs=JOB_HISTORY_NEW_WS_SPECS['ranges'])
-    info(f"formatted  .. {count} pre-defined ranges")
+    info(f"formatted  .. {count} pre-defined ranges", nesting_level=1)
 
 
     # iterate job-histories and create range_work_specs
     range_work_specs = {}
     current_row = 4
     index = 0
-    info(f"generating .. dynamic ranges")
+    info(f"generating .. dynamic ranges", nesting_level=1)
     for job_history in job_histories:
         block_start_row = current_row
 
@@ -193,43 +193,43 @@ def create_06_job_history_new(gsheet):
         index = index + 1
 
 
-    info(f"generated  .. {index} dynamic ranges")
+    info(f"generated  .. {index} dynamic ranges", nesting_level=1)
 
     # iterate over ranges and apply specs
-    info(f"formatting .. dynamic ranges")
+    info(f"formatting .. dynamic ranges", nesting_level=1)
     count = gsheet.work_on_ranges(target_ws, range_work_specs=range_work_specs)
-    info(f"formatted  .. {count} dynamic ranges")
+    info(f"formatted  .. {count} dynamic ranges", nesting_level=1)
 
     # remove last 3 columns
-    info(f"removing .. last 3 columns")
+    info(f"removing .. last 3 columns", nesting_level=1)
     target_ws.delete_columns(6, 8)
     col_count = col_count - 3
-    info(f"removed  .. last 3 columns")
+    info(f"removed  .. last 3 columns", nesting_level=1)
 
     # remove all trailing blank rows
-    info(f"removing .. trailing blank rows")
+    info(f"removing .. trailing blank rows", nesting_level=1)
     gsheet.remove_trailing_blank_rows(target_ws, row_count)
-    info(f"removed  .. trailing blank rows")
+    info(f"removed  .. trailing blank rows", nesting_level=1)
 
     # clear conditional formatting
-    info(f"clearing .. all conditional formatting")
+    info(f"clearing .. all conditional formatting", nesting_level=1)
     gsheet.clear_conditional_format_rules(target_ws)
-    info(f"cleared  .. all conditional formatting")
+    info(f"cleared  .. all conditional formatting", nesting_level=1)
 
     # conditional formatting for blank cells
-    info(f"adding .. conditional formatting for blank cells")
+    info(f"adding .. conditional formatting for blank cells", nesting_level=1)
     gsheet.add_conditional_formatting_for_blank_cells(target_ws, JOB_HISTORY_NEW_WS_SPECS['cell-empty-markers'])
-    info(f"added  .. conditional formatting for blank cells")
+    info(f"added  .. conditional formatting for blank cells", nesting_level=1)
 
     # conditional formatting review-notes
-    info(f"adding .. conditional formatting for review-notes")
+    info(f"adding .. conditional formatting for review-notes", nesting_level=1)
     gsheet.add_conditional_formatting_for_review_notes(target_ws, row_count, col_count)
-    info(f"added  .. conditional formatting for review-notes")
+    info(f"added  .. conditional formatting for review-notes", nesting_level=1)
 
-    info(f"freezing .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns")
+    info(f"freezing .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns", nesting_level=1)
     try:
         target_ws.freeze(JOB_HISTORY_NEW_WS_SPECS['frozen-rows'], JOB_HISTORY_NEW_WS_SPECS['frozen-columns'])
-        info(f"freezed  .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns")
+        info(f"freezed  .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns", nesting_level=1)
     except Exception as e:
         warn(str(e))
 
@@ -336,21 +336,21 @@ def job_history_from_06_job_history(job_history_ws):
             job_history['task'].append('')
 
         if True:
-            debug(f"project {job_history_index}")
-            debug(f".. from     : {job_history['from']}")
-            debug(f".. to       : {job_history['to']}")
+            debug(f"project {job_history_index}", nesting_level=2)
+            debug(f".. from     : {job_history['from']}", nesting_level=2)
+            debug(f".. to       : {job_history['to']}", nesting_level=2)
 
-            debug(f".. name     : {job_history['name'][0]}")
+            debug(f".. name     : {job_history['name'][0]}", nesting_level=2)
             for name in job_history['name'][1:]:
-                debug(f"..          : {name}")
+                debug(f"..          : {name}", nesting_level=2)
 
-            debug(f".. position : {job_history['position'][0]}")
+            debug(f".. position : {job_history['position'][0]}", nesting_level=2)
             for position in job_history['position'][1:]:
-                debug(f"..          : {position}")
+                debug(f"..          : {position}", nesting_level=2)
 
-            debug(f".. summary  : {job_history['summary'][0]}")
+            debug(f".. summary  : {job_history['summary'][0]}", nesting_level=2)
             for summary in job_history['summary'][1:]:
-                debug(f"..          : {summary}")
+                debug(f"..          : {summary}", nesting_level=2)
 
         job_history_index = job_history_index + 1
 
