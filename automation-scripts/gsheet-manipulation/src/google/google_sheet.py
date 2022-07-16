@@ -92,7 +92,27 @@ class GoogleSheet(object):
                 info(f"renamed  worksheet {worksheet_name} to {new_worksheet_name}")
         
         except WorksheetNotFound as e:
-            error(f"worksheet {worksheet_name} not found")
+            warn(f"worksheet {worksheet_name} not found")
+
+
+
+    ''' remove a worksheet
+    '''
+    def remove_worksheet(self, worksheet_name):
+        try:
+            worksheet_to_remove = self.gspread_sheet.worksheet(worksheet_name)
+
+            # check existence of the new_worksheet_name
+            try:
+                info(f"removing worksheet {worksheet_name}")
+                self.gspread_sheet.del_worksheet(worksheet_to_remove)
+                info(f"removed  worksheet {worksheet_name}")
+
+            except:
+                info(f"worksheet {worksheet_name} could not be removed")
+        
+        except WorksheetNotFound as e:
+            warn(f"worksheet {worksheet_name} not found")
 
 
 
@@ -178,11 +198,14 @@ class GoogleSheet(object):
     def work_on_ranges(self, worksheet_name=None, worksheet=None, range_work_specs={}):
         if worksheet is None:
             try:
-                worksheet = self.gspread_sheet.worksheet(worksheet_name)
+                ws = self.gspread_sheet.worksheet(worksheet_name)
             
             except WorksheetNotFound as e:
                 error(f"worksheet {worksheet_name} not found")
                 return 0
+        else:
+            ws = worksheet
+
 
         count = 0
         formats = []
@@ -200,16 +223,16 @@ class GoogleSheet(object):
                 merge = work_spec['merge']
 
             if merge:
-                merges.append({'mergeCells': {'range': a1_range_to_grid_range(range_spec, sheet_id=worksheet.id), 'mergeType': 'MERGE_ALL'}})
+                merges.append({'mergeCells': {'range': a1_range_to_grid_range(range_spec, sheet_id=ws.id), 'mergeType': 'MERGE_ALL'}})
 
             # formats
-            repeat_cell = build_repeatcell_from_work_spec(a1_range_to_grid_range(range_spec, sheet_id=worksheet.id), work_spec)
+            repeat_cell = build_repeatcell_from_work_spec(a1_range_to_grid_range(range_spec, sheet_id=ws.id), work_spec)
             if repeat_cell:
                 formats.append(repeat_cell)
 
             # borders
             if 'border-color' in work_spec:
-                broder_object = {'range': a1_range_to_grid_range(range_spec, sheet_id=worksheet.id)}
+                broder_object = {'range': a1_range_to_grid_range(range_spec, sheet_id=ws.id)}
                 borders.append({'updateBorders': {**broder_object, **build_border_around_spec(work_spec['border-color'])}})
 
 
@@ -217,7 +240,7 @@ class GoogleSheet(object):
 
         # batch update values
         if len(values):
-            worksheet.batch_update(values, value_input_option=ValueInputOption.user_entered)
+            ws.batch_update(values, value_input_option=ValueInputOption.user_entered)
 
         # batch merges
         if len(merges):

@@ -102,7 +102,7 @@ def create_06_job_history_new(gsheet):
 
     # iterate over ranges and apply specs
     info(f"formatting .. pre-defined ranges", nesting_level=1)
-    count = gsheet.work_on_ranges(target_ws, range_work_specs=WORKSHEET_SPEC['ranges'])
+    count = gsheet.work_on_ranges(worksheet=target_ws, range_work_specs=WORKSHEET_SPEC['ranges'])
     info(f"formatted  .. {count} pre-defined ranges", nesting_level=1)
 
 
@@ -180,7 +180,7 @@ def create_06_job_history_new(gsheet):
 
     # iterate over ranges and apply specs
     info(f"formatting .. dynamic ranges", nesting_level=1)
-    count = gsheet.work_on_ranges(target_ws, range_work_specs=range_work_specs)
+    count = gsheet.work_on_ranges(worksheet=target_ws, range_work_specs=range_work_specs)
     info(f"formatted  .. {count} dynamic ranges", nesting_level=1)
 
     # remove last 3 columns

@@ -14,11 +14,18 @@ from helper.logger import *
 def do_something(gsheet):
     # gsheet.bulk_duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=['04.01-৩১', '04.01-৩২', '04.02-৩৩', '04.02-৩৪', '04.03-৩৫', '04.03-৩৬'])
     # gsheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
-    # gsheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-OLD')
+
+    # gsheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
     # gsheet.rename_worksheet(worksheet_name='06-job-history-NEW', new_worksheet_name='06-job-history')
+
     # gsheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
-    # gsheet.work_on_ranges(worksheet_name='00-layout-BSW', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
+
+    # gsheet.remove_worksheet(worksheet_name='-toc')
+    gsheet.remove_worksheet(worksheet_name='06-job-history-Z')
+    # gsheet.remove_worksheet(worksheet_name='07-project-roles-Z')
+
     # gsheet.order_worksheets()
+
 
     # BEGIN resume related
     # create_06_job_history_new(gsheet)
