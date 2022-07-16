@@ -3,7 +3,6 @@
 import re
 
 
-
 ''' build a repeatCell from work_spec
 ''' 
 def build_repeatcell_from_work_spec(range, work_spec):
@@ -187,7 +186,7 @@ def build_value_from_work_spec(work_spec, gspread_sheet):
 
 
 ''' build dimension update request
-note: index is 0 based
+    note: index is 0 based
 '''
 def build_dimension_update_request(sheet_id, dimension, index, size):
     range_spec = {
@@ -211,7 +210,7 @@ def build_dimension_update_request(sheet_id, dimension, index, size):
 
 
 
-'''split text into lines and remove spaces and any special character from the begining
+''' split text into lines and remove spaces and any special character from the begining
 '''
 def split_and_dress(value):
     lines = value.split('\n')

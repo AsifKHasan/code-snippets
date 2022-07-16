@@ -5,6 +5,14 @@ import gspread
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
+SCOPES = [
+    "https://spreadsheets.google.com/feeds",
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+]
+
+
 ''' Google service wrapper
 '''
 class GoogleService(object):
@@ -15,14 +23,7 @@ class GoogleService(object):
 
         # get credentials for service-account
         credentials = service_account.Credentials.from_service_account_file(service_account_json_path)
-        scoped_credentials = credentials.with_scopes(
-                                                    [
-                                                        "https://spreadsheets.google.com/feeds",
-                                                        'https://www.googleapis.com/auth/spreadsheets',
-                                                        "https://www.googleapis.com/auth/drive.file",
-                                                        "https://www.googleapis.com/auth/drive"
-                                                    ]
-                                                )
+        scoped_credentials = credentials.with_scopes(SCOPES)
 
         # the gsheet service
         self.gsheet_service = build('sheets', 'v4', credentials=credentials)

@@ -5,6 +5,7 @@ from datetime import datetime
 from termcolor import colored
 import colorama
 
+
 colorama.init()
 
 log_color = {
