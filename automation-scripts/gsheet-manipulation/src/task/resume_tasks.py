@@ -222,18 +222,18 @@ def create_06_job_history_new(gsheet):
 '''
 def job_history_from_06_job_history(job_history_ws):
     LABEL_TO_GROUP = {
-    'Organization': 'name',
-    'Position': 'position',
-    'Job Summary': 'summary',
+        'Organization': 'name',
+        'Position': 'position',
+        'Job Summary': 'summary',
     }
 
     GROUP_SUBGROUP = {
     }
 
     GROUP_VALUE_INDEX = {
-    'name': 1,
-    'position': 1,
-    'summary': 2,
+        'name': 1,
+        'position': 1,
+        'summary': 2,
     }
 
     source_values = job_history_ws.get('B3:D')
@@ -289,23 +289,25 @@ def job_history_from_06_job_history(job_history_ws):
 
             if new_group_label == '':
                 # previous group continuing
-                value = row[GROUP_VALUE_INDEX[current_group]]
+                group_value_index = GROUP_VALUE_INDEX[current_group]
+                if len(row) > group_value_index:
+                    value = row[GROUP_VALUE_INDEX[current_group]]
 
-                # group may have subgroups
-                if current_group in GROUP_SUBGROUP:
-                    if value in GROUP_SUBGROUP[current_group]:
-                        # the value is not value for the group rather it starts a subgroup
-                        current_group = GROUP_SUBGROUP[current_group][value]
+                    # group may have subgroups
+                    if current_group in GROUP_SUBGROUP:
+                        if value in GROUP_SUBGROUP[current_group]:
+                            # the value is not value for the group rather it starts a subgroup
+                            current_group = GROUP_SUBGROUP[current_group][value]
+
+                        else:
+                            # this is not a subgroup, append value
+                            if value != '':
+                                job_history[current_group] = job_history[current_group] + split_and_dress(value)
 
                     else:
-                        # this is not a subgroup, append value
+                        # the group does not have any subgroups, append value
                         if value != '':
                             job_history[current_group] = job_history[current_group] + split_and_dress(value)
-
-                else:
-                    # the group does not have any subgroups, append value
-                    if value != '':
-                        job_history[current_group] = job_history[current_group] + split_and_dress(value)
 
             else:
                 # a new group has started, get the group
@@ -313,14 +315,19 @@ def job_history_from_06_job_history(job_history_ws):
                     current_group = LABEL_TO_GROUP[new_group_label]
 
                     # append value into the group
-                    value = row[GROUP_VALUE_INDEX[current_group]]
-                    if value != '':
-                        job_history[current_group] = job_history[current_group] + split_and_dress(value)
+                    group_value_index = GROUP_VALUE_INDEX[current_group]
+                    if len(row) > group_value_index:
+                        value = row[group_value_index]
+                        if value != '':
+                            job_history[current_group] = job_history[current_group] + split_and_dress(value)
 
                 else:
                     # this must be the from value
                     job_history['from'] = new_group_label
-                    job_history['to'] = row[2]
+                    if len(row) >= 3:
+                        job_history['to'] = row[2]
+                    else:
+                        job_history['to'] = ''
 
 
         # we should have at least one entry for each groups
@@ -328,10 +335,10 @@ def job_history_from_06_job_history(job_history_ws):
             job_history['name'].append('')
 
         if len(job_history['position']) == 0:
-            job_history['client'].append('')
+            job_history['position'].append('')
 
         if len(job_history['summary']) == 0:
-            job_history['task'].append('')
+            job_history['summary'].append('')
 
         if True:
             debug(f"project {job_history_index}", nesting_level=2)

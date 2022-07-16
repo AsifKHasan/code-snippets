@@ -31,9 +31,12 @@ class GoogleSheet(object):
     '''
     @classmethod
     def open(cls, google_service, gsheet_name):
-        c = cls(google_service)
-        c.gspread_sheet = c.service.gspread.open(gsheet_name)
-        return c
+        try:
+            c = cls(google_service)
+            c.gspread_sheet = c.service.gspread.open(gsheet_name)
+            return c
+        except Exception as e:
+            raise e
 
 
 

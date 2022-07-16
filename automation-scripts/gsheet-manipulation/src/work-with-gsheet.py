@@ -2,6 +2,7 @@
 
 import json
 import yaml
+import time
 import argparse
 
 from google.google_service import GoogleService
@@ -31,7 +32,7 @@ def do_something(gsheet):
 
 
     # BEGIN resume related
-    # create_06_job_history_new(gsheet)
+    create_06_job_history_new(gsheet)
     # END   resume related
 
 
@@ -48,11 +49,21 @@ if __name__ == '__main__':
         gsheet_names = config['gsheets']
 
     google_service = GoogleService('../conf/credential.json')
+    count = 0
     for gsheet_name in gsheet_names:
+        count = count + 1
         try:
-            info(f"processing .. gsheet {gsheet_name}")
+            info(f"{count:>4} : processing .. gsheet {gsheet_name}")
             gsheet = GoogleSheet.open(google_service, gsheet_name=gsheet_name)
-            do_something(gsheet)
-            info(f"processed  .. gsheet {gsheet_name}")
         except Exception as e:
+            gsheet = None
             warn(str(e))
+            # raise e
+
+        if gsheet:
+            do_something(gsheet)
+            info(f"{count:>4} : processed  .. gsheet {gsheet_name}\n")
+
+        if count % 3 == 0:
+            warn(f"sleeping for {60} seconds\n")
+            time.sleep(60)
