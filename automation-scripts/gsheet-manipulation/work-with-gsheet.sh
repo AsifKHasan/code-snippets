@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
-# work with gsheet
 
 # parameters
-GSHEET=$1
+if [ $# -eq 0 ] 
+then
+  set echo off
+  pushd ./src
+  ./work-with-gsheet.py
+else
+  GSHEET=$1
+  set echo off
+  pushd ./src
+  ./work-with-gsheet.py --gsheet ${GSHEET}
+fi
 
-set echo off
-
-pushd ./src
-./work-with-gsheet.py --gsheet ${DOCUMENT}
 
 if [ ${?} -ne 0 ]; then
   popd && exit 1

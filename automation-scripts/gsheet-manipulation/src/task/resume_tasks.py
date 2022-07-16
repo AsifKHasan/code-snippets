@@ -10,59 +10,45 @@ from helper.utils import *
 from helper.logger import *
 
 
-LABEL_TO_GROUP = {
-  'Organization': 'name',
-  'Position': 'position',
-  'Job Summary': 'summary',
+WORKSHEET_SPECS = {
+    '06-job-history': {
+        'num-columns': 5,
+        'frozen-rows': 3,
+        'frozen-columns': 0,
+
+        'columns': {
+            'A': {'size': 100}, 
+            'B': {'size': 65}, 
+            'C': {'size': 65}, 
+            'D': {'size': 30}, 
+            'E': {'size': 640}, 
+        },
+
+        'ranges': {
+            'B1:B': {'weight': 'normal', 'halign': 'center', 'merge': False},
+            'C1:C': {'weight': 'normal', 'halign': 'center', 'merge': False},
+            'D1:D': {'weight': 'normal', 'halign': 'center', 'merge': False},
+            'E1:E': {'weight': 'normal', 'halign': 'left', 'merge': False},
+
+            'B3:B': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
+            'C3:C': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
+
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'halign': 'left'},
+
+            'A3:H': {'valign': 'top', 'merge': False, 'wrap': True},
+
+            'B3': {'value': 'From', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'weight': 'bold', 'note': '{"repeat-rows": 1}'},
+            'C3': {'value': 'To', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'weight': 'bold'},
+            'D3:E3': {'value': 'Employment history', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'halign': 'left', 'weight': 'bold'},
+
+        },
+
+        'cell-empty-markers': [
+            'B3:E'
+        ], 
+    },
 }
-
-GROUP_SUBGROUP = {
-}
-
-GROUP_VALUE_INDEX = {
-  'name': 1,
-  'position': 1,
-  'summary': 2,
-}
-
-JOB_HISTORY_NEW_WS_SPECS = {
-  'num-columns': 5,
-  'frozen-rows': 3,
-  'frozen-columns': 0,
-
-  'columns': {
-    'A': {'size': 100}, 
-    'B': {'size': 65}, 
-    'C': {'size': 65}, 
-    'D': {'size': 30}, 
-    'E': {'size': 640}, 
-  },
-
-  'ranges': {
-    'B1:B': {'weight': 'normal', 'halign': 'center', 'merge': False},
-    'C1:C': {'weight': 'normal', 'halign': 'center', 'merge': False},
-    'D1:D': {'weight': 'normal', 'halign': 'center', 'merge': False},
-    'E1:E': {'weight': 'normal', 'halign': 'left', 'merge': False},
-
-    'B3:B': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
-    'C3:C': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
-
-    'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
-    'B2:E2': {'value': 'content', 'weight': 'bold', 'halign': 'left'},
-
-    'A3:H': {'valign': 'top', 'merge': False, 'wrap': True},
-
-    'B3': {'value': 'From', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'weight': 'bold', 'note': '{"repeat-rows": 1}'},
-    'C3': {'value': 'To', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'weight': 'bold'},
-    'D3:E3': {'value': 'Employment history', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'halign': 'left', 'weight': 'bold'},
-
-  },
-
-  'cell-empty-markers': [
-    'B3:E'
-  ], 
-}
-
 
 
 ''' modify 06-job-history to new format
@@ -74,6 +60,8 @@ def create_06_job_history_new(gsheet):
     if job_history_ws is None:
         error(f"worksheet {job_history_ws_name} not found", nesting_level=1)
         return
+
+    WORKSHEET_SPEC = WORKSHEET_SPECS['06-job-history']
 
     # get the job-history list
     job_histories = job_history_from_06_job_history(job_history_ws)
@@ -107,19 +95,14 @@ def create_06_job_history_new(gsheet):
     info(f"added  .. 1000 new rows at the end", nesting_level=1)
 
 
-    # for each column
     info(f"resizing .. columns", nesting_level=1)
-    for key, value in JOB_HISTORY_NEW_WS_SPECS['columns'].items():
-        # resize the columns
-        debug(f".. resizing column {key} to {value['size']}", nesting_level=2)
-        set_column_width(target_ws, key, value['size'])
-
+    gsheet.resize_columns(target_ws, WORKSHEET_SPEC['columns'])
     info(f"resized  .. columns", nesting_level=1)
 
 
     # iterate over ranges and apply specs
     info(f"formatting .. pre-defined ranges", nesting_level=1)
-    count = gsheet.work_on_ranges(target_ws, range_work_specs=JOB_HISTORY_NEW_WS_SPECS['ranges'])
+    count = gsheet.work_on_ranges(target_ws, range_work_specs=WORKSHEET_SPEC['ranges'])
     info(f"formatted  .. {count} pre-defined ranges", nesting_level=1)
 
 
@@ -218,7 +201,7 @@ def create_06_job_history_new(gsheet):
 
     # conditional formatting for blank cells
     info(f"adding .. conditional formatting for blank cells", nesting_level=1)
-    gsheet.add_conditional_formatting_for_blank_cells(target_ws, JOB_HISTORY_NEW_WS_SPECS['cell-empty-markers'])
+    gsheet.add_conditional_formatting_for_blank_cells(target_ws, WORKSHEET_SPEC['cell-empty-markers'])
     info(f"added  .. conditional formatting for blank cells", nesting_level=1)
 
     # conditional formatting review-notes
@@ -226,10 +209,10 @@ def create_06_job_history_new(gsheet):
     gsheet.add_conditional_formatting_for_review_notes(target_ws, row_count, col_count)
     info(f"added  .. conditional formatting for review-notes", nesting_level=1)
 
-    info(f"freezing .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns", nesting_level=1)
+    info(f"freezing .. {WORKSHEET_SPEC['frozen-rows']} rows and {WORKSHEET_SPEC['frozen-columns']} columns", nesting_level=1)
     try:
-        target_ws.freeze(JOB_HISTORY_NEW_WS_SPECS['frozen-rows'], JOB_HISTORY_NEW_WS_SPECS['frozen-columns'])
-        info(f"freezed  .. {JOB_HISTORY_NEW_WS_SPECS['frozen-rows']} rows and {JOB_HISTORY_NEW_WS_SPECS['frozen-columns']} columns", nesting_level=1)
+        target_ws.freeze(WORKSHEET_SPEC['frozen-rows'], WORKSHEET_SPEC['frozen-columns'])
+        info(f"freezed  .. {WORKSHEET_SPEC['frozen-rows']} rows and {WORKSHEET_SPEC['frozen-columns']} columns", nesting_level=1)
     except Exception as e:
         warn(str(e))
 
@@ -238,6 +221,21 @@ def create_06_job_history_new(gsheet):
 ''' get job-histories data from '06-job-history'
 '''
 def job_history_from_06_job_history(job_history_ws):
+    LABEL_TO_GROUP = {
+    'Organization': 'name',
+    'Position': 'position',
+    'Job Summary': 'summary',
+    }
+
+    GROUP_SUBGROUP = {
+    }
+
+    GROUP_VALUE_INDEX = {
+    'name': 1,
+    'position': 1,
+    'summary': 2,
+    }
+
     source_values = job_history_ws.get('B3:D')
 
     num_rows = len(source_values)

@@ -6,22 +6,14 @@ import re
 
 ''' build a repeatCell from work_spec
 ''' 
-def repeatcell_from_work_spec(range, work_spec):
+def build_repeatcell_from_work_spec(range, work_spec):
     fields = []
 
-    # formula
-    formula = None
-    if 'formula' in work_spec:
-        # range.setFormula(work_spec['formula'])
-        pass
-
-
-    # border-color
-    border_color = None
-    if 'border-color' in work_spec:
-        # range.setBorder(true, true, true, true, false, false, work_spec['border-color'], SpreadsheetApp.BorderStyle.SOLID)
-        # fields.append('userEnteredFormat.borders')
-        pass
+    # valign
+    valign = None
+    if 'valign' in work_spec:
+        valign = work_spec['valign']
+        fields.append('userEnteredFormat.verticalAlignment')
 
 
     # halign
@@ -31,11 +23,15 @@ def repeatcell_from_work_spec(range, work_spec):
         fields.append('userEnteredFormat.horizontalAlignment')
 
 
-    # valign
-    valign = None
-    if 'valign' in work_spec:
-        valign = work_spec['valign']
-        fields.append('userEnteredFormat.verticalAlignment')
+    # wrap
+    wrap_strategy = None
+    if 'wrap' in work_spec:
+        if work_spec['wrap'] == True:
+            wrap_strategy = 'WRAP'
+        else:
+            wrap_strategy = 'CLIP'
+
+        fields.append('userEnteredFormat.wrapStrategy')
 
 
     # number-format
@@ -43,6 +39,20 @@ def repeatcell_from_work_spec(range, work_spec):
     if 'date-format' in work_spec:
         number_format = {'type': 'DATE', 'pattern': work_spec['date-format']}
         fields.append('userEnteredFormat.numberFormat')
+
+
+    # bgcolor
+    bg_color = None
+    if 'bgcolor' in work_spec:
+        bg_color = work_spec['bgcolor']
+        fields.append('userEnteredFormat.backgroundColor')
+
+
+    # fgcolor
+    fg_color = None
+    if 'fgcolor' in work_spec:
+        fg_color = work_spec['fgcolor']
+        fields.append('userEnteredFormat.textFormat.foregroundColor')
 
 
     # font-family
@@ -68,29 +78,13 @@ def repeatcell_from_work_spec(range, work_spec):
         fields.append('userEnteredFormat.textFormat.bold')
     
 
-    # fgcolor
-    fg_color = None
-    if 'fgcolor' in work_spec:
-        fg_color = work_spec['fgcolor']
-        fields.append('userEnteredFormat.textFormat.foregroundColor')
+    # note
+    note = None
+    if 'note' in work_spec:
+        note = work_spec['note']
+        fields.append('note')
 
 
-    # bgcolor
-    bg_color = None
-    if 'bgcolor' in work_spec:
-        bg_color = work_spec['bgcolor']
-        fields.append('userEnteredFormat.backgroundColor')
-
-
-    # wrap
-    wrap_strategy = None
-    if 'wrap' in work_spec:
-        if work_spec['wrap'] == True:
-            wrap_strategy = 'WRAP'
-        else:
-            wrap_strategy = 'CLIP'
-
-        fields.append('userEnteredFormat.wrapStrategy')
 
     if len(fields) == 0:
         return None
@@ -99,24 +93,49 @@ def repeatcell_from_work_spec(range, work_spec):
       'repeatCell': {
         'range': range,
         'cell': {
-          'userEnteredFormat': {
-            'verticalAlignment': valign,
-            'horizontalAlignment': halign,
-            'wrapStrategy': wrap_strategy,
-            'numberFormat': number_format,
-            'backgroundColor': None if bg_color is None else hex_to_rgba(bg_color),
-            # 'borders': borders,
-            'textFormat': {
-              'foregroundColor': None if fg_color is None else hex_to_rgba(fg_color),
-              'fontFamily': font_family,
-              'fontSize': font_size,
-              'bold': bold
-            }
-          }
+            'userEnteredFormat': {
+                'verticalAlignment': valign,
+                'horizontalAlignment': halign,
+                'wrapStrategy': wrap_strategy,
+                'numberFormat': number_format,
+                'backgroundColor': None if bg_color is None else hex_to_rgba(bg_color),
+                'textFormat': {
+                    'foregroundColor': None if fg_color is None else hex_to_rgba(fg_color),
+                    'fontFamily': font_family,
+                    'fontSize': font_size,
+                    'bold': bold
+                },
+            },
+            'note': note,
         },
         'fields': ','.join(fields)
       }
     }
+
+
+
+''' gsheet border spec for border around a range
+'''
+def build_border_around_spec(border_color, border_style='SOLID'):
+    color = hex_to_rgba(border_color)
+    border = {
+        "style": border_style,
+        # "color": color,
+        "colorStyle": {
+            "rgbColor": color
+        }
+    }
+
+    borders = {
+        "top": border,
+        "bottom": border,
+        "left": border,
+        "right": border,
+        "innerHorizontal": None,
+        "innerVertical": None,
+    }
+
+    return borders
 
 
 
@@ -126,7 +145,7 @@ def repeatcell_from_work_spec(range, work_spec):
     condition_values is a list of strings
     format is a dict
 ''' 
-def conditional_format_rule(ranges, condition_type, condition_values, format):
+def build_conditional_format_rule(ranges, condition_type, condition_values, format):
     rule = {"addConditionalFormatRule": {
                 "rule": {
                     "ranges" : ranges,
@@ -144,6 +163,52 @@ def conditional_format_rule(ranges, condition_type, condition_values, format):
 
     return rule
     
+
+
+''' gets the value from workspec
+'''
+def build_value_from_work_spec(work_spec, gspread_sheet):
+    value = ''
+    if 'value' in work_spec:
+        value = work_spec['value']
+
+    # it may be hyperlink to another worksheet
+    if 'ws-name-to-link' in work_spec:
+        # is it a valied worksheet
+        ws_to_link = gspread_sheet.worksheet(work_spec['ws-name-to-link'])
+        if ws_to_link:
+            value = f'=HYPERLINK("#gid={ws_to_link.id}", "{value}")'.lstrip("'")
+        else:
+            warn(f".... No Worksheet named {work_spec['ws-name-to-link']}")
+
+    return value
+
+
+
+
+''' build dimension update request
+note: index is 0 based
+'''
+def build_dimension_update_request(sheet_id, dimension, index, size):
+    range_spec = {
+        "sheetId": sheet_id,
+        "dimension": dimension,
+        "startIndex": index - 1,
+        "endIndex": index
+    }
+
+    update_dimension_properies = {
+      "updateDimensionProperties": {
+        "range": range_spec,
+        "properties": {
+          "pixelSize": size
+        },
+        "fields": "pixelSize"
+      }
+    }
+
+    return update_dimension_properies
+
 
 
 '''split text into lines and remove spaces and any special character from the begining
