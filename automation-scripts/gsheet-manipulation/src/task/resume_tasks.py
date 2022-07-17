@@ -79,31 +79,37 @@ def create_06_job_history_new(gsheet):
     col_count = target_ws.col_count
     row_count = target_ws.row_count
 
-    # add 4 new columns at the end (after D) E, F, G, H
-    info(f"adding .. 4 new columns at E-H", nesting_level=1)
-    target_ws.insert_cols([[], [], [], []], 2)
+
+    # add 4 new columns at the end (after D) E, F, G, H and add job_histories.count * 3 + rows at the end
+    # HACK - for safety add 1000 rows at the end
+    cols_to_add_at, cols_to_add, rows_to_add_at, rows_to_add = 'B', 4, 'end', 1000
+    info(f"adding .. {cols_to_add} new columns at {cols_to_add_at} and {rows_to_add} new rows at {rows_to_add_at}", nesting_level=1)
+    gsheet.add_dimension(worksheet_id=target_ws.id, cols_to_add_at=cols_to_add_at, cols_to_add=cols_to_add, rows_to_add_at=rows_to_add_at, rows_to_add=rows_to_add)
+    info(f"added  .. {cols_to_add} new columns at {cols_to_add_at} and {rows_to_add} new rows at {rows_to_add_at}", nesting_level=1)
+
     col_count = col_count + 4
-    info(f"added  .. 4 new columns at E-H", nesting_level=1)
+    row_count = row_count + 1000
+
+
+    # add 4 new columns at the end (after D) E, F, G, H
+    # info(f"adding .. 4 new columns at E-H", nesting_level=1)
+    # target_ws.insert_cols([[], [], [], []], 2)
+    # col_count = col_count + 4
+    # info(f"added  .. 4 new columns at E-H", nesting_level=1)
 
 
     # add job_histories.count * 3 + rows at the end
     # HACK - for safety add 1000 rows at the end
     # target_ws.add_rows(job_histories.length * 3 + 1)
-    info(f"adding .. 1000 new rows at the end", nesting_level=1)
-    target_ws.add_rows(1000)
-    row_count = row_count + 1000
-    info(f"added  .. 1000 new rows at the end", nesting_level=1)
+    # info(f"adding .. 1000 new rows at the end", nesting_level=1)
+    # target_ws.add_rows(1000)
+    # row_count = row_count + 1000
+    # info(f"added  .. 1000 new rows at the end", nesting_level=1)
 
 
     info(f"resizing .. columns", nesting_level=1)
     gsheet.resize_columns(target_ws, WORKSHEET_SPEC['columns'])
     info(f"resized  .. columns", nesting_level=1)
-
-
-    # iterate over ranges and apply specs
-    info(f"formatting .. pre-defined ranges", nesting_level=1)
-    count = gsheet.work_on_ranges(worksheet=target_ws, range_work_specs=WORKSHEET_SPEC['ranges'])
-    info(f"formatted  .. {count} pre-defined ranges", nesting_level=1)
 
 
     # iterate job-histories and create range_work_specs
@@ -179,35 +185,48 @@ def create_06_job_history_new(gsheet):
     info(f"generated  .. {index} dynamic ranges", nesting_level=1)
 
     # iterate over ranges and apply specs
-    info(f"formatting .. dynamic ranges", nesting_level=1)
-    count = gsheet.work_on_ranges(worksheet=target_ws, range_work_specs=range_work_specs)
-    info(f"formatted  .. {count} dynamic ranges", nesting_level=1)
+    info(f"formatting .. ranges", nesting_level=1)
+    count = gsheet.work_on_ranges(worksheet=target_ws, range_work_specs={**WORKSHEET_SPEC['ranges'], **range_work_specs})
+    info(f"formatted  .. {count} ranges", nesting_level=1)
 
-    # remove last 3 columns
-    info(f"removing .. last 3 columns", nesting_level=1)
-    target_ws.delete_columns(6, 8)
-    col_count = col_count - 3
-    info(f"removed  .. last 3 columns", nesting_level=1)
 
-    # remove all trailing blank rows
-    info(f"removing .. trailing blank rows", nesting_level=1)
-    gsheet.remove_trailing_blank_rows(target_ws, row_count)
-    info(f"removed  .. trailing blank rows", nesting_level=1)
+    # remove last 3 columns and trailing blank rows
+    cols_to_remove_from, cols_to_remove_to = 'F', 'end'
+    rows_to_remove_from, rows_to_remove_to = gsheet.trailing_blank_row_start_index(worksheet=target_ws), 'end'
+    info(f"removing .. columns {cols_to_remove_from}-{cols_to_remove_to} and rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
+    gsheet.remove_dimension(worksheet_id=target_ws.id, cols_to_remove_from=cols_to_remove_from, cols_to_remove_to=cols_to_remove_to, rows_to_remove_from=rows_to_remove_from, rows_to_remove_to=rows_to_remove_to)
+    info(f"removed  .. columns {cols_to_remove_from}-{cols_to_remove_to} and rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
+
+
+    # # remove last 3 columns
+    # info(f"removing .. last 3 columns", nesting_level=1)
+    # target_ws.delete_columns(6, 8)
+    # col_count = col_count - 3
+    # info(f"removed  .. last 3 columns", nesting_level=1)
+
+    # # remove all trailing blank rows
+    # info(f"removing .. trailing blank rows", nesting_level=1)
+    # gsheet.remove_trailing_blank_rows(target_ws, row_count)
+    # info(f"removed  .. trailing blank rows", nesting_level=1)
+
 
     # clear conditional formatting
     info(f"clearing .. all conditional formatting", nesting_level=1)
     gsheet.clear_conditional_format_rules(target_ws)
     info(f"cleared  .. all conditional formatting", nesting_level=1)
 
+
     # conditional formatting for blank cells
     info(f"adding .. conditional formatting for blank cells", nesting_level=1)
     gsheet.add_conditional_formatting_for_blank_cells(target_ws, WORKSHEET_SPEC['cell-empty-markers'])
     info(f"added  .. conditional formatting for blank cells", nesting_level=1)
 
+
     # conditional formatting review-notes
     info(f"adding .. conditional formatting for review-notes", nesting_level=1)
     gsheet.add_conditional_formatting_for_review_notes(target_ws, row_count, col_count)
     info(f"added  .. conditional formatting for review-notes", nesting_level=1)
+
 
     info(f"freezing .. {WORKSHEET_SPEC['frozen-rows']} rows and {WORKSHEET_SPEC['frozen-columns']} columns", nesting_level=1)
     try:

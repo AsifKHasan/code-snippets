@@ -20,6 +20,7 @@ def do_something(gsheet):
 
     # gsheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
     # gsheet.rename_worksheet(worksheet_name='06-job-history-NEW', new_worksheet_name='06-job-history')
+    # gsheet.order_worksheets()
 
     # gsheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}})
     # gsheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
@@ -27,12 +28,11 @@ def do_something(gsheet):
     # gsheet.remove_worksheet(worksheet_name='-toc')
     # gsheet.remove_worksheet(worksheet_name='06-job-history-Z')
     # gsheet.remove_worksheet(worksheet_name='07-project-roles-Z')
-
     # gsheet.order_worksheets()
 
 
     # BEGIN resume related
-    create_06_job_history_new(gsheet)
+    # create_06_job_history_new(gsheet)
     # END   resume related
 
 
@@ -50,10 +50,11 @@ if __name__ == '__main__':
 
     google_service = GoogleService('../conf/credential.json')
     count = 0
+    num_gsheets = len(gsheet_names)
     for gsheet_name in gsheet_names:
         count = count + 1
         try:
-            info(f"{count:>4} : processing .. gsheet {gsheet_name}")
+            info(f"{count:>4}/{num_gsheets} : processing .. gsheet {gsheet_name}")
             gsheet = GoogleSheet.open(google_service, gsheet_name=gsheet_name)
         except Exception as e:
             gsheet = None
@@ -62,8 +63,9 @@ if __name__ == '__main__':
 
         if gsheet:
             do_something(gsheet)
-            info(f"{count:>4} : processed  .. gsheet {gsheet_name}\n")
+            info(f"{count:>4}/{num_gsheets} : processed  .. gsheet {gsheet_name}\n")
 
-        if count % 3 == 0:
-            warn(f"sleeping for {60} seconds\n")
-            time.sleep(60)
+        wait_for = 50
+        if count % 5 == 0:
+            warn(f"sleeping for {wait_for} seconds\n")
+            time.sleep(wait_for)

@@ -113,6 +113,49 @@ def build_repeatcell_from_work_spec(range, work_spec):
 
 
 
+''' appendDimensionRequest builder
+'''
+def build_append_dimension_request(worksheet_id, dimension, length):
+    return {'appendDimension': {'sheetId': worksheet_id, 'dimension': dimension, 'length': length}}
+
+
+
+''' insertDimensionRequest builder
+'''
+def build_insert_dimension_request(worksheet_id, dimension, start_index, length, inherit_from_before):
+    range = {'sheetId': worksheet_id, 'dimension': dimension, 'startIndex': start_index, 'endIndex': start_index + length}
+    return {'insertDimension': {'range': range, 'inheritFromBefore': inherit_from_before}}
+
+
+
+''' deleteDimensionRequest builder
+'''
+def build_delete_dimension_request(worksheet_id, dimension, start_index, end_index=None):
+    range = {'sheetId': worksheet_id, 'dimension': dimension, 'startIndex': start_index}
+    if end_index:
+        range['endIndex'] = end_index
+
+    return {'deleteDimension': {'range': range}}
+
+
+
+''' gsheet border spec for border around a range
+'''
+def build_duplicate_sheet_request(worksheet_id, new_worksheet_name, new_worksheet_index=None):
+    request_body = {
+        "duplicateSheet": {
+            "sourceSheetId": worksheet_id,
+            "newSheetName": new_worksheet_name
+        }
+    }
+
+    if new_worksheet_index:
+        request_body['duplicateSheet'][insertSheetIndex] = new_worksheet_index
+
+    return request_body
+
+
+
 ''' gsheet border spec for border around a range
 '''
 def build_border_around_spec(border_color, border_style='SOLID'):

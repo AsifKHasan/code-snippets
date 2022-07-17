@@ -10,7 +10,7 @@ from helper.logger import *
 
 
 COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-LETTER_COLUMN_TO = {
+LETTER_TO_COLUMN = {
     'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16, 
     'Q': 17, 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26}
 
@@ -42,8 +42,8 @@ class GoogleSheet(object):
 
     ''' update spreadsheet in batch
     '''
-    def update_in_batch(self, request_body):
-        self.gspread_sheet.batch_update(body={'requests': request_body})    
+    def update_in_batch(self, request_list):
+        self.gspread_sheet.batch_update(body={'requests': request_list})    
 
 
 
@@ -66,6 +66,64 @@ class GoogleSheet(object):
         
         except WorksheetNotFound as e:
             error(f"worksheet {worksheet_name_to_duplicate} not found")
+
+
+
+    ''' add dimensions
+    '''
+    def add_dimension(self, worksheet_id, cols_to_add_at=None, cols_to_add=0, rows_to_add_at=None, rows_to_add=0):
+        requests = []
+        if cols_to_add_at and cols_to_add:
+            # columns to be added
+            if cols_to_add_at == 'end':
+                # columns to be appended at the end
+                requests.append(build_append_dimension_request(worksheet_id=worksheet_id, dimension='COLUMNS', length=rows_to_add))
+
+            else:
+                # columns to be inserted at some index
+                requests.append(build_insert_dimension_request(worksheet_id=worksheet_id, dimension'COLUMNS', start_index=LETTER_TO_COLUMN[cols_to_add_at]-1, length=cols_to_add, inherit_from_before=False))
+
+        if rows_to_add_at and rows_to_add:
+            # rows to be added
+            if rows_to_add_at == 'end':
+                # rows to be appended at the end
+                requests.append(build_append_dimension_request(worksheet_id=worksheet_id, dimension='ROWS', length=rows_to_add))
+
+            else:
+                # rows to be inserted at some index
+                requests.append(build_insert_dimension_request(worksheet_id=worksheet_id, dimension'ROWS', start_index=rows_to_add_at, length=rows_to_add, inherit_from_before=True))
+
+        if len(requests) > 0:
+            self.update_in_batch(requests)
+
+
+
+    ''' add dimensions
+    '''
+    def remove_dimension(self, worksheet_id, cols_to_remove_from=None, cols_to_remove_to=None, rows_to_remove_from=None, rows_to_remove_to=None):
+        requests = []
+        if cols_to_remove_from and cols_to_remove_to:
+            # columns to be removed
+            if cols_to_remove_to == 'end':
+                # columns to be removed till end
+                requests.append(build_delete_dimension_request(worksheet_id=worksheet_id, dimension='COLUMNS', start_index=LETTER_TO_COLUMN[cols_to_remove_from]-1))
+
+            else:
+                # columns to be removed from the middle
+                requests.append(build_delete_dimension_request(worksheet_id=worksheet_id, dimension'COLUMNS', start_index=LETTER_TO_COLUMN[cols_to_remove_from]-1, end_index=LETTER_TO_COLUMN[cols_to_remove_to]))
+
+        if rows_to_remove_from and rows_to_remove_to:
+            # rows to be removed
+            if rows_to_remove_to == 'end':
+                # rows to be removed till end
+                requests.append(build_delete_dimension_request(worksheet_id=worksheet_id, dimension='ROWS', start_index=LETTER_TO_COLUMN[rows_to_remove_from]-1))
+
+            else:
+                # rows to be removed from the middle
+                requests.append(build_delete_dimension_request(worksheet_id=worksheet_id, dimension'ROWS', start_index=LETTER_TO_COLUMN[rows_to_remove_from]-1, end_index=LETTER_TO_COLUMN[rows_to_remove_to]))
+
+        if len(requests) > 0:
+            self.update_in_batch(requests)
 
 
 
@@ -153,18 +211,12 @@ class GoogleSheet(object):
 
 
 
-    ''' delete trailing blank rows from the worksheet
+    ''' get start_index of trailing blank rows from the worksheet
     '''
-    def remove_trailing_blank_rows(self, worksheet, row_count):
+    def trailing_blank_row_start_index(self, worksheet):
         # we first need to know what is the last row having some value
         values = worksheet.get_values()
-        rows_with_value = len(values)
-
-        row_to_delete_from = rows_with_value + 1
-        rows_to_delete = row_count - rows_with_value
-        debug(f"  .. deleting : {rows_to_delete} rows starting from row {row_to_delete_from}")
-        worksheet.delete_rows(row_to_delete_from, row_count)
-        debug(f"  .. deleted  : {rows_to_delete} rows starting from row {row_to_delete_from}")
+        return len(values)
 
 
 
@@ -270,7 +322,7 @@ class GoogleSheet(object):
             # debug(f".. resizing column {key} to {value['size']}", nesting_level=2)
             # set_column_width(target_ws, key, value['size'])
             # dimension_update_request = build_dimension_update_request(sheet_id=worksheet.id, dimension='COLUMN', index=gspread.utils.column_letter_to_index(key), size=value['size'])
-            dimension_update_request = build_dimension_update_request(sheet_id=worksheet.id, dimension='COLUMNS', index=LETTER_COLUMN_TO[key], size=value['size'])
+            dimension_update_request = build_dimension_update_request(sheet_id=worksheet.id, dimension='COLUMNS', index=LETTER_TO_COLUMN[key], size=value['size'])
             dimension_update_requests.append(dimension_update_request)
 
         # batch dimension updates
