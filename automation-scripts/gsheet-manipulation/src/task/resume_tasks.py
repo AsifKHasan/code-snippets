@@ -51,6 +51,35 @@ WORKSHEET_SPECS = {
 }
 
 
+''' retouch worksheets
+'''
+def retouch_worksheets(gsheet):
+    for worksheet_name, worksheet_specs in WORKSHEET_SPECS.items():
+        info(f"BEGIN retouching worksheet {worksheet_name}")
+        g_worksheet = gsheet.worksheet_by_name(worksheet_name=worksheet_name)
+        if g_worksheet:
+            retouch_worksheet(g_worksheet=g_worksheet, worksheet_specs=worksheet_specs)
+            info(f"DONE  retouching worksheet {worksheet_name}")
+
+
+
+''' retouch worksheet
+'''
+def retouch_worksheet(g_worksheet, worksheet_specs):
+
+    # validate num_cols, frozen rows and columns
+    num_cols_actual = g_worksheet.gspread_worksheet.col_count
+    num_cols_required = worksheet_specs['num-columns']
+    if num_cols_actual == num_cols_required:
+        debug(f"PASS .. {num_cols_actual} columns found")
+    else:
+        warn(f"FAIL .. {num_cols_actual} columns found instead of {num_cols_required} column required")
+
+
+    # resize columns
+
+
+
 ''' modify 06-job-history to new format
 '''
 def create_06_job_history_new(gsheet):

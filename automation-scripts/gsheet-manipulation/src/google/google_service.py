@@ -5,6 +5,8 @@ import gspread
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 
+from google.google_sheet import GoogleSheet
+
 SCOPES = [
     "https://spreadsheets.google.com/feeds",
     "https://www.googleapis.com/auth/spreadsheets",
@@ -39,3 +41,16 @@ class GoogleService(object):
 
         # authed_http = AuthorizedHttp(credentials)
         # response = authed_http.request('GET', 'https://www.googleapis.com/storage/v1/b')
+
+
+    ''' open a gsheet
+    '''
+    def open(self, gsheet_name):
+        gspread_sheet = self.gspread.open(gsheet_name)
+        if gspread_sheet:
+            return GoogleSheet(google_service=self, gspread_sheet=gspread_sheet)
+        else:
+            return None
+
+
+

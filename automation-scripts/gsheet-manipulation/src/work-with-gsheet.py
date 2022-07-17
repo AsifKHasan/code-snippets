@@ -6,33 +6,33 @@ import time
 import argparse
 
 from google.google_service import GoogleService
-from google.google_sheet import GoogleSheet
 
 from task.resume_tasks import *
 
 from helper.logger import *
 
 
-def do_something(gsheet):
+def do_something(g_sheet):
 
-    # gsheet.bulk_duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=['04.01-৩১', '04.01-৩২', '04.02-৩৩', '04.02-৩৪', '04.03-৩৫', '04.03-৩৬'])
-    # gsheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
-    # gsheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
-    # gsheet.rename_worksheet(worksheet_name='06-job-history-NEW', new_worksheet_name='06-job-history')
-    # gsheet.order_worksheets()
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=['05.01-৩৭', '05.01-৩৮'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
-    # gsheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}})
-    # gsheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
+    # g_sheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
+    # g_sheet.rename_worksheet(worksheet_name='06-job-history-Z', new_worksheet_name='06-job-history')
 
-    # gsheet.remove_worksheet(worksheet_name='-toc')
-    # gsheet.remove_worksheet(worksheet_name='06-job-history-Z')
-    # gsheet.remove_worksheet(worksheet_name='07-project-roles-Z')
-    # gsheet.order_worksheets()
+    # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}})
+    # g_sheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
+
+    # g_sheet.remove_worksheet(worksheet_name='-toc')
+    # g_sheet.remove_worksheet(worksheet_name='06-job-history-Z')
+    # g_sheet.remove_worksheet(worksheet_name='07-project-roles-Z')
+    # g_sheet.order_worksheets()
 
 
     # BEGIN resume related
-    # create_06_job_history_new(gsheet)
+    retouch_worksheets(g_sheet)
+    # create_06_job_history_new(g_sheet)
     # END   resume related
 
 
@@ -54,16 +54,16 @@ if __name__ == '__main__':
     for gsheet_name in gsheet_names:
         count = count + 1
         try:
-            info(f"{count:>4}/{num_gsheets} : processing .. gsheet {gsheet_name}")
-            gsheet = GoogleSheet.open(google_service, gsheet_name=gsheet_name)
+            info(f"processing {count:>4}/{num_gsheets} gsheet {gsheet_name}")
+            g_sheet = google_service.open(gsheet_name=gsheet_name)
         except Exception as e:
-            gsheet = None
+            g_sheet = None
             warn(str(e))
             # raise e
 
-        if gsheet:
-            do_something(gsheet)
-            info(f"{count:>4}/{num_gsheets} : processed  .. gsheet {gsheet_name}\n")
+        if g_sheet:
+            do_something(g_sheet=g_sheet)
+            info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 50
         if count % 5 == 0:

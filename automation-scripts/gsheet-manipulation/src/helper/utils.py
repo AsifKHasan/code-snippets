@@ -209,22 +209,21 @@ def build_conditional_format_rule(ranges, condition_type, condition_values, form
 
 ''' gets the value from workspec
 '''
-def build_value_from_work_spec(work_spec, gspread_sheet):
+def build_value_from_work_spec(work_spec, worksheet_dict={}):
     value = ''
     if 'value' in work_spec:
         value = work_spec['value']
 
-    # it may be hyperlink to another worksheet
-    if 'ws-name-to-link' in work_spec:
-        # is it a valied worksheet
-        ws_to_link = gspread_sheet.worksheet(work_spec['ws-name-to-link'])
-        if ws_to_link:
-            value = f'=HYPERLINK("#gid={ws_to_link.id}", "{value}")'.lstrip("'")
-        else:
-            warn(f".... No Worksheet named {work_spec['ws-name-to-link']}")
+    if value != '':
+        # it may be hyperlink to another worksheet
+        if 'ws-name-to-link' in work_spec:
+            # is it a valid worksheet
+            if work_spec['ws-name-to-link'] in worksheet_dict:
+                value = f'=HYPERLINK("#gid={worksheet_dict[work_spec["ws-name-to-link"]]}", "{value}")'.lstrip("'")
+            else:
+                warn(f".... No Worksheet named {work_spec['ws-name-to-link']}")
 
     return value
-
 
 
 

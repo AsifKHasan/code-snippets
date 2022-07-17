@@ -8,3 +8,5 @@ work-with-gsheet.bat Résumé__Md.Jamal.Uddin
 
 cd /home/asif/projects/asif@github/code-snippets/automation-scripts/gsheet-manipulation
 ./work-with-gsheet.sh
+./work-with-gsheet.sh PPA-2006__2019-01
+./work-with-gsheet.sh Résumé__Md.Jamal.Uddin
