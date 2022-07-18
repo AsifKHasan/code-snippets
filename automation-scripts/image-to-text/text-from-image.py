@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 
-# Import required packages
+# import required packages
+import platform
 import cv2
 import pytesseract
 
-# Mention the installed location of Tesseract-OCR in your system
-pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+
+# the installed location of Tesseract-OCR in your system
+if platform.system() == 'Windows':
+	pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
+else:
+	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 # Read image from which text needs to be extracted
-img = cv2.imread("/home/asif/Downloads/ibas/ibas-faq/faq-01.png")
+img = cv2.imread("./data/ibas/ibas-faq/faq-01.png")
 
 # Preprocessing the image starts
 
@@ -35,7 +40,7 @@ contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_AP
 im2 = img.copy()
 
 # A text file is created and flushed
-file = open("recognized.txt", "w+")
+file = open("./data/recognized.txt", "w+")
 file.write("")
 file.close()
 
@@ -53,10 +58,12 @@ for cnt in contours:
 	cropped = im2[y:y + h, x:x + w]
 	
 	# Open the file in append mode
-	file = open("recognized.txt", "a")
+	file = open("./data/recognized.txt", "a")
 	
 	# Apply OCR on the cropped image
-	text = pytesseract.image_to_string(cropped, lang='eng+ben')
+	config = '-c preserve_interword_spaces=1x1 --psm 6 --oem 3'
+	config = '-c preserve_interword_spaces=1x1 --psm 6'
+	text = pytesseract.image_to_string(cropped, lang='eng+ben', config=config)
 	
 	# Appending the text into file
 	file.write(text)
