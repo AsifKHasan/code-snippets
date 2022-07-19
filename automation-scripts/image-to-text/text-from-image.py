@@ -40,9 +40,9 @@ contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_AP
 im2 = img.copy()
 
 # A text file is created and flushed
-file = open("./data/recognized.txt", "w+")
-file.write("")
-file.close()
+# file = open("./data/recognized.txt", "w+")
+# file.write("")
+# file.close()
 
 # Looping through the identified contours
 # Then rectangular part is cropped and passed on
@@ -61,9 +61,14 @@ for cnt in contours:
 	file = open("./data/recognized.txt", "a")
 	
 	# Apply OCR on the cropped image
-	config = '-c preserve_interword_spaces=1x1 --psm 6 --oem 3'
-	config = '-c preserve_interword_spaces=1x1 --psm 6'
-	text = pytesseract.image_to_string(cropped, lang='eng+ben', config=config)
+	config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
+	# config = '-c preserve_interword_spaces=1 --psm 6 --oem 3'
+	# config = '-c preserve_interword_spaces=1 --psm 11 --oem 3'
+	# config = '-c preserve_interword_spaces=1 --psm 12 --oem 3'
+	
+	# text = pytesseract.image_to_string(cropped, lang='eng+ben', config=config)
+	# text = pytesseract.image_to_pdf_or_hocr(cropped, lang='eng+ben', config=config, extension='hocr')
+	text = pytesseract.run_and_get_output (cropped, lang='eng+ben', config=config, extension='hocr')
 	
 	# Appending the text into file
 	file.write(text)
