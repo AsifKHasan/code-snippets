@@ -1,2 +1,5 @@
 cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 text-from-image.py
+
+cd /home/asif/projects/asif@github/code-snippets/automation-scripts/image-to-text
+./text-from-image.py

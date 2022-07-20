@@ -484,3 +484,2018 @@
  </body>
 </html>
 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_jss4kg0x.PNG"; bbox 0 0 46 58; ppageno 0'>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_pm4kwn2o.PNG"; bbox 0 0 2929 1741; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 0 0 2929 2">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 0 0 2929 2">
+     <span class='ocr_line' id='line_1_1' title="bbox 0 0 2929 2; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 0 2929 2; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 13 15 2914 17">
+    <p class='ocr_par' id='par_1_2' lang='eng' title="bbox 13 15 2914 17">
+     <span class='ocr_line' id='line_1_2' title="bbox 13 15 2914 17; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_2' title='bbox 13 15 2914 17; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 468 45 2078 119">
+    <p class='ocr_par' id='par_1_3' lang='ben' title="bbox 468 45 2078 119">
+     <span class='ocr_line' id='line_1_3' title="bbox 468 45 2078 119; baseline 0 -14; x_size 65.761902; x_descenders 9.7619047; x_ascenders 15">
+      <span class='ocrx_word' id='word_1_3' title='bbox 468 45 617 119; x_wconf 93'>সমস্যা</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 616 45 895 119; x_wconf 84'>(শ্রেণিবিন্যাস)</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 1919 58 2078 106; x_wconf 95'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 40 158 2601 335">
+    <p class='ocr_par' id='par_1_4' lang='ben' title="bbox 40 158 2601 335">
+     <span class='ocr_line' id='line_1_4' title="bbox 40 158 2601 208; baseline -0 -11; x_size 48; x_descenders 10; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_6' title='bbox 40 164 71 208; x_wconf 88'>১</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 167 156 275 212; x_wconf 95'>অনেক</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 279 156 368 212; x_wconf 95'>সময়</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 372 160 828 203; x_wconf 93'>কম্পিউটার</span>
+      <span class='ocrx_word' id='word_1_10' title='bbox 540 156 569 212; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_11' title='bbox 568 156 639 212; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_12' title='bbox 642 156 746 212; x_wconf 69'>এন্ট্রি</span>
+      <span class='ocrx_word' id='word_1_13' title='bbox 802 175 826 194; x_wconf 95'>করতে</span>
+      <span class='ocrx_word' id='word_1_14' title='bbox 844 156 914 212; x_wconf 95'>গেলে</span>
+      <span class='ocrx_word' id='word_1_15' title='bbox 918 156 1021 212; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_16' title='bbox 1042 156 1231 212; x_wconf 64'>19500901601</span>
+      <span class='ocrx_word' id='word_1_17' title='bbox 1401 166 1457 197; x_wconf 95'>প্রাপ্ত</span>
+      <span class='ocrx_word' id='word_1_18' title='bbox 1490 159 1583 197; x_wconf 95'>বিলের</span>
+      <span class='ocrx_word' id='word_1_19' title='bbox 1615 158 1744 196; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_20' title='bbox 1778 159 1872 197; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_21' title='bbox 1907 167 1986 197; x_wconf 93'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_22' title='bbox 2023 170 2084 197; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_23' title='bbox 2117 159 2220 196; x_wconf 13' lang='eng'>feed</span>
+      <span class='ocrx_word' id='word_1_24' title='bbox 2257 165 2484 203; x_wconf 95' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_25' title='bbox 2520 158 2601 197; x_wconf 96'>অর্থাৎ</span>
+     </span>
+     <span class='ocr_line' id='line_1_5' title="bbox 175 221 2601 274; baseline -0.001 -10.989; x_size 45.632507; x_descenders 7.6325092; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_26' title='bbox 175 221 289 274; x_wconf 91'>দেখায়।</span>
+      <span class='ocrx_word' id='word_1_27' title='bbox 1396 220 1572 274; x_wconf 94'>যথাযথভাবে</span>
+      <span class='ocrx_word' id='word_1_28' title='bbox 1576 220 1698 274; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_29' title='bbox 1715 220 1919 274; x_wconf 91'>অথরাইজেশন</span>
+      <span class='ocrx_word' id='word_1_30' title='bbox 1918 220 2004 274; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_31' title='bbox 2008 220 2060 274; x_wconf 96'>না</span>
+      <span class='ocrx_word' id='word_1_32' title='bbox 2067 220 2153 274; x_wconf 96'>হলে</span>
+      <span class='ocrx_word' id='word_1_33' title='bbox 2152 220 2234 274; x_wconf 92'>বিল</span>
+      <span class='ocrx_word' id='word_1_34' title='bbox 2233 220 2360 274; x_wconf 25'>এন্ট্রির</span>
+      <span class='ocrx_word' id='word_1_35' title='bbox 2373 220 2472 274; x_wconf 94'>সময়</span>
+      <span class='ocrx_word' id='word_1_36' title='bbox 2485 220 2603 274; x_wconf 94'>বাজেট</span>
+     </span>
+     <span class='ocr_line' id='line_1_6' title="bbox 204 289 2600 335; baseline 0.001 -7; x_size 44; x_descenders 7; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_37' title='bbox 204 297 255 335; x_wconf 96'>(ক)</span>
+      <span class='ocrx_word' id='word_1_38' title='bbox 270 291 361 329; x_wconf 94'>অফিস</span>
+      <span class='ocrx_word' id='word_1_39' title='bbox 377 299 451 328; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_40' title='bbox 468 302 746 329; x_wconf 90'>১০৭০৩০৫১০১১৪০</span>
+      <span class='ocrx_word' id='word_1_41' title='bbox 777 291 868 329; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_42' title='bbox 884 299 958 328; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_43' title='bbox 975 297 1274 335; x_wconf 9'>(১৩৬০১০১)</span>
+      <span class='ocrx_word' id='word_1_44' title='bbox 1399 297 1593 329; x_wconf 54'>17540001617</span>
+      <span class='ocrx_word' id='word_1_45' title='bbox 1620 298 1735 328; x_wconf 60'>দেখাবে</span>
+      <span class='ocrx_word' id='word_1_46' title='bbox 1723 285 1733 339; x_wconf 60'>।</span>
+      <span class='ocrx_word' id='word_1_47' title='bbox 1761 298 1852 328; x_wconf 96'>আবার</span>
+      <span class='ocrx_word' id='word_1_48' title='bbox 1874 290 1970 330; x_wconf 90'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_49' title='bbox 1992 289 2145 328; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_50' title='bbox 2171 298 2259 327; x_wconf 90'>কোডে</span>
+      <span class='ocrx_word' id='word_1_51' title='bbox 2284 301 2317 328; x_wconf 95'>যে</span>
+      <span class='ocrx_word' id='word_1_52' title='bbox 2340 298 2419 328; x_wconf 87'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_53' title='bbox 2441 298 2517 331; x_wconf 95'>আছে</span>
+      <span class='ocrx_word' id='word_1_54' title='bbox 2541 291 2600 331; x_wconf 95'>সেই</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_5' title="bbox 184 355 2440 532">
+    <p class='ocr_par' id='par_1_5' lang='ben' title="bbox 184 355 2440 532">
+     <span class='ocr_line' id='line_1_7' title="bbox 185 355 2440 401; baseline 0 -7; x_size 47; x_descenders 8; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_55' title='bbox 185 365 331 395; x_wconf 96'>অপারেশন</span>
+      <span class='ocrx_word' id='word_1_56' title='bbox 347 365 421 394; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_57' title='bbox 438 368 629 398; x_wconf 91'>১২০০০২৪০১</span>
+      <span class='ocrx_word' id='word_1_58' title='bbox 660 356 813 395; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_59' title='bbox 830 365 904 394; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_60' title='bbox 920 368 1085 401; x_wconf 91'>৩২৫৬১০৭,</span>
+      <span class='ocrx_word' id='word_1_61' title='bbox 1114 357 1172 395; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_62' title='bbox 1188 357 1278 395; x_wconf 91'>পোষ্টিং</span>
+      <span class='ocrx_word' id='word_1_63' title='bbox 1396 364 1511 394; x_wconf 82'>বরাদ্দের</span>
+      <span class='ocrx_word' id='word_1_64' title='bbox 1526 367 1592 394; x_wconf 96'>চেয়ে</span>
+      <span class='ocrx_word' id='word_1_65' title='bbox 1609 356 1768 394; x_wconf 96'>পরিশোধিত</span>
+      <span class='ocrx_word' id='word_1_66' title='bbox 1781 355 1838 394; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_67' title='bbox 1851 355 1918 393; x_wconf 96'>বেশী</span>
+      <span class='ocrx_word' id='word_1_68' title='bbox 1930 367 1992 397; x_wconf 95'>হলে</span>
+      <span class='ocrx_word' id='word_1_69' title='bbox 2006 356 2100 394; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_70' title='bbox 2117 363 2311 395; x_wconf 22'>105069011</span>
+      <span class='ocrx_word' id='word_1_71' title='bbox 2328 364 2440 395; x_wconf 91'>দেখাবে।</span>
+     </span>
+     <span class='ocr_line' id='line_1_8' title="bbox 184 422 787 461; baseline 0.002 -2; x_size 46.166351; x_descenders 8.1663513; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_72' title='bbox 184 430 267 459; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_73' title='bbox 280 433 349 460; x_wconf 96'>সময়</span>
+      <span class='ocrx_word' id='word_1_74' title='bbox 367 429 560 461; x_wconf 63'>10506901617</span>
+      <span class='ocrx_word' id='word_1_75' title='bbox 575 422 668 460; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_76' title='bbox 685 430 787 460; x_wconf 90'>দেখায়।</span>
+     </span>
+     <span class='ocr_line' id='line_1_9' title="bbox 204 487 1319 532; baseline 0.001 -7; x_size 47; x_descenders 8; x_ascenders 10">
+      <span class='ocrx_word' id='word_1_77' title='bbox 204 483 249 538; x_wconf 91'>(খ)</span>
+      <span class='ocrx_word' id='word_1_78' title='bbox 250 483 361 538; x_wconf 93'>বিভিন্ন</span>
+      <span class='ocrx_word' id='word_1_79' title='bbox 365 483 521 538; x_wconf 92'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_80' title='bbox 525 483 618 538; x_wconf 93'>কোডে</span>
+      <span class='ocrx_word' id='word_1_81' title='bbox 617 483 714 538; x_wconf 91'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_82' title='bbox 713 483 815 538; x_wconf 91'>পর্যাপ্ত</span>
+      <span class='ocrx_word' id='word_1_83' title='bbox 818 483 893 538; x_wconf 96'>থাকা</span>
+      <span class='ocrx_word' id='word_1_84' title='bbox 892 483 993 538; x_wconf 47'>সত্তেও</span>
+      <span class='ocrx_word' id='word_1_85' title='bbox 1025 487 1145 526; x_wconf 93'>নির্ধারিত</span>
+      <span class='ocrx_word' id='word_1_86' title='bbox 1157 483 1250 538; x_wconf 92'>কোডে</span>
+      <span class='ocrx_word' id='word_1_87' title='bbox 1249 483 1323 538; x_wconf 96'>বিল</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_6' title="bbox 13 609 2914 611">
+    <p class='ocr_par' id='par_1_6' lang='eng' title="bbox 13 609 2914 611">
+     <span class='ocr_line' id='line_1_10' title="bbox 13 609 2914 611; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_88' title='bbox 13 609 2914 611; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_7' title="bbox 22 553 2606 790">
+    <p class='ocr_par' id='par_1_7' lang='ben' title="bbox 40 553 2601 790">
+     <span class='ocr_line' id='line_1_11' title="bbox 188 553 511 591; baseline -0.003 -1; x_size 46.447964; x_descenders 9.4479637; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_89' title='bbox 188 553 511 591; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_90' title='bbox 309 549 376 605; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_91' title='bbox 375 549 450 605; x_wconf 93'>যায়</span>
+      <span class='ocrx_word' id='word_1_92' title='bbox 454 549 516 605; x_wconf 90'>না।</span>
+     </span>
+     <span class='ocr_line' id='line_1_12' title="bbox 22 617 2600 676; baseline -0.002 -12.965; x_size 48; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_93' title='bbox 22 620 77 676; x_wconf 79'>২|</span>
+      <span class='ocrx_word' id='word_1_94' title='bbox 176 617 275 673; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_95' title='bbox 279 617 377 673; x_wconf 92'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_96' title='bbox 388 617 447 673; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_97' title='bbox 447 617 520 673; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_98' title='bbox 521 617 592 673; x_wconf 94'>ছাড়</span>
+      <span class='ocrx_word' id='word_1_99' title='bbox 601 617 690 673; x_wconf 96'>করলে</span>
+      <span class='ocrx_word' id='word_1_100' title='bbox 689 617 760 673; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_101' title='bbox 759 617 835 673; x_wconf 96'>পাশ</span>
+      <span class='ocrx_word' id='word_1_102' title='bbox 834 617 900 673; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_103' title='bbox 909 617 984 673; x_wconf 96'>যাবে</span>
+      <span class='ocrx_word' id='word_1_104' title='bbox 993 617 1056 673; x_wconf 96'>কি?</span>
+      <span class='ocrx_word' id='word_1_105' title='bbox 1382 616 1495 672; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_106' title='bbox 1494 616 1607 672; x_wconf 94'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_107' title='bbox 1625 616 1686 672; x_wconf 93'>এবং</span>
+      <span class='ocrx_word' id='word_1_108' title='bbox 1690 616 1836 672; x_wconf 81'>অর্থছাড়</span>
+      <span class='ocrx_word' id='word_1_109' title='bbox 1840 616 1934 672; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_110' title='bbox 1942 616 1999 672; x_wconf 96'>পর</span>
+      <span class='ocrx_word' id='word_1_111' title='bbox 2008 616 2086 672; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_112' title='bbox 2087 620 2385 664; x_wconf 90'>দাখিলকারী</span>
+      <span class='ocrx_word' id='word_1_113' title='bbox 2278 616 2391 672; x_wconf 89'>ডিডিও</span>
+      <span class='ocrx_word' id='word_1_114' title='bbox 2417 632 2465 659; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_115' title='bbox 2470 616 2601 672; x_wconf 96'>বরাবরে</span>
+     </span>
+     <span class='ocr_line' id='line_1_13' title="bbox 1387 683 2606 740; baseline 0 -16; x_size 38; x_descenders 6; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_116' title='bbox 1387 689 1533 740; x_wconf 95'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_117' title='bbox 1564 687 1658 725; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_118' title='bbox 1691 687 1793 724; x_wconf 91'>বিতরণ</span>
+      <span class='ocrx_word' id='word_1_119' title='bbox 1831 693 2057 731; x_wconf 95' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_120' title='bbox 2092 695 2154 724; x_wconf 55' lang='eng'>Fat</span>
+      <span class='ocrx_word' id='word_1_121' title='bbox 2185 698 2248 728; x_wconf 45' lang='eng'>aA</span>
+      <span class='ocrx_word' id='word_1_122' title='bbox 2266 683 2433 740; x_wconf 92'>বিতরণকৃত</span>
+      <span class='ocrx_word' id='word_1_123' title='bbox 2454 683 2606 735; x_wconf 95'>বাজেটের</span>
+     </span>
+     <span class='ocr_line' id='line_1_14' title="bbox 1395 751 1836 790; baseline -0.002 -1; x_size 47.447964; x_descenders 9.4479637; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_124' title='bbox 1395 751 1836 790; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_125' title='bbox 1531 747 1592 803; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_126' title='bbox 1591 747 1667 803; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_127' title='bbox 1666 747 1732 803; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_128' title='bbox 1736 747 1830 803; x_wconf 90'>যাবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_8' title="bbox 13 884 2914 886">
+    <p class='ocr_par' id='par_1_8' lang='eng' title="bbox 13 884 2914 886">
+     <span class='ocr_line' id='line_1_15' title="bbox 13 884 2914 886; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_129' title='bbox 13 884 2914 886; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_9' title="bbox 40 897 2601 1205">
+    <p class='ocr_par' id='par_1_9' lang='ben' title="bbox 40 897 2601 1205">
+     <span class='ocr_line' id='line_1_16' title="bbox 40 897 2601 946; baseline 0 -11; x_size 46; x_descenders 8; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_130' title='bbox 40 902 80 946; x_wconf 77'>৩]</span>
+      <span class='ocrx_word' id='word_1_131' title='bbox 185 899 333 943; x_wconf 92'>জুলাই/১৮</span>
+      <span class='ocrx_word' id='word_1_132' title='bbox 351 910 373 933; x_wconf 93'>ও</span>
+      <span class='ocrx_word' id='word_1_133' title='bbox 388 899 548 943; x_wconf 86'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_134' title='bbox 562 906 633 936; x_wconf 93'>মাসে</span>
+      <span class='ocrx_word' id='word_1_135' title='bbox 647 898 748 939; x_wconf 87'>ইউএও</span>
+      <span class='ocrx_word' id='word_1_136' title='bbox 745 893 891 949; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_137' title='bbox 890 893 1035 949; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_138' title='bbox 1039 893 1119 949; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_139' title='bbox 1123 893 1264 949; x_wconf 96'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_140' title='bbox 1263 893 1339 949; x_wconf 94'>বিল</span>
+      <span class='ocrx_word' id='word_1_141' title='bbox 1347 893 1385 949; x_wconf 58'>1</span>
+      <span class='ocrx_word' id='word_1_142' title='bbox 1396 898 1590 942; x_wconf 91'>জুলাই/২০১৮</span>
+      <span class='ocrx_word' id='word_1_143' title='bbox 1611 905 1682 935; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_144' title='bbox 1706 909 1786 936; x_wconf 31'>4০০</span>
+      <span class='ocrx_word' id='word_1_145' title='bbox 1811 904 1982 945; x_wconf 23'>£6068150</span>
+      <span class='ocrx_word' id='word_1_146' title='bbox 2006 904 2102 936; x_wconf 61'>6016</span>
+      <span class='ocrx_word' id='word_1_147' title='bbox 2129 908 2177 935; x_wconf 96'>এর</span>
+      <span class='ocrx_word' id='word_1_148' title='bbox 2197 905 2296 935; x_wconf 94'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_149' title='bbox 2320 908 2353 935; x_wconf 95'>যে</span>
+      <span class='ocrx_word' id='word_1_150' title='bbox 2374 908 2454 935; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_151' title='bbox 2474 897 2601 935; x_wconf 95'>অফিসের</span>
+     </span>
+     <span class='ocr_line' id='line_1_17' title="bbox 188 962 2601 1010; baseline -0.001 -9; x_size 37; x_descenders 5; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_152' title='bbox 188 972 246 1001; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_153' title='bbox 258 972 320 1001; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_154' title='bbox 331 975 391 1005; x_wconf 92'>হয়।</span>
+      <span class='ocrx_word' id='word_1_155' title='bbox 412 972 483 1002; x_wconf 96'>এখন</span>
+      <span class='ocrx_word' id='word_1_156' title='bbox 495 964 605 1001; x_wconf 96'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_157' title='bbox 617 964 714 1004; x_wconf 96'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_158' title='bbox 727 964 854 1002; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_159' title='bbox 866 963 995 1001; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_160' title='bbox 1009 975 1061 1002; x_wconf 94'>ব্যয়</span>
+      <span class='ocrx_word' id='word_1_161' title='bbox 1078 972 1184 1002; x_wconf 94'>দেখাতে</span>
+      <span class='ocrx_word' id='word_1_162' title='bbox 1197 975 1271 1005; x_wconf 96'>হবে?</span>
+      <span class='ocrx_word' id='word_1_163' title='bbox 1395 962 1453 1000; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_164' title='bbox 1470 962 1594 1000; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_165' title='bbox 1608 970 1669 999; x_wconf 94'>করা</span>
+      <span class='ocrx_word' id='word_1_166' title='bbox 1683 962 1797 1003; x_wconf 95'>হয়েছিল</span>
+      <span class='ocrx_word' id='word_1_167' title='bbox 1812 970 1871 999; x_wconf 96'>তার</span>
+      <span class='ocrx_word' id='word_1_168' title='bbox 1891 969 1999 1001; x_wconf 45'>09911</span>
+      <span class='ocrx_word' id='word_1_169' title='bbox 2020 973 2208 1010; x_wconf 61'>৪০০০9100175</span>
+      <span class='ocrx_word' id='word_1_170' title='bbox 2224 969 2314 1003; x_wconf 89'>সম্পন্ন</span>
+      <span class='ocrx_word' id='word_1_171' title='bbox 2327 970 2390 999; x_wconf 92'>করা</span>
+      <span class='ocrx_word' id='word_1_172' title='bbox 2403 973 2512 1003; x_wconf 90'>হয়েছে।</span>
+      <span class='ocrx_word' id='word_1_173' title='bbox 2534 973 2601 1000; x_wconf 95'>এতে</span>
+     </span>
+     <span class='ocr_line' id='line_1_18' title="bbox 1396 1027 2598 1073; baseline -0.002 -7; x_size 48; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_174' title='bbox 1382 1023 1464 1080; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_175' title='bbox 1468 1023 1535 1080; x_wconf 93'>কোন</span>
+      <span class='ocrx_word' id='word_1_176' title='bbox 1534 1023 1692 1080; x_wconf 77'>ভুলভ্রান্তি</span>
+      <span class='ocrx_word' id='word_1_177' title='bbox 1696 1023 1848 1080; x_wconf 96'>পরিলক্ষিত</span>
+      <span class='ocrx_word' id='word_1_178' title='bbox 1848 1023 1910 1080; x_wconf 96'>হয়</span>
+      <span class='ocrx_word' id='word_1_179' title='bbox 1919 1023 1981 1080; x_wconf 93'>তবে</span>
+      <span class='ocrx_word' id='word_1_180' title='bbox 1985 1023 2133 1080; x_wconf 88'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_181' title='bbox 2133 1023 2262 1080; x_wconf 94'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_182' title='bbox 2267 1023 2399 1080; x_wconf 94'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_183' title='bbox 2408 1023 2504 1080; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_184' title='bbox 2503 1023 2598 1080; x_wconf 90'>হবে।</span>
+     </span>
+     <span class='ocr_line' id='line_1_19' title="bbox 1396 1094 2596 1142; baseline 0.001 -10; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_185' title='bbox 1396 1095 1557 1139; x_wconf 87'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_186' title='bbox 1573 1102 1644 1132; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_187' title='bbox 1663 1102 1734 1132; x_wconf 96'>কোন</span>
+      <span class='ocrx_word' id='word_1_188' title='bbox 1752 1106 1832 1133; x_wconf 28'>40০</span>
+      <span class='ocrx_word' id='word_1_189' title='bbox 1852 1101 2023 1142; x_wconf 11'>5901-850</span>
+      <span class='ocrx_word' id='word_1_190' title='bbox 2042 1101 2139 1133; x_wconf 52'>(০0150</span>
+      <span class='ocrx_word' id='word_1_191' title='bbox 2160 1105 2182 1132; x_wconf 95'>এ</span>
+      <span class='ocrx_word' id='word_1_192' title='bbox 2218 1094 2275 1132; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_193' title='bbox 2294 1094 2418 1132; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_194' title='bbox 2432 1102 2494 1131; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_195' title='bbox 2508 1094 2596 1135; x_wconf 92'>হয়নি।</span>
+     </span>
+     <span class='ocr_line' id='line_1_20' title="bbox 1396 1159 2548 1205; baseline 0.002 -8; x_size 47; x_descenders 8; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_196' title='bbox 1382 1155 1525 1210; x_wconf 88'>তারপরও</span>
+      <span class='ocrx_word' id='word_1_197' title='bbox 1529 1155 1608 1210; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_198' title='bbox 1607 1155 1677 1210; x_wconf 95'>কোন</span>
+      <span class='ocrx_word' id='word_1_199' title='bbox 1676 1155 1741 1210; x_wconf 88'>ভুল</span>
+      <span class='ocrx_word' id='word_1_200' title='bbox 1744 1155 1823 1210; x_wconf 96'>হয়ে</span>
+      <span class='ocrx_word' id='word_1_201' title='bbox 1827 1155 1901 1210; x_wconf 96'>থাকে</span>
+      <span class='ocrx_word' id='word_1_202' title='bbox 1905 1155 1956 1210; x_wconf 93'>তা</span>
+      <span class='ocrx_word' id='word_1_203' title='bbox 1955 1155 2098 1210; x_wconf 86'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_204' title='bbox 2102 1155 2227 1210; x_wconf 91'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_205' title='bbox 2230 1155 2359 1210; x_wconf 96'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_206' title='bbox 2368 1155 2460 1210; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_207' title='bbox 2464 1155 2548 1210; x_wconf 88'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_10' title="bbox 13 1215 2914 1217">
+    <p class='ocr_par' id='par_1_10' lang='eng' title="bbox 13 1215 2914 1217">
+     <span class='ocr_line' id='line_1_21' title="bbox 13 1215 2914 1217; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_208' title='bbox 13 1215 2914 1217; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_11' title="bbox 40 1228 2602 1407">
+    <p class='ocr_par' id='par_1_11' lang='ben' title="bbox 40 1228 2602 1407">
+     <span class='ocr_line' id='line_1_22' title="bbox 40 1228 2601 1281; baseline 0 -15; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_209' title='bbox 40 1229 71 1281; x_wconf 87'>8]</span>
+      <span class='ocrx_word' id='word_1_210' title='bbox 187 1236 353 1277; x_wconf 7'>15070</span>
+      <span class='ocrx_word' id='word_1_211' title='bbox 367 1229 455 1267; x_wconf 92'>সিএও</span>
+      <span class='ocrx_word' id='word_1_212' title='bbox 470 1229 597 1267; x_wconf 93'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_213' title='bbox 614 1236 747 1268; x_wconf 37'>০01০5০</span>
+      <span class='ocrx_word' id='word_1_214' title='bbox 761 1237 844 1266; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_215' title='bbox 857 1237 961 1267; x_wconf 95'>দরকার</span>
+      <span class='ocrx_word' id='word_1_216' title='bbox 974 1237 1050 1270; x_wconf 96'>আছে</span>
+      <span class='ocrx_word' id='word_1_217' title='bbox 1061 1229 1116 1268; x_wconf 96'>কি?</span>
+      <span class='ocrx_word' id='word_1_218' title='bbox 1395 1228 1483 1266; x_wconf 88'>সিএও</span>
+      <span class='ocrx_word' id='word_1_219' title='bbox 1499 1228 1590 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_220' title='bbox 1604 1228 1698 1266; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_221' title='bbox 1711 1228 1812 1267; x_wconf 90'>নিয়ন্ত্রণ</span>
+      <span class='ocrx_word' id='word_1_222' title='bbox 1826 1228 1917 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_223' title='bbox 1930 1228 2032 1269; x_wconf 93'>হিসাবে</span>
+      <span class='ocrx_word' id='word_1_224' title='bbox 2048 1235 2215 1276; x_wconf 40'>/১0701</span>
+      <span class='ocrx_word' id='word_1_225' title='bbox 2233 1235 2367 1267; x_wconf 4'>০701059</span>
+      <span class='ocrx_word' id='word_1_226' title='bbox 2381 1236 2465 1265; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_227' title='bbox 2483 1235 2601 1266; x_wconf 94'>প্রয়োজন</span>
+     </span>
+     <span class='ocr_line' id='line_1_23' title="bbox 1396 1292 2602 1342; baseline -0.001 -11; x_size 47; x_descenders 9; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_228' title='bbox 1396 1301 1486 1334; x_wconf 84'>আছে।</span>
+      <span class='ocrx_word' id='word_1_229' title='bbox 1503 1304 1568 1330; x_wconf 96'>তবে</span>
+      <span class='ocrx_word' id='word_1_230' title='bbox 1581 1301 1679 1331; x_wconf 96'>যথাযথ</span>
+      <span class='ocrx_word' id='word_1_231' title='bbox 1692 1292 1808 1342; x_wconf 89'>কর্তৃপক্ষ</span>
+      <span class='ocrx_word' id='word_1_232' title='bbox 1821 1292 1907 1342; x_wconf 69'>কর্তৃক</span>
+      <span class='ocrx_word' id='word_1_233' title='bbox 1925 1304 2001 1332; x_wconf 49'>1945</span>
+      <span class='ocrx_word' id='word_1_234' title='bbox 2021 1305 2138 1341; x_wconf 47'>550507</span>
+      <span class='ocrx_word' id='word_1_235' title='bbox 2157 1304 2179 1331; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_236' title='bbox 2197 1293 2290 1331; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_237' title='bbox 2309 1300 2510 1332; x_wconf 0'>015010007</span>
+      <span class='ocrx_word' id='word_1_238' title='bbox 2540 1301 2602 1330; x_wconf 96'>করা</span>
+     </span>
+     <span class='ocr_line' id='line_1_24' title="bbox 1395 1366 2125 1407; baseline -0.004 -9; x_size 41; x_descenders 9; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_239' title='bbox 1395 1370 1458 1400; x_wconf 93'>হলে</span>
+      <span class='ocrx_word' id='word_1_240' title='bbox 1473 1366 1640 1407; x_wconf 31'>4000011</span>
+      <span class='ocrx_word' id='word_1_241' title='bbox 1657 1366 1791 1398; x_wconf 59'>21959</span>
+      <span class='ocrx_word' id='word_1_242' title='bbox 1809 1370 1857 1397; x_wconf 93'>এর</span>
+      <span class='ocrx_word' id='word_1_243' title='bbox 1875 1366 1993 1397; x_wconf 95'>প্রয়োজন</span>
+      <span class='ocrx_word' id='word_1_244' title='bbox 2005 1370 2065 1400; x_wconf 93'>হবে</span>
+      <span class='ocrx_word' id='word_1_245' title='bbox 2077 1367 2125 1397; x_wconf 91'>না।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_12' title="bbox 13 1497 2914 1499">
+    <p class='ocr_par' id='par_1_12' lang='eng' title="bbox 13 1497 2914 1499">
+     <span class='ocr_line' id='line_1_25' title="bbox 13 1497 2914 1499; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_246' title='bbox 13 1497 2914 1499; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_13' title="bbox 40 1506 2602 1682">
+    <p class='ocr_par' id='par_1_13' lang='ben' title="bbox 40 1506 2602 1682">
+     <span class='ocr_line' id='line_1_26' title="bbox 40 1506 2602 1559; baseline -0.001 -11; x_size 45; x_descenders 7; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_247' title='bbox 40 1514 76 1558; x_wconf 94'>৫]</span>
+      <span class='ocrx_word' id='word_1_248' title='bbox 185 1506 314 1559; x_wconf 95'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_249' title='bbox 313 1506 455 1559; x_wconf 95'>পরিষদের</span>
+      <span class='ocrx_word' id='word_1_250' title='bbox 454 1506 544 1559; x_wconf 96'>টাকা</span>
+      <span class='ocrx_word' id='word_1_251' title='bbox 547 1506 672 1559; x_wconf 95'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_252' title='bbox 671 1506 804 1559; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_253' title='bbox 803 1506 879 1559; x_wconf 94'>করা</span>
+      <span class='ocrx_word' id='word_1_254' title='bbox 878 1506 959 1559; x_wconf 94'>হবে?</span>
+      <span class='ocrx_word' id='word_1_255' title='bbox 1396 1509 1524 1547; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_256' title='bbox 1553 1509 1651 1547; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_257' title='bbox 1682 1520 1730 1547; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_258' title='bbox 1756 1517 1862 1556; x_wconf 95'>অনুদান</span>
+      <span class='ocrx_word' id='word_1_259' title='bbox 1892 1517 1963 1546; x_wconf 96'>খাতে</span>
+      <span class='ocrx_word' id='word_1_260' title='bbox 1990 1517 2124 1559; x_wconf 94'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_261' title='bbox 2151 1508 2209 1547; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_262' title='bbox 2235 1508 2382 1547; x_wconf 96'>এককালীন</span>
+      <span class='ocrx_word' id='word_1_263' title='bbox 2413 1509 2461 1546; x_wconf 96'>৪টি</span>
+      <span class='ocrx_word' id='word_1_264' title='bbox 2487 1509 2602 1546; x_wconf 93'>কিস্তিতে</span>
+     </span>
+     <span class='ocr_line' id='line_1_27' title="bbox 1396 1575 2602 1620; baseline 0.001 -8; x_size 48; x_descenders 9; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_265' title='bbox 1387 1571 1523 1627; x_wconf 94'>উত্তোলন</span>
+      <span class='ocrx_word' id='word_1_266' title='bbox 1527 1571 1600 1627; x_wconf 96'>করে</span>
+      <span class='ocrx_word' id='word_1_267' title='bbox 1617 1571 1747 1627; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_268' title='bbox 1746 1571 1864 1627; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_269' title='bbox 1863 1571 1985 1627; x_wconf 96'>তহবিলে</span>
+      <span class='ocrx_word' id='word_1_270' title='bbox 1984 1571 2131 1627; x_wconf 93'>স্থানান্তর</span>
+      <span class='ocrx_word' id='word_1_271' title='bbox 2172 1571 2228 1627; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_272' title='bbox 2227 1571 2293 1627; x_wconf 95'>উক্ত</span>
+      <span class='ocrx_word' id='word_1_273' title='bbox 2297 1571 2484 1627; x_wconf 96'>স্থানান্তরিত</span>
+      <span class='ocrx_word' id='word_1_274' title='bbox 2488 1571 2601 1627; x_wconf 95'>তহবিল</span>
+     </span>
+     <span class='ocr_line' id='line_1_28' title="bbox 1399 1641 2096 1682; baseline 0.003 -4; x_size 44.401905; x_descenders 7.4019055; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_275' title='bbox 1399 1637 1479 1690; x_wconf 95'>থেকে</span>
+      <span class='ocrx_word' id='word_1_276' title='bbox 1478 1637 1590 1690; x_wconf 95'>তাদের</span>
+      <span class='ocrx_word' id='word_1_277' title='bbox 1589 1637 1683 1690; x_wconf 96'>বেতন</span>
+      <span class='ocrx_word' id='word_1_278' title='bbox 1682 1637 1771 1690; x_wconf 96'>ভাতা</span>
+      <span class='ocrx_word' id='word_1_279' title='bbox 1774 1637 1908 1690; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_280' title='bbox 1916 1637 2009 1690; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_281' title='bbox 2008 1637 2089 1690; x_wconf 91'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_14' title="bbox 13 1723 2914 1725">
+    <p class='ocr_par' id='par_1_14' lang='eng' title="bbox 13 1723 2914 1725">
+     <span class='ocr_line' id='line_1_29' title="bbox 13 1723 2914 1725; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_282' title='bbox 13 1723 2914 1725; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_15' title="bbox 0 1740 2929 1741">
+    <p class='ocr_par' id='par_1_15' lang='eng' title="bbox 0 1740 2929 1741">
+     <span class='ocr_line' id='line_1_30' title="bbox 0 1740 2929 1741; baseline 0 0; x_size 0.5; x_descenders -0.25; x_ascenders 0.25">
+      <span class='ocrx_word' id='word_1_283' title='bbox 0 1740 2929 1741; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_8j0fwrp8.PNG"; bbox 0 0 1169 103; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 0 0 1169 2">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 0 0 1169 2">
+     <span class='ocr_line' id='line_1_1' title="bbox 0 0 1169 2; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 0 1169 2; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 14 14 1154 82">
+    <p class='ocr_par' id='par_1_2' lang='ben' title="bbox 14 14 1154 82">
+     <span class='ocr_line' id='line_1_2' title="bbox 14 14 1154 82; baseline -0.005 -6; x_size 69; x_descenders 11; x_ascenders 17">
+      <span class='ocrx_word' id='word_1_2' title='bbox 0 10 107 87; x_wconf 93'>নতুন</span>
+      <span class='ocrx_word' id='word_1_3' title='bbox 106 10 376 87; x_wconf 88'>শ্রেণিবিন্যাস</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 390 31 423 65; x_wconf 92'>ও</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 439 10 652 87; x_wconf 86'>আইবাস++</span>
+      <span class='ocrx_word' id='word_1_6' title='bbox 651 10 819 87; x_wconf 94'>সংক্রান্ত</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 824 10 941 87; x_wconf 92'>প্রশ্ন</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 944 31 978 65; x_wconf 96'>ও</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 985 10 1159 87; x_wconf 96'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 19 86 1152 88">
+    <p class='ocr_par' id='par_1_3' lang='eng' title="bbox 19 86 1152 88">
+     <span class='ocr_line' id='line_1_3' title="bbox 19 86 1152 88; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_10' title='bbox 19 86 1152 88; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 0 102 1169 103">
+    <p class='ocr_par' id='par_1_4' lang='eng' title="bbox 0 102 1169 103">
+     <span class='ocr_line' id='line_1_4' title="bbox 0 102 1169 103; baseline 0 0; x_size 0.5; x_descenders -0.25; x_ascenders 0.25">
+      <span class='ocrx_word' id='word_1_11' title='bbox 0 102 1169 103; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_j7_8h3p5.PNG"; bbox 0 0 46 58; ppageno 0'>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_3a6smc6w.PNG"; bbox 0 0 2929 1741; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 0 0 2929 2">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 0 0 2929 2">
+     <span class='ocr_line' id='line_1_1' title="bbox 0 0 2929 2; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 0 2929 2; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 13 15 2914 17">
+    <p class='ocr_par' id='par_1_2' lang='eng' title="bbox 13 15 2914 17">
+     <span class='ocr_line' id='line_1_2' title="bbox 13 15 2914 17; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_2' title='bbox 13 15 2914 17; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 468 45 2078 119">
+    <p class='ocr_par' id='par_1_3' lang='ben' title="bbox 468 45 2078 119">
+     <span class='ocr_line' id='line_1_3' title="bbox 468 45 2078 119; baseline 0 -14; x_size 65.761902; x_descenders 9.7619047; x_ascenders 15">
+      <span class='ocrx_word' id='word_1_3' title='bbox 468 45 617 119; x_wconf 93'>সমস্যা</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 616 45 895 119; x_wconf 84'>(শ্রেণিবিন্যাস)</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 1919 58 2078 106; x_wconf 95'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 40 158 2601 335">
+    <p class='ocr_par' id='par_1_4' lang='ben' title="bbox 40 158 2601 335">
+     <span class='ocr_line' id='line_1_4' title="bbox 40 158 2601 208; baseline -0 -11; x_size 48; x_descenders 10; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_6' title='bbox 40 164 71 208; x_wconf 88'>১</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 167 156 275 212; x_wconf 95'>অনেক</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 279 156 368 212; x_wconf 95'>সময়</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 372 160 828 203; x_wconf 93'>কম্পিউটার</span>
+      <span class='ocrx_word' id='word_1_10' title='bbox 540 156 569 212; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_11' title='bbox 568 156 639 212; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_12' title='bbox 642 156 746 212; x_wconf 69'>এন্ট্রি</span>
+      <span class='ocrx_word' id='word_1_13' title='bbox 802 175 826 194; x_wconf 95'>করতে</span>
+      <span class='ocrx_word' id='word_1_14' title='bbox 844 156 914 212; x_wconf 95'>গেলে</span>
+      <span class='ocrx_word' id='word_1_15' title='bbox 918 156 1021 212; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_16' title='bbox 1042 156 1231 212; x_wconf 64'>19500901601</span>
+      <span class='ocrx_word' id='word_1_17' title='bbox 1401 166 1457 197; x_wconf 95'>প্রাপ্ত</span>
+      <span class='ocrx_word' id='word_1_18' title='bbox 1490 159 1583 197; x_wconf 95'>বিলের</span>
+      <span class='ocrx_word' id='word_1_19' title='bbox 1615 158 1744 196; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_20' title='bbox 1778 159 1872 197; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_21' title='bbox 1907 167 1986 197; x_wconf 93'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_22' title='bbox 2023 170 2084 197; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_23' title='bbox 2117 159 2220 196; x_wconf 13' lang='eng'>feed</span>
+      <span class='ocrx_word' id='word_1_24' title='bbox 2257 165 2484 203; x_wconf 95' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_25' title='bbox 2520 158 2601 197; x_wconf 96'>অর্থাৎ</span>
+     </span>
+     <span class='ocr_line' id='line_1_5' title="bbox 175 221 2601 274; baseline -0.001 -10.989; x_size 45.632507; x_descenders 7.6325092; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_26' title='bbox 175 221 289 274; x_wconf 91'>দেখায়।</span>
+      <span class='ocrx_word' id='word_1_27' title='bbox 1396 220 1572 274; x_wconf 94'>যথাযথভাবে</span>
+      <span class='ocrx_word' id='word_1_28' title='bbox 1576 220 1698 274; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_29' title='bbox 1715 220 1919 274; x_wconf 91'>অথরাইজেশন</span>
+      <span class='ocrx_word' id='word_1_30' title='bbox 1918 220 2004 274; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_31' title='bbox 2008 220 2060 274; x_wconf 96'>না</span>
+      <span class='ocrx_word' id='word_1_32' title='bbox 2067 220 2153 274; x_wconf 96'>হলে</span>
+      <span class='ocrx_word' id='word_1_33' title='bbox 2152 220 2234 274; x_wconf 92'>বিল</span>
+      <span class='ocrx_word' id='word_1_34' title='bbox 2233 220 2360 274; x_wconf 25'>এন্ট্রির</span>
+      <span class='ocrx_word' id='word_1_35' title='bbox 2373 220 2472 274; x_wconf 94'>সময়</span>
+      <span class='ocrx_word' id='word_1_36' title='bbox 2485 220 2603 274; x_wconf 94'>বাজেট</span>
+     </span>
+     <span class='ocr_line' id='line_1_6' title="bbox 204 289 2600 335; baseline 0.001 -7; x_size 44; x_descenders 7; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_37' title='bbox 204 297 255 335; x_wconf 96'>(ক)</span>
+      <span class='ocrx_word' id='word_1_38' title='bbox 270 291 361 329; x_wconf 94'>অফিস</span>
+      <span class='ocrx_word' id='word_1_39' title='bbox 377 299 451 328; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_40' title='bbox 468 302 746 329; x_wconf 90'>১০৭০৩০৫১০১১৪০</span>
+      <span class='ocrx_word' id='word_1_41' title='bbox 777 291 868 329; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_42' title='bbox 884 299 958 328; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_43' title='bbox 975 297 1274 335; x_wconf 9'>(১৩৬০১০১)</span>
+      <span class='ocrx_word' id='word_1_44' title='bbox 1399 297 1593 329; x_wconf 54'>17540001617</span>
+      <span class='ocrx_word' id='word_1_45' title='bbox 1620 298 1735 328; x_wconf 60'>দেখাবে</span>
+      <span class='ocrx_word' id='word_1_46' title='bbox 1723 285 1733 339; x_wconf 60'>।</span>
+      <span class='ocrx_word' id='word_1_47' title='bbox 1761 298 1852 328; x_wconf 96'>আবার</span>
+      <span class='ocrx_word' id='word_1_48' title='bbox 1874 290 1970 330; x_wconf 90'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_49' title='bbox 1992 289 2145 328; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_50' title='bbox 2171 298 2259 327; x_wconf 90'>কোডে</span>
+      <span class='ocrx_word' id='word_1_51' title='bbox 2284 301 2317 328; x_wconf 95'>যে</span>
+      <span class='ocrx_word' id='word_1_52' title='bbox 2340 298 2419 328; x_wconf 87'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_53' title='bbox 2441 298 2517 331; x_wconf 95'>আছে</span>
+      <span class='ocrx_word' id='word_1_54' title='bbox 2541 291 2600 331; x_wconf 95'>সেই</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_5' title="bbox 184 355 2440 532">
+    <p class='ocr_par' id='par_1_5' lang='ben' title="bbox 184 355 2440 532">
+     <span class='ocr_line' id='line_1_7' title="bbox 185 355 2440 401; baseline 0 -7; x_size 47; x_descenders 8; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_55' title='bbox 185 365 331 395; x_wconf 96'>অপারেশন</span>
+      <span class='ocrx_word' id='word_1_56' title='bbox 347 365 421 394; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_57' title='bbox 438 368 629 398; x_wconf 91'>১২০০০২৪০১</span>
+      <span class='ocrx_word' id='word_1_58' title='bbox 660 356 813 395; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_59' title='bbox 830 365 904 394; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_60' title='bbox 920 368 1085 401; x_wconf 91'>৩২৫৬১০৭,</span>
+      <span class='ocrx_word' id='word_1_61' title='bbox 1114 357 1172 395; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_62' title='bbox 1188 357 1278 395; x_wconf 91'>পোষ্টিং</span>
+      <span class='ocrx_word' id='word_1_63' title='bbox 1396 364 1511 394; x_wconf 82'>বরাদ্দের</span>
+      <span class='ocrx_word' id='word_1_64' title='bbox 1526 367 1592 394; x_wconf 96'>চেয়ে</span>
+      <span class='ocrx_word' id='word_1_65' title='bbox 1609 356 1768 394; x_wconf 96'>পরিশোধিত</span>
+      <span class='ocrx_word' id='word_1_66' title='bbox 1781 355 1838 394; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_67' title='bbox 1851 355 1918 393; x_wconf 96'>বেশী</span>
+      <span class='ocrx_word' id='word_1_68' title='bbox 1930 367 1992 397; x_wconf 95'>হলে</span>
+      <span class='ocrx_word' id='word_1_69' title='bbox 2006 356 2100 394; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_70' title='bbox 2117 363 2311 395; x_wconf 22'>105069011</span>
+      <span class='ocrx_word' id='word_1_71' title='bbox 2328 364 2440 395; x_wconf 91'>দেখাবে।</span>
+     </span>
+     <span class='ocr_line' id='line_1_8' title="bbox 184 422 787 461; baseline 0.002 -2; x_size 46.166351; x_descenders 8.1663513; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_72' title='bbox 184 430 267 459; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_73' title='bbox 280 433 349 460; x_wconf 96'>সময়</span>
+      <span class='ocrx_word' id='word_1_74' title='bbox 367 429 560 461; x_wconf 63'>10506901617</span>
+      <span class='ocrx_word' id='word_1_75' title='bbox 575 422 668 460; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_76' title='bbox 685 430 787 460; x_wconf 90'>দেখায়।</span>
+     </span>
+     <span class='ocr_line' id='line_1_9' title="bbox 204 487 1319 532; baseline 0.001 -7; x_size 47; x_descenders 8; x_ascenders 10">
+      <span class='ocrx_word' id='word_1_77' title='bbox 204 483 249 538; x_wconf 91'>(খ)</span>
+      <span class='ocrx_word' id='word_1_78' title='bbox 250 483 361 538; x_wconf 93'>বিভিন্ন</span>
+      <span class='ocrx_word' id='word_1_79' title='bbox 365 483 521 538; x_wconf 92'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_80' title='bbox 525 483 618 538; x_wconf 93'>কোডে</span>
+      <span class='ocrx_word' id='word_1_81' title='bbox 617 483 714 538; x_wconf 91'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_82' title='bbox 713 483 815 538; x_wconf 91'>পর্যাপ্ত</span>
+      <span class='ocrx_word' id='word_1_83' title='bbox 818 483 893 538; x_wconf 96'>থাকা</span>
+      <span class='ocrx_word' id='word_1_84' title='bbox 892 483 993 538; x_wconf 47'>সত্তেও</span>
+      <span class='ocrx_word' id='word_1_85' title='bbox 1025 487 1145 526; x_wconf 93'>নির্ধারিত</span>
+      <span class='ocrx_word' id='word_1_86' title='bbox 1157 483 1250 538; x_wconf 92'>কোডে</span>
+      <span class='ocrx_word' id='word_1_87' title='bbox 1249 483 1323 538; x_wconf 96'>বিল</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_6' title="bbox 13 609 2914 611">
+    <p class='ocr_par' id='par_1_6' lang='eng' title="bbox 13 609 2914 611">
+     <span class='ocr_line' id='line_1_10' title="bbox 13 609 2914 611; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_88' title='bbox 13 609 2914 611; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_7' title="bbox 22 553 2606 790">
+    <p class='ocr_par' id='par_1_7' lang='ben' title="bbox 40 553 2601 790">
+     <span class='ocr_line' id='line_1_11' title="bbox 188 553 511 591; baseline -0.003 -1; x_size 46.447964; x_descenders 9.4479637; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_89' title='bbox 188 553 511 591; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_90' title='bbox 309 549 376 605; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_91' title='bbox 375 549 450 605; x_wconf 93'>যায়</span>
+      <span class='ocrx_word' id='word_1_92' title='bbox 454 549 516 605; x_wconf 90'>না।</span>
+     </span>
+     <span class='ocr_line' id='line_1_12' title="bbox 22 617 2600 676; baseline -0.002 -12.965; x_size 48; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_93' title='bbox 22 620 77 676; x_wconf 79'>২|</span>
+      <span class='ocrx_word' id='word_1_94' title='bbox 176 617 275 673; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_95' title='bbox 279 617 377 673; x_wconf 92'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_96' title='bbox 388 617 447 673; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_97' title='bbox 447 617 520 673; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_98' title='bbox 521 617 592 673; x_wconf 94'>ছাড়</span>
+      <span class='ocrx_word' id='word_1_99' title='bbox 601 617 690 673; x_wconf 96'>করলে</span>
+      <span class='ocrx_word' id='word_1_100' title='bbox 689 617 760 673; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_101' title='bbox 759 617 835 673; x_wconf 96'>পাশ</span>
+      <span class='ocrx_word' id='word_1_102' title='bbox 834 617 900 673; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_103' title='bbox 909 617 984 673; x_wconf 96'>যাবে</span>
+      <span class='ocrx_word' id='word_1_104' title='bbox 993 617 1056 673; x_wconf 96'>কি?</span>
+      <span class='ocrx_word' id='word_1_105' title='bbox 1382 616 1495 672; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_106' title='bbox 1494 616 1607 672; x_wconf 94'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_107' title='bbox 1625 616 1686 672; x_wconf 93'>এবং</span>
+      <span class='ocrx_word' id='word_1_108' title='bbox 1690 616 1836 672; x_wconf 81'>অর্থছাড়</span>
+      <span class='ocrx_word' id='word_1_109' title='bbox 1840 616 1934 672; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_110' title='bbox 1942 616 1999 672; x_wconf 96'>পর</span>
+      <span class='ocrx_word' id='word_1_111' title='bbox 2008 616 2086 672; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_112' title='bbox 2087 620 2385 664; x_wconf 90'>দাখিলকারী</span>
+      <span class='ocrx_word' id='word_1_113' title='bbox 2278 616 2391 672; x_wconf 89'>ডিডিও</span>
+      <span class='ocrx_word' id='word_1_114' title='bbox 2417 632 2465 659; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_115' title='bbox 2470 616 2601 672; x_wconf 96'>বরাবরে</span>
+     </span>
+     <span class='ocr_line' id='line_1_13' title="bbox 1387 683 2606 740; baseline 0 -16; x_size 38; x_descenders 6; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_116' title='bbox 1387 689 1533 740; x_wconf 95'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_117' title='bbox 1564 687 1658 725; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_118' title='bbox 1691 687 1793 724; x_wconf 91'>বিতরণ</span>
+      <span class='ocrx_word' id='word_1_119' title='bbox 1831 693 2057 731; x_wconf 95' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_120' title='bbox 2092 695 2154 724; x_wconf 55' lang='eng'>Fat</span>
+      <span class='ocrx_word' id='word_1_121' title='bbox 2185 698 2248 728; x_wconf 45' lang='eng'>aA</span>
+      <span class='ocrx_word' id='word_1_122' title='bbox 2266 683 2433 740; x_wconf 92'>বিতরণকৃত</span>
+      <span class='ocrx_word' id='word_1_123' title='bbox 2454 683 2606 735; x_wconf 95'>বাজেটের</span>
+     </span>
+     <span class='ocr_line' id='line_1_14' title="bbox 1395 751 1836 790; baseline -0.002 -1; x_size 47.447964; x_descenders 9.4479637; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_124' title='bbox 1395 751 1836 790; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_125' title='bbox 1531 747 1592 803; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_126' title='bbox 1591 747 1667 803; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_127' title='bbox 1666 747 1732 803; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_128' title='bbox 1736 747 1830 803; x_wconf 90'>যাবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_8' title="bbox 13 884 2914 886">
+    <p class='ocr_par' id='par_1_8' lang='eng' title="bbox 13 884 2914 886">
+     <span class='ocr_line' id='line_1_15' title="bbox 13 884 2914 886; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_129' title='bbox 13 884 2914 886; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_9' title="bbox 40 897 2601 1205">
+    <p class='ocr_par' id='par_1_9' lang='ben' title="bbox 40 897 2601 1205">
+     <span class='ocr_line' id='line_1_16' title="bbox 40 897 2601 946; baseline 0 -11; x_size 46; x_descenders 8; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_130' title='bbox 40 902 80 946; x_wconf 77'>৩]</span>
+      <span class='ocrx_word' id='word_1_131' title='bbox 185 899 333 943; x_wconf 92'>জুলাই/১৮</span>
+      <span class='ocrx_word' id='word_1_132' title='bbox 351 910 373 933; x_wconf 93'>ও</span>
+      <span class='ocrx_word' id='word_1_133' title='bbox 388 899 548 943; x_wconf 86'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_134' title='bbox 562 906 633 936; x_wconf 93'>মাসে</span>
+      <span class='ocrx_word' id='word_1_135' title='bbox 647 898 748 939; x_wconf 87'>ইউএও</span>
+      <span class='ocrx_word' id='word_1_136' title='bbox 745 893 891 949; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_137' title='bbox 890 893 1035 949; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_138' title='bbox 1039 893 1119 949; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_139' title='bbox 1123 893 1264 949; x_wconf 96'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_140' title='bbox 1263 893 1339 949; x_wconf 94'>বিল</span>
+      <span class='ocrx_word' id='word_1_141' title='bbox 1347 893 1385 949; x_wconf 58'>1</span>
+      <span class='ocrx_word' id='word_1_142' title='bbox 1396 898 1590 942; x_wconf 91'>জুলাই/২০১৮</span>
+      <span class='ocrx_word' id='word_1_143' title='bbox 1611 905 1682 935; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_144' title='bbox 1706 909 1786 936; x_wconf 31'>4০০</span>
+      <span class='ocrx_word' id='word_1_145' title='bbox 1811 904 1982 945; x_wconf 23'>£6068150</span>
+      <span class='ocrx_word' id='word_1_146' title='bbox 2006 904 2102 936; x_wconf 61'>6016</span>
+      <span class='ocrx_word' id='word_1_147' title='bbox 2129 908 2177 935; x_wconf 96'>এর</span>
+      <span class='ocrx_word' id='word_1_148' title='bbox 2197 905 2296 935; x_wconf 94'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_149' title='bbox 2320 908 2353 935; x_wconf 95'>যে</span>
+      <span class='ocrx_word' id='word_1_150' title='bbox 2374 908 2454 935; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_151' title='bbox 2474 897 2601 935; x_wconf 95'>অফিসের</span>
+     </span>
+     <span class='ocr_line' id='line_1_17' title="bbox 188 962 2601 1010; baseline -0.001 -9; x_size 37; x_descenders 5; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_152' title='bbox 188 972 246 1001; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_153' title='bbox 258 972 320 1001; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_154' title='bbox 331 975 391 1005; x_wconf 92'>হয়।</span>
+      <span class='ocrx_word' id='word_1_155' title='bbox 412 972 483 1002; x_wconf 96'>এখন</span>
+      <span class='ocrx_word' id='word_1_156' title='bbox 495 964 605 1001; x_wconf 96'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_157' title='bbox 617 964 714 1004; x_wconf 96'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_158' title='bbox 727 964 854 1002; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_159' title='bbox 866 963 995 1001; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_160' title='bbox 1009 975 1061 1002; x_wconf 94'>ব্যয়</span>
+      <span class='ocrx_word' id='word_1_161' title='bbox 1078 972 1184 1002; x_wconf 94'>দেখাতে</span>
+      <span class='ocrx_word' id='word_1_162' title='bbox 1197 975 1271 1005; x_wconf 96'>হবে?</span>
+      <span class='ocrx_word' id='word_1_163' title='bbox 1395 962 1453 1000; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_164' title='bbox 1470 962 1594 1000; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_165' title='bbox 1608 970 1669 999; x_wconf 94'>করা</span>
+      <span class='ocrx_word' id='word_1_166' title='bbox 1683 962 1797 1003; x_wconf 95'>হয়েছিল</span>
+      <span class='ocrx_word' id='word_1_167' title='bbox 1812 970 1871 999; x_wconf 96'>তার</span>
+      <span class='ocrx_word' id='word_1_168' title='bbox 1891 969 1999 1001; x_wconf 45'>09911</span>
+      <span class='ocrx_word' id='word_1_169' title='bbox 2020 973 2208 1010; x_wconf 61'>৪০০০9100175</span>
+      <span class='ocrx_word' id='word_1_170' title='bbox 2224 969 2314 1003; x_wconf 89'>সম্পন্ন</span>
+      <span class='ocrx_word' id='word_1_171' title='bbox 2327 970 2390 999; x_wconf 92'>করা</span>
+      <span class='ocrx_word' id='word_1_172' title='bbox 2403 973 2512 1003; x_wconf 90'>হয়েছে।</span>
+      <span class='ocrx_word' id='word_1_173' title='bbox 2534 973 2601 1000; x_wconf 95'>এতে</span>
+     </span>
+     <span class='ocr_line' id='line_1_18' title="bbox 1396 1027 2598 1073; baseline -0.002 -7; x_size 48; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_174' title='bbox 1382 1023 1464 1080; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_175' title='bbox 1468 1023 1535 1080; x_wconf 93'>কোন</span>
+      <span class='ocrx_word' id='word_1_176' title='bbox 1534 1023 1692 1080; x_wconf 77'>ভুলভ্রান্তি</span>
+      <span class='ocrx_word' id='word_1_177' title='bbox 1696 1023 1848 1080; x_wconf 96'>পরিলক্ষিত</span>
+      <span class='ocrx_word' id='word_1_178' title='bbox 1848 1023 1910 1080; x_wconf 96'>হয়</span>
+      <span class='ocrx_word' id='word_1_179' title='bbox 1919 1023 1981 1080; x_wconf 93'>তবে</span>
+      <span class='ocrx_word' id='word_1_180' title='bbox 1985 1023 2133 1080; x_wconf 88'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_181' title='bbox 2133 1023 2262 1080; x_wconf 94'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_182' title='bbox 2267 1023 2399 1080; x_wconf 94'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_183' title='bbox 2408 1023 2504 1080; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_184' title='bbox 2503 1023 2598 1080; x_wconf 90'>হবে।</span>
+     </span>
+     <span class='ocr_line' id='line_1_19' title="bbox 1396 1094 2596 1142; baseline 0.001 -10; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_185' title='bbox 1396 1095 1557 1139; x_wconf 87'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_186' title='bbox 1573 1102 1644 1132; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_187' title='bbox 1663 1102 1734 1132; x_wconf 96'>কোন</span>
+      <span class='ocrx_word' id='word_1_188' title='bbox 1752 1106 1832 1133; x_wconf 28'>40০</span>
+      <span class='ocrx_word' id='word_1_189' title='bbox 1852 1101 2023 1142; x_wconf 11'>5901-850</span>
+      <span class='ocrx_word' id='word_1_190' title='bbox 2042 1101 2139 1133; x_wconf 52'>(০0150</span>
+      <span class='ocrx_word' id='word_1_191' title='bbox 2160 1105 2182 1132; x_wconf 95'>এ</span>
+      <span class='ocrx_word' id='word_1_192' title='bbox 2218 1094 2275 1132; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_193' title='bbox 2294 1094 2418 1132; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_194' title='bbox 2432 1102 2494 1131; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_195' title='bbox 2508 1094 2596 1135; x_wconf 92'>হয়নি।</span>
+     </span>
+     <span class='ocr_line' id='line_1_20' title="bbox 1396 1159 2548 1205; baseline 0.002 -8; x_size 47; x_descenders 8; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_196' title='bbox 1382 1155 1525 1210; x_wconf 88'>তারপরও</span>
+      <span class='ocrx_word' id='word_1_197' title='bbox 1529 1155 1608 1210; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_198' title='bbox 1607 1155 1677 1210; x_wconf 95'>কোন</span>
+      <span class='ocrx_word' id='word_1_199' title='bbox 1676 1155 1741 1210; x_wconf 88'>ভুল</span>
+      <span class='ocrx_word' id='word_1_200' title='bbox 1744 1155 1823 1210; x_wconf 96'>হয়ে</span>
+      <span class='ocrx_word' id='word_1_201' title='bbox 1827 1155 1901 1210; x_wconf 96'>থাকে</span>
+      <span class='ocrx_word' id='word_1_202' title='bbox 1905 1155 1956 1210; x_wconf 93'>তা</span>
+      <span class='ocrx_word' id='word_1_203' title='bbox 1955 1155 2098 1210; x_wconf 86'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_204' title='bbox 2102 1155 2227 1210; x_wconf 91'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_205' title='bbox 2230 1155 2359 1210; x_wconf 96'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_206' title='bbox 2368 1155 2460 1210; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_207' title='bbox 2464 1155 2548 1210; x_wconf 88'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_10' title="bbox 13 1215 2914 1217">
+    <p class='ocr_par' id='par_1_10' lang='eng' title="bbox 13 1215 2914 1217">
+     <span class='ocr_line' id='line_1_21' title="bbox 13 1215 2914 1217; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_208' title='bbox 13 1215 2914 1217; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_11' title="bbox 40 1228 2602 1407">
+    <p class='ocr_par' id='par_1_11' lang='ben' title="bbox 40 1228 2602 1407">
+     <span class='ocr_line' id='line_1_22' title="bbox 40 1228 2601 1281; baseline 0 -15; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_209' title='bbox 40 1229 71 1281; x_wconf 87'>8]</span>
+      <span class='ocrx_word' id='word_1_210' title='bbox 187 1236 353 1277; x_wconf 7'>15070</span>
+      <span class='ocrx_word' id='word_1_211' title='bbox 367 1229 455 1267; x_wconf 92'>সিএও</span>
+      <span class='ocrx_word' id='word_1_212' title='bbox 470 1229 597 1267; x_wconf 93'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_213' title='bbox 614 1236 747 1268; x_wconf 37'>০01০5০</span>
+      <span class='ocrx_word' id='word_1_214' title='bbox 761 1237 844 1266; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_215' title='bbox 857 1237 961 1267; x_wconf 95'>দরকার</span>
+      <span class='ocrx_word' id='word_1_216' title='bbox 974 1237 1050 1270; x_wconf 96'>আছে</span>
+      <span class='ocrx_word' id='word_1_217' title='bbox 1061 1229 1116 1268; x_wconf 96'>কি?</span>
+      <span class='ocrx_word' id='word_1_218' title='bbox 1395 1228 1483 1266; x_wconf 88'>সিএও</span>
+      <span class='ocrx_word' id='word_1_219' title='bbox 1499 1228 1590 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_220' title='bbox 1604 1228 1698 1266; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_221' title='bbox 1711 1228 1812 1267; x_wconf 90'>নিয়ন্ত্রণ</span>
+      <span class='ocrx_word' id='word_1_222' title='bbox 1826 1228 1917 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_223' title='bbox 1930 1228 2032 1269; x_wconf 93'>হিসাবে</span>
+      <span class='ocrx_word' id='word_1_224' title='bbox 2048 1235 2215 1276; x_wconf 40'>/১0701</span>
+      <span class='ocrx_word' id='word_1_225' title='bbox 2233 1235 2367 1267; x_wconf 4'>০701059</span>
+      <span class='ocrx_word' id='word_1_226' title='bbox 2381 1236 2465 1265; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_227' title='bbox 2483 1235 2601 1266; x_wconf 94'>প্রয়োজন</span>
+     </span>
+     <span class='ocr_line' id='line_1_23' title="bbox 1396 1292 2602 1342; baseline -0.001 -11; x_size 47; x_descenders 9; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_228' title='bbox 1396 1301 1486 1334; x_wconf 84'>আছে।</span>
+      <span class='ocrx_word' id='word_1_229' title='bbox 1503 1304 1568 1330; x_wconf 96'>তবে</span>
+      <span class='ocrx_word' id='word_1_230' title='bbox 1581 1301 1679 1331; x_wconf 96'>যথাযথ</span>
+      <span class='ocrx_word' id='word_1_231' title='bbox 1692 1292 1808 1342; x_wconf 89'>কর্তৃপক্ষ</span>
+      <span class='ocrx_word' id='word_1_232' title='bbox 1821 1292 1907 1342; x_wconf 69'>কর্তৃক</span>
+      <span class='ocrx_word' id='word_1_233' title='bbox 1925 1304 2001 1332; x_wconf 49'>1945</span>
+      <span class='ocrx_word' id='word_1_234' title='bbox 2021 1305 2138 1341; x_wconf 47'>550507</span>
+      <span class='ocrx_word' id='word_1_235' title='bbox 2157 1304 2179 1331; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_236' title='bbox 2197 1293 2290 1331; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_237' title='bbox 2309 1300 2510 1332; x_wconf 0'>015010007</span>
+      <span class='ocrx_word' id='word_1_238' title='bbox 2540 1301 2602 1330; x_wconf 96'>করা</span>
+     </span>
+     <span class='ocr_line' id='line_1_24' title="bbox 1395 1366 2125 1407; baseline -0.004 -9; x_size 41; x_descenders 9; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_239' title='bbox 1395 1370 1458 1400; x_wconf 93'>হলে</span>
+      <span class='ocrx_word' id='word_1_240' title='bbox 1473 1366 1640 1407; x_wconf 31'>4000011</span>
+      <span class='ocrx_word' id='word_1_241' title='bbox 1657 1366 1791 1398; x_wconf 59'>21959</span>
+      <span class='ocrx_word' id='word_1_242' title='bbox 1809 1370 1857 1397; x_wconf 93'>এর</span>
+      <span class='ocrx_word' id='word_1_243' title='bbox 1875 1366 1993 1397; x_wconf 95'>প্রয়োজন</span>
+      <span class='ocrx_word' id='word_1_244' title='bbox 2005 1370 2065 1400; x_wconf 93'>হবে</span>
+      <span class='ocrx_word' id='word_1_245' title='bbox 2077 1367 2125 1397; x_wconf 91'>না।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_12' title="bbox 13 1497 2914 1499">
+    <p class='ocr_par' id='par_1_12' lang='eng' title="bbox 13 1497 2914 1499">
+     <span class='ocr_line' id='line_1_25' title="bbox 13 1497 2914 1499; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_246' title='bbox 13 1497 2914 1499; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_13' title="bbox 40 1506 2602 1682">
+    <p class='ocr_par' id='par_1_13' lang='ben' title="bbox 40 1506 2602 1682">
+     <span class='ocr_line' id='line_1_26' title="bbox 40 1506 2602 1559; baseline -0.001 -11; x_size 45; x_descenders 7; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_247' title='bbox 40 1514 76 1558; x_wconf 94'>৫]</span>
+      <span class='ocrx_word' id='word_1_248' title='bbox 185 1506 314 1559; x_wconf 95'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_249' title='bbox 313 1506 455 1559; x_wconf 95'>পরিষদের</span>
+      <span class='ocrx_word' id='word_1_250' title='bbox 454 1506 544 1559; x_wconf 96'>টাকা</span>
+      <span class='ocrx_word' id='word_1_251' title='bbox 547 1506 672 1559; x_wconf 95'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_252' title='bbox 671 1506 804 1559; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_253' title='bbox 803 1506 879 1559; x_wconf 94'>করা</span>
+      <span class='ocrx_word' id='word_1_254' title='bbox 878 1506 959 1559; x_wconf 94'>হবে?</span>
+      <span class='ocrx_word' id='word_1_255' title='bbox 1396 1509 1524 1547; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_256' title='bbox 1553 1509 1651 1547; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_257' title='bbox 1682 1520 1730 1547; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_258' title='bbox 1756 1517 1862 1556; x_wconf 95'>অনুদান</span>
+      <span class='ocrx_word' id='word_1_259' title='bbox 1892 1517 1963 1546; x_wconf 96'>খাতে</span>
+      <span class='ocrx_word' id='word_1_260' title='bbox 1990 1517 2124 1559; x_wconf 94'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_261' title='bbox 2151 1508 2209 1547; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_262' title='bbox 2235 1508 2382 1547; x_wconf 96'>এককালীন</span>
+      <span class='ocrx_word' id='word_1_263' title='bbox 2413 1509 2461 1546; x_wconf 96'>৪টি</span>
+      <span class='ocrx_word' id='word_1_264' title='bbox 2487 1509 2602 1546; x_wconf 93'>কিস্তিতে</span>
+     </span>
+     <span class='ocr_line' id='line_1_27' title="bbox 1396 1575 2602 1620; baseline 0.001 -8; x_size 48; x_descenders 9; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_265' title='bbox 1387 1571 1523 1627; x_wconf 94'>উত্তোলন</span>
+      <span class='ocrx_word' id='word_1_266' title='bbox 1527 1571 1600 1627; x_wconf 96'>করে</span>
+      <span class='ocrx_word' id='word_1_267' title='bbox 1617 1571 1747 1627; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_268' title='bbox 1746 1571 1864 1627; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_269' title='bbox 1863 1571 1985 1627; x_wconf 96'>তহবিলে</span>
+      <span class='ocrx_word' id='word_1_270' title='bbox 1984 1571 2131 1627; x_wconf 93'>স্থানান্তর</span>
+      <span class='ocrx_word' id='word_1_271' title='bbox 2172 1571 2228 1627; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_272' title='bbox 2227 1571 2293 1627; x_wconf 95'>উক্ত</span>
+      <span class='ocrx_word' id='word_1_273' title='bbox 2297 1571 2484 1627; x_wconf 96'>স্থানান্তরিত</span>
+      <span class='ocrx_word' id='word_1_274' title='bbox 2488 1571 2601 1627; x_wconf 95'>তহবিল</span>
+     </span>
+     <span class='ocr_line' id='line_1_28' title="bbox 1399 1641 2096 1682; baseline 0.003 -4; x_size 44.401905; x_descenders 7.4019055; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_275' title='bbox 1399 1637 1479 1690; x_wconf 95'>থেকে</span>
+      <span class='ocrx_word' id='word_1_276' title='bbox 1478 1637 1590 1690; x_wconf 95'>তাদের</span>
+      <span class='ocrx_word' id='word_1_277' title='bbox 1589 1637 1683 1690; x_wconf 96'>বেতন</span>
+      <span class='ocrx_word' id='word_1_278' title='bbox 1682 1637 1771 1690; x_wconf 96'>ভাতা</span>
+      <span class='ocrx_word' id='word_1_279' title='bbox 1774 1637 1908 1690; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_280' title='bbox 1916 1637 2009 1690; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_281' title='bbox 2008 1637 2089 1690; x_wconf 91'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_14' title="bbox 13 1723 2914 1725">
+    <p class='ocr_par' id='par_1_14' lang='eng' title="bbox 13 1723 2914 1725">
+     <span class='ocr_line' id='line_1_29' title="bbox 13 1723 2914 1725; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_282' title='bbox 13 1723 2914 1725; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_15' title="bbox 0 1740 2929 1741">
+    <p class='ocr_par' id='par_1_15' lang='eng' title="bbox 0 1740 2929 1741">
+     <span class='ocr_line' id='line_1_30' title="bbox 0 1740 2929 1741; baseline 0 0; x_size 0.5; x_descenders -0.25; x_ascenders 0.25">
+      <span class='ocrx_word' id='word_1_283' title='bbox 0 1740 2929 1741; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_x639pvcr.PNG"; bbox 0 0 1169 103; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 0 0 1169 2">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 0 0 1169 2">
+     <span class='ocr_line' id='line_1_1' title="bbox 0 0 1169 2; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 0 1169 2; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 14 14 1154 82">
+    <p class='ocr_par' id='par_1_2' lang='ben' title="bbox 14 14 1154 82">
+     <span class='ocr_line' id='line_1_2' title="bbox 14 14 1154 82; baseline -0.005 -6; x_size 69; x_descenders 11; x_ascenders 17">
+      <span class='ocrx_word' id='word_1_2' title='bbox 0 10 107 87; x_wconf 93'>নতুন</span>
+      <span class='ocrx_word' id='word_1_3' title='bbox 106 10 376 87; x_wconf 88'>শ্রেণিবিন্যাস</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 390 31 423 65; x_wconf 92'>ও</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 439 10 652 87; x_wconf 86'>আইবাস++</span>
+      <span class='ocrx_word' id='word_1_6' title='bbox 651 10 819 87; x_wconf 94'>সংক্রান্ত</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 824 10 941 87; x_wconf 92'>প্রশ্ন</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 944 31 978 65; x_wconf 96'>ও</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 985 10 1159 87; x_wconf 96'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 19 86 1152 88">
+    <p class='ocr_par' id='par_1_3' lang='eng' title="bbox 19 86 1152 88">
+     <span class='ocr_line' id='line_1_3' title="bbox 19 86 1152 88; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_10' title='bbox 19 86 1152 88; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 0 102 1169 103">
+    <p class='ocr_par' id='par_1_4' lang='eng' title="bbox 0 102 1169 103">
+     <span class='ocr_line' id='line_1_4' title="bbox 0 102 1169 103; baseline 0 0; x_size 0.5; x_descenders -0.25; x_ascenders 0.25">
+      <span class='ocrx_word' id='word_1_11' title='bbox 0 102 1169 103; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_3fu5_nff.PNG"; bbox 0 0 46 58; ppageno 0'>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_nckilgtz.PNG"; bbox 0 0 2929 1741; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 0 0 2929 2">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 0 0 2929 2">
+     <span class='ocr_line' id='line_1_1' title="bbox 0 0 2929 2; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 0 2929 2; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 13 15 2914 17">
+    <p class='ocr_par' id='par_1_2' lang='eng' title="bbox 13 15 2914 17">
+     <span class='ocr_line' id='line_1_2' title="bbox 13 15 2914 17; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_2' title='bbox 13 15 2914 17; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 468 45 2078 119">
+    <p class='ocr_par' id='par_1_3' lang='ben' title="bbox 468 45 2078 119">
+     <span class='ocr_line' id='line_1_3' title="bbox 468 45 2078 119; baseline 0 -14; x_size 65.761902; x_descenders 9.7619047; x_ascenders 15">
+      <span class='ocrx_word' id='word_1_3' title='bbox 468 45 617 119; x_wconf 93'>সমস্যা</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 616 45 895 119; x_wconf 84'>(শ্রেণিবিন্যাস)</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 1919 58 2078 106; x_wconf 95'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 40 158 2601 335">
+    <p class='ocr_par' id='par_1_4' lang='ben' title="bbox 40 158 2601 335">
+     <span class='ocr_line' id='line_1_4' title="bbox 40 158 2601 208; baseline -0 -11; x_size 48; x_descenders 10; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_6' title='bbox 40 164 71 208; x_wconf 88'>১</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 167 156 275 212; x_wconf 95'>অনেক</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 279 156 368 212; x_wconf 95'>সময়</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 372 160 828 203; x_wconf 93'>কম্পিউটার</span>
+      <span class='ocrx_word' id='word_1_10' title='bbox 540 156 569 212; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_11' title='bbox 568 156 639 212; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_12' title='bbox 642 156 746 212; x_wconf 69'>এন্ট্রি</span>
+      <span class='ocrx_word' id='word_1_13' title='bbox 802 175 826 194; x_wconf 95'>করতে</span>
+      <span class='ocrx_word' id='word_1_14' title='bbox 844 156 914 212; x_wconf 95'>গেলে</span>
+      <span class='ocrx_word' id='word_1_15' title='bbox 918 156 1021 212; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_16' title='bbox 1042 156 1231 212; x_wconf 64'>19500901601</span>
+      <span class='ocrx_word' id='word_1_17' title='bbox 1401 166 1457 197; x_wconf 95'>প্রাপ্ত</span>
+      <span class='ocrx_word' id='word_1_18' title='bbox 1490 159 1583 197; x_wconf 95'>বিলের</span>
+      <span class='ocrx_word' id='word_1_19' title='bbox 1615 158 1744 196; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_20' title='bbox 1778 159 1872 197; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_21' title='bbox 1907 167 1986 197; x_wconf 93'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_22' title='bbox 2023 170 2084 197; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_23' title='bbox 2117 159 2220 196; x_wconf 13' lang='eng'>feed</span>
+      <span class='ocrx_word' id='word_1_24' title='bbox 2257 165 2484 203; x_wconf 95' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_25' title='bbox 2520 158 2601 197; x_wconf 96'>অর্থাৎ</span>
+     </span>
+     <span class='ocr_line' id='line_1_5' title="bbox 175 221 2601 274; baseline -0.001 -10.989; x_size 45.632507; x_descenders 7.6325092; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_26' title='bbox 175 221 289 274; x_wconf 91'>দেখায়।</span>
+      <span class='ocrx_word' id='word_1_27' title='bbox 1396 220 1572 274; x_wconf 94'>যথাযথভাবে</span>
+      <span class='ocrx_word' id='word_1_28' title='bbox 1576 220 1698 274; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_29' title='bbox 1715 220 1919 274; x_wconf 91'>অথরাইজেশন</span>
+      <span class='ocrx_word' id='word_1_30' title='bbox 1918 220 2004 274; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_31' title='bbox 2008 220 2060 274; x_wconf 96'>না</span>
+      <span class='ocrx_word' id='word_1_32' title='bbox 2067 220 2153 274; x_wconf 96'>হলে</span>
+      <span class='ocrx_word' id='word_1_33' title='bbox 2152 220 2234 274; x_wconf 92'>বিল</span>
+      <span class='ocrx_word' id='word_1_34' title='bbox 2233 220 2360 274; x_wconf 25'>এন্ট্রির</span>
+      <span class='ocrx_word' id='word_1_35' title='bbox 2373 220 2472 274; x_wconf 94'>সময়</span>
+      <span class='ocrx_word' id='word_1_36' title='bbox 2485 220 2603 274; x_wconf 94'>বাজেট</span>
+     </span>
+     <span class='ocr_line' id='line_1_6' title="bbox 204 289 2600 335; baseline 0.001 -7; x_size 44; x_descenders 7; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_37' title='bbox 204 297 255 335; x_wconf 96'>(ক)</span>
+      <span class='ocrx_word' id='word_1_38' title='bbox 270 291 361 329; x_wconf 94'>অফিস</span>
+      <span class='ocrx_word' id='word_1_39' title='bbox 377 299 451 328; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_40' title='bbox 468 302 746 329; x_wconf 90'>১০৭০৩০৫১০১১৪০</span>
+      <span class='ocrx_word' id='word_1_41' title='bbox 777 291 868 329; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_42' title='bbox 884 299 958 328; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_43' title='bbox 975 297 1274 335; x_wconf 9'>(১৩৬০১০১)</span>
+      <span class='ocrx_word' id='word_1_44' title='bbox 1399 297 1593 329; x_wconf 54'>17540001617</span>
+      <span class='ocrx_word' id='word_1_45' title='bbox 1620 298 1735 328; x_wconf 60'>দেখাবে</span>
+      <span class='ocrx_word' id='word_1_46' title='bbox 1723 285 1733 339; x_wconf 60'>।</span>
+      <span class='ocrx_word' id='word_1_47' title='bbox 1761 298 1852 328; x_wconf 96'>আবার</span>
+      <span class='ocrx_word' id='word_1_48' title='bbox 1874 290 1970 330; x_wconf 90'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_49' title='bbox 1992 289 2145 328; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_50' title='bbox 2171 298 2259 327; x_wconf 90'>কোডে</span>
+      <span class='ocrx_word' id='word_1_51' title='bbox 2284 301 2317 328; x_wconf 95'>যে</span>
+      <span class='ocrx_word' id='word_1_52' title='bbox 2340 298 2419 328; x_wconf 87'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_53' title='bbox 2441 298 2517 331; x_wconf 95'>আছে</span>
+      <span class='ocrx_word' id='word_1_54' title='bbox 2541 291 2600 331; x_wconf 95'>সেই</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_5' title="bbox 184 355 2440 532">
+    <p class='ocr_par' id='par_1_5' lang='ben' title="bbox 184 355 2440 532">
+     <span class='ocr_line' id='line_1_7' title="bbox 185 355 2440 401; baseline 0 -7; x_size 47; x_descenders 8; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_55' title='bbox 185 365 331 395; x_wconf 96'>অপারেশন</span>
+      <span class='ocrx_word' id='word_1_56' title='bbox 347 365 421 394; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_57' title='bbox 438 368 629 398; x_wconf 91'>১২০০০২৪০১</span>
+      <span class='ocrx_word' id='word_1_58' title='bbox 660 356 813 395; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_59' title='bbox 830 365 904 394; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_60' title='bbox 920 368 1085 401; x_wconf 91'>৩২৫৬১০৭,</span>
+      <span class='ocrx_word' id='word_1_61' title='bbox 1114 357 1172 395; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_62' title='bbox 1188 357 1278 395; x_wconf 91'>পোষ্টিং</span>
+      <span class='ocrx_word' id='word_1_63' title='bbox 1396 364 1511 394; x_wconf 82'>বরাদ্দের</span>
+      <span class='ocrx_word' id='word_1_64' title='bbox 1526 367 1592 394; x_wconf 96'>চেয়ে</span>
+      <span class='ocrx_word' id='word_1_65' title='bbox 1609 356 1768 394; x_wconf 96'>পরিশোধিত</span>
+      <span class='ocrx_word' id='word_1_66' title='bbox 1781 355 1838 394; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_67' title='bbox 1851 355 1918 393; x_wconf 96'>বেশী</span>
+      <span class='ocrx_word' id='word_1_68' title='bbox 1930 367 1992 397; x_wconf 95'>হলে</span>
+      <span class='ocrx_word' id='word_1_69' title='bbox 2006 356 2100 394; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_70' title='bbox 2117 363 2311 395; x_wconf 22'>105069011</span>
+      <span class='ocrx_word' id='word_1_71' title='bbox 2328 364 2440 395; x_wconf 91'>দেখাবে।</span>
+     </span>
+     <span class='ocr_line' id='line_1_8' title="bbox 184 422 787 461; baseline 0.002 -2; x_size 46.166351; x_descenders 8.1663513; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_72' title='bbox 184 430 267 459; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_73' title='bbox 280 433 349 460; x_wconf 96'>সময়</span>
+      <span class='ocrx_word' id='word_1_74' title='bbox 367 429 560 461; x_wconf 63'>10506901617</span>
+      <span class='ocrx_word' id='word_1_75' title='bbox 575 422 668 460; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_76' title='bbox 685 430 787 460; x_wconf 90'>দেখায়।</span>
+     </span>
+     <span class='ocr_line' id='line_1_9' title="bbox 204 487 1319 532; baseline 0.001 -7; x_size 47; x_descenders 8; x_ascenders 10">
+      <span class='ocrx_word' id='word_1_77' title='bbox 204 483 249 538; x_wconf 91'>(খ)</span>
+      <span class='ocrx_word' id='word_1_78' title='bbox 250 483 361 538; x_wconf 93'>বিভিন্ন</span>
+      <span class='ocrx_word' id='word_1_79' title='bbox 365 483 521 538; x_wconf 92'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_80' title='bbox 525 483 618 538; x_wconf 93'>কোডে</span>
+      <span class='ocrx_word' id='word_1_81' title='bbox 617 483 714 538; x_wconf 91'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_82' title='bbox 713 483 815 538; x_wconf 91'>পর্যাপ্ত</span>
+      <span class='ocrx_word' id='word_1_83' title='bbox 818 483 893 538; x_wconf 96'>থাকা</span>
+      <span class='ocrx_word' id='word_1_84' title='bbox 892 483 993 538; x_wconf 47'>সত্তেও</span>
+      <span class='ocrx_word' id='word_1_85' title='bbox 1025 487 1145 526; x_wconf 93'>নির্ধারিত</span>
+      <span class='ocrx_word' id='word_1_86' title='bbox 1157 483 1250 538; x_wconf 92'>কোডে</span>
+      <span class='ocrx_word' id='word_1_87' title='bbox 1249 483 1323 538; x_wconf 96'>বিল</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_6' title="bbox 13 609 2914 611">
+    <p class='ocr_par' id='par_1_6' lang='eng' title="bbox 13 609 2914 611">
+     <span class='ocr_line' id='line_1_10' title="bbox 13 609 2914 611; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_88' title='bbox 13 609 2914 611; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_7' title="bbox 22 553 2606 790">
+    <p class='ocr_par' id='par_1_7' lang='ben' title="bbox 40 553 2601 790">
+     <span class='ocr_line' id='line_1_11' title="bbox 188 553 511 591; baseline -0.003 -1; x_size 46.447964; x_descenders 9.4479637; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_89' title='bbox 188 553 511 591; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_90' title='bbox 309 549 376 605; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_91' title='bbox 375 549 450 605; x_wconf 93'>যায়</span>
+      <span class='ocrx_word' id='word_1_92' title='bbox 454 549 516 605; x_wconf 90'>না।</span>
+     </span>
+     <span class='ocr_line' id='line_1_12' title="bbox 22 617 2600 676; baseline -0.002 -12.965; x_size 48; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_93' title='bbox 22 620 77 676; x_wconf 79'>২|</span>
+      <span class='ocrx_word' id='word_1_94' title='bbox 176 617 275 673; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_95' title='bbox 279 617 377 673; x_wconf 92'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_96' title='bbox 388 617 447 673; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_97' title='bbox 447 617 520 673; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_98' title='bbox 521 617 592 673; x_wconf 94'>ছাড়</span>
+      <span class='ocrx_word' id='word_1_99' title='bbox 601 617 690 673; x_wconf 96'>করলে</span>
+      <span class='ocrx_word' id='word_1_100' title='bbox 689 617 760 673; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_101' title='bbox 759 617 835 673; x_wconf 96'>পাশ</span>
+      <span class='ocrx_word' id='word_1_102' title='bbox 834 617 900 673; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_103' title='bbox 909 617 984 673; x_wconf 96'>যাবে</span>
+      <span class='ocrx_word' id='word_1_104' title='bbox 993 617 1056 673; x_wconf 96'>কি?</span>
+      <span class='ocrx_word' id='word_1_105' title='bbox 1382 616 1495 672; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_106' title='bbox 1494 616 1607 672; x_wconf 94'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_107' title='bbox 1625 616 1686 672; x_wconf 93'>এবং</span>
+      <span class='ocrx_word' id='word_1_108' title='bbox 1690 616 1836 672; x_wconf 81'>অর্থছাড়</span>
+      <span class='ocrx_word' id='word_1_109' title='bbox 1840 616 1934 672; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_110' title='bbox 1942 616 1999 672; x_wconf 96'>পর</span>
+      <span class='ocrx_word' id='word_1_111' title='bbox 2008 616 2086 672; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_112' title='bbox 2087 620 2385 664; x_wconf 90'>দাখিলকারী</span>
+      <span class='ocrx_word' id='word_1_113' title='bbox 2278 616 2391 672; x_wconf 89'>ডিডিও</span>
+      <span class='ocrx_word' id='word_1_114' title='bbox 2417 632 2465 659; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_115' title='bbox 2470 616 2601 672; x_wconf 96'>বরাবরে</span>
+     </span>
+     <span class='ocr_line' id='line_1_13' title="bbox 1387 683 2606 740; baseline 0 -16; x_size 38; x_descenders 6; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_116' title='bbox 1387 689 1533 740; x_wconf 95'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_117' title='bbox 1564 687 1658 725; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_118' title='bbox 1691 687 1793 724; x_wconf 91'>বিতরণ</span>
+      <span class='ocrx_word' id='word_1_119' title='bbox 1831 693 2057 731; x_wconf 95' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_120' title='bbox 2092 695 2154 724; x_wconf 55' lang='eng'>Fat</span>
+      <span class='ocrx_word' id='word_1_121' title='bbox 2185 698 2248 728; x_wconf 45' lang='eng'>aA</span>
+      <span class='ocrx_word' id='word_1_122' title='bbox 2266 683 2433 740; x_wconf 92'>বিতরণকৃত</span>
+      <span class='ocrx_word' id='word_1_123' title='bbox 2454 683 2606 735; x_wconf 95'>বাজেটের</span>
+     </span>
+     <span class='ocr_line' id='line_1_14' title="bbox 1395 751 1836 790; baseline -0.002 -1; x_size 47.447964; x_descenders 9.4479637; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_124' title='bbox 1395 751 1836 790; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_125' title='bbox 1531 747 1592 803; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_126' title='bbox 1591 747 1667 803; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_127' title='bbox 1666 747 1732 803; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_128' title='bbox 1736 747 1830 803; x_wconf 90'>যাবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_8' title="bbox 13 884 2914 886">
+    <p class='ocr_par' id='par_1_8' lang='eng' title="bbox 13 884 2914 886">
+     <span class='ocr_line' id='line_1_15' title="bbox 13 884 2914 886; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_129' title='bbox 13 884 2914 886; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_9' title="bbox 40 897 2601 1205">
+    <p class='ocr_par' id='par_1_9' lang='ben' title="bbox 40 897 2601 1205">
+     <span class='ocr_line' id='line_1_16' title="bbox 40 897 2601 946; baseline 0 -11; x_size 46; x_descenders 8; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_130' title='bbox 40 902 80 946; x_wconf 77'>৩]</span>
+      <span class='ocrx_word' id='word_1_131' title='bbox 185 899 333 943; x_wconf 92'>জুলাই/১৮</span>
+      <span class='ocrx_word' id='word_1_132' title='bbox 351 910 373 933; x_wconf 93'>ও</span>
+      <span class='ocrx_word' id='word_1_133' title='bbox 388 899 548 943; x_wconf 86'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_134' title='bbox 562 906 633 936; x_wconf 93'>মাসে</span>
+      <span class='ocrx_word' id='word_1_135' title='bbox 647 898 748 939; x_wconf 87'>ইউএও</span>
+      <span class='ocrx_word' id='word_1_136' title='bbox 745 893 891 949; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_137' title='bbox 890 893 1035 949; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_138' title='bbox 1039 893 1119 949; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_139' title='bbox 1123 893 1264 949; x_wconf 96'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_140' title='bbox 1263 893 1339 949; x_wconf 94'>বিল</span>
+      <span class='ocrx_word' id='word_1_141' title='bbox 1347 893 1385 949; x_wconf 58'>1</span>
+      <span class='ocrx_word' id='word_1_142' title='bbox 1396 898 1590 942; x_wconf 91'>জুলাই/২০১৮</span>
+      <span class='ocrx_word' id='word_1_143' title='bbox 1611 905 1682 935; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_144' title='bbox 1706 909 1786 936; x_wconf 31'>4০০</span>
+      <span class='ocrx_word' id='word_1_145' title='bbox 1811 904 1982 945; x_wconf 23'>£6068150</span>
+      <span class='ocrx_word' id='word_1_146' title='bbox 2006 904 2102 936; x_wconf 61'>6016</span>
+      <span class='ocrx_word' id='word_1_147' title='bbox 2129 908 2177 935; x_wconf 96'>এর</span>
+      <span class='ocrx_word' id='word_1_148' title='bbox 2197 905 2296 935; x_wconf 94'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_149' title='bbox 2320 908 2353 935; x_wconf 95'>যে</span>
+      <span class='ocrx_word' id='word_1_150' title='bbox 2374 908 2454 935; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_151' title='bbox 2474 897 2601 935; x_wconf 95'>অফিসের</span>
+     </span>
+     <span class='ocr_line' id='line_1_17' title="bbox 188 962 2601 1010; baseline -0.001 -9; x_size 37; x_descenders 5; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_152' title='bbox 188 972 246 1001; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_153' title='bbox 258 972 320 1001; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_154' title='bbox 331 975 391 1005; x_wconf 92'>হয়।</span>
+      <span class='ocrx_word' id='word_1_155' title='bbox 412 972 483 1002; x_wconf 96'>এখন</span>
+      <span class='ocrx_word' id='word_1_156' title='bbox 495 964 605 1001; x_wconf 96'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_157' title='bbox 617 964 714 1004; x_wconf 96'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_158' title='bbox 727 964 854 1002; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_159' title='bbox 866 963 995 1001; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_160' title='bbox 1009 975 1061 1002; x_wconf 94'>ব্যয়</span>
+      <span class='ocrx_word' id='word_1_161' title='bbox 1078 972 1184 1002; x_wconf 94'>দেখাতে</span>
+      <span class='ocrx_word' id='word_1_162' title='bbox 1197 975 1271 1005; x_wconf 96'>হবে?</span>
+      <span class='ocrx_word' id='word_1_163' title='bbox 1395 962 1453 1000; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_164' title='bbox 1470 962 1594 1000; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_165' title='bbox 1608 970 1669 999; x_wconf 94'>করা</span>
+      <span class='ocrx_word' id='word_1_166' title='bbox 1683 962 1797 1003; x_wconf 95'>হয়েছিল</span>
+      <span class='ocrx_word' id='word_1_167' title='bbox 1812 970 1871 999; x_wconf 96'>তার</span>
+      <span class='ocrx_word' id='word_1_168' title='bbox 1891 969 1999 1001; x_wconf 45'>09911</span>
+      <span class='ocrx_word' id='word_1_169' title='bbox 2020 973 2208 1010; x_wconf 61'>৪০০০9100175</span>
+      <span class='ocrx_word' id='word_1_170' title='bbox 2224 969 2314 1003; x_wconf 89'>সম্পন্ন</span>
+      <span class='ocrx_word' id='word_1_171' title='bbox 2327 970 2390 999; x_wconf 92'>করা</span>
+      <span class='ocrx_word' id='word_1_172' title='bbox 2403 973 2512 1003; x_wconf 90'>হয়েছে।</span>
+      <span class='ocrx_word' id='word_1_173' title='bbox 2534 973 2601 1000; x_wconf 95'>এতে</span>
+     </span>
+     <span class='ocr_line' id='line_1_18' title="bbox 1396 1027 2598 1073; baseline -0.002 -7; x_size 48; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_174' title='bbox 1382 1023 1464 1080; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_175' title='bbox 1468 1023 1535 1080; x_wconf 93'>কোন</span>
+      <span class='ocrx_word' id='word_1_176' title='bbox 1534 1023 1692 1080; x_wconf 77'>ভুলভ্রান্তি</span>
+      <span class='ocrx_word' id='word_1_177' title='bbox 1696 1023 1848 1080; x_wconf 96'>পরিলক্ষিত</span>
+      <span class='ocrx_word' id='word_1_178' title='bbox 1848 1023 1910 1080; x_wconf 96'>হয়</span>
+      <span class='ocrx_word' id='word_1_179' title='bbox 1919 1023 1981 1080; x_wconf 93'>তবে</span>
+      <span class='ocrx_word' id='word_1_180' title='bbox 1985 1023 2133 1080; x_wconf 88'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_181' title='bbox 2133 1023 2262 1080; x_wconf 94'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_182' title='bbox 2267 1023 2399 1080; x_wconf 94'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_183' title='bbox 2408 1023 2504 1080; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_184' title='bbox 2503 1023 2598 1080; x_wconf 90'>হবে।</span>
+     </span>
+     <span class='ocr_line' id='line_1_19' title="bbox 1396 1094 2596 1142; baseline 0.001 -10; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_185' title='bbox 1396 1095 1557 1139; x_wconf 87'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_186' title='bbox 1573 1102 1644 1132; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_187' title='bbox 1663 1102 1734 1132; x_wconf 96'>কোন</span>
+      <span class='ocrx_word' id='word_1_188' title='bbox 1752 1106 1832 1133; x_wconf 28'>40০</span>
+      <span class='ocrx_word' id='word_1_189' title='bbox 1852 1101 2023 1142; x_wconf 11'>5901-850</span>
+      <span class='ocrx_word' id='word_1_190' title='bbox 2042 1101 2139 1133; x_wconf 52'>(০0150</span>
+      <span class='ocrx_word' id='word_1_191' title='bbox 2160 1105 2182 1132; x_wconf 95'>এ</span>
+      <span class='ocrx_word' id='word_1_192' title='bbox 2218 1094 2275 1132; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_193' title='bbox 2294 1094 2418 1132; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_194' title='bbox 2432 1102 2494 1131; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_195' title='bbox 2508 1094 2596 1135; x_wconf 92'>হয়নি।</span>
+     </span>
+     <span class='ocr_line' id='line_1_20' title="bbox 1396 1159 2548 1205; baseline 0.002 -8; x_size 47; x_descenders 8; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_196' title='bbox 1382 1155 1525 1210; x_wconf 88'>তারপরও</span>
+      <span class='ocrx_word' id='word_1_197' title='bbox 1529 1155 1608 1210; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_198' title='bbox 1607 1155 1677 1210; x_wconf 95'>কোন</span>
+      <span class='ocrx_word' id='word_1_199' title='bbox 1676 1155 1741 1210; x_wconf 88'>ভুল</span>
+      <span class='ocrx_word' id='word_1_200' title='bbox 1744 1155 1823 1210; x_wconf 96'>হয়ে</span>
+      <span class='ocrx_word' id='word_1_201' title='bbox 1827 1155 1901 1210; x_wconf 96'>থাকে</span>
+      <span class='ocrx_word' id='word_1_202' title='bbox 1905 1155 1956 1210; x_wconf 93'>তা</span>
+      <span class='ocrx_word' id='word_1_203' title='bbox 1955 1155 2098 1210; x_wconf 86'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_204' title='bbox 2102 1155 2227 1210; x_wconf 91'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_205' title='bbox 2230 1155 2359 1210; x_wconf 96'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_206' title='bbox 2368 1155 2460 1210; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_207' title='bbox 2464 1155 2548 1210; x_wconf 88'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_10' title="bbox 13 1215 2914 1217">
+    <p class='ocr_par' id='par_1_10' lang='eng' title="bbox 13 1215 2914 1217">
+     <span class='ocr_line' id='line_1_21' title="bbox 13 1215 2914 1217; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_208' title='bbox 13 1215 2914 1217; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_11' title="bbox 40 1228 2602 1407">
+    <p class='ocr_par' id='par_1_11' lang='ben' title="bbox 40 1228 2602 1407">
+     <span class='ocr_line' id='line_1_22' title="bbox 40 1228 2601 1281; baseline 0 -15; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_209' title='bbox 40 1229 71 1281; x_wconf 87'>8]</span>
+      <span class='ocrx_word' id='word_1_210' title='bbox 187 1236 353 1277; x_wconf 7'>15070</span>
+      <span class='ocrx_word' id='word_1_211' title='bbox 367 1229 455 1267; x_wconf 92'>সিএও</span>
+      <span class='ocrx_word' id='word_1_212' title='bbox 470 1229 597 1267; x_wconf 93'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_213' title='bbox 614 1236 747 1268; x_wconf 37'>০01০5০</span>
+      <span class='ocrx_word' id='word_1_214' title='bbox 761 1237 844 1266; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_215' title='bbox 857 1237 961 1267; x_wconf 95'>দরকার</span>
+      <span class='ocrx_word' id='word_1_216' title='bbox 974 1237 1050 1270; x_wconf 96'>আছে</span>
+      <span class='ocrx_word' id='word_1_217' title='bbox 1061 1229 1116 1268; x_wconf 96'>কি?</span>
+      <span class='ocrx_word' id='word_1_218' title='bbox 1395 1228 1483 1266; x_wconf 88'>সিএও</span>
+      <span class='ocrx_word' id='word_1_219' title='bbox 1499 1228 1590 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_220' title='bbox 1604 1228 1698 1266; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_221' title='bbox 1711 1228 1812 1267; x_wconf 90'>নিয়ন্ত্রণ</span>
+      <span class='ocrx_word' id='word_1_222' title='bbox 1826 1228 1917 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_223' title='bbox 1930 1228 2032 1269; x_wconf 93'>হিসাবে</span>
+      <span class='ocrx_word' id='word_1_224' title='bbox 2048 1235 2215 1276; x_wconf 40'>/১0701</span>
+      <span class='ocrx_word' id='word_1_225' title='bbox 2233 1235 2367 1267; x_wconf 4'>০701059</span>
+      <span class='ocrx_word' id='word_1_226' title='bbox 2381 1236 2465 1265; x_wconf 96'>করার</span>
+      <span class='ocrx_word' id='word_1_227' title='bbox 2483 1235 2601 1266; x_wconf 94'>প্রয়োজন</span>
+     </span>
+     <span class='ocr_line' id='line_1_23' title="bbox 1396 1292 2602 1342; baseline -0.001 -11; x_size 47; x_descenders 9; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_228' title='bbox 1396 1301 1486 1334; x_wconf 84'>আছে।</span>
+      <span class='ocrx_word' id='word_1_229' title='bbox 1503 1304 1568 1330; x_wconf 96'>তবে</span>
+      <span class='ocrx_word' id='word_1_230' title='bbox 1581 1301 1679 1331; x_wconf 96'>যথাযথ</span>
+      <span class='ocrx_word' id='word_1_231' title='bbox 1692 1292 1808 1342; x_wconf 89'>কর্তৃপক্ষ</span>
+      <span class='ocrx_word' id='word_1_232' title='bbox 1821 1292 1907 1342; x_wconf 69'>কর্তৃক</span>
+      <span class='ocrx_word' id='word_1_233' title='bbox 1925 1304 2001 1332; x_wconf 49'>1945</span>
+      <span class='ocrx_word' id='word_1_234' title='bbox 2021 1305 2138 1341; x_wconf 47'>550507</span>
+      <span class='ocrx_word' id='word_1_235' title='bbox 2157 1304 2179 1331; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_236' title='bbox 2197 1293 2290 1331; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_237' title='bbox 2309 1300 2510 1332; x_wconf 0'>015010007</span>
+      <span class='ocrx_word' id='word_1_238' title='bbox 2540 1301 2602 1330; x_wconf 96'>করা</span>
+     </span>
+     <span class='ocr_line' id='line_1_24' title="bbox 1395 1366 2125 1407; baseline -0.004 -9; x_size 41; x_descenders 9; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_239' title='bbox 1395 1370 1458 1400; x_wconf 93'>হলে</span>
+      <span class='ocrx_word' id='word_1_240' title='bbox 1473 1366 1640 1407; x_wconf 31'>4000011</span>
+      <span class='ocrx_word' id='word_1_241' title='bbox 1657 1366 1791 1398; x_wconf 59'>21959</span>
+      <span class='ocrx_word' id='word_1_242' title='bbox 1809 1370 1857 1397; x_wconf 93'>এর</span>
+      <span class='ocrx_word' id='word_1_243' title='bbox 1875 1366 1993 1397; x_wconf 95'>প্রয়োজন</span>
+      <span class='ocrx_word' id='word_1_244' title='bbox 2005 1370 2065 1400; x_wconf 93'>হবে</span>
+      <span class='ocrx_word' id='word_1_245' title='bbox 2077 1367 2125 1397; x_wconf 91'>না।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_12' title="bbox 13 1497 2914 1499">
+    <p class='ocr_par' id='par_1_12' lang='eng' title="bbox 13 1497 2914 1499">
+     <span class='ocr_line' id='line_1_25' title="bbox 13 1497 2914 1499; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_246' title='bbox 13 1497 2914 1499; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_13' title="bbox 40 1506 2602 1682">
+    <p class='ocr_par' id='par_1_13' lang='ben' title="bbox 40 1506 2602 1682">
+     <span class='ocr_line' id='line_1_26' title="bbox 40 1506 2602 1559; baseline -0.001 -11; x_size 45; x_descenders 7; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_247' title='bbox 40 1514 76 1558; x_wconf 94'>৫]</span>
+      <span class='ocrx_word' id='word_1_248' title='bbox 185 1506 314 1559; x_wconf 95'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_249' title='bbox 313 1506 455 1559; x_wconf 95'>পরিষদের</span>
+      <span class='ocrx_word' id='word_1_250' title='bbox 454 1506 544 1559; x_wconf 96'>টাকা</span>
+      <span class='ocrx_word' id='word_1_251' title='bbox 547 1506 672 1559; x_wconf 95'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_252' title='bbox 671 1506 804 1559; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_253' title='bbox 803 1506 879 1559; x_wconf 94'>করা</span>
+      <span class='ocrx_word' id='word_1_254' title='bbox 878 1506 959 1559; x_wconf 94'>হবে?</span>
+      <span class='ocrx_word' id='word_1_255' title='bbox 1396 1509 1524 1547; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_256' title='bbox 1553 1509 1651 1547; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_257' title='bbox 1682 1520 1730 1547; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_258' title='bbox 1756 1517 1862 1556; x_wconf 95'>অনুদান</span>
+      <span class='ocrx_word' id='word_1_259' title='bbox 1892 1517 1963 1546; x_wconf 96'>খাতে</span>
+      <span class='ocrx_word' id='word_1_260' title='bbox 1990 1517 2124 1559; x_wconf 94'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_261' title='bbox 2151 1508 2209 1547; x_wconf 95'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_262' title='bbox 2235 1508 2382 1547; x_wconf 96'>এককালীন</span>
+      <span class='ocrx_word' id='word_1_263' title='bbox 2413 1509 2461 1546; x_wconf 96'>৪টি</span>
+      <span class='ocrx_word' id='word_1_264' title='bbox 2487 1509 2602 1546; x_wconf 93'>কিস্তিতে</span>
+     </span>
+     <span class='ocr_line' id='line_1_27' title="bbox 1396 1575 2602 1620; baseline 0.001 -8; x_size 48; x_descenders 9; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_265' title='bbox 1387 1571 1523 1627; x_wconf 94'>উত্তোলন</span>
+      <span class='ocrx_word' id='word_1_266' title='bbox 1527 1571 1600 1627; x_wconf 96'>করে</span>
+      <span class='ocrx_word' id='word_1_267' title='bbox 1617 1571 1747 1627; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_268' title='bbox 1746 1571 1864 1627; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_269' title='bbox 1863 1571 1985 1627; x_wconf 96'>তহবিলে</span>
+      <span class='ocrx_word' id='word_1_270' title='bbox 1984 1571 2131 1627; x_wconf 93'>স্থানান্তর</span>
+      <span class='ocrx_word' id='word_1_271' title='bbox 2172 1571 2228 1627; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_272' title='bbox 2227 1571 2293 1627; x_wconf 95'>উক্ত</span>
+      <span class='ocrx_word' id='word_1_273' title='bbox 2297 1571 2484 1627; x_wconf 96'>স্থানান্তরিত</span>
+      <span class='ocrx_word' id='word_1_274' title='bbox 2488 1571 2601 1627; x_wconf 95'>তহবিল</span>
+     </span>
+     <span class='ocr_line' id='line_1_28' title="bbox 1399 1641 2096 1682; baseline 0.003 -4; x_size 44.401905; x_descenders 7.4019055; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_275' title='bbox 1399 1637 1479 1690; x_wconf 95'>থেকে</span>
+      <span class='ocrx_word' id='word_1_276' title='bbox 1478 1637 1590 1690; x_wconf 95'>তাদের</span>
+      <span class='ocrx_word' id='word_1_277' title='bbox 1589 1637 1683 1690; x_wconf 96'>বেতন</span>
+      <span class='ocrx_word' id='word_1_278' title='bbox 1682 1637 1771 1690; x_wconf 96'>ভাতা</span>
+      <span class='ocrx_word' id='word_1_279' title='bbox 1774 1637 1908 1690; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_280' title='bbox 1916 1637 2009 1690; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_281' title='bbox 2008 1637 2089 1690; x_wconf 91'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_14' title="bbox 13 1723 2914 1725">
+    <p class='ocr_par' id='par_1_14' lang='eng' title="bbox 13 1723 2914 1725">
+     <span class='ocr_line' id='line_1_29' title="bbox 13 1723 2914 1725; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_282' title='bbox 13 1723 2914 1725; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_15' title="bbox 0 1740 2929 1741">
+    <p class='ocr_par' id='par_1_15' lang='eng' title="bbox 0 1740 2929 1741">
+     <span class='ocr_line' id='line_1_30' title="bbox 0 1740 2929 1741; baseline 0 0; x_size 0.5; x_descenders -0.25; x_ascenders 0.25">
+      <span class='ocrx_word' id='word_1_283' title='bbox 0 1740 2929 1741; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_4ub9r4gy.PNG"; bbox 0 0 1169 103; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 0 0 1169 2">
+    <p class='ocr_par' id='par_1_1' lang='eng' title="bbox 0 0 1169 2">
+     <span class='ocr_line' id='line_1_1' title="bbox 0 0 1169 2; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 0 1169 2; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 14 14 1154 82">
+    <p class='ocr_par' id='par_1_2' lang='ben' title="bbox 14 14 1154 82">
+     <span class='ocr_line' id='line_1_2' title="bbox 14 14 1154 82; baseline -0.005 -6; x_size 69; x_descenders 11; x_ascenders 17">
+      <span class='ocrx_word' id='word_1_2' title='bbox 0 10 107 87; x_wconf 93'>নতুন</span>
+      <span class='ocrx_word' id='word_1_3' title='bbox 106 10 376 87; x_wconf 88'>শ্রেণিবিন্যাস</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 390 31 423 65; x_wconf 92'>ও</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 439 10 652 87; x_wconf 86'>আইবাস++</span>
+      <span class='ocrx_word' id='word_1_6' title='bbox 651 10 819 87; x_wconf 94'>সংক্রান্ত</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 824 10 941 87; x_wconf 92'>প্রশ্ন</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 944 31 978 65; x_wconf 96'>ও</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 985 10 1159 87; x_wconf 96'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 19 86 1152 88">
+    <p class='ocr_par' id='par_1_3' lang='eng' title="bbox 19 86 1152 88">
+     <span class='ocr_line' id='line_1_3' title="bbox 19 86 1152 88; baseline 0 0; x_size 1; x_descenders -0.5; x_ascenders 0.5">
+      <span class='ocrx_word' id='word_1_10' title='bbox 19 86 1152 88; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 0 102 1169 103">
+    <p class='ocr_par' id='par_1_4' lang='eng' title="bbox 0 102 1169 103">
+     <span class='ocr_line' id='line_1_4' title="bbox 0 102 1169 103; baseline 0 0; x_size 0.5; x_descenders -0.25; x_ascenders 0.25">
+      <span class='ocrx_word' id='word_1_11' title='bbox 0 102 1169 103; x_wconf 95'> </span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_q67fts2k.PNG"; bbox 0 0 46 58; ppageno 0'>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_wug9n9cx.PNG"; bbox 0 0 2929 1741; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 485 49 899 113">
+    <p class='ocr_par' id='par_1_1' lang='ben' title="bbox 485 49 899 113">
+     <span class='ocr_line' id='line_1_1' title="bbox 485 49 899 113; baseline 0 -8; x_size 64.785713; x_descenders 8.7857141; x_ascenders 15">
+      <span class='ocrx_word' id='word_1_1' title='bbox 468 45 615 118; x_wconf 93'>সমস্যা</span>
+      <span class='ocrx_word' id='word_1_2' title='bbox 620 45 895 118; x_wconf 90'>(শ্রেণিবিন্যাস)</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_2' title="bbox 1919 58 2078 106">
+    <p class='ocr_par' id='par_1_2' lang='ben' title="bbox 1919 58 2078 106">
+     <span class='ocr_line' id='line_1_2' title="bbox 1919 58 2078 106; baseline 0 -1; x_size 62.666668; x_descenders 15.666667; x_ascenders 15.666667">
+      <span class='ocrx_word' id='word_1_3' title='bbox 1919 58 2078 106; x_wconf 95'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_3' title="bbox 40 164 71 208">
+    <p class='ocr_par' id='par_1_3' lang='eng' title="bbox 40 164 71 208">
+     <span class='ocr_line' id='line_1_3' title="bbox 40 164 71 208; baseline 0 0; x_size 58.666668; x_descenders 14.666667; x_ascenders 14.666667">
+      <span class='ocrx_word' id='word_1_4' title='bbox 40 164 71 208; x_wconf 79'>&gt;|</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_4' title="bbox 185 160 1236 203">
+    <p class='ocr_par' id='par_1_4' lang='ben' title="bbox 185 160 1236 203">
+     <span class='ocr_line' id='line_1_4' title="bbox 185 160 1236 203; baseline 0.001 -5; x_size 43.400002; x_descenders 5.4000001; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_5' title='bbox 185 171 279 198; x_wconf 96'>অনেক</span>
+      <span class='ocrx_word' id='word_1_6' title='bbox 292 171 362 198; x_wconf 95'>সময়</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 375 160 531 197; x_wconf 95'>কম্পিউটার</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 548 171 570 198; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_9' title='bbox 586 160 644 198; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_10' title='bbox 661 160 725 203; x_wconf 80'>এন্ট্রি</span>
+      <span class='ocrx_word' id='word_1_11' title='bbox 735 171 828 197; x_wconf 95'>করতে</span>
+      <span class='ocrx_word' id='word_1_12' title='bbox 844 167 918 198; x_wconf 95'>গেলে</span>
+      <span class='ocrx_word' id='word_1_13' title='bbox 931 160 1025 198; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_14' title='bbox 1042 167 1236 199; x_wconf 38'>175000160</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_5' title="bbox 1401 158 2601 203">
+    <p class='ocr_par' id='par_1_5' lang='ben' title="bbox 1401 158 2601 203">
+     <span class='ocr_line' id='line_1_5' title="bbox 1401 158 2601 203; baseline -0.001 -6; x_size 43.400002; x_descenders 5.4000001; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_15' title='bbox 1401 166 1457 197; x_wconf 95'>প্রাপ্ত</span>
+      <span class='ocrx_word' id='word_1_16' title='bbox 1490 159 1583 197; x_wconf 96'>বিলের</span>
+      <span class='ocrx_word' id='word_1_17' title='bbox 1615 158 1744 196; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_18' title='bbox 1778 159 1872 197; x_wconf 94'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_19' title='bbox 1907 167 1986 197; x_wconf 94'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_20' title='bbox 2023 170 2084 197; x_wconf 96'>এবং</span>
+      <span class='ocrx_word' id='word_1_21' title='bbox 2117 159 2220 196; x_wconf 95'>বিতরণ</span>
+      <span class='ocrx_word' id='word_1_22' title='bbox 2257 165 2484 203; x_wconf 96' lang='eng'>(distribution)</span>
+      <span class='ocrx_word' id='word_1_23' title='bbox 2520 158 2601 197; x_wconf 65' lang='eng'>adic</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_6' title="bbox 188 233 289 263">
+    <p class='ocr_par' id='par_1_6' lang='ben' title="bbox 188 233 289 263">
+     <span class='ocr_line' id='line_1_6' title="bbox 188 233 289 263; baseline -0.03 0; x_size 34.714287; x_descenders 5.7142859; x_ascenders 9">
+      <span class='ocrx_word' id='word_1_24' title='bbox 188 233 289 263; x_wconf 89'>দেখায়।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_7' title="bbox 1396 224 2601 267">
+    <p class='ocr_par' id='par_1_7' lang='ben' title="bbox 1396 224 2601 267">
+     <span class='ocr_line' id='line_1_7' title="bbox 1396 224 2601 267; baseline 0 -6; x_size 43.400002; x_descenders 5.4000001; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_25' title='bbox 1396 219 1574 271; x_wconf 95'>যথাযথভাবে</span>
+      <span class='ocrx_word' id='word_1_26' title='bbox 1582 219 1700 271; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_27' title='bbox 1715 219 1921 271; x_wconf 90'>অথরাইজেশন</span>
+      <span class='ocrx_word' id='word_1_28' title='bbox 1924 219 2003 271; x_wconf 95'>করা</span>
+      <span class='ocrx_word' id='word_1_29' title='bbox 2011 219 2060 271; x_wconf 96'>না</span>
+      <span class='ocrx_word' id='word_1_30' title='bbox 2072 219 2155 271; x_wconf 96'>হলে</span>
+      <span class='ocrx_word' id='word_1_31' title='bbox 2154 219 2237 271; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_32' title='bbox 2241 219 2359 271; x_wconf 48'>এন্ট্রির</span>
+      <span class='ocrx_word' id='word_1_33' title='bbox 2366 219 2471 271; x_wconf 95'>সময়</span>
+      <span class='ocrx_word' id='word_1_34' title='bbox 2507 224 2601 262; x_wconf 96'>বাজেট</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_8' title="bbox 204 291 1274 335">
+    <p class='ocr_par' id='par_1_8' lang='ben' title="bbox 204 291 1274 335">
+     <span class='ocr_line' id='line_1_8' title="bbox 204 291 1274 335; baseline 0.001 -7; x_size 40; x_descenders 8; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_35' title='bbox 204 297 255 335; x_wconf 95'>(ক)</span>
+      <span class='ocrx_word' id='word_1_36' title='bbox 270 291 358 329; x_wconf 95'>অফিস</span>
+      <span class='ocrx_word' id='word_1_37' title='bbox 377 299 451 328; x_wconf 92'>কোড</span>
+      <span class='ocrx_word' id='word_1_38' title='bbox 468 302 746 329; x_wconf 91'>১০৭০৩০৫১০১১৪০</span>
+      <span class='ocrx_word' id='word_1_39' title='bbox 777 291 865 329; x_wconf 94'>অফিস</span>
+      <span class='ocrx_word' id='word_1_40' title='bbox 884 299 958 328; x_wconf 88'>কোড</span>
+      <span class='ocrx_word' id='word_1_41' title='bbox 975 297 1274 335; x_wconf 62'>(১৩৬০১০১৯)</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_9' title="bbox 1399 289 2600 331">
+    <p class='ocr_par' id='par_1_9' lang='eng' title="bbox 1399 289 2600 331">
+     <span class='ocr_line' id='line_1_9' title="bbox 1399 289 2600 331; baseline 0.002 -3; x_size 45.400002; x_descenders 5.4000001; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_42' title='bbox 1399 297 1593 329; x_wconf 96'>insufficient</span>
+      <span class='ocrx_word' id='word_1_43' title='bbox 1620 298 1735 328; x_wconf 27'>Cita</span>
+      <span class='ocrx_word' id='word_1_44' title='bbox 1761 298 1852 328; x_wconf 96' lang='ben'>আবার</span>
+      <span class='ocrx_word' id='word_1_45' title='bbox 1874 290 1970 330; x_wconf 81' lang='ben'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_46' title='bbox 1992 289 2145 328; x_wconf 93' lang='ben'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_47' title='bbox 2171 298 2259 327; x_wconf 92' lang='ben'>কোডে</span>
+      <span class='ocrx_word' id='word_1_48' title='bbox 2284 301 2317 328; x_wconf 95' lang='ben'>যে</span>
+      <span class='ocrx_word' id='word_1_49' title='bbox 2340 298 2419 328; x_wconf 87' lang='ben'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_50' title='bbox 2441 298 2517 331; x_wconf 95' lang='ben'>আছে</span>
+      <span class='ocrx_word' id='word_1_51' title='bbox 2541 291 2600 331; x_wconf 95' lang='ben'>সেই</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_10' title="bbox 185 356 1278 401">
+    <p class='ocr_par' id='par_1_10' lang='ben' title="bbox 185 356 1278 401">
+     <span class='ocr_line' id='line_1_10' title="bbox 185 356 1278 401; baseline 0 -7; x_size 45; x_descenders 7; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_52' title='bbox 185 365 331 395; x_wconf 95'>অপারেশন</span>
+      <span class='ocrx_word' id='word_1_53' title='bbox 347 365 421 394; x_wconf 89'>কোড</span>
+      <span class='ocrx_word' id='word_1_54' title='bbox 438 368 629 398; x_wconf 89'>১২০০০২৪০১</span>
+      <span class='ocrx_word' id='word_1_55' title='bbox 660 356 813 395; x_wconf 94'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_56' title='bbox 830 365 904 394; x_wconf 93'>কোড</span>
+      <span class='ocrx_word' id='word_1_57' title='bbox 920 368 1085 401; x_wconf 92'>৩২৫৬১০৭,</span>
+      <span class='ocrx_word' id='word_1_58' title='bbox 1114 357 1172 395; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_59' title='bbox 1188 357 1278 395; x_wconf 5'>পোস্টিং</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_11' title="bbox 1396 355 2440 397">
+    <p class='ocr_par' id='par_1_11' lang='ben' title="bbox 1396 355 2440 397">
+     <span class='ocr_line' id='line_1_11' title="bbox 1396 355 2440 397; baseline 0.002 -4; x_size 44.400002; x_descenders 5.4000001; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_60' title='bbox 1396 364 1511 394; x_wconf 94'>বরাদ্দের</span>
+      <span class='ocrx_word' id='word_1_61' title='bbox 1526 367 1592 394; x_wconf 96'>চেয়ে</span>
+      <span class='ocrx_word' id='word_1_62' title='bbox 1609 356 1768 394; x_wconf 96'>পরিশোধিত</span>
+      <span class='ocrx_word' id='word_1_63' title='bbox 1781 355 1838 394; x_wconf 94'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_64' title='bbox 1851 355 1918 393; x_wconf 94'>বেশী</span>
+      <span class='ocrx_word' id='word_1_65' title='bbox 1930 367 1992 397; x_wconf 96'>হলে</span>
+      <span class='ocrx_word' id='word_1_66' title='bbox 2006 356 2100 394; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_67' title='bbox 2117 363 2311 395; x_wconf 45'>17500901671</span>
+      <span class='ocrx_word' id='word_1_68' title='bbox 2328 364 2440 395; x_wconf 88'>দেখাবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_12' title="bbox 184 422 787 461">
+    <p class='ocr_par' id='par_1_12' lang='ben' title="bbox 184 422 787 461">
+     <span class='ocr_line' id='line_1_12' title="bbox 184 422 787 461; baseline -0.002 -2; x_size 43.400002; x_descenders 5.4000001; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_69' title='bbox 184 430 267 459; x_wconf 95'>করার</span>
+      <span class='ocrx_word' id='word_1_70' title='bbox 280 433 349 460; x_wconf 96'>সময়</span>
+      <span class='ocrx_word' id='word_1_71' title='bbox 367 429 560 461; x_wconf 68'>17570090190</span>
+      <span class='ocrx_word' id='word_1_72' title='bbox 575 422 668 460; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_73' title='bbox 685 430 787 460; x_wconf 87'>দেখায়।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_13' title="bbox 204 487 1319 532">
+    <p class='ocr_par' id='par_1_13' lang='ben' title="bbox 204 487 1319 532">
+     <span class='ocr_line' id='line_1_13' title="bbox 204 487 1319 532; baseline 0 -7; x_size 44.396225; x_descenders 5.3962264; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_74' title='bbox 204 483 249 536; x_wconf 92'>(খ)</span>
+      <span class='ocrx_word' id='word_1_75' title='bbox 253 483 359 536; x_wconf 95'>বিভিন্ন</span>
+      <span class='ocrx_word' id='word_1_76' title='bbox 366 487 995 526; x_wconf 93'>অর্থনৈতিক</span>
+      <span class='ocrx_word' id='word_1_77' title='bbox 526 483 616 536; x_wconf 90'>কোডে</span>
+      <span class='ocrx_word' id='word_1_78' title='bbox 615 483 713 536; x_wconf 94'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_79' title='bbox 712 483 814 536; x_wconf 92'>পর্যাপ্ত</span>
+      <span class='ocrx_word' id='word_1_80' title='bbox 822 483 894 536; x_wconf 96'>থাকা</span>
+      <span class='ocrx_word' id='word_1_81' title='bbox 893 483 995 536; x_wconf 73'>সত্তেও</span>
+      <span class='ocrx_word' id='word_1_82' title='bbox 999 483 1154 536; x_wconf 85'>নির্ধারিত</span>
+      <span class='ocrx_word' id='word_1_83' title='bbox 1158 483 1252 536; x_wconf 92'>কোডে</span>
+      <span class='ocrx_word' id='word_1_84' title='bbox 1251 483 1322 536; x_wconf 96'>বিল</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_14' title="bbox 188 553 511 591">
+    <p class='ocr_par' id='par_1_14' lang='ben' title="bbox 188 553 511 591">
+     <span class='ocr_line' id='line_1_14' title="bbox 188 553 511 591; baseline -0.003 -1; x_size 42.396225; x_descenders 5.3962264; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_85' title='bbox 188 553 511 591; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_86' title='bbox 311 549 380 600; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_87' title='bbox 379 549 456 600; x_wconf 93'>যায়</span>
+      <span class='ocrx_word' id='word_1_88' title='bbox 456 549 516 600; x_wconf 91'>না।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_15' title="bbox 40 626 77 670">
+    <p class='ocr_par' id='par_1_15' lang='ben' title="bbox 40 626 77 670">
+     <span class='ocr_line' id='line_1_15' title="bbox 40 626 77 670; baseline 0 0; x_size 57.333332; x_descenders 14.333333; x_ascenders 14.333333">
+      <span class='ocrx_word' id='word_1_89' title='bbox 40 626 77 670; x_wconf 67'>২</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_16' title="bbox 185 621 1056 665">
+    <p class='ocr_par' id='par_1_16' lang='ben' title="bbox 185 621 1056 665">
+     <span class='ocr_line' id='line_1_16' title="bbox 185 621 1056 665; baseline 0 -5; x_size 43.400002; x_descenders 5.4000001; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_90' title='bbox 172 617 277 669; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_91' title='bbox 276 617 381 669; x_wconf 95'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_92' title='bbox 388 633 446 660; x_wconf 96'>এবং</span>
+      <span class='ocrx_word' id='word_1_93' title='bbox 449 617 519 669; x_wconf 94'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_94' title='bbox 523 617 597 669; x_wconf 94'>ছাড়</span>
+      <span class='ocrx_word' id='word_1_95' title='bbox 601 617 693 669; x_wconf 96'>করলে</span>
+      <span class='ocrx_word' id='word_1_96' title='bbox 692 617 762 669; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_97' title='bbox 761 617 831 669; x_wconf 96'>পাশ</span>
+      <span class='ocrx_word' id='word_1_98' title='bbox 835 617 905 669; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_99' title='bbox 904 622 1056 661; x_wconf 96'>যাবে</span>
+      <span class='ocrx_word' id='word_1_100' title='bbox 991 617 1052 669; x_wconf 96'>কি?</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_17' title="bbox 1396 620 2600 664">
+    <p class='ocr_par' id='par_1_17' lang='ben' title="bbox 1396 620 2600 664">
+     <span class='ocr_line' id='line_1_17' title="bbox 1396 620 2600 664; baseline -0.001 -5; x_size 43.396225; x_descenders 5.3962264; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_101' title='bbox 1383 616 1492 668; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_102' title='bbox 1495 616 1600 668; x_wconf 91'>বরাদ্দ</span>
+      <span class='ocrx_word' id='word_1_103' title='bbox 1625 616 1686 668; x_wconf 92'>এবং</span>
+      <span class='ocrx_word' id='word_1_104' title='bbox 1690 616 1834 668; x_wconf 87'>অর্থছাড়</span>
+      <span class='ocrx_word' id='word_1_105' title='bbox 1842 616 1943 668; x_wconf 95'>করার</span>
+      <span class='ocrx_word' id='word_1_106' title='bbox 1942 616 2004 668; x_wconf 96'>পর</span>
+      <span class='ocrx_word' id='word_1_107' title='bbox 2007 616 2086 668; x_wconf 93'>বিল</span>
+      <span class='ocrx_word' id='word_1_108' title='bbox 2089 616 2272 668; x_wconf 89'>দাখিলকারী</span>
+      <span class='ocrx_word' id='word_1_109' title='bbox 2280 616 2385 668; x_wconf 89'>ডিডিও</span>
+      <span class='ocrx_word' id='word_1_110' title='bbox 2417 632 2465 659; x_wconf 96'>এর</span>
+      <span class='ocrx_word' id='word_1_111' title='bbox 2466 616 2597 668; x_wconf 96'>বরাবরে</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_18' title="bbox 1396 687 2601 736">
+    <p class='ocr_par' id='par_1_18' lang='ben' title="bbox 1396 687 2601 736">
+     <span class='ocr_line' id='line_1_18' title="bbox 1396 687 2601 736; baseline 0.001 -12; x_size 49; x_descenders 12; x_ascenders 10">
+      <span class='ocrx_word' id='word_1_112' title='bbox 1396 695 1530 736; x_wconf 88'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_113' title='bbox 1564 687 1658 725; x_wconf 96'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_114' title='bbox 1691 687 1793 724; x_wconf 88'>বিতরণ</span>
+      <span class='ocrx_word' id='word_1_115' title='bbox 1831 693 2057 731; x_wconf 4'>(৫150158000)</span>
+      <span class='ocrx_word' id='word_1_116' title='bbox 2092 695 2154 724; x_wconf 95'>করা</span>
+      <span class='ocrx_word' id='word_1_117' title='bbox 2185 698 2248 728; x_wconf 93'>হলে</span>
+      <span class='ocrx_word' id='word_1_118' title='bbox 2280 687 2438 736; x_wconf 88'>বিতরণকৃত</span>
+      <span class='ocrx_word' id='word_1_119' title='bbox 2471 687 2601 725; x_wconf 96'>বাজেটের</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_19' title="bbox 1395 751 1836 790">
+    <p class='ocr_par' id='par_1_19' lang='ben' title="bbox 1395 751 1836 790">
+     <span class='ocr_line' id='line_1_19' title="bbox 1395 751 1836 790; baseline -0.005 -1; x_size 42.396225; x_descenders 5.3962264; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_120' title='bbox 1395 751 1524 789; x_wconf 96'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_121' title='bbox 1525 747 1595 799; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_122' title='bbox 1594 747 1664 799; x_wconf 96'>পাশ</span>
+      <span class='ocrx_word' id='word_1_123' title='bbox 1668 747 1738 799; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_124' title='bbox 1737 752 1836 790; x_wconf 90'>যাবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_20' title="bbox 40 902 80 946">
+    <p class='ocr_par' id='par_1_20' lang='ben' title="bbox 40 902 80 946">
+     <span class='ocr_line' id='line_1_20' title="bbox 40 902 80 946; baseline 0 0; x_size 54.666668; x_descenders 13.666667; x_ascenders 13.666667">
+      <span class='ocrx_word' id='word_1_125' title='bbox 40 902 80 946; x_wconf 72'>৩</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_21' title="bbox 185 897 1333 943">
+    <p class='ocr_par' id='par_1_21' lang='ben' title="bbox 185 897 1333 943">
+     <span class='ocr_line' id='line_1_21' title="bbox 185 897 1333 943; baseline -0.003 -4; x_size 48; x_descenders 8; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_126' title='bbox 185 899 333 943; x_wconf 91'>জুলাই/১৮</span>
+      <span class='ocrx_word' id='word_1_127' title='bbox 351 910 373 933; x_wconf 93'>ও</span>
+      <span class='ocrx_word' id='word_1_128' title='bbox 388 899 548 943; x_wconf 70'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_129' title='bbox 562 906 633 936; x_wconf 93'>মাসে</span>
+      <span class='ocrx_word' id='word_1_130' title='bbox 647 898 748 939; x_wconf 90'>ইউএও</span>
+      <span class='ocrx_word' id='word_1_131' title='bbox 763 898 890 936; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_132' title='bbox 901 897 1031 935; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_133' title='bbox 1044 909 1124 936; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_134' title='bbox 1136 898 1264 936; x_wconf 95'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_135' title='bbox 1275 898 1333 936; x_wconf 95'>বিল</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_22' title="bbox 1396 897 2601 945">
+    <p class='ocr_par' id='par_1_22' lang='ben' title="bbox 1396 897 2601 945">
+     <span class='ocr_line' id='line_1_22' title="bbox 1396 897 2601 945; baseline -0.003 -7; x_size 47; x_descenders 7; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_136' title='bbox 1396 898 1590 942; x_wconf 89'>জুলাই/২০১৮</span>
+      <span class='ocrx_word' id='word_1_137' title='bbox 1611 905 1682 935; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_138' title='bbox 1706 909 1786 936; x_wconf 96' lang='eng'>Auto</span>
+      <span class='ocrx_word' id='word_1_139' title='bbox 1811 904 1982 945; x_wconf 96' lang='eng'>generated</span>
+      <span class='ocrx_word' id='word_1_140' title='bbox 2006 904 2102 936; x_wconf 96' lang='eng'>token</span>
+      <span class='ocrx_word' id='word_1_141' title='bbox 2129 908 2177 935; x_wconf 95'>এর</span>
+      <span class='ocrx_word' id='word_1_142' title='bbox 2197 905 2296 935; x_wconf 93'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_143' title='bbox 2320 908 2353 935; x_wconf 96'>যে</span>
+      <span class='ocrx_word' id='word_1_144' title='bbox 2374 908 2454 935; x_wconf 96'>সকল</span>
+      <span class='ocrx_word' id='word_1_145' title='bbox 2474 897 2601 935; x_wconf 96'>অফিসের</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_23' title="bbox 188 963 1271 1005">
+    <p class='ocr_par' id='par_1_23' lang='ben' title="bbox 188 963 1271 1005">
+     <span class='ocr_line' id='line_1_23' title="bbox 188 963 1271 1005; baseline 0.002 -4; x_size 44.403507; x_descenders 5.4035087; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_146' title='bbox 166 959 247 1013; x_wconf 95'>পাশ</span>
+      <span class='ocrx_word' id='word_1_147' title='bbox 247 959 319 1013; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_148' title='bbox 323 959 391 1013; x_wconf 92'>হয়।</span>
+      <span class='ocrx_word' id='word_1_149' title='bbox 412 959 481 1013; x_wconf 96'>এখন</span>
+      <span class='ocrx_word' id='word_1_150' title='bbox 481 959 598 1013; x_wconf 95'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_151' title='bbox 598 959 729 1013; x_wconf 95'>সংশ্লিষ্ট</span>
+      <span class='ocrx_word' id='word_1_152' title='bbox 728 959 850 1013; x_wconf 96'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_153' title='bbox 866 963 995 1001; x_wconf 95'>বিপরীতে</span>
+      <span class='ocrx_word' id='word_1_154' title='bbox 985 959 1066 1013; x_wconf 94'>ব্যয়</span>
+      <span class='ocrx_word' id='word_1_155' title='bbox 1078 959 1188 1013; x_wconf 95'>দেখাতে</span>
+      <span class='ocrx_word' id='word_1_156' title='bbox 1192 959 1271 1013; x_wconf 96'>হবে?</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_24' title="bbox 1395 962 2601 1010">
+    <p class='ocr_par' id='par_1_24' lang='ben' title="bbox 1395 962 2601 1010">
+     <span class='ocr_line' id='line_1_24' title="bbox 1395 962 2601 1010; baseline 0 -11; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_157' title='bbox 1395 962 1453 1000; x_wconf 96'>বিল</span>
+      <span class='ocrx_word' id='word_1_158' title='bbox 1470 962 1594 1000; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_159' title='bbox 1608 970 1669 999; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_160' title='bbox 1683 962 1797 1003; x_wconf 96'>হয়েছিল</span>
+      <span class='ocrx_word' id='word_1_161' title='bbox 1812 970 1871 999; x_wconf 93'>তার</span>
+      <span class='ocrx_word' id='word_1_162' title='bbox 1891 969 1999 1001; x_wconf 23'>99181]5</span>
+      <span class='ocrx_word' id='word_1_163' title='bbox 2020 973 2208 1010; x_wconf 30'>৪০০০1/11€</span>
+      <span class='ocrx_word' id='word_1_164' title='bbox 2224 969 2314 1003; x_wconf 95'>সম্পন্ন</span>
+      <span class='ocrx_word' id='word_1_165' title='bbox 2327 970 2390 999; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_166' title='bbox 2408 973 2512 1000; x_wconf 89'>হয়েছে।</span>
+      <span class='ocrx_word' id='word_1_167' title='bbox 2534 973 2601 1000; x_wconf 96'>এতে</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_25' title="bbox 1396 1027 2598 1073">
+    <p class='ocr_par' id='par_1_25' lang='ben' title="bbox 1396 1027 2598 1073">
+     <span class='ocr_line' id='line_1_25' title="bbox 1396 1027 2598 1073; baseline -0.002 -7; x_size 47; x_descenders 9; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_168' title='bbox 1382 1021 1462 1077; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_169' title='bbox 1462 1021 1537 1077; x_wconf 92'>কোন</span>
+      <span class='ocrx_word' id='word_1_170' title='bbox 1536 1021 1691 1077; x_wconf 44'>ভুূলভ্রান্তি</span>
+      <span class='ocrx_word' id='word_1_171' title='bbox 1699 1028 1988 1069; x_wconf 96'>পরিলক্ষিত</span>
+      <span class='ocrx_word' id='word_1_172' title='bbox 1849 1021 1910 1077; x_wconf 96'>হয়</span>
+      <span class='ocrx_word' id='word_1_173' title='bbox 1919 1021 1985 1077; x_wconf 92'>তবে</span>
+      <span class='ocrx_word' id='word_1_174' title='bbox 2004 1027 2134 1066; x_wconf 85'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_175' title='bbox 2134 1021 2265 1077; x_wconf 87'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_176' title='bbox 2267 1021 2399 1077; x_wconf 96'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_177' title='bbox 2404 1021 2508 1077; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_178' title='bbox 2507 1021 2596 1077; x_wconf 92'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_26' title="bbox 1396 1094 2596 1142">
+    <p class='ocr_par' id='par_1_26' lang='ben' title="bbox 1396 1094 2596 1142">
+     <span class='ocr_line' id='line_1_26' title="bbox 1396 1094 2596 1142; baseline 0.001 -10; x_size 46; x_descenders 10; x_ascenders 16">
+      <span class='ocrx_word' id='word_1_179' title='bbox 1396 1095 1557 1139; x_wconf 87'>আগস্ট/১৮</span>
+      <span class='ocrx_word' id='word_1_180' title='bbox 1578 1105 1641 1132; x_wconf 96'>মাসে</span>
+      <span class='ocrx_word' id='word_1_181' title='bbox 1663 1102 1734 1132; x_wconf 96'>কোন</span>
+      <span class='ocrx_word' id='word_1_182' title='bbox 1752 1106 1832 1133; x_wconf 28'>40০</span>
+      <span class='ocrx_word' id='word_1_183' title='bbox 1852 1101 2023 1142; x_wconf 11'>5901-850</span>
+      <span class='ocrx_word' id='word_1_184' title='bbox 2042 1101 2139 1133; x_wconf 52'>(০0150</span>
+      <span class='ocrx_word' id='word_1_185' title='bbox 2160 1105 2182 1132; x_wconf 95'>এ</span>
+      <span class='ocrx_word' id='word_1_186' title='bbox 2218 1094 2275 1132; x_wconf 95'>বিল</span>
+      <span class='ocrx_word' id='word_1_187' title='bbox 2294 1094 2418 1132; x_wconf 95'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_188' title='bbox 2432 1102 2494 1131; x_wconf 93'>করা</span>
+      <span class='ocrx_word' id='word_1_189' title='bbox 2508 1094 2596 1135; x_wconf 92'>হয়নি।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_27' title="bbox 1396 1159 2548 1205">
+    <p class='ocr_par' id='par_1_27' lang='ben' title="bbox 1396 1159 2548 1205">
+     <span class='ocr_line' id='line_1_27' title="bbox 1396 1159 2548 1205; baseline 0.004 -11; x_size 46; x_descenders 8; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_190' title='bbox 1382 1155 1525 1210; x_wconf 88'>তারপরও</span>
+      <span class='ocrx_word' id='word_1_191' title='bbox 1529 1155 1608 1210; x_wconf 96'>যদি</span>
+      <span class='ocrx_word' id='word_1_192' title='bbox 1607 1155 1677 1210; x_wconf 95'>কোন</span>
+      <span class='ocrx_word' id='word_1_193' title='bbox 1676 1155 1741 1210; x_wconf 88'>ভুল</span>
+      <span class='ocrx_word' id='word_1_194' title='bbox 1744 1155 1823 1210; x_wconf 96'>হয়ে</span>
+      <span class='ocrx_word' id='word_1_195' title='bbox 1827 1155 1901 1210; x_wconf 96'>থাকে</span>
+      <span class='ocrx_word' id='word_1_196' title='bbox 1905 1155 1956 1210; x_wconf 93'>তা</span>
+      <span class='ocrx_word' id='word_1_197' title='bbox 2086 1191 2090 1196; x_wconf 86'>জার্নালের</span>
+      <span class='ocrx_word' id='word_1_198' title='bbox 2102 1155 2227 1210; x_wconf 91'>মাধ্যমে</span>
+      <span class='ocrx_word' id='word_1_199' title='bbox 2230 1155 2359 1210; x_wconf 96'>সংশোধন</span>
+      <span class='ocrx_word' id='word_1_200' title='bbox 2368 1155 2460 1210; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_201' title='bbox 2464 1171 2548 1201; x_wconf 88'>হবে।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_28' title="bbox 40 1233 73 1277">
+    <p class='ocr_par' id='par_1_28' lang='eng' title="bbox 40 1233 73 1277">
+     <span class='ocr_line' id='line_1_28' title="bbox 40 1233 73 1277; baseline 0 0; x_size 58.666668; x_descenders 14.666667; x_ascenders 14.666667">
+      <span class='ocrx_word' id='word_1_202' title='bbox 40 1233 73 1277; x_wconf 83'>8|</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_29' title="bbox 187 1229 1116 1277">
+    <p class='ocr_par' id='par_1_29' lang='eng' title="bbox 187 1229 1116 1277">
+     <span class='ocr_line' id='line_1_29' title="bbox 187 1229 1116 1277; baseline -0.002 -9; x_size 41; x_descenders 9; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_203' title='bbox 187 1236 353 1277; x_wconf 96'>Authority</span>
+      <span class='ocrx_word' id='word_1_204' title='bbox 367 1229 455 1267; x_wconf 43'>Pia</span>
+      <span class='ocrx_word' id='word_1_205' title='bbox 470 1229 593 1267; x_wconf 95' lang='ben'>অফিসের</span>
+      <span class='ocrx_word' id='word_1_206' title='bbox 614 1236 747 1268; x_wconf 58' lang='ben'>০905০</span>
+      <span class='ocrx_word' id='word_1_207' title='bbox 761 1237 844 1266; x_wconf 96' lang='ben'>করার</span>
+      <span class='ocrx_word' id='word_1_208' title='bbox 857 1237 961 1267; x_wconf 95' lang='ben'>দরকার</span>
+      <span class='ocrx_word' id='word_1_209' title='bbox 974 1237 1050 1270; x_wconf 96' lang='ben'>আছে</span>
+      <span class='ocrx_word' id='word_1_210' title='bbox 1061 1229 1116 1268; x_wconf 96' lang='ben'>কি?</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_30' title="bbox 1395 1228 2601 1276">
+    <p class='ocr_par' id='par_1_30' lang='ben' title="bbox 1395 1228 2601 1276">
+     <span class='ocr_line' id='line_1_30' title="bbox 1395 1228 2601 1276; baseline 0 -10; x_size 42; x_descenders 10; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_211' title='bbox 1395 1228 1483 1266; x_wconf 91'>সিএও</span>
+      <span class='ocrx_word' id='word_1_212' title='bbox 1499 1228 1587 1266; x_wconf 95'>অফিস</span>
+      <span class='ocrx_word' id='word_1_213' title='bbox 1607 1232 1698 1266; x_wconf 95'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_214' title='bbox 1711 1228 1812 1267; x_wconf 95'>নিয়ন্ত্রণ</span>
+      <span class='ocrx_word' id='word_1_215' title='bbox 1826 1228 1914 1266; x_wconf 96'>অফিস</span>
+      <span class='ocrx_word' id='word_1_216' title='bbox 1944 1228 2028 1266; x_wconf 96'>হিসাবে</span>
+      <span class='ocrx_word' id='word_1_217' title='bbox 2048 1235 2215 1276; x_wconf 0'>40011</span>
+      <span class='ocrx_word' id='word_1_218' title='bbox 2233 1235 2367 1267; x_wconf 33'>279056</span>
+      <span class='ocrx_word' id='word_1_219' title='bbox 2381 1236 2465 1265; x_wconf 95'>করার</span>
+      <span class='ocrx_word' id='word_1_220' title='bbox 2483 1235 2601 1266; x_wconf 94'>প্রয়োজন</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_31' title="bbox 1396 1292 2602 1342">
+    <p class='ocr_par' id='par_1_31' lang='ben' title="bbox 1396 1292 2602 1342">
+     <span class='ocr_line' id='line_1_31' title="bbox 1396 1292 2602 1342; baseline -0.001 -11; x_size 49; x_descenders 11; x_ascenders 11">
+      <span class='ocrx_word' id='word_1_221' title='bbox 1396 1301 1486 1334; x_wconf 90'>আছে।</span>
+      <span class='ocrx_word' id='word_1_222' title='bbox 1503 1304 1568 1330; x_wconf 96'>তবে</span>
+      <span class='ocrx_word' id='word_1_223' title='bbox 1581 1301 1679 1331; x_wconf 95'>যথাযথ</span>
+      <span class='ocrx_word' id='word_1_224' title='bbox 1692 1292 1808 1342; x_wconf 93'>কর্তৃপক্ষ</span>
+      <span class='ocrx_word' id='word_1_225' title='bbox 1821 1292 1907 1342; x_wconf 89'>কর্তৃক</span>
+      <span class='ocrx_word' id='word_1_226' title='bbox 1925 1304 2001 1332; x_wconf 0'>19/55</span>
+      <span class='ocrx_word' id='word_1_227' title='bbox 2021 1305 2138 1341; x_wconf 59'>55911</span>
+      <span class='ocrx_word' id='word_1_228' title='bbox 2157 1304 2179 1331; x_wconf 96'>এ</span>
+      <span class='ocrx_word' id='word_1_229' title='bbox 2197 1293 2290 1331; x_wconf 93'>বাজেট</span>
+      <span class='ocrx_word' id='word_1_230' title='bbox 2309 1300 2510 1332; x_wconf 52'>015080017</span>
+      <span class='ocrx_word' id='word_1_231' title='bbox 2540 1301 2602 1330; x_wconf 96'>করা</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_32' title="bbox 1400 1366 2125 1407">
+    <p class='ocr_par' id='par_1_32' lang='ben' title="bbox 1400 1366 2125 1407">
+     <span class='ocr_line' id='line_1_32' title="bbox 1400 1366 2125 1407; baseline -0.004 -9; x_size 41; x_descenders 9; x_ascenders 13">
+      <span class='ocrx_word' id='word_1_232' title='bbox 1400 1370 1454 1397; x_wconf 93'>হলে</span>
+      <span class='ocrx_word' id='word_1_233' title='bbox 1473 1366 1640 1407; x_wconf 13'>£001011</span>
+      <span class='ocrx_word' id='word_1_234' title='bbox 1657 1366 1791 1398; x_wconf 21'>9791959</span>
+      <span class='ocrx_word' id='word_1_235' title='bbox 1809 1370 1857 1397; x_wconf 93'>এর</span>
+      <span class='ocrx_word' id='word_1_236' title='bbox 1875 1366 1993 1397; x_wconf 95'>প্রয়োজন</span>
+      <span class='ocrx_word' id='word_1_237' title='bbox 2005 1370 2065 1400; x_wconf 93'>হবে</span>
+      <span class='ocrx_word' id='word_1_238' title='bbox 2077 1367 2125 1397; x_wconf 90'>না।</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_33' title="bbox 40 1514 76 1558">
+    <p class='ocr_par' id='par_1_33' lang='ben' title="bbox 40 1514 76 1558">
+     <span class='ocr_line' id='line_1_33' title="bbox 40 1514 76 1558; baseline 0 0; x_size 57.333332; x_descenders 14.333333; x_ascenders 14.333333">
+      <span class='ocrx_word' id='word_1_239' title='bbox 40 1514 76 1558; x_wconf 76'>৫]</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_34' title="bbox 185 1510 965 1551">
+    <p class='ocr_par' id='par_1_34' lang='ben' title="bbox 185 1510 965 1551">
+     <span class='ocr_line' id='line_1_34' title="bbox 185 1510 965 1551; baseline 0.005 -6; x_size 43.409836; x_descenders 5.4098358; x_ascenders 8">
+      <span class='ocrx_word' id='word_1_240' title='bbox 185 1505 313 1556; x_wconf 95'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_241' title='bbox 317 1505 458 1556; x_wconf 96'>পরিষদের</span>
+      <span class='ocrx_word' id='word_1_242' title='bbox 457 1505 547 1556; x_wconf 95'>টাকা</span>
+      <span class='ocrx_word' id='word_1_243' title='bbox 546 1505 670 1556; x_wconf 95'>কিভাবে</span>
+      <span class='ocrx_word' id='word_1_244' title='bbox 681 1510 965 1551; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_245' title='bbox 810 1505 878 1556; x_wconf 96'>করা</span>
+      <span class='ocrx_word' id='word_1_246' title='bbox 878 1510 963 1551; x_wconf 96'>হবে?</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_35' title="bbox 1396 1508 2602 1559">
+    <p class='ocr_par' id='par_1_35' lang='ben' title="bbox 1396 1508 2602 1559">
+     <span class='ocr_line' id='line_1_35' title="bbox 1396 1508 2602 1559; baseline 0.001 -14; x_size 52; x_descenders 13; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_247' title='bbox 1396 1503 1532 1563; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_248' title='bbox 1532 1503 1657 1563; x_wconf 96'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_249' title='bbox 1662 1503 1730 1563; x_wconf 96'>এর</span>
+      <span class='ocrx_word' id='word_1_250' title='bbox 1732 1503 1872 1563; x_wconf 96'>অনুদান</span>
+      <span class='ocrx_word' id='word_1_251' title='bbox 1877 1503 1967 1563; x_wconf 96'>খাতে</span>
+      <span class='ocrx_word' id='word_1_252' title='bbox 1972 1503 2132 1563; x_wconf 92'>বরাদ্দকৃত</span>
+      <span class='ocrx_word' id='word_1_253' title='bbox 2137 1503 2209 1563; x_wconf 93'>অর্থ</span>
+      <span class='ocrx_word' id='word_1_254' title='bbox 2235 1503 2387 1563; x_wconf 95'>এককালীন</span>
+      <span class='ocrx_word' id='word_1_255' title='bbox 2387 1503 2461 1563; x_wconf 96'>৪টি</span>
+      <span class='ocrx_word' id='word_1_256' title='bbox 2467 1503 2602 1563; x_wconf 94'>কিস্তিতে</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_36' title="bbox 1396 1575 2602 1620">
+    <p class='ocr_par' id='par_1_36' lang='ben' title="bbox 1396 1575 2602 1620">
+     <span class='ocr_line' id='line_1_36' title="bbox 1396 1575 2602 1620; baseline 0.002 -10; x_size 47; x_descenders 9; x_ascenders 12">
+      <span class='ocrx_word' id='word_1_257' title='bbox 1387 1571 1523 1627; x_wconf 94'>উত্তোলন</span>
+      <span class='ocrx_word' id='word_1_258' title='bbox 1527 1571 1600 1627; x_wconf 96'>করে</span>
+      <span class='ocrx_word' id='word_1_259' title='bbox 1617 1571 1747 1627; x_wconf 96'>উপজেলা</span>
+      <span class='ocrx_word' id='word_1_260' title='bbox 1746 1571 1864 1627; x_wconf 95'>পরিষদ</span>
+      <span class='ocrx_word' id='word_1_261' title='bbox 1863 1571 1985 1627; x_wconf 96'>তহবিলে</span>
+      <span class='ocrx_word' id='word_1_262' title='bbox 1984 1571 2131 1627; x_wconf 93'>স্থানান্তর</span>
+      <span class='ocrx_word' id='word_1_263' title='bbox 2172 1571 2228 1627; x_wconf 95'>এবং</span>
+      <span class='ocrx_word' id='word_1_264' title='bbox 2227 1571 2293 1627; x_wconf 95'>উক্ত</span>
+      <span class='ocrx_word' id='word_1_265' title='bbox 2297 1571 2484 1627; x_wconf 96'>স্থানান্তরিত</span>
+      <span class='ocrx_word' id='word_1_266' title='bbox 2488 1571 2601 1627; x_wconf 95'>তহবিল</span>
+     </span>
+    </p>
+   </div>
+   <div class='ocr_carea' id='block_1_37' title="bbox 1399 1641 2096 1682">
+    <p class='ocr_par' id='par_1_37' lang='ben' title="bbox 1399 1641 2096 1682">
+     <span class='ocr_line' id='line_1_37' title="bbox 1399 1641 2096 1682; baseline 0 -4; x_size 41.396225; x_descenders 5.3962264; x_ascenders 10">
+      <span class='ocrx_word' id='word_1_267' title='bbox 1399 1635 1476 1686; x_wconf 95'>থেকে</span>
+      <span class='ocrx_word' id='word_1_268' title='bbox 1489 1672 1572 1677; x_wconf 94'>তাদের</span>
+      <span class='ocrx_word' id='word_1_269' title='bbox 1600 1652 1682 1679; x_wconf 95'>বেতন</span>
+      <span class='ocrx_word' id='word_1_270' title='bbox 1696 1649 1768 1678; x_wconf 95'>ভাতা</span>
+      <span class='ocrx_word' id='word_1_271' title='bbox 1773 1635 1908 1686; x_wconf 96'>পরিশোধ</span>
+      <span class='ocrx_word' id='word_1_272' title='bbox 1909 1635 2012 1686; x_wconf 93'>করতে</span>
+      <span class='ocrx_word' id='word_1_273' title='bbox 2011 1652 2096 1682; x_wconf 79'>হবে।</span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 4.1.1' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "/tmp/tess_ddudlym9.PNG"; bbox 0 0 1169 103; ppageno 0'>
+   <div class='ocr_carea' id='block_1_1' title="bbox 14 14 1154 82">
+    <p class='ocr_par' id='par_1_1' lang='ben' title="bbox 14 14 1154 82">
+     <span class='ocr_line' id='line_1_1' title="bbox 14 14 1154 82; baseline -0.004 -6; x_size 67; x_descenders 10; x_ascenders 17">
+      <span class='ocrx_word' id='word_1_1' title='bbox 0 10 105 86; x_wconf 93'>নতুন</span>
+      <span class='ocrx_word' id='word_1_2' title='bbox 104 10 378 86; x_wconf 79'>শ্রেণিবিন্যাস</span>
+      <span class='ocrx_word' id='word_1_3' title='bbox 390 31 423 65; x_wconf 93'>ও</span>
+      <span class='ocrx_word' id='word_1_4' title='bbox 440 10 650 86; x_wconf 89'>আইবাস++</span>
+      <span class='ocrx_word' id='word_1_5' title='bbox 655 10 815 86; x_wconf 95'>সংক্রান্ত</span>
+      <span class='ocrx_word' id='word_1_6' title='bbox 820 10 941 86; x_wconf 95'>প্রশ্ন</span>
+      <span class='ocrx_word' id='word_1_7' title='bbox 944 31 978 65; x_wconf 96'>ও</span>
+      <span class='ocrx_word' id='word_1_8' title='bbox 985 10 1157 86; x_wconf 96'>সমাধান</span>
+     </span>
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
+
