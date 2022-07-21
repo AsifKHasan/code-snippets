@@ -6,6 +6,7 @@ import argparse
 
 import cv2
 import pytesseract
+from bs4 import BeautifulSoup
 
 
 # the installed location of Tesseract-OCR in your system
@@ -16,10 +17,11 @@ else:
 
 
 IMG_PATH = "./data/ibas/ibas-faq/faq-01.png"
-OCR_OUTPUT_PATH = "./data/recognized.txt"
-IMG_OUTPUT_FOLDER = "./out/"
+IMG_OUTPUT_PATH = "./out/{}.png"
+OCR_OUTPUT_PATH = "./out/{}.html"
+PARSED_OUTPUT_PATH = "./out/{}.txt"
 
-def segment_image(image_path):
+def segment_image(image_path, no_segmentation=False):
 	# Read image from which text needs to be extracted
 	img = cv2.imread(image_path)
 
@@ -41,67 +43,84 @@ def segment_image(image_path):
 	# Applying dilation on the threshold image
 	dilation = cv2.dilate(thresh1, rect_kernel, iterations = 1)
 
+	if no_segmentation:
+		return [(img, 0, None)]
+
 	# Finding contours
 	contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
-	# Creating a copy of image
-	im2 = img.copy()
-
-	# A text file is created and flushed
-	# file = open("./data/recognized.txt", "w+")
-	# file.write("")
-	# file.close()
-
 	# Looping through the identified contours
-	# Then rectangular part is cropped and passed on
-	# to pytesseract for extracting text from it
-	# Extracted text is then written into the text file
+	# Then rectangular part is cropped
 	image_segments = []
+	i = 0
 	for cnt in contours:
 		x, y, w, h = cv2.boundingRect(cnt)
 		
 		# Drawing a rectangle on copied image
-		rect = cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 2)
+		rect = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 		
 		# Cropping the text block for giving input to OCR
 		cropped = im2[y:y + h, x:x + w]
 
-		image_segments.append((cropped, (x, y, w, h)))
+		image_segments.append((cropped, i, (x, y, w, h)))
+
+		i = i + 1
 
 	return image_segments
 
 
-def save_image_segments(image_segments, output_folder):
-	i = 0
+def save_image_segments(image_segments, img_output_path):
 	for image_segment in image_segments:
 		img = image_segment[0]
-		output_path = f"{output_folder}/{i:03}.png"
+		output_path = img_output_path.format(f"{image_segment[1]:03}")
 		cv2.imwrite(output_path, img)
-		i = i + 1
 
 
-def ocr_segments(image_segments, ocr_output_path):
-	# Open the file in append mode
-	file = open(ocr_output_path, "a")
-	
+def ocr_segments(image_segments):
 	# Apply OCR on the cropped images
 	# config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
 	config = '-c preserve_interword_spaces=1 --psm 6 --oem 3'
 	# config = '-c preserve_interword_spaces=1 --psm 11 --oem 3'
 	# config = '-c preserve_interword_spaces=1 --psm 12 --oem 3'
 
+	ocr_texts = []
 	for image_segment in image_segments:
-		cropped = image_segment[0]
-		# text = pytesseract.image_to_string(cropped, lang='eng+ben', config=config)
-		# text = pytesseract.image_to_pdf_or_hocr(cropped, lang='eng+ben', config=config, extension='hocr')
-		text = pytesseract.run_and_get_output (cropped, lang='eng+ben', config=config, extension='hocr')
+		img = image_segment[0]
+		# text = pytesseract.image_to_string(img, lang='eng+ben', config=config)
+		# text = pytesseract.image_to_pdf_or_hocr(img, lang='eng+ben', config=config, extension='hocr')
+		text = pytesseract.run_and_get_output(img, lang='eng+ben', config=config, extension='hocr')
 	
 		# Appending the text into file
-		file.write(text)
+		ocr_texts.append((text, image_segment[1]))
+
+	return ocr_texts
+
+
+def save_ocr_texts(ocr_texts, ocr_output_path):
+	for ocr_text in ocr_texts:
+		# Open the file in append mode
+		file = open(ocr_output_path.format(f"{ocr_text[1]:03}"), "a")
+
+		# Appending the text into file
+		file.write(ocr_text[0])
 		file.write("\n")
 	
-	# Close the file
-	file.close
+		# Close the file
+		file.close
+
+
+def parse_ocr_texts(ocr_texts, parsed_output_path):
+	for ocr_text in ocr_texts:
+		# Open the file in append mode
+		file = open(parsed_output_path.format(f"{ocr_text[1]:03}"), "a")
+
+		text = ocr_text[0]
+
+		soup = BeautifulSoup(text)
+		
+	
+		# Close the file
+		file.close
 
 
 if __name__ == '__main__':
@@ -109,6 +128,8 @@ if __name__ == '__main__':
     # ap.add_argument("-g", "--gsheet", required=False, help="gsheet name to work with", default=argparse.SUPPRESS)
     # args = vars(ap.parse_args())
 
-	image_segments = segment_image(image_path=IMG_PATH)
-	save_image_segments(image_segments=image_segments, output_folder=IMG_OUTPUT_FOLDER)
-	# ocr_segments(image_segments=image_segments, ocr_output_path=OCR_OUTPUT_PATH)
+	image_segments = segment_image(image_path=IMG_PATH, no_segmentation=True)
+	save_image_segments(image_segments=image_segments, img_output_path=IMG_OUTPUT_PATH)
+	ocr_texts = ocr_segments(image_segments=image_segments)
+	save_ocr_texts(ocr_texts=ocr_texts, ocr_output_path=OCR_OUTPUT_PATH)
+	parse_ocr_texts(ocr_texts=ocr_texts, parsed_output_path=PARSED_OUTPUT_PATH)
