@@ -17,7 +17,7 @@ if platform.system() == 'Windows':
 else:
 	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-IMG_NAME = "faq-01"
+IMG_NAME = "faq-06"
 IMG_PATH = f"./data/ibas/ibas-faq/{IMG_NAME}.png"
 IMG_OUTPUT_PATH = "./out/{}x{}-{}.png"
 OCR_OUTPUT_PATH = f"./out/{IMG_NAME}.txt"
