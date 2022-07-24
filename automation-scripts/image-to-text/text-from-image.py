@@ -17,11 +17,10 @@ if platform.system() == 'Windows':
 else:
 	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-
-IMG_PATH = "./data/ibas/ibas-faq/faq-01.png"
+IMG_NAME = "faq-01"
+IMG_PATH = f"./data/ibas/ibas-faq/{IMG_NAME}.png"
 IMG_OUTPUT_PATH = "./out/{}x{}-{}.png"
-OCR_OUTPUT_PATH = "./out/{}.html"
-PARSED_OUTPUT_PATH = "./out/{}.txt"
+OCR_OUTPUT_PATH = f"./out/{IMG_NAME}.txt"
 
 def get_kernels(img, img_bin, thresh):
 	kernel_len = np.array(img).shape[1]//100
@@ -39,7 +38,6 @@ def get_vertical_lines(img_bin,ver_kernel):
 	return vertical_lines
 
 
-#@title Apply Horizontal Kernels
 def get_horizontal_lines(img_bin,hor_kernel):
 	image_2 = cv2.erode(img_bin, hor_kernel, iterations=3)
 	horizontal_lines = cv2.dilate(image_2, hor_kernel, iterations=3)
@@ -47,43 +45,44 @@ def get_horizontal_lines(img_bin,hor_kernel):
 	return horizontal_lines
 
 
-#@title Get the List of Boxes
-def get_list_of_box(img,contours):
-	box = []
+def get_list_of_box(img, contours):
+	boxes = []
+	# img_height, *_ = img.shape
+	img_height = 1000
 
 	for c in contours:
 		x, y, w, h = cv2.boundingRect(c)
 
-		if (20 < h < 2000):
+		if (20 < h < img_height):
 			image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
-			crop_img = img[y:y+h, x:x+w]
+			cropped = img[y:y+h, x:x+w]
 			# cv2_imshow(crop_img)
 
-			box.append([x, y, w, h])
+			boxes.append({'img': cropped, 'box': [x, y, w, h]})
 
-	return box
+	return boxes
 
 
-def get_row_and_columns(box, mean):
+def get_row_and_columns(boxes, mean):
 	rows = []
 	cols = []
 	j = 0
 
-	for i in range(len(box)):
-		if(i == 0):
-		  cols.append(box[i])
-		  previous = box[i]
+	for i in range(len(boxes)):
+		if (i == 0):
+			cols.append(boxes[i])
+			previous = boxes[i]
 		else:
-			if(box[i][1] <= previous[1] + mean / 2):
-				cols.append(box[i])
-				previous = box[i]
-				if (i == len(box) - 1):
+			if (boxes[i]['box'][1] <= previous['box'][1] + mean / 2):
+				cols.append(boxes[i])
+				previous = boxes[i]
+				if (i == len(boxes) - 1):
 					rows.append(cols)
 			else:
 				rows.append(cols)
 				cols = []
-				previous = box[i]
-				cols.append(box[i])
+				previous = boxes[i]
+				cols.append(boxes[i])
 
 	return rows, cols
 
@@ -113,7 +112,7 @@ def arrange_boxes_in_order(row, countcol, center):
 			lis.append([])
 
 		for j in range(len(row[i])):
-			diff = abs(center- (row[i][j][0] + row[i][j][2] / 4))
+			diff = abs(center- (row[i][j]['box'][0] + row[i][j]['box'][2] / 4))
 			minimum = min(diff)
 			indexing = list(diff).index(minimum)
 			lis[indexing].append(row[i][j])
@@ -153,8 +152,10 @@ def segment_image(image_path, no_segmentation=False):
 	heights = [bounding_boxes[i][3] for i in range(len(bounding_boxes))]
 	mean = np.mean(heights)
 
-	box = get_list_of_box(img, contours)
-	rows, cols = get_row_and_columns(box, mean)
+	# print(f"found {len(contours)} contours")
+	boxes = get_list_of_box(bitnot, contours)
+	# print(f"found {len(boxes)} boxes")
+	rows, cols = get_row_and_columns(boxes, mean)
 
 	num_cols = 0
 	for i in range(len(rows)):
@@ -162,66 +163,26 @@ def segment_image(image_path, no_segmentation=False):
 		if count > num_cols:
 			num_cols = count
 
-	center = [int(rows[i][j][0] + rows[i][j][2] / 2) for j in range(len(rows[i])) if rows[0]]
+	center = [int(rows[i][j]['box'][0] + rows[i][j]['box'][2] / 2) for j in range(len(rows[i])) if rows[0]]
 	center = np.array(center)
 	center.sort()
 	final_boxes = arrange_boxes_in_order(rows, num_cols, center)
 
-	return bitnot, final_boxes
+	return final_boxes
 
 
-
-
-
-
-
-	# Specify structure shape and kernel size.
-	# Kernel size increases or decreases the area
-	# of the rectangle to be detected.
-	# A smaller value like (10, 10) will detect
-	# each word instead of a sentence.
-	# rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
-
-	# Applying dilation on the threshold image
-	# dilation = cv2.dilate(thresh1, rect_kernel, iterations = 1)
-
-	# if no_segmentation:
-	# 	return [(img, 0, None)]
-
-	# Finding contours
-	# contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-
-	# Looping through the identified contours
-	# Then rectangular part is cropped
-	# image_segments = []
-	# i = 0
-	# for cnt in contours:
-	# 	x, y, w, h = cv2.boundingRect(cnt)
-	#
-	# 	# Drawing a rectangle on copied image
-	# 	rect = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
-	#
-	# 	# Cropping the text block for giving input to OCR
-	# 	cropped = im2[y:y + h, x:x + w]
-	#
-	# 	image_segments.append((cropped, i, (x, y, w, h)))
-	#
-	# 	i = i + 1
-	#
-	# return image_segments
-
-
-def save_image_segments(img, image_segments, img_output_path):
+def save_image_segments(image_segments, img_output_path):
 	row_num = 1
 	for row in image_segments:
 		col_num = 1
 		for col in row:
 			idx = 1
 			for box in col:
-				y, x, w, h = box[0], box[1], box[2], box[3]
-				cropped = img[x:x+h, y:y+w]
+				y, x, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
 				output_path = img_output_path.format(row_num, col_num, idx)
-				cv2.imwrite(output_path, cropped)
+				cv2.imwrite(output_path, box['img'])
+
+				idx = idx + 1
 
 			col_num = col_num + 1
 
@@ -229,50 +190,58 @@ def save_image_segments(img, image_segments, img_output_path):
 
 
 def ocr_segments(image_segments):
-	# Apply OCR on the cropped images
 	# config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
-	config = '-c preserve_interword_spaces=1 --psm 6 --oem 3'
+	# config = '-c preserve_interword_spaces=1 --psm 6 --oem 3'
 	# config = '-c preserve_interword_spaces=1 --psm 11 --oem 3'
 	# config = '-c preserve_interword_spaces=1 --psm 12 --oem 3'
+	config = '-c preserve_interword_spaces=1 --oem 3'
 
-	ocr_texts = []
-	for image_segment in image_segments:
-		img = image_segment[0]
-		# text = pytesseract.image_to_string(img, lang='eng+ben', config=config)
-		# text = pytesseract.image_to_pdf_or_hocr(img, lang='eng+ben', config=config, extension='hocr')
-		text = pytesseract.run_and_get_output(img, lang='eng+ben', config=config, extension='hocr')
+	row_num = 1
+	for row in image_segments:
+		col_num = 1
+		for col in row:
+			idx = 1
+			for box in col:
+				kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 1))
+				border = cv2.copyMakeBorder(box['img'], 2, 2, 2, 2, cv2.BORDER_CONSTANT, value=[255,255])
+				resizing = cv2.resize(border, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
+				dilation = cv2.dilate(resizing, kernel,iterations=1)
+				erosion = cv2.erode(dilation, kernel,iterations=1)
 
-		# Appending the text into file
-		ocr_texts.append((text, image_segment[1]))
+				text = pytesseract.image_to_string(erosion, lang='eng+ben', config=config)
+				# text = pytesseract.image_to_pdf_or_hocr(box['img'], lang='eng+ben', config=config, extension='hocr')
+				# text = pytesseract.run_and_get_output(box['img'], lang='eng+ben', config=config, extension='hocr')
 
-	return ocr_texts
+				box['ocr'] = text.strip()
 
+				idx = idx + 1
 
-def save_ocr_texts(ocr_texts, ocr_output_path):
-	for ocr_text in ocr_texts:
-		# Open the file in append mode
-		file = open(ocr_output_path.format(f"{ocr_text[1]:03}"), "a")
+			col_num = col_num + 1
 
-		# Appending the text into file
-		file.write(ocr_text[0])
-		file.write("\n")
-
-		# Close the file
-		file.close
-
-
-def parse_ocr_texts(ocr_texts, parsed_output_path):
-	for ocr_text in ocr_texts:
-		# Open the file in append mode
-		file = open(parsed_output_path.format(f"{ocr_text[1]:03}"), "a")
-
-		text = ocr_text[0]
-
-		soup = BeautifulSoup(text)
+		row_num = row_num + 1
 
 
-		# Close the file
-		file.close
+def save_ocr_texts(image_segments, ocr_output_path):
+	file = open(OCR_OUTPUT_PATH, "w")
+
+	row_num = 1
+	for row in image_segments:
+		col_num = 1
+		for col in row:
+			idx = 1
+			for box in col:
+				file.write(f"{row_num}x{col_num}-{idx}")
+				file.write("\n")
+				file.write(box['ocr'])
+				file.write("\n")
+
+				idx = idx + 1
+
+			col_num = col_num + 1
+
+		row_num = row_num + 1
+
+	file.close
 
 
 if __name__ == '__main__':
@@ -280,9 +249,7 @@ if __name__ == '__main__':
     # ap.add_argument("-g", "--gsheet", required=False, help="gsheet name to work with", default=argparse.SUPPRESS)
     # args = vars(ap.parse_args())
 
-	img, image_segments = segment_image(image_path=IMG_PATH, no_segmentation=True)
-	# pprint(image_segments)
-	save_image_segments(img=img, image_segments=image_segments, img_output_path=IMG_OUTPUT_PATH)
-	# ocr_texts = ocr_segments(image_segments=image_segments)
-	# save_ocr_texts(ocr_texts=ocr_texts, ocr_output_path=OCR_OUTPUT_PATH)
-	# parse_ocr_texts(ocr_texts=ocr_texts, parsed_output_path=PARSED_OUTPUT_PATH)
+	image_segments = segment_image(image_path=IMG_PATH, no_segmentation=True)
+	save_image_segments(image_segments=image_segments, img_output_path=IMG_OUTPUT_PATH)
+	ocr_segments(image_segments=image_segments)
+	save_ocr_texts(image_segments=image_segments, ocr_output_path=OCR_OUTPUT_PATH)
