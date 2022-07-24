@@ -17,10 +17,9 @@ if platform.system() == 'Windows':
 else:
 	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-IMG_NAME = "faq-06"
-IMG_PATH = f"./data/ibas/ibas-faq/{IMG_NAME}.png"
-IMG_OUTPUT_PATH = "./out/{}x{}-{}.png"
-OCR_OUTPUT_PATH = f"./out/{IMG_NAME}.txt"
+IMG_PATH = "./data/ibas/ibas-faq/{}.png"
+IMG_OUTPUT_PATH = "./out/{}__{}x{}-{}.png"
+OCR_OUTPUT_PATH = "./out/{}.txt"
 
 def get_kernels(img, img_bin, thresh):
 	kernel_len = np.array(img).shape[1]//100
@@ -171,7 +170,7 @@ def segment_image(image_path, no_segmentation=False):
 	return final_boxes
 
 
-def save_image_segments(image_segments, img_output_path):
+def save_image_segments(image_segments, img_name, img_output_path):
 	row_num = 1
 	for row in image_segments:
 		col_num = 1
@@ -179,7 +178,7 @@ def save_image_segments(image_segments, img_output_path):
 			idx = 1
 			for box in col:
 				y, x, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
-				output_path = img_output_path.format(row_num, col_num, idx)
+				output_path = img_output_path.format(img_name, row_num, col_num, idx)
 				cv2.imwrite(output_path, box['img'])
 
 				idx = idx + 1
@@ -222,7 +221,7 @@ def ocr_segments(image_segments):
 
 
 def save_ocr_texts(image_segments, ocr_output_path):
-	file = open(OCR_OUTPUT_PATH, "w")
+	file = open(ocr_output_path, "w")
 
 	row_num = 1
 	for row in image_segments:
@@ -245,11 +244,15 @@ def save_ocr_texts(image_segments, ocr_output_path):
 
 
 if __name__ == '__main__':
-    # ap = argparse.ArgumentParser()
-    # ap.add_argument("-g", "--gsheet", required=False, help="gsheet name to work with", default=argparse.SUPPRESS)
-    # args = vars(ap.parse_args())
+	ap = argparse.ArgumentParser()
+	ap.add_argument("-i", "--image", required=True, help="image name to work with", default=argparse.SUPPRESS)
+	args = vars(ap.parse_args())
 
-	image_segments = segment_image(image_path=IMG_PATH, no_segmentation=True)
-	save_image_segments(image_segments=image_segments, img_output_path=IMG_OUTPUT_PATH)
+	img_name = args['image']
+	img_path = IMG_PATH.format(img_name)
+	ocr_output_path = OCR_OUTPUT_PATH.format(img_name)
+
+	image_segments = segment_image(image_path=img_path, no_segmentation=True)
+	save_image_segments(image_segments=image_segments, img_name=img_name, img_output_path=IMG_OUTPUT_PATH)
 	ocr_segments(image_segments=image_segments)
-	save_ocr_texts(image_segments=image_segments, ocr_output_path=OCR_OUTPUT_PATH)
+	save_ocr_texts(image_segments=image_segments, ocr_output_path=ocr_output_path)
