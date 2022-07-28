@@ -221,7 +221,7 @@ def ocr_segments(image_segments):
 
 
 def save_ocr_texts(image_segments, ocr_output_path):
-	file = open(ocr_output_path, "w")
+	file = open(ocr_output_path, "w", encoding='utf-8')
 
 	row_num = 1
 	for row in image_segments:
@@ -230,9 +230,10 @@ def save_ocr_texts(image_segments, ocr_output_path):
 			idx = 1
 			for box in col:
 				file.write(f"{row_num}x{col_num}-{idx}")
-				file.write("\n")
-				file.write(box['ocr'])
-				file.write("\n")
+				file.write('\n"\n')
+				# file.write(box['ocr'])
+				file.write(box['ocr'].replace('\n', ' '))
+				file.write('\n"\n\n')
 
 				idx = idx + 1
 
