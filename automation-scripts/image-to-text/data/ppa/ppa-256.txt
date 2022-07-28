@@ -1,0 +1,160 @@
+২৪৫
+
+অংশ-উ 3
+invitation for Tenders
+
+{for use when there are MULTIPLE iots in a package
+This is the website format and as used for published advertisement.
+It is inciuded in this document for information onl
+IMENT OF THE PEOPLE'S REPUBLIC OP: BANGLADESH =e
+< select >
+< select >
+< type in name >
+
+      
+   
+   
+ 
+ 
+
+ 
+ 
+    
+
+Ministry/Division
+Agency
+Procuring Entity Name
+Procuring Entity Code rt
+Procuring Entity District _ <select >
+Invitation for _<select> ছু <select >
+
+Invitation Ref No < type in name >
+
+| Date < < select >
+
+   
+    
+  
+
+1
+2
+3
+4
+ডা
+6
+7
+6.
+
+    
+  
+
+< select >
+< srt in name >
+
+  
+     
+ 
+       
+  
+  
+ 
+ 
+ 
+ 
+ 
+  
+ 
+  
+
+men mee Source of Funds —
+Development Partners (if 2০
+> c চো?
+
+   
+
+< use MOF code >
+< use MOF name >
+< type in name >
+
+Project / নিলি Code (if applicable)
+113 | Project / Programme Name (if applicable)
+' 14 | Tender Package No.
+
+ 
+
+115 | Tender Package Name | < type in name >
+| Date “3
+1:16 | Tender Publication Date < select >
+'17 ~~ Tender Last Seiling Date < select >
+[Date ও
+18 | Tender submission Date and Time < select >
+19 | Tender Opening Date anc Time (if < select >
+| different from 18) রঃ
+20 | Name & Address of the office(s) ‘Address
+- Selling Tender Document (Principal) < type in name >
+- Selling Tender Document (Others) < type in name >
+- Receiving Tender Document < type in name >
+- Opening Tender Document < type in name > |
+21 Place / Date / Time of < type in name >
+Pre-Tender Meeting (Optional) Date 7
+< select >
+
+ 
+
+< type in name >
+< type in name >
+
+22 ean of টিটি
+23 | Brief Description of Goods or Works
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+  
+ 
+
+ 
+   
+        
+ 
+ 
+
+24 | Brief Description of Related Services ; < type in name >
+25 __| Price of Tender Document (Tk) _ 1 < type in price >
+Lot | Identification of Lot ui Location Tender Security | Completion Time in |
+No | Amount (Tk) | Weeks / Months
+26 4 < type in name > < type in name > <type in> <type in>
+27 < type in name > : < type in name > <type in> <type in>
+< type in name > | < type in name > <type in> <type in>
+< type in name > < ype in ০ > i i
+
+ 
+
+= Be
+30 =| Name of Official inviting Tender < type in name >
+31 Designation of Official Inviting Tender < type in name >
+32 | Address of Official Inviting Tender | < type in name >
+33 _| Contact details of Officia! inviting Tender | <Tel.No.> 1 <FaxNo.> |<e-mail>
+
+ 
+
+ 
+
+ 
+
+ 
+
+134 __| The procuring entity reserves the right to --- deleted-- reject all Tenders
+“<select : these fields are “pop-up” fields and fhe procuring entity will only have to select the correct name,
+address or date in order to complete the form.
+
+<type in name> : these fields are to be completed by typing in the relevant data.
+
+ 
+

@@ -1,0 +1,169 @@
+২৪২
+
+». অংশ-খঃ
+
+Invitation for Pre-Qualification
+[for use when there is a SINGLE lot in a package
+
+This is the website format and as used for published advertisement.
+It is included in this document for information only]
+
+         
+
+      
+ 
+
+PUIRTIC OF BANGLADESH?
+
+ 
+
+THE PEOPLE'S RE!
+< select >
+< select >
+
+       
+   
+ 
+ 
+
+  
+
+1 Ministry/Division
+
+2 | Agency
+
+3 | Procuring Entity Name
+4 | Procuring Entity Code
+5 | Procuring Entity District
+6
+
+Uf
+
+8
+
+   
+ 
+   
+
+< select >
+
+| Invitation for | <select> GM <select >
+| Invitation Ref No
+| Date
+
+: এ type in name >
+
+ 
+
+  
+   
+
+< select >
+pe in name >
+
+  
+     
+  
+ 
+
+টির and Satis of Funds
+সর nec oo 22839 |.
+
+  
+    
+
+14 | Proposed Tender Package No.
+15 | Proposed Tender Package Name
+
+= type in name >
+_< type in name >
+
+‘Date.
+
+    
+        
+   
+      
+     
+ 
+
+ 
+
+18 | Pre-Qualification submission Date and
+Time
+19 | Name & Address of the office(s)
+- Selling Pre-Qual, Document (Principal)
+- Selling Pre-Qual. Document (Others)
+- Receiving Pre-Qual. Document
+20 Place / Date / Time of
+Pre-Qualification Meeting (Optional)
+
+Vel <select > ঠা
+
+  
+  
+
+4109 in name >:
+«type in‘name >
+< type inname >
+Kt pes sn name >
+
+ 
+   
+
+রা 1078: ae
+
+2] < select > 1
+
+ 
+    
+ 
+   
+
+  
+
+Eligibility of Applicant | < type in name >
+22 | Brief Description of Goods or Works < type in name >
+
+ 
+
+ 
+
+ 
+
+23 | Brief Description of Related Services < type-in name >
+24 | Price of Pre-Qua/, Document (Tk} | < type in price > ——
+Lot | Identification of Lot ] Location | Completion
+No Time in
+| Weeks /
+] | months _
+<typeinname> | — <type in>
+
+ 
+
+] Name of Official inviting Pre “Qualifi cation
+30 Designation of Official Inviting Pre-Qual. < type in name >
+2 Address of Official Inviting Pre-Qual. <.type in name >
+
+| < type in name >
+
+ 
+
+32__| Contact details of Official Inviting Pre-Qual. | <Tel.No.> | <FaxNo.> | <e-mail>
+33__| The procuring entity reserves the right to --- deleted--_ reject all Pre-Qualifications
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<select> : these fields are “pop-up” fields and the procuring entity will only have to select the correct
+name, address or date in order to complete the form.
+
+<type in name> : these fields are to be completed by typing in the relevant data
+

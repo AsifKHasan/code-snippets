@@ -1,0 +1,64 @@
+২২৩
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Col Activity Note
+No.
+11 Advertising Tender Always show “0” in the “Planned Days” box in Column 11.
+il Advertising Tender Always show “0” in the “Planned Days” box in Column 11.
+11 Issue RFP Always show “0” in the “Planned Days” box in Column 10.
+12  |Opening of Tender /
+Proposal
+13. | Evaluation of Tender / | The date for each activity will automatically be calculated
+Proposal and appear in the “Planned Dates” box.
+14. ‘| Approval of Award
+15 | Notification of Award
+16 | Signing of Contract Now determine the number of days it is expected that
+each activity will take place and enter the time for that
+activity in the relevant “Planned Days” box. ‘[* * *]
+17. | Completion of Planned Dates & Planned Days :
+
+Contract For each Procurement package, consider the Date on
+which the Goods, Works or Services are required to be
+completed and enter the date in Planned Dates (Column
+17).
+
+Then show the expected duration of the Contract (in
+Days) in Planned Days immediately under the above Date
+(Column 17).
+
+18 {Total Time (in Days) | This is automatically calculated by adding together all the
+
+ 
+
+ 
+
+pre-determined number of “Planned Days’, it will change if
+any of the Planned Days are changed.
+
+ 
+
+১এস, আর, ও নং ৭৩-আইন/২০১১, তারিখ £ ২৭ মার্চ, ২০১১ দ্বারা শব্দগুলি, বন্ধনী ও ফুলস্টপ বিলুপ্ত, সেকশন-২৬।
+
+ 
+

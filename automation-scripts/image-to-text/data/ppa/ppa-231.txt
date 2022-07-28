@@ -1,0 +1,82 @@
+২২০
+
+তফসিল-৫
+
+অংশ-ক ৪ [বিধি ১৬৮৮) দ্রঃ]
+
+Total Procurement Plan for Development Project / Programme
+
+This part identifies the packages for Goods, Works and Services that are
+
+required under the development project/programme. It identifies each Procure-
+ment package, giving it a unique code and considers the expected cost of the
+package (as per the DPP/TPP), as well as the anticipated dates when the
+Procurement package will be supplied.
+
+Goods, Works and Services.
+
+A separate Schedule, completed as shown below, should be provided for
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+in Tk million
+
+Col Activity Note
+No
+1 Package Number In ascending numerical order.
+(e.g. GD1, GD2, GD3; WD1, WD2, WD3; or SD1,
+SD2, SD3 etc)
+2 Description of Brief description of the Procurement package,
+Procurement Package expressed in quantifiable terms. (29 per
+DPP/TPP)
+3/4 Unit/ Quantity The unit of supply. (e.g. 1, set, sqm, ump sum)
+The quantity of the unit required (e.g. 1,2,3 etc; or
+1,500 etc)
+5 Procurement Method Procurement Method (e.g. OTM (NCT); LTM
+& Type (NCT), DP, etc.)
+6 Contract Approving State here the approving authority that gave
+Authority approval to the Tender / Proposal Evaluation
+Report.
+7 Source of Funds Source of Funds (GoB or Own) or
+Development Partners (IDA, ADB, EU etc)
+8 Estimated cost Express the anticipated cost in Taka million as
+
+per the DPP/TPP.
+
+e.g. 50 Lakh would be 5 million, 1 Crore 50 Lakh
+10 thousand would be 150 million 10 thousand
+
+ 
+
+ 
+
+ 
+
+Indicative Dates
+
+ 
+
+These are the three key dates of any
+Procurement activity, the date at which the
+Procuring Entity invites Tenders, the date at
+which a Contract is expected to be signed and
+the expected date of completion of the Contract.
+
+ 
+
+ 
+

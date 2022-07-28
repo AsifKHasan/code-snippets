@@ -1,0 +1,139 @@
+৯২২৭
+তফসিল-৬
+[বিধি ৩৭ (১) দ্রঃ]
+
+Format for Reporting Contract Award
+শুষ্ক oe oe]
+
+[This is the website format which requests only the data needed to complete
+The Contract Award Notification Sheet]
+
+Agency <select >
+Procuring Entity Name < type in name ৯.
+Procuring Entity Code eee
+Procuring Entity District < select >
+
+‘< select >
+
+RA 2
+Budget and Source of Funds <select >
+Development Partners < type in name>
+
+০০8 3 ঠা es কই পে
+
+Project / Programme Coce (if applicable) | « use MOF ০০০৪৯
+13 Project / Programme Name (if applicable) |.< use. MOF name >
+14 Tender / Proposal Package No. “type in name >
+15 Tender / Proposal Package Name < type in name >
+
+ 
+
+  
+
+ 
+
+  
+  
+
+ 
+
+16 81
+
+11 Date of Advertisement <select >
+
+18 Date of Notification of Award <select >
+
+19 Date of Contract Signing < select:>
+
+20 Proposed Date of Contract Completion < select'>
+
+21 No. of Tenders / Proposais Sold < type in: Number >
+22 No. of Tenders / Proposa's Received < type in Number >
+23 No. of Responsive Tenders / Proposals < type in Number ৯
+
+ 
+
+  
+ 
+
+ 
+
+    
+   
+
+< type in details >
+
+   
+
+CURING ENTIT :
+35 Name of Authorised Officer
+36 Designation of Authorised Officer
+
+ 
+
+< type in name >
+< type in name >
+
+ 
+
+ 
+
+ 
+
+24 Brief Description of Contract | < type in details >
+25 Contract Price < type in details >
+26 Name of Supplier / Contractor / Consultant < type in details >
+27 Location of Supplier / Contractor / Consultant | এ type in details >
+28 Location of Delivery / Works / Consultancy এ type indetails >
+29 Is the Contract awarded to the Person with the lowest priced Tender ?
+30 If no, state brief reasons | এ type 'in-details >
+31 Was the Performance Security provided in due time?
+
+32 if no, state reasons
+
+33 Was the Contract signed in due time?
+
+34 If no, state reasons
+
+   
+     
+   
+   
+   
+  
+   
+  
+ 
+
+Add reasons for non-
+responsiveness
+
+ 
+  
+ 
+
+| <select >
+
+| <select >
+
+| <select >
+
+ 
+
+ 
+
+< select > These fields in the website are “pop-up” fields and the procuring entity will only have to select
+
+the correct name, address or date in order to complete the form.
+
+< type in name / details > These fields are to be completed by typing in the relevant data.
+
+ 
+
+এস, আর, ও নং ২০৩-আইন/২০০৯, তারিখ ৪ ১২ আগস্ট ২০০৯ দ্বারা “(for Tk. 100 million and above
+for goods and works contracts)” এবং “(for Tk. 5 million and above for service contracts)” শব্দগুলি,
+
+সংখ্যাগুলি ও বন্ধনীগুলি বিলুপ্ত, সেকশন-৪১(ন)।
+
+ 
+

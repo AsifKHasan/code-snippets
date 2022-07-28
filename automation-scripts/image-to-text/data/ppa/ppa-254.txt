@@ -1,0 +1,188 @@
+২৪৩
+
+অংশ-গ 8
+
+Invitation for Pre-Qualification
+
+ 
+
+[for use when there are MULTIPLE lots in a package
+This is the website format and as used for published advertisement.
+It is included in this document for information only]
+
+ 
+
+    
+
+        
+
+<select >
+< select >
+< type in name >
+
+Ministry/Division
+Agency
+
+Procuring Entity Name
+Procuring Entity Code
+Procuring Entity District
+Invitation for
+invitation Ref No
+
+    
+ 
+   
+ 
+
+     
+   
+
+ 
+ 
+  
+   
+ 
+
+ 
+ 
+   
+
+< select >
+<select> < select >
+< type in. name >
+
+< select >
+
+  
+  
+
+< select >
+
+          
+    
+    
+   
+
+০০ ২4 ০১ 0 ২৯ ০১১ ১
+
+<select> §
+
+ 
+
+< select >
+<t pe in name >
+
+  
+      
+        
+  
+        
+       
+   
+      
+ 
+ 
+
+< use MOF codes >
+< use MOF name >
+
+< type in name> ]
+_< type in name >
+
+ 
+  
+
+ELAS A
+Project / Programme Code (if applicable)
+13 | Project / Programme Name (if applicable)
+14 Proposed Tender Package No.
+15 Proposed Tender Package Name
+
+18 | Pre-qualification Closing Date and Time
+19 | Name & Address of the office(s)
+
+- Selling Pre-Qual. Document (Principal)
+- Selling Pre-Qual. Document (Others)
+
+- Receiving Pre-Qual, Document
+
+20 | Place / Date / Time of
+
+Pre-Qualification Meeting (Optional)
+
+< type in name >.
+<type in name >
+< type in name >
+< type in name >
+
+< select >
+
+ 
+   
+
+< type in name >
+‘< type-in name >
+.< type In name >
+:< type in price >
+
+21 Elig ility of App cant
+22 Brief Description of Goods or Works
+23 | Brief Description of Related Services
+24 __| Price of Pre-Qual. Document (Tk)
+
+   
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+   
+  
+
+Lot | Identification of Lot Location Completion
+No Time in
+Weeks
+/months
+25 1 < type in name > < type in name > <type in>
+26 2 | <type in name > < type in name > <type in>
+27 3 | এ type in name > < type in name > <type in>
+4 < type in name > <type in>
+
+     
+ 
+
+< type in name >
+
+29 | Name of Official Inviting Pre-Quali ication i < type in name >
+30 Designation of Official Inviting Pre- < type in name >
+
+Qualification BH
+
+31 Address of Official inviting Pre-Qualification 1 < type in name>
+
+32 | Contact details of Official Inviting Pre-Qual. | <Tel.No.> | <FaxNo.> | <e-mail >
+33 ___| The procuring entity reserves the right to --- deleted--_reject all Pre-Qualifications
+
+<select> : these fields in the website are “pop-up” fields and the procuring entity will only have to
+select the correct name, address or date in order to complete the form.
+
+<type in name> : these fields are to be ০0011019650 by typing in the relevant data.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+৬
+

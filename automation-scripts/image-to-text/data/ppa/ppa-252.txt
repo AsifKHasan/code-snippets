@@ -1,0 +1,130 @@
+২৪১
+
+তফসিল-১০
+অংশ-ক 3 PUT ৯০৫) ও ৯১(১২)]দ্বঃ
+
+Invitation for Enlistment
+
+This is the website format and as used for published advertisement.
+it is included in this document for information only]
+
+ 
+ 
+
+ 
+
+DOR BANGLADESH: ae
+
+   
+   
+
+Ministry/Division < select > টু
+Agency < select > ৫
+Procuring Entity Name typ
+Procuring Entity Code
+
+  
+
+ 
+ 
+    
+ 
+
+< select >
+Invitation for Enlistment <select > <select >
+Invitation Ref No < type in name >
+
+ 
+
+< select >
+
+1
+2
+3
+4
+5 | Procuring Entity District
+6
+7
+8
+E{
+
+   
+
+10 | Budget and Sauron of শি <select >
+
+Aa Development Partners (if applicable) এ pe in name >
+EPARTICUPAR INFORMATION Se 3 = 5755 ই
+
+12 Project / Programme Code (if পানি] “<use MOF code > >
+
+13 | Project / Programme Name (if applicable) | এ use MOF name >
+
+ 
+ 
+   
+  
+
+ 
+ 
+
+18 | Application Closing Date and Time select >
+
+19 | Name & Address of the office(s) i
+- Application Form Availability (Principal) | < type in name >
+- Application Form Availability (Others) < type in name.>
+- Receiving Application Form < type in-name.>
+
+ 
+
+  
+ 
+   
+    
+
+ 
+ 
+
+< type in name >
+< type in name >
+< type in name >
+<t pe in 90০৯০
+
+Eligibility of Applicant
+22 | Brief Description of Goods or Works
+
+23 | Brief Description of Related or Physical Services
+24 | Price of Application Form (Tk)
+
+EPROCURING ENTITYDETAILS.. ও 2:58
+
+29 | Name of Official inviting Application < eH in name>
+
+   
+
+   
+
+30 | Designation of Official Inviting Application < type in name >
+31 | Address of Official Inviting Application < type in name >
+
+32__| Contact details of Official Inviting Application | < Tel. No.> | <FaxNo.> | <e-mail ৯
+33__| The procuring entity reserves the right to reject all Applications
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<select> : these fields are “pop-up” fields and the procuring entity will only have to select the correct
+name, address or date in order to complete the form.<type in name> : these fields are to be
+completed by typing in the relevant data.
+
+ 
+
+'এস, আর, ও নং ২০৩-আইন/২০০৯, তারিখ £ ১২ আগস্ট, ২০০৯ দ্বারা “বিধি ৯০৫৫)” শব্দ, সংখ্যাগুলি ও
+বন্ধনীর পরিবর্তে “বিধি ৯০৫) ও ৯১৫১২)” শব্দগুলি, সংখ্যাগুলি ও বন্ধনীগুলি প্রতিস্থাপিত, সেকশন-৪২।
+

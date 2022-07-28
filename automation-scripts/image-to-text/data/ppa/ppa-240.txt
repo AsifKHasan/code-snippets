@@ -1,0 +1,69 @@
+(1)
+
+(2)
+
+(3)
+
+(4)
+
+(5)
+
+(6)
+
+(7)
+
+(8)
+
+(9)
+
+২২৯
+
+তফসিল ৮
+অংশ-ক 3 [বিধি ৪৩ (8) দ্রঃ]
+
+Records of Procurement to be Maintained by a Procuring Entity
+
+The records of Procurement of Goods, Works and Services made through each contract
+shall be maintained separately.
+
+In case of more than one contract falling under a particular package, the files or records shall
+be systematically maintained on each contract basis and arranged or grouped together on the
+basis of each package. For example, if one package of goods consists of 3 lots and for each
+lot a separate contract has been concluded, then there should be three files for 3 contracts
+and papers relating to each contract shall be maintained in the relevant contract files. A!l the
+three contract files relating to the particular package shall be maintained together as a group
+or package. If in a goods package, say Package No. 01 there are 3 contracts then the contract
+files shall indicate as G1: Contract -1 (3), G1: Contract 2 (3), 01: Contract 3 (3). All the 3
+contracts shall be serially maintained under one package. The file number may include ---/---
+-/Procurement/ G1: Cont-1 (3)/2004-06. The indicated years are the file opening and closing
+years.
+
+The file should be opened indicating the year when it is opened and the year when it should
+be closed. In other words it should include year of commencement and year of completion of
+contractual obligations.
+
+A particular Contract file may have more than one Part file. Part file shall be indicated in the
+file number as Part-1, Part-2 say for example: ----- [------- /G1: Cont.1 (3) Part- 1/2004 -06.
+
+The checklist of records format shall be placed at the top of every file whether it is a part file
+or not. The format of the checklist should be filled in stating the records maintained in a
+particular file. Where part file is opened, some of the columns of the checklist of records will
+remain blank concerning the records not maintained in a particular part file.
+
+The concerned officer of the Procuring Entity should indicate in writing in the format in
+which part file or main file the records appearing blank are available.
+
+If relevant papers relating to a particular Procurement are maintained by more than one
+branch of the Procuring Entity, the relevant branch shali transfer the records to the main
+Procurement file.
+
+If it is not possible to transfer the records and documents, the concerned department(s) shall
+maintain the documents/records relating to the Procurement for the period stated in the
+Regulations and the Procedures. The concerned Procurement Officer shall ensure the
+relevant branch is complying with the requirement and the Procedures of the Regulation 9.
+This situation may arise in case of documents/records maintained by the Accounts Branch
+who may retain the original documents for audit or other purposes.
+
+The pages of the file shall be numbered serially. The entire file should be preserved in a
+manner so that no page should miss, The pages in the file should be bounded if possible.
+

@@ -1,0 +1,195 @@
+ 
+
+ 
+
+    
+  
+    
+ 
+
+০০ ২4 ০১ 01 4৯ ০১1১১ =F
+রি
+
+Project / Programme Code (if applicable)
+
+ 
+   
+
+Eligibility of Tenderer রঃ
+
+২৪৪
+
+অংশ-ঘ ঃ
+
+Invitation for Tenders
+[For use when there is a SINGLE fot in a package}
+
+x OVERNMENT OF THE! THE PEOP
+Ministry/Division
+Agency
+Procuring Entity Name
+Procuring Entity Code
+Procuring Entity District
+invitation for
+Invitation Ref No
+
+নিন মি of Funds”
+Development 0 (if 20469)
+
+ 
+
+Project / Programme Name (if applicable)
+Tender Package No.
+Tender Package Name
+
+Tender Publication Date
+Tender Last Selling Date
+
+Tender Submission Date and Time
+Tender Opening Date and Time (if
+different from 18)
+
+Name & Address of the office(s)
+
+- Selling Tender Document (Principal)
+~ Selling Tender Document (Others)
+
+- Receiving Tender Document
+
+- Opening Tender Document
+
+Place / Date / Time of
+
+Pre-Tender Meeting (Optional)
+
+ 
+
+ 
+  
+ 
+ 
+    
+ 
+
+< select >
+< select >
+< type in name >
+
+ 
+ 
+  
+ 
+    
+ 
+    
+    
+
+< select >
+
+< select > < select >
+< type in name >
+
+< select >
+
+  
+
+< select >
+< type in name >
+
+< use MOF code >
+< use MOF name >
+< type inname >
+< type in name >
+
+Date.
+
+  
+   
+  
+
+< select > >
+এ select.>
+
+7০০
+< type in name >
+< type in name >
+< type in name >
+< type in name >
+এ type in name >
+
+   
+ 
+ 
+ 
+     
+    
+
+ 
+
+ 
+ 
+
+< type in name >
+
+ 
+
+ 
+
+ 
+ 
+
+a “DETAILS”
+মা of Official রি Tender
+
+23 | Brief Description of Goods or Works < {ype in name >
+24 | Brief Description of Related Services < type in name >
+25__| Price of Tender Document (Tk) < type in price >
+Lot | Identification of Lot Location Tender Security Completion Time
+No Amount (Tk) in Weeks / Months
+এ. bss 1057 inn peme > i
+
+ 
+
+ 
+
+ 
+
+< type
+' হু উজির
+
+ 
+
+ 
+
+   
+ 
+
+_<type in> __
+
+< type in name >
+
+ 
+
+ 
+
+ 
+
+31 Designation of Official Inviting Tender < type in name >
+
+32 | Address of Official Inviting Tender < type in name >
+
+33__| Contact details of Officia! inviting Tender <Tel.No.> | <FaxNo.> | <e-mail>
+34__| The procuring entity reserves the right to --- deleted-- reject all Tenders
+
+ 
+
+ 
+
+<select> : these fields are “pop-up” 05105 and the procuring entity will only have to select the correct
+name, address or date in order to complete the form.
+
+<type in name> : these fields are to be completed by typing in the relevant data.
+
+This is the website format and as used for published advertisement. It is included in this document for
+information only]
+

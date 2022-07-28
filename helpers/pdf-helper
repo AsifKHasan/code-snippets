@@ -1,13 +1,27 @@
+cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
+
 # pdf pages as png
-pdftocairo -png -r 300 PPA-2006__PPR-2008__2019-01.pdf abc
+pdftocairo -png -r 300 -f 11 -l 30 data/Ancholic_Bhasar_Ovidhan.pdf data/vernacular/vernacular
+
+pdftocairo -png -f 1 -l 1 -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
+pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 
 # ocr an image for text
-tesseract abc-001.png abc-001 -l ben
+tesseract data/vernacular/abc-008.png out/vernacular/abc-008 -l ben
 
-for f in *;
+tesseract data/ppa/ppa-gray-001.png out/ppa/ppa-gray-001 -l ben+eng
+tesseract data/ppa/ppa-mono-001.png out/ppa/ppa-mono-001 -l ben+eng
+
+for f in data/ppa/*;
 do
-  tesseract "$f" "$f" -l ben
+  echo "$f"
+  # tesseract "$f" "$f" -l ben+eng
 done
+
+
+for %f in (*.*) do ren "%f" "z-%f"
+for %f in (data\ppa\*.png) do tesseract %f out/ppa/%~nf -l ben+eng
+
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
 qpdf --compression-level=9 --compress-streams=y --recompress-flate --optimize-images --linearize "sophos-xg-series-appliances-brna.pdf" "sophos-xg-series-appliances-brna-new.pdf"

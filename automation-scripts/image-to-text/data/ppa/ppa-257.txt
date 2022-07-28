@@ -1,0 +1,168 @@
+২৪৬
+তফসিল-১১
+অংশ-ক 3 [SE ৯০৫) দ্রঃ
+
+Request for Expressions of Interest (Firm)
+
+This is the website format and as used for published advertisement.
+it is included in this document for information only]
+
+    
+
+    
+   
+   
+    
+ 
+ 
+    
+      
+  
+  
+
+   
+
+< সি >
+< select >
+<t
+
+Ministry/Division
+Agency
+
+Procuring Entity Name
+Procuring Entity Code
+Procuring Entity District <select >
+Expression of Interest for Selection of <-type in name >
+EOt Ref No < type in name >
+< select >
+
+ 
+
+0০ -এ 0) ০01 +১ ০১1১ -৯
+
+   
+
+<select >
+< type in name>:
+
+  
+  
+ 
+
+Budget and € Source of Funds
+| Develop ment Partners (if eel)
+
+  
+
+  
+   
+
+  
+  
+  
+ 
+ 
+ 
+
+Project / Programme Code. “(if আর্তি < use MOF code >
+13 Project / Programme Name (if applicable) | এ use MOF name.>
+L Date”
+< select >
+
+14 | EOI Closing Date and Time < select >
+
+ 
+
+ 
+
+NES : VAPPLICANT
+
+16 Brief জ্ঞানী of Assignment
+17 Experience, Resources and Delivery Capacity Req'd
+18 | Other Details (if applicable)
+
+    
+
+< type in details >
+< type in details >
+< type in details >
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+         
+     
+
+  
+
+19 | Association with foreign firms is < select >
+Ref | Phasing of Services’ Location Indicative Indicative
+No Start Date Completion
+
+Date
+
+20 51 | < type in name > < type in name > < type in > < type in >
+$2 | এ complete as required > < type in name > < type in > < type in >
+53 | এ complete as required > < type in name > < type i in > < type in >
+34 | < complete as required > < typ st > | < type in >
+
+   
+
+BPROCURINGENTITY DETAILS —
+21 Name of Official Inviting Expressions of
+
+Interest
+
+22 |} Designation of Official Inviting Expressions
+
+of Interest
+
+23 | Address of Official inviting Expressions of
+
+Interest
+
+24 | Contact details of Official Inviting
+
+Expressions of Interest
+
+25__| The procuring entity reserves the right to -deleted- reject all EOI’s
+
+ 
+
+< type in name>
+<type in name>
+<type.in name>
+
+, Tel. No. > <FaxNo.> | <e-mail>
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+< select > : these fields are “pop-up” fields and the procuring entity will only have to select the correct
+name, address or date in order to complete the form.
+
+< type in name > : these fields are to be completed by typing in the relevant data.
+
+ 
+
+'এস, আর, ও নং ২০৩-আইন/২০০৯, তারিখ £ ১২ আগস্ট, ২০০৯ দ্বারা “বিধি ৯১৫১২)” শব্দ, সংখ্যাগুলি ও
+বন্ধনীর পরিবর্তে “বিধি ৯০৫৫)” শব্দ, সংখ্যাগুলি ও বন্ধনীগুলি প্রতিস্থাপিত, সেকশন-৪৩।
+
