@@ -2,6 +2,8 @@
 
 import re
 
+from helper.logger import *
+
 
 ''' build a repeatCell from work_spec
 ''' 

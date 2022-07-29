@@ -18,8 +18,8 @@ else:
 	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 IMG_PATH = "./data/ibas/ibas-faq/{}.png"
-IMG_OUTPUT_PATH = "./out/{}__{}x{}-{}.png"
-OCR_OUTPUT_PATH = "./out/{}.txt"
+IMG_OUTPUT_PATH = "./out/ibas/{}__{}x{}-{}.png"
+OCR_OUTPUT_PATH = "./out/ibas/{}.txt"
 
 def get_kernels(img, img_bin, thresh):
 	kernel_len = np.array(img).shape[1]//100
@@ -193,7 +193,7 @@ def ocr_segments(image_segments):
 	# config = '-c preserve_interword_spaces=1 --psm 6 --oem 3'
 	# config = '-c preserve_interword_spaces=1 --psm 11 --oem 3'
 	# config = '-c preserve_interword_spaces=1 --psm 12 --oem 3'
-	config = '-c preserve_interword_spaces=1 --oem 3'
+	config = '-c preserve_interword_spaces=0 --psm 11 --oem 3'
 
 	row_num = 1
 	for row in image_segments:
@@ -207,7 +207,7 @@ def ocr_segments(image_segments):
 				dilation = cv2.dilate(resizing, kernel,iterations=1)
 				erosion = cv2.erode(dilation, kernel,iterations=1)
 
-				text = pytesseract.image_to_string(erosion, lang='eng+ben', config=config)
+				text = pytesseract.image_to_string(erosion, lang='ben+eng', config=config)
 				# text = pytesseract.image_to_pdf_or_hocr(box['img'], lang='eng+ben', config=config, extension='hocr')
 				# text = pytesseract.run_and_get_output(box['img'], lang='eng+ben', config=config, extension='hocr')
 
