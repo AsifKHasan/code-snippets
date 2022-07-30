@@ -5,6 +5,13 @@ import re
 from helper.logger import *
 
 
+COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+LETTER_TO_COLUMN = {
+    'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16, 
+    'Q': 17, 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26
+}
+
+
 ''' build a repeatCell from work_spec
 ''' 
 def build_repeatcell_from_work_spec(range, work_spec):
@@ -276,7 +283,7 @@ def build_dimension_size_update_request(sheet_id, dimension, index, size):
         "endIndex": index
     }
 
-    update_dimension_properies = {
+    update_dimension_properties = {
       "updateDimensionProperties": {
         "range": range_spec,
         "properties": {
@@ -286,7 +293,7 @@ def build_dimension_size_update_request(sheet_id, dimension, index, size):
       }
     }
 
-    return update_dimension_properies
+    return update_dimension_properties
 
 
 
@@ -301,7 +308,7 @@ def build_dimension_visibility_update_request(sheet_id, dimension, start_index, 
         "endIndex": end_index
     }
 
-    update_dimension_properies = {
+    update_dimension_properties = {
       "updateDimensionProperties": {
         "range": range_spec,
         "properties": {
@@ -311,7 +318,45 @@ def build_dimension_visibility_update_request(sheet_id, dimension, start_index, 
       }
     }
 
-    return update_dimension_properies
+    return update_dimension_properties
+
+
+
+''' build sheet property update request for frozen rows
+'''
+def build_row_freeze_request(sheet_id, frozen_rows):
+    update_sheet_properties = {
+      "updateSheetProperties": {
+        "properties": {
+          "sheetId": sheet_id,
+          "gridProperties": {
+            "frozenRowCount": frozen_rows,
+          }
+        },
+        "fields": "gridProperties.frozenRowCount"
+      }
+    }
+
+    return update_sheet_properties
+
+
+
+''' build sheet property update request for frozen columns
+'''
+def build_column_freeze_request(sheet_id, frozen_cols):
+    update_sheet_properties = {
+      "updateSheetProperties": {
+        "properties": {
+          "sheetId": sheet_id,
+          "gridProperties": {
+            "frozenColumnCount": frozen_cols,
+          }
+        },
+        "fields": "gridProperties.frozenColumnCount"
+      }
+    }
+
+    return update_sheet_properties
 
 
 

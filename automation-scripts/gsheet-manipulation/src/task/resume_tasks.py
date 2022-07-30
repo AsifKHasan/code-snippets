@@ -49,6 +49,9 @@ WORKSHEET_SPECS = {
         ], 
     },
     '-toc-new': {
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+
         'columns': {
             'A': {'halign': 'center', 'size':  60, 'label': 'section'            , },
             'B': {'halign': 'left',   'size': 200, 'label': 'heading'            , },
@@ -74,7 +77,12 @@ WORKSHEET_SPECS = {
             'V': {'halign': 'left',   'size':  80, 'label': 'responsible'        , },
             'W': {'halign': 'left',   'size':  80, 'label': 'reviewer'           , },
             'X': {'halign': 'left',   'size': 160, 'label': 'status'             , 'validation-list': ['pending', 'under-documentation', 'ready-for-review', 'under-review', 'finalized']},
-        }
+        },
+
+        'cell-empty-markers': [
+            'V3:W'
+        ], 
+
     }    
 }
 
@@ -499,54 +507,96 @@ def new_toc_from_toc(gsheet):
             requests = requests + toc_new_ws.data_validation_from_list_request(range_spec, col_data['validation-list'])
 
 
-    # for column C (process) (range C3:C), change values to blank if it is -
-    range_spec = 'C3:C'
-
-    # for column K (hide-pageno) (range K3:K), change values to Yes if it is No
-    range_spec = 'K3:K'
-
-    # for column L (hide-heading) (range L3:L), change values to blank if it is -
-    range_spec = 'L3:L'
-
-    # for column M (different-firstpage) (range M3:M), change values to blank if it is -
-    range_spec = 'M3:M'
-
-    # for column T (override-header) (range T3:T), change values to blank if it is -
-    range_spec = 'T3:T'
-
-    # for column U (override-footer) (range U3:U), change values to blank if it is -
-    range_spec = 'U3:U'
-
-    # for column J (margin-spec) (range J3:J), change values to narrow
-    range_spec = 'J3:J'
-
-    # for column I (page-spec) (range I3:I), change values to A4
-    range_spec = 'I3:I'
-
-    # for column H (landscape) (range H3:H), change values to Yes if column G contains landscape
-    # for column G (break) (range G3:G), change values to blank if it is -, change to section if it contains newpage
-    range_spec = 'G3:H'
-    # values = toc_new_ws.getRange(range_spec).getValues()
-    # values.forEach((row, row_index) => {
-    #     if (row[0].endsWith('_landscape')){
-    #         values[row_index][1] = 'Yes'
-    #     } 
-
-    #     if (row[0] === '-'){
-    #         values[row_index][0] = ''
-    #     } 
-
-    #     if (row[0].startsWith('newpage_')){
-    #         values[row_index][0] = 'section'
-    #     } 
-
-    #     if (row[0].startsWith('continuous_')){
-    #         values[row_index][0] = ''
-    #     } 
-
-
+    # get the work range requests
     values, formats = toc_new_ws.range_work_request(range_work_specs=range_work_specs)
     requests = requests + formats
+
+
+    range_spec = 'C3:U'
+    vals_list = toc_new_ws.get_values(range=range_spec, major_dimension='ROWS')
+    for row in vals_list:
+        row_len = len(row)
+
+        # for column C (process) (range C3:C), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['C'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column I (page-spec) (range I3:I), change values to A4
+        col_idx = LETTER_TO_COLUMN['I'] - 3
+        if (col_idx < row_len):
+            row[col_idx] = 'A4'
+
+
+        # for column J (margin-spec) (range J3:J), change values to narrow
+        col_idx = LETTER_TO_COLUMN['J'] - 3
+        if (col_idx < row_len):
+            row[col_idx] = 'narrow'
+
+        # for column K (hide-pageno) (range K3:K), change values to Yes if it is No
+        col_idx = LETTER_TO_COLUMN['K'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+            elif (row[col_idx] == 'No'):
+                row[col_idx] = 'Yes'
+
+
+        # for column L (hide-heading) (range L3:L), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['L'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column M (different-firstpage) (range M3:M), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['M'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column T (override-header) (range T3:T), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['T'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column U (override-footer) (range U3:U), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['U'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column H (landscape) (range H3:H), change values to Yes if column G contains landscape
+        # for column G (break) (range G3:G), change values to blank if it is -, change to section if it contains newpage
+        col_idx_g = LETTER_TO_COLUMN['G'] - 3
+        col_idx_h = LETTER_TO_COLUMN['H'] - 3
+        if (col_idx_h < row_len):
+            if (row[col_idx_g] == '-'):
+                row[col_idx_g] = ''
+
+            elif (row[col_idx_g].endswith('_landscape')):
+                row[col_idx_h] = 'Yes'
+
+            if (row[col_idx_g].startswith('newpage_')):
+                row[col_idx_g] = 'section'
+
+            if (row[col_idx_g].startswith('continuous_')):
+                row[col_idx_g] = ''
+
+
+    values.append({'range': range_spec, 'values': vals_list})
+
+    # clear conditional formatting
+    requests = requests + toc_new_ws.conditional_formatting_rules_clear_request()
+
+    # conditional formatting for blank cells
+    requests = requests + toc_new_ws.conditional_formatting_for_blank_cells_request(WORKSHEET_SPEC['cell-empty-markers'])
+
+    #  freeze rows and columns
+    requests = requests + toc_new_ws.dimension_freeze_request(frozen_rows=WORKSHEET_SPEC['frozen-rows'], frozen_cols=WORKSHEET_SPEC['frozen-columns'])
+
+
     value_count = len(values)
     format_count = len(requests)
 
@@ -559,4 +609,4 @@ def new_toc_from_toc(gsheet):
 
     info(f"updating   .. ranges", nesting_level=1)
     toc_new_ws.update_values_in_batch(values=values)
-    info(f"updatied   .. {value_count} ranges", nesting_level=1)
+    info(f"updated    .. {value_count} ranges", nesting_level=1)

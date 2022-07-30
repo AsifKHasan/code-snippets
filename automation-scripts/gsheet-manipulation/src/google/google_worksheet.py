@@ -9,13 +9,6 @@ from helper.utils import *
 from helper.logger import *
 
 
-COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-LETTER_TO_COLUMN = {
-    'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16, 
-    'Q': 17, 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26
-}
-
-
 ''' Google worksheet wrapper
 '''
 class GoogleWorksheet(object):
@@ -26,6 +19,26 @@ class GoogleWorksheet(object):
         self.gspread_worksheet = gspread_worksheet
         self.gsheet = gsheet
         self.id = self.gspread_worksheet.id
+
+
+
+    ''' get values
+    '''
+    def get_col_values(self, col_a1):
+        return self.gspread_worksheet.col_values(LETTER_TO_COLUMN[col_a1])
+
+
+
+    ''' get values
+    '''
+    def get_values(self, range, major_dimension):
+        return self.gspread_worksheet.get(range, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
+
+
+    ''' get values in batch
+    '''
+    def get_values_in_batch(self, ranges, major_dimension):
+        return self.gspread_worksheet.batch_get(ranges, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
 
 
 
@@ -146,11 +159,13 @@ class GoogleWorksheet(object):
 
     ''' clear conditional format rules from the worksheet
     '''
-    def clear_conditional_format_rules(self):
-        pass
+    def conditional_formatting_rules_clear_request(self):
+        requests = []
+
+        return requests
         
         
-        
+
     ''' conditional formatting request for blank cells
     '''
     def conditional_formatting_for_blank_cells_request(self, range_specs):
@@ -271,6 +286,24 @@ class GoogleWorksheet(object):
             dimension_update_requests.append(dimension_update_request)
 
         return dimension_update_requests
+
+
+
+    ''' freeze row and column request
+    '''
+    def dimension_freeze_request(self, frozen_rows=None, frozen_cols=None):
+        requests = []
+
+        if frozen_rows is not None:
+            request = build_row_freeze_request(sheet_id=self.id, frozen_rows=frozen_rows)
+            requests.append(request)
+
+        if frozen_cols is not None:
+            request = build_column_freeze_request(sheet_id=self.id, frozen_cols=frozen_cols)
+            requests.append(request)
+
+        return requests
+    
 
 
 
