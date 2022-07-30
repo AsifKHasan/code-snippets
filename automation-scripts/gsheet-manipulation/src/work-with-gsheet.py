@@ -15,8 +15,8 @@ from helper.logger import *
 def do_something(g_sheet):
 
 
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=['06.01-৪০', '06.02-৪১', '06.02-৪২', '06.02-৪৩', '06.03-৪৪', '06.03-৪৫', '06.03-৪৬', '06.03-৪৭', '06.03-৪৮', '06.03-৪৯', '06.03-৫০', '06.03-৫১', '06.03-৫২', '06.03-৫৩', '06.04-৫৪', '06.04-৫৫', '06.04-৫৬', '06.04-৫৭', '06.04-৫৮', '06.04-৫৯', '06.04-৬০', '06.04-৬১', '06.04-৬২', '06.04-৬৩', '07.01-৬৪', '08-01-৬৫', '09.01-৬৬', '09.01-৬৭', '09.01-৬৮', '09.01-৬৯', '09.01-৭০', '09.01-৭১', '09.01-৭২', '09.01-৭৩'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=[])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
     # g_sheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
     # g_sheet.rename_worksheet(worksheet_name='06-job-history-Z', new_worksheet_name='06-job-history')
@@ -28,6 +28,8 @@ def do_something(g_sheet):
     # g_sheet.remove_worksheet(worksheet_name='06-job-history-Z')
     # g_sheet.remove_worksheet(worksheet_name='07-project-roles-Z')
     # g_sheet.order_worksheets()
+
+    new_toc_from_toc(g_sheet)
 
 
     # BEGIN resume related

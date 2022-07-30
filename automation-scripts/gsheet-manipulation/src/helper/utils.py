@@ -209,6 +209,42 @@ def build_conditional_format_rule(ranges, condition_type, condition_values, form
     
 
 
+''' build a data validation rule
+    condition_values is a list of strings
+''' 
+def build_data_validation_rule(range, condition_type, condition_values, input_message=None):
+    values = [{'userEnteredValue': v} for v in condition_values]
+    rule = {"setDataValidation": {
+                "range" : range,
+                "rule": {
+                    "condition": {
+                        "type": condition_type,
+                        "values": values,
+                    },
+                    "inputMessage": input_message,
+                    "strict": True,
+                    "showCustomUi": True
+                }
+            }
+        }
+
+    return rule
+
+
+
+''' build a no data validation rule
+''' 
+def build_no_data_validation_rule(range):
+    rule = {"setDataValidation": {
+                "range" : range,
+                "rule": None
+            }
+        }
+
+    return rule
+
+
+
 ''' gets the value from workspec
 '''
 def build_value_from_work_spec(work_spec, worksheet_dict={}):
@@ -229,10 +265,10 @@ def build_value_from_work_spec(work_spec, worksheet_dict={}):
 
 
 
-''' build dimension update request
+''' build dimension size update request
     note: index is 0 based
 '''
-def build_dimension_update_request(sheet_id, dimension, index, size):
+def build_dimension_size_update_request(sheet_id, dimension, index, size):
     range_spec = {
         "sheetId": sheet_id,
         "dimension": dimension,
@@ -247,6 +283,31 @@ def build_dimension_update_request(sheet_id, dimension, index, size):
           "pixelSize": size
         },
         "fields": "pixelSize"
+      }
+    }
+
+    return update_dimension_properies
+
+
+
+''' build dimension visibility update request
+    note: index is 0 based
+'''
+def build_dimension_visibility_update_request(sheet_id, dimension, start_index, end_index, hide):
+    range_spec = {
+        "sheetId": sheet_id,
+        "dimension": dimension,
+        "startIndex": start_index,
+        "endIndex": end_index
+    }
+
+    update_dimension_properies = {
+      "updateDimensionProperties": {
+        "range": range_spec,
+        "properties": {
+          "hiddenByUser": hide
+        },
+        "fields": "hiddenByUser"
       }
     }
 

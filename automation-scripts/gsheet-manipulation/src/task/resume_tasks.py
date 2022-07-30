@@ -48,6 +48,34 @@ WORKSHEET_SPECS = {
             'B3:E'
         ], 
     },
+    '-toc-new': {
+        'columns': {
+            'A': {'halign': 'center', 'size':  60, 'label': 'section'            , },
+            'B': {'halign': 'left',   'size': 200, 'label': 'heading'            , },
+            'C': {'halign': 'center', 'size':  80, 'label': 'process'            , 'validation-list': ['Yes']},
+            'D': {'halign': 'center', 'size':  80, 'label': 'level'              , 'validation-list': ['0', '1', '2', '3', '4', '5', '6']},
+            'E': {'halign': 'center', 'size':  80, 'label': 'content-type'       , 'validation-list': ['docx', 'gsheet', 'lof', 'lot', 'pdf', 'table', 'toc']},
+            'F': {'halign': 'left',   'size': 200, 'label': 'link'               , },
+            'G': {'halign': 'center', 'size':  80, 'label': 'break'              , 'validation-list': ['page', 'section']},
+            'H': {'halign': 'center', 'size':  80, 'label': 'landscape'          , 'validation-list': ['Yes']},
+            'I': {'halign': 'center', 'size':  80, 'label': 'page-spec'          , 'validation-list': ['A4', 'A3', 'Letter', 'Legal']},
+            'J': {'halign': 'center', 'size':  80, 'label': 'margin-spec'        , 'validation-list': ['wide', 'medium', 'narrow', 'none']},
+            'K': {'halign': 'center', 'size':  80, 'label': 'hide-pageno'        , 'validation-list': ['Yes']},
+            'L': {'halign': 'center', 'size':  80, 'label': 'hide-heading'       , 'validation-list': ['Yes']},
+            'M': {'halign': 'center', 'size':  80, 'label': 'different-firstpage', 'validation-list': ['Yes']},
+            'N': {'halign': 'left',   'size':  80, 'label': 'header-first'       , },
+            'O': {'halign': 'left',   'size':  80, 'label': 'header-odd'         , },
+            'P': {'halign': 'left',   'size':  80, 'label': 'header-even'        , },
+            'Q': {'halign': 'left',   'size':  80, 'label': 'footer-first'       , },
+            'R': {'halign': 'left',   'size':  80, 'label': 'footer-odd'         , },
+            'S': {'halign': 'left',   'size':  80, 'label': 'footer-even'        , },
+            'T': {'halign': 'center', 'size':  80, 'label': 'override-header'    , 'validation-list': ['Yes']},
+            'U': {'halign': 'center', 'size':  80, 'label': 'override-footer'    , 'validation-list': ['Yes']},
+            'V': {'halign': 'left',   'size':  80, 'label': 'responsible'        , },
+            'W': {'halign': 'left',   'size':  80, 'label': 'reviewer'           , },
+            'X': {'halign': 'left',   'size': 160, 'label': 'status'             , 'validation-list': ['pending', 'under-documentation', 'ready-for-review', 'under-review', 'finalized']},
+        }
+    }    
 }
 
 
@@ -137,7 +165,7 @@ def create_06_job_history_new(gsheet):
 
 
     info(f"resizing .. columns", nesting_level=1)
-    gsheet.resize_columns(target_ws, WORKSHEET_SPEC['columns'])
+    target_ws.resize_columns(WORKSHEET_SPEC['columns'])
     info(f"resized  .. columns", nesting_level=1)
 
 
@@ -409,3 +437,126 @@ def job_history_from_06_job_history(job_history_ws):
 
 
     return job_histories
+
+
+
+''' create worksheet *-new-toc* from *-toc* worksheet
+'''
+def new_toc_from_toc(gsheet):
+    # duplicate the *-toc* as *-toc-new* worksheet
+    toc_ws_name = '-toc'
+    toc_new_ws_name = '-toc-new'
+    gsheet.duplicate_worksheet(worksheet_name_to_duplicate=toc_ws_name, new_worksheet_names=[toc_new_ws_name])
+
+    # get the -toc-new worksheet
+    toc_new_ws = gsheet.worksheet_by_name(toc_new_ws_name)
+    if toc_new_ws is None:
+        return
+
+    requests = []
+
+    # unhide all columns
+    requests = requests + toc_new_ws.column_unhide_request()
+
+    # if there are 20 columns in -toc-new, insert two columns at position 16 (Q) (override-header and override-footer)
+    if (toc_new_ws.col_count() == 20):
+        requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='Q', cols_to_add=2)
+
+
+    # add 3 new columns after G - 'landscape', 'page-spec', 'margin-spec'. Column G we will use for 'break'
+    requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='H', cols_to_add=3)
+
+    WORKSHEET_SPEC = WORKSHEET_SPECS['-toc-new']
+
+
+    #  resize columns
+    requests = requests + toc_new_ws.column_resize_request(WORKSHEET_SPEC['columns'])
+
+
+    # batch the requests
+    gsheet.update_in_batch(request_list=requests)
+
+
+    # for each column
+    range_work_specs = {}
+    requests = []
+    info(f"generating .. dynamic ranges", nesting_level=1)
+    for col_a1, col_data in WORKSHEET_SPEC['columns'].items():
+        # change the labels in row 2
+        if ('label' in col_data):
+            range_spec = f"{col_a1}2"
+            range_work_specs[range_spec] = {'value': col_data['label']}
+
+        # set horizontal alignments
+        if ('halign' in col_data):
+            range_spec = f"{col_a1}:{col_a1}"
+            range_work_specs[range_spec] = {'halign': col_data['halign']}
+
+        # set validation rules
+        range_spec = f"{col_a1}3:{col_a1}"
+        requests = requests + toc_new_ws.data_validation_clear_request(range_spec)
+        if ('validation-list' in col_data):
+            requests = requests + toc_new_ws.data_validation_from_list_request(range_spec, col_data['validation-list'])
+
+
+    # for column C (process) (range C3:C), change values to blank if it is -
+    range_spec = 'C3:C'
+
+    # for column K (hide-pageno) (range K3:K), change values to Yes if it is No
+    range_spec = 'K3:K'
+
+    # for column L (hide-heading) (range L3:L), change values to blank if it is -
+    range_spec = 'L3:L'
+
+    # for column M (different-firstpage) (range M3:M), change values to blank if it is -
+    range_spec = 'M3:M'
+
+    # for column T (override-header) (range T3:T), change values to blank if it is -
+    range_spec = 'T3:T'
+
+    # for column U (override-footer) (range U3:U), change values to blank if it is -
+    range_spec = 'U3:U'
+
+    # for column J (margin-spec) (range J3:J), change values to narrow
+    range_spec = 'J3:J'
+
+    # for column I (page-spec) (range I3:I), change values to A4
+    range_spec = 'I3:I'
+
+    # for column H (landscape) (range H3:H), change values to Yes if column G contains landscape
+    # for column G (break) (range G3:G), change values to blank if it is -, change to section if it contains newpage
+    range_spec = 'G3:H'
+    # values = toc_new_ws.getRange(range_spec).getValues()
+    # values.forEach((row, row_index) => {
+    #     if (row[0].endsWith('_landscape')){
+    #         values[row_index][1] = 'Yes'
+    #     } 
+
+    #     if (row[0] === '-'){
+    #         values[row_index][0] = ''
+    #     } 
+
+    #     if (row[0].startsWith('newpage_')){
+    #         values[row_index][0] = 'section'
+    #     } 
+
+    #     if (row[0].startsWith('continuous_')){
+    #         values[row_index][0] = ''
+    #     } 
+
+
+    values, formats = toc_new_ws.range_work_request(range_work_specs=range_work_specs)
+    requests = requests + formats
+    value_count = len(values)
+    format_count = len(requests)
+
+    info(f"generated  .. {value_count} dynamic values", nesting_level=1)
+    info(f"generated  .. {format_count} dynamic formats", nesting_level=1)
+
+    info(f"formatting .. ranges", nesting_level=1)
+    gsheet.update_in_batch(request_list=requests)
+    info(f"formatted  .. {format_count} ranges", nesting_level=1)
+
+    info(f"updating   .. ranges", nesting_level=1)
+    toc_new_ws.update_values_in_batch(values=values)
+    info(f"updatied   .. {value_count} ranges", nesting_level=1)
