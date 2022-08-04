@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-
+PYTHON=python
 # parameters
 if [ $# -eq 0 ] 
 then
   set echo off
   pushd ./src
-  ./work-with-gsheet.py
+  ${PYTHON} work-with-gsheet.py
 else
   GSHEET=$1
   set echo off
   pushd ./src
-  ./work-with-gsheet.py --gsheet ${GSHEET}
+  ${PYTHON} work-with-gsheet.py --gsheet ${GSHEET}
 fi
 
 

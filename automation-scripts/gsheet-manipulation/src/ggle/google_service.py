@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import gspread
 
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
+from apiclient import errors
 
-from google.google_sheet import GoogleSheet
+from ggle.google_sheet import GoogleSheet
 
 SCOPES = [
     "https://spreadsheets.google.com/feeds",
@@ -54,3 +55,41 @@ class GoogleService(object):
 
 
 
+    ''' copy a file
+    '''
+    def copy_file(self, source_file_id, target_folder_id, target_file_title):
+        copied_file = {'name': target_file_title, 'parents' : [target_folder_id]}
+        try:
+            response = self.drive_service.files().copy(fileId=source_file_id, fields='id', body=copied_file).execute()
+            print(response)
+            return response
+        except Exception as error:
+            print(error)
+            return None
+
+
+    ''' share a file
+
+        Args:
+            service: Drive API service instance.
+            file_id: ID of the file to insert permission for.
+            value: User or group e-mail address, domain name or None for 'default'
+                    type.
+            perm_type: The value 'user', 'group', 'domain' or 'default'.
+            role: The value 'owner', 'writer' or 'reader'.
+        Returns:
+            The inserted permission if successful, None otherwise.
+    '''
+    def share(self, file_id, email, perm_type, role):
+        new_permission = {
+            'emailAddress': email,
+            'type': perm_type,
+            'role': role
+        }
+        try:
+            return self.drive_service.permissions().create(fileId=file_id, moveToNewOwnersRoot=True, transferOwnership=True, body=new_permission).execute()
+
+        except Exception as error:
+            print(error)
+
+        return None

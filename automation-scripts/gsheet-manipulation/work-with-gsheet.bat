@@ -3,7 +3,7 @@
 @echo off
 
 :: parameters
-set GSHEET=%1
+set GSHEET="%1"
 
 pushd .\src
 .\work-with-gsheet.py  --gsheet "%GSHEET%"

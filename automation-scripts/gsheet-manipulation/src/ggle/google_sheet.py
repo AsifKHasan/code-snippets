@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import gspread
 from gspread.utils import *
 from gspread.exceptions import *
 from gspread_formatting import *
 
-from google.google_worksheet import GoogleWorksheet
+from ggle.google_worksheet import GoogleWorksheet
 
 from helper.utils import *
 from helper.logger import *
@@ -23,6 +23,13 @@ class GoogleSheet(object):
 
 
 
+    ''' get the id
+    '''
+    def id(self):
+        return self.gspread_sheet.id
+
+
+
     ''' update spreadsheet in batch
     '''
     def update_in_batch(self, request_list):
@@ -30,6 +37,13 @@ class GoogleSheet(object):
 
 
 
+    ''' share a gsheet
+    '''
+    def share(self, email, perm_type, role):
+        self.gspread_sheet.share(email_address=email, perm_type=perm_type, role=role, notify=False)
+
+
+    
     ''' get worksheet by name
     '''
     def worksheet_by_name(self, worksheet_name):
