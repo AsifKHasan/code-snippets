@@ -9,6 +9,7 @@ from ggle.google_worksheet import GoogleWorksheet
 
 from helper.utils import *
 from helper.logger import *
+import pprint
 
 
 ''' Google sheet wrapper
@@ -98,7 +99,7 @@ class GoogleSheet(object):
             except:
                 info(f"worksheet {worksheet_name} could not be removed", nesting_level=1)
         
-
+ 
 
     ''' bulk create multiple worksheets by duplicating a given worksheet 
     '''
@@ -126,5 +127,5 @@ class GoogleSheet(object):
         if worksheet_to_work_on:
             worksheet_dict = self.worksheets_as_dict()
             info(f"formatting .. {len(range_work_specs.keys())} ranges", nesting_level=1)
-            count = worksheet_to_work_on.work_on_ranges(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+            requests = worksheet_to_work_on.cell_to_worksheet_link_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
             info(f"formatted  .. {count} ranges", nesting_level=1)

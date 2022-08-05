@@ -26,8 +26,8 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=[])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=['01-strategy', '02-framework', '03-business-architecture', '04-application-architecture', '05-data-architecture', '06-technology-architecture'])
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
     # g_sheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
     # g_sheet.rename_worksheet(worksheet_name='06-job-history-Z', new_worksheet_name='06-job-history')
@@ -38,7 +38,7 @@ def work_on_gsheet(g_sheet):
     # g_sheet.remove_worksheet(worksheet_name='-toc')
     # g_sheet.remove_worksheet(worksheet_name='06-job-history-Z')
     # g_sheet.remove_worksheet(worksheet_name='07-project-roles-Z')
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
     # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
 
@@ -79,7 +79,7 @@ if __name__ == '__main__':
             # raise e
 
         if g_sheet:
-            # work_on_gsheet(g_sheet=g_sheet)
+            work_on_gsheet(g_sheet=g_sheet)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 

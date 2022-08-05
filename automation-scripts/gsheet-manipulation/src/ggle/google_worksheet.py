@@ -132,6 +132,13 @@ class GoogleWorksheet(object):
 
 
 
+    ''' link cells to worksheets where cells values are names of worksheets
+    '''
+    def link_cells_to_worksheet(self, range_spec_for_cells_to_link, worksheet_dict={}):
+        requests = self.cell_to_worksheet_link_request(range_spec_for_cells_to_link=range_spec_for_cells_to_link, worksheet_dict=worksheet_dict)
+        self.update_values_in_batch(requests)
+
+
     ''' link cells to worksheets request where cells values are names of worksheets
     '''
     def cell_to_worksheet_link_request(self, range_spec_for_cells_to_link, worksheet_dict={}):
@@ -144,7 +151,9 @@ class GoogleWorksheet(object):
                 info(f"cell {cell.address:>5} to be linked with worksheet [{cell.value}]")
                 range_work_specs[cell.address] = {'value': cell.value, 'ws-name-to-link': cell.value}
 
-        return self.work_on_ranges(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+        requests, _ = self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+
+        return requests
 
 
 
@@ -304,7 +313,6 @@ class GoogleWorksheet(object):
 
         return requests
     
-
 
 
     ''' column count

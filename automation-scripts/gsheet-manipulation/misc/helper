@@ -5,11 +5,16 @@ work-with-gsheet.bat PPA-2006__2019-01
 work-with-gsheet.bat Résumé__Khandakar.Asif.Hasan
 work-with-gsheet.bat Résumé__Md.Jamal.Uddin
 work-with-gsheet.bat doculaboration__gsheet-template
-work-with-gsheet.bat BNDA__standards
+work-with-gsheet.bat BCC-BNDA__standards
+work-with-gsheet.bat BCC-BNDA__hardware-specifications-checklist
+work-with-gsheet.bat BCC-BNDA__strategy-and-framework
+
 
 cd /home/asif/projects/asif@github/code-snippets/automation-scripts/gsheet-manipulation
 ./work-with-gsheet.sh
 ./work-with-gsheet.sh PPA-2006__2019-01
 ./work-with-gsheet.sh Résumé__Md.Jamal.Uddin
 ./work-with-gsheet.sh doculaboration__gsheet-template
-./work-with-gsheet.sh BNDA__standards
+./work-with-gsheet.sh BCC-BNDA__standards
+./work-with-gsheet.sh BCC-BNDA__hardware-specifications-checklist
+./work-with-gsheet.sh BCC-BNDA__strategy-and-framework
