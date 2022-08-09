@@ -126,6 +126,15 @@ class GoogleSheet(object):
         worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
         if worksheet_to_work_on:
             worksheet_dict = self.worksheets_as_dict()
-            info(f"formatting .. {len(range_work_specs.keys())} ranges", nesting_level=1)
-            requests = worksheet_to_work_on.cell_to_worksheet_link_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
-            info(f"formatted  .. {count} ranges", nesting_level=1)
+            info(f"working on .. {len(range_work_specs.keys())} ranges", nesting_level=1)
+            values, requests = worksheet_to_work_on.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+
+            if len(values):
+                worksheet_to_work_on.update_values_in_batch(values=values)
+                info(f"updated   .. {len(values)} ranges", nesting_level=2)
+
+            if len(requests):
+                self.update_in_batch(request_list=values)
+                info(f"formatted .. {len(requests)} ranges", nesting_level=2)
+
+            info(f"worked on  .. {len(range_work_specs.keys())} ranges", nesting_level=1)

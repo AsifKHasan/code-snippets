@@ -44,13 +44,31 @@ def work_on_gsheet(g_sheet):
     # g_sheet.rename_worksheet(worksheet_name='footer-odd', new_worksheet_name='z-footer')
     # g_sheet.rename_worksheet(worksheet_name='header-odd', new_worksheet_name='z-header')
 
-    # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}})
+    # g_sheet.rename_worksheet(worksheet_name='09-people', new_worksheet_name='05-people')
+    # g_sheet.rename_worksheet(worksheet_name='description', new_worksheet_name='06-description')
+    # g_sheet.rename_worksheet(worksheet_name='05-functionality', new_worksheet_name='07-functionality')
+    # g_sheet.rename_worksheet(worksheet_name='06-technology', new_worksheet_name='08-technology')
+    # g_sheet.rename_worksheet(worksheet_name='08-services', new_worksheet_name='09-services')
+    # g_sheet.rename_worksheet(worksheet_name='07-process', new_worksheet_name='10-process')
+    # g_sheet.rename_worksheet(worksheet_name='10-complexity', new_worksheet_name='11-complexity')
+    # g_sheet.rename_worksheet(worksheet_name='11-screenshots', new_worksheet_name='12-screenshots')
+
+    g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={
+        'B3': {'value': "='01-summary'!C3"}, 
+        'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}, 
+        'F4': {'value': '12-screenshots', 'ws-name-to-link': '12-screenshots'}
+        }
+    )
     # g_sheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
-    # g_sheet.remove_worksheet(worksheet_name='06-job-history-Z')
-    # g_sheet.remove_worksheet(worksheet_name='07-project-roles-Z')
-    g_sheet.order_worksheets()
+    # g_sheet.remove_worksheet(worksheet_name='contract')
+    # g_sheet.remove_worksheet(worksheet_name='screenshot')
+    # g_sheet.remove_worksheet(worksheet_name='wb-pds-layout')
+    # g_sheet.remove_worksheet(worksheet_name='wcc')
+    # g_sheet.remove_worksheet(worksheet_name='wo-noa')
+
+    # g_sheet.order_worksheets()
 
     # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
 
@@ -96,6 +114,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 50
-        if count % 10 == 0:
+        if count % 30 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)
