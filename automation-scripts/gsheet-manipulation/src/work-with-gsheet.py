@@ -26,11 +26,23 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=['01-strategy', '02-framework', '03-business-architecture', '04-application-architecture', '05-data-architecture', '06-technology-architecture'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='summary', new_worksheet_names=['00-layout'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
-    # g_sheet.rename_worksheet(worksheet_name='06-job-history', new_worksheet_name='06-job-history-Z')
-    # g_sheet.rename_worksheet(worksheet_name='06-job-history-Z', new_worksheet_name='06-job-history')
+    # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
+    # g_sheet.rename_worksheet(worksheet_name='revenue', new_worksheet_name='02-revenue')
+    # g_sheet.rename_worksheet(worksheet_name='contact', new_worksheet_name='03-contact')
+    # g_sheet.rename_worksheet(worksheet_name='joint-venture', new_worksheet_name='04-joint-venture')
+    # g_sheet.rename_worksheet(worksheet_name='functionality', new_worksheet_name='05-functionality')
+    # g_sheet.rename_worksheet(worksheet_name='technology', new_worksheet_name='06-technology')
+    # g_sheet.rename_worksheet(worksheet_name='process', new_worksheet_name='07-process')
+    # g_sheet.rename_worksheet(worksheet_name='services', new_worksheet_name='08-services')
+    # g_sheet.rename_worksheet(worksheet_name='people', new_worksheet_name='09-people')
+    # g_sheet.rename_worksheet(worksheet_name='complexity', new_worksheet_name='10-complexity')
+    # g_sheet.rename_worksheet(worksheet_name='screenshots', new_worksheet_name='11-screenshots')
+    # g_sheet.rename_worksheet(worksheet_name='blank-template', new_worksheet_name='z-blank')
+    # g_sheet.rename_worksheet(worksheet_name='footer-odd', new_worksheet_name='z-footer')
+    # g_sheet.rename_worksheet(worksheet_name='header-odd', new_worksheet_name='z-header')
 
     # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}})
     # g_sheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
@@ -84,6 +96,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 50
-        if count % 5 == 0:
+        if count % 10 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-PYTHON=python
+PYTHON=python3
 # parameters
 if [ $# -eq 0 ] 
 then
