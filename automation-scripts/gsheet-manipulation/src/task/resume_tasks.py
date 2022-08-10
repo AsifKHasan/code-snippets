@@ -10,6 +10,44 @@ from helper.utils import *
 from helper.logger import *
 
 
+WORKSHEET_STRUCTURE = {
+    '00-layout': {
+        'index': 1,
+        'num-rows': 34,
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'C': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'D': {'size': 400, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+        },
+
+        'review-notes': True,
+
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True},
+
+            'B3:C3': {'value': 'Assignment Name:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D3': {'value': 'Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B4:C4': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
+            'D4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+
+        },
+
+        'cell-empty-markers': [
+            'B3:D18'
+        ], 
+    },
+}
+
+
 WORKSHEET_SPECS = {
     '06-job-history': {
         'num-columns': 5,
@@ -87,32 +125,122 @@ WORKSHEET_SPECS = {
 }
 
 
-''' retouch worksheets
+
+''' create worksheets according to spec defined in WORKSHEET_STRUCTURE
 '''
-def retouch_worksheets(gsheet):
-    for worksheet_name, worksheet_specs in WORKSHEET_SPECS.items():
-        info(f"BEGIN retouching worksheet {worksheet_name}")
-        g_worksheet = gsheet.worksheet_by_name(worksheet_name=worksheet_name)
-        if g_worksheet:
-            retouch_worksheet(g_worksheet=g_worksheet, worksheet_specs=worksheet_specs)
-            info(f"DONE  retouching worksheet {worksheet_name}")
+def create_worksheets(g_sheet, worksheet_name_list):
+    for ws_name in worksheet_name_list:
+        if (ws_name in WORKSHEET_STRUCTURE):
+            info(f"creating worksheet {ws_name}", nesting_level=1)
+          
+            worksheet_created = create_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])  
+            if worksheet_created:
+                info(f"created  worksheet {ws_name}", nesting_level=1)
+            
+            else:
+                info(f"worksheet {ws_name} already exists", nesting_level=1)
+
+        else:
+            warn(f"worksheet {ws_name} : structure not defined", nesting_level=1)
 
 
 
-''' retouch worksheet
+''' format worksheets according to spec defined in WORKSHEET_STRUCTURE
 '''
-def retouch_worksheet(g_worksheet, worksheet_specs):
+def format_worksheets(g_sheet, worksheet_name_list):
+    for ws_name in worksheet_name_list:
+        if (ws_name in WORKSHEET_STRUCTURE):
+            info(f"formatting worksheet {ws_name}", nesting_level=1)
+          
+            worksheet_formatted = format_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])  
+            if worksheet_formatted:
+                info(f"formatted  worksheet {ws_name}", nesting_level=1)
+            
+            else:
+                info(f"worksheet {ws_name} could not be formatted", nesting_level=1)
 
-    # validate num_cols, frozen rows and columns
-    num_cols_actual = g_worksheet.gspread_worksheet.col_count
-    num_cols_required = worksheet_specs['num-columns']
-    if num_cols_actual == num_cols_required:
-        debug(f"PASS .. {num_cols_actual} columns found")
+        else:
+            warn(f"worksheet {ws_name} : structure not defined", nesting_level=1)
+
+
+
+''' create a worksheet according to spec defined in WORKSHEET_STRUCTURE
+'''
+def create_worksheet(g_sheet, worksheet_name, worksheet_struct):
+    # the worksheet might exist
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+    if worksheet:
+        return False
+
+
+    # create the worksheet with right dimensions and in the right place with right freezing
+    request = build_add_sheet_request(worksheet_name=worksheet_name, sheet_index=worksheet_struct['index'], num_rows=worksheet_struct['num-rows'], num_cols=worksheet_struct['num-columns'], frozen_rows=worksheet_struct['frozen-rows'], frozen_cols=worksheet_struct['frozen-columns'])
+
+    g_sheet.update_in_batch(request_list=[request])
+
+
+    # get the worksheet
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+    if not worksheet:
+        return False
+
+
+    # work on the columns - size, alignemnts, fonts and wrapping
+    range_work_specs = {}
+
+    # requests for column resizing
+    column_resize_requests = worksheet.column_resize_request(column_specs=worksheet_struct['columns'])
+
+    #  requests for column formatting
+    for col_a1, work_spec in worksheet_struct['columns'].items():
+        range_spec = f"{col_a1}:{col_a1}"
+        range_work_specs[range_spec] = work_spec
+
+    values, format_requests = worksheet.range_work_request(range_work_specs=range_work_specs)
+
+
+    # will there be review-notes in the worksheet
+    if worksheet_struct['review-notes']:
+        conditional_format_requests = worksheet.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
     else:
-        warn(f"FAIL .. {num_cols_actual} columns found instead of {num_cols_required} column required")
+        conditional_format_requests = []
 
 
-    # resize columns
+    # finally update in batch
+    g_sheet.update_in_batch(request_list=column_resize_requests+format_requests+conditional_format_requests)
+
+
+    return True
+
+
+
+''' format a worksheet according to spec defined in WORKSHEET_STRUCTURE
+'''
+def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
+    # get the worksheet
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+    if not worksheet:
+        return False
+
+
+    # get the ranges and formatting requests
+    worksheet_dict = g_sheet.worksheets_as_dict()
+    values, format_requests = worksheet.range_work_request(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
+
+
+    # conditional formatting for blank cells
+    conditional_format_requests = worksheet.conditional_formatting_for_blank_cells_request(range_specs=worksheet_struct['cell-empty-markers'])
+
+
+    # update formats in batch
+    g_sheet.update_in_batch(request_list=format_requests+conditional_format_requests)
+
+
+    # update values in batch
+    worksheet.update_values_in_batch(values=values)
+
+
+    return True
 
 
 

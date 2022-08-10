@@ -44,13 +44,15 @@ class GoogleSheet(object):
     
     ''' get worksheet by name
     '''
-    def worksheet_by_name(self, worksheet_name):
+    def worksheet_by_name(self, worksheet_name, suppress_log=False):
         try:
             ws = self.gspread_sheet.worksheet(worksheet_name)
             return GoogleWorksheet(gspread_worksheet=ws, gsheet=self)
 
         except:
-            warn(f"worksheet {worksheet_name} not found", nesting_level=1)
+            if not suppress_log:
+                warn(f"worksheet {worksheet_name} not found", nesting_level=1)
+            
             return None
 
 

@@ -202,8 +202,8 @@ class GoogleWorksheet(object):
 
     ''' conditional formatting request for blank cells
     '''
-    def conditional_formatting_for_review_notes_request(self, row_count, col_count):
-        range_spec = f"A3:{COLUMN_TO_LETTER[col_count]}"
+    def conditional_formatting_for_review_notes_request(self, num_cols):
+        range_spec = f"A3:{COLUMN_TO_LETTER[num_cols]}"
         range = a1_range_to_grid_range(range_spec, sheet_id=self.id)
 
         rule = build_conditional_format_rule(ranges=[range], condition_type="CUSTOM_FORMULA", condition_values=["=not(isblank($A:$A))"], format={"backgroundColor": hex_to_rgba("#f4cccc")})

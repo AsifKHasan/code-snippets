@@ -12,6 +12,26 @@ LETTER_TO_COLUMN = {
 }
 
 
+''' addSheetRequest builder
+'''
+def build_add_sheet_request(worksheet_name, sheet_index, num_rows, num_cols, frozen_rows, frozen_cols):
+    return {
+        'addSheet': {
+            'properties': {
+                'title': worksheet_name,
+                'index': sheet_index,
+                'gridProperties': {
+                    'rowCount': num_rows,
+                    'columnCount': num_cols,
+                    'frozenRowCount': frozen_rows,
+                    'frozenColumnCount': frozen_cols,
+                },
+            }
+        }
+    }
+
+
+
 ''' build a repeatCell from work_spec
 ''' 
 def build_repeatcell_from_work_spec(range, work_spec):

@@ -42,36 +42,9 @@ def work_on_gsheet(g_sheet):
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='summary', new_worksheet_names=['00-layout'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
-    # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
-    # g_sheet.rename_worksheet(worksheet_name='revenue', new_worksheet_name='02-revenue')
-    # g_sheet.rename_worksheet(worksheet_name='contact', new_worksheet_name='03-contact')
-    # g_sheet.rename_worksheet(worksheet_name='joint-venture', new_worksheet_name='04-joint-venture')
-    # g_sheet.rename_worksheet(worksheet_name='functionality', new_worksheet_name='05-functionality')
-    # g_sheet.rename_worksheet(worksheet_name='technology', new_worksheet_name='06-technology')
-    # g_sheet.rename_worksheet(worksheet_name='process', new_worksheet_name='07-process')
-    # g_sheet.rename_worksheet(worksheet_name='services', new_worksheet_name='08-services')
-    # g_sheet.rename_worksheet(worksheet_name='people', new_worksheet_name='09-people')
-    # g_sheet.rename_worksheet(worksheet_name='complexity', new_worksheet_name='10-complexity')
-    # g_sheet.rename_worksheet(worksheet_name='screenshots', new_worksheet_name='11-screenshots')
-    # g_sheet.rename_worksheet(worksheet_name='blank-template', new_worksheet_name='z-blank')
-    # g_sheet.rename_worksheet(worksheet_name='footer-odd', new_worksheet_name='z-footer')
-    # g_sheet.rename_worksheet(worksheet_name='header-odd', new_worksheet_name='z-header')
-
-    # g_sheet.rename_worksheet(worksheet_name='09-people', new_worksheet_name='05-people')
-    # g_sheet.rename_worksheet(worksheet_name='description', new_worksheet_name='06-description')
-    # g_sheet.rename_worksheet(worksheet_name='05-functionality', new_worksheet_name='07-functionality')
-    # g_sheet.rename_worksheet(worksheet_name='06-technology', new_worksheet_name='08-technology')
-    # g_sheet.rename_worksheet(worksheet_name='08-services', new_worksheet_name='09-services')
-    # g_sheet.rename_worksheet(worksheet_name='07-process', new_worksheet_name='10-process')
-    # g_sheet.rename_worksheet(worksheet_name='10-complexity', new_worksheet_name='11-complexity')
-    # g_sheet.rename_worksheet(worksheet_name='11-screenshots', new_worksheet_name='12-screenshots')
+    # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-Z')
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
-    # g_sheet.remove_worksheet(worksheet_name='contract')
-    # g_sheet.remove_worksheet(worksheet_name='screenshot')
-    # g_sheet.remove_worksheet(worksheet_name='wb-pds-layout')
-    # g_sheet.remove_worksheet(worksheet_name='wcc')
-    # g_sheet.remove_worksheet(worksheet_name='wo-noa')
 
     # g_sheet.order_worksheets()
 
@@ -79,17 +52,22 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
 
-    # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
+
+    # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name='00-layout')
+    # print(f"{g_sheet.title:<30}: [00-layout] : {num_rows} rows, {num_cols} columns")
 
 
-    num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name='00-layout')
-    print(f"{g_sheet.title:<30}: [00-layout] : {num_rows} rows, {num_cols} columns")
-
-    # BEGIN resume related
+    # BEGIN major tasks
     # new_toc_from_toc(g_sheet)
-    # retouch_worksheets(g_sheet)
+    # create_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
+    format_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
+    # retouch_worksheets(g_sheet, worksheet_name_list=[])
     # create_06_job_history_new(g_sheet)
-    # END   resume related
+    # END   major tasks
+
+    # BEGIN drive/file related
+    # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
+    # END   drive/file related
 
     pass
 
@@ -112,7 +90,7 @@ if __name__ == '__main__':
     for gsheet_name in gsheet_names:
         count = count + 1
         try:
-            # info(f"processing {count:>4}/{num_gsheets} gsheet {gsheet_name}")
+            info(f"processing {count:>4}/{num_gsheets} gsheet {gsheet_name}")
             g_sheet = g_service.open(gsheet_name=gsheet_name)
         except Exception as e:
             g_sheet = None
@@ -122,7 +100,7 @@ if __name__ == '__main__':
         if g_sheet:
             work_on_gsheet(g_sheet=g_sheet)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
-            # info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
+            info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 60
         if count % 25 == 0:
