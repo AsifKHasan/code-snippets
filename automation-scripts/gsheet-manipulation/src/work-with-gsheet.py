@@ -13,6 +13,19 @@ from task.resume_tasks import *
 from helper.logger import *
 
 
+RANGE_WORK_SPECS = {
+    'O3': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
+    'O4': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
+    'O5': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
+    'O6': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
+    'O7': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
+    'R3': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
+    'R4': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
+    'R5': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
+    'R6': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
+    'R7': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
+}
+
 def work_on_drive(g_service, g_sheet):
 
     # BEGIN drive file related
@@ -53,14 +66,6 @@ def work_on_gsheet(g_sheet):
     # g_sheet.rename_worksheet(worksheet_name='10-complexity', new_worksheet_name='11-complexity')
     # g_sheet.rename_worksheet(worksheet_name='11-screenshots', new_worksheet_name='12-screenshots')
 
-    g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs={
-        'B3': {'value': "='01-summary'!C3"}, 
-        'F3': {'value': '00-layout', 'ws-name-to-link': '00-layout'}, 
-        'F4': {'value': '12-screenshots', 'ws-name-to-link': '12-screenshots'}
-        }
-    )
-    # g_sheet.work_on_ranges(worksheet_name='00-layout', range_work_specs={'B29': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'}})
-
     # g_sheet.remove_worksheet(worksheet_name='-toc')
     # g_sheet.remove_worksheet(worksheet_name='contract')
     # g_sheet.remove_worksheet(worksheet_name='screenshot')
@@ -70,12 +75,18 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.order_worksheets()
 
+    # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
+
+    # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
+
     # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
 
-    # new_toc_from_toc(g_sheet)
 
+    num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name='00-layout')
+    print(f"{g_sheet.title:<30}: [00-layout] : {num_rows} rows, {num_cols} columns")
 
     # BEGIN resume related
+    # new_toc_from_toc(g_sheet)
     # retouch_worksheets(g_sheet)
     # create_06_job_history_new(g_sheet)
     # END   resume related
@@ -101,7 +112,7 @@ if __name__ == '__main__':
     for gsheet_name in gsheet_names:
         count = count + 1
         try:
-            info(f"processing {count:>4}/{num_gsheets} gsheet {gsheet_name}")
+            # info(f"processing {count:>4}/{num_gsheets} gsheet {gsheet_name}")
             g_sheet = g_service.open(gsheet_name=gsheet_name)
         except Exception as e:
             g_sheet = None
@@ -111,9 +122,9 @@ if __name__ == '__main__':
         if g_sheet:
             work_on_gsheet(g_sheet=g_sheet)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
-            info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
+            # info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
-        wait_for = 50
-        if count % 30 == 0:
+        wait_for = 60
+        if count % 25 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)

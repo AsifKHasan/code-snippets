@@ -122,11 +122,11 @@ class GoogleWorksheet(object):
             # rows to be removed
             if rows_to_remove_to == 'end':
                 # rows to be removed till end
-                requests.append(build_delete_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=LETTER_TO_COLUMN[rows_to_remove_from]-1))
+                requests.append(build_delete_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=rows_to_remove_from))
 
             else:
                 # rows to be removed from the middle
-                requests.append(build_delete_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=LETTER_TO_COLUMN[rows_to_remove_from]-1, end_index=LETTER_TO_COLUMN[rows_to_remove_to]))
+                requests.append(build_delete_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=rows_to_remove_from, end_index=rows_to_remove_to))
 
         return requests
 
@@ -175,6 +175,20 @@ class GoogleWorksheet(object):
         return requests
         
         
+
+    ''' remove trailing blank rows
+    '''
+    def remove_trailing_blank_rows(self):
+        rows_to_remove_from, rows_to_remove_to = self.trailing_blank_row_start_index(), 'end'
+        request_list = self.dimension_remove_request(rows_to_remove_from=rows_to_remove_from, rows_to_remove_to=rows_to_remove_to)
+
+        info(f"removing .. rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
+        if len(request_list):
+            self.gsheet.update_in_batch(request_list=request_list)
+        
+        info(f"removed  .. rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
+
+
 
     ''' conditional formatting request for blank cells
     '''
@@ -319,4 +333,10 @@ class GoogleWorksheet(object):
     ''' column count
     '''
     def col_count(self):
-        return self.gspread_worksheet.col_count
+        return 
+
+
+    ''' number of rows and columns of the worksheet
+    '''
+    def number_of_dimesnions(self):
+        return self.gspread_worksheet.row_count, self.gspread_worksheet.col_count

@@ -17,9 +17,9 @@ if platform.system() == 'Windows':
 else:
 	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-IMG_PATH = "./data/ibas/ibas-faq/{}.png"
-IMG_OUTPUT_PATH = "./out/ibas/{}__{}x{}-{}.png"
-OCR_OUTPUT_PATH = "./out/ibas/{}.txt"
+IMG_PATH = "./data/ppa/{}.png"
+IMG_OUTPUT_PATH = "./out/ppa/{}__{}x{}-{}.png"
+OCR_OUTPUT_PATH = "./out/ppa/{}.txt"
 
 def get_kernels(img, img_bin, thresh):
 	kernel_len = np.array(img).shape[1]//100

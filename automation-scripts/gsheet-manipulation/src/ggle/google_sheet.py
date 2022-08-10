@@ -21,21 +21,18 @@ class GoogleSheet(object):
     def __init__(self, google_service, gspread_sheet):
         self.service = google_service
         self.gspread_sheet = gspread_sheet
-
-
-
-    ''' get the id
-    '''
-    def id(self):
-        return self.gspread_sheet.id
+        self.id = self.gspread_sheet.id
+        self.title = self.gspread_sheet.title
 
 
 
     ''' update spreadsheet in batch
     '''
     def update_in_batch(self, request_list):
-        self.gspread_sheet.batch_update(body={'requests': request_list})    
-
+        try:
+            self.gspread_sheet.batch_update(body={'requests': request_list})    
+        except Exception as e:
+            print(e)
 
 
     ''' share a gsheet
@@ -138,3 +135,21 @@ class GoogleSheet(object):
                 info(f"formatted .. {len(requests)} ranges", nesting_level=2)
 
             info(f"worked on  .. {len(range_work_specs.keys())} ranges", nesting_level=1)
+
+
+    ''' remove trailing blank rows from a worksheet
+    '''
+    def remove_trailing_blank_rows(self, worksheet_name):
+        worksheet = self.worksheet_by_name(worksheet_name)
+        if worksheet:
+            worksheet.remove_trailing_blank_rows()
+
+
+    ''' number of rows and columns of a worksheet
+    '''
+    def number_of_dimesnions(self, worksheet_name):
+        worksheet = self.worksheet_by_name(worksheet_name)
+        if worksheet:
+            return worksheet.number_of_dimesnions()
+        else:
+            return 0, 0
