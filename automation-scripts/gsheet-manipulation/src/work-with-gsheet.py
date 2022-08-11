@@ -8,9 +8,11 @@ import argparse
 # from google.google_sheet import GoogleSheet
 from ggle.google_service import GoogleService
 
-from task.resume_tasks import *
-
 from helper.logger import *
+
+from task.common_tasks import *
+# from task.resume_tasks import *
+
 
 
 RANGE_WORK_SPECS = {
@@ -41,29 +43,34 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='summary', new_worksheet_names=['00-layout'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
-
     # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-Z')
-
-    # g_sheet.remove_worksheet(worksheet_name='-toc')
-
-    # g_sheet.order_worksheets()
-
+    # g_sheet.remove_worksheet(worksheet_name='00-layout-Z')
     # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
-
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
+    # g_sheet.order_worksheets()
 
 
     # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name='00-layout')
     # print(f"{g_sheet.title:<30}: [00-layout] : {num_rows} rows, {num_cols} columns")
 
 
-    # BEGIN major tasks
+    # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
-    format_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
-    # retouch_worksheets(g_sheet, worksheet_name_list=[])
+    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
+    # END   common tasks
+
+
+    # BEGIN adhoc tasks
+    # populate_range(g_sheet=g_sheet)
+    # insert_a_row_with_values(g_sheet=g_sheet)
+    # END   adhoc tasks
+
+
+    # BEGIN resume specific tasks
     # create_06_job_history_new(g_sheet)
-    # END   major tasks
+    # END   resume specific tasks
+
 
     # BEGIN drive/file related
     # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
@@ -103,6 +110,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 60
-        if count % 25 == 0:
+        if count % 50 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)

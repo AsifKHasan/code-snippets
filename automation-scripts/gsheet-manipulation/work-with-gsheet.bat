@@ -15,7 +15,7 @@ if errorlevel 1 (
 )
 
 popd
-exit
+goto :EOF
 
 :WITHOUT_ARG
 pushd .\src
@@ -26,3 +26,5 @@ if errorlevel 1 (
 )
 
 popd
+
+:EOF

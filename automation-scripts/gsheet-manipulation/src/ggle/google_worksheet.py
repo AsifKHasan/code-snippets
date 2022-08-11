@@ -35,6 +35,7 @@ class GoogleWorksheet(object):
         return self.gspread_worksheet.get(range, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
 
 
+
     ''' get values in batch
     '''
     def get_values_in_batch(self, ranges, major_dimension):
@@ -328,12 +329,6 @@ class GoogleWorksheet(object):
 
         return requests
     
-
-
-    ''' column count
-    '''
-    def col_count(self):
-        return 
 
 
     ''' number of rows and columns of the worksheet

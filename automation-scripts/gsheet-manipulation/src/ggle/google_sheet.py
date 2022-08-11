@@ -35,6 +35,7 @@ class GoogleSheet(object):
             print(e)
 
 
+
     ''' share a gsheet
     '''
     def share(self, email, perm_type, role):
@@ -139,12 +140,14 @@ class GoogleSheet(object):
             info(f"worked on  .. {len(range_work_specs.keys())} ranges", nesting_level=1)
 
 
+
     ''' remove trailing blank rows from a worksheet
     '''
     def remove_trailing_blank_rows(self, worksheet_name):
         worksheet = self.worksheet_by_name(worksheet_name)
         if worksheet:
             worksheet.remove_trailing_blank_rows()
+
 
 
     ''' number of rows and columns of a worksheet

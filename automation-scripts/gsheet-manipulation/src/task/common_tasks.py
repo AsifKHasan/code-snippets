@@ -1,0 +1,468 @@
+#!/usr/bin/env python3
+
+import gspread
+from gspread.exceptions import *
+from gspread_formatting import *
+
+from pprint import pprint
+
+from helper.utils import *
+from helper.logger import *
+
+
+WORKSHEET_STRUCTURE = {
+    '-toc-new': {
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+
+        'columns': {
+            'A': {'halign': 'center', 'size':  60, 'label': 'section'            , },
+            'B': {'halign': 'left',   'size': 200, 'label': 'heading'            , },
+            'C': {'halign': 'center', 'size':  80, 'label': 'process'            , 'validation-list': ['Yes']},
+            'D': {'halign': 'center', 'size':  80, 'label': 'level'              , 'validation-list': ['0', '1', '2', '3', '4', '5', '6']},
+            'E': {'halign': 'center', 'size':  80, 'label': 'content-type'       , 'validation-list': ['docx', 'gsheet', 'lof', 'lot', 'pdf', 'table', 'toc']},
+            'F': {'halign': 'left',   'size': 200, 'label': 'link'               , },
+            'G': {'halign': 'center', 'size':  80, 'label': 'break'              , 'validation-list': ['page', 'section']},
+            'H': {'halign': 'center', 'size':  80, 'label': 'landscape'          , 'validation-list': ['Yes']},
+            'I': {'halign': 'center', 'size':  80, 'label': 'page-spec'          , 'validation-list': ['A4', 'A3', 'Letter', 'Legal']},
+            'J': {'halign': 'center', 'size':  80, 'label': 'margin-spec'        , 'validation-list': ['wide', 'medium', 'narrow', 'none']},
+            'K': {'halign': 'center', 'size':  80, 'label': 'hide-pageno'        , 'validation-list': ['Yes']},
+            'L': {'halign': 'center', 'size':  80, 'label': 'hide-heading'       , 'validation-list': ['Yes']},
+            'M': {'halign': 'center', 'size':  80, 'label': 'different-firstpage', 'validation-list': ['Yes']},
+            'N': {'halign': 'left',   'size':  80, 'label': 'header-first'       , },
+            'O': {'halign': 'left',   'size':  80, 'label': 'header-odd'         , },
+            'P': {'halign': 'left',   'size':  80, 'label': 'header-even'        , },
+            'Q': {'halign': 'left',   'size':  80, 'label': 'footer-first'       , },
+            'R': {'halign': 'left',   'size':  80, 'label': 'footer-odd'         , },
+            'S': {'halign': 'left',   'size':  80, 'label': 'footer-even'        , },
+            'T': {'halign': 'center', 'size':  80, 'label': 'override-header'    , 'validation-list': ['Yes']},
+            'U': {'halign': 'center', 'size':  80, 'label': 'override-footer'    , 'validation-list': ['Yes']},
+            'V': {'halign': 'left',   'size':  80, 'label': 'responsible'        , },
+            'W': {'halign': 'left',   'size':  80, 'label': 'reviewer'           , },
+            'X': {'halign': 'left',   'size': 160, 'label': 'status'             , 'validation-list': ['pending', 'under-documentation', 'ready-for-review', 'under-review', 'finalized']},
+        },
+
+        'cell-empty-markers': [
+            'V3:W'
+        ],
+    },
+    '00-layout': {
+        'index': 1,
+        'num-rows': 34,
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'C': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'D': {'size': 400, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+        },
+
+        'review-notes': True,
+
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True},
+
+            'B3:C3': {'value': 'Assignment Name:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D3': {'value': 'Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B4:C4': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
+            'D4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B5:C5': {'value': 'Location within Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D5': {'value': 'Duration of assignment (months):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B6:C6': {'value': "='01-summary'!C5", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
+            'D6': {'value': "='01-summary'!C6", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B7:C7': {'value': 'Name of Client:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D7': {'value': 'Approximate value of the Project (In BDT):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B8:C8': {'value': "='01-summary'!C7", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
+            'D8': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B9:C9': {'value': 'Address', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D9': {'value': 'Approx. value of the services provided by your firm under the contract:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B10:C10': {'value': "='01-summary'!C8", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"keep-line-breaks": true}'},
+            'D10': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B11': {'value': 'Start Date (Month/Year):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'C11': {'value': 'Completion Date (Month/Year):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'D11': {'value': 'No. of person-months of the assignment:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B12': {'value': "='01-summary'!C11", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'C12': {'value': "='01-summary'!C12", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'D12': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B13:C13': {'value': 'Name of joint venture partner or sub-consultants, if any:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D13': {'value': 'No. of months of Professional Staff Provided by your firm under the contract:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B14:C14': {'value': '04-joint-venture', 'ws-name-to-link': '04-joint-venture', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True},
+            'D14': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B15:D15': {'merge': True},
+
+            'B16:D16': {'value': 'Name of Senior Staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B17:D17': {'value': '05-people', 'ws-name-to-link': '05-people', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B18:D18': {'merge': True},
+
+            'B19:D19': {'value': 'Narrative Description of Project:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
+            'B20:D20': {'value': 'Project Description', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'B21:D21': {'value': '06-description', 'ws-name-to-link': '06-description', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B22:D22': {'merge': True},
+
+            'B23:D23': {'value': 'Functionality', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'B24:D24': {'value': '07-functionality', 'ws-name-to-link': '07-functionality', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B25:D25': {'merge': True},
+
+            'B26:D26': {'value': 'Technology', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'B27:D27': {'value': '08-technology', 'ws-name-to-link': '08-technology', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B28:D28': {'merge': True},
+
+            'B29:D29': {'value': 'Narrative Descriptions of works performed by your organization:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
+            'B30:D30': {'value': 'Services Provided', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'B31:D31': {'value': '09-services', 'ws-name-to-link': '09-services', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B32:D32': {'merge': True},
+
+            'B33:D33': {'value': 'Processes Adopted', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'B34:D34': {'value': '10-process', 'ws-name-to-link': '10-process', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+        },
+
+        'cell-empty-markers': [
+            'B3:D14',
+            'B16:D17',
+            'B19:D21',
+            'B23:D24',
+            'B26:D27',
+        ], 
+    },
+}
+
+
+''' create worksheets according to spec defined in WORKSHEET_STRUCTURE
+'''
+def create_worksheets(g_sheet, worksheet_name_list):
+    for ws_name in worksheet_name_list:
+        if (ws_name in WORKSHEET_STRUCTURE):
+            info(f"creating worksheet {ws_name}", nesting_level=1)
+          
+            worksheet_created = create_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])  
+            if worksheet_created:
+                info(f"created  worksheet {ws_name}", nesting_level=1)
+            
+            else:
+                info(f"worksheet {ws_name} already exists", nesting_level=1)
+
+        else:
+            warn(f"worksheet {ws_name} : structure not defined", nesting_level=1)
+
+
+
+''' format worksheets according to spec defined in WORKSHEET_STRUCTURE
+'''
+def format_worksheets(g_sheet, worksheet_name_list):
+    for ws_name in worksheet_name_list:
+        if (ws_name in WORKSHEET_STRUCTURE):
+            info(f"formatting worksheet {ws_name}", nesting_level=1)
+          
+            worksheet_formatted = format_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])  
+            if worksheet_formatted:
+                info(f"formatted  worksheet {ws_name}", nesting_level=1)
+            
+            else:
+                info(f"worksheet {ws_name} could not be formatted", nesting_level=1)
+
+        else:
+            warn(f"worksheet {ws_name} : structure not defined", nesting_level=1)
+
+
+
+''' create a worksheet according to spec defined in WORKSHEET_STRUCTURE
+'''
+def create_worksheet(g_sheet, worksheet_name, worksheet_struct):
+    # the worksheet might exist
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+    if worksheet:
+        return False
+
+
+    # create the worksheet with right dimensions and in the right place with right freezing
+    request = build_add_sheet_request(worksheet_name=worksheet_name, sheet_index=worksheet_struct['index'], num_rows=worksheet_struct['num-rows'], num_cols=worksheet_struct['num-columns'], frozen_rows=worksheet_struct['frozen-rows'], frozen_cols=worksheet_struct['frozen-columns'])
+
+    g_sheet.update_in_batch(request_list=[request])
+
+
+    # get the worksheet
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+    if not worksheet:
+        return False
+
+
+    # work on the columns - size, alignemnts, fonts and wrapping
+    range_work_specs = {}
+
+    # requests for column resizing
+    column_resize_requests = worksheet.column_resize_request(column_specs=worksheet_struct['columns'])
+
+    #  requests for column formatting
+    for col_a1, work_spec in worksheet_struct['columns'].items():
+        range_spec = f"{col_a1}:{col_a1}"
+        range_work_specs[range_spec] = work_spec
+
+    values, format_requests = worksheet.range_work_request(range_work_specs=range_work_specs)
+
+
+    # will there be review-notes in the worksheet
+    if worksheet_struct['review-notes']:
+        conditional_format_requests = worksheet.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
+    else:
+        conditional_format_requests = []
+
+
+    # finally update in batch
+    g_sheet.update_in_batch(request_list=column_resize_requests+format_requests+conditional_format_requests)
+
+    return True
+
+
+
+''' format a worksheet according to spec defined in WORKSHEET_STRUCTURE
+'''
+def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
+    # get the worksheet
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+    if not worksheet:
+        return False
+
+
+    # get the ranges and formatting requests
+    worksheet_dict = g_sheet.worksheets_as_dict()
+    values, format_requests = worksheet.range_work_request(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
+
+
+    # conditional formatting for blank cells
+    conditional_format_requests = worksheet.conditional_formatting_for_blank_cells_request(range_specs=worksheet_struct['cell-empty-markers'])
+
+
+    # update formats in batch
+    g_sheet.update_in_batch(request_list=format_requests+conditional_format_requests)
+
+
+    # update values in batch
+    worksheet.update_values_in_batch(values=values)
+
+    return True
+
+
+
+''' create worksheet *-new-toc* from *-toc* worksheet
+'''
+def new_toc_from_toc(gsheet):
+    # duplicate the *-toc* as *-toc-new* worksheet
+    toc_ws_name = '-toc'
+    toc_new_ws_name = '-toc-new'
+    gsheet.duplicate_worksheet(worksheet_name_to_duplicate=toc_ws_name, new_worksheet_names=[toc_new_ws_name])
+
+    # get the -toc-new worksheet
+    toc_new_ws = gsheet.worksheet_by_name(toc_new_ws_name)
+    if toc_new_ws is None:
+        return
+
+    requests = []
+
+    # unhide all columns
+    requests = requests + toc_new_ws.column_unhide_request()
+
+    # if there are 20 columns in -toc-new, insert two columns at position 16 (Q) (override-header and override-footer)
+    if (toc_new_ws.col_count() == 20):
+        requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='Q', cols_to_add=2)
+
+
+    # add 3 new columns after G - 'landscape', 'page-spec', 'margin-spec'. Column G we will use for 'break'
+    requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='H', cols_to_add=3)
+
+    WORKSHEET_SPEC = WORKSHEET_SPECS['-toc-new']
+
+
+    #  resize columns
+    requests = requests + toc_new_ws.column_resize_request(WORKSHEET_SPEC['columns'])
+
+
+    # batch the requests
+    gsheet.update_in_batch(request_list=requests)
+
+
+    # for each column
+    range_work_specs = {}
+    requests = []
+    info(f"generating .. dynamic ranges", nesting_level=1)
+    for col_a1, col_data in WORKSHEET_SPEC['columns'].items():
+        # change the labels in row 2
+        if ('label' in col_data):
+            range_spec = f"{col_a1}2"
+            range_work_specs[range_spec] = {'value': col_data['label']}
+
+        # set horizontal alignments
+        if ('halign' in col_data):
+            range_spec = f"{col_a1}:{col_a1}"
+            range_work_specs[range_spec] = {'halign': col_data['halign']}
+
+        # set validation rules
+        range_spec = f"{col_a1}3:{col_a1}"
+        requests = requests + toc_new_ws.data_validation_clear_request(range_spec)
+        if ('validation-list' in col_data):
+            requests = requests + toc_new_ws.data_validation_from_list_request(range_spec, col_data['validation-list'])
+
+
+    # get the work range requests
+    values, formats = toc_new_ws.range_work_request(range_work_specs=range_work_specs)
+    requests = requests + formats
+
+
+    range_spec = 'C3:U'
+    vals_list = toc_new_ws.get_values(range=range_spec, major_dimension='ROWS')
+    for row in vals_list:
+        row_len = len(row)
+
+        # for column C (process) (range C3:C), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['C'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column I (page-spec) (range I3:I), change values to A4
+        col_idx = LETTER_TO_COLUMN['I'] - 3
+        if (col_idx < row_len):
+            row[col_idx] = 'A4'
+
+
+        # for column J (margin-spec) (range J3:J), change values to narrow
+        col_idx = LETTER_TO_COLUMN['J'] - 3
+        if (col_idx < row_len):
+            row[col_idx] = 'narrow'
+
+        # for column K (hide-pageno) (range K3:K), change values to Yes if it is No
+        col_idx = LETTER_TO_COLUMN['K'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+            elif (row[col_idx] == 'No'):
+                row[col_idx] = 'Yes'
+
+
+        # for column L (hide-heading) (range L3:L), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['L'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column M (different-firstpage) (range M3:M), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['M'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column T (override-header) (range T3:T), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['T'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column U (override-footer) (range U3:U), change values to blank if it is -
+        col_idx = LETTER_TO_COLUMN['U'] - 3
+        if (col_idx < row_len):
+            if (row[col_idx] == '-'):
+                row[col_idx] = ''
+
+        # for column H (landscape) (range H3:H), change values to Yes if column G contains landscape
+        # for column G (break) (range G3:G), change values to blank if it is -, change to section if it contains newpage
+        col_idx_g = LETTER_TO_COLUMN['G'] - 3
+        col_idx_h = LETTER_TO_COLUMN['H'] - 3
+        if (col_idx_h < row_len):
+            if (row[col_idx_g] == '-'):
+                row[col_idx_g] = ''
+
+            elif (row[col_idx_g].endswith('_landscape')):
+                row[col_idx_h] = 'Yes'
+
+            if (row[col_idx_g].startswith('newpage_')):
+                row[col_idx_g] = 'section'
+
+            if (row[col_idx_g].startswith('continuous_')):
+                row[col_idx_g] = ''
+
+
+    values.append({'range': range_spec, 'values': vals_list})
+
+    # clear conditional formatting
+    requests = requests + toc_new_ws.conditional_formatting_rules_clear_request()
+
+    # conditional formatting for blank cells
+    requests = requests + toc_new_ws.conditional_formatting_for_blank_cells_request(WORKSHEET_SPEC['cell-empty-markers'])
+
+    #  freeze rows and columns
+    requests = requests + toc_new_ws.dimension_freeze_request(frozen_rows=WORKSHEET_SPEC['frozen-rows'], frozen_cols=WORKSHEET_SPEC['frozen-columns'])
+
+
+    value_count = len(values)
+    format_count = len(requests)
+
+    info(f"generated  .. {value_count} dynamic values", nesting_level=1)
+    info(f"generated  .. {format_count} dynamic formats", nesting_level=1)
+
+    info(f"formatting .. ranges", nesting_level=1)
+    gsheet.update_in_batch(request_list=requests)
+    info(f"formatted  .. {format_count} ranges", nesting_level=1)
+
+    info(f"updating   .. ranges", nesting_level=1)
+    toc_new_ws.update_values_in_batch(values=values)
+    info(f"updated    .. {value_count} ranges", nesting_level=1)
+
+
+
+''' adhoc task
+'''
+def insert_a_row_with_values(g_sheet):
+    worksheet = g_sheet.worksheet_by_name(worksheet_name='01-summary')
+    if not worksheet:
+        return False
+
+    # insert row at 7
+    requests = worksheet.dimension_add_request(rows_to_add_at=7, rows_to_add=1)
+
+    # B8 will be Address
+    range_work_specs = {'B8': {'value': 'Address'}}
+    values, _ = worksheet.range_work_request(range_work_specs=range_work_specs)
+
+    g_sheet.update_in_batch(request_list=requests)
+    worksheet.update_values_in_batch(values=values)
+
+
+
+''' adhoc task
+'''
+def populate_range(g_sheet):
+    worksheet = g_sheet.worksheet_by_name(worksheet_name='-toc-new')
+    if not worksheet:
+        return False
+
+    # range O3:O to be z-header and linked, range R3:R to be z-footer and linked
+    worksheet_dict = g_sheet.worksheets_as_dict()
+    values = []
+    num_rows, _ = worksheet.number_of_dimesnions()
+    for row_num in range(3, num_rows+1):
+        values.append({'range': f"O{row_num}", 'values': [[build_value_from_work_spec(work_spec={'value': 'z-header', 'ws-name-to-link': 'z-header'}, worksheet_dict=worksheet_dict)]]})
+        values.append({'range': f"R{row_num}", 'values': [[build_value_from_work_spec(work_spec={'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, worksheet_dict=worksheet_dict)]]})
+
+    if len(values):
+        worksheet.update_values_in_batch(values=values)
