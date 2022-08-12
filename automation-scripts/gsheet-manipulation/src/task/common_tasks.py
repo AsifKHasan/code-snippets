@@ -291,7 +291,7 @@ def new_toc_from_toc(gsheet):
     # add 3 new columns after G - 'landscape', 'page-spec', 'margin-spec'. Column G we will use for 'break'
     requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='H', cols_to_add=3)
 
-    WORKSHEET_SPEC = WORKSHEET_SPECS['-toc-new']
+    WORKSHEET_SPEC = WORKSHEET_STRUCTURE['-toc-new']
 
 
     #  resize columns
@@ -460,7 +460,7 @@ def populate_range(g_sheet):
     worksheet_dict = g_sheet.worksheets_as_dict()
     values = []
     num_rows, _ = worksheet.number_of_dimesnions()
-    for row_num in range(3, num_rows+1):
+    for row_num in range(4, num_rows+1):
         values.append({'range': f"O{row_num}", 'values': [[build_value_from_work_spec(work_spec={'value': 'z-header', 'ws-name-to-link': 'z-header'}, worksheet_dict=worksheet_dict)]]})
         values.append({'range': f"R{row_num}", 'values': [[build_value_from_work_spec(work_spec={'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, worksheet_dict=worksheet_dict)]]})
 

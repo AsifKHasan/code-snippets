@@ -335,3 +335,19 @@ class GoogleWorksheet(object):
     '''
     def number_of_dimesnions(self):
         return self.gspread_worksheet.row_count, self.gspread_worksheet.col_count
+
+
+
+    ''' number of rows of the worksheet
+    '''
+    def row_count(self):
+        row_count, _ = self.number_of_dimesnions()
+        return row_count
+
+
+
+    ''' number of columns of the worksheet
+    '''
+    def col_count(self):
+        _, col_count = self.number_of_dimesnions()
+        return col_count        
