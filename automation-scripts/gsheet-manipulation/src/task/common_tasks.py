@@ -9,8 +9,520 @@ from pprint import pprint
 from helper.utils import *
 from helper.logger import *
 
-
 WORKSHEET_STRUCTURE = {
+    '03.01.01-Common-Functional-Specifications': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.02.03-Functional-Specifications': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.03-Functional-Specifications-portal': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.04-Trading-Community-Stakeholder-Workbench': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.05.01-Customs-Workbench': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.05.02-CLPIA-Workbench': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.05.03-Port-Authority-Workbench': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.05.04-Bank-Workbench': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.03.05.05-Information-Workbench': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.04.04-Functional-Specifications-CLP': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.05.03-Functional-Specifications': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.06.01-Functional-Specification': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.07.07-Functional-Specifications': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.08.05-Functional-Specifications': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '03.09.01-Functional-Specifications-BI-DA': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '04.04-Functional-Specification-ARMS': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.01.05-Functional-Specifications-for-Manifest': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.02.03-Functional-Specifications-Module': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.03.01-Functional-Specifications-for-VDB': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.04.01-Functional-Specification-for-AEOs-Module': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.05.01-Functional-Specification-for-Case-Module': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.06.01-Functional-Specification-LaboratoryModule': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.07.01-Functional-Specifications-Examination': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '05.08.01-Functional-Specification-For-Bank-Guranan': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '06.01.02-Application-Architecture': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '06.01.04-Performance-Monitoring': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '06.01.05-Reports-or-Business-Intelligence': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '06.01.06-Deployment-Architecture': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '06.01.07-Non-Functional-Requirements': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    }, 
+    '06.02.01-Technical-Infrastructure': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'review-notes': False,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
+        },
+    },
+}
+
+WORKSHEET_STRUCTURE1 = {
     '-toc-new': {
         'frozen-rows': 2,
         'frozen-columns': 0,
@@ -245,21 +757,66 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
         return False
 
 
+    # work on the columns - size, alignemnts, fonts and wrapping
+    range_work_specs = {}
+
+    if 'columns' in worksheet_struct:
+        # requests for column resizing
+        column_resize_requests = worksheet.column_resize_request(column_specs=worksheet_struct['columns'])
+    
+        #  requests for column formatting
+        for col_a1, work_spec in worksheet_struct['columns'].items():
+            range_spec = f"{col_a1}:{col_a1}"
+            range_work_specs[range_spec] = work_spec
+
+        values, format_requests = worksheet.range_work_request(range_work_specs=range_work_specs)
+
+    else:
+        column_resize_requests, values, format_requests = [], [], []
+
+
+    # will there be review-notes in the worksheet
+    if 'review-notes' in worksheet_struct:
+        if worksheet_struct['review-notes']:
+            conditional_format_requests = worksheet.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
+        else:
+            conditional_format_requests = []
+
+    else:
+        conditional_format_requests = []
+
+
+    # finally update in batch
+    request_list = column_resize_requests + format_requests + conditional_format_requests
+    if len(request_list) > 0:
+        g_sheet.update_in_batch(request_list=request_list)
+
+
+
     # get the ranges and formatting requests
-    worksheet_dict = g_sheet.worksheets_as_dict()
-    values, format_requests = worksheet.range_work_request(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
+    if 'ranges' in worksheet_struct:
+        worksheet_dict = g_sheet.worksheets_as_dict()
+        values, format_requests = worksheet.range_work_request(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
+    else:
+        values, format_requests = [], []
 
 
     # conditional formatting for blank cells
-    conditional_format_requests = worksheet.conditional_formatting_for_blank_cells_request(range_specs=worksheet_struct['cell-empty-markers'])
+    if 'cell-empty-markers' in worksheet_struct:
+        conditional_format_requests = worksheet.conditional_formatting_for_blank_cells_request(range_specs=worksheet_struct['cell-empty-markers'])
+    else:
+        conditional_format_requests = []
 
 
     # update formats in batch
-    g_sheet.update_in_batch(request_list=format_requests+conditional_format_requests)
+    request_list = format_requests+conditional_format_requests
+    if len(request_list) > 0:
+        g_sheet.update_in_batch(request_list=request_list)
 
 
     # update values in batch
-    worksheet.update_values_in_batch(values=values)
+    if len(values) > 0:
+        worksheet.update_values_in_batch(values=values)
 
     return True
 

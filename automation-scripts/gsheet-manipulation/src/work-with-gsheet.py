@@ -13,7 +13,38 @@ from helper.logger import *
 from task.common_tasks import *
 # from task.resume_tasks import *
 
-
+WORKSHEET_NAMES = [
+    # '03.01.01-Common-Functional-Specifications', 
+    '03.02.03-Functional-Specifications', 
+    '03.03.03-Functional-Specifications-portal', 
+    '03.03.04-Trading-Community-Stakeholder-Workbench', 
+    '03.03.05.01-Customs-Workbench', 
+    '03.03.05.02-CLPIA-Workbench', 
+    '03.03.05.03-Port-Authority-Workbench', 
+    '03.03.05.04-Bank-Workbench', 
+    '03.03.05.05-Information-Workbench', 
+    '03.04.04-Functional-Specifications-CLP', 
+    '03.05.03-Functional-Specifications', 
+    '03.06.01-Functional-Specification', 
+    '03.07.07-Functional-Specifications', 
+    '03.08.05-Functional-Specifications', 
+    '03.09.01-Functional-Specifications-BI-DA', 
+    '04.04-Functional-Specification-ARMS', 
+    '05.01.05-Functional-Specifications-for-Manifest', 
+    '05.02.03-Functional-Specifications-Module', 
+    '05.03.01-Functional-Specifications-for-VDB', 
+    '05.04.01-Functional-Specification-for-AEOs-Module', 
+    '05.05.01-Functional-Specification-for-Case-Module', 
+    '05.06.01-Functional-Specification-LaboratoryModule', 
+    '05.07.01-Functional-Specifications-Examination', 
+    '05.08.01-Functional-Specification-For-Bank-Guranan', 
+    '06.01.02-Application-Architecture', 
+    '06.01.04-Performance-Monitoring', 
+    '06.01.05-Reports-or-Business-Intelligence', 
+    '06.01.06-Deployment-Architecture', 
+    '06.01.07-Non-Functional-Requirements', 
+    '06.02.01-Technical-Infrastructure'
+]
 
 RANGE_WORK_SPECS = {
     'O3': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
@@ -42,49 +73,30 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='summary', new_worksheet_names=['00-layout'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
-    # g_sheet.remove_worksheet(worksheet_name='wb-pds-layout')
-    # g_sheet.remove_worksheet(worksheet_name='screenshot')
-    # g_sheet.remove_worksheet(worksheet_name='contract')
-    # g_sheet.remove_worksheet(worksheet_name='wo-noa')
-    # g_sheet.remove_worksheet(worksheet_name='wcc')
 
     # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
-    # g_sheet.rename_worksheet(worksheet_name='revenue', new_worksheet_name='02-revenue')
-    # g_sheet.rename_worksheet(worksheet_name='contact', new_worksheet_name='03-contact')
-    # g_sheet.rename_worksheet(worksheet_name='joint-venture', new_worksheet_name='04-joint-venture')
-    # g_sheet.rename_worksheet(worksheet_name='people', new_worksheet_name='05-people')
-    # g_sheet.rename_worksheet(worksheet_name='description', new_worksheet_name='06-description')
-    # g_sheet.rename_worksheet(worksheet_name='functionality', new_worksheet_name='07-functionality')
-    # g_sheet.rename_worksheet(worksheet_name='technology', new_worksheet_name='08-technology')
-    # g_sheet.rename_worksheet(worksheet_name='services', new_worksheet_name='09-services')
-    # g_sheet.rename_worksheet(worksheet_name='process', new_worksheet_name='10-process')
-    # g_sheet.rename_worksheet(worksheet_name='complexity', new_worksheet_name='11-complexity')
-    # g_sheet.rename_worksheet(worksheet_name='screenshots', new_worksheet_name='12-screenshots')
-    # g_sheet.rename_worksheet(worksheet_name='blank-template', new_worksheet_name='z-blank')
-    # g_sheet.rename_worksheet(worksheet_name='header-odd', new_worksheet_name='z-header')
-    # g_sheet.rename_worksheet(worksheet_name='footer-odd', new_worksheet_name='z-footer')
 
     # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
-    g_sheet.order_worksheets()
+    # g_sheet.order_worksheets()
 
-
-    # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name='00-layout')
-    # print(f"{g_sheet.title:<30}: [00-layout] : {num_rows} rows, {num_cols} columns")
+    # for worksheet_name in WORKSHEET_NAMES:
+    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
+    #     print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
 
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
-    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
+    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 
     # BEGIN adhoc tasks
-    populate_range(g_sheet=g_sheet)
+    # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
     # END   adhoc tasks
 
