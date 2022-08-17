@@ -79,6 +79,7 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
 
+
     # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
     # g_sheet.order_worksheets()
@@ -91,7 +92,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
-    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 
