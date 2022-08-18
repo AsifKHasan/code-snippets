@@ -14,36 +14,19 @@ from task.common_tasks import *
 # from task.resume_tasks import *
 
 WORKSHEET_NAMES = [
-    # '03.01.01-Common-Functional-Specifications', 
-    '03.02.03-Functional-Specifications', 
-    '03.03.03-Functional-Specifications-portal', 
-    '03.03.04-Trading-Community-Stakeholder-Workbench', 
-    '03.03.05.01-Customs-Workbench', 
-    '03.03.05.02-CLPIA-Workbench', 
-    '03.03.05.03-Port-Authority-Workbench', 
-    '03.03.05.04-Bank-Workbench', 
-    '03.03.05.05-Information-Workbench', 
-    '03.04.04-Functional-Specifications-CLP', 
-    '03.05.03-Functional-Specifications', 
-    '03.06.01-Functional-Specification', 
-    '03.07.07-Functional-Specifications', 
-    '03.08.05-Functional-Specifications', 
-    '03.09.01-Functional-Specifications-BI-DA', 
-    '04.04-Functional-Specification-ARMS', 
-    '05.01.05-Functional-Specifications-for-Manifest', 
-    '05.02.03-Functional-Specifications-Module', 
-    '05.03.01-Functional-Specifications-for-VDB', 
-    '05.04.01-Functional-Specification-for-AEOs-Module', 
-    '05.05.01-Functional-Specification-for-Case-Module', 
-    '05.06.01-Functional-Specification-LaboratoryModule', 
-    '05.07.01-Functional-Specifications-Examination', 
-    '05.08.01-Functional-Specification-For-Bank-Guranan', 
-    '06.01.02-Application-Architecture', 
-    '06.01.04-Performance-Monitoring', 
-    '06.01.05-Reports-or-Business-Intelligence', 
-    '06.01.06-Deployment-Architecture', 
-    '06.01.07-Non-Functional-Requirements', 
-    '06.02.01-Technical-Infrastructure'
+    '01-invitation-to-bidder',
+    '02-s1-bid-acknowledgement',
+    '03-s2-general-instructions',
+    '04-s3-requirements-technical',
+    '05-s4-requirements-commercial',
+    '06-s5-scope-of-work',
+    '07-s6-contract-conditions',
+    '08-attachment-technical',
+    '09-attachment-commercial',
+    '10-request-itb-clarification',
+    '11-statement-of-compliance',
+    'A-detailed-work-plan-revenue-system',
+    'B-quotation-list-pwsp-revenue-system',
 ]
 
 RANGE_WORK_SPECS = {
@@ -72,17 +55,16 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='summary', new_worksheet_names=['00-layout'])
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
 
     # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
 
-
     # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
     # for worksheet_name in WORKSHEET_NAMES:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
