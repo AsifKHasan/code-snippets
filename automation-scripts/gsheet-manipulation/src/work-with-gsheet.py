@@ -14,19 +14,10 @@ from task.common_tasks import *
 # from task.resume_tasks import *
 
 WORKSHEET_NAMES = [
-    '01-invitation-to-bidder',
-    '02-s1-bid-acknowledgement',
-    '03-s2-general-instructions',
-    '04-s3-requirements-technical',
-    '05-s4-requirements-commercial',
-    '06-s5-scope-of-work',
-    '07-s6-contract-conditions',
-    '08-attachment-technical',
-    '09-attachment-commercial',
-    '10-request-itb-clarification',
-    '11-statement-of-compliance',
-    'A-detailed-work-plan-revenue-system',
-    'B-quotation-list-pwsp-revenue-system',
+    '03-s2-01-project-description', '03-s2-02-addenda-tender-bulletin', '03-s2-03-itb-compliance', '03-s2-04-deviations-by-bidder', '03-s2-05-itb-interpretation', 
+    '03-s2-06-oral-interpretation', '03-s2-07-information-equality', '03-s2-08-disclaimer', '03-s2-09-bid-content', '03-s2-10-bid-submission', '03-s2-11-bid-closing-date-time', 
+    '03-s2-12-bid-validity', '03-s2-13-bid-currency', '03-s2-14-bid-price', '03-s2-15-implied-agreement', '03-s2-16-acceptance-rejection', '03-s2-17-agreement', 
+    '03-s2-18-bid-confidentiality', '03-s2-19-language', '03-s2-20-bid-security', '03-s2-21-payment-method', '03-s2-22-guarantee-period',
 ]
 
 RANGE_WORK_SPECS = {
@@ -64,7 +55,7 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
-    g_sheet.order_worksheets()
+    # g_sheet.order_worksheets()
 
     # for worksheet_name in WORKSHEET_NAMES:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
