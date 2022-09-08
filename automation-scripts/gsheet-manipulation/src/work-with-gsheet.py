@@ -12,6 +12,7 @@ from helper.logger import *
 
 from task.common_tasks import *
 # from task.resume_tasks import *
+# from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
     '03-s2-01-project-description', '03-s2-02-addenda-tender-bulletin', '03-s2-03-itb-compliance', '03-s2-04-deviations-by-bidder', '03-s2-05-itb-interpretation', 
@@ -21,16 +22,19 @@ WORKSHEET_NAMES = [
 ]
 
 RANGE_WORK_SPECS = {
-    'O3': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
-    'O4': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
-    'O5': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
-    'O6': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
-    'O7': {'value': 'z-header', 'ws-name-to-link': 'z-header'}, 
-    'R3': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
-    'R4': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
-    'R5': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
-    'R6': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
-    'R7': {'value': 'z-footer', 'ws-name-to-link': 'z-footer'}, 
+    'B4': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'C4': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'D4': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'E4': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'F4': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'G4': {'value': '10004 (02493)', 'valign': 'center'}, 
+
+    'B5': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'C5': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'D5': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'E5': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'F5': {'value': '10004 (02493)', 'valign': 'center'}, 
+    'G5': {'value': '10004 (02493)', 'valign': 'center'}, 
 }
 
 def work_on_drive(g_service, g_sheet):
@@ -47,15 +51,15 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
 
     # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
 
-    # g_sheet.work_on_ranges(worksheet_name='-toc-new', range_work_specs=RANGE_WORK_SPECS)
+    # g_sheet.work_on_ranges(worksheet_name='11-result', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
-    g_sheet.order_worksheets()
+    # g_sheet.order_worksheets()
 
     # for worksheet_name in WORKSHEET_NAMES:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
@@ -78,6 +82,12 @@ def work_on_gsheet(g_sheet):
     # BEGIN resume specific tasks
     # create_06_job_history_new(g_sheet)
     # END   resume specific tasks
+
+
+    # BEGIN Tanim ACAS tasks
+    RANGE_WORK_SPECS = get_ranked_result()
+    g_sheet.work_on_ranges(worksheet_name='11-result', range_work_specs=RANGE_WORK_SPECS)
+    # END   Tanim ACAS tasks
 
 
     # BEGIN drive/file related
