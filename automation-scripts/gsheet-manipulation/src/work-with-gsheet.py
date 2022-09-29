@@ -15,10 +15,7 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-    '03-s2-01-project-description', '03-s2-02-addenda-tender-bulletin', '03-s2-03-itb-compliance', '03-s2-04-deviations-by-bidder', '03-s2-05-itb-interpretation', 
-    '03-s2-06-oral-interpretation', '03-s2-07-information-equality', '03-s2-08-disclaimer', '03-s2-09-bid-content', '03-s2-10-bid-submission', '03-s2-11-bid-closing-date-time', 
-    '03-s2-12-bid-validity', '03-s2-13-bid-currency', '03-s2-14-bid-price', '03-s2-15-implied-agreement', '03-s2-16-acceptance-rejection', '03-s2-17-agreement', 
-    '03-s2-18-bid-confidentiality', '03-s2-19-language', '03-s2-20-bid-security', '03-s2-21-payment-method', '03-s2-22-guarantee-period',
+    '05.01.01-ims-web-portal'
 ]
 
 RANGE_WORK_SPECS = {
@@ -52,6 +49,7 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    # g_sheet.order_worksheets()
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
 
@@ -59,7 +57,6 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.work_on_ranges(worksheet_name='11-result', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
-    # g_sheet.order_worksheets()
 
     # for worksheet_name in WORKSHEET_NAMES:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
@@ -76,6 +73,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN adhoc tasks
     # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
+    create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   adhoc tasks
 
 
@@ -85,8 +83,8 @@ def work_on_gsheet(g_sheet):
 
 
     # BEGIN Tanim ACAS tasks
-    RANGE_WORK_SPECS = get_ranked_result()
-    g_sheet.work_on_ranges(worksheet_name='11-result', range_work_specs=RANGE_WORK_SPECS)
+    # RANGE_WORK_SPECS = get_ranked_result()
+    # g_sheet.work_on_ranges(worksheet_name='11-result', range_work_specs=RANGE_WORK_SPECS)
     # END   Tanim ACAS tasks
 
 

@@ -1023,3 +1023,23 @@ def populate_range(g_sheet):
 
     if len(values):
         worksheet.update_values_in_batch(values=values)
+
+
+
+''' create review-notes conditional formatting
+'''
+def create_review_notes_conditional_formatting(g_sheet, worksheet_name_list):
+    for worksheet_name in worksheet_name_list:
+        worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+
+        conditional_format_requests = []
+        if worksheet:
+            # Get number of columns
+            num_cols = worksheet.col_count()
+            conditional_format_requests = conditional_format_requests + worksheet.conditional_formatting_for_review_notes_request(num_cols=num_cols)
+
+
+    # finally update in batch
+    request_list = conditional_format_requests
+    if len(request_list) > 0:
+        g_sheet.update_in_batch(request_list=request_list)
