@@ -15,7 +15,15 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-    '05.01.01-ims-web-portal'
+    '03-system-features-requirements',
+    '03.01-functional-requirements',
+    '03.02-external-interface-requirements',
+    '03.03-system-features',
+    '03.04-nonfunctional-requirements',
+    '03.04.01-security-requirements',
+    '03.04.02-usability-requirements',
+    '03.04.03-scalability-requirements',
+    '03.04.04-performance-requirements',
 ]
 
 RANGE_WORK_SPECS = {
@@ -47,9 +55,9 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
-    # g_sheet.order_worksheets()
+    g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    g_sheet.order_worksheets()
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
 
@@ -65,7 +73,7 @@ def work_on_gsheet(g_sheet):
 
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
-    # create_worksheets(g_sheet=g_sheet, worksheet_name_list=['00-layout'])
+    # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
@@ -73,7 +81,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN adhoc tasks
     # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
-    create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   adhoc tasks
 
 
