@@ -15,7 +15,42 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-    '05.01.01-ims-web-portal'
+    '01-DP-1-ITT',
+    'A-annex',
+    'A-DP-2-schedule',
+    'B-annex',
+    'B-DP-3-cover-letter',
+    'C-annex',
+    'C-DP-4-special-terms',
+    'D-annex',
+    'D-technical-spec',
+    'E-annex',
+    'E0-remarks-column-10',
+    'E1-appendix-QAC',
+    'F-annex',
+    'F-terms-conditions',
+    'G-annex',
+    'G0-remarks-column-11',
+    'G1-appendix-QAC',
+    'H-annex',
+    'H-terms-clauses',
+    'J-annex',
+    'J-training-req',
+    'K-annex',
+    'K0-req-analyzer',
+    'K1-appendix-finding-list',
+    'K2-appendix-service-tools',
+    'K3-appendix-spare-parts',
+    'L-annex',
+    'L-DP-6-financial-offer',
+    'M-annex',
+    'M-DP-7-performance-guarantee',
+    'N-annex',
+    'N-DP-8-EUC',
+    'P-annex',
+    'P-DP-9-terms-local-currency',
+    'Q-annex',
+    'Q-undertaking'
 ]
 
 RANGE_WORK_SPECS = {
@@ -37,6 +72,7 @@ RANGE_WORK_SPECS = {
 def work_on_drive(g_service, g_sheet):
 
     # BEGIN drive file related
+
     # target_file_id = g_service.copy_file(source_file_id=g_sheet.id(), target_folder_id='1Ol7pNkAloXNPxeU8j1_IMNAayUh7AvPf', target_file_title='BNDA__standards')
     # g_service.share(file_id=target_file_id, email='asif.hasan@gmail.com', perm_type='user', role='owner')
     # g_service.share(file_id='1J7VpUFfZiQi543f4zdGcX9mqX7HugvsmebtoECCgk_4', email='asif.hasan@gmail.com', perm_type='user', role='owner')
@@ -48,7 +84,7 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
     # g_sheet.order_worksheets()
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
@@ -73,7 +109,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN adhoc tasks
     # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
-    create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   adhoc tasks
 
 

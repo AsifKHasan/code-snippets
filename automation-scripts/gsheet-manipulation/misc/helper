@@ -8,6 +8,7 @@ work-with-gsheet.bat doculaboration__gsheet-template
 work-with-gsheet.bat BCC-BNDA__standards
 work-with-gsheet.bat BCC-BNDA__hardware-specifications-checklist
 work-with-gsheet.bat BCC-BNDA__strategy-and-framework
+work-with-gsheet.bat MRA-IMS__SRS
 
 
 cd /home/asif/projects/asif@github/code-snippets/automation-scripts/gsheet-manipulation
@@ -18,3 +19,4 @@ cd /home/asif/projects/asif@github/code-snippets/automation-scripts/gsheet-manip
 ./work-with-gsheet.sh BCC-BNDA__standards
 ./work-with-gsheet.sh BCC-BNDA__hardware-specifications-checklist
 ./work-with-gsheet.sh BCC-BNDA__strategy-and-framework
+./work-with-gsheet.sh MRA-IMS__SRS

@@ -2,11 +2,14 @@ cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 
 # pdf pages as png
 pdftocairo -png -r 300 -f 11 -l 30 data/Ancholic_Bhasar_Ovidhan.pdf data/vernacular/vernacular
-
 pdftocairo -png -f 1 -l 1 -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 
+pdftocairo -png -r 300 -cropbox -gray "data/ROV Tender-Bd Army.pdf" data/rov/rov
+
 # ocr an image for text
+tesseract data/rov/rov-55.png out/rov/rov-55 -l ben
+
 tesseract data/vernacular/abc-008.png out/vernacular/abc-008 -l ben
 
 tesseract data/ppa/ppa-gray-001.png out/ppa/ppa-gray-001 -l ben+eng
