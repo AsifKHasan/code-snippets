@@ -15,54 +15,6 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-<<<<<<< HEAD
-    '01-DP-1-ITT',
-    'A-annex',
-    'A-DP-2-schedule',
-    'B-annex',
-    'B-DP-3-cover-letter',
-    'C-annex',
-    'C-DP-4-special-terms',
-    'D-annex',
-    'D-technical-spec',
-    'E-annex',
-    'E0-remarks-column-10',
-    'E1-appendix-QAC',
-    'F-annex',
-    'F-terms-conditions',
-    'G-annex',
-    'G0-remarks-column-11',
-    'G1-appendix-QAC',
-    'H-annex',
-    'H-terms-clauses',
-    'J-annex',
-    'J-training-req',
-    'K-annex',
-    'K0-req-analyzer',
-    'K1-appendix-finding-list',
-    'K2-appendix-service-tools',
-    'K3-appendix-spare-parts',
-    'L-annex',
-    'L-DP-6-financial-offer',
-    'M-annex',
-    'M-DP-7-performance-guarantee',
-    'N-annex',
-    'N-DP-8-EUC',
-    'P-annex',
-    'P-DP-9-terms-local-currency',
-    'Q-annex',
-    'Q-undertaking'
-=======
-    '03-system-features-requirements',
-    '03.01-functional-requirements',
-    '03.02-external-interface-requirements',
-    '03.03-system-features',
-    '03.04-nonfunctional-requirements',
-    '03.04.01-security-requirements',
-    '03.04.02-usability-requirements',
-    '03.04.03-scalability-requirements',
-    '03.04.04-performance-requirements',
->>>>>>> d1a6f382992f8799da8b1839e5a97f97e97d73c5
 ]
 
 RANGE_WORK_SPECS = {
