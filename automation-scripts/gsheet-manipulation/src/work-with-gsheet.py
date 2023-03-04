@@ -49,7 +49,7 @@ def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
     g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
     # g_sheet.remove_worksheet(worksheet_name='-toc')
 
