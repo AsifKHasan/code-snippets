@@ -31,15 +31,15 @@ WORKSHEET_NAMES = [
     '03.01.01.02.07-workdays-config', 
     '03.01.01.02.08-holidays-config', 
     '03.01.01.02.09-areas', 
-    '03.01.01.02.010-zone', 
-    '03.01.01.02.011-region', 
-    '03.01.01.02.012-funding-organizations', 
-    '03.01.01.02.013-member-samity-transfer-config', 
-    '03.01.01.02.014-collection-sheet-config', 
-    '03.01.01.02.015-loan-product-category', 
-    '03.01.01.02.016-economic-purpose-code', 
-    '03.01.01.02.017-economic-purpose', 
-    '03.01.01.02.018-dashboard-settings', 
+    '03.01.01.02.10-zone', 
+    '03.01.01.02.11-region', 
+    '03.01.01.02.12-funding-organizations', 
+    '03.01.01.02.13-member-samity-transfer-config', 
+    '03.01.01.02.14-collection-sheet-config', 
+    '03.01.01.02.15-loan-product-category', 
+    '03.01.01.02.16-economic-purpose-code', 
+    '03.01.01.02.17-economic-purpose', 
+    '03.01.01.02.18-dashboard-settings', 
     '03.01.01.03-employees', 
     '03.01.01.03.01-employees-departments', 
     '03.01.01.03.02-employees-designations', 
@@ -79,8 +79,8 @@ WORKSHEET_NAMES = [
     '03.01.01.07.07-loan-waive-death', 
     '03.01.01.07.08-loan-adjustment', 
     '03.01.01.07.09-loan-writt-off-eligible-list', 
-    '03.01.01.07.010-loan-write-off', 
-    '03.01.01.07.011-loan-write-off-collection', 
+    '03.01.01.07.10-loan-write-off', 
+    '03.01.01.07.11-loan-write-off-collection', 
     '03.01.01.08-process', 
     '03.01.01.08.01-transaction-auth', 
     '03.01.01.08.02-transaction-unauth', 
@@ -121,11 +121,12 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank-reqs', new_worksheet_names=WORKSHEET_NAMES)
     g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
     g_sheet.order_worksheets()
 
-    # g_sheet.remove_worksheet(worksheet_name='-toc')
+    # for ws_name in WORKSHEET_NAMES:
+    #     g_sheet.remove_worksheet(worksheet_name=ws_name)
 
     # g_sheet.rename_worksheet(worksheet_name='summary', new_worksheet_name='01-summary')
 
