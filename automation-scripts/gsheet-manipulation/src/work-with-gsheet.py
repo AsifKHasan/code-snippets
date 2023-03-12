@@ -15,96 +15,10 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-    '03.01.01.01-administration', 
-    '03.01.01.01.01-manage-user', 
-    '03.01.01.01.02-manage-user-role', 
-    '03.01.01.01.03-manage-profile', 
-    '03.01.01.01.04-manage-notification', 
-    '03.01.01.01.05-managing-data', 
-    '03.01.01.02-configs', 
-    '03.01.01.02.01-general-config', 
-    '03.01.01.02.02-auto-id-config', 
-    '03.01.01.02.03-branch-config', 
-    '03.01.01.02.04-samity-config', 
-    '03.01.01.02.05-member-config', 
-    '03.01.01.02.06-address-config', 
-    '03.01.01.02.07-workdays-config', 
-    '03.01.01.02.08-holidays-config', 
-    '03.01.01.02.09-areas', 
-    '03.01.01.02.10-zone', 
-    '03.01.01.02.11-region', 
-    '03.01.01.02.12-funding-organizations', 
-    '03.01.01.02.13-member-samity-transfer-config', 
-    '03.01.01.02.14-collection-sheet-config', 
-    '03.01.01.02.15-loan-product-category', 
-    '03.01.01.02.16-economic-purpose-code', 
-    '03.01.01.02.17-economic-purpose', 
-    '03.01.01.02.18-dashboard-settings', 
-    '03.01.01.03-employees', 
-    '03.01.01.03.01-employees-departments', 
-    '03.01.01.03.02-employees-designations', 
-    '03.01.01.03.03-employees', 
-    '03.01.01.03.04-employees-responsibility', 
-    '03.01.01.03.05-employees-promotion', 
-    '03.01.01.03.06-employees-branch-transfer', 
-    '03.01.01.03.07-employees-resign-termination', 
-    '03.01.01.03.08-field-officer-management', 
-    '03.01.01.04-samity', 
-    '03.01.01.04.01-samity-management', 
-    '03.01.01.04.02-samity-transfers', 
-    '03.01.01.04.03-samity-field-officer-change', 
-    '03.01.01.04.04-samity-batch-field-officer-change', 
-    '03.01.01.04.05-samity-day-change', 
-    '03.01.01.04.06-samity-closings', 
-    '03.01.01.05-member', 
-    '03.01.01.05.01-member-management', 
-    '03.01.01.05.02-member-samity-transfer', 
-    '03.01.01.05.03-member-primary-product-transfer', 
-    '03.01.01.05.04-member-closing', 
-    '03.01.01.05.05-member-black-list', 
-    '03.01.01.05.06-member-attendances', 
-    '03.01.01.05.07-member-pass-book-sale', 
-    '03.01.01.06-products-accounts', 
-    '03.01.01.06.01-manage-loan-products', 
-    '03.01.01.06.02-manage-savings-products', 
-    '03.01.01.06.03-manage-loan-accounts', 
-    '03.01.01.06.04-manage-savings-accounts', 
-    '03.01.01.07-transaction', 
-    '03.01.01.07.01-disburse-regular-loan', 
-    '03.01.01.07.02-disburse-one-time-loan', 
-    '03.01.01.07.03-repayment-regular-loan', 
-    '03.01.01.07.04-repayment-one-time-loan', 
-    '03.01.01.07.05-collect-overdue-loan', 
-    '03.01.01.07.06-loan-rebates', 
-    '03.01.01.07.07-loan-waive-death', 
-    '03.01.01.07.08-loan-adjustment', 
-    '03.01.01.07.09-loan-writt-off-eligible-list', 
-    '03.01.01.07.10-loan-write-off', 
-    '03.01.01.07.11-loan-write-off-collection', 
-    '03.01.01.08-process', 
-    '03.01.01.08.01-transaction-auth', 
-    '03.01.01.08.02-transaction-unauth', 
-    '03.01.01.08.03-day-end-process', 
-    '03.01.01.08.04-month-end-process', 
-    '03.01.01.08.05-pass-book-balance', 
-    '03.01.01.08.06-branch-wise-loan-savings', 
-    '03.01.01.08.07-consolidated-branch-information'
 ]
 
 RANGE_WORK_SPECS = {
     'B4': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'C4': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'D4': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'E4': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'F4': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'G4': {'value': '10004 (02493)', 'valign': 'center'}, 
-
-    'B5': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'C5': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'D5': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'E5': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'F5': {'value': '10004 (02493)', 'valign': 'center'}, 
-    'G5': {'value': '10004 (02493)', 'valign': 'center'}, 
 }
 
 def work_on_drive(g_service, g_sheet):
@@ -155,12 +69,6 @@ def work_on_gsheet(g_sheet):
     # BEGIN resume specific tasks
     # create_06_job_history_new(g_sheet)
     # END   resume specific tasks
-
-
-    # BEGIN Tanim ACAS tasks
-    # RANGE_WORK_SPECS = get_ranked_result()
-    # g_sheet.work_on_ranges(worksheet_name='11-result', range_work_specs=RANGE_WORK_SPECS)
-    # END   Tanim ACAS tasks
 
 
     # BEGIN drive/file related
