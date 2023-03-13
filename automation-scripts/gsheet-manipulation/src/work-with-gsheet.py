@@ -15,6 +15,52 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
+'A1-background-introduction', 
+'A2-objectives', 
+'A2.1-project-1-appeal-procedure-system', 
+'A2.2-project-2-advance-ruling-system', 
+'A3-guidance-on-methodology', 
+'B-scope-of-work', 
+'B1-technical-requirements', 
+'B1.1-project-1-appeal-procedure-system', 
+'B1.2-project-2-advance-ruling-system', 
+'B2-non-functional-requirements', 
+'B3-conditions-warranty-support', 
+'C-deliverables-period-of-performance', 
+'C1-period-of-performance', 
+'C2-list-of-deliverables', 
+'C2.1-project-1-appeals-procedure-system', 
+'C2.2-project-2-advance-ruling-system', 
+'D-payment', 
+'D1-payment-schedule', 
+'D2-payment-details', 
+'E-proposal-instructions', 
+'E1-questions-concerning-rfp', 
+'E2-proposal-due-date', 
+'E3-proposal-submission-instructions', 
+'E3.1-technical-proposal', 
+'E3.2-financial-proposal', 
+'E3.3-structure-of-proposals', 
+'E4-maximum-contract-ceiling', 
+'E5-additional-requirements', 
+'F-evaluation-criteria-for-award', 
+'F.1-general-information', 
+'F.2-qualifications-experience-of-firm', 
+'F.3-evaluation-technical', 
+'F.4-evaluation-financial', 
+'F.5-award-of-contract', 
+'F.6-fraud-and-corruption', 
+'F.7-contracting-eligibility', 
+'X1-technical-proposal-templates', 
+'X1.1-technical-proposal-submission-letter', 
+'X1.2-past-performance-information', 
+'X1.3-staffing-plan', 
+'X1.4-cv-template', 
+'X2-financial-proposal-templates', 
+'X2.1-financial-proposal-submission-letter', 
+'X2.2-budget-template', 
+'X3-section-889-certification', 
+'X4-evidence-of-responsibility'
 ]
 
 RANGE_WORK_SPECS = {
@@ -35,8 +81,8 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank-reqs', new_worksheet_names=WORKSHEET_NAMES)
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F')
+    g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='f3:f')
     g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
