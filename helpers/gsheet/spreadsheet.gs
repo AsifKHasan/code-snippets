@@ -40,7 +40,7 @@ function work_on_spreadsheets() {
     // search_replace_texts(ss, '.png", 3)', '.png", 1)');
 
 
-    // CREATE Rsume gsheet - BEGIN
+    // CREATE Resume gsheet - BEGIN
     // create_ss_from_template(ss_name, template_ss, target_resume_folder)
     // CREATE Rsume gsheet - BEGIN
 
