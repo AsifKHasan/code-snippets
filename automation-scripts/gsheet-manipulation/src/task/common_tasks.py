@@ -1029,10 +1029,12 @@ def populate_range(g_sheet):
 ''' create review-notes conditional formatting
 '''
 def create_review_notes_conditional_formatting(g_sheet, worksheet_name_list):
+    conditional_format_requests = []
     for worksheet_name in worksheet_name_list:
         worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
 
-        conditional_format_requests = []
+        info(f"updating review-notes conditional formatting for worksheet {worksheet_name}", nesting_level=1)
+
         if worksheet:
             # Get number of columns
             num_cols = worksheet.col_count()

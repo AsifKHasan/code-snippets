@@ -15,6 +15,17 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
+'00.00-coverpage', 
+'00.01-forwarding-letter', 
+'00.02-executive-summary', 
+'00.03-terms-glossary', 
+'00.04-confidentiality-statement', 
+'01-background', 
+'02-proposed-solution', 
+'03-software-compliance', 
+'03.01-compliance-summary', 
+'03.02-item-wise-compliance', 
+'03.02.01-automatic-vehicle-classification', 
 '03.02.02-automated-toll-collection', 
 '03.02.03-tag-and-save', 
 '03.02.04-anpr-capability', 
@@ -49,7 +60,16 @@ WORKSHEET_NAMES = [
 '03.02.33-integration-weigh-scales', 
 '03.02.34-toll-tickets-vehicle-weight', 
 '03.02.35-over-weight-fine', 
-'03.02.36-real-time-lane-monitoring'
+'03.02.36-real-time-lane-monitoring', 
+'03.03-value-added-propositions', 
+'04-hardware-compliance', 
+'04.02-compliance-summary', 
+'04.03-hardware-design-boq', 
+'04.03.01-central-data-center', 
+'04.03.02-local-data-center', 
+'04.03.03-toll-plaza-equipment', 
+'04.03.04-disaster-recovery-center', 
+'04.03.05-monitoring-center'
 ]
 
 RANGE_WORK_SPECS = {
@@ -70,9 +90,9 @@ def work_on_drive(g_service, g_sheet):
 
 def work_on_gsheet(g_sheet):
 
-    g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='03.02.01-automatic-vehicle-classification', new_worksheet_names=WORKSHEET_NAMES)
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='f3:f')
-    g_sheet.order_worksheets()
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='f3:f')
+    # g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
     #     g_sheet.remove_worksheet(worksheet_name=ws_name)
@@ -97,7 +117,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN adhoc tasks
     # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
-    # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   adhoc tasks
 
 
