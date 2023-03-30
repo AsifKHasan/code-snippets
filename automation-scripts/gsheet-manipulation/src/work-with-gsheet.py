@@ -91,8 +91,12 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='f3:f')
-    # g_sheet.order_worksheets()
+    g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B7')
+    g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B10')
+    g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B13')
+    g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B16')
+    g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B19')
+    g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
     #     g_sheet.remove_worksheet(worksheet_name=ws_name)
@@ -117,7 +121,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN adhoc tasks
     # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
-    create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   adhoc tasks
 
 
