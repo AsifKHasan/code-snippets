@@ -15,9 +15,9 @@ function work_on_spreadsheets() {
   // var target_resume_folder = DriveApp.getFolderById('19qaw26Oq_i1t_sK2lcU5gLeNVszc8Pch');
 
   // get worksheet to import
-  // var ss_to_import_from = open_spreadsheet('Résumé__template')
-  // var job_history_ws = ss_to_import_from.getSheetByName('06-job-history');
-  // var project_roles_ws = ss_to_import_from.getSheetByName('07-project-roles');
+  var ss_to_import_from = open_spreadsheet('celloscope__résumé__template')
+  // var ws_to_import = ss_to_import_from.getSheetByName('16-references');
+  var ws_to_import = ss_to_import_from.getSheetByName('00-layout-USAID-FFBT');
 
   ss_data_to_work_on.forEach(function(ss_data, index){
     var ss_name = ss_data[0];
@@ -42,16 +42,22 @@ function work_on_spreadsheets() {
 
     // CREATE Resume gsheet - BEGIN
     // create_ss_from_template(ss_name, template_ss, target_resume_folder)
-    // CREATE Rsume gsheet - BEGIN
+    // CREATE Resume gsheet - BEGIN
+
+
+    // RENAME worksheets - BEGIN
+    // rename_worksheets(ss, {'07-project-roles-NBR-BSW': '07-project-roles'});
+    // RENAME worksheets - END
 
     // MOVE worksheet - BEGIN
     // move_worksheet_to_end(ss, '-toc');
     // MOVE worksheet - END
 
-    // work on *-new-toc* - BEGIN
-    new_toc_from_toc(ss);
+    // work on *-toc-new* - BEGIN
+    // new_toc_from_toc(ss);
     // update_new_toc(ss);
     // update_new_toc_links(ss);
+    // update_toc_new_worksheet_links(ss_name);
     // work on *-new-toc* - END
 
     // REMOVE named worksheet - BEGIN
@@ -59,8 +65,7 @@ function work_on_spreadsheets() {
     // REMOVE named worksheet - END
 
     // IMPORT worksheets into ss to a specific location - BEGIN
-    // import_worksheet(ss, ws_to_import=job_history_ws, index=8);
-    // import_worksheet(ss, ws_to_import=project_roles_ws, index=9);
+    // import_worksheet(ss, ws_to_import=ws_to_import, index=3);
     // IMPORT worksheets into ss to a specific location - END
     //
     // ALL WORKSHEET FORMATTING - BEGIN
@@ -80,6 +85,10 @@ function work_on_spreadsheets() {
     // update_00_layout_worksheet_links(ss_name);
     // SPECIFIC to *01-personal* WORKSHEET - END
     //
+    // SPECIFIC to *00-layout-USAID_FFBT* WORKSHEET - BEGIN
+    update_worksheet_00_layout_USAID_FFBT(ss_name);
+    // SPECIFIC to *00-layout-USAID_FFBT* WORKSHEET - END
+    //
     // SPECIFIC to *01-personal* WORKSHEET - BEGIN
     // update_01_personal_worksheet_photo(ss_name, ss_org);
     // SPECIFIC to *01-personal* WORKSHEET - END
@@ -90,6 +99,7 @@ function work_on_spreadsheets() {
 
     // SPECIFIC to *01-project-roles* WORKSHEET - BEGIN
     // update_07_project_roles_worksheet(ss_name);
+    // create_07_project_roles_nbr_bsw_worksheet(ss_name);
     // SPECIFIC to *01-project-roles* WORKSHEET - END
 
     Logger.log(`DONE ..... ${index} : ${row_num} .. ${ss_org} : ${ss_name}`);

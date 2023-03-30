@@ -1,33 +1,33 @@
 RESUME_WS_SPECS = {
-  '-toc' : {
+  '-toc-new' : {
     'column-index': {
       'section': 1,
       'heading': 2,
       'process': 3,
       'link': 6,
-      'responsible': 19,
-      'reviewer': 20,
-      'status': 21,
-      'organization': 22,
-      'existing': 23,
-      'unit': 24,
+      'responsible': 22,
+      'reviewer': 23,
+      'status': 24,
+      'organization': 25,
+      'existing': 26,
+      'unit': 27,
     },
   },
   '00-layout' : {
     'num-columns': 10,
     'columns': {'B': 40, 'C': 200, 'D': 40, 'E': 30, 'F': 40, 'G': 30, 'H': 150, 'I': 150, 'J': 320, },
     'cell-links': {
-      'B13': {'cell-value': '10-membership', 'ws-name-to-link': '10-membership', 'note': '{"content": "out-of-cell"}'},
-      'B16': {'cell-value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "out-of-cell"}'},
-      'B19': {'cell-value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "out-of-cell"}'},
-      'B21': {'cell-value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "out-of-cell"}'},
-      'B24': {'cell-value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "out-of-cell"}'},
+      // 'B13': {'cell-value': '10-membership', 'ws-name-to-link': '10-membership', 'note': '{"content": "out-of-cell"}'},
+      // 'B16': {'cell-value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "out-of-cell"}'},
+      // 'B19': {'cell-value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "out-of-cell"}'},
+      // 'B21': {'cell-value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "out-of-cell"}'},
+      // 'B24': {'cell-value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "out-of-cell"}'},
       'B29': {'cell-value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "out-of-cell"}'},
       'B31': {'cell-value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "out-of-cell"}'},
-      'B34': {'cell-value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "out-of-cell"}'},
-      'B37': {'cell-value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "out-of-cell"}'},
-      'H39': {'cell-value': '12-contact', 'ws-name-to-link': '12-contact'},
-      'B41': {'note': '{"content": "out-of-cell"}'},
+      // 'B34': {'cell-value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "out-of-cell"}'},
+      // 'B37': {'cell-value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "out-of-cell"}'},
+      // 'H39': {'cell-value': '12-contact', 'ws-name-to-link': '12-contact'},
+      // 'B41': {'note': '{"content": "out-of-cell"}'},
     },
     'cell-contents': {
       // Name of the Firm
@@ -265,69 +265,4 @@ RESUME_WS_SPECS = {
     'num-columns': 2,
     'columns': {'B': 1000, },
   },
-};
-
-
-WORKSHEET_NAME_MAP1 = {
-  'idra-wb-resume-layout' : 'layout-IDRA',
-  'idra-resume-layout-wb' : 'layout-IDRA',
-  'idra-wb-resume-layout-wb' : 'layout-IDRA',
-  'Idra-resume-layout-wb' : 'layout-IDRA',
-  'Idra-wb-resume-layout' : 'layout-IDRA',
-  'wb-idra-resume-layout' : 'layout-IDRA',
-  'wb-idra-resume-layout-wb' : 'layout-IDRA',
-
-  'wb-resume-layout-wb' : 'layout-WB-WB',
-  'wb-resume-layout' : 'layout-WB',
-
-  'DWASA-wb-resume-layout' : 'layout-DWASA',
-
-  'nbr-bmap-resume-layout' : 'layout-NBR-BMAP',
-  'nbr-bmap-wb-resume-layout' : 'layout-NBR-BMAP',
-
-  'pg5-bhp-layout' : 'layout-PG5-BHP',
-  'BHP-resume-layout' : 'layout-PG5-BHP',
-
-  'idra-job-history' : 'job-history-IDRA',
-  'nbr-bmap-job-history' : 'job-history-NBR-BMAP',
-
-  'idra-project-roles' : 'project-roles-IDRA',
-  'nbr-bmap-project-roles' : 'project-roles-NBR-BMAP',
-
-  'nbr-bmap-technical-expertise' : 'technical-expertise-NBR-BMAP',
-};
-
-
-WORKSHEET_NAME_MAP2 = {
-  'layout-DWASA': '00-layout-DWASA',
-  'layout-IDRA': '00-layout-IDRA',
-  'layout-NBR-BMAP': '00-layout-NBR-BMAP',
-  'layout-PG5-BHP': '00-layout-PG5-BHP',
-  'layout-WB-WB': '00-layout-WB-WB',
-  'layout-WB': '00-layout-WB',
-
-  'personal': '01-personal',
-  'career-highlight': '02-career-highlight',
-  'education': '03-education',
-  'managerial-expertise': '04-managerial-expertise',
-
-  'technical-expertise': '05-technical-expertise',
-  'technical-expertise-NBR-BMAP': '05-technical-expertise-NBR-BMAP',
-
-  'job-history': '06-job-history',
-  'job-history-IDRA': '06-job-history-IDRA',
-  'job-history-NBR-BMAP': '06-job-history-NBR-BMAP',
-
-  'project-roles': '07-project-roles',
-  'project-roles-IDRA': '07-project-roles-IDRA',
-  'project-roles-NBR-BMAP': '07-project-roles-NBR-BMAP',
-
-  'training': '08-training',
-  'certification': '09-certification',
-  'membership': '10-membership',
-  'language-proficiency': '11-language-proficiency',
-  'contact': '12-contact',
-  'educational-certificates': '13-educational-certificates',
-  'vendor-certificates': '14-vendor-certificates',
-  'institutional-certificates': '15-institutional-certificates',
 };

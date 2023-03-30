@@ -88,7 +88,6 @@ function work_on_objects(object_list){
 
 };
 
-
 // given an object, return relavant data
 function get_object_data(obj, is_folder, parent_folder, seq){
   if (obj === null){
@@ -210,12 +209,31 @@ function get_parent_path(folder){
 };
 
 
+// get list of file names to process
+function get_file_names_to_work_on() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var name_ws_name = 'z-file-list';
+  var name_ws = ss.getSheetByName(name_ws_name);
+
+  var name_data = name_ws.getRange('A3:C').getValues();
+
+  var file_names = [];
+  name_data.forEach(function(row, index){
+    // we take only the values which has Process Yes
+    if (row[NAME_LIST_COLUMNS.Process] === 'Yes'){
+      var entry = {'seq': row[NAME_LIST_COLUMNS.Seq], 'name': row[NAME_LIST_COLUMNS.FolderFileName]};
+      file_names.push(entry);
+    };
+  });
+
+  return file_names;
+};
+
 const NAME_LIST_COLUMNS = {
   Process: 0,
   Seq: 1,
   FolderFileName: 2,
 };
-
 
 const MIME_TYPES = {
 'application/vnd.google-apps.audio'        : 'audio',

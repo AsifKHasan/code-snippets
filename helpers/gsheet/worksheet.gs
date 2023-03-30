@@ -4,12 +4,13 @@ function work_on_worksheets(ss=undefined) {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
   }
 
-  var worksheet_names_to_work_on = RESUME_WS_NAMES;
+  var worksheet_names_to_work_on = ['-toc-new'];
 
   for (var i = 0; i < worksheet_names_to_work_on.length; i++) {
     var ws = ss.getSheetByName(worksheet_names_to_work_on[i]);
     // do some work on the worksheet
-    get_and_write_column_size(ws);
+    // get_and_write_column_size(ws);
+    link_cells(ws, 'F5:F', 'E5:E', null);
   }
 };
 
