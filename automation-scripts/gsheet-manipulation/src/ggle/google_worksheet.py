@@ -50,7 +50,7 @@ class GoogleWorksheet(object):
 
 
 
-    ''' bulk create multiple worksheets by duplicating this worksheet 
+    ''' bulk create multiple worksheets by duplicating this worksheet
     '''
     def duplicate_worksheet(self, new_worksheet_names):
         request_list = []
@@ -61,7 +61,7 @@ class GoogleWorksheet(object):
         if len(request_list):
             self.gsheet.update_in_batch(request_list=request_list)
             info(f"duplicated  worksheet {self.gspread_worksheet.title} to {len(request_list)} worksheets")
-        
+
 
 
     ''' rename a worksheet
@@ -74,7 +74,7 @@ class GoogleWorksheet(object):
 
         except:
             warn(f"worksheet {self.gspread_worksheet.title} could not be renamed to {new_worksheet_name}")
-        
+
 
 
     ''' dimensions add request
@@ -174,8 +174,8 @@ class GoogleWorksheet(object):
         requests = []
 
         return requests
-        
-        
+
+
 
     ''' remove trailing blank rows
     '''
@@ -186,7 +186,7 @@ class GoogleWorksheet(object):
         info(f"removing .. rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
         if len(request_list):
             self.gsheet.update_in_batch(request_list=request_list)
-        
+
         info(f"removed  .. rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
 
 
@@ -194,7 +194,7 @@ class GoogleWorksheet(object):
     ''' conditional formatting request for blank cells
     '''
     def conditional_formatting_for_blank_cells_request(self, range_specs):
-        ranges = [a1_range_to_grid_range(range_spec, sheet_id=self.id) for range_spec in range_specs] 
+        ranges = [a1_range_to_grid_range(range_spec, sheet_id=self.id) for range_spec in range_specs]
         rule = build_conditional_format_rule(ranges=ranges, condition_type="BLANK", condition_values=[], format={"backgroundColor": hex_to_rgba("#fff2cc")})
 
         return [rule]
@@ -284,6 +284,18 @@ class GoogleWorksheet(object):
 
 
 
+    ''' resize rows request as per spec
+    '''
+    def row_resize_request(self, row_specs):
+        dimension_update_requests = []
+        for key, value in row_specs.items():
+            dimension_update_request = build_dimension_size_update_request(sheet_id=self.id, dimension='ROWS', index=int(key), size=value['size'])
+            dimension_update_requests.append(dimension_update_request)
+
+        return dimension_update_requests
+
+
+
     ''' unhide columns request
     '''
     def column_unhide_request(self):
@@ -328,7 +340,7 @@ class GoogleWorksheet(object):
             requests.append(request)
 
         return requests
-    
+
 
 
     ''' number of rows and columns of the worksheet
@@ -350,4 +362,4 @@ class GoogleWorksheet(object):
     '''
     def col_count(self):
         _, col_count = self.number_of_dimesnions()
-        return col_count        
+        return col_count

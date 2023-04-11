@@ -7,7 +7,7 @@ from helper.logger import *
 
 COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 LETTER_TO_COLUMN = {
-    'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16, 
+    'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16,
     'Q': 17, 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26
 }
 
@@ -33,7 +33,7 @@ def build_add_sheet_request(worksheet_name, sheet_index, num_rows, num_cols, fro
 
 
 ''' build a repeatCell from work_spec
-''' 
+'''
 def build_repeatcell_from_work_spec(range, work_spec):
     fields = []
 
@@ -104,7 +104,7 @@ def build_repeatcell_from_work_spec(range, work_spec):
             bold = True
 
         fields.append('userEnteredFormat.textFormat.bold')
-    
+
 
     # note
     note = None
@@ -202,8 +202,8 @@ def build_border_around_spec(border_color, border_style='SOLID'):
         "bottom": border,
         "left": border,
         "right": border,
-        "innerHorizontal": None,
-        "innerVertical": None,
+        "innerHorizontal": border,
+        "innerVertical": border,
     }
 
     return borders
@@ -215,7 +215,7 @@ def build_border_around_spec(border_color, border_style='SOLID'):
     condition_type is enum (https://developers.google.com/sheets/api/reference/rest/v4/spreadsheets/other#ConditionType)
     condition_values is a list of strings
     format is a dict
-''' 
+'''
 def build_conditional_format_rule(ranges, condition_type, condition_values, format):
     rule = {"addConditionalFormatRule": {
                 "rule": {
@@ -233,12 +233,12 @@ def build_conditional_format_rule(ranges, condition_type, condition_values, form
         }
 
     return rule
-    
+
 
 
 ''' build a data validation rule
     condition_values is a list of strings
-''' 
+'''
 def build_data_validation_rule(range, condition_type, condition_values, input_message=None):
     values = [{'userEnteredValue': v} for v in condition_values]
     rule = {"setDataValidation": {
@@ -260,7 +260,7 @@ def build_data_validation_rule(range, condition_type, condition_values, input_me
 
 
 ''' build a no data validation rule
-''' 
+'''
 def build_no_data_validation_rule(range):
     rule = {"setDataValidation": {
                 "range" : range,

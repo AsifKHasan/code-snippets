@@ -15,15 +15,58 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-    '00-layout-USAID-FFBT'
+    # '00-layout-USAID-FFBT',
+    # '02-career-highlight',
+    # '03-education',
+    # '06-job-history-USAID-FFBT',
+    # '11-language-proficiency',
+    # '16-references',
+
+    # NBR-USAID-FFBT-APS__volume-1__technical-proposal
+    # '00.01-cover-page',
+    # '00.02-technical-proposal-submission-letter',
+    # '00.06-executive-summary',
+    # '00.07-terms-and-glossary',
+    # '00.08-confidentiality-statement',
+    # '1-methodology-and-work-plan',
+    # '1.1-project-management-methodology',
+    # '1.2-project-work-plan',
+    # '1.2.1-kick-off-plan-with-whole-team',
+    # '1.2.2-implementation-management',
+    # '1.2.2.1-risk-management-plan',
+    # '1.2.2.2-quality-assurance',
+    # '1.2.2.3-communication-plan',
+    # '1.2.2.4-change-management-plan',
+    # '1.2.2.5-uat-build-release-and-deployment-plan',
+    # '2.1-nrbc-agent-banking',
+    # '2.2-nrbc-e-kyc',
+    # 'z-blank',
+    # 'z-header',
+    # 'z-footer',
+
+    # NBR-USAID-FFBT-ARDS__volume-1__technical-proposal
+    '00.01-cover-page',
+    '00.02-technical-proposal-submission-letter',
+    '00.06-executive-summary',
+    '00.07-terms-and-glossary',
+    '00.08-confidentiality-statement',
+    '1-methodology-and-work-plan',
+    '1.1-project-management-methodology',
+    '1.2-project-work-plan',
+    '1.2.1-kick-off-plan-with-whole-team',
+    '1.2.2-implementation-management',
+    '1.2.2.1-risk-management-plan',
+    '1.2.2.2-quality-assurance',
+    '1.2.2.3-communication-plan',
+    '1.2.2.4-change-management-plan',
+    '1.2.2.5-uat-build-release-and-deployment-plan',
+    'z-blank',
+    'z-header',
+    'z-footer',
 ]
 
 RANGE_WORK_SPECS = {
-        # 'A1:F' : {'font-family': 'Times New Roman', 'font-size': 12, 'valign': 'top'}
-        # 'B13:D13' : {'merge': True, 'value': '06-job-history-USAID-FFBT', 'ws-name-to-link': '06-job-history-USAID-FFBT'}
-        'B4' : {'border-color': '#808080'},
-        'C4' : {'border-color': '#808080'},
-        'D4' : {'border-color': '#808080'},
+        'A1:I' : {'font-family': 'Times New Roman', 'font-size': 12, 'valign': 'top'}
 }
 
 def work_on_drive(g_service, g_sheet):
@@ -33,7 +76,7 @@ def work_on_drive(g_service, g_sheet):
     # target_file_id = g_service.copy_file(source_file_id=g_sheet.id(), target_folder_id='1Ol7pNkAloXNPxeU8j1_IMNAayUh7AvPf', target_file_title='BNDA__standards')
     # g_service.share(file_id=target_file_id, email='asif.hasan@gmail.com', perm_type='user', role='owner')
     # g_service.share(file_id='1J7VpUFfZiQi543f4zdGcX9mqX7HugvsmebtoECCgk_4', email='asif.hasan@gmail.com', perm_type='user', role='owner')
-    
+
     # END   drive file related
     pass
 
@@ -55,8 +98,9 @@ def work_on_gsheet(g_sheet):
 
 
 
-    # g_sheet.work_on_ranges(worksheet_name='00-layout-USAID-FFBT', range_work_specs=RANGE_WORK_SPECS)
-    # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
+    for worksheet_name in WORKSHEET_NAMES:
+        g_sheet.work_on_ranges(worksheet_name=worksheet_name, range_work_specs=RANGE_WORK_SPECS)
+        # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
 
     # for worksheet_name in WORKSHEET_NAMES:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
@@ -66,7 +110,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 
@@ -120,6 +164,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 60
-        if count % 50 == 0:
+        if count % 5 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)

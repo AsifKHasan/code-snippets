@@ -12,10 +12,17 @@ from helper.logger import *
 WORKSHEET_STRUCTURE = {
     '00-layout-USAID-FFBT': {
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
-            'B': {'size':  60}, 
-            'C': {'size': 340}, 
-            'D': {'size': 400}, 
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  60},
+            'C': {'size': 340},
+            'D': {'size': 400},
+        },
+        'rows': {
+            '5': {'size': 10},
+            '8': {'size':  10},
+            '11': {'size': 10},
+            '14': {'size': 10},
+            '17': {'size': 10},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
@@ -29,35 +36,93 @@ WORKSHEET_STRUCTURE = {
             'C4': {'value': "='01-personal'!D3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
             'D4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
 
-            'B5:D5': {'merge': True},
+            'B5:D5': {'merge': True, 'font-size': 4},
 
             'B6:D6': {'value': 'Summary of personnel experience', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
             'B7:D7': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'merge': True, 'note': '{"content": "free"}'},
 
-        },
+            'B8:D8': {'merge': True, 'font-size': 4},
 
+            'B9:D9': {'value': 'EDUCATION:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B10:D10': {'value': '03-education', 'ws-name-to-link': '03-education', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B11:D11': {'merge': True, 'font-size': 4},
+
+            'B12:D12': {'value': 'PROFESSIONAL EXPERIENCE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B13:D13': {'value': '06-job-history-USAID-FFBT', 'ws-name-to-link': '06-job-history-USAID-FFBT', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B14:D14': {'merge': True, 'font-size': 4},
+
+            'B15:D15': {'value': 'LANGUAGE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B16:D16': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'merge': True, 'note': '{"content": "free"}'},
+
+            'B17:D17': {'merge': True, 'font-size': 4},
+
+            'B18:D18': {'value': 'REFERENCES:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B19:D19': {'value': '16-references', 'ws-name-to-link': '16-references', 'merge': True, 'note': '{"content": "free"}'},
+        },
         'cell-empty-markers': [
             'B4:D4',
-        ], 
+        ],
     },
     '02-career-highlight': {
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
-            'B': {'size': 150}, 
-            'C': {'size':  30}, 
-            'D': {'size': 620}, 
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 150},
+            'C': {'size':  30},
+            'D': {'size': 620},
+        },
+        'ranges': {
+            'B3:D' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
+        },
+        'cell-empty-markers': [
+            'B3:D',
+        ],
+    },
+    '03-education': {
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'ranges': {
+            'B3:E3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
+            'B4:E' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
+        },
+        'cell-empty-markers': [
+            'B3:E',
+        ],
+    },
+    '06-job-history-USAID-FFBT': {
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
         },
     },
     '11-language-proficiency': {
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
-            'B': {'size': 100}, 
-            'C': {'size': 200}, 
-            'D': {'size': 200}, 
-            'E': {'size': 200}, 
-            'F': {'size': 100}, 
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 100},
+            'C': {'size': 200},
+            'D': {'size': 200},
+            'E': {'size': 200},
+            'F': {'size': 100},
         },
-    }
+    },
+    '16-references': {
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 150},
+            'C': {'size': 150},
+            'D': {'size': 150},
+            'E': {'size': 210},
+            'F': {'size': 140},
+        },
+        'ranges': {
+            'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
+            'B4:F6' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
+        },
+        'cell-empty-markers': [
+            'B3:F6',
+        ],
+    },
 }
 
 WORKSHEET_STRUCTURE2 = {
@@ -66,504 +131,504 @@ WORKSHEET_STRUCTURE2 = {
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.02.03-Functional-Specifications': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.03-Functional-Specifications-portal': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.04-Trading-Community-Stakeholder-Workbench': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.05.01-Customs-Workbench': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.05.02-CLPIA-Workbench': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.05.03-Port-Authority-Workbench': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.05.04-Bank-Workbench': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.03.05.05-Information-Workbench': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.04.04-Functional-Specifications-CLP': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.05.03-Functional-Specifications': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.06.01-Functional-Specification': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.07.07-Functional-Specifications': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.08.05-Functional-Specifications': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '03.09.01-Functional-Specifications-BI-DA': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '04.04-Functional-Specification-ARMS': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.01.05-Functional-Specifications-for-Manifest': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.02.03-Functional-Specifications-Module': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.03.01-Functional-Specifications-for-VDB': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.04.01-Functional-Specification-for-AEOs-Module': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.05.01-Functional-Specification-for-Case-Module': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.06.01-Functional-Specification-LaboratoryModule': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.07.01-Functional-Specifications-Examination': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '05.08.01-Functional-Specification-For-Bank-Guranan': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '06.01.02-Application-Architecture': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '06.01.04-Performance-Monitoring': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '06.01.05-Reports-or-Business-Intelligence': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '06.01.06-Deployment-Architecture': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '06.01.07-Non-Functional-Requirements': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:E2': {'value': 'content', 'weight': 'bold', 'merge': True},
         },
-    }, 
+    },
     '06.02.01-Technical-Infrastructure': {
         'num-columns': 5,
         'frozen-rows': 2,
         'review-notes': False,
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size':  60, 'valign': 'middle', 'wrap': True}, 
-            'C': {'size':  40, 'valign': 'middle', 'wrap': True}, 
-            'D': {'size': 550, 'valign': 'middle', 'wrap': True}, 
-            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size':  60, 'valign': 'middle', 'wrap': True},
+            'C': {'size':  40, 'valign': 'middle', 'wrap': True},
+            'D': {'size': 550, 'valign': 'middle', 'wrap': True},
+            'E': {'size': 150, 'halign': 'left', 'valign': 'middle', 'wrap': True},
         },
         'ranges': {
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
@@ -617,10 +682,10 @@ WORKSHEET_STRUCTURE1 = {
         'frozen-columns': 0,
 
         'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'B': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'C': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
-            'D': {'size': 400, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True}, 
+            'A': {'size': 100, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'B': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'C': {'size': 200, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
+            'D': {'size': 400, 'halign': 'left', 'valign': 'middle', 'font-family': 'Calibri', 'fomt-size': 10, 'weight': 'normal', 'wrap': True},
         },
 
         'review-notes': True,
@@ -707,7 +772,7 @@ WORKSHEET_STRUCTURE1 = {
             'B19:D21',
             'B23:D24',
             'B26:D27',
-        ], 
+        ],
     },
 }
 
@@ -718,11 +783,11 @@ def create_worksheets(g_sheet, worksheet_name_list):
     for ws_name in worksheet_name_list:
         if (ws_name in WORKSHEET_STRUCTURE):
             info(f"creating worksheet {ws_name}", nesting_level=1)
-          
-            worksheet_created = create_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])  
+
+            worksheet_created = create_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])
             if worksheet_created:
                 info(f"created  worksheet {ws_name}", nesting_level=1)
-            
+
             else:
                 info(f"worksheet {ws_name} already exists", nesting_level=1)
 
@@ -737,11 +802,11 @@ def format_worksheets(g_sheet, worksheet_name_list):
     for ws_name in worksheet_name_list:
         if (ws_name in WORKSHEET_STRUCTURE):
             info(f"formatting worksheet {ws_name}", nesting_level=1)
-          
-            worksheet_formatted = format_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])  
+
+            worksheet_formatted = format_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])
             if worksheet_formatted:
                 info(f"formatted  worksheet {ws_name}", nesting_level=1)
-            
+
             else:
                 info(f"worksheet {ws_name} could not be formatted", nesting_level=1)
 
@@ -811,10 +876,18 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
     # work on the columns - size, alignemnts, fonts and wrapping
     range_work_specs = {}
 
+    if 'rows' in worksheet_struct:
+        # requests for row resizing
+        row_resize_requests = worksheet.row_resize_request(row_specs=worksheet_struct['rows'])
+
+    else:
+        row_resize_requests = []
+
+
     if 'columns' in worksheet_struct:
         # requests for column resizing
         column_resize_requests = worksheet.column_resize_request(column_specs=worksheet_struct['columns'])
-    
+
         #  requests for column formatting
         for col_a1, work_spec in worksheet_struct['columns'].items():
             range_spec = f"{col_a1}:{col_a1}"
@@ -838,7 +911,7 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
 
 
     # finally update in batch
-    request_list = column_resize_requests + format_requests + conditional_format_requests
+    request_list = row_resize_requests + column_resize_requests + format_requests + conditional_format_requests
     if len(request_list) > 0:
         g_sheet.update_in_batch(request_list=request_list)
 
