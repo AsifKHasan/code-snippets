@@ -134,7 +134,7 @@ class GoogleSheet(object):
                 info(f"updated   .. {len(values)} ranges", nesting_level=2)
 
             if len(requests):
-                self.update_in_batch(request_list=values)
+                self.update_in_batch(request_list=requests)
                 info(f"formatted .. {len(requests)} ranges", nesting_level=2)
 
             info(f"worked on  .. {len(range_work_specs.keys())} ranges", nesting_level=1)

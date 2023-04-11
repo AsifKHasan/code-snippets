@@ -10,6 +10,27 @@ from helper.utils import *
 from helper.logger import *
 
 WORKSHEET_STRUCTURE = {
+    '02-career-highlight': {
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
+            'B': {'size': 150}, 
+            'C': {'size':  30}, 
+            'D': {'size': 620}, 
+        },
+    },
+    '11-language-proficiency': {
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
+            'B': {'size': 100}, 
+            'C': {'size': 200}, 
+            'D': {'size': 200}, 
+            'E': {'size': 200}, 
+            'F': {'size': 100}, 
+        },
+    }
+}
+
+WORKSHEET_STRUCTURE2 = {
     '03.01.01-Common-Functional-Specifications': {
         'num-columns': 5,
         'frozen-rows': 2,
