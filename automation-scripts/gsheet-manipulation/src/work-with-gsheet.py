@@ -15,7 +15,7 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
-    '11-language-proficiency'
+    '00-layout-USAID-FFBT'
 ]
 
 RANGE_WORK_SPECS = {
@@ -55,7 +55,7 @@ def work_on_gsheet(g_sheet):
 
 
 
-    g_sheet.work_on_ranges(worksheet_name='00-layout-USAID-FFBT', range_work_specs=RANGE_WORK_SPECS)
+    # g_sheet.work_on_ranges(worksheet_name='00-layout-USAID-FFBT', range_work_specs=RANGE_WORK_SPECS)
     # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
 
     # for worksheet_name in WORKSHEET_NAMES:
@@ -66,7 +66,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 

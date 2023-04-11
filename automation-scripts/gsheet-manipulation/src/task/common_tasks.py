@@ -10,6 +10,36 @@ from helper.utils import *
 from helper.logger import *
 
 WORKSHEET_STRUCTURE = {
+    '00-layout-USAID-FFBT': {
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
+            'B': {'size':  60}, 
+            'C': {'size': 340}, 
+            'D': {'size': 400}, 
+        },
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
+            'A2': {'value': 'review-notes', 'weight': 'bold'},
+            'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True},
+
+            'B3:C3': {'value': 'Name:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
+            'D3': {'value': 'Proposed Position:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+
+            'B4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'C4': {'value': "='01-personal'!D3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
+            'D4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+
+            'B5:D5': {'merge': True},
+
+            'B6:D6': {'value': 'Summary of personnel experience', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B7:D7': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'merge': True, 'note': '{"content": "free"}'},
+
+        },
+
+        'cell-empty-markers': [
+            'B4:D4',
+        ], 
+    },
     '02-career-highlight': {
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True}, 
