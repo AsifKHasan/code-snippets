@@ -105,6 +105,13 @@ WORKSHEET_STRUCTURE = {
             'E': {'size': 200},
             'F': {'size': 100},
         },
+        'ranges': {
+            'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
+            'B4:F' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
+        },
+        'cell-empty-markers': [
+            'B3:F',
+        ],
     },
     '16-references': {
         'columns': {

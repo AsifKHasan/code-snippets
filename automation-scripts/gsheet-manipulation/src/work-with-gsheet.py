@@ -15,6 +15,14 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
+    # pds
+    '00-layout-USAID-FFBT',
+    '06-description',
+    '08-technology',
+    '11-complexity',
+    '03-contact',
+
+    # resume
     # '00-layout-USAID-FFBT',
     # '02-career-highlight',
     # '03-education',
@@ -45,24 +53,24 @@ WORKSHEET_NAMES = [
     # 'z-footer',
 
     # NBR-USAID-FFBT-ARDS__volume-1__technical-proposal
-    '00.01-cover-page',
-    '00.02-technical-proposal-submission-letter',
-    '00.06-executive-summary',
-    '00.07-terms-and-glossary',
-    '00.08-confidentiality-statement',
-    '1-methodology-and-work-plan',
-    '1.1-project-management-methodology',
-    '1.2-project-work-plan',
-    '1.2.1-kick-off-plan-with-whole-team',
-    '1.2.2-implementation-management',
-    '1.2.2.1-risk-management-plan',
-    '1.2.2.2-quality-assurance',
-    '1.2.2.3-communication-plan',
-    '1.2.2.4-change-management-plan',
-    '1.2.2.5-uat-build-release-and-deployment-plan',
-    'z-blank',
-    'z-header',
-    'z-footer',
+    # '00.01-cover-page',
+    # '00.02-technical-proposal-submission-letter',
+    # '00.06-executive-summary',
+    # '00.07-terms-and-glossary',
+    # '00.08-confidentiality-statement',
+    # '1-methodology-and-work-plan',
+    # '1.1-project-management-methodology',
+    # '1.2-project-work-plan',
+    # '1.2.1-kick-off-plan-with-whole-team',
+    # '1.2.2-implementation-management',
+    # '1.2.2.1-risk-management-plan',
+    # '1.2.2.2-quality-assurance',
+    # '1.2.2.3-communication-plan',
+    # '1.2.2.4-change-management-plan',
+    # '1.2.2.5-uat-build-release-and-deployment-plan',
+    # 'z-blank',
+    # 'z-header',
+    # 'z-footer',
 ]
 
 RANGE_WORK_SPECS = {
@@ -89,7 +97,7 @@ def work_on_gsheet(g_sheet):
     # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B13')
     # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B16')
     # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B19')
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
     #     g_sheet.remove_worksheet(worksheet_name=ws_name)
@@ -101,10 +109,12 @@ def work_on_gsheet(g_sheet):
     for worksheet_name in WORKSHEET_NAMES:
         g_sheet.work_on_ranges(worksheet_name=worksheet_name, range_work_specs=RANGE_WORK_SPECS)
         # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
+        pass
 
-    # for worksheet_name in WORKSHEET_NAMES:
+    for worksheet_name in WORKSHEET_NAMES:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
     #     print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+        pass
 
 
     # BEGIN common tasks
@@ -164,6 +174,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 60
-        if count % 5 == 0:
+        if count % 20 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)
