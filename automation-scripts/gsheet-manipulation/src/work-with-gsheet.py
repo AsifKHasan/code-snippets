@@ -92,11 +92,7 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B7')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B10')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B13')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B16')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-USAID-FFBT', range_spec_for_cells_to_link='B19')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F48')
     g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
@@ -107,7 +103,7 @@ def work_on_gsheet(g_sheet):
 
 
     for worksheet_name in WORKSHEET_NAMES:
-        g_sheet.work_on_ranges(worksheet_name=worksheet_name, range_work_specs=RANGE_WORK_SPECS)
+        # g_sheet.work_on_ranges(worksheet_name=worksheet_name, range_work_specs=RANGE_WORK_SPECS)
         # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
         pass
 
