@@ -15,12 +15,35 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 WORKSHEET_NAMES = [
+
+    # 'B.02.01-user-registration-management',
+    # 'B.02.02-user-dashboard',
+    # 'B.02.03-appeal-application-management',
+    # 'B.02.04-field-office-management',
+    # 'B.02.05-appeal-operation-management',
+    # 'B.02.06-report-management',
+    # 'B.02.07-monitoring-management',
+    # 'B.02.08-security-management',
+    # 'B.02.09-system-log-management',
+    # 'B.02.10-backup-management',
+    # 'B.02.11-restore-archive-management',
+    'B.03.01-licensing-intellectual-property',
+    'B.03.02-system-architecture',
+    'B.03.03-interoperability',
+    'B.03.04-performance',
+    'B.03.05-flexibility',
+    'B.03.06-user-interface-ergonomics',
+    'B.03.07-maintenance',
+    'B.03.08-scalability',
+    'B.03.09-information-security',
+    'B.03.10-resilience-continuity',
+
     # pds
-    '00-layout-USAID-FFBT',
-    '06-description',
-    '08-technology',
-    '11-complexity',
-    '03-contact',
+    # '00-layout-USAID-FFBT',
+    # '06-description',
+    # '08-technology',
+    # '11-complexity',
+    # '03-contact',
 
     # resume
     # '00-layout-USAID-FFBT',
@@ -92,8 +115,8 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F38:F65')
-    g_sheet.order_worksheets()
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F38:F65')
+    # g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
     #     g_sheet.remove_worksheet(worksheet_name=ws_name)
@@ -116,7 +139,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 
