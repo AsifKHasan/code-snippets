@@ -16,24 +16,24 @@ from task.common_tasks import *
 
 WORKSHEET_NAMES = [
 
-    'B.01-proposed-architecture',
-    'B.01.01-containerized-architecture',
-    'B.01.02-modular-architecture',
-    'B.01.03-safety-redundancy',
-    'B.01.04-interoperability',
-    'B.01.05-performance',
-    'B.01.06-user-interface-experience',
-    'B.01.07-ease-of-maintenance',
-    'B.01.08-architectural-scalability',
-    'B.01.09-information-security',
-    'B.01.10-business-continuity',
-    'B.01.11-state-integrity',
-    'B.02-proposed-technology-stack',
-    'B.03-deployment-and-delivery',
-    'B.03.01-environment-deployment-flow',
-    'B.03.02-technical-deliverables-list',
-    'B.03.03-usage-model-licensing',
-    'B.04-warranty-support',
+    # 'B.01-proposed-architecture',
+    # 'B.01.01-containerized-architecture',
+    # 'B.01.02-modular-architecture',
+    # 'B.01.03-safety-redundancy',
+    # 'B.01.04-interoperability',
+    # 'B.01.05-performance',
+    # 'B.01.06-user-interface-experience',
+    # 'B.01.07-ease-of-maintenance',
+    # 'B.01.08-architectural-scalability',
+    # 'B.01.09-information-security',
+    # 'B.01.10-business-continuity',
+    # 'B.01.11-state-integrity',
+    # 'B.02-proposed-technology-stack',
+    # 'B.03-deployment-and-delivery',
+    # 'B.03.01-environment-deployment-flow',
+    # 'B.03.02-technical-deliverables-list',
+    # 'B.03.03-usage-model-licensing',
+    # 'B.04-warranty-support',
 
     # pds
     # '00-layout-USAID-FFBT',
@@ -43,10 +43,10 @@ WORKSHEET_NAMES = [
     # '03-contact',
 
     # resume
-    # '00-layout-USAID-FFBT',
+    '00-layout-USAID-FFBT',
     # '02-career-highlight',
     # '03-education',
-    # '06-job-history-USAID-FFBT',
+    '06-job-history-USAID-FFBT',
     # '11-language-proficiency',
     # '16-references',
 
@@ -112,7 +112,10 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F41:F58')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F8')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F13:F14')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O3:O')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
     g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
@@ -190,6 +193,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 60
-        if count % 20 == 0:
+        if count % 10 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)
