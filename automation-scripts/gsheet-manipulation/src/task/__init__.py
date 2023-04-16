@@ -1,4 +1,6 @@
 # FFBT structure
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+
 WORKSHEET_STRUCTURE_FFBT = {
     'C.02.01-user-registration-management' : {
         'num-columns': 6,

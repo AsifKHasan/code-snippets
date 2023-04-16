@@ -10,8 +10,6 @@ from task import *
 from helper.utils import *
 from helper.logger import *
 
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
-
 ''' create worksheets according to spec defined in WORKSHEET_STRUCTURE
 '''
 def create_worksheets(g_sheet, worksheet_name_list):

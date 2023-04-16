@@ -43,12 +43,12 @@ WORKSHEET_NAMES = [
     # '03-contact',
 
     # resume
-    '00-layout-USAID-FFBT',
-    '02-career-highlight',
-    '03-education',
-    '06-job-history-USAID-FFBT',
-    '11-language-proficiency',
-    '16-references',
+    # '00-layout-USAID-FFBT',
+    # '02-career-highlight',
+    # '03-education',
+    # '06-job-history-USAID-FFBT',
+    # '11-language-proficiency',
+    # '16-references',
 
     # NBR-USAID-FFBT-APS__volume-1__technical-proposal
     # '00.01-cover-page',
@@ -119,7 +119,7 @@ def work_on_gsheet(g_sheet):
     # g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
-    #     g_sheet.remove_worksheet(worksheet_name=ws_name)
+        # g_sheet.remove_worksheet(worksheet_name=ws_name)
 
     # g_sheet.rename_worksheet(worksheet_name='06-job-history-ffbt', new_worksheet_name='06-job-history-USAID-FFBT')
 
@@ -131,15 +131,15 @@ def work_on_gsheet(g_sheet):
         pass
 
     for worksheet_name in WORKSHEET_NAMES:
-    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
-    #     print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
+        # print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
         pass
 
 
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 
