@@ -44,11 +44,11 @@ WORKSHEET_NAMES = [
 
     # resume
     '00-layout-USAID-FFBT',
-    # '02-career-highlight',
-    # '03-education',
+    '02-career-highlight',
+    '03-education',
     '06-job-history-USAID-FFBT',
-    # '11-language-proficiency',
-    # '16-references',
+    '11-language-proficiency',
+    '16-references',
 
     # NBR-USAID-FFBT-APS__volume-1__technical-proposal
     # '00.01-cover-page',
@@ -112,11 +112,11 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F8')
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F13:F14')
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O3:O')
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
-    g_sheet.order_worksheets()
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F8')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F13:F14')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O3:O')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
+    # g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
     #     g_sheet.remove_worksheet(worksheet_name=ws_name)
@@ -139,7 +139,7 @@ def work_on_gsheet(g_sheet):
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # END   common tasks
 
 

@@ -270,11 +270,11 @@ WORKSHEET_STRUCTURE_RESUME = {
     '16-references': {
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 150},
-            'C': {'size': 150},
-            'D': {'size': 150},
-            'E': {'size': 210},
-            'F': {'size': 140},
+            'B': {'size': 140, 'halign': 'left', 'wrap': True},
+            'C': {'size': 150, 'halign': 'left', 'wrap': True},
+            'D': {'size': 190, 'halign': 'left', 'wrap': True},
+            'E': {'size': 190, 'halign': 'left', 'wrap': True},
+            'F': {'size': 130, 'halign': 'left', 'wrap': True},
         },
         'ranges': {
             'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
