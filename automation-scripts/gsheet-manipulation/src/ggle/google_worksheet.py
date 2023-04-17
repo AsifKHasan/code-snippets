@@ -50,6 +50,21 @@ class GoogleWorksheet(object):
 
 
 
+    ''' copy worksheet to another gsheet
+    '''
+    def copy_worksheet_to_gsheet(self, destination_gsheet):
+        try:
+            info(f"copying worksheet        {self.gspread_worksheet.title} to {destination_gsheet.title}")
+            response = self.gspread_worksheet.copy_to(destination_gsheet.id)
+            # rename the newly copied worksheet
+            if response:
+                destination_gsheet.rename_worksheet(worksheet_name=response['title'], new_worksheet_name=self.gspread_worksheet.title)
+
+        except:
+            warn(f"could not copy worksheet {self.gspread_worksheet.title} to {destination_gsheet.title}")
+
+
+
     ''' bulk create multiple worksheets by duplicating this worksheet
     '''
     def duplicate_worksheet(self, new_worksheet_names):
@@ -67,13 +82,14 @@ class GoogleWorksheet(object):
     ''' rename a worksheet
     '''
     def rename_worksheet(self, new_worksheet_name):
+        old_worksheet_name = self.gspread_worksheet.title
         try:
-            info(f"renaming worksheet {self.gspread_worksheet.title} to {new_worksheet_name}")
+            info(f"renaming worksheet [{old_worksheet_name}] to [{new_worksheet_name}]")
             self.gspread_worksheet.update_title(new_worksheet_name)
-            info(f"renamed  worksheet {self.gspread_worksheet.title} to {new_worksheet_name}")
+            info(f"renamed  worksheet [{old_worksheet_name}] to [{new_worksheet_name}]")
 
         except:
-            warn(f"worksheet {self.gspread_worksheet.title} could not be renamed to {new_worksheet_name}")
+            warn(f"worksheet [{old_worksheet_name}] could not be renamed to [{new_worksheet_name}]")
 
 
 

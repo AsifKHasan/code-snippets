@@ -25,12 +25,19 @@ class GoogleSheet(object):
         self.title = self.gspread_sheet.title
 
 
+    ''' copy worksheet to another gsheet
+    '''
+    def copy_worksheet_to_gsheet(self, destination_gsheet, worksheet_name_to_copy):
+        worksheet_to_copy = self.worksheet_by_name(worksheet_name_to_copy)
+        if worksheet_to_copy:
+            worksheet_to_copy.copy_worksheet_to_gsheet(destination_gsheet)
+
 
     ''' update spreadsheet in batch
     '''
     def update_in_batch(self, request_list):
         try:
-            self.gspread_sheet.batch_update(body={'requests': request_list})    
+            self.gspread_sheet.batch_update(body={'requests': request_list})
         except Exception as e:
             print(e)
 
@@ -42,7 +49,7 @@ class GoogleSheet(object):
         self.gspread_sheet.share(email_address=email, perm_type=perm_type, role=role, notify=False)
 
 
-    
+
     ''' get worksheet by name
     '''
     def worksheet_by_name(self, worksheet_name, suppress_log=False):
@@ -53,7 +60,7 @@ class GoogleSheet(object):
         except:
             if not suppress_log:
                 warn(f"worksheet {worksheet_name} not found", nesting_level=1)
-            
+
             return None
 
 
@@ -98,10 +105,10 @@ class GoogleSheet(object):
 
             except:
                 info(f"worksheet {worksheet_name} could not be removed", nesting_level=1)
-        
- 
 
-    ''' bulk create multiple worksheets by duplicating a given worksheet 
+
+
+    ''' bulk create multiple worksheets by duplicating a given worksheet
     '''
     def duplicate_worksheet(self, worksheet_name_to_duplicate, new_worksheet_names):
         worksheet_to_duplicate = self.worksheet_by_name(worksheet_name_to_duplicate)
