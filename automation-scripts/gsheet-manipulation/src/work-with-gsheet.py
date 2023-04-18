@@ -15,87 +15,72 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 DESTINATION_GSHEETS = [
-    'NBR-USAID-FFBT-APS__volume-1__technical-proposal__spectrum',
+    'NBR-USAID-FFBT-ARDS__volume-1__technical-proposal__spectrum',
 ]
 
 WORKSHEET_NAMES = [
-    'z-blank',
-
-    # 'B.01-proposed-architecture',
-    # 'B.01.01-containerized-architecture',
-    # 'B.01.02-modular-architecture',
-    # 'B.01.03-safety-redundancy',
-    # 'B.01.04-interoperability',
-    # 'B.01.05-performance',
-    # 'B.01.06-user-interface-experience',
-    # 'B.01.07-ease-of-maintenance',
-    # 'B.01.08-architectural-scalability',
-    # 'B.01.09-information-security',
-    # 'B.01.10-business-continuity',
-    # 'B.01.11-state-integrity',
-    # 'B.02-proposed-technology-stack',
-    # 'B.03-deployment-and-delivery',
-    # 'B.03.01-environment-deployment-flow',
-    # 'B.03.02-technical-deliverables-list',
-    # 'B.03.03-usage-model-licensing',
-    # 'B.04-warranty-support',
-
-    # pds
-    # '00-layout-USAID-FFBT',
-    # '06-description',
-    # '08-technology',
-    # '11-complexity',
-    # '03-contact',
-
-    # resume
-    # '00-layout-USAID-FFBT',
-    # '02-career-highlight',
-    # '03-education',
-    # '06-job-history-USAID-FFBT',
-    # '11-language-proficiency',
-    # '16-references',
-
-    # NBR-USAID-FFBT-APS__volume-1__technical-proposal
-    # '00.01-cover-page',
-    # '00.02-technical-proposal-submission-letter',
-    # '00.06-executive-summary',
-    # '00.07-terms-and-glossary',
-    # '00.08-confidentiality-statement',
-    # '1-methodology-and-work-plan',
-    # '1.1-project-management-methodology',
-    # '1.2-project-work-plan',
-    # '1.2.1-kick-off-plan-with-whole-team',
-    # '1.2.2-implementation-management',
-    # '1.2.2.1-risk-management-plan',
-    # '1.2.2.2-quality-assurance',
-    # '1.2.2.3-communication-plan',
-    # '1.2.2.4-change-management-plan',
-    # '1.2.2.5-uat-build-release-and-deployment-plan',
-    # '2.1-nrbc-agent-banking',
-    # '2.2-nrbc-e-kyc',
     # 'z-blank',
-    # 'z-header',
-    # 'z-footer',
 
-    # NBR-USAID-FFBT-ARDS__volume-1__technical-proposal
-    # '00.01-cover-page',
-    # '00.02-technical-proposal-submission-letter',
-    # '00.06-executive-summary',
-    # '00.07-terms-and-glossary',
-    # '00.08-confidentiality-statement',
-    # '1-methodology-and-work-plan',
-    # '1.1-project-management-methodology',
-    # '1.2-project-work-plan',
-    # '1.2.1-kick-off-plan-with-whole-team',
-    # '1.2.2-implementation-management',
-    # '1.2.2.1-risk-management-plan',
-    # '1.2.2.2-quality-assurance',
-    # '1.2.2.3-communication-plan',
-    # '1.2.2.4-change-management-plan',
-    # '1.2.2.5-uat-build-release-and-deployment-plan',
-    # 'z-blank',
-    # 'z-header',
-    # 'z-footer',
+    '01-methodology-and-work-plan',
+    '01.01-project-work-plan',
+    '01.01.01-kick-off-plan-with-whole-team',
+    '01.01.02-implementation-management',
+    '01.01.03-risk-management-plan',
+    '01.01.04-quality-assurance',
+    '01.01.05-communication-plan',
+    '01.01.06-change-management-plan',
+    '01.01.07-uat-build-release-and-deployment-plan',
+
+    'A-sow-understanding',
+    'B-proposed-solution',
+    'B.01-proposed-architecture',
+    'B.01.01-containerized-architecture',
+    'B.01.02-modular-architecture',
+    'B.01.03-safety-redundancy',
+    'B.01.04-interoperability',
+    'B.01.05-performance',
+    'B.01.06-user-interface-experience',
+    'B.01.07-ease-of-maintenance',
+    'B.01.08-architectural-scalability',
+    'B.01.09-information-security',
+    'B.01.10-business-continuity',
+    'B.01.11-state-integrity',
+    'B.02-proposed-technology-stack',
+    'B.03-deployment-and-delivery',
+    'B.03.01-environment-deployment-flow',
+    'B.03.02-technical-deliverables-list',
+    'B.03.03-usage-model-licensing',
+    'B.04-warranty-support',
+    'C-compliance-commentary',
+    'C.01-general-functional-compliance',
+    'C.02-functional-compliance',
+
+    # 'C.02.01-user-registration-management',
+    # 'C.02.02-user-dashboard',
+    # 'C.02.03-appeal-application-management',
+    # 'C.02.04-field-office-management',
+    # 'C.02.05-appeal-operation-management',
+    # 'C.02.06-report-management',
+    # 'C.02.07-monitoring-management',
+    # 'C.02.08-security-management',
+    # 'C.02.09-system-log-management',
+    # 'C.02.10-backup-management',
+    # 'C.02.11-restore-archive-management',
+
+    'C.03-non-functional-compliance',
+    'C.03.01-licensing-intellectual-property',
+    'C.03.02-system-architecture',
+    'C.03.03-interoperability',
+    'C.03.04-performance',
+    'C.03.05-flexibility',
+    'C.03.06-user-interface-ergonomics',
+    'C.03.07-maintenance',
+    'C.03.08-scalability',
+    'C.03.09-information-security',
+    'C.03.10-resilience-continuity',
+    'C.04-warranty-support-conditions',
+    'C.05-deliverables-list',
+
 ]
 
 RANGE_WORK_SPECS = {
@@ -117,11 +102,12 @@ def work_on_drive(g_service, g_sheet):
 def work_on_gsheet(g_sheet, g_service):
 
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F8')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F13:F14')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O3:O')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
-    # g_sheet.order_worksheets()
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F21')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F28:F28')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F41:F')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O3:O')
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
+    g_sheet.order_worksheets()
 
     # for ws_name in WORKSHEET_NAMES:
         # g_sheet.remove_worksheet(worksheet_name=ws_name)
@@ -132,7 +118,8 @@ def work_on_gsheet(g_sheet, g_service):
     destination_gsheet = g_service.open(DESTINATION_GSHEETS[0])
     if destination_gsheet:
         for worksheet_name in WORKSHEET_NAMES:
-            g_sheet.copy_worksheet_to_gsheet(destination_gsheet, worksheet_name_to_copy=worksheet_name)
+            # g_sheet.copy_worksheet_to_gsheet(destination_gsheet, worksheet_name_to_copy=worksheet_name)
+            pass
 
 
     for worksheet_name in WORKSHEET_NAMES:

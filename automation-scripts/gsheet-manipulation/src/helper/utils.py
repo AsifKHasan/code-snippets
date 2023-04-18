@@ -12,14 +12,6 @@ LETTER_TO_COLUMN = {
 }
 
 
-''' sheet copyTo builder
-'''
-def build_copy_sheet_to_request(destination_gsheet_id):
-    return {
-        'destinationSpreadsheetId': destination_gsheet_id
-    }
-
-
 ''' addSheetRequest builder
 '''
 def build_add_sheet_request(worksheet_name, sheet_index, num_rows, num_cols, frozen_rows, frozen_cols):
