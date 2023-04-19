@@ -15,7 +15,8 @@ class GoogleWorksheet(object):
 
     ''' constructor
     '''
-    def __init__(self, gspread_worksheet, gsheet):
+    def __init__(self, google_service, gspread_worksheet, gsheet):
+        self.service = google_service
         self.gspread_worksheet = gspread_worksheet
         self.gsheet = gsheet
         self.id = self.gspread_worksheet.id
@@ -149,6 +150,32 @@ class GoogleWorksheet(object):
 
 
 
+    ''' link cells to drive files where cells values are names of drive files
+    '''
+    def link_cells_to_drive_files(self, range_spec_for_cells_to_link):
+        requests = self.cell_to_drive_file_link_request(range_spec_for_cells_to_link=range_spec_for_cells_to_link)
+        self.update_values_in_batch(requests)
+
+
+
+    ''' link cells to drive files request where cells values are names of drive files
+    '''
+    def cell_to_drive_file_link_request(self, range_spec_for_cells_to_link):
+        range_to_work_on = self.gspread_worksheet.range(range_spec_for_cells_to_link)
+        range_work_specs = {}
+        for cell in range_to_work_on:
+            if cell.value == '':
+                warn(f"cell {cell.address:>5} is empty .. skipping")
+            else:
+                info(f"cell {cell.address:>5} to be linked with drive file [{cell.value}]")
+                range_work_specs[cell.address] = {'value': cell.value, 'file-name-to-link': cell.value}
+
+        requests, _ = self.range_work_request(range_work_specs=range_work_specs)
+
+        return requests
+
+
+
     ''' link cells to worksheets where cells values are names of worksheets
     '''
     def link_cells_to_worksheet(self, range_spec_for_cells_to_link, worksheet_dict={}):
@@ -261,7 +288,7 @@ class GoogleWorksheet(object):
         for range_spec, work_spec in range_work_specs.items():
             # value
             if 'value' in work_spec:
-                values.append({'range': range_spec, 'values': [[build_value_from_work_spec(work_spec=work_spec, worksheet_dict=worksheet_dict)]]})
+                values.append({'range': range_spec, 'values': [[build_value_from_work_spec(work_spec=work_spec, worksheet_dict=worksheet_dict, google_service=self.service)]]})
 
             # merge
             merge = False

@@ -5,13 +5,6 @@ import re
 from helper.logger import *
 
 
-COLUMN_TO_LETTER = ['-', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-LETTER_TO_COLUMN = {
-    'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16,
-    'Q': 17, 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26
-}
-
-
 ''' addSheetRequest builder
 '''
 def build_add_sheet_request(worksheet_name, sheet_index, num_rows, num_cols, frozen_rows, frozen_cols):
@@ -274,7 +267,7 @@ def build_no_data_validation_rule(range):
 
 ''' gets the value from workspec
 '''
-def build_value_from_work_spec(work_spec, worksheet_dict={}):
+def build_value_from_work_spec(work_spec, worksheet_dict={}, google_service=None):
     value = ''
     if 'value' in work_spec:
         value = work_spec['value']
@@ -287,6 +280,16 @@ def build_value_from_work_spec(work_spec, worksheet_dict={}):
                 value = f'=HYPERLINK("#gid={worksheet_dict[work_spec["ws-name-to-link"]]}", "{value}")'.lstrip("'")
             else:
                 warn(f".... No Worksheet named {work_spec['ws-name-to-link']}")
+
+        # it may be hyperlink to another drive file
+        elif 'file-name-to-link' in work_spec:
+            # we need the id of the drive file
+            drive_file = google_service.get_drive_file(drive_file_name=work_spec['file-name-to-link'])
+            if drive_file:
+                print(drive_file)
+                # value = f'=HYPERLINK("{drive_file.id}", "{value}")'.lstrip("'")
+            else:
+                warn(f".... No Drive File named {work_spec['file-name-to-link']}")
 
     return value
 

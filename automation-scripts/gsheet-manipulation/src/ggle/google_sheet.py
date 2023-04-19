@@ -55,7 +55,7 @@ class GoogleSheet(object):
     def worksheet_by_name(self, worksheet_name, suppress_log=False):
         try:
             ws = self.gspread_sheet.worksheet(worksheet_name)
-            return GoogleWorksheet(gspread_worksheet=ws, gsheet=self)
+            return GoogleWorksheet(google_service=self.service, gspread_worksheet=ws, gsheet=self)
 
         except:
             if not suppress_log:
@@ -114,6 +114,15 @@ class GoogleSheet(object):
         worksheet_to_duplicate = self.worksheet_by_name(worksheet_name_to_duplicate)
         if worksheet_to_duplicate:
             worksheet_to_duplicate.duplicate_worksheet(new_worksheet_names)
+
+
+
+    ''' link cells of a worksheet to drive files where cells values are names of drive files
+    '''
+    def link_cells_to_drive_files(self, worksheet_name, range_spec_for_cells_to_link):
+        worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
+        if worksheet_to_work_on:
+            worksheet_to_work_on.link_cells_to_drive_files(range_spec_for_cells_to_link=range_spec_for_cells_to_link)
 
 
 

@@ -5,6 +5,7 @@ import gspread
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from apiclient import errors
+from googleapiclient.errors import HttpError
 
 from ggle.google_sheet import GoogleSheet
 
@@ -51,6 +52,32 @@ class GoogleService(object):
         if gspread_sheet:
             return GoogleSheet(google_service=self, gspread_sheet=gspread_sheet)
         else:
+            return None
+
+
+    ''' get a drive file
+    '''
+    def get_drive_file(self, drive_file_name):
+        try:
+            files = []
+            page_token = None
+            while True:
+                q = f"name = '{drive_file_name}'"
+                response = self.drive_service.files().list(q=q,
+                                                spaces='drive',
+                                                fields='nextPageToken, files(id, name)',
+                                                pageToken=page_token).execute()
+
+                files.extend(response.get('files', []))
+                page_token = response.get('nextPageToken', None)
+                if page_token is None:
+                    break
+
+            if len(files) > 0:
+                return files[0]
+
+        except HttpError as error:
+            print(f"An error occurred: {error}")
             return None
 
 
