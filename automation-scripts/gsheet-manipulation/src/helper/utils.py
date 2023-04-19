@@ -286,8 +286,8 @@ def build_value_from_work_spec(work_spec, worksheet_dict={}, google_service=None
             # we need the id of the drive file
             drive_file = google_service.get_drive_file(drive_file_name=work_spec['file-name-to-link'])
             if drive_file:
-                print(drive_file)
-                # value = f'=HYPERLINK("{drive_file.id}", "{value}")'.lstrip("'")
+                # print(drive_file)
+                value = f'=HYPERLINK("{drive_file["webViewLink"]}", "{value}")'.lstrip("'")
             else:
                 warn(f".... No Drive File named {work_spec['file-name-to-link']}")
 

@@ -65,7 +65,7 @@ class GoogleService(object):
                 q = f"name = '{drive_file_name}'"
                 response = self.drive_service.files().list(q=q,
                                                 spaces='drive',
-                                                fields='nextPageToken, files(id, name)',
+                                                fields='nextPageToken, files(id, name, webViewLink)',
                                                 pageToken=page_token).execute()
 
                 files.extend(response.get('files', []))

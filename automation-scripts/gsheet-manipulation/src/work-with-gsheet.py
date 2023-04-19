@@ -95,14 +95,15 @@ def work_on_gsheet(g_sheet, g_service):
 
 
     # cell linking and ordering
-    g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F8')
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F8:F14')
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F24:F26')
 
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F21')
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F28:F28')
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F41:F')
 
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O3:O')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R3:R')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O4:O')
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R4:R')
     # g_sheet.order_worksheets()
 
 
