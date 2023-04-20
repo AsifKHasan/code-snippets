@@ -7,6 +7,7 @@ from gspread_formatting import *
 
 from helper.utils import *
 from helper.logger import *
+from pprint import pprint
 
 
 ''' Google worksheet wrapper
@@ -232,15 +233,16 @@ class GoogleWorksheet(object):
         # for coumns B to end
         range_work_specs = {}
         requests = []
-        for col_num in range(1, self.col_count):
+        for col_num in range(1, self.col_count()):
             cell_a1 = f"{column_to_letter(col_num + 1)}1"
-            column_width = column_sizes[col_num]
-            range_work_specs[cell_a1] = {'value': column_width, 'halign': 'left'}
+            column_width = column_sizes[self.gspread_worksheet.title][col_num]
+            range_work_specs[cell_a1] = {'value': f"'{column_width}", 'halign': 'left'}
 
             reqs, _ = self.range_work_request(range_work_specs=range_work_specs)
             requests = requests + reqs
 
-        # self.update_values_in_batch(requests)
+        # pprint(range_work_specs)
+        self.update_values_in_batch(requests)
 
 
 

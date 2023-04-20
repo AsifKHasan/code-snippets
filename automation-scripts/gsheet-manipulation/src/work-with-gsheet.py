@@ -20,7 +20,7 @@ DESTINATION_GSHEET_NAMES = [
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
-    '00.01-coverpage',
+    # '00.01-coverpage',
     # '00.02-forwarding letter',
     # '00.03-executive-summary',
     # '00.04-submission-guide',
@@ -37,8 +37,9 @@ WORKSHEET_NAMES = [
     # '06-staff-skill',
     # '07-financial-capacity',
     # '08-litigation-history',
-    # 'A-resource-resume',
-    # 'B-pds-wcc',
+    'A-assignment-understaning',
+    'B-resource-resume',
+    'C-pds-wcc',
     # 'z-blank',
     # 'z-footer',
     # 'z-header',

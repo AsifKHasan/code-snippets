@@ -9,7 +9,7 @@ from ggle.google_worksheet import GoogleWorksheet
 
 from helper.utils import *
 from helper.logger import *
-import pprint
+from pprint import pprint
 
 
 ''' Google sheet wrapper
@@ -28,9 +28,14 @@ class GoogleSheet(object):
     ''' get column sizes
     '''
     def get_column_sizes(self):
-        request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, includeGridData=False)
+        fields = 'sheets(properties.title,data(columnMetadata(pixelSize)))'
+        request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, includeGridData=True, fields=fields)
         response = request.execute()
-        print(response)
+        # print(response)
+        # pprint(response['sheets'][0]['data'][0]['columnMetadata'])
+
+        column_sizes = {sheet['properties']['title']: [ pixel_size['pixelSize'] for pixel_size in sheet['data'][0]['columnMetadata'] ] for sheet in response['sheets']}
+        # print(column_sizes)
 
         return column_sizes
 
