@@ -15,25 +15,33 @@ from task.common_tasks import *
 # from task.acas_tasks import *
 
 # list of gsheets which are targets for work like copy_to
-DESTINATION_GSHEETS = [
+DESTINATION_GSHEET_NAMES = [
 ]
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
     '00.01-coverpage',
-    '00.02-forwarding-letter',
-    '00.03-executive-summary',
-    '00.03-submission-guide',
-
-    '01-legal-docs-certificates',
-    '00-similar-assignments',
-    '01-infrastructure-project-summary',
-    '02-software-project-summary',
-    '03-financial-summary',
-    'z-blank',
-    'z-footer',
-    'z-header',
-
+    # '00.02-forwarding letter',
+    # '00.03-executive-summary',
+    # '00.04-submission-guide',
+    # '01-registration-certificates',
+    # '02-legal-docs',
+    # '03-profile-brochure',
+    # '03.01-organogram-spectrum',
+    # '03.02-management-personnel',
+    # '03.03-ict-personnel',
+    # '04-similar-assignments',
+    # '04.01-infrastructure-project-summary',
+    # '04.02-software-project-summary',
+    # '05-similar-service-experience',
+    # '06-staff-skill',
+    # '07-financial-capacity',
+    # '08-litigation-history',
+    # 'A-resource-resume',
+    # 'B-pds-wcc',
+    # 'z-blank',
+    # 'z-footer',
+    # 'z-header',
 ]
 
 # work specs for applying on a list of worksheets
@@ -64,8 +72,7 @@ def work_on_gsheet(g_sheet, g_service):
 
 
     # worksheet removal
-    # for ws_name in WORKSHEET_NAMES:
-        # g_sheet.remove_worksheet(worksheet_name=ws_name)
+    # g_sheet.remove_worksheets(worksheet_names_to_remove=WORKSHEET_NAMES)
 
 
     # worksheet renaming
@@ -75,37 +82,36 @@ def work_on_gsheet(g_sheet, g_service):
     # worksheet creation, formatting and related tasks
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+
+    # trailing blank row removal, review-notes, column size in row 1
     # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # g_sheet.remove_trailing_blank_rows(worksheet_names=WORKSHEET_NAMES)
+    g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
 
 
-    # work on ranges and etc.
+    # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
+
+
     # for worksheet_name in WORKSHEET_NAMES:
-        # g_sheet.remove_trailing_blank_rows(worksheet_name='-toc-new')
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
         # print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
-        # pass
 
 
     # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F6:F')
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F24:F26')
-
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F21')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F28:F28')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F41:F')
-
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O4:O')
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R4:R')
-    g_sheet.order_worksheets()
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F10:F11', 'F14:F16'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F9', 'F18:F21'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O4:O', 'R4:R'])
+    # g_sheet.order_worksheets()
 
 
     # copy worksheets to another gsheet
-    # destination_gsheet = g_service.open(DESTINATION_GSHEETS[0])
-    # if destination_gsheet:
-    #     for worksheet_name in WORKSHEET_NAMES:
-            # g_sheet.copy_worksheet_to_gsheet(destination_gsheet, worksheet_name_to_copy=worksheet_name)
-            # pass
+    # for destination_gsheet_name in DESTINATION_GSHEET_NAMES:
+    #     destination_gsheet = g_service.open(gsheet_name=destination_gsheet_name)
+    #     if destination_gsheet:
+    #         for worksheet_name in WORKSHEET_NAMES:
+    #             g_sheet.copy_worksheet_to_gsheet(destination_gsheet=destination_gsheet, worksheet_name_to_copy=worksheet_name)
+    #             pass
 
 
     # BEGIN common tasks

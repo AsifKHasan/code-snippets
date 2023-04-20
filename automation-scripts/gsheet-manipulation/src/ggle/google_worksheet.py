@@ -152,25 +152,28 @@ class GoogleWorksheet(object):
 
     ''' link cells to drive files where cells values are names of drive files
     '''
-    def link_cells_to_drive_files(self, range_spec_for_cells_to_link):
-        requests = self.cell_to_drive_file_link_request(range_spec_for_cells_to_link=range_spec_for_cells_to_link)
+    def link_cells_to_drive_files(self, range_specs_for_cells_to_link):
+        requests = self.cell_to_drive_file_link_request(range_specs_for_cells_to_link=range_specs_for_cells_to_link)
         self.update_values_in_batch(requests)
 
 
 
     ''' link cells to drive files request where cells values are names of drive files
     '''
-    def cell_to_drive_file_link_request(self, range_spec_for_cells_to_link):
-        range_to_work_on = self.gspread_worksheet.range(range_spec_for_cells_to_link)
-        range_work_specs = {}
-        for cell in range_to_work_on:
-            if cell.value == '':
-                warn(f"cell {cell.address:>5} is empty .. skipping")
-            else:
-                info(f"cell {cell.address:>5} to be linked with drive file [{cell.value}]")
-                range_work_specs[cell.address] = {'value': cell.value, 'file-name-to-link': cell.value}
+    def cell_to_drive_file_link_request(self, range_specs_for_cells_to_link):
+        requests = []
+        for range_spec in range_specs_for_cells_to_link:
+            range_to_work_on = self.gspread_worksheet.range(range_spec)
+            range_work_specs = {}
+            for cell in range_to_work_on:
+                if cell.value == '':
+                    warn(f"cell {cell.address:>5} is empty .. skipping")
+                else:
+                    info(f"cell {cell.address:>5} to be linked with drive file [{cell.value}]")
+                    range_work_specs[cell.address] = {'value': cell.value, 'file-name-to-link': cell.value}
 
-        requests, _ = self.range_work_request(range_work_specs=range_work_specs)
+            reqs, _ = self.range_work_request(range_work_specs=range_work_specs)
+            requests = requests + reqs
 
         return requests
 
@@ -178,25 +181,28 @@ class GoogleWorksheet(object):
 
     ''' link cells to worksheets where cells values are names of worksheets
     '''
-    def link_cells_to_worksheet(self, range_spec_for_cells_to_link, worksheet_dict={}):
-        requests = self.cell_to_worksheet_link_request(range_spec_for_cells_to_link=range_spec_for_cells_to_link, worksheet_dict=worksheet_dict)
+    def link_cells_to_worksheet(self, range_specs_for_cells_to_link, worksheet_dict={}):
+        requests = self.cell_to_worksheet_link_request(range_specs_for_cells_to_link=range_specs_for_cells_to_link, worksheet_dict=worksheet_dict)
         self.update_values_in_batch(requests)
 
 
 
     ''' link cells to worksheets request where cells values are names of worksheets
     '''
-    def cell_to_worksheet_link_request(self, range_spec_for_cells_to_link, worksheet_dict={}):
-        range_to_work_on = self.gspread_worksheet.range(range_spec_for_cells_to_link)
-        range_work_specs = {}
-        for cell in range_to_work_on:
-            if cell.value == '':
-                warn(f"cell {cell.address:>5} is empty .. skipping")
-            else:
-                info(f"cell {cell.address:>5} to be linked with worksheet [{cell.value}]")
-                range_work_specs[cell.address] = {'value': cell.value, 'ws-name-to-link': cell.value}
+    def cell_to_worksheet_link_request(self, range_specs_for_cells_to_link, worksheet_dict={}):
+        requests = []
+        for range_spec in range_specs_for_cells_to_link:
+            range_to_work_on = self.gspread_worksheet.range(range_spec)
+            range_work_specs = {}
+            for cell in range_to_work_on:
+                if cell.value == '':
+                    warn(f"cell {cell.address:>5} is empty .. skipping")
+                else:
+                    info(f"cell {cell.address:>5} to be linked with worksheet [{cell.value}]")
+                    range_work_specs[cell.address] = {'value': cell.value, 'ws-name-to-link': cell.value}
 
-        requests, _ = self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+            reqs, _ = self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+            requests = requests + reqs
 
         return requests
 
@@ -217,6 +223,24 @@ class GoogleWorksheet(object):
         requests = []
 
         return requests
+
+
+
+    ''' put column size in pixels in row 1 for all columns except A
+    '''
+    def column_pixels_in_top_row(self, column_sizes):
+        # for coumns B to end
+        range_work_specs = {}
+        requests = []
+        for col_num in range(1, self.col_count):
+            cell_a1 = f"{column_to_letter(col_num + 1)}1"
+            column_width = column_sizes[col_num]
+            range_work_specs[cell_a1] = {'value': column_width, 'halign': 'left'}
+
+            reqs, _ = self.range_work_request(range_work_specs=range_work_specs)
+            requests = requests + reqs
+
+        # self.update_values_in_batch(requests)
 
 
 

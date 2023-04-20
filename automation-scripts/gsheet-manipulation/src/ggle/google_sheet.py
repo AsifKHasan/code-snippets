@@ -25,6 +25,16 @@ class GoogleSheet(object):
         self.title = self.gspread_sheet.title
 
 
+    ''' get column sizes
+    '''
+    def get_column_sizes(self):
+        request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, includeGridData=False)
+        response = request.execute()
+        print(response)
+
+        return column_sizes
+
+
     ''' copy worksheet to another gsheet
     '''
     def copy_worksheet_to_gsheet(self, destination_gsheet, worksheet_name_to_copy):
@@ -95,16 +105,17 @@ class GoogleSheet(object):
 
     ''' remove a worksheet
     '''
-    def remove_worksheet(self, worksheet_name):
-        worksheet_to_remove = self.worksheet_by_name(worksheet_name)
-        if worksheet_to_remove:
-            try:
-                info(f"removing worksheet {worksheet_name}", nesting_level=1)
-                self.gspread_sheet.del_worksheet(worksheet_to_remove)
-                info(f"removed  worksheet {worksheet_name}", nesting_level=1)
+    def remove_worksheet(self, worksheet_names_to_remove):
+        for worksheet_name in worksheet_names_to_remove:
+            worksheet_to_remove = self.worksheet_by_name(worksheet_name)
+            if worksheet_to_remove:
+                try:
+                    info(f"removing worksheet {worksheet_name}", nesting_level=1)
+                    self.gspread_sheet.del_worksheet(worksheet_to_remove)
+                    info(f"removed  worksheet {worksheet_name}", nesting_level=1)
 
-            except:
-                info(f"worksheet {worksheet_name} could not be removed", nesting_level=1)
+                except:
+                    info(f"worksheet {worksheet_name} could not be removed", nesting_level=1)
 
 
 
@@ -119,20 +130,20 @@ class GoogleSheet(object):
 
     ''' link cells of a worksheet to drive files where cells values are names of drive files
     '''
-    def link_cells_to_drive_files(self, worksheet_name, range_spec_for_cells_to_link):
+    def link_cells_to_drive_files(self, worksheet_name, range_specs_for_cells_to_link):
         worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
         if worksheet_to_work_on:
-            worksheet_to_work_on.link_cells_to_drive_files(range_spec_for_cells_to_link=range_spec_for_cells_to_link)
+            worksheet_to_work_on.link_cells_to_drive_files(range_specs_for_cells_to_link=range_specs_for_cells_to_link)
 
 
 
     ''' link cells of a worksheet to worksheets where cells values are names of worksheets
     '''
-    def link_cells_to_worksheet(self, worksheet_name, range_spec_for_cells_to_link):
+    def link_cells_to_worksheet(self, worksheet_name, range_specs_for_cells_to_link):
         worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
         if worksheet_to_work_on:
             worksheet_dict = self.worksheets_as_dict()
-            worksheet_to_work_on.link_cells_to_worksheet(range_spec_for_cells_to_link=range_spec_for_cells_to_link, worksheet_dict=worksheet_dict)
+            worksheet_to_work_on.link_cells_to_worksheet(range_specs_for_cells_to_link=range_specs_for_cells_to_link, worksheet_dict=worksheet_dict)
 
 
 
@@ -158,12 +169,24 @@ class GoogleSheet(object):
 
 
 
+    ''' put column size in pixels in row 1 for all columns except A
+    '''
+    def column_pixels_in_top_row(self, worksheet_names):
+        column_sizes = self.get_column_sizes()
+        for worksheet_name in worksheet_names:
+            worksheet = self.worksheet_by_name(worksheet_name)
+            if worksheet:
+                worksheet.column_pixels_in_top_row(column_sizes=column_sizes)
+
+
+
     ''' remove trailing blank rows from a worksheet
     '''
-    def remove_trailing_blank_rows(self, worksheet_name):
-        worksheet = self.worksheet_by_name(worksheet_name)
-        if worksheet:
-            worksheet.remove_trailing_blank_rows()
+    def remove_trailing_blank_rows(self, worksheet_names):
+        for worksheet_name in worksheet_names:
+            worksheet = self.worksheet_by_name(worksheet_name)
+            if worksheet:
+                worksheet.remove_trailing_blank_rows()
 
 
 
