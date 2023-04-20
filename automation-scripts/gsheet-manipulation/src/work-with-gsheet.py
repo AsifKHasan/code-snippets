@@ -20,34 +20,27 @@ DESTINATION_GSHEETS = [
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
-    '00-layout',
-    '00-layout-USAID-FFBT',
-    '00-layout-NBR-BSW',
-    '01-personal',
-    '02-career-highlight',
-    '03-education',
-    '04-managerial-expertise',
-    '05-technical-expertise',
-    '06-job-history',
-    '07-project-roles',
-    '08-training',
-    '09-certification',
-    '10-membership',
-    '11-language-proficiency',
-    '12-contact',
-    '13-educational-certificates',
-    '14-vendor-certificates',
-    '15-institutional-certificates',
-    '16-references',
+    '00.01-coverpage',
+    '00.02-forwarding-letter',
+    '00.03-executive-summary',
+    '00.03-submission-guide',
+
+    '01-legal-docs-certificates',
+    '00-similar-assignments',
+    '01-infrastructure-project-summary',
+    '02-software-project-summary',
+    '03-financial-summary',
+    'z-blank',
     'z-footer',
     'z-header',
+
 ]
 
 # work specs for applying on a list of worksheets
 RANGE_WORK_SPECS = {
-    # change fonts and vertical alignments for worksheet
-    'A1:I' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
-    # link -toc-new at cell A1
+    # change fonts and vertical alignments for the worksheet
+    'A1:Z' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
+    # link -toc-new at cell A1 and left align the cell
     'A1' : {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'weight': 'normal', 'halign': 'left'},
 
 }
@@ -95,7 +88,7 @@ def work_on_gsheet(g_sheet, g_service):
 
 
     # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F8:F14')
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F6:F')
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_spec_for_cells_to_link='F24:F26')
 
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='F3:F21')
@@ -104,7 +97,7 @@ def work_on_gsheet(g_sheet, g_service):
 
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='O4:O')
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_spec_for_cells_to_link='R4:R')
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
 
     # copy worksheets to another gsheet
