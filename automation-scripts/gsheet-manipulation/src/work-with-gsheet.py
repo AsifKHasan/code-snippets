@@ -20,27 +20,24 @@ DESTINATION_GSHEET_NAMES = [
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
-    # '00.01-coverpage',
-    # '00.02-forwarding letter',
-    # '00.03-executive-summary',
-    # '00.04-submission-guide',
-    # '01-registration-certificates',
-    # '02-legal-docs',
-    # '03-profile-brochure',
-    # '03.01-organogram-spectrum',
-    # '03.02-management-personnel',
-    # '03.03-ict-personnel',
-    # '04-similar-assignments',
-    # '04.01-infrastructure-project-summary',
-    # '04.02-software-project-summary',
-    # '05-similar-service-experience',
-    # '06-staff-skill',
-    # '07-financial-capacity',
-    # '08-litigation-history',
-    'A-assignment-understaning',
-    'B-resource-resume',
-    'C-pds-wcc',
-    # 'z-blank',
+    # '-toc-new',
+    # '00-layout',
+    # '01-personal',
+    # '02-career-highlight',
+    # '03-education',
+    # '04-managerial-expertise',
+    # '05-technical-expertise',
+    # '06-job-history',
+    # '07-project-roles',
+    # '08-training',
+    # '09-certification',
+    # '10-membership',
+    # '11-language-proficiency',
+    # '12-contact',
+    '13-educational-certificates',
+    '14-vendor-certificates',
+    '15-institutional-certificates',
+    # '16-references',
     # 'z-footer',
     # 'z-header',
 ]
@@ -51,20 +48,25 @@ RANGE_WORK_SPECS = {
     'A1:Z' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
     # link -toc-new at cell A1 and left align the cell
     'A1' : {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'weight': 'normal', 'halign': 'left'},
-
 }
 
-def work_on_drive(g_service, g_sheet):
+# find and replace patterns
+REPLACE_WITH_PATTERNS = [
+    # {'find': '/doer/', 'replace-with': '/03-doer/'},
+    # {'find': '/diploma/', 'replace-with': '/01-diploma/'},
+    # {'find': '/bachelor/', 'replace-with': '/02-bachelor/'},
+    # {'find': '/master/', 'replace-with': '/03-master/'},
 
-    # BEGIN drive file related
+    {'find': '/01-diploma/03-doer/', 'replace-with': '/03-doer/01-diploma/'},
+    {'find': '/02-bachelor/03-doer/', 'replace-with': '/03-doer/02-bachelor/'},
+    {'find': '/03-master/03-doer/', 'replace-with': '/03-doer/03-master/'},
 
-    # target_file_id = g_service.copy_file(source_file_id=g_sheet.id(), target_folder_id='1Ol7pNkAloXNPxeU8j1_IMNAayUh7AvPf', target_file_title='BNDA__standards')
-    # g_service.share(file_id=target_file_id, email='asif.hasan@gmail.com', perm_type='user', role='owner')
-    # g_service.share(file_id='1J7VpUFfZiQi543f4zdGcX9mqX7HugvsmebtoECCgk_4', email='asif.hasan@gmail.com', perm_type='user', role='owner')
+    {'find': '/udemy/03-doer/', 'replace-with': '/03-doer/udemy/'},
+    {'find': '/coursera/03-doer/', 'replace-with': '/03-doer/coursera/'},
 
-    # END   drive file related
-    pass
-
+    {'find': '/institutional-certificates/', 'replace-with': '/institutional-certificates/03-doer/'},
+    {'find': '/vendor-certificates/', 'replace-with': '/vendor-certificates/03-doer/'},
+]
 
 def work_on_gsheet(g_sheet, g_service):
 
@@ -87,12 +89,14 @@ def work_on_gsheet(g_sheet, g_service):
     # trailing blank row removal, review-notes, column size in row 1
     # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # g_sheet.remove_trailing_blank_rows(worksheet_names=WORKSHEET_NAMES)
-    g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
+    # g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
 
 
     # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
 
+    # find and replace in worksheets
+    g_sheet.find_and_replace(worksheet_names=WORKSHEET_NAMES, find_replace_patterns=REPLACE_WITH_PATTERNS)
 
     # for worksheet_name in WORKSHEET_NAMES:
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
@@ -101,7 +105,7 @@ def work_on_gsheet(g_sheet, g_service):
 
     # cell linking and ordering
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F10:F11', 'F14:F16'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F9', 'F18:F21'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O4:O', 'R4:R'])
     # g_sheet.order_worksheets()
 
@@ -138,6 +142,18 @@ def work_on_gsheet(g_sheet, g_service):
     pass
 
 
+def work_on_drive(g_service, g_sheet):
+
+    # BEGIN drive file related
+
+    # target_file_id = g_service.copy_file(source_file_id=g_sheet.id(), target_folder_id='1Ol7pNkAloXNPxeU8j1_IMNAayUh7AvPf', target_file_title='BNDA__standards')
+    # g_service.share(file_id=target_file_id, email='asif.hasan@gmail.com', perm_type='user', role='owner')
+    # g_service.share(file_id='1J7VpUFfZiQi543f4zdGcX9mqX7HugvsmebtoECCgk_4', email='asif.hasan@gmail.com', perm_type='user', role='owner')
+
+    # END   drive file related
+    pass
+
+
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument("-g", "--gsheet", required=False, help="gsheet name to work with", default=argparse.SUPPRESS)
@@ -169,6 +185,6 @@ if __name__ == '__main__':
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
         wait_for = 60
-        if count % 60 == 0:
+        if count % 8 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)

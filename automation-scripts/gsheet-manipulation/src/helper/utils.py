@@ -183,6 +183,21 @@ def build_duplicate_sheet_request(worksheet_id, new_worksheet_name, new_workshee
     return request_body
 
 
+'''
+'''
+def build_find_replace_request(worksheet_id, search_for, replace_with):
+    return {
+        "findReplace": {
+            "find": search_for,
+            "replacement": replace_with,
+            "matchCase": True,
+            "matchEntireCell": False,
+            "searchByRegex": False,
+            "includeFormulas": True,
+            "sheetId": worksheet_id,
+        }
+    }
+
 
 ''' gsheet border spec for border around a range
 '''

@@ -151,6 +151,23 @@ class GoogleSheet(object):
             worksheet_to_work_on.link_cells_to_worksheet(range_specs_for_cells_to_link=range_specs_for_cells_to_link, worksheet_dict=worksheet_dict)
 
 
+    ''' find and replace in worksheets
+    '''
+    def find_and_replace(self, worksheet_names, find_replace_patterns):
+        requests = []
+        for worksheet_name in worksheet_names:
+            info(f"searching [{len(find_replace_patterns)}] patterns in  [{worksheet_name}]", nesting_level=1)
+            worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
+            if worksheet_to_work_on:
+                reqs = worksheet_to_work_on.find_and_replace(find_replace_patterns=find_replace_patterns)
+                info(f"found     [{len(reqs)}] patterns in  [{worksheet_name}]", nesting_level=1)
+                requests = requests + reqs
+
+        if len(requests):
+            self.update_in_batch(request_list=requests)
+            info(f"replaced  .. {len(requests)} patterns", nesting_level=1)
+
+
 
     ''' work on a (list of) worksheet's range of work specs for value and format updates
     '''

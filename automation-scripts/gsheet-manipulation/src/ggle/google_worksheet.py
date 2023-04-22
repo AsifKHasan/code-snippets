@@ -227,6 +227,20 @@ class GoogleWorksheet(object):
 
 
 
+    ''' find and replace in worksheet
+    '''
+    def find_and_replace(self, find_replace_patterns):
+        find_replace_requests = []
+        for pattern in find_replace_patterns:
+            search_for = pattern['find']
+            replace_with = pattern['replace-with']
+            request = build_find_replace_request(worksheet_id=self.id, search_for=search_for, replace_with=replace_with)
+            if request:
+                find_replace_requests.append(request)
+
+        return find_replace_requests
+
+
     ''' put column size in pixels in row 1 for all columns except A
     '''
     def column_pixels_in_top_row(self, column_sizes):
