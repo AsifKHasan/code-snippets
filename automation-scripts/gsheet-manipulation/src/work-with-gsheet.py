@@ -20,7 +20,7 @@ DESTINATION_GSHEET_NAMES = [
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
-    # '-toc-new',
+    '-toc-new',
     # '00-layout',
     # '01-personal',
     # '02-career-highlight',
@@ -34,9 +34,9 @@ WORKSHEET_NAMES = [
     # '10-membership',
     # '11-language-proficiency',
     # '12-contact',
-    '13-educational-certificates',
-    '14-vendor-certificates',
-    '15-institutional-certificates',
+    # '13-educational-certificates',
+    # '14-vendor-certificates',
+    # '15-institutional-certificates',
     # '16-references',
     # 'z-footer',
     # 'z-header',
@@ -45,9 +45,9 @@ WORKSHEET_NAMES = [
 # work specs for applying on a list of worksheets
 RANGE_WORK_SPECS = {
     # change fonts and vertical alignments for the worksheet
-    'A1:Z' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
+    # 'A1:Z' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
     # link -toc-new at cell A1 and left align the cell
-    'A1' : {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'weight': 'normal', 'halign': 'left'},
+    # 'A1' : {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'weight': 'normal', 'halign': 'left'},
 }
 
 # find and replace patterns
@@ -57,30 +57,23 @@ REPLACE_WITH_PATTERNS = [
     # {'find': '/bachelor/', 'replace-with': '/02-bachelor/'},
     # {'find': '/master/', 'replace-with': '/03-master/'},
 
-    {'find': '/01-diploma/03-doer/', 'replace-with': '/03-doer/01-diploma/'},
-    {'find': '/02-bachelor/03-doer/', 'replace-with': '/03-doer/02-bachelor/'},
-    {'find': '/03-master/03-doer/', 'replace-with': '/03-doer/03-master/'},
-
-    {'find': '/udemy/03-doer/', 'replace-with': '/03-doer/udemy/'},
-    {'find': '/coursera/03-doer/', 'replace-with': '/03-doer/coursera/'},
-
-    {'find': '/institutional-certificates/', 'replace-with': '/institutional-certificates/03-doer/'},
-    {'find': '/vendor-certificates/', 'replace-with': '/vendor-certificates/03-doer/'},
+    # {'find': '/01-diploma/03-doer/', 'replace-with': '/03-doer/01-diploma/'},
+    # {'find': '/02-bachelor/03-doer/', 'replace-with': '/03-doer/02-bachelor/'},
+    # {'find': '/03-master/03-doer/', 'replace-with': '/03-doer/03-master/'},
+    #
+    # {'find': '/udemy/03-doer/', 'replace-with': '/03-doer/udemy/'},
+    # {'find': '/coursera/03-doer/', 'replace-with': '/03-doer/coursera/'},
+    #
+    # {'find': '/institutional-certificates/', 'replace-with': '/institutional-certificates/03-doer/'},
+    # {'find': '/vendor-certificates/', 'replace-with': '/vendor-certificates/03-doer/'},
 ]
 
 def work_on_gsheet(g_sheet, g_service):
 
-    # worksheet duplication
+    # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-
-
-    # worksheet removal
     # g_sheet.remove_worksheets(worksheet_names_to_remove=WORKSHEET_NAMES)
-
-
-    # worksheet renaming
     # g_sheet.rename_worksheet(worksheet_name='06-job-history-ffbt', new_worksheet_name='06-job-history-USAID-FFBT')
-
 
     # worksheet creation, formatting and related tasks
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
@@ -89,24 +82,21 @@ def work_on_gsheet(g_sheet, g_service):
     # trailing blank row removal, review-notes, column size in row 1
     # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # g_sheet.remove_trailing_blank_rows(worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
-
+    g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
 
     # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
 
     # find and replace in worksheets
-    g_sheet.find_and_replace(worksheet_names=WORKSHEET_NAMES, find_replace_patterns=REPLACE_WITH_PATTERNS)
+    # g_sheet.find_and_replace(worksheet_names=WORKSHEET_NAMES, find_replace_patterns=REPLACE_WITH_PATTERNS)
 
     # for worksheet_name in WORKSHEET_NAMES:
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
         # print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
-
     # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F10:F11', 'F14:F16'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O4:O', 'R4:R'])
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F'])
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
     # g_sheet.order_worksheets()
 
 
@@ -184,7 +174,7 @@ if __name__ == '__main__':
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 
-        wait_for = 60
-        if count % 8 == 0:
+        wait_for = 30
+        if count % 500 == 0:
             warn(f"sleeping for {wait_for} seconds\n")
             time.sleep(wait_for)

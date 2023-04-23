@@ -47,8 +47,12 @@ class GoogleWorksheet(object):
 
     ''' update values in batch
     '''
-    def update_values_in_batch(self, values):
-        self.gspread_worksheet.batch_update(values, value_input_option=ValueInputOption.user_entered)
+    def update_values_in_batch_old(self, values):
+        response = None
+        try:
+            response = self.gspread_worksheet.batch_update(values, value_input_option=ValueInputOption.user_entered)
+        except Exception as e:
+            print(e)
 
 
 
@@ -151,21 +155,12 @@ class GoogleWorksheet(object):
 
 
 
-    ''' link cells to drive files where cells values are names of drive files
-    '''
-    def link_cells_to_drive_files(self, range_specs_for_cells_to_link):
-        requests = self.cell_to_drive_file_link_request(range_specs_for_cells_to_link=range_specs_for_cells_to_link)
-        self.update_values_in_batch(requests)
-
-
-
     ''' link cells to drive files request where cells values are names of drive files
     '''
     def cell_to_drive_file_link_request(self, range_specs_for_cells_to_link):
-        requests = []
+        range_work_specs = {}
         for range_spec in range_specs_for_cells_to_link:
             range_to_work_on = self.gspread_worksheet.range(range_spec)
-            range_work_specs = {}
             for cell in range_to_work_on:
                 if cell.value == '':
                     warn(f"cell {cell.address:>5} is empty .. skipping")
@@ -173,28 +168,16 @@ class GoogleWorksheet(object):
                     info(f"cell {cell.address:>5} to be linked with drive file [{cell.value}]")
                     range_work_specs[cell.address] = {'value': cell.value, 'file-name-to-link': cell.value}
 
-            reqs, _ = self.range_work_request(range_work_specs=range_work_specs)
-            requests = requests + reqs
-
-        return requests
-
-
-
-    ''' link cells to worksheets where cells values are names of worksheets
-    '''
-    def link_cells_to_worksheet(self, range_specs_for_cells_to_link, worksheet_dict={}):
-        requests = self.cell_to_worksheet_link_request(range_specs_for_cells_to_link=range_specs_for_cells_to_link, worksheet_dict=worksheet_dict)
-        self.update_values_in_batch(requests)
+        return self.range_work_request(range_work_specs=range_work_specs)
 
 
 
     ''' link cells to worksheets request where cells values are names of worksheets
     '''
     def cell_to_worksheet_link_request(self, range_specs_for_cells_to_link, worksheet_dict={}):
-        requests = []
+        range_work_specs = {}
         for range_spec in range_specs_for_cells_to_link:
             range_to_work_on = self.gspread_worksheet.range(range_spec)
-            range_work_specs = {}
             for cell in range_to_work_on:
                 if cell.value == '':
                     warn(f"cell {cell.address:>5} is empty .. skipping")
@@ -202,10 +185,7 @@ class GoogleWorksheet(object):
                     info(f"cell {cell.address:>5} to be linked with worksheet [{cell.value}]")
                     range_work_specs[cell.address] = {'value': cell.value, 'ws-name-to-link': cell.value}
 
-            reqs, _ = self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
-            requests = requests + reqs
-
-        return requests
+        return self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
 
 
 
@@ -246,18 +226,14 @@ class GoogleWorksheet(object):
     def column_pixels_in_top_row(self, column_sizes):
         # for coumns B to end
         range_work_specs = {}
+        values = []
         requests = []
         for col_num in range(1, self.col_count()):
             cell_a1 = f"{column_to_letter(col_num + 1)}1"
             column_width = column_sizes[self.gspread_worksheet.title][col_num]
-            range_work_specs[cell_a1] = {'value': f"'{column_width}", 'halign': 'left'}
+            range_work_specs[cell_a1] = {'value': column_width, 'halign': 'center'}
 
-            reqs, _ = self.range_work_request(range_work_specs=range_work_specs)
-            requests = requests + reqs
-
-        # pprint(range_work_specs)
-        self.update_values_in_batch(requests)
-
+        return self.range_work_request(range_work_specs=range_work_specs, worksheet_dict={})
 
 
     ''' remove trailing blank rows
@@ -328,7 +304,7 @@ class GoogleWorksheet(object):
         for range_spec, work_spec in range_work_specs.items():
             # value
             if 'value' in work_spec:
-                values.append({'range': range_spec, 'values': [[build_value_from_work_spec(work_spec=work_spec, worksheet_dict=worksheet_dict, google_service=self.service)]]})
+                values.append({'range': f"'{self.gspread_worksheet.title}'!{range_spec}", 'values': [[build_value_from_work_spec(work_spec=work_spec, worksheet_dict=worksheet_dict, google_service=self.service)]]})
 
             # merge
             merge = False
