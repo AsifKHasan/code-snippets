@@ -160,7 +160,7 @@ class GoogleWorksheet(object):
     def cell_to_drive_file_link_request(self, range_specs_for_cells_to_link):
         range_work_specs = {}
         for range_spec in range_specs_for_cells_to_link:
-            range_to_work_on = self.gspread_worksheet.range(range_spec)
+            range_to_work_on = self.get_range(range_spec=range_spec)
             for cell in range_to_work_on:
                 if cell.value == '':
                     warn(f"cell {cell.address:>5} is empty .. skipping")
@@ -171,13 +171,30 @@ class GoogleWorksheet(object):
         return self.range_work_request(range_work_specs=range_work_specs)
 
 
+    ''' get a range from a1 notation
+    '''
+    def get_range(self, range_spec, try_for=3):
+        wait_for = 30
+        for try_count in range(1, try_for+1):
+            try:
+                ws_range = self.gspread_worksheet.range(range_spec)
+                debug(f"get range passed in [{try_count}] try", nesting_level=1)
+                return ws_range
+            except Exception as e:
+                print(e)
+                warn(f"get range failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                time.sleep(wait_for)
+
+        return None
+
+
 
     ''' link cells to worksheets request where cells values are names of worksheets
     '''
     def cell_to_worksheet_link_request(self, range_specs_for_cells_to_link, worksheet_dict={}):
         range_work_specs = {}
         for range_spec in range_specs_for_cells_to_link:
-            range_to_work_on = self.gspread_worksheet.range(range_spec)
+            range_to_work_on = self.get_range(range_spec=range_spec)
             for cell in range_to_work_on:
                 if cell.value == '':
                     warn(f"cell {cell.address:>5} is empty .. skipping")
