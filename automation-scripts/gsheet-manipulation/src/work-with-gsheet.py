@@ -20,7 +20,7 @@ DESTINATION_GSHEET_NAMES = [
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
-    '-toc-new',
+    # '-toc-new',
     # '00-layout',
     # '01-personal',
     # '02-career-highlight',
@@ -82,7 +82,7 @@ def work_on_gsheet(g_sheet, g_service):
     # trailing blank row removal, review-notes, column size in row 1
     # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
     # g_sheet.remove_trailing_blank_rows(worksheet_names=WORKSHEET_NAMES)
-    g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
+    # g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
 
     # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
@@ -95,8 +95,8 @@ def work_on_gsheet(g_sheet, g_service):
         # print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
     # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F20:F21', 'F24:F26', 'F32:F33', 'F45:F56', 'F59:F63', 'F68:F92', 'F95:F104'])
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F19', 'F23:F23', 'F28:F31', 'F35:F44', 'F58:F58', 'F65:F65', 'F67:F67', 'F94:F94', 'O3:O', 'R3:R'])
     # g_sheet.order_worksheets()
 
 
