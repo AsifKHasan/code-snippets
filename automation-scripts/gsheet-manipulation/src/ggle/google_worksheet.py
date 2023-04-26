@@ -64,7 +64,17 @@ class GoogleWorksheet(object):
             response = self.gspread_worksheet.copy_to(destination_gsheet.id)
             # rename the newly copied worksheet
             if response:
-                destination_gsheet.rename_worksheet(worksheet_name=response['title'], new_worksheet_name=self.gspread_worksheet.title)
+                info(f"copied  worksheet        {self.gspread_worksheet.title} to {destination_gsheet.title}")
+
+                try:
+                    new_gspread_worksheet = destination_gsheet.gspread_sheet.worksheet(response['title'])
+                    info(f"renaming worksheet [{response['title']}] to [{self.gspread_worksheet.title}]")
+                    new_gspread_worksheet.update_title(self.gspread_worksheet.title)
+                    info(f"renamed  worksheet [{response['title']}] to [{self.gspread_worksheet.title}]")
+
+                except:
+                    warn(f"worksheet [{response['title']}] could not be renamed to [{self.gspread_worksheet.title}]")
+
 
         except:
             warn(f"could not copy worksheet {self.gspread_worksheet.title} to {destination_gsheet.title}")

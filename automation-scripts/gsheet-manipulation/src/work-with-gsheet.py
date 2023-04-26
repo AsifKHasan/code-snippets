@@ -16,12 +16,19 @@ from task.common_tasks import *
 
 # list of gsheets which are targets for work like copy_to
 DESTINATION_GSHEET_NAMES = [
+
+    # 'Résumé__Md.Rezaur.Rahman__RHD-TMC',
+    # 'Résumé__Saifur.Rahman__RHD-TMC',
+    # 'Résumé__Sharmin.Sultana__RHD-TMC',
+
 ]
 
 # list of worksheets on which to do a common work
 WORKSHEET_NAMES = [
-    # '-toc-new',
+    '-toc-new',
     # '00-layout',
+    # '00-layout-RHD-TMC',
+    # '00-layout-WB',
     # '01-personal',
     # '02-career-highlight',
     # '03-education',
@@ -46,8 +53,38 @@ WORKSHEET_NAMES = [
 RANGE_WORK_SPECS = {
     # change fonts and vertical alignments for the worksheet
     # 'A1:Z' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
+
     # link -toc-new at cell A1 and left align the cell
     # 'A1' : {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'weight': 'normal', 'halign': 'left'},
+
+    # change -toc-new
+    # 'F3' : {'value': '00-layout', 'ws-name-to-link': '00-layout'},
+    # 'F3' : {'value': '00-layout-RHD-TMC', 'ws-name-to-link': '00-layout-RHD-TMC'},
+
+    'C3' : {'value': 'Yes'},
+    'C4' : {'value': 'Yes'},
+    'C5' : {'value': 'Yes'},
+    'C6' : {'value': 'Yes'},
+
+    'D3' : {'value': '1'},
+    'D4' : {'value': '2'},
+    'D5' : {'value': '2'},
+    'D6' : {'value': '2'},
+
+    'G3' : {'value': ''},
+    'G4' : {'value': 'section'},
+    'G5' : {'value': 'section'},
+    'G6' : {'value': 'section'},
+
+    'K3' : {'value': ''},
+    'K4' : {'value': ''},
+    'K5' : {'value': ''},
+    'K6' : {'value': ''},
+
+    'L3' : {'value': 'Yes'},
+    'L4' : {'value': ''},
+    'L5' : {'value': ''},
+    'L6' : {'value': ''},
 }
 
 # find and replace patterns
@@ -73,7 +110,7 @@ def work_on_gsheet(g_sheet, g_service):
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
     # g_sheet.remove_worksheets(worksheet_names_to_remove=WORKSHEET_NAMES)
-    # g_sheet.rename_worksheet(worksheet_name='06-job-history-ffbt', new_worksheet_name='06-job-history-USAID-FFBT')
+    # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
 
     # worksheet creation, formatting and related tasks
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
@@ -85,18 +122,20 @@ def work_on_gsheet(g_sheet, g_service):
     # g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
 
     # work on ranges etc.
-    # g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
+    g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
 
     # find and replace in worksheets
     # g_sheet.find_and_replace(worksheet_names=WORKSHEET_NAMES, find_replace_patterns=REPLACE_WITH_PATTERNS)
 
     # for worksheet_name in WORKSHEET_NAMES:
-        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
-        # print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
+    #     if num_rows > 6:
+    #         print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
     # cell linking and ordering
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F20:F21', 'F24:F26', 'F32:F33', 'F45:F56', 'F59:F63', 'F68:F92', 'F95:F104'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F19', 'F23:F23', 'F28:F31', 'F35:F44', 'F58:F58', 'F65:F65', 'F67:F67', 'F94:F94', 'O3:O', 'R3:R'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F19', 'F23:F23', 'F28:F31', 'F35:F44', 'F58:F58', 'F65:F65', 'F67:F67', 'F94:F94', 'O3:O', 'R3:R'])
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
     # g_sheet.order_worksheets()
 
 
@@ -106,7 +145,6 @@ def work_on_gsheet(g_sheet, g_service):
     #     if destination_gsheet:
     #         for worksheet_name in WORKSHEET_NAMES:
     #             g_sheet.copy_worksheet_to_gsheet(destination_gsheet=destination_gsheet, worksheet_name_to_copy=worksheet_name)
-    #             pass
 
 
     # BEGIN common tasks

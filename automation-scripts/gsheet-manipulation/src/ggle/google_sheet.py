@@ -51,7 +51,7 @@ class GoogleSheet(object):
     '''
     def copy_worksheet_to_gsheet(self, destination_gsheet, worksheet_name_to_copy):
         # if destination already has a worksheet of the same name, do not do anything
-        destintion_worksheet = destination_gsheet.worksheet_by_name(worksheet_name_to_copy)
+        destintion_worksheet = destination_gsheet.worksheet_by_name(worksheet_name_to_copy, suppress_log=True)
         if destintion_worksheet:
             warn(f"worksheet [{worksheet_name_to_copy}] already exists in [{destination_gsheet.title}]")
             return
