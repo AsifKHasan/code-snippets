@@ -14,41 +14,6 @@ from task.common_tasks import *
 # from task.resume_tasks import *
 # from task.acas_tasks import *
 
-# list of gsheets which are targets for work like copy_to
-DESTINATION_GSHEET_NAMES = [
-
-    # 'Résumé__Md.Rezaur.Rahman__RHD-TMC',
-    # 'Résumé__Saifur.Rahman__RHD-TMC',
-    # 'Résumé__Sharmin.Sultana__RHD-TMC',
-
-]
-
-# list of worksheets on which to do a common work
-WORKSHEET_NAMES = [
-    '-toc-new',
-    # '00-layout',
-    # '00-layout-RHD-TMC',
-    # '00-layout-WB',
-    # '01-personal',
-    # '02-career-highlight',
-    # '03-education',
-    # '04-managerial-expertise',
-    # '05-technical-expertise',
-    # '06-job-history',
-    # '07-project-roles',
-    # '08-training',
-    # '09-certification',
-    # '10-membership',
-    # '11-language-proficiency',
-    # '12-contact',
-    # '13-educational-certificates',
-    # '14-vendor-certificates',
-    # '15-institutional-certificates',
-    # '16-references',
-    # 'z-footer',
-    # 'z-header',
-]
-
 # work specs for applying on a list of worksheets
 RANGE_WORK_SPECS = {
     # change fonts and vertical alignments for the worksheet
@@ -105,45 +70,48 @@ REPLACE_WITH_PATTERNS = [
     # {'find': '/vendor-certificates/', 'replace-with': '/vendor-certificates/03-doer/'},
 ]
 
-def work_on_gsheet(g_sheet, g_service):
+def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names):
 
     # worksheet duplication, removal, renaming
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.remove_worksheets(worksheet_names_to_remove=WORKSHEET_NAMES)
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
+    # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
     # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
 
     # worksheet creation, formatting and related tasks
-    # create_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
+    # create_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
+    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
-    # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=WORKSHEET_NAMES)
-    # g_sheet.remove_trailing_blank_rows(worksheet_names=WORKSHEET_NAMES)
-    # g_sheet.column_pixels_in_top_row(worksheet_names=WORKSHEET_NAMES)
+    # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
+    # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
+    # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
+    # g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
 
     # work on ranges etc.
-    g_sheet.work_on_ranges(worksheet_names=WORKSHEET_NAMES, range_work_specs=RANGE_WORK_SPECS)
+    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=RANGE_WORK_SPECS)
 
     # find and replace in worksheets
-    # g_sheet.find_and_replace(worksheet_names=WORKSHEET_NAMES, find_replace_patterns=REPLACE_WITH_PATTERNS)
+    # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=REPLACE_WITH_PATTERNS)
 
-    # for worksheet_name in WORKSHEET_NAMES:
+    # for worksheet_name in worksheet_names:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
     #     if num_rows > 6:
     #         print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
     # cell linking and ordering
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F20:F21', 'F24:F26', 'F32:F33', 'F45:F56', 'F59:F63', 'F68:F92', 'F95:F104'])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F', 'O3:O', 'R3:R'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F19', 'F23:F23', 'F28:F31', 'F35:F44', 'F58:F58', 'F65:F65', 'F67:F67', 'F94:F94', 'O3:O', 'R3:R'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
     # g_sheet.order_worksheets()
 
 
     # copy worksheets to another gsheet
-    # for destination_gsheet_name in DESTINATION_GSHEET_NAMES:
+    # for destination_gsheet_name in destination_gsheet_names:
     #     destination_gsheet = g_service.open(gsheet_name=destination_gsheet_name)
     #     if destination_gsheet:
-    #         for worksheet_name in WORKSHEET_NAMES:
+    #         for worksheet_name in worksheet_names:
     #             g_sheet.copy_worksheet_to_gsheet(destination_gsheet=destination_gsheet, worksheet_name_to_copy=worksheet_name)
 
 
@@ -187,12 +155,16 @@ if __name__ == '__main__':
     ap.add_argument("-g", "--gsheet", required=False, help="gsheet name to work with", default=argparse.SUPPRESS)
     args = vars(ap.parse_args())
 
+    # read config.yml to get the list of gsheets and other data
+    config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
+
     if 'gsheet' in args and args["gsheet"] != '':
         gsheet_names = [args["gsheet"]]
     else:
-        # read config.yml to get the list of gsheets
-        config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
         gsheet_names = config['gsheets']
+
+    destination_gsheet_names = config['destination-gsheets']
+    worksheet_names = config['worksheets']
 
     g_service = GoogleService('../conf/credential.json')
     count = 0
@@ -208,7 +180,7 @@ if __name__ == '__main__':
             # raise e
 
         if g_sheet:
-            work_on_gsheet(g_sheet=g_sheet, g_service=g_service)
+            work_on_gsheet(g_sheet=g_sheet, g_service=g_service, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 

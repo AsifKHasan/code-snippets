@@ -31,28 +31,10 @@ class GoogleWorksheet(object):
 
 
 
-    ''' get values
-    '''
-    def get_values(self, range, major_dimension):
-        return self.gspread_worksheet.get(range, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
-
-
-
     ''' get values in batch
     '''
-    def get_values_in_batch(self, ranges, major_dimension):
+    def get_values_in_batch(self, ranges, major_dimension='ROWS'):
         return self.gspread_worksheet.batch_get(ranges, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
-
-
-
-    ''' update values in batch
-    '''
-    def update_values_in_batch_old(self, values):
-        response = None
-        try:
-            response = self.gspread_worksheet.batch_update(values, value_input_option=ValueInputOption.user_entered)
-        except Exception as e:
-            print(e)
 
 
 
@@ -164,6 +146,73 @@ class GoogleWorksheet(object):
         return requests
 
 
+    ''' link cells of a worksheet to drive-file/worksheet based type
+        type is valid only if the range has two columns
+        if the range has only one column default to worksheet link
+    '''
+    def cell_link_based_on_type_request(self, range_specs_for_cells_to_link, worksheet_dict):
+        nesting_level = 2
+        range_work_specs = {}
+        for range_spec in range_specs_for_cells_to_link:
+            grid_range_spec = a1_range_to_grid_range(range_spec)
+            range_start_col, range_start_row, range_end_col = grid_range_spec['startColumnIndex']+1, grid_range_spec['startRowIndex']+1, grid_range_spec['endColumnIndex']+1
+            values = self.get_values_in_batch(ranges=[range_spec])[0]
+            num_columns = range_end_col - range_start_col
+            r = 0
+            for row_value in values:
+                # make sure the row has num_columns elements, if not extend with empty string elements
+                if len(row_value) < num_columns:
+                    row_value.extend([''] * (num_columns - len(row_value)))
+
+                # print(row_value)
+
+                if len(row_value) == 1:
+                    # no type defined, it is a worksheet link
+                    cell_value = row_value[0]
+                    cell_address = rowcol_to_a1(row=range_start_row+r, col=range_start_col)
+                    if cell_value == '':
+                        warn(f"cell [{cell_address:>5}] is empty .. skipping", nesting_level=nesting_level)
+                    else:
+                        info(f"cell [{cell_address:>5}] to be linked with worksheet [{cell_value}]", nesting_level=nesting_level)
+                        range_work_specs[cell_address] = {'value': cell_value, 'ws-name-to-link': cell_value}
+
+                elif len(row_value) > 1:
+                    type_value, cell_value = row_value[0], row_value[1]
+                    type_cell_address = rowcol_to_a1(row=range_start_row+r, col=range_start_col)
+                    cell_address = rowcol_to_a1(row=range_start_row+r, col=range_start_col+1)
+
+                    if type_value in ['gsheet', 'pdf']:
+                        # it is a drive-file link
+                        debug(f"type [{type_cell_address:>5}] is [{type_value}] .. link to drive file", nesting_level=nesting_level)
+                        if cell_value == '':
+                            warn(f"cell [{cell_address:>5}] is empty .. skipping", nesting_level=nesting_level)
+                        else:
+                            info(f"cell [{cell_address:>5}] to be linked with drive file [{cell_value}]", nesting_level=nesting_level)
+                            range_work_specs[cell_address] = {'value': cell_value, 'file-name-to-link': cell_value}
+
+                    elif type_value == 'table':
+                        # it is a worksheet link
+                        debug(f"type [{type_cell_address:>5}] is [{type_value}] .. link to worksheet", nesting_level=nesting_level)
+                        if cell_value == '':
+                            warn(f"cell [{cell_address:>5}] is empty .. skipping", nesting_level=nesting_level)
+                        else:
+                            info(f"cell [{cell_address:>5}] to be linked with worksheet [{cell_value}]", nesting_level=nesting_level)
+                            range_work_specs[cell_address] = {'value': cell_value, 'ws-name-to-link': cell_value}
+
+                    elif type_value == '':
+                        warn(f"type [{cell_address:>5}] is empty .. skipping", nesting_level=nesting_level)
+
+                    else:
+                        warn(f"type [{type_cell_address:>5}] is [{type_value}] .. skipping", nesting_level=nesting_level)
+
+                else:
+                    debug(f"row  [{range_start_row+r:>5}] is empty .. skipping", nesting_level=nesting_level)
+
+                r = r + 1
+
+        return self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+
+
 
     ''' link cells to drive files request where cells values are names of drive files
     '''
@@ -179,6 +228,23 @@ class GoogleWorksheet(object):
                     range_work_specs[cell.address] = {'value': cell.value, 'file-name-to-link': cell.value}
 
         return self.range_work_request(range_work_specs=range_work_specs)
+
+
+    ''' get values from a1 notation
+    '''
+    def get_values(self, range_spec, try_for=3):
+        wait_for = 30
+        for try_count in range(1, try_for+1):
+            try:
+                values = self.gspread_worksheet.get_values(range_spec, value_render_option='ValueRenderOption.formatted')
+                debug(f"get values passed in [{try_count}] try", nesting_level=1)
+                return values
+            except Exception as e:
+                print(e)
+                warn(f"get values failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                time.sleep(wait_for)
+
+        return None
 
 
     ''' get a range from a1 notation
@@ -213,15 +279,6 @@ class GoogleWorksheet(object):
                     range_work_specs[cell.address] = {'value': cell.value, 'ws-name-to-link': cell.value}
 
         return self.range_work_request(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
-
-
-
-    ''' get start_index of trailing blank rows from the worksheet
-    '''
-    def trailing_blank_row_start_index(self):
-        # we first need to know what is the last row having some value
-        values = self.gspread_worksheet.get_values()
-        return len(values)
 
 
 
@@ -263,6 +320,19 @@ class GoogleWorksheet(object):
         return self.range_work_request(range_work_specs=range_work_specs, worksheet_dict={})
 
 
+    ''' remove extra columns
+    '''
+    def remove_extra_columns(self, cols_to_remove_from, cols_to_remove_to):
+        request_list = self.dimension_remove_request(cols_to_remove_from=cols_to_remove_from, cols_to_remove_to=cols_to_remove_to)
+
+        info(f"removing .. columns {cols_to_remove_from}-{cols_to_remove_to}", nesting_level=1)
+        if len(request_list):
+            self.gsheet.update_in_batch(request_list=request_list)
+
+        info(f"removed  .. columns {cols_to_remove_from}-{cols_to_remove_to}", nesting_level=1)
+
+
+
     ''' remove trailing blank rows
     '''
     def remove_trailing_blank_rows(self):
@@ -274,6 +344,15 @@ class GoogleWorksheet(object):
             self.gsheet.update_in_batch(request_list=request_list)
 
         info(f"removed  .. rows {rows_to_remove_from}-{rows_to_remove_to}", nesting_level=1)
+
+
+
+    ''' get start_index of trailing blank rows from the worksheet
+    '''
+    def trailing_blank_row_start_index(self):
+        # we first need to know what is the last row having some value
+        values = self.gspread_worksheet.get_values()
+        return len(values)
 
 
 

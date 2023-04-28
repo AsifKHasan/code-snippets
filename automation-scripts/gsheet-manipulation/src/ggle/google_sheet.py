@@ -190,6 +190,26 @@ class GoogleSheet(object):
             worksheet_to_duplicate.duplicate_worksheet(new_worksheet_names)
 
 
+    ''' link cells of a worksheet to drive-file/worksheet based type
+        type is valid only if the range has two columns
+        if the range has only one column default to worksheet link
+    '''
+    def link_cells_based_on_type(self, worksheet_name, range_specs_for_cells_to_link):
+        worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
+        if worksheet_to_work_on:
+            worksheet_dict = self.worksheets_as_dict()
+            values, requests = worksheet_to_work_on.cell_link_based_on_type_request(range_specs_for_cells_to_link=range_specs_for_cells_to_link, worksheet_dict=worksheet_dict)
+
+            if len(values):
+                # pprint(values)
+                self.update_values_in_batch(value_list=values)
+                info(f"updated    .. [{len(values)}] values", nesting_level=1)
+
+            if len(requests):
+                self.update_in_batch(request_list=requests)
+                info(f"formatted  .. [{len(requests)}] ranges", nesting_level=1)
+
+
 
     ''' link cells of a worksheet to drive files where cells values are names of drive files
     '''
@@ -286,6 +306,20 @@ class GoogleSheet(object):
         if len(requests):
             self.update_in_batch(request_list=requests)
             info(f"formatted  .. [{len(requests)}] ranges", nesting_level=1)
+
+
+    ''' remove extra columns
+    '''
+    def remove_extra_columns(self, worksheet_names, cols_to_remove_from, cols_to_remove_to):
+        for worksheet_name in worksheet_names:
+            worksheet = self.worksheet_by_name(worksheet_name)
+            if worksheet:
+                # check if the worksheet column count is valid for the operation
+                if worksheet.col_count() >= LETTER_TO_COLUMN[cols_to_remove_from]:
+                    worksheet.remove_extra_columns(cols_to_remove_from=cols_to_remove_from, cols_to_remove_to=cols_to_remove_to)
+                else:
+                    debug(f"worksheet [{worksheet.gspread_worksheet.title:<40}] does not have column [{cols_to_remove_from}]", nesting_level=1)
+
 
 
     ''' remove trailing blank rows from a worksheet
