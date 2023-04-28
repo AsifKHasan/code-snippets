@@ -14,64 +14,7 @@ from task.common_tasks import *
 # from task.resume_tasks import *
 # from task.acas_tasks import *
 
-# work specs for applying on a list of worksheets
-RANGE_WORK_SPECS = {
-    # change fonts and vertical alignments for the worksheet
-    # 'A1:Z' : {'font-family': 'Arial', 'font-size': 10, 'valign': 'top'},
-
-    # link -toc-new at cell A1 and left align the cell
-    # 'A1' : {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'weight': 'normal', 'halign': 'left'},
-
-    # change -toc-new
-    # 'F3' : {'value': '00-layout', 'ws-name-to-link': '00-layout'},
-    # 'F3' : {'value': '00-layout-RHD-TMC', 'ws-name-to-link': '00-layout-RHD-TMC'},
-
-    'C3' : {'value': 'Yes'},
-    'C4' : {'value': 'Yes'},
-    'C5' : {'value': 'Yes'},
-    'C6' : {'value': 'Yes'},
-
-    'D3' : {'value': '1'},
-    'D4' : {'value': '2'},
-    'D5' : {'value': '2'},
-    'D6' : {'value': '2'},
-
-    'G3' : {'value': ''},
-    'G4' : {'value': 'section'},
-    'G5' : {'value': 'section'},
-    'G6' : {'value': 'section'},
-
-    'K3' : {'value': ''},
-    'K4' : {'value': ''},
-    'K5' : {'value': ''},
-    'K6' : {'value': ''},
-
-    'L3' : {'value': 'Yes'},
-    'L4' : {'value': ''},
-    'L5' : {'value': ''},
-    'L6' : {'value': ''},
-}
-
-# find and replace patterns
-REPLACE_WITH_PATTERNS = [
-    {'find': '/data/spectrum/pmo-project-datasheet/', 'replace-with': '/data/organization/01-spectrum/pmo-project-datasheet/'},
-    # {'find': '/doer/', 'replace-with': '/03-doer/'},
-    # {'find': '/diploma/', 'replace-with': '/01-diploma/'},
-    # {'find': '/bachelor/', 'replace-with': '/02-bachelor/'},
-    # {'find': '/master/', 'replace-with': '/03-master/'},
-
-    # {'find': '/01-diploma/03-doer/', 'replace-with': '/03-doer/01-diploma/'},
-    # {'find': '/02-bachelor/03-doer/', 'replace-with': '/03-doer/02-bachelor/'},
-    # {'find': '/03-master/03-doer/', 'replace-with': '/03-doer/03-master/'},
-    #
-    # {'find': '/udemy/03-doer/', 'replace-with': '/03-doer/udemy/'},
-    # {'find': '/coursera/03-doer/', 'replace-with': '/03-doer/coursera/'},
-    #
-    # {'find': '/institutional-certificates/', 'replace-with': '/institutional-certificates/03-doer/'},
-    # {'find': '/vendor-certificates/', 'replace-with': '/vendor-certificates/03-doer/'},
-]
-
-def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names):
+def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
 
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
@@ -89,10 +32,10 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
 
     # work on ranges etc.
-    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=RANGE_WORK_SPECS)
+    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
-    # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=REPLACE_WITH_PATTERNS)
+    g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
     # for worksheet_name in worksheet_names:
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
@@ -100,10 +43,10 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     #         print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
     # cell linking and ordering
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F', 'O3:O', 'R3:R'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F20:F21', 'F24:F26', 'F32:F33', 'F45:F56', 'F59:F63', 'F68:F92', 'F95:F104'])
-    g_sheet.order_worksheets()
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
+    # g_sheet.order_worksheets()
 
 
     # copy worksheets to another gsheet
@@ -164,6 +107,8 @@ if __name__ == '__main__':
 
     destination_gsheet_names = config['destination-gsheets']
     worksheet_names = config['worksheets']
+    work_specs = config['work-specs']
+    find_replace_patterns = config['find-replace-patterns']
 
     g_service = GoogleService('../conf/credential.json')
     count = 0
@@ -179,7 +124,7 @@ if __name__ == '__main__':
             # raise e
 
         if g_sheet:
-            work_on_gsheet(g_sheet=g_sheet, g_service=g_service, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names)
+            work_on_gsheet(g_sheet=g_sheet, g_service=g_service, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 

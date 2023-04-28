@@ -33,8 +33,20 @@ class GoogleWorksheet(object):
 
     ''' get values in batch
     '''
-    def get_values_in_batch(self, ranges, major_dimension='ROWS'):
-        return self.gspread_worksheet.batch_get(ranges, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
+    def get_values_in_batch(self, ranges, major_dimension='ROWS', try_for=3):
+        wait_for = 30
+        for try_count in range(1, try_for+1):
+            try:
+                values = self.gspread_worksheet.batch_get(ranges, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
+                debug(f"get values passed in [{try_count}] try", nesting_level=1)
+                return values
+
+            except Exception as e:
+                print(e)
+                warn(f"get values failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                time.sleep(wait_for)
+
+        return None
 
 
 
