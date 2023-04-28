@@ -54,6 +54,7 @@ RANGE_WORK_SPECS = {
 
 # find and replace patterns
 REPLACE_WITH_PATTERNS = [
+    {'find': '/data/spectrum/pmo-project-datasheet/', 'replace-with': '/data/organization/01-spectrum/pmo-project-datasheet/'},
     # {'find': '/doer/', 'replace-with': '/03-doer/'},
     # {'find': '/diploma/', 'replace-with': '/01-diploma/'},
     # {'find': '/bachelor/', 'replace-with': '/02-bachelor/'},
@@ -99,12 +100,10 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     #         print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
     # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F20:F21', 'F24:F26', 'F32:F33', 'F45:F56', 'F59:F63', 'F68:F92', 'F95:F104'])
-    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
-    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F', 'O3:O', 'R3:R'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F19', 'F23:F23', 'F28:F31', 'F35:F44', 'F58:F58', 'F65:F65', 'F67:F67', 'F94:F94', 'O3:O', 'R3:R'])
+    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F', 'O3:O', 'R3:R'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F3:F', 'O3:O', 'R3:R'])
-    # g_sheet.order_worksheets()
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['F20:F21', 'F24:F26', 'F32:F33', 'F45:F56', 'F59:F63', 'F68:F92', 'F95:F104'])
+    g_sheet.order_worksheets()
 
 
     # copy worksheets to another gsheet
