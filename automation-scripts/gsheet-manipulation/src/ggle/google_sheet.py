@@ -27,6 +27,7 @@ class GoogleSheet(object):
         self.worksheets = self.gspread_sheet.worksheets()
 
 
+
     ''' get column sizes
     '''
     def get_column_sizes(self, try_for=3):
@@ -41,10 +42,14 @@ class GoogleSheet(object):
                 return column_sizes
             except Exception as e:
                 print(e)
-                warn(f"get worksheet failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                time.sleep(wait_for)
+                if try_count < try_for:
+                    warn(f"get worksheet failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"get worksheet failed in [{try_count}] try", nesting_level=1)
 
         return None
+
 
 
     ''' copy worksheet to another gsheet
@@ -61,6 +66,7 @@ class GoogleSheet(object):
             worksheet_to_copy.copy_worksheet_to_gsheet(destination_gsheet)
 
 
+
     ''' update spreadsheet in batch
     '''
     def update_in_batch(self, request_list, try_for=3):
@@ -72,8 +78,12 @@ class GoogleSheet(object):
                 return response
             except Exception as e:
                 print(e)
-                warn(f"batch update failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                time.sleep(wait_for)
+                if try_count < try_for:
+                    warn(f"batch update failed in [{try_count}/{try_for}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"batch update failed in [{try_count}/{try_for}] try", nesting_level=1)
+
 
 
     ''' update spreadsheet values in batch
@@ -93,8 +103,11 @@ class GoogleSheet(object):
                 return response
             except Exception as e:
                 print(e)
-                warn(f"value update failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                time.sleep(wait_for)
+                if try_count < try_for:
+                    warn(f"value update failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"value update failed in [{try_count}] try", nesting_level=1)
 
 
 
@@ -110,32 +123,13 @@ class GoogleSheet(object):
     def worksheet_by_name(self, worksheet_name, suppress_log=False):
         for ws in self.worksheets:
             if ws.title == worksheet_name:
-                debug(f"worksheet [{worksheet_name:<40}] found", nesting_level=1)
+                if not suppress_log:
+                    debug(f"worksheet [{worksheet_name:<40}] found", nesting_level=1)
+
                 return GoogleWorksheet(google_service=self.service, gspread_worksheet=ws, gsheet=self)
 
         if not suppress_log:
             warn(f"worksheet [{worksheet_name:<40}] not found", nesting_level=1)
-
-
-    ''' get worksheet by name
-    '''
-    def worksheet_by_name_old(self, worksheet_name, suppress_log=False, try_for=3):
-        wait_for = 35
-        for try_count in range(1, try_for+1):
-            try:
-                ws = self.gspread_sheet.worksheet(worksheet_name)
-                debug(f"worksheet [{worksheet_name:<40}] found in [{try_count}] try", nesting_level=1)
-                return GoogleWorksheet(google_service=self.service, gspread_worksheet=ws, gsheet=self)
-
-            except:
-                if not suppress_log:
-                    if try_count < try_for:
-                        warn(f"worksheet [{worksheet_name:<40}] not found in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                        time.sleep(wait_for)
-                    else:
-                        warn(f"worksheet [{worksheet_name:<40}] not found in [{try_count}] try", nesting_level=1)
-
-        return None
 
 
 
@@ -190,6 +184,7 @@ class GoogleSheet(object):
             worksheet_to_duplicate.duplicate_worksheet(new_worksheet_names)
 
 
+
     ''' link cells of a worksheet to drive-file/worksheet based type
         type is valid only if the range has two columns
         if the range has only one column default to worksheet link
@@ -227,6 +222,7 @@ class GoogleSheet(object):
                 info(f"formatted  .. [{len(requests)}] ranges", nesting_level=1)
 
 
+
     ''' link cells of a worksheet to worksheets where cells values are names of worksheets
     '''
     def link_cells_to_worksheet(self, worksheet_name, range_specs_for_cells_to_link):
@@ -242,6 +238,7 @@ class GoogleSheet(object):
             if len(requests):
                 self.update_in_batch(request_list=requests)
                 info(f"formatted  .. [{len(requests)}] ranges", nesting_level=1)
+
 
 
     ''' find and replace in worksheets
@@ -289,8 +286,7 @@ class GoogleSheet(object):
     ''' put column size in pixels in row 1 for all columns except A
     '''
     def column_pixels_in_top_row(self, worksheet_names):
-        values = []
-        requests = []
+        values, requests = [], []
         column_sizes = self.get_column_sizes()
         for worksheet_name in worksheet_names:
             worksheet = self.worksheet_by_name(worksheet_name)
@@ -300,12 +296,15 @@ class GoogleSheet(object):
                 requests = requests + reqs
 
         if len(values):
+            # print(values)
             self.update_values_in_batch(value_list=values)
             info(f"updated    .. [{len(values)}] values", nesting_level=1)
 
         if len(requests):
+            # print(requests)
             self.update_in_batch(request_list=requests)
             info(f"formatted  .. [{len(requests)}] ranges", nesting_level=1)
+
 
 
     ''' remove extra columns
@@ -334,8 +333,8 @@ class GoogleSheet(object):
 
     ''' number of rows and columns of a worksheet
     '''
-    def number_of_dimesnions(self, worksheet_name):
-        worksheet = self.worksheet_by_name(worksheet_name)
+    def number_of_dimesnions(self, worksheet_name, suppress_log=False):
+        worksheet = self.worksheet_by_name(worksheet_name, suppress_log=suppress_log)
         if worksheet:
             return worksheet.number_of_dimesnions()
         else:

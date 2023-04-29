@@ -38,13 +38,16 @@ class GoogleWorksheet(object):
         for try_count in range(1, try_for+1):
             try:
                 values = self.gspread_worksheet.batch_get(ranges, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
-                debug(f"get values passed in [{try_count}] try", nesting_level=1)
+                debug(f"get values in batch passed in [{try_count}] try", nesting_level=1)
                 return values
 
             except Exception as e:
                 print(e)
-                warn(f"get values failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                time.sleep(wait_for)
+                if try_count < try_for:
+                    warn(f"get values in batch failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"get values in batch failed in [{try_count}] try", nesting_level=1)
 
         return None
 
@@ -111,7 +114,7 @@ class GoogleWorksheet(object):
             # columns to be added
             if cols_to_add_at == 'end':
                 # columns to be appended at the end
-                requests.append(build_append_dimension_request(worksheet_id=self.id, dimension='COLUMNS', length=rows_to_add))
+                requests.append(build_append_dimension_request(worksheet_id=self.id, dimension='COLUMNS', length=cols_to_add, inherit_from_before=False))
 
             else:
                 # columns to be inserted at some index
@@ -156,6 +159,7 @@ class GoogleWorksheet(object):
                 requests.append(build_delete_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=rows_to_remove_from, end_index=rows_to_remove_to))
 
         return requests
+
 
 
     ''' link cells of a worksheet to drive-file/worksheet based type
@@ -242,6 +246,7 @@ class GoogleWorksheet(object):
         return self.range_work_request(range_work_specs=range_work_specs)
 
 
+
     ''' get values from a1 notation
     '''
     def get_values(self, range_spec, try_for=3):
@@ -253,10 +258,14 @@ class GoogleWorksheet(object):
                 return values
             except Exception as e:
                 print(e)
-                warn(f"get values failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                time.sleep(wait_for)
+                if try_count < try_for:
+                    warn(f"get values failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"get values failed in [{try_count}] try", nesting_level=1)
 
         return None
+
 
 
     ''' get a range from a1 notation
@@ -270,8 +279,11 @@ class GoogleWorksheet(object):
                 return ws_range
             except Exception as e:
                 print(e)
-                warn(f"get range failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
-                time.sleep(wait_for)
+                if try_count < try_for:
+                    warn(f"get range failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"get range failed in [{try_count}] try", nesting_level=1)
 
         return None
 
@@ -317,6 +329,7 @@ class GoogleWorksheet(object):
         return find_replace_requests
 
 
+
     ''' put column size in pixels in row 1 for all columns except A
     '''
     def column_pixels_in_top_row(self, column_sizes):
@@ -332,6 +345,7 @@ class GoogleWorksheet(object):
         return self.range_work_request(range_work_specs=range_work_specs, worksheet_dict={})
 
 
+
     ''' remove extra columns
     '''
     def remove_extra_columns(self, cols_to_remove_from, cols_to_remove_to):
@@ -342,6 +356,19 @@ class GoogleWorksheet(object):
             self.gsheet.update_in_batch(request_list=request_list)
 
         info(f"removed  .. columns {cols_to_remove_from}-{cols_to_remove_to}", nesting_level=1)
+
+
+
+    ''' add extra columns
+    '''
+    def add_extra_columns(self, cols_to_add_at, cols_to_add=1):
+        request_list = self.dimension_add_request(cols_to_add_at=cols_to_add_at, cols_to_add=cols_to_add)
+
+        info(f"adding .. [{cols_to_add}] column(s) at [{cols_to_add_at}]", nesting_level=1)
+        if len(request_list):
+            self.gsheet.update_in_batch(request_list=request_list)
+
+        info(f"added  .. [{cols_to_add}] column(s) at [{cols_to_add_at}]", nesting_level=1)
 
 
 
@@ -365,6 +392,41 @@ class GoogleWorksheet(object):
         # we first need to know what is the last row having some value
         values = self.gspread_worksheet.get_values()
         return len(values)
+
+
+
+    ''' clear all conditional formats
+    '''
+    def clear_conditional_formats(self, number_of_rules=1):
+        request_list = []
+        for i in range(0, number_of_rules):
+            request = {"deleteConditionalFormatRule": {
+                        "sheetId": self.id,
+                        "index": 0
+                    }
+                }
+
+            request_list.append(request)
+
+
+        info(f"clearing conditional formats ..", nesting_level=1)
+        if len(request_list):
+            self.gsheet.update_in_batch(request_list=request_list, try_for=1)
+
+        info(f"cleared  conditional formats ..", nesting_level=1)
+
+
+
+    ''' clear data validation for a range
+    '''
+    def clear_data_validation(self, range_spec):
+        request_list = self.data_validation_clear_request(range_spec=range_spec)
+
+        info(f"clearing data validation .. [{range_spec}]", nesting_level=1)
+        if len(request_list):
+            self.gsheet.update_in_batch(request_list=request_list)
+
+        info(f"cleared data validation  .. [{range_spec}]", nesting_level=1)
 
 
 

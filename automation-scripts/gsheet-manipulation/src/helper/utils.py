@@ -161,7 +161,7 @@ def build_repeatcell_from_work_spec(range, work_spec):
 
 ''' appendDimensionRequest builder
 '''
-def build_append_dimension_request(worksheet_id, dimension, length):
+def build_append_dimension_request(worksheet_id, dimension, length, inherit_from_before):
     return {'appendDimension': {'sheetId': worksheet_id, 'dimension': dimension, 'length': length}}
 
 
@@ -265,7 +265,6 @@ def build_conditional_format_rule(ranges, condition_type, condition_values, form
         }
 
     return rule
-
 
 
 ''' build a data validation rule

@@ -25,7 +25,7 @@ WORKSHEET_STRUCTURE_RESUME = {
             'B': {'halign': 'left',   'size': 200, 'label': 'heading'            , },
             'C': {'halign': 'center', 'size':  80, 'label': 'process'            , 'validation-list': ['Yes']},
             'D': {'halign': 'center', 'size':  80, 'label': 'level'              , 'validation-list': ['0', '1', '2', '3', '4', '5', '6']},
-            'E': {'halign': 'center', 'size':  80, 'label': 'content-type'       , 'validation-list': ['docx', 'gsheet', 'lof', 'lot', 'pdf', 'table', 'toc']},
+            'E': {'halign': 'center', 'size':  80, 'label': 'content-type'       , 'validation-list': ['gsheet', 'lof', 'lot', 'pdf', 'table', 'toc']},
             'F': {'halign': 'left',   'size': 200, 'label': 'link'               , },
             'G': {'halign': 'center', 'size':  80, 'label': 'break'              , 'validation-list': ['page', 'section']},
             'H': {'halign': 'center', 'size':  80, 'label': 'landscape'          , 'validation-list': ['Yes']},
@@ -42,13 +42,15 @@ WORKSHEET_STRUCTURE_RESUME = {
             'S': {'halign': 'left',   'size':  80, 'label': 'footer-even'        , },
             'T': {'halign': 'center', 'size':  80, 'label': 'override-header'    , 'validation-list': ['Yes']},
             'U': {'halign': 'center', 'size':  80, 'label': 'override-footer'    , 'validation-list': ['Yes']},
-            'V': {'halign': 'left',   'size':  80, 'label': 'responsible'        , },
-            'W': {'halign': 'left',   'size':  80, 'label': 'reviewer'           , },
-            'X': {'halign': 'left',   'size': 160, 'label': 'status'             , 'validation-list': ['pending', 'under-documentation', 'ready-for-review', 'under-review', 'finalized']},
+            'V': {'halign': 'left',   'size': 100, 'label': 'background-image'   , },
+            'W': {'halign': 'left',   'size':  80, 'label': 'responsible'        , },
+            'X': {'halign': 'left',   'size':  80, 'label': 'reviewer'           , },
+            'Y': {'halign': 'left',   'size': 160, 'label': 'status'             , 'validation-list': ['pending', 'under-documentation', 'ready-for-review', 'under-review', 'finalized']},
+            'Z': {'halign': 'left',   'size': 300, 'label': 'comment'            , },
         },
 
         'cell-empty-markers': [
-            'V3:W'
+            'W3:Y'
         ],
     },
     '00-layout': {

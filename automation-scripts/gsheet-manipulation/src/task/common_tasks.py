@@ -120,11 +120,18 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
     if 'columns' in worksheet_struct:
         # requests for column resizing
         column_resize_requests = worksheet.column_resize_request(column_specs=worksheet_struct['columns'])
+        data_validation_requests = []
 
         #  requests for column formatting
         for col_a1, work_spec in worksheet_struct['columns'].items():
             range_spec = f"{col_a1}:{col_a1}"
             range_work_specs[range_spec] = work_spec
+
+            # set validation rules
+            range_spec = f"{col_a1}3:{col_a1}"
+            data_validation_requests = data_validation_requests + worksheet.data_validation_clear_request(range_spec)
+            if ('validation-list' in work_spec):
+                data_validation_requests = data_validation_requests + worksheet.data_validation_from_list_request(range_spec, work_spec['validation-list'])
 
         values, format_requests = worksheet.range_work_request(range_work_specs=range_work_specs)
 
@@ -144,7 +151,7 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
 
 
     # finally update in batch
-    request_list = row_resize_requests + column_resize_requests + format_requests + conditional_format_requests
+    request_list = row_resize_requests + column_resize_requests + format_requests + conditional_format_requests + data_validation_requests
     if len(request_list) > 0:
         g_sheet.update_in_batch(request_list=request_list)
 
@@ -166,7 +173,7 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
 
 
     # update formats in batch
-    request_list = format_requests+conditional_format_requests
+    request_list = format_requests + conditional_format_requests
     if len(request_list) > 0:
         g_sheet.update_in_batch(request_list=request_list)
 

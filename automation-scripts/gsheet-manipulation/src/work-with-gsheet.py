@@ -23,7 +23,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # worksheet creation, formatting and related tasks
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
-    # format_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
+    format_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
     # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
@@ -35,12 +35,35 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
-    g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
+    # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
+
+
+    # BEGIN work on a single worksheet rather than on a list of worksheets
+    # -----------------------------------------------------------------------------------
+
+    # worksheet_name = '-toc-new'
+    # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+
+    # add column
+    # num_rows, num_cols = worksheet.number_of_dimesnions()
+    # if num_cols == 25:
+    #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
+
+    # clear data validation
+    # worksheet.clear_data_validation(range_spec='A1:Z')
+
+    # clear conditional formats
+    # worksheet.clear_conditional_formats(number_of_rules=1)
+
+    # -----------------------------------------------------------------------------------
+    # END   work on a single worksheet rather than on a list of worksheets
+
 
     # for worksheet_name in worksheet_names:
-    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name)
-    #     if num_rows > 6:
-    #         print(f"{g_sheet.title:<30}: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
+    #     if num_cols != 25:
+    #         print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+
 
     # cell linking and ordering
     # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
