@@ -208,30 +208,88 @@ WORKSHEET_STRUCTURE_RESUME = {
             'B4:D4',
         ],
     },
-    '02-career-highlight': {
+    '01-personal': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 150},
-            'C': {'size':  30},
-            'D': {'size': 620},
         },
+        'review-notes': True,
         'ranges': {
-            'B3:D' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
         },
         'cell-empty-markers': [
-            'B3:D',
+            'B3:Z'
+        ],
+    },
+    '02-career-highlight': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
         ],
     },
     '03-education': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
         },
+        'review-notes': True,
         'ranges': {
-            'B3:E3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
-            'B4:E' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
         },
         'cell-empty-markers': [
-            'B3:E',
+            'B3:Z',
+        ],
+    },
+    '04-managerial-expertise': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '05-technical-expertise': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '06-job-history': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
         ],
     },
     '06-job-history-USAID-FFBT': {
@@ -253,24 +311,138 @@ WORKSHEET_STRUCTURE_RESUME = {
 
         },
     },
-    '11-language-proficiency': {
+    '07-project-roles': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 100},
-            'C': {'size': 200},
-            'D': {'size': 200},
-            'E': {'size': 200},
-            'F': {'size': 100},
         },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '08-training': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '09-certification': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '10-membership': {
+        'num-columns': 6,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '11-language-proficiency': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
         'ranges': {
             'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
             'B4:F' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
         },
         'cell-empty-markers': [
-            'B3:F',
+            'B3:Z',
+        ],
+    },
+    '12-contact': {
+        'num-columns': 3,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z4',
+        ],
+    },
+    '13-educational-certificates': {
+        'num-columns': 2,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '14-vendor-certificates': {
+        'num-columns': 2,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    '15-institutional-certificates': {
+        'num-columns': 2,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
         ],
     },
     '16-references': {
+        'num-columns': 6,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
             'B': {'size': 140, 'halign': 'left', 'wrap': True},
@@ -279,12 +451,41 @@ WORKSHEET_STRUCTURE_RESUME = {
             'E': {'size': 190, 'halign': 'left', 'wrap': True},
             'F': {'size': 130, 'halign': 'left', 'wrap': True},
         },
+        'review-notes': True,
         'ranges': {
             'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
             'B4:F6' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
         },
         'cell-empty-markers': [
-            'B3:F6',
+            'B3:Z',
+        ],
+    },
+    'z-header': {
+        'num-columns': 3,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    'z-footer': {
+        'num-columns': 3,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+        },
+        'cell-empty-markers': [
+            'B3:Z',
         ],
     },
 }

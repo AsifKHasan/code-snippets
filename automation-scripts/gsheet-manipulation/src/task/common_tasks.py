@@ -139,19 +139,8 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
         column_resize_requests, values, format_requests = [], [], []
 
 
-    # will there be review-notes in the worksheet
-    if 'review-notes' in worksheet_struct:
-        if worksheet_struct['review-notes']:
-            conditional_format_requests = worksheet.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
-        else:
-            conditional_format_requests = []
-
-    else:
-        conditional_format_requests = []
-
-
     # finally update in batch
-    request_list = row_resize_requests + column_resize_requests + format_requests + conditional_format_requests + data_validation_requests
+    request_list = row_resize_requests + column_resize_requests + format_requests + data_validation_requests
     if len(request_list) > 0:
         g_sheet.update_in_batch(request_list=request_list)
 
@@ -172,8 +161,19 @@ def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
         conditional_format_requests = []
 
 
+    # will there be review-notes in the worksheet
+    if 'review-notes' in worksheet_struct:
+        if worksheet_struct['review-notes']:
+            review_notes_format_requests = worksheet.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
+        else:
+            review_notes_format_requests = []
+
+    else:
+        review_notes_format_requests = []
+
+
     # update formats in batch
-    request_list = format_requests + conditional_format_requests
+    request_list = format_requests + conditional_format_requests + review_notes_format_requests
     if len(request_list) > 0:
         g_sheet.update_in_batch(request_list=request_list)
 

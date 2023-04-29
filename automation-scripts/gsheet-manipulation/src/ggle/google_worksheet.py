@@ -397,7 +397,7 @@ class GoogleWorksheet(object):
 
     ''' clear all conditional formats
     '''
-    def clear_conditional_formats(self, number_of_rules=1):
+    def clear_conditional_formats(self, number_of_rules):
         request_list = []
         for i in range(0, number_of_rules):
             request = {"deleteConditionalFormatRule": {
@@ -408,12 +408,10 @@ class GoogleWorksheet(object):
 
             request_list.append(request)
 
-
-        info(f"clearing conditional formats ..", nesting_level=1)
         if len(request_list):
+            info(f"clearing conditional formats .. [{self.gspread_worksheet.title}]", nesting_level=1)
             self.gsheet.update_in_batch(request_list=request_list, try_for=1)
-
-        info(f"cleared  conditional formats ..", nesting_level=1)
+            info(f"cleared  conditional formats .. [{self.gspread_worksheet.title}]", nesting_level=1)
 
 
 

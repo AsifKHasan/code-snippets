@@ -12,3 +12,7 @@ worksheets:
 
 # work specifications to apply on a list of worksheets
 work-specs:
+
+
+# find and replace patterns
+find-replace-patterns:

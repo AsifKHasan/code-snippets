@@ -28,6 +28,34 @@ class GoogleSheet(object):
 
 
 
+    ''' get conditional formats
+    '''
+    def get_conditional_formats(self, worksheet_name, range_spec='A1:Z', try_for=3):
+        fields = 'sheets(properties.title,conditionalFormats)'
+        ranges = [f"'{worksheet_name}'!{range_spec}"]
+        wait_for = 30
+        conditional_formats = []
+        for try_count in range(1, try_for+1):
+            try:
+                request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, ranges=ranges, includeGridData=True, fields=fields)
+                response = request.execute()
+                debug(f"get conditional formats passed in [{try_count}] try", nesting_level=1)
+                if 'conditionalFormats' in response['sheets'][0]:
+                    conditional_formats = response['sheets'][0]['conditionalFormats']
+                    return conditional_formats
+
+            except Exception as e:
+                print(e)
+                if try_count < try_for:
+                    warn(f"get conditional formats failed in [{try_count}] try, trying again in {wait_for} seconds", nesting_level=1)
+                    time.sleep(wait_for)
+                else:
+                    warn(f"get conditional formats failed in [{try_count}] try", nesting_level=1)
+
+        return conditional_formats
+
+
+
     ''' get column sizes
     '''
     def get_column_sizes(self, try_for=3):

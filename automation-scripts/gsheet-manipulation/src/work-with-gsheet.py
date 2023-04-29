@@ -16,6 +16,18 @@ from task.common_tasks import *
 
 def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
 
+    for worksheet_name in worksheet_names:
+        # get and clear conditional formats
+        worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+        conditiona_formats = g_sheet.get_conditional_formats(worksheet_name=worksheet_name)
+        worksheet.clear_conditional_formats(number_of_rules=len(conditiona_formats))
+
+        # get dimensions
+        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
+        # if num_cols != 25:
+        #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+
+
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
     # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
@@ -41,28 +53,22 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # BEGIN work on a single worksheet rather than on a list of worksheets
     # -----------------------------------------------------------------------------------
 
+
     # worksheet_name = '-toc-new'
     # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-
-    # add column
-    # num_rows, num_cols = worksheet.number_of_dimesnions()
-    # if num_cols == 25:
-    #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
 
     # clear data validation
     # worksheet.clear_data_validation(range_spec='A1:Z')
 
-    # clear conditional formats
-    # worksheet.clear_conditional_formats(number_of_rules=1)
+    # add dimension
+    # num_rows, num_cols = worksheet.number_of_dimesnions()
+    # if num_cols == 25:
+    #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
+
 
     # -----------------------------------------------------------------------------------
     # END   work on a single worksheet rather than on a list of worksheets
 
-
-    # for worksheet_name in worksheet_names:
-    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-    #     if num_cols != 25:
-    #         print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
 
     # cell linking and ordering
