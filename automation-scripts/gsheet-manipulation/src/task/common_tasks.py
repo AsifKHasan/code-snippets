@@ -29,25 +29,6 @@ def create_worksheets(g_sheet, worksheet_name_list):
 
 
 
-''' format worksheets according to spec defined in WORKSHEET_STRUCTURE
-'''
-def format_worksheets(g_sheet, worksheet_name_list):
-    for ws_name in worksheet_name_list:
-        if (ws_name in WORKSHEET_STRUCTURE):
-            info(f"formatting worksheet {ws_name}", nesting_level=1)
-
-            worksheet_formatted = format_worksheet(g_sheet=g_sheet, worksheet_name=ws_name, worksheet_struct=WORKSHEET_STRUCTURE[ws_name])
-            if worksheet_formatted:
-                info(f"formatted  worksheet {ws_name}", nesting_level=1)
-
-            else:
-                info(f"worksheet {ws_name} could not be formatted", nesting_level=1)
-
-        else:
-            warn(f"worksheet {ws_name} : structure not defined", nesting_level=1)
-
-
-
 ''' create a worksheet according to spec defined in WORKSHEET_STRUCTURE
 '''
 def create_worksheet(g_sheet, worksheet_name, worksheet_struct):
@@ -92,95 +73,6 @@ def create_worksheet(g_sheet, worksheet_name, worksheet_struct):
 
     # finally update in batch
     g_sheet.update_in_batch(request_list=column_resize_requests+format_requests+conditional_format_requests)
-
-    return True
-
-
-
-''' format a worksheet according to spec defined in WORKSHEET_STRUCTURE
-'''
-def format_worksheet(g_sheet, worksheet_name, worksheet_struct):
-    # get the worksheet
-    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
-    if not worksheet:
-        return False
-
-
-    # work on the columns - size, alignemnts, fonts and wrapping
-    range_work_specs = {}
-
-    if 'rows' in worksheet_struct:
-        # requests for row resizing
-        row_resize_requests = worksheet.row_resize_request(row_specs=worksheet_struct['rows'])
-
-    else:
-        row_resize_requests = []
-
-
-    if 'columns' in worksheet_struct:
-        # requests for column resizing
-        column_resize_requests = worksheet.column_resize_request(column_specs=worksheet_struct['columns'])
-        data_validation_requests = []
-
-        #  requests for column formatting
-        for col_a1, work_spec in worksheet_struct['columns'].items():
-            range_spec = f"{col_a1}:{col_a1}"
-            range_work_specs[range_spec] = work_spec
-
-            # set validation rules
-            range_spec = f"{col_a1}3:{col_a1}"
-            data_validation_requests = data_validation_requests + worksheet.data_validation_clear_request(range_spec)
-            if ('validation-list' in work_spec):
-                data_validation_requests = data_validation_requests + worksheet.data_validation_from_list_request(range_spec, work_spec['validation-list'])
-
-        values, format_requests = worksheet.range_work_request(range_work_specs=range_work_specs)
-
-    else:
-        column_resize_requests, values, format_requests = [], [], []
-
-
-    # finally update in batch
-    request_list = row_resize_requests + column_resize_requests + format_requests + data_validation_requests
-    if len(request_list) > 0:
-        g_sheet.update_in_batch(request_list=request_list)
-
-
-
-    # get the ranges and formatting requests
-    if 'ranges' in worksheet_struct:
-        worksheet_dict = g_sheet.worksheets_as_dict()
-        values, format_requests = worksheet.range_work_request(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
-    else:
-        values, format_requests = [], []
-
-
-    # conditional formatting for blank cells
-    if 'cell-empty-markers' in worksheet_struct:
-        conditional_format_requests = worksheet.conditional_formatting_for_blank_cells_request(range_specs=worksheet_struct['cell-empty-markers'])
-    else:
-        conditional_format_requests = []
-
-
-    # will there be review-notes in the worksheet
-    if 'review-notes' in worksheet_struct:
-        if worksheet_struct['review-notes']:
-            review_notes_format_requests = worksheet.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
-        else:
-            review_notes_format_requests = []
-
-    else:
-        review_notes_format_requests = []
-
-
-    # update formats in batch
-    request_list = format_requests + conditional_format_requests + review_notes_format_requests
-    if len(request_list) > 0:
-        g_sheet.update_in_batch(request_list=request_list)
-
-
-    # update values in batch
-    if len(values) > 0:
-        worksheet.update_values_in_batch(values=values)
 
     return True
 

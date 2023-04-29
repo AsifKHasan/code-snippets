@@ -9,6 +9,8 @@ from ggle.google_worksheet import GoogleWorksheet
 
 from helper.utils import *
 from helper.logger import *
+from helper.data import *
+
 from pprint import pprint
 
 
@@ -30,19 +32,22 @@ class GoogleSheet(object):
 
     ''' get conditional formats
     '''
-    def get_conditional_formats(self, worksheet_name, range_spec='A1:Z', try_for=3):
+    def get_conditional_formats(self, try_for=3):
         fields = 'sheets(properties.title,conditionalFormats)'
-        ranges = [f"'{worksheet_name}'!{range_spec}"]
+        # ranges = [f"'{worksheet_name}'!{range_spec}"]
         wait_for = 30
-        conditional_formats = []
+        conditional_formats = {}
         for try_count in range(1, try_for+1):
             try:
-                request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, ranges=ranges, includeGridData=True, fields=fields)
+                request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, includeGridData=True, fields=fields)
                 response = request.execute()
                 debug(f"get conditional formats passed in [{try_count}] try", nesting_level=1)
-                if 'conditionalFormats' in response['sheets'][0]:
-                    conditional_formats = response['sheets'][0]['conditionalFormats']
-                    return conditional_formats
+                if 'sheets' in response:
+                    for sheet in response['sheets']:
+                        if 'conditionalFormats' in sheet:
+                            conditional_formats[sheet['properties']['title']] = sheet['conditionalFormats']
+
+                return conditional_formats
 
             except Exception as e:
                 print(e)
@@ -284,6 +289,57 @@ class GoogleSheet(object):
         if len(requests):
             self.update_in_batch(request_list=requests)
             info(f"replaced  .. {len(requests)} patterns", nesting_level=1)
+
+
+
+    ''' get and clear conditional formats
+    '''
+    def clear_conditional_formats(self, worksheet_names):
+        conditional_formats = self.get_conditional_formats(try_for=3)
+        requests = []
+        for worksheet_name in worksheet_names:
+            if worksheet_name not in conditional_formats:
+                debug(f"No conditional format exists for [{worksheet_name}]")
+                continue
+
+            worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
+            if worksheet_to_work_on:
+                number_of_rules = len(conditional_formats[worksheet_name])
+                reqs = worksheet_to_work_on.clear_conditional_formats(number_of_rules=number_of_rules)
+                requests = requests + reqs
+
+        if len(requests):
+            info(f"clearing  {len(requests)} conditional formats", nesting_level=1)
+            self.update_in_batch(request_list=requests)
+            info(f"cleared   {len(requests)} conditional formats", nesting_level=1)
+
+
+
+    ''' work on a (list of) worksheet's range of work specs for value and format updates
+    '''
+    def format_worksheets(self, worksheet_names):
+        global WORKSHEET_STRUCTURE
+        values, requests = [], []
+        worksheet_dict = self.worksheets_as_dict()
+        for worksheet_name in worksheet_names:
+            if worksheet_name not in WORKSHEET_STRUCTURE:
+                warn(f"No structure defined for formatting [{worksheet_name}]", nesting_level=1)
+                return
+
+            worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
+            if worksheet_to_work_on:
+                worksheet_struct = WORKSHEET_STRUCTURE[worksheet_name]
+                vals, reqs = worksheet_to_work_on.format_worksheet(worksheet_dict=worksheet_dict, worksheet_struct=worksheet_struct)
+                values = values + vals
+                requests = requests + reqs
+
+        if len(values):
+            self.update_values_in_batch(value_list=values)
+            info(f"[format_worksheets] updated    .. [{len(values)}] values", nesting_level=1)
+
+        if len(requests):
+            self.update_in_batch(request_list=requests)
+            info(f"[format_worksheets] formatted  .. [{len(requests)}] ranges", nesting_level=1)
 
 
 

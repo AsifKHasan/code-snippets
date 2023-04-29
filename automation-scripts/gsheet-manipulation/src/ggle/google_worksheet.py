@@ -315,6 +315,74 @@ class GoogleWorksheet(object):
 
 
 
+    ''' format a worksheet according to spec defined in WORKSHEET_STRUCTURE
+    '''
+    def format_worksheet(self, worksheet_dict, worksheet_struct):
+        # work on the columns - size, alignemnts, fonts and wrapping
+        range_work_specs = {}
+
+        if 'rows' in worksheet_struct:
+            # requests for row resizing
+            row_resize_requests = worksheet.row_resize_request(row_specs=worksheet_struct['rows'])
+
+        else:
+            row_resize_requests = []
+
+
+        if 'columns' in worksheet_struct:
+            # requests for column resizing
+            column_resize_requests = self.column_resize_request(column_specs=worksheet_struct['columns'])
+            data_validation_requests = []
+
+            #  requests for column formatting
+            for col_a1, work_spec in worksheet_struct['columns'].items():
+                range_spec = f"{col_a1}:{col_a1}"
+                range_work_specs[range_spec] = work_spec
+
+                # set validation rules
+                range_spec = f"{col_a1}3:{col_a1}"
+                data_validation_requests = data_validation_requests + self.data_validation_clear_request(range_spec)
+                if ('validation-list' in work_spec):
+                    data_validation_requests = data_validation_requests + self.data_validation_from_list_request(range_spec, work_spec['validation-list'])
+
+            values, column_format_requests = self.range_work_request(range_work_specs=range_work_specs)
+
+        else:
+            column_resize_requests, values, column_format_requests = [], [], []
+
+
+        # get the ranges and formatting requests
+        if 'ranges' in worksheet_struct:
+            values, range_format_requests = self.range_work_request(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
+        else:
+            values, range_format_requests = [], []
+
+
+        # conditional formatting for blank cells
+        if 'cell-empty-markers' in worksheet_struct:
+            conditional_format_requests = self.conditional_formatting_for_blank_cells_request(range_specs=worksheet_struct['cell-empty-markers'])
+        else:
+            conditional_format_requests = []
+
+
+        # will there be review-notes in the worksheet
+        if 'review-notes' in worksheet_struct:
+            if worksheet_struct['review-notes']:
+                review_notes_format_requests = self.conditional_formatting_for_review_notes_request(num_cols=worksheet_struct['num-columns'])
+            else:
+                review_notes_format_requests = []
+
+        else:
+            review_notes_format_requests = []
+
+
+        # merge formats
+        requests = row_resize_requests + column_resize_requests + column_format_requests + data_validation_requests + range_format_requests + conditional_format_requests + review_notes_format_requests
+
+        return values, requests
+
+
+
     ''' find and replace in worksheet
     '''
     def find_and_replace(self, find_replace_patterns):
@@ -408,11 +476,8 @@ class GoogleWorksheet(object):
 
             request_list.append(request)
 
-        if len(request_list):
-            info(f"clearing conditional formats .. [{self.gspread_worksheet.title}]", nesting_level=1)
-            self.gsheet.update_in_batch(request_list=request_list, try_for=1)
-            info(f"cleared  conditional formats .. [{self.gspread_worksheet.title}]", nesting_level=1)
-
+        return request_list
+        
 
 
     ''' clear data validation for a range

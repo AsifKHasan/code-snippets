@@ -16,12 +16,7 @@ from task.common_tasks import *
 
 def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
 
-    for worksheet_name in worksheet_names:
-        # get and clear conditional formats
-        worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-        conditiona_formats = g_sheet.get_conditional_formats(worksheet_name=worksheet_name)
-        worksheet.clear_conditional_formats(number_of_rules=len(conditiona_formats))
-
+    # for worksheet_name in worksheet_names:
         # get dimensions
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
         # if num_cols != 25:
@@ -34,8 +29,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
 
     # worksheet creation, formatting and related tasks
+    g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
+    g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
-    format_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
     # create_review_notes_conditional_formatting(g_sheet=g_sheet, worksheet_name_list=worksheet_names)

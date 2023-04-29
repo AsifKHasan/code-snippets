@@ -10,48 +10,6 @@ from helper.utils import *
 from helper.logger import *
 
 
-WORKSHEET_SPECS = {
-    '06-job-history': {
-        'num-columns': 5,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-
-        'columns': {
-            'A': {'size': 100}, 
-            'B': {'size': 65}, 
-            'C': {'size': 65}, 
-            'D': {'size': 30}, 
-            'E': {'size': 640}, 
-        },
-
-        'ranges': {
-            'B1:B': {'weight': 'normal', 'halign': 'center', 'merge': False},
-            'C1:C': {'weight': 'normal', 'halign': 'center', 'merge': False},
-            'D1:D': {'weight': 'normal', 'halign': 'center', 'merge': False},
-            'E1:E': {'weight': 'normal', 'halign': 'left', 'merge': False},
-
-            'B3:B': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
-            'C3:C': {'date-format': 'yyyy-mmm', 'merge': False, 'weight': 'bold'},
-
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
-            'B2:E2': {'value': 'content', 'weight': 'bold', 'halign': 'left'},
-
-            'A3:H': {'valign': 'top', 'merge': False, 'wrap': True},
-
-            'B3': {'value': 'From', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'weight': 'bold', 'note': '{"repeat-rows": 1}'},
-            'C3': {'value': 'To', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'weight': 'bold'},
-            'D3:E3': {'value': 'Employment history', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'halign': 'left', 'weight': 'bold'},
-
-        },
-
-        'cell-empty-markers': [
-            'B3:E'
-        ], 
-    },
-}
-
-
-
 ''' modify 06-job-history to new format
 '''
 def create_06_job_history_new(gsheet):
@@ -161,7 +119,7 @@ def create_06_job_history_new(gsheet):
 
         # job-history finished
         block_end_row = current_row - 1
-        
+
         # From
         range_spec = f"B{block_start_row}:B{block_end_row}"
         # val = quote_number(job_history['from'])
@@ -169,7 +127,7 @@ def create_06_job_history_new(gsheet):
         # debug(f".. From : {job_history['from']} -> {val}")
         range_work_specs[range_spec] = {'value': val, 'border-color': '#b7b7b7'}
 
-        # To 
+        # To
         range_spec = f"C{block_start_row}:C{block_end_row}"
         # val = quote_number(job_history['to'])
         val = job_history['to']
@@ -236,7 +194,7 @@ def create_06_job_history_new(gsheet):
     except Exception as e:
         warn(str(e))
 
-    
+
 
 ''' get job-histories data from '06-job-history'
 '''
