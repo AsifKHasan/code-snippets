@@ -167,7 +167,7 @@ class GoogleSheet(object):
 
     ''' get worksheet by name
     '''
-    def worksheet_by_name(self, worksheet_name, suppress_log=False):
+    def worksheet_by_name(self, worksheet_name, suppress_log=True):
         for ws in self.worksheets:
             if ws.title == worksheet_name:
                 if not suppress_log:
@@ -175,8 +175,7 @@ class GoogleSheet(object):
 
                 return GoogleWorksheet(google_service=self.service, gspread_worksheet=ws, gsheet=self)
 
-        if not suppress_log:
-            warn(f"worksheet [{worksheet_name:<40}] not found", nesting_level=1)
+        warn(f"worksheet [{worksheet_name:<40}] not found", nesting_level=1)
 
 
 

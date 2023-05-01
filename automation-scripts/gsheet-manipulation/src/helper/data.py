@@ -479,6 +479,8 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 600, 'halign': 'left', 'wrap': True},
+            'C': {'size': 200, 'halign': 'right', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
@@ -493,6 +495,8 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 600, 'halign': 'left', 'wrap': True},
+            'C': {'size': 200, 'halign': 'right', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
