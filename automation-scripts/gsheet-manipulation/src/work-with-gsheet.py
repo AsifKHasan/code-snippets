@@ -32,7 +32,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
 
-    g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
@@ -72,6 +72,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
+
+    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-RHD-TMC', range_specs_for_cells_to_link=['B9', 'B12', 'B15', 'B17', 'B20', 'B23', 'B25', 'B28'])
+
     # g_sheet.order_worksheets()
 
 

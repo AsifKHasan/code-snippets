@@ -139,6 +139,33 @@ WORKSHEET_STRUCTURE_RESUME = {
             'B26:D27',
         ],
     },
+    '00-layout-RHD-TMC': {
+        'num-rows': 28,
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'top', 'wrap': True},
+            'B': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True},
+            'C': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
+            'D': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
+            'E': {'size': 270, 'halign': 'center', 'valign': 'top', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+            'B9': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight'},
+            'B12': {'value': '03-education', 'ws-name-to-link': '03-education'},
+            'B15': {'value': '06-job-history', 'ws-name-to-link': '06-job-history'},
+            'B17': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles'},
+            'B20': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise'},
+            'B23': {'value': '08-training', 'ws-name-to-link': '08-training'},
+            'B25': {'value': '09-certification', 'ws-name-to-link': '09-certification'},
+            'B28': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency'},
+        },
+        'cell-empty-markers': [
+            'B3:E6',
+        ],
+    },
     '00-layout-USAID-FFBT': {
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},

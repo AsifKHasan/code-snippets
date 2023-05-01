@@ -115,7 +115,7 @@ class GoogleWorksheet(object):
                     info(f"renamed  worksheet [{response['title']}] to [{self.title}]")
 
                 except:
-                    warn(f"worksheet [{response['title']}] could not be renamed to [{self.title}]")
+                    warn(f"worksheet          [{response['title']}] could not be renamed to [{self.title}]")
 
 
         except:
