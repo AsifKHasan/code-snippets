@@ -210,7 +210,7 @@ def build_find_replace_request(worksheet_id, search_for, replace_with):
             "replacement": replace_with,
             "matchCase": True,
             "matchEntireCell": False,
-            "searchByRegex": False,
+            "searchByRegex": True,
             "includeFormulas": True,
             "sheetId": worksheet_id,
         }
