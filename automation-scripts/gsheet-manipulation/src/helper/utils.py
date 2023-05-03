@@ -203,15 +203,15 @@ def build_duplicate_sheet_request(worksheet_id, new_worksheet_name, new_workshee
 
 '''
 '''
-def build_find_replace_request(worksheet_id, search_for, replace_with):
+def build_find_replace_request(worksheet_id, search_for, replace_with, regex=False, include_formulas=False, entire_cell=False):
     return {
         "findReplace": {
             "find": search_for,
             "replacement": replace_with,
             "matchCase": True,
-            "matchEntireCell": False,
-            "searchByRegex": True,
-            "includeFormulas": True,
+            "matchEntireCell": entire_cell,
+            "searchByRegex": regex,
+            "includeFormulas": include_formulas,
             "sheetId": worksheet_id,
         }
     }

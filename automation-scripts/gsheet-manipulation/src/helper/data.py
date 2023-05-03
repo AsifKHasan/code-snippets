@@ -507,5 +507,207 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
 }
 
+# Resume structure
+WORKSHEET_STRUCTURE_PDS = {
+    '05-people': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 150,  },
+            'C': {'halign': 'left', 'size': 150,  },
+            'D': {'halign': 'left', 'size': 500,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'person'},
+            'C2': {'value': 'project-role'},
+            'D2': {'value': 'functionalities-performed'},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    '06-description': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 150,  },
+            'C': {'halign': 'center', 'size': 30,  },
+            'D': {'halign': 'left', 'size': 620,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'header', 'halign': 'left'},
+            'C2:D2': {'value': 'narrative-paragraphs', 'halign': 'left', 'merge': True},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    '07-functionality': {
+        'num-columns': 5,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 150,  },
+            'C': {'halign': 'left', 'size':  30,  },
+            'D': {'halign': 'left', 'size': 120,  },
+            'E': {'halign': 'left', 'size': 500,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'module', 'halign': 'left'},
+            'C2:D2': {'value': 'feature', 'halign': 'left', 'merge': True},
+            'E2': {'value': 'process', 'halign': 'left'},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    '08-technology': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 150,  },
+            'C': {'halign': 'center', 'size': 30,  },
+            'D': {'halign': 'left', 'size': 620,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'area', 'halign': 'left'},
+            'C2:D2': {'value': 'technology-tool', 'halign': 'left', 'merge': True},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    '09-services': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 150,  },
+            'C': {'halign': 'center', 'size': 30,  },
+            'D': {'halign': 'left', 'size': 620,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'area', 'halign': 'left'},
+            'C2:D2': {'value': 'services-provided-by-staff', 'halign': 'left', 'merge': True},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    '10-process': {
+        'num-columns': 4,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 150,  },
+            'C': {'halign': 'center', 'size': 30,  },
+            'D': {'halign': 'left', 'size': 620,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'area', 'halign': 'left'},
+            'C2:D2': {'value': 'process-description-in-paragraphs-bullets', 'halign': 'left', 'merge': True},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    '11-complexity': {
+        'num-columns': 3,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'halign': 'left', 'size': 100,  },
+            'B': {'halign': 'left', 'size': 200,  },
+            'C': {'halign': 'left', 'size': 600,  },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2': {'value': 'project-complexity', 'halign': 'left'},
+            'C2': {'value': 'how-it-was-addressed', 'halign': 'left'},
+            'B3:Z': {'border-color': '#b7b7b7'},
+        },
+        'cell-empty-markers': [
+            'B3:Z'
+        ],
+    },
+    'z-header': {
+        'num-columns': 3,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 600, 'halign': 'left', 'wrap': True},
+            'C': {'size': 200, 'halign': 'right', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2:C2': {'value': 'content', 'merge': True, 'halign': 'left'},
+            'B3': {'value': 'Project Datasheet', 'halign': 'left'},
+            'C3': {'value': '=image("https://spectrum-bd.biz/data/artifacts/res/logo/spectrum-logo-small-111x89.png", 1)', 'halign': 'right'},
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+    'z-footer': {
+        'num-columns': 3,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 600, 'halign': 'left', 'wrap': True},
+            'C': {'size': 200, 'halign': 'right', 'wrap': True},
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
+            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'B2:C2': {'value': 'content', 'merge': True, 'halign': 'left'},
+            'B3': {'value': "='01-summary'!C3", 'halign': 'left'},
+            'C3': {'value': 'A', 'note': '{"page-number": "long"}', 'halign': 'right'},
+        },
+        'cell-empty-markers': [
+            'B3:Z',
+        ],
+    },
+}
+
 # which structure we are using
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS

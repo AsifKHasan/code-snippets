@@ -22,6 +22,19 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # if num_cols != 25:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
+        # BEGIN work on a single worksheet rather than on a list of worksheets
+        # -----------------------------------------------------------------------------------
+
+        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+        # worksheet.clear_data_validation(range_spec='A1:Z')
+
+        # add dimension
+        # num_rows, num_cols = worksheet.number_of_dimesnions()
+        # if num_cols == 25:
+        #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
+
+        # -----------------------------------------------------------------------------------
+        # END   work on a single worksheet rather than on a list of worksheets
 
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
@@ -29,43 +42,22 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
 
     # worksheet creation, formatting and related tasks
-    # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
-    # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
+    g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
+    g_sheet.format_worksheets(worksheet_names=worksheet_names)
 
-    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
     # create_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
     # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
     # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
-    # g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
+    g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
 
     # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
-    g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
-
-
-    # BEGIN work on a single worksheet rather than on a list of worksheets
-    # -----------------------------------------------------------------------------------
-
-
-    # worksheet_name = '-toc-new'
-    # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-
-    # clear data validation
-    # worksheet.clear_data_validation(range_spec='A1:Z')
-
-    # add dimension
-    # num_rows, num_cols = worksheet.number_of_dimesnions()
-    # if num_cols == 25:
-    #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
-
-
-    # -----------------------------------------------------------------------------------
-    # END   work on a single worksheet rather than on a list of worksheets
-
+    # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
 
     # cell linking and ordering

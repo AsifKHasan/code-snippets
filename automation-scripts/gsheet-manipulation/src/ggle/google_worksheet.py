@@ -446,7 +446,10 @@ class GoogleWorksheet(object):
         for pattern in find_replace_patterns:
             search_for = pattern['find']
             replace_with = pattern['replace-with']
-            request = build_find_replace_request(worksheet_id=self.id, search_for=search_for, replace_with=replace_with)
+            regex = pattern.get('regex', False)
+            include_formulas = pattern.get('include-formulas', False)
+            entire_cell = pattern.get('entire-cell', False)
+            request = build_find_replace_request(worksheet_id=self.id, search_for=search_for, replace_with=replace_with, regex=regex, include_formulas=include_formulas, entire_cell=entire_cell)
             if request:
                 find_replace_requests.append(request)
 
@@ -490,13 +493,8 @@ class GoogleWorksheet(object):
     ''' clear data validation for a range
     '''
     def clear_data_validation(self, range_spec):
-        request_list = self.data_validation_clear_requests(range_spec=range_spec)
-
-        info(f"clearing data validation .. [{range_spec}]", nesting_level=1)
-        if len(request_list):
-            self.gsheet.update_in_batch(request_list=request_list)
-
-        info(f"cleared data validation  .. [{range_spec}]", nesting_level=1)
+        requests = self.data_validation_clear_requests(range_spec=range_spec)
+        self.gsheet.update_in_batch(values=[], requests=requests, requester='clear_data_validation')
 
 
 
