@@ -12,9 +12,11 @@ from helper.logger import *
 
 from task.common_tasks import *
 # from task.resume_tasks import *
-# from task.acas_tasks import *
 
 def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
+
+    # BEGIN work on a single worksheet rather than on a list of worksheets
+    # -----------------------------------------------------------------------------------
 
     # for worksheet_name in worksheet_names:
         # get dimensions
@@ -22,10 +24,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # if num_cols != 25:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
-        # BEGIN work on a single worksheet rather than on a list of worksheets
-        # -----------------------------------------------------------------------------------
-
         # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+
+        # clear data validation
         # worksheet.clear_data_validation(range_spec='A1:Z')
 
         # add dimension
@@ -33,8 +34,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # if num_cols == 25:
         #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
 
-        # -----------------------------------------------------------------------------------
-        # END   work on a single worksheet rather than on a list of worksheets
+    # -----------------------------------------------------------------------------------
+    # END   work on a single worksheet rather than on a list of worksheets
+
 
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
@@ -43,10 +45,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # worksheet creation, formatting and related tasks
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
-    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
-
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
-    # create_worksheets(g_sheet=g_sheet, worksheet_name_list=worksheet_names)
+    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.create_worksheets(worksheet_names=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
     # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
@@ -64,9 +65,6 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
-
-    # g_sheet.link_cells_to_worksheet(worksheet_name='00-layout-RHD-TMC', range_specs_for_cells_to_link=['B9', 'B12', 'B15', 'B17', 'B20', 'B23', 'B25', 'B28'])
-
     # g_sheet.order_worksheets()
 
 

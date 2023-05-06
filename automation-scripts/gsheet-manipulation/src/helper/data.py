@@ -40,7 +40,6 @@ WORKSHEET_STRUCTURE_RESUME = {
         ],
     },
     '00-layout': {
-        'index': 1,
         'num-rows': 34,
         'num-columns': 4,
         'frozen-rows': 2,
@@ -265,7 +264,7 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '04-managerial-expertise': {
         'num-columns': 4,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
