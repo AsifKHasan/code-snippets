@@ -586,7 +586,7 @@ worksheets:
   # - 02-career-highlight
   # - 03-education
   - 04-managerial-expertise
-  # - 05-technical-expertise
+  - 05-technical-expertise
   # - 06-job-history
   # - 07-project-roles
   # - 08-training

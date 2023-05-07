@@ -559,8 +559,12 @@ class GoogleWorksheet(object):
             if 'merge' in work_spec:
                 merge = work_spec['merge']
 
+            merge_type = 'MERGE_ALL'
+            if 'merge-type' in work_spec:
+                merge_type = work_spec['merge-type']
+
             if merge:
-                merges.append({'mergeCells': {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id), 'mergeType': 'MERGE_ALL'}})
+                merges.append({'mergeCells': {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id), 'mergeType': merge_type}})
 
             # formats
             repeat_cell = build_repeatcell_from_work_spec(a1_range_to_grid_range(range_spec, sheet_id=self.id), work_spec)

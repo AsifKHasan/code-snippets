@@ -274,11 +274,12 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         'review-notes': True,
         'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#FFFFFF', 'no-border': True, },
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
             'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:D1': {'halign': 'center', },
             'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', },
+            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'note': '{"repeat-rows": 1}', },
             'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, },
         },
         'cell-empty-markers': [
@@ -287,13 +288,23 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '05-technical-expertise': {
         'num-columns': 4,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 170, 'halign': 'left', 'wrap': True},
+            'C': {'size':  30, 'halign': 'center', 'wrap': True},
+            'D': {'size': 600, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:D1': {'halign': 'center', },
+            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'note': '{"repeat-rows": 1}', },
+            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',

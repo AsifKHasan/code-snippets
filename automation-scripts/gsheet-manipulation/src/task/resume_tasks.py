@@ -11,56 +11,66 @@ from helper.utils import *
 from helper.logger import *
 
 
-''' merge cells and border worksheet 04-managerial-expertise
+''' merge cells and border worksheet based on one column
 '''
-def border_and_merge_04_managerial_expertise(g_sheet):
-    worksheet_name = '04-managerial-expertise'
-    range_spec = 'B4:D'
-    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
-    if worksheet is None:
-        error(f"worksheet {worksheet_name} not found", nesting_level=1)
-        return
+def border_and_merge_based_on_column(g_sheet, worksheet_names, range_spec, grouping_columns):
+    values, requests = [], []
+    for worksheet_name in worksheet_names:
+        range_work_specs = {}
+        worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+        if worksheet is None:
+            error(f"worksheet {worksheet_name} not found", nesting_level=1)
+            return
 
-    # unmerge the range
-    grid_range = a1_range_to_grid_range(range_spec, sheet_id=worksheet.id)
-    requests = [{'unmergeCells': {'range': grid_range}}]
+        # unmerge the range
+        grid_range = a1_range_to_grid_range(range_spec, sheet_id=worksheet.id)
+        # requests.append({'unmergeCells': {'range': grid_range}})
+        vals, reqs = worksheet.range_work_requests(range_work_specs={range_spec: {'border-color': '#B7B7B7', 'no-border': True, }})
+        requests = requests + reqs
+        values = values + vals
 
-    # first column of range B (1) is the grouping column, vertical span for each value is to be stored (for subsequent column processing), merged and bordered around
-    grouping_column_index = 0
-    grouping_column = grid_range['startColumnIndex'] + grouping_column_index + 1
-    start_row = grid_range['startRowIndex']
 
-    range_values = worksheet.get_values_in_batch(ranges=[range_spec])
-    range_work_specs = {}
-    group_start_row = 0
-    current_row = 0
-    for row in range_values[0]:
-        new_value = row[grouping_column_index]
-        if current_row == 0:
-            previous_value = row[grouping_column_index]
-        else:
-            if new_value != '' and new_value != previous_value:
-                print(f"[{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row+1}] value changed [{previous_value}] -> [{new_value}]")
-                a1_range = f"{COLUMN_TO_LETTER[grouping_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row}"
-                range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7'}
-                group_start_row = current_row
-                previous_value = new_value
-    
+        # first column of range B (1) is the grouping column, vertical span for each value is to be stored (for subsequent column processing), merged and bordered around
+        grouping_start_column = grid_range['startColumnIndex'] + 1
+        grouping_end_column = grouping_start_column + grouping_columns - 1
+        non_grouping_start_column = grouping_end_column + 1
+        last_column = grid_range['endColumnIndex']
+        start_row = grid_range['startRowIndex']
 
-        current_row = current_row + 1
+        range_values = worksheet.get_values_in_batch(ranges=[range_spec])
+        group_start_row = 0
+        current_row = 0
+        for row in range_values[0]:
+            new_value = row[0]
+            if current_row == 0:
+                previous_value = row[0]
+            else:
+                if new_value != '' and new_value != previous_value:
+                    # print(f"[{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row+1}] value changed [{previous_value}] -> [{new_value}]")
+                    a1_range = f"{COLUMN_TO_LETTER[grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_end_column]}{start_row+current_row}"
+                    range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7', 'merge-type': 'MERGE_COLUMNS', }
+                    a1_range = f"{COLUMN_TO_LETTER[non_grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[last_column]}{start_row+current_row}"
+                    range_work_specs[a1_range] = {'border-color': '#B7B7B7', 'inner-border': False, }
 
-    # there may be an open group
-    a1_range = f"{COLUMN_TO_LETTER[grouping_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row}"
-    range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7'}
+                    group_start_row = current_row
+                    previous_value = new_value
 
-    vals, reqs = worksheet.range_work_requests(range_work_specs=range_work_specs)
-    requests = requests + reqs
-    values = vals
+            current_row = current_row + 1
 
-    g_sheet.update_in_batch(values=values, requests=requests, requester='border_and_merge_04_managerial_expertise')
+        # there may be an open group
+        a1_range = f"{COLUMN_TO_LETTER[grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_end_column]}{start_row+current_row}"
+        range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7', 'merge-type': 'MERGE_COLUMNS', }
+        # do for the other columns
+        a1_range = f"{COLUMN_TO_LETTER[non_grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[last_column]}{start_row+current_row}"
+        range_work_specs[a1_range] = {'border-color': '#B7B7B7', 'inner-border': False, }
 
-    # print(range_work_specs)
+        vals, reqs = worksheet.range_work_requests(range_work_specs=range_work_specs)
+        requests = requests + reqs
+        values = values + vals
 
+    # pprint(range_work_specs)
+    # pprint(requests)
+    g_sheet.update_in_batch(values=values, requests=requests, requester='border_and_merge_based_on_column')
 
 
 

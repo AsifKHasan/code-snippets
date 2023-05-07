@@ -46,7 +46,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # worksheet creation, formatting and related tasks
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
-    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
@@ -89,7 +89,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # BEGIN resume specific tasks
     # create_06_job_history_new(g_sheet)
-    border_and_merge_04_managerial_expertise(g_sheet=g_sheet)
+    border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=worksheet_names, range_spec='B4:Z', grouping_columns=1)
     # END   resume specific tasks
 
 
