@@ -11,7 +11,7 @@ from ggle.google_service import GoogleService
 from helper.logger import *
 
 from task.common_tasks import *
-# from task.resume_tasks import *
+from task.resume_tasks import *
 
 def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
 
@@ -62,7 +62,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
 
     # cell linking and ordering
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
     # g_sheet.order_worksheets()
@@ -89,6 +89,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # BEGIN resume specific tasks
     # create_06_job_history_new(g_sheet)
+    border_and_merge_04_managerial_expertise(g_sheet=g_sheet)
     # END   resume specific tasks
 
 

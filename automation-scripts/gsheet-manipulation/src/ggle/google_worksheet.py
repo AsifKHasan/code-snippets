@@ -567,10 +567,21 @@ class GoogleWorksheet(object):
             if repeat_cell:
                 formats.append(repeat_cell)
 
+
             # borders
+            border_style = 'SOLID'
+            if 'no-border' in work_spec:
+                no_border = work_spec['no-border']
+                if no_border:
+                    border_style = 'NONE'
+
+            inner_border = True
+            if 'inner-border' in work_spec:
+                inner_border = work_spec['inner-border']
+
             if 'border-color' in work_spec:
                 broder_object = {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id)}
-                borders.append({'updateBorders': {**broder_object, **build_border_around_spec(work_spec['border-color'])}})
+                borders.append({'updateBorders': {**broder_object, **build_border_around_spec(border_color=work_spec['border-color'], border_style=border_style, inner_border=inner_border)}})
 
         return values, merges + formats + borders
 

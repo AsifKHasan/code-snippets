@@ -29,6 +29,7 @@ def matrix_dimension(matrix):
     return height, width
 
 
+
 ''' addSheetRequest builder
 '''
 def build_add_sheet_request(worksheet_name, sheet_index, num_rows, num_cols, frozen_rows, frozen_cols):
@@ -201,6 +202,7 @@ def build_duplicate_sheet_request(worksheet_id, new_worksheet_name, new_workshee
     return request_body
 
 
+
 '''
 '''
 def build_find_replace_request(worksheet_id, search_for, replace_with, regex=False, include_formulas=False, entire_cell=False):
@@ -217,9 +219,10 @@ def build_find_replace_request(worksheet_id, search_for, replace_with, regex=Fal
     }
 
 
+
 ''' gsheet border spec for border around a range
 '''
-def build_border_around_spec(border_color, border_style='SOLID'):
+def build_border_around_spec(border_color, border_style='SOLID', inner_border=True):
     color = hex_to_rgba(border_color)
     border = {
         "style": border_style,
@@ -234,8 +237,8 @@ def build_border_around_spec(border_color, border_style='SOLID'):
         "bottom": border,
         "left": border,
         "right": border,
-        "innerHorizontal": border,
-        "innerVertical": border,
+        "innerHorizontal": border if inner_border else None,
+        "innerVertical": border if inner_border else None,
     }
 
     return borders
@@ -265,6 +268,7 @@ def build_conditional_format_rule(ranges, condition_type, condition_values, form
         }
 
     return rule
+
 
 
 ''' build a data validation rule

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import gspread
+from gspread.utils import *
 from gspread.exceptions import *
 from gspread_formatting import *
 
@@ -8,6 +9,59 @@ from pprint import pprint
 
 from helper.utils import *
 from helper.logger import *
+
+
+''' merge cells and border worksheet 04-managerial-expertise
+'''
+def border_and_merge_04_managerial_expertise(g_sheet):
+    worksheet_name = '04-managerial-expertise'
+    range_spec = 'B4:D'
+    worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
+    if worksheet is None:
+        error(f"worksheet {worksheet_name} not found", nesting_level=1)
+        return
+
+    # unmerge the range
+    grid_range = a1_range_to_grid_range(range_spec, sheet_id=worksheet.id)
+    requests = [{'unmergeCells': {'range': grid_range}}]
+
+    # first column of range B (1) is the grouping column, vertical span for each value is to be stored (for subsequent column processing), merged and bordered around
+    grouping_column_index = 0
+    grouping_column = grid_range['startColumnIndex'] + grouping_column_index + 1
+    start_row = grid_range['startRowIndex']
+
+    range_values = worksheet.get_values_in_batch(ranges=[range_spec])
+    range_work_specs = {}
+    group_start_row = 0
+    current_row = 0
+    for row in range_values[0]:
+        new_value = row[grouping_column_index]
+        if current_row == 0:
+            previous_value = row[grouping_column_index]
+        else:
+            if new_value != '' and new_value != previous_value:
+                print(f"[{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row+1}] value changed [{previous_value}] -> [{new_value}]")
+                a1_range = f"{COLUMN_TO_LETTER[grouping_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row}"
+                range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7'}
+                group_start_row = current_row
+                previous_value = new_value
+    
+
+        current_row = current_row + 1
+
+    # there may be an open group
+    a1_range = f"{COLUMN_TO_LETTER[grouping_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row}"
+    range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7'}
+
+    vals, reqs = worksheet.range_work_requests(range_work_specs=range_work_specs)
+    requests = requests + reqs
+    values = vals
+
+    g_sheet.update_in_batch(values=values, requests=requests, requester='border_and_merge_04_managerial_expertise')
+
+    # print(range_work_specs)
+
+
 
 
 ''' modify 06-job-history to new format
