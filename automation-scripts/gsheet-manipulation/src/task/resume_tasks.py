@@ -41,34 +41,38 @@ def border_and_merge_based_on_column(g_sheet, worksheet_names, range_spec, group
         group_start_row = 0
         current_row = 0
         for row in range_values[0]:
-            new_value = row[0]
-            if current_row == 0:
-                previous_value = row[0]
-            else:
-                if new_value != '' and new_value != previous_value:
-                    # print(f"[{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row+1}] value changed [{previous_value}] -> [{new_value}]")
-                    a1_range = f"{COLUMN_TO_LETTER[grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_end_column]}{start_row+current_row}"
-                    range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7', 'merge-type': 'MERGE_COLUMNS', }
-                    a1_range = f"{COLUMN_TO_LETTER[non_grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[last_column]}{start_row+current_row}"
-                    range_work_specs[a1_range] = {'border-color': '#B7B7B7', 'inner-border': False, }
+            if len(row) != 0:
+                new_value = row[0]
+                if current_row == 0:
+                    previous_value = row[0]
+                else:
+                    if new_value != '' and new_value != previous_value:
+                        # print(f"[{COLUMN_TO_LETTER[grouping_column]}{start_row+current_row+1}] value changed [{previous_value}] -> [{new_value}]")
+                        a1_range = f"{COLUMN_TO_LETTER[grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_end_column]}{start_row+current_row}"
+                        range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7', 'merge-type': 'MERGE_COLUMNS', }
+                        a1_range = f"{COLUMN_TO_LETTER[non_grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[last_column]}{start_row+current_row}"
+                        range_work_specs[a1_range] = {'border-color': '#B7B7B7', 'inner-border': False, }
 
-                    group_start_row = current_row
-                    previous_value = new_value
+                        group_start_row = current_row
+                        previous_value = new_value
 
             current_row = current_row + 1
 
         # there may be an open group
-        a1_range = f"{COLUMN_TO_LETTER[grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_end_column]}{start_row+current_row}"
-        range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7', 'merge-type': 'MERGE_COLUMNS', }
-        # do for the other columns
-        a1_range = f"{COLUMN_TO_LETTER[non_grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[last_column]}{start_row+current_row}"
-        range_work_specs[a1_range] = {'border-color': '#B7B7B7', 'inner-border': False, }
+        if group_start_row < current_row:
+            a1_range = f"{COLUMN_TO_LETTER[grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[grouping_end_column]}{start_row+current_row}"
+            range_work_specs[a1_range] = {'merge': True, 'border-color': '#B7B7B7', 'merge-type': 'MERGE_COLUMNS', }
+            # do for the other columns
+            a1_range = f"{COLUMN_TO_LETTER[non_grouping_start_column]}{start_row+group_start_row+1}:{COLUMN_TO_LETTER[last_column]}{start_row+current_row}"
+            range_work_specs[a1_range] = {'border-color': '#B7B7B7', 'inner-border': False, }
 
         vals, reqs = worksheet.range_work_requests(range_work_specs=range_work_specs)
         requests = requests + reqs
         values = values + vals
 
-    # pprint(range_work_specs)
+        # pprint(range_work_specs)
+
+
     # pprint(requests)
     g_sheet.update_in_batch(values=values, requests=requests, requester='border_and_merge_based_on_column')
 

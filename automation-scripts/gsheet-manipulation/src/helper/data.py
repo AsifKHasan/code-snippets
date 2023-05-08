@@ -59,75 +59,75 @@ WORKSHEET_STRUCTURE_RESUME = {
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True},
 
-            'B3:C3': {'value': 'Assignment Name:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'D3': {'value': 'Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B3:C3': {'value': 'Assignment Name:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'D3': {'value': 'Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B4:C4': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
-            'D4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B4:C4': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True},
+            'D4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
-            'B5:C5': {'value': 'Location within Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'D5': {'value': 'Duration of assignment (months):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B5:C5': {'value': 'Location within Country:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'D5': {'value': 'Duration of assignment (months):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B6:C6': {'value': "='01-summary'!C5", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
-            'D6': {'value': "='01-summary'!C6", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B6:C6': {'value': "='01-summary'!C5", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True},
+            'D6': {'value': "='01-summary'!C6", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
-            'B7:C7': {'value': 'Name of Client:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'D7': {'value': 'Approximate value of the Project (In BDT):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B7:C7': {'value': 'Name of Client:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'D7': {'value': 'Approximate value of the Project (In BDT):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B8:C8': {'value': "='01-summary'!C7", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
-            'D8': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B8:C8': {'value': "='01-summary'!C7", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True},
+            'D8': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
-            'B9:C9': {'value': 'Address', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'D9': {'value': 'Approx. value of the services provided by your firm under the contract:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B9:C9': {'value': 'Address', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'D9': {'value': 'Approx. value of the services provided by your firm under the contract:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B10:C10': {'value': "='01-summary'!C8", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"keep-line-breaks": true}'},
-            'D10': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B10:C10': {'value': "='01-summary'!C8", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"keep-line-breaks": true}'},
+            'D10': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
-            'B11': {'value': 'Start Date (Month/Year):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
-            'C11': {'value': 'Completion Date (Month/Year):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
-            'D11': {'value': 'No. of person-months of the assignment:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B11': {'value': 'Start Date (Month/Year):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
+            'C11': {'value': 'Completion Date (Month/Year):', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
+            'D11': {'value': 'No. of person-months of the assignment:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B12': {'value': "='01-summary'!C11", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
-            'C12': {'value': "='01-summary'!C12", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
-            'D12': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B12': {'value': "='01-summary'!C11", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
+            'C12': {'value': "='01-summary'!C12", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
+            'D12': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
-            'B13:C13': {'value': 'Name of joint venture partner or sub-consultants, if any:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'D13': {'value': 'No. of months of Professional Staff Provided by your firm under the contract:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B13:C13': {'value': 'Name of joint venture partner or sub-consultants, if any:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'D13': {'value': 'No. of months of Professional Staff Provided by your firm under the contract:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B14:C14': {'value': '04-joint-venture', 'ws-name-to-link': '04-joint-venture', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True},
-            'D14': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B14:C14': {'value': '04-joint-venture', 'ws-name-to-link': '04-joint-venture', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True},
+            'D14': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
             'B15:D15': {'merge': True},
 
-            'B16:D16': {'value': 'Name of Senior Staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
-            'B17:D17': {'value': '05-people', 'ws-name-to-link': '05-people', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B16:D16': {'value': 'Name of Senior Staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
+            'B17:D17': {'value': '05-people', 'ws-name-to-link': '05-people', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
 
             'B18:D18': {'merge': True},
 
-            'B19:D19': {'value': 'Narrative Description of Project:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
-            'B20:D20': {'value': 'Project Description', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'B21:D21': {'value': '06-description', 'ws-name-to-link': '06-description', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B19:D19': {'value': 'Narrative Description of Project:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
+            'B20:D20': {'value': 'Project Description', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'B21:D21': {'value': '06-description', 'ws-name-to-link': '06-description', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
 
             'B22:D22': {'merge': True},
 
-            'B23:D23': {'value': 'Functionality', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'B24:D24': {'value': '07-functionality', 'ws-name-to-link': '07-functionality', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B23:D23': {'value': 'Functionality', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'B24:D24': {'value': '07-functionality', 'ws-name-to-link': '07-functionality', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
 
             'B25:D25': {'merge': True},
 
-            'B26:D26': {'value': 'Technology', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'B27:D27': {'value': '08-technology', 'ws-name-to-link': '08-technology', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B26:D26': {'value': 'Technology', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'B27:D27': {'value': '08-technology', 'ws-name-to-link': '08-technology', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
 
             'B28:D28': {'merge': True},
 
-            'B29:D29': {'value': 'Narrative Descriptions of works performed by your organization:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
-            'B30:D30': {'value': 'Services Provided', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'B31:D31': {'value': '09-services', 'ws-name-to-link': '09-services', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B29:D29': {'value': 'Narrative Descriptions of works performed by your organization:', 'font-size': 11, 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
+            'B30:D30': {'value': 'Services Provided', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'B31:D31': {'value': '09-services', 'ws-name-to-link': '09-services', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
 
             'B32:D32': {'merge': True},
 
-            'B33:D33': {'value': 'Processes Adopted', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'B34:D34': {'value': '10-process', 'ws-name-to-link': '10-process', 'weight': 'normal', 'border-color': '#b7b7b7', 'merge': True, 'note': '{"content": "free"}'},
+            'B33:D33': {'value': 'Processes Adopted', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'B34:D34': {'value': '10-process', 'ws-name-to-link': '10-process', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}'},
         },
 
         'cell-empty-markers': [
@@ -184,36 +184,36 @@ WORKSHEET_STRUCTURE_RESUME = {
             'A2': {'value': 'review-notes', 'weight': 'bold'},
             'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True},
 
-            'B3:C3': {'value': 'Name:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True},
-            'D3': {'value': 'Proposed Position:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7'},
+            'B3:C3': {'value': 'Name:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
+            'D3': {'value': 'Proposed Position:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
 
-            'B4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
-            'C4': {'value': "='01-personal'!D3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7', 'merge': True},
-            'D4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#b7b7b7'},
+            'B4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
+            'C4': {'value': "='01-personal'!D3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True},
+            'D4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
 
             'B5:D5': {'merge': True, 'font-size': 4},
 
-            'B6:D6': {'value': 'Summary of personnel experience', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B6:D6': {'value': 'Summary of personnel experience', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
             'B7:D7': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'merge': True, 'note': '{"content": "free"}'},
 
             'B8:D8': {'merge': True, 'font-size': 4},
 
-            'B9:D9': {'value': 'EDUCATION:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B9:D9': {'value': 'EDUCATION:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
             'B10:D10': {'value': '03-education', 'ws-name-to-link': '03-education', 'merge': True, 'note': '{"content": "free"}'},
 
             'B11:D11': {'merge': True, 'font-size': 4},
 
-            'B12:D12': {'value': 'PROFESSIONAL EXPERIENCE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
+            'B12:D12': {'value': 'PROFESSIONAL EXPERIENCE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
             'B13:D13': {'value': '06-job-history-USAID-FFBT', 'ws-name-to-link': '06-job-history-USAID-FFBT', 'merge': True, 'note': '{"content": "free"}'},
 
             'B14:D14': {'merge': True, 'font-size': 4},
 
-            'B15:D15': {'value': 'LANGUAGE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B15:D15': {'value': 'LANGUAGE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
             'B16:D16': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'merge': True, 'note': '{"content": "free"}'},
 
             'B17:D17': {'merge': True, 'font-size': 4},
 
-            'B18:D18': {'value': 'REFERENCES:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#ffffff', 'merge': True, 'note': '{"content": "free"}'},
+            'B18:D18': {'value': 'REFERENCES:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
             'B19:D19': {'value': '16-references', 'ws-name-to-link': '16-references', 'merge': True, 'note': '{"content": "free"}'},
         },
         'cell-empty-markers': [
@@ -226,9 +226,19 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  30, 'halign': 'center', 'wrap': True},
+            'C': {'size': 130, 'halign': 'left', 'wrap': True},
+            'D': {'size': 320, 'halign': 'left', 'wrap': True},
+            'E': {'size': 320, 'halign': 'center', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:E1': {'halign': 'center', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -240,9 +250,17 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 150, 'halign': 'left', 'wrap': True},
+            'C': {'size':  30, 'halign': 'center', 'wrap': True},
+            'D': {'size': 620, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:D1': {'halign': 'center', },
+            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -250,13 +268,27 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '03-education': {
         'num-columns': 5,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  80, 'halign': 'center', 'wrap': True},
+            'C': {'size': 210, 'halign': 'left', 'wrap': True},
+            'D': {'size': 210, 'halign': 'left', 'wrap': True},
+            'E': {'size': 300, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:E1': {'halign': 'center', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Year', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'Degree', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3': {'value': 'Subject/Discipline', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'E3': {'value': 'Institute', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -279,8 +311,8 @@ WORKSHEET_STRUCTURE_RESUME = {
             'A2': {'value': 'review-notes', 'halign': 'left', },
             'B1:D1': {'halign': 'center', },
             'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'note': '{"repeat-rows": 1}', },
-            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, },
+            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -303,8 +335,8 @@ WORKSHEET_STRUCTURE_RESUME = {
             'A2': {'value': 'review-notes', 'halign': 'left', },
             'B1:D1': {'halign': 'center', },
             'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'note': '{"repeat-rows": 1}', },
-            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#f3f3f3', 'border-color': '#b7b7b7', 'merge': True, },
+            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -312,13 +344,25 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '06-job-history': {
         'num-columns': 5,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  60, 'halign': 'center', 'wrap': True},
+            'C': {'size':  60, 'halign': 'center', 'wrap': True},
+            'D': {'size':  30, 'wrap': True},
+            'E': {'size': 650, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:E1': {'halign': 'center', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'From', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'To', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3:E3': {'value': 'Employment History', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -345,13 +389,25 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '07-project-roles': {
         'num-columns': 5,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  60, 'halign': 'center', 'wrap': True},
+            'C': {'size':  60, 'halign': 'center', 'wrap': True},
+            'D': {'size':  30, 'wrap': True},
+            'E': {'size': 650, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:E1': {'halign': 'center', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'From', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'To', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3:E3': {'value': 'Company/Project/Position/ Relevant Technical and Management Experience', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -359,13 +415,25 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '08-training': {
         'num-columns': 4,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  80, 'halign': 'center', 'wrap': True},
+            'C': {'size': 450, 'halign': 'left', 'wrap': True},
+            'D': {'size': 370, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:D1': {'halign': 'center', },
+            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Year', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'Training', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3': {'value': 'Institute', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -373,13 +441,27 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '09-certification': {
         'num-columns': 5,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size':  70, 'halign': 'center', 'wrap': True},
+            'C': {'size': 150, 'halign': 'left', 'wrap': True},
+            'D': {'size': 280, 'halign': 'left', 'wrap': True},
+            'E': {'size': 300, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:E1': {'halign': 'center', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Year', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'Vendor/OEM/Subject', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3': {'value': 'Certification', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'E3': {'value': 'Details', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -387,13 +469,29 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '10-membership': {
         'num-columns': 6,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 250, 'halign': 'left', 'wrap': True},
+            'C': {'size': 150, 'halign': 'left', 'wrap': True},
+            'D': {'size': 125, 'halign': 'center', 'wrap': True},
+            'E': {'size': 125, 'halign': 'center', 'wrap': True},
+            'F': {'size': 150, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:F1': {'halign': 'center', },
+            'B2:F2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Professional Organization/Society', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'Membership Rank/Level', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3': {'value': 'Membership ID/Number', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'E3': {'value': 'Member Since', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'F3': {'value': 'Details', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -401,15 +499,27 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '11-language-proficiency': {
         'num-columns': 5,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 110, 'halign': 'left', 'wrap': True},
+            'C': {'size': 230, 'halign': 'left', 'wrap': True},
+            'D': {'size': 230, 'halign': 'left', 'wrap': True},
+            'E': {'size': 230, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
-            'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
-            'B4:F' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:E1': {'halign': 'center', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Language', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'Speaking', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3': {'value': 'Reading', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'E3': {'value': 'Writing', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -421,12 +531,20 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 200, 'halign': 'left', 'wrap': True},
+            'C': {'size': 600, 'halign': 'left', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:C1': {'halign': 'center', },
+            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
-            'B3:Z4',
+            'B3:C4',
         ],
     },
     '13-educational-certificates': {
@@ -435,9 +553,15 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 800, 'halign': 'center', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1': {'halign': 'center', },
+            'B2': {'value': 'content', 'halign': 'left', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -449,9 +573,15 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 800, 'halign': 'center', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1': {'halign': 'center', },
+            'B2': {'value': 'content', 'halign': 'left', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -463,9 +593,15 @@ WORKSHEET_STRUCTURE_RESUME = {
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
+            'B': {'size': 800, 'halign': 'center', 'wrap': True},
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1': {'halign': 'center', },
+            'B2': {'value': 'content', 'halign': 'left', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -473,7 +609,7 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
     '16-references': {
         'num-columns': 6,
-        'frozen-rows': 2,
+        'frozen-rows': 3,
         'frozen-columns': 0,
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True},
@@ -485,8 +621,17 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         'review-notes': True,
         'ranges': {
-            'B3:F3' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#f3f3f3'},
-            'B4:F6' : {'border-color': '#b7b7b7', 'wrap': True, 'bgcolor': '#ffffff'},
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:F1': {'halign': 'center', },
+            'B2:F2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'B3': {'value': 'Name', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
+            'C3': {'value': 'Position', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'D3': {'value': 'Company', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'E3': {'value': 'Email', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'F3': {'value': 'Phone Number', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            'B4:Z': {'border-color': '#B7B7B7', },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -503,6 +648,11 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:C1': {'halign': 'center', },
+            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -519,6 +669,11 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         'review-notes': True,
         'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:C1': {'halign': 'center', },
+            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
         },
         'cell-empty-markers': [
             'B3:Z',
@@ -545,7 +700,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B2': {'value': 'person'},
             'C2': {'value': 'project-role'},
             'D2': {'value': 'functionalities-performed'},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -567,7 +722,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'A2': {'value': 'review-notes', 'halign': 'left'},
             'B2': {'value': 'header', 'halign': 'left'},
             'C2:D2': {'value': 'narrative-paragraphs', 'halign': 'left', 'merge': True},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -591,7 +746,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B2': {'value': 'module', 'halign': 'left'},
             'C2:D2': {'value': 'feature', 'halign': 'left', 'merge': True},
             'E2': {'value': 'process', 'halign': 'left'},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -613,7 +768,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'A2': {'value': 'review-notes', 'halign': 'left'},
             'B2': {'value': 'area', 'halign': 'left'},
             'C2:D2': {'value': 'technology-tool', 'halign': 'left', 'merge': True},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -635,7 +790,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'A2': {'value': 'review-notes', 'halign': 'left'},
             'B2': {'value': 'area', 'halign': 'left'},
             'C2:D2': {'value': 'services-provided-by-staff', 'halign': 'left', 'merge': True},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -657,7 +812,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'A2': {'value': 'review-notes', 'halign': 'left'},
             'B2': {'value': 'area', 'halign': 'left'},
             'C2:D2': {'value': 'process-description-in-paragraphs-bullets', 'halign': 'left', 'merge': True},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
@@ -678,7 +833,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'A2': {'value': 'review-notes', 'halign': 'left'},
             'B2': {'value': 'project-complexity', 'halign': 'left'},
             'C2': {'value': 'how-it-was-addressed', 'halign': 'left'},
-            'B3:Z': {'border-color': '#b7b7b7'},
+            'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
             'B3:Z'
