@@ -351,6 +351,7 @@ gsheets:
     #   - Résumé__Mostafa.Jannatul.Ferdows
     #   - Résumé__Salman.Ahmed.Firoz
   # pds
+    - pds__blank.template
     - pds__ACMELL
     - pds__BB-RTGS
     - pds__BBA-BPBB
@@ -660,36 +661,36 @@ worksheets:
 
 # work specifications to apply on a list of worksheets
 work-specs:
-# multiple worksheets
-  # change fonts and vertical alignments for the worksheet
-  # 'A1:Z'  :
-  #   font-family       : Arial
-  #   font-size         : 10
-  #   valign            : top
-  # border around cells
-  # 'B3:Z'          :
-  #   border-color      : '#b7b7b7'
-  # link -toc-new at cell A1 and left align the cell
-  # 'A1'    :
-  #   value             : '-toc-new'
-  #   ws-name-to-link   : '-toc-new'
-  #   halign            : left
-# -toc-new
-  # 'F3'      :
-  #   value             : '00-layout-RHD-TMC'
-  #   ws-name-to-link   : '00-layout-RHD-TMC'
-# z-header
-  # 'C3'      :
-  #   value             : '=image("https://spectrum-bd.biz/data/artifacts/res/logo/doer-logo-hor-color-563x87.png", 1)'
-  # 'B3'      :
-  #   value             : "Resource Résumé"
-# z-footer
-  # 'B3'      :
-  #   value             : "='01-personal'!D3"
-  # 'C3'      :
-  #   value             : A
-  #   note              : '{"page-number":  "long"}'
-  # -
+  # multiple worksheets
+    # change fonts and vertical alignments for the worksheet
+    # 'A1:Z'  :
+    #   font-family       : Arial
+    #   font-size         : 10
+    #   valign            : top
+    # border around cells
+    # 'B3:Z'          :
+    #   border-color      : '#b7b7b7'
+    # link -toc-new at cell A1 and left align the cell
+    # 'A1'    :
+    #   value             : '-toc-new'
+    #   ws-name-to-link   : '-toc-new'
+    #   halign            : left
+  # -toc-new
+    # 'F3'      :
+    #   value             : '00-layout-RHD-TMC'
+    #   ws-name-to-link   : '00-layout-RHD-TMC'
+  # z-header
+    # 'C3'      :
+    #   value             : '=image("https://spectrum-bd.biz/data/artifacts/res/logo/doer-logo-hor-color-563x87.png", 1)'
+    # 'B3'      :
+    #   value             : "Resource Résumé"
+  # z-footer
+    # 'B3'      :
+    #   value             : "='01-personal'!D3"
+    # 'C3'      :
+    #   value             : A
+    #   note              : '{"page-number":  "long"}'
+    # -
 
 
 # find and replace patterns

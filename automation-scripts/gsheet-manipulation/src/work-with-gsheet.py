@@ -20,7 +20,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # for worksheet_name in worksheet_names:
         # get dimensions
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-        # if num_cols != 25:
+        # if num_cols != 26:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
         # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
@@ -57,7 +57,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
-    # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
+    g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
 
     # cell linking and ordering
