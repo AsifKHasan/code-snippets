@@ -351,177 +351,177 @@ gsheets:
     #   - Résumé__Mostafa.Jannatul.Ferdows
     #   - Résumé__Salman.Ahmed.Firoz
   # pds
-    - pds__blank.template
-    - pds__ACMELL
-    - pds__BB-RTGS
-    - pds__BBA-BPBB
-    - pds__BCC
-    - pds__BCC-AMC
-    - pds__BCC-AMC-2020
-    - pds__BCC-Cisco-Renewal
-    - pds__BCC-DC
-    - pds__BCC-DC-Expansion
-    - pds__BCC-DSCOCP
-    - pds__BCC-HW-Expansion
-    - pds__BCC-Tier-IV-ServerStorage
-    - pds__BDREN-DC-Expansion
-    - pds__BDREN-G-13
-    - pds__BDREN-Network
-    - pds__Beximco-IT
-    - pds__BG(DC)
-    - pds__BPA-Sardah-Police-Academy
-    - pds__BR-DCDR
-    - pds__BRP
-    - pds__BSCCL
-    - pds__BSCCL-Kuakata
-    - pds__BSCCL-SCISCO
-    - pds__BTCL
-    - pds__BTCL-NGNCDR
-    - pds__BTTB
-    - pds__BWDB
-    - pds__CCC-WPSD
-    - pds__CRM
-    - pds__DBBL-DWDM
-    - pds__DISWLS
-    - pds__DMS-UBL
-    - pds__DSEL
-    - pds__DSHE-DC
-    - pds__DSILW(BAF)
-    - pds__DVSIVSS
-    - pds__DWASA
-    - pds__EMS
-    - pds__FOLC
-    - pds__GP-CHQ
-    - pds__GPIGP
-    - pds__iBAS
-    - pds__IBBL
-    - pds__ICBIBL(DR)
-    - pds__ICBISL
-    - pds__IFIC-DC
-    - pds__InterCon
-    - pds__IOWM
-    - pds__ITCL
-    - pds__ITICB
-    - pds__ITNA
-    - pds__IUB
-    - pds__JU
-    - pds__JUB
-    - pds__KTAL
-    - pds__LBBL
-    - pds__MCICT-SASECIH
-    - pds__MOS-ICT
-    - pds__Mosharaf-Group
-    - pds__MTBL-CCTV
-    - pds__MTBL-EBNCDC
-    - pds__NBR-ASYCUDA
-    - pds__NBR-ASYCUDA-SLA
-    - pds__NBR-AW-Network&Security
-    - pds__NBR-AW-Systems
-    - pds__NL-DC
-    - pds__OBL
-    - pds__PHQ-AMC
-    - pds__REB
-    - pds__RHD-MIS-consultancy
-    - pds__RHD-MIS-e-procurement
-    - pds__RWGH
-    - pds__SBFI
-    - pds__SCB
-    - pds__SIBL
-    - pds__SIBL(DC)
-    - pds__SPARRSO-2010
-    - pds__SPARRSO-2012
-    - pds__SSF
-    - pds__SSVPE
-    - pds__SUST-TC
-    - pds__TBL
-    - pds__TDS
-    - pds__UGCB
-    - pds__VHA
-    - pds__WDTGCL
-    - pds__ABBank-CIB
-    - pds__AgraniBank-BACPS
-    - pds__BB-BACPS
-    - pds__BB-CA
-    - pds__BCBL-CIB
-    - pds__BCC-CA
-    - pds__Bdjobs-MPVCC
-    - pds__Biman-HelpDeskHR
-    - pds__Boeing-BangladeshBiman
-    - pds__BRTA-UniVerge
-    - pds__BuySight-BizOps
-    - pds__CapGains-LLC
-    - pds__CCA-IDS
-    - pds__CCC-CSSM
-    - pds__CID-CDMS
-    - pds__CityBank-CityAgent
-    - pds__CityCell-NID-V-SA
-    - pds__ConserveTrack-RDU
-    - pds__ConserveTrack-WCM
-    - pds__EAM-CMMS
-    - pds__GP-HRMS
-    - pds__GP-ROC
-    - pds__GP-WBMS
-    - pds__HabibBank-BACPS
-    - pds__IslamGarments-rmgPro
-    - pds__lekhapora.com
-    - pds__LGED-IPMSRDEC
-    - pds__MarketSharp-CRM
-    - pds__Modhumoti(Kalna)-Bridge-Toll-2022
-    - pds__MTBL-BACPS
-    - pds__NBR-CAMS
-    - pds__NBR-UMS
-    - pds__Nestle-VATsys
-    - pds__OAGN-NAMS
-    - pds__OCAG-AMMS
-    - pds__Partex-OEBS
-    - pds__RA-BRPSharePoint
-    - pds__RA-CWRBS
-    - pds__RA-SRMS
-    - pds__Revnx-Journey
-    - pds__RHD-BDMS
-    - pds__RHD-CBRNIP
-    - pds__RHD-MIS
-    - pds__RHD-MIS-2009
-    - pds__RHD-MIS-2015
-    - pds__RHD-MIS-2017
-    - pds__ROBI-DMS
-    - pds__ROBI-ROC
-    - pds__SAU-ACAS
-    - pds__SCB-CBRM
-    - pds__SCB-OPCCMS
-    - pds__SCB-RTGS
-    - pds__SECL-CSB
-    - pds__SECL-Metrica
-    - pds__SECL-UniVerge
-    - pds__SECL-VATsys
-    - pds__SigmaStream-V2P
-    - pds__SportsBuddy
-    - pds__TrustBank-BACPS
-    - pds__UGC-HEMIS
+    # - pds__blank.template
+    # - pds__ACMELL
+    # - pds__BB-RTGS
+    # - pds__BBA-BPBB
+    # - pds__BCC
+    # - pds__BCC-AMC
+    # - pds__BCC-AMC-2020
+    # - pds__BCC-Cisco-Renewal
+    # - pds__BCC-DC
+    # - pds__BCC-DC-Expansion
+    # - pds__BCC-DSCOCP
+    # - pds__BCC-HW-Expansion
+    # - pds__BCC-Tier-IV-ServerStorage
+    # - pds__BDREN-DC-Expansion
+    # - pds__BDREN-G-13
+    # - pds__BDREN-Network
+    # - pds__Beximco-IT
+    # - pds__BG(DC)
+    # - pds__BPA-Sardah-Police-Academy
+    # - pds__BR-DCDR
+    # - pds__BRP
+    # - pds__BSCCL
+    # - pds__BSCCL-Kuakata
+    # - pds__BSCCL-SCISCO
+    # - pds__BTCL
+    # - pds__BTCL-NGNCDR
+    # - pds__BTTB
+    # - pds__BWDB
+    # - pds__CCC-WPSD
+    # - pds__CRM
+    # - pds__DBBL-DWDM
+    # - pds__DISWLS
+    # - pds__DMS-UBL
+    # - pds__DSEL
+    # - pds__DSHE-DC
+    # - pds__DSILW(BAF)
+    # - pds__DVSIVSS
+    # - pds__DWASA
+    # - pds__EMS
+    # - pds__FOLC
+    # - pds__GP-CHQ
+    # - pds__GPIGP
+    # - pds__iBAS
+    # - pds__IBBL
+    # - pds__ICBIBL(DR)
+    # - pds__ICBISL
+    # - pds__IFIC-DC
+    # - pds__InterCon
+    # - pds__IOWM
+    # - pds__ITCL
+    # - pds__ITICB
+    # - pds__ITNA
+    # - pds__IUB
+    # - pds__JU
+    # - pds__JUB
+    # - pds__KTAL
+    # - pds__LBBL
+    # - pds__MCICT-SASECIH
+    # - pds__MOS-ICT
+    # - pds__Mosharaf-Group
+    # - pds__MTBL-CCTV
+    # - pds__MTBL-EBNCDC
+    # - pds__NBR-ASYCUDA
+    # - pds__NBR-ASYCUDA-SLA
+    # - pds__NBR-AW-Network&Security
+    # - pds__NBR-AW-Systems
+    # - pds__NL-DC
+    # - pds__OBL
+    # - pds__PHQ-AMC
+    # - pds__REB
+    # - pds__RHD-MIS-consultancy
+    # - pds__RHD-MIS-e-procurement
+    # - pds__RWGH
+    # - pds__SBFI
+    # - pds__SCB
+    # - pds__SIBL
+    # - pds__SIBL(DC)
+    # - pds__SPARRSO-2010
+    # - pds__SPARRSO-2012
+    # - pds__SSF
+    # - pds__SSVPE
+    # - pds__SUST-TC
+    # - pds__TBL
+    # - pds__TDS
+    # - pds__UGCB
+    # - pds__VHA
+    # - pds__WDTGCL
+    # - pds__ABBank-CIB
+    # - pds__AgraniBank-BACPS
+    # - pds__BB-BACPS
+    # - pds__BB-CA
+    # - pds__BCBL-CIB
+    # - pds__BCC-CA
+    # - pds__Bdjobs-MPVCC
+    # - pds__Biman-HelpDeskHR
+    # - pds__Boeing-BangladeshBiman
+    # - pds__BRTA-UniVerge
+    # - pds__BuySight-BizOps
+    # - pds__CapGains-LLC
+    # - pds__CCA-IDS
+    # - pds__CCC-CSSM
+    # - pds__CID-CDMS
+    # - pds__CityBank-CityAgent
+    # - pds__CityCell-NID-V-SA
+    # - pds__ConserveTrack-RDU
+    # - pds__ConserveTrack-WCM
+    # - pds__EAM-CMMS
+    # - pds__GP-HRMS
+    # - pds__GP-ROC
+    # - pds__GP-WBMS
+    # - pds__HabibBank-BACPS
+    # - pds__IslamGarments-rmgPro
+    # - pds__lekhapora.com
+    # - pds__LGED-IPMSRDEC
+    # - pds__MarketSharp-CRM
+    # - pds__Modhumoti(Kalna)-Bridge-Toll-2022
+    # - pds__MTBL-BACPS
+    # - pds__NBR-CAMS
+    # - pds__NBR-UMS
+    # - pds__Nestle-VATsys
+    # - pds__OAGN-NAMS
+    # - pds__OCAG-AMMS
+    # - pds__Partex-OEBS
+    # - pds__RA-BRPSharePoint
+    # - pds__RA-CWRBS
+    # - pds__RA-SRMS
+    # - pds__Revnx-Journey
+    # - pds__RHD-BDMS
+    # - pds__RHD-CBRNIP
+    # - pds__RHD-MIS
+    # - pds__RHD-MIS-2009
+    # - pds__RHD-MIS-2015
+    # - pds__RHD-MIS-2017
+    # - pds__ROBI-DMS
+    # - pds__ROBI-ROC
+    # - pds__SAU-ACAS
+    # - pds__SCB-CBRM
+    # - pds__SCB-OPCCMS
+    # - pds__SCB-RTGS
+    # - pds__SECL-CSB
+    # - pds__SECL-Metrica
+    # - pds__SECL-UniVerge
+    # - pds__SECL-VATsys
+    # - pds__SigmaStream-V2P
+    # - pds__SportsBuddy
+    # - pds__TrustBank-BACPS
+    # - pds__UGC-HEMIS
   # RHD-TMC resume
-    # - Résumé__Md.Rezaur.Rahman__RHD-TMC
-    # - Résumé__Saifur.Rahman__RHD-TMC
-    # - Résumé__Mohammad.Main.Uddin
-    # - Résumé__Md.Faizul.Bari
-    # - Résumé__Mamunur.Rashid__RHD-TMC
-    # - Résumé__Sharmin.Sultana__RHD-TMC
-    # - Résumé__Iftakhar.Ali.Khandokar
-    # - Résumé__Md.Raqibul.Islam
-    # - Résumé__Md.Hasibur.Rahman
-    # - Résumé__Md.Mahasin.Alam
-    # - Résumé__Akeed.Anjum
-    # - Résumé__Rishad.Ali.Mimo
-    # - Résumé__Syed.Mostofa.Monsur
-    # - Résumé__Nur-E-Asma.Tabassum
-    # - Résumé__Md.Saidur.Rahman.(Shamim)
-    # - Résumé__Md.Al.Shahrior.Rahman
-    # - Résumé__Taposh.Kumar
-    # - Résumé__Joy.Kabiraj
-    # - Résumé__Md.Ibrahim.Ullah
-    # - Résumé__Jyoti.Basu.Chakma
-    # - Résumé__Shuvo.Das
-    # - Résumé__Md.Shohag.Hossain
-    # - Résumé__Md.Shahin.Sheikh
+    - Résumé__Md.Rezaur.Rahman__RHD-TMC
+    - Résumé__Saifur.Rahman__RHD-TMC
+    - Résumé__Mohammad.Main.Uddin
+    - Résumé__Md.Faizul.Bari
+    - Résumé__Mamunur.Rashid__RHD-TMC
+    - Résumé__Sharmin.Sultana__RHD-TMC
+    - Résumé__Iftakhar.Ali.Khandokar
+    - Résumé__Md.Raqibul.Islam
+    - Résumé__Md.Hasibur.Rahman
+    - Résumé__Md.Mahasin.Alam
+    - Résumé__Akeed.Anjum
+    - Résumé__Rishad.Ali.Mimo
+    - Résumé__Syed.Mostofa.Monsur
+    - Résumé__Nur-E-Asma.Tabassum
+    - Résumé__Md.Saidur.Rahman.(Shamim)
+    - Résumé__Md.Al.Shahrior.Rahman
+    - Résumé__Taposh.Kumar
+    - Résumé__Joy.Kabiraj
+    - Résumé__Md.Ibrahim.Ullah
+    - Résumé__Jyoti.Basu.Chakma
+    - Résumé__Shuvo.Das
+    - Résumé__Md.Shohag.Hossain
+    - Résumé__Md.Shahin.Sheikh
   # RHD-TMC pds
     # - pds__DSHE-DC
     # - pds__BCC-DC-Expansion
@@ -581,44 +581,46 @@ destination-gsheets:
 worksheets:
 # resume worksheets
   # - '-toc-new'
-  # - 00-layout
-  # - 00-layout-RHD-TMC
-  # - 01-personal
-  # - 02-career-highlight
-  # - 03-education
-  # - 04-managerial-expertise
-  # - 05-technical-expertise
-  # - 06-job-history
-  # - 07-project-roles
-  # - 08-training
-  # - 09-certification
-  # - 10-membership
-  # - 11-language-proficiency
-  # - 12-contact
-  # - 13-educational-certificates
-  # - 14-vendor-certificates
-  # - 15-institutional-certificates
-  # - 16-references
-  # - z-footer
-  # - z-header
-# pds worksheets
-  # - '-toc-new'
   - 00-layout
-  - 01-summary
-  - 02-revenue
-  - 03-contact
-  - 04-joint-venture
-  - 05-people
-  - 06-description
-  - 07-functionality
-  - 08-technology
-  - 09-services
-  - 10-process
-  - 11-complexity
-  - 12-screenshots
-  - z-blank
+  - 00-layout-RHD-TMC
+  - 01-personal
+  - 02-career-highlight
+  - 03-education
+  - 04-managerial-expertise
+  - 05-technical-expertise
+  - 06-job-history
+  - 07-project-roles
+  - 07-project-roles-RHD-TMC
+  - 08-training
+  - 09-certification
+  - 10-membership
+  - 11-language-proficiency
+  - 12-contact
+  - 13-educational-certificates
+  - 14-vendor-certificates
+  - 15-institutional-certificates
+  - 16-references
   - z-footer
   - z-header
+# pds worksheets
+  # - '-toc-new'
+  # - 00-layout
+  # - 01-summary
+  # - 02-revenue
+  # - 03-contact
+  # - 04-joint-venture
+  # - 05-people
+  # - 06-description
+  # - 07-functionality
+  # - 08-technology
+  # - 09-services
+  # - 10-process
+  # - 11-complexity
+  # - 12-screenshots
+  # - z-blank
+  # - z-footer
+  # - z-header
+
 # RHD-TMC__EoI__submission
   # - '-toc-new'
   # - 00.02-forwarding letter
@@ -695,19 +697,322 @@ work-specs:
 
 # find and replace patterns
 find-replace-patterns:
-  # - find                : '  '
-  #   replace-with        : ' '
-  # - find                : \n
-  #   replace-with        : ' '
+  # - find                : 'applience'
+  #   replace-with        : 'appliance'
+  # - find                : Asistant
+  #   replace-with        : Assistant
+  # - find                : Assetmanagement
+  #   replace-with        : Asset Management
+  # - find                : Auto CAD
+  #   replace-with        : AutoCAD
+  # - find                : Autocad
+  #   replace-with        : AutoCAD
+  # - find                : autocad
+  #   replace-with        : AutoCAD
+  # - find                : bangaldesh
+  #   replace-with        : Bangaldesh
+  # - find                : BangladGov
+  #   replace-with        : BanglaGov
+  # - find                : BootStrap
+  #   replace-with        : Bootstrap
+  # - find                : buisness
+  #   replace-with        : business
+  # - find                : capabilyties
+  #   replace-with        : capabilities
+  # - find                : Ceneter
+  #   replace-with        : Center
+  # - find                : challange
+  #   replace-with        : challenge
+  # - find                : chittagong
+  #   replace-with        : Chittagong
+  # - find                : CIvil
+  #   replace-with        : Civil
+  # - find                : Cneter
+  #   replace-with        : Center
+  # - find                : commisioning
+  #   replace-with        : commissioning
+  # - find                : Commisioning
+  #   replace-with        : Commissioning
+  # - find                : Commscope
+  #   replace-with        : CommScope
+  # - find                : Configration
+  #   replace-with        : Configuration
+  # - find                : Coputer
+  #   replace-with        : Computer
+  # - find                : cordinate
+  #   replace-with        : coordinate
+  # - find                : Coustomer
+  #   replace-with        : Customer
+  # - find                : Defferents
+  #   replace-with        : Different
+  # - find                : deplyment
+  #   replace-with        : deployment
+  # - find                : Deplyment
+  #   replace-with        : Deployment
+  # - find                : Desig
+  #   replace-with        : Design
+  # - find                : Deta
+  #   replace-with        : Data
+  # - find                : developement
+  #   replace-with        : development
+  # - find                : Developement
+  #   replace-with        : Development
+  # - find                : Developement
+  #   replace-with        : Development
+  # - find                : Electricl
+  #   replace-with        : Electrical
+  # - find                : Enginnering
+  #   replace-with        : Engineering
+  # - find                : english
+  #   replace-with        : English
+  # - find                : equipments
+  #   replace-with        : equipment
+  # - find                : Equipments
+  #   replace-with        : Equipment
+  # - find                : esxi
+  #   replace-with        : ESXi
+  # - find                : etc
+  #   replace-with        : etc.
+  # - find                : Exchage
+  #   replace-with        : Exchange
+  # - find                : Expertis
+  #   replace-with        : Expertise
+  # - find                : Fibre
+  #   replace-with        : Fiber
+  # - find                : Fushion
+  #   replace-with        : Fusion
+  # - find                : Genaretor
+  #   replace-with        : Generator
+  # - find                : GreenLc
+  #   replace-with        : GreenLC
+  # - find                : HeadQuarter
+  #   replace-with        : Head Quarter
+  # - find                : Implementaion
+  #   replace-with        : Implementation
+  # - find                : Inc
+  #   replace-with        : Inc.
+  # - find                : InfoSarkar
+  #   replace-with        : Info-Sarker
+  # - find                : infrstructure
+  #   replace-with        : infrastructure
+  # - find                : Infrustructure
+  #   replace-with        : Infrastructure
+  # - find                : Instalaltion
+  #   replace-with        : Installation
+  # - find                : installition
+  #   replace-with        : installation
+  # - find                : Instlation
+  #   replace-with        : Installation
+  # - find                : instllation
+  #   replace-with        : installation
+  # - find                : intlation
+  #   replace-with        : installation
+  # - find                : iterateing
+  #   replace-with        : iterating
+  # - find                : Javascript
+  #   replace-with        : JavaScript
+  # - find                : jboss
+  #   replace-with        : JBoss
+  # - find                : Jboss
+  #   replace-with        : JBoss
+  # - find                : kuakata
+  #   replace-with        : Kuakata
+  # - find                : labour
+  #   replace-with        : labor
+  # - find                : lan
+  #   replace-with        : LAN
+  # - find                : Maintanance
+  #   replace-with        : Maintenance
+  # - find                : maintenanec
+  #   replace-with        : maintenance
+  # - find                : maintenence
+  #   replace-with        : maintenance
+  # - find                : maintenence
+  #   replace-with        : maintenance
+  # - find                : maitenance
+  #   replace-with        : maintenance
+  # - find                : manage- ment
+  #   replace-with        : management
+  # - find                : Mangement
+  #   replace-with        : Management
+  # - find                : Mangemnet
+  #   replace-with        : Management
+  # - find                : maximise
+  #   replace-with        : maximize
+  # - find                : Maximising
+  #   replace-with        : Maximizing
+  # - find                : Mikrotik
+  #   replace-with        : MikroTik
+  # - find                : Mikrotik
+  #   replace-with        : MikroTik
+  # - find                : More then
+  #   replace-with        : More than
+  # - find                : multigigabit
+  #   replace-with        : multi-gigabit
+  # - find                : Mymanshing
+  #   replace-with        : Mymensingh
+  # - find                : Netbean
+  #   replace-with        : Netbeans
+  # - find                : ngnix
+  #   replace-with        : NGINX
+  # - find                : Nodejs
+  #   replace-with        : Node.js
+  # - find                : Opensource
+  #   replace-with        : Open Source
+  # - find                : Optmizer
+  #   replace-with        : Optimizer
+  # - find                : orbjective
+  #   replace-with        : objective
+  # - find                : organisation
+  #   replace-with        : organization
+  # - find                : panal
+  #   replace-with        : panel
+  # - find                : Pasific
+  #   replace-with        : Pacific
+  # - find                : persistance
+  #   replace-with        : persistent
+  # - find                : Php
+  #   replace-with        : PHP
+  # - find                : Planing
+  #   replace-with        : Planning
+  # - find                : Polytechnich
+  #   replace-with        : Polytechnic
+  # - find                : Postgresql
+  #   replace-with        : PostgreSQL
+  # - find                : postgreSQL
+  #   replace-with        : PostgreSQL
+  # - find                : Postgress
+  #   replace-with        : PostgreSQL
+  # - find                : poweredge
+  #   replace-with        : PowerEdge
+  # - find                : prepartion
+  #   replace-with        : preparation
+  # - find                : prepration
+  #   replace-with        : preparation
+  # - find                : preservinguser
+  #   replace-with        : preserving user
+  # - find                : Professiona
+  #   replace-with        : Professional
+  # - find                : Proffessionals
+  #   replace-with        : Professionals
+  # - find                : Realise
+  #   replace-with        : Realize
+  # - find                : Rectifire
+  #   replace-with        : Rectifier
+  # - find                : REctifire
+  #   replace-with        : Rectifier
+  # - find                : Rectifire
+  #   replace-with        : Rectifier
+  # - find                : Redhat
+  #   replace-with        : Red Hat
+  # - find                : RedHat
+  #   replace-with        : Red Hat
+  # - find                : reqirement
+  #   replace-with        : requirement
+  # - find                : requiremnt
+  #   replace-with        : requirement
+  # - find                : Schnider
+  #   replace-with        : Schneider
+  # - find                : Seconday
+  #   replace-with        : Secondary
+  # - find                : Shonali
+  #   replace-with        : Sonali
+  # - find                : Sinciarly
+  #   replace-with        : Sincerity
+  # - find                : skype
+  #   replace-with        : Skype
+  # - find                : Softawre
+  #   replace-with        : Software
+  # - find                : softwares
+  #   replace-with        : software
+  # - find                : Sophos
+  #   replace-with        : Sophos
+  # - find                : Sparc Server
+  #   replace-with        : SPARC Server
+  # - find                : Specfication
+  #   replace-with        : Specification
+  # - find                : stageslike
+  #   replace-with        : stages like
+  # - find                : Sysytem
+  #   replace-with        : System
+  # - find                : targetted
+  #   replace-with        : targeted
+  # - find                : Techincal
+  #   replace-with        : Technical
+  # - find                : throughoout
+  #   replace-with        : throughout
+  # - find                : Titash
+  #   replace-with        : Titas
+  # - find                : TomCat
+  #   replace-with        : Tomcat
+  # - find                : Trainning
+  #   replace-with        : Training
+  # - find                : troublshoot
+  #   replace-with        : troubleshoot
+  # - find                : Univeristy
+  #   replace-with        : University
+  # - find                : Vertive
+  #   replace-with        : Vertiv
+  # - find                : VISIO
+  #   replace-with        : Visio
+  # - find                : Voyegar
+  #   replace-with        : Voyager
+  # - find                : with.Net
+  #   replace-with        : with .Net
+  # - find                : years experience
+  #   replace-with        : years' experience
+
+  # # comma - space after, no space before
+  # - find                : ','
+  #   replace-with        : ', '
   # - find                : ' ,'
   #   replace-with        : ','
+
+  # # period - space after, no space before
+  # - find                : '.'
+  #   replace-with        : '. '
   # - find                : ' .'
   #   replace-with        : '.'
-  # - find                : '• '
-  #   replace-with        : ''
+
+  # # semicolon - space after, no space before
+  # - find                : ';'
+  #   replace-with        : '; '
+  # - find                : ' ;'
+  #   replace-with        : ';'
+
+  # # colon - space after, no space before
+  # - find                : ':'
+  #   replace-with        : ': '
+  # - find                : ' :'
+  #   replace-with        : ':'
+
+  # # opening brace - space before, no space after
+  # - find                : '('
+  #   replace-with        : ' ('
+  # - find                : '( '
+  #   replace-with        : '('
+
+  # # closing brace - space after, no space before
+  # - find                : ')'
+  #   replace-with        : ') '
+  # - find                : ' )'
+  #   replace-with        : ')'
+
+
+  # remove double space
+  - find                : '  '
+    replace-with        : ' '
+
+  # remove nultiline
+  # - find                : \n
+  #   replace-with        : ' '
+
+  # remove single dash
   # - find                : '-'
   #   replace-with        : ''
   #   entire-cell         : True
+
+
   # - find                : /data/spectrum/pmo-project-datasheet/
   #   replace-with        : /data/organization/01-spectrum/pmo-project-datasheet/
   # {'find': '/doer/', 'replace-with': '/03-doer/'},
