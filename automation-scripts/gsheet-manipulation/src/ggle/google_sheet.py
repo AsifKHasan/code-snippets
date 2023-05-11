@@ -313,7 +313,7 @@ class GoogleSheet(object):
         for worksheet_name in worksheet_names:
             if worksheet_name not in WORKSHEET_STRUCTURE:
                 warn(f"No structure defined for formatting [{worksheet_name}]", nesting_level=1)
-                return
+                continue
 
             worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
             if worksheet_to_work_on:

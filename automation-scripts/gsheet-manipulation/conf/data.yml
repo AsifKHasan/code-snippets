@@ -1,504 +1,499 @@
 # the gsheet(s) that will be processed
 gsheets:
   # resume
-    # # template
-    #   - spectrum__Résumé__template
-    # # external resume
-    #   - Résumé__Md.Rezaur.Rahman__RHD-TMC
-    #   - Résumé__Saifur.Rahman__RHD-TMC
-    #   - Résumé__Sharmin.Sultana__RHD-TMC
-    #   - Résumé__Mamunur.Rashid__RHD-TMC
-    # # sscl resume
-    #   - Résumé__Akeed.Anjum
-    #   - Résumé__Arif.Hossain
-    #   - Résumé__Faraz.Ahmed.Bhuiyan
-    #   - Résumé__Faridul.Islam.Farhad
-    #   - Résumé__Golam.Mostafa
-    #   - Résumé__Hasib.Mahmud
-    #   - Résumé__Humaira.Binte.Harun
-    #   - Résumé__Iftakhar.Ali.Khandokar
-    #   - Résumé__Jumana.Ahmed
-    #   - Résumé__Md.Abu.Sayed
-    #   - Résumé__Md.Al.Emran.Hossain
-    #   - Résumé__Md.Faizul.Bari
-    #   - Résumé__Md.Mahmudul.Hasan
-    #   - Résumé__Md.Rokonuzzaman
-    #   - Résumé__Md.Sayeduzzaman
-    #   - Résumé__Mohammed.Farhan.Islam
-    #   - Résumé__Monjur.Ahmed
-    #   - Résumé__Mosaddek.Ali.Mithu
-    #   - Résumé__Sarah.Noor
-    # # spectrum resume
-    #   - Résumé__A.S.M.Estiuk.Sadick
-    #   - Résumé__Aabid.Rahman
-    #   - Résumé__Abu.Muhammad.Rashed.Mujib.Noman
-    #   - Résumé__Adiat.Islam.Sahih
-    #   - Résumé__Airin.Sultana
-    #   - Résumé__Aminul.Quader.Khalili
-    #   - Résumé__Aqib.Asifur.Rahman
-    #   - Résumé__Arif.Ullah
-    #   - Résumé__Ashish.Kumar.Das
-    #   - Résumé__Asif.Hasan.Chowdhury
-    #   - Résumé__Asma.Ul.Husna
-    #   - Résumé__Atiqur.Rahman
-    #   - Résumé__Bappa.Saha
-    #   - Résumé__Delwar.Hossain
-    #   - Résumé__Dip.Kumar.Pal
-    #   - Résumé__Dipika.Debnath
-    #   - Résumé__Fakhrul.Islam.(Babu)
-    #   - Résumé__Ferdous.Ara.Ruma
-    #   - Résumé__Ferdous.Rahman
-    #   - Résumé__Fiaz.Ahmed
-    #   - Résumé__Fokrul.Hassan.Zibon
-    #   - Résumé__Forkan.Bin.Quasem
-    #   - Résumé__Hasan.Al.Mahmood
-    #   - Résumé__Ibrahim.Ibna.Md.Liaquat.Ullah
-    #   - Résumé__Joy.Kabiraj
-    #   - Résumé__Jubayer.Reza.Chowdhury
-    #   - Résumé__Jyoti.Basu.Chakma
-    #   - Résumé__K.M.Zabir.Tarique
-    #   - Résumé__Kaji.Shahjahan.Omar
-    #   - Résumé__Kamrul.Islam.Sarek
-    #   - Résumé__Karzon.Chowdhury
-    #   - Résumé__Kazi.Md.Mohsin
-    #   - Résumé__Kazi.Rakibur.Rahman
-    #   - Résumé__Khaja.Ajijul.Haque.(Mithu)
-    #   - Résumé__Khandakar.Asif.Hasan
-    #   - Résumé__Khandakar.Muttakinuzzaman
-    #   - Résumé__Lubna.Saha
-    #   - Résumé__Mahim.Jahan.Mim
-    #   - Résumé__Manzur.Alam
-    #   - Résumé__Md.Ashrafur.Rahaman
-    #   - Résumé__Md.Farhadul.Alam.Jion
-    #   - Résumé__MD.Ferdous.Mahmud
-    #   - Résumé__Md.Mehrab.Hossen.Siam
-    #   - Résumé__Md.Murshid.Sarker
-    #   - Résumé__Md.Abdul.Kader
-    #   - Résumé__Md.Abdullah.Al.Mamun
-    #   - Résumé__Md.Ahsanur.Rahman
-    #   - Résumé__Md.Al.Shahrior.Rahman
-    #   - Résumé__Md.Al-Shahariar
-    #   - Résumé__Md.Anamul.Haque
-    #   - Résumé__Md.Anisur.Rahman
-    #   - Résumé__Md.Anowarul.Islam.Rahat
-    #   - Résumé__Md.Ariful.Islam
-    #   - Résumé__Md.Asgor.Ali
-    #   - Résumé__Md.Ashaduzzaman
-    #   - Résumé__Md.Ashraful.Hossain
-    #   - Résumé__Md.Aslam.Iqbal
-    #   - Résumé__Md.Azadul.Karim
-    #   - Résumé__Md.Fahim.Islam
-    #   - Résumé__Md.Fazle.Rabby
-    #   - Résumé__Md.Hasibur.Rahman
-    #   - Résumé__Md.Humayun.Kabir
-    #   - Résumé__Md.Ibrahim.Hossen
-    #   - Résumé__Md.Ibrahim.Ullah
-    #   - Résumé__Md.Jakir.Hossain
-    #   - Résumé__Md.Jubaer.Hossain
-    #   - Résumé__Md.Kamruzzaman.(OM)
-    #   - Résumé__Md.Kazal.Pk
-    #   - Résumé__Md.Mahabub.Al-Islam
-    #   - Résumé__Md.Mahadi.Rahat
-    #   - Résumé__Md.Mahasin.Alam
-    #   - Résumé__Md.Mashrurul.Hakim
-    #   - Résumé__Md.Mazharul.Islam
-    #   - Résumé__Md.Mominul.Islam
-    #   - Résumé__Md.Monirul.Islam
-    #   - Résumé__Md.Motaleb.Hossain
-    #   - Résumé__Md.Murshadul.Islam
-    #   - Résumé__Md.Mushfiqur.Rahman
-    #   - Résumé__Md.Najmul.Hasan.Sharon
-    #   - Résumé__Md.Nazmul.Hassan
-    #   - Résumé__Md.Nazmul.Hossain
-    #   - Résumé__Md.Nurujjaman.Sarker
-    #   - Résumé__Md.Rabiul.Islam
-    #   - Résumé__Md.Rakib.Uddin.Chowdhury
-    #   - Résumé__Md.Raqibul.Islam
-    #   - Résumé__Md.Rezaul.Islam
-    #   - Résumé__Md.Rony.Ahmed
-    #   - Résumé__Md.Saidur.Rahman.(Shamim)
-    #   - Résumé__Mohammad.Saiful.Islam
-    #   - Résumé__MD.Saiful.Islam.(DBA)
-    #   - Résumé__Md.Salman.Hossen
-    #   - Résumé__Md.Samim.Hosen
-    #   - Résumé__Md.Sayeem.Khan
-    #   - Résumé__Md.Shahin.Sheikh
-    #   - Résumé__Md.Shamsuddin.Pappu
-    #   - Résumé__Md.Sharafat.Hossain.Kamal
-    #   - Résumé__Md.Shariful.Islam
-    #   - Résumé__Md.Shohag.Hossain
-    #   - Résumé__Md.Siddiqur.Rahman
-    #   - Résumé__Md.Tuhin.Reza
-    #   - Résumé__Md.Zahidul.Islam
-    #   - Résumé__Mehedi.Hasan.Bhuiyan
-    #   - Résumé__Miskatun.Nahar
-    #   - Résumé__Mohammad.Main.Uddin
-    #   - Résumé__Mohammad.Sabbir.Ahmed
-    #   - Résumé__Muhammad.Myanuddin
-    #   - Résumé__Mumtahina.Afroz
-    #   - Résumé__Nafis.Ahmed
-    #   - Résumé__Nazmul.Hossain.(Tusit)
-    #   - Résumé__Nur-E-Asma.Tabassum
-    #   - Résumé__Rahat.Hussain
-    #   - Résumé__Raihan.Ur.Rashid
-    #   - Résumé__Rajib.Chowdhury
-    #   - Résumé__Rishad.Ali.Mimo
-    #   - Résumé__Rizia.Aktar
-    #   - Résumé__S.M.Touhidul.Islam.Al-Amin
-    #   - Résumé__S.M.Azharul.Islam
-    #   - Résumé__Sadia.Imam.Vasha
-    #   - Résumé__Sagar.Saha
-    #   - Résumé__Saiful.Islam.(Sumon)
-    #   - Résumé__Samin.Tawsib.Tanjim
-    #   - Résumé__Sanjoy.Kumar.Saha
-    #   - Résumé__Sanmoon.Yasmin
-    #   - Résumé__Saqeeb.Redwanur.Rahman
-    #   - Résumé__Sarkar.Abul.Kalam.Azad
-    #   - Résumé__Sayeda.Fatema.Ferdousi
-    #   - Résumé__Sayeda.Tanjila
-    #   - Résumé__Shaikh.Tojibul.Islam
-    #   - Résumé__Shajir.Uddin.Haider
-    #   - Résumé__Sharif.Mohmmad.Bin.Safi
-    #   - Résumé__Shihan.Zaman
-    #   - Résumé__Shuvo.Das
-    #   - Résumé__SK.Maruf.Hosen
-    #   - Résumé__Sonjoy.Kumar
-    #   - Résumé__Syed.Md.Manzur.Murshed
-    #   - Résumé__Syed.Tareque.Hasan
-    #   - Résumé__Tanmoy.Chandra.Dhar
-    #   - Résumé__Tanveer.Ehsanur.Rahman
-    #   - Résumé__Tanzin.Rubaiyat
-    #   - Résumé__Taposh.Kumar
-    #   - Résumé__Tasnim.Kabir.Ratul
-    #   - Résumé__Tridib.Biswas
-    #   - Résumé__Umaeer.Al.Hammad
-    # # doer resume
-    #   - celloscope__résumé__template
-    #   - Résumé__Abdullah.Al.Maruf
-    #   - Résumé__Abir.Ahmed
-    #   - Résumé__Abu.Zahed.Md.Shamshed
-    #   - Résumé__Ajoy.Kumar.Khan
-    #   - Résumé__Amjad.Hossain.Polock
-    #   - Résumé__Arun.Chakraborty
-    #   - Résumé__Ashfaq.Inteser
-    #   - Résumé__Ayesha.Siddika
-    #   - Résumé__Ayesha.Siddiqa.Asha
-    #   - Résumé__B.M.Ferdous.Mahmud
-    #   - Résumé__Fahadul.Islam.Shimak
-    #   - Résumé__Fahima.Rahman
-    #   - Résumé__Faisal.Ahmed.Anik
-    #   - Résumé__Farzana.Afrin
-    #   - Résumé__Gaffar.Khan
-    #   - Résumé__Hasibul.Hasan.Emon
-    #   - Résumé__Imran.Howlader
-    #   - Résumé__Ishrat.Fatima
-    #   - Résumé__Ishtiak.Ahmed
-    #   - Résumé__Istiak.Ahmed
-    #   - Résumé__Jahin.Khan.Shourov
-    #   - Résumé__Jashim.Uddin.Ahmed
-    #   - Résumé__K.M.Anisur.Rahman
-    #   - Résumé__Kanis.Fatema.Mariya
-    #   - Résumé__Mahamudul.Hasan
-    #   - Résumé__Mahmudul.Hasan
-    #   - Résumé__Maria.Nurjahanara.Bhuiyan
-    #   - Résumé__Md.Jafrul.Ahsan
-    #   - Résumé__Md.Jahidul.Islam
-    #   - Résumé__Md.Masud.Rana.(Tuhin)
-    #   - Résumé__Md.Sahidur.Rahman
-    #   - Résumé__Md.Shamiul.Islam
-    #   - Résumé__Md.Zillur.Rahman
-    #   - Résumé__Md.Abdullah.Al.Salam
-    #   - Résumé__Md.Abdus.Samad.Patwary
-    #   - Résumé__Md.Arafat.Rahman.Sayed
-    #   - Résumé__Md.Bodrul.Alam
-    #   - Résumé__Md.Bony.Tasnim.Ibna.Razzak
-    #   - Résumé__Md.Golam.Kibria
-    #   - Résumé__Md.Habibur.Rahman.Tusher
-    #   - Résumé__Md.Humayun.Kabir.(BDEx)
-    #   - Résumé__Md.Humayun.Kabir.(Software)
-    #   - Résumé__Md.Imtiaz.Mahmood.Sayed
-    #   - Résumé__Md.Izadul.Ala.Ala.Baksh
-    #   - Résumé__Md.Jalal.Uddin
-    #   - Résumé__Md.Jamal.Uddin
-    #   - Résumé__Md.Kamal.Parvez
-    #   - Résumé__Md.Kamrul.Hasan.(BDEx)
-    #   - Résumé__Md.Kamrul.Islam
-    #   - Résumé__Md.Kamruzzaman
-    #   - Résumé__Md.Khaleque.Rakibul.Haque
-    #   - Résumé__Md.Masum.Ahmmed
-    #   - Résumé__Md.Mizanur.Rahman
-    #   - Résumé__Md.Mokaddes.Hossain.Talukder
-    #   - Résumé__Md.Moktadir.Hosan
-    #   - Résumé__Md.Mokul.Arfan
-    #   - Résumé__Md.Moniruzzaman.Liton
-    #   - Résumé__Md.Nahhid.Uj.Jaman.Jisun
-    #   - Résumé__Md.Noor-E-Alom.Siddique
-    #   - Résumé__Md.Reasad.Islam
-    #   - Résumé__Md.Rezaul.Karim.Sarker
-    #   - Résumé__Md.Shabbir.Hossain.Bhuiya
-    #   - Résumé__Md.Siam.Samad.Prantik
-    #   - Résumé__Md.Sohan.Kabir
-    #   - Résumé__Md.Tauhid.Amir
-    #   - Résumé__Md.Thoufiq.Zumma
-    #   - Résumé__Mithun.Kumar.Debnath
-    #   - Résumé__Mohaiminul.Islam
-    #   - Résumé__Mohammad.Abul.Hasnat
-    #   - Résumé__Mohammad.Shahadat.Hossain
-    #   - Résumé__Mohammad.Ziaul.Hoq
-    #   - Résumé__Musaddiqur.Rahman.Ovi
-    #   - Résumé__Ommul.Khair.Musammat.Tahera
-    #   - Résumé__Palash.Kumar.Sinha
-    #   - Résumé__Polas.Hossain
-    #   - Résumé__Rafiqul.Islam.Reyad
-    #   - Résumé__Rahana.Akter
-    #   - Résumé__Rasheda.Akter
-    #   - Résumé__Redwan.Al.Rashed
-    #   - Résumé__Rizon.Ali
-    #   - Résumé__Rubayat.Zaman
-    #   - Résumé__Rubel.Ahammed
-    #   - Résumé__S.M.Al-Amin
-    #   - Résumé__Sabiha.Afrin.Bithee
-    #   - Résumé__Salma.Afroze
-    #   - Résumé__Sathe.Khan.Majlish
-    #   - Résumé__Shaikh.Insad.Ibney.Amin
-    #   - Résumé__Shajidur.Rahman.Chowdury
-    #   - Résumé__Shanawaz.Durjoy
-    #   - Résumé__Subrata.Sanyal
-    #   - Résumé__Sufia.Khanom
-    #   - Résumé__Suman.Miah
-    #   - Résumé__Sumshur.Rahman
-    #   - Résumé__Syed.Ahmad.Mahdi
-    #   - Résumé__Syed.Ahmad.Rasul
-    #   - Résumé__Tanvir.Ahammed.Sobuj
-    #   - Résumé__Tanvir.Ahmed
-    #   - Résumé__Tanvir.Mallik
-    #   - Résumé__Umme.Habiba.Rita
-    # # celloscope resume
-    #   - Résumé__Abida.Anjum.Noshin
-    #   - Résumé__Alif.Arfab.Pavel
-    #   - Résumé__Altaf.Hossain
-    #   - Résumé__Amina.Khatun
-    #   - Résumé__Amena.Shiddika
-    #   - Résumé__Aminul.Hossain.Sazzad
-    #   - Résumé__Amiya.Ahamed
-    #   - Résumé__Anan.Aiman.Tuba
-    #   - Résumé__Arnab.Basak
-    #   - Résumé__Asiya.Khatun.(Papiya)
-    #   - Résumé__Avi.Afrid
-    #   - Résumé__Deboraj.Saha
-    #   - Résumé__Dip.Chowdhury
-    #   - Résumé__Farhad.Hossain
-    #   - Résumé__Farhana.Naz
-    #   - Résumé__Heronmoy.Tanchangya.Emon
-    #   - Résumé__Jannatul.Promy
-    #   - Résumé__Kamrul.Hasan.Farabee
-    #   - Résumé__Kamrun.Nahar
-    #   - Résumé__Khondoker.Tanvir.Hossain
-    #   - Résumé__Mahabuba.Rahman.(Moon)
-    #   - Résumé__Mainur.Rahman.Rasel
-    #   - Résumé__Maly.Mohsem.Ahmed
-    #   - Résumé__Md.Farhad.Bhuiyan
-    #   - Résumé__Md.Tahmid.Islam.Bhuiyan
-    #   - Résumé__Md.Abu.Yousuf.Sajal
-    #   - Résumé__Md.Asif.Khan.Taj
-    #   - Résumé__MD.Fuad.Hasan.Chowdhury
-    #   - Résumé__Md.Hafizur.Rahman
-    #   - Résumé__Md.Kamruzzaman.Tanim
-    #   - Résumé__Md.Nazmul.Alam
-    #   - Résumé__Md.Samiul.Alim
-    #   - Résumé__Md.Shariar.Kabir
-    #   - Résumé__Mehedi.Hasan
-    #   - Résumé__Mohammad.Ashraful.Islam
-    #   - Résumé__Mohammad.Kamrul.Hasan
-    #   - Résumé__Mohammad.Mashud.Karim
-    #   - Résumé__Mohammad.Wakib.Hasan
-    #   - Résumé__Most.Fahmi.Tazrin
-    #   - Résumé__Mushfika.Faria
-    #   - Résumé__Nafi.Uz.Zaman
-    #   - Résumé__Nasima.Aktar
-    #   - Résumé__Nayeem.Ahmed
-    #   - Résumé__Nazmus.Sakib
-    #   - Résumé__Omar.Faruk
-    #   - Résumé__Rashida.Akter
-    #   - Résumé__Reyad.Hossain
-    #   - Résumé__Rezwan.Huq
-    #   - Résumé__Rizvi.Mahmud
-    #   - Résumé__Sakib.Chowdhury
-    #   - Résumé__Sakib.Ibn.Abdullah
-    #   - Résumé__Sazzad.Sakib
-    #   - Résumé__Shafayat.Ahmed
-    #   - Résumé__Shah.Nafiz.Manjoor
-    #   - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
-    #   - Résumé__Shajeda.Akter.Shanta
-    #   - Résumé__Sharif.Tamjidur.Rahman
-    #   - Résumé__Syed.Mostofa.Monsur
-    #   - Résumé__Umme.Rumman.Usha
-    #   - Résumé__Zubair.Hasan
-    # # ael resume
-    #   - Résumé__Asadul.Haque
-    #   - Résumé__Asif.Yusuf
-    #   - Résumé__Assaduzzaman
-    #   - Résumé__Dipankar.Kumar.Biswas
-    #   - Résumé__Iqbal.Yusuf
-    #   - Résumé__Md.Nasir.Uddin
-    #   - Résumé__Md.Ahsan.Habib.Rocky
-    #   - Résumé__Md.Atikur.Zaman
-    #   - Résumé__Md.Mijanur.Rahman
-    #   - Résumé__Md.Nahidul.Islam.Siddique
-    #   - Résumé__Md.Sohel.Rana
-    #   - Résumé__Md.Yousuf.Ali
-    #   - Résumé__Mir.Earfan.Elahi
-    #   - Résumé__Mostafa.Jannatul.Ferdows
-    #   - Résumé__Salman.Ahmed.Firoz
+    # template
+      - spectrum__Résumé__template
+    # external resume
+      - Résumé__Md.Rezaur.Rahman__RHD-TMC
+      - Résumé__Saifur.Rahman__RHD-TMC
+      - Résumé__Sharmin.Sultana__RHD-TMC
+      - Résumé__Mamunur.Rashid__RHD-TMC
+    # sscl resume
+      - Résumé__Akeed.Anjum
+      - Résumé__Arif.Hossain
+      - Résumé__Faraz.Ahmed.Bhuiyan
+      - Résumé__Faridul.Islam.Farhad
+      - Résumé__Golam.Mostafa
+      - Résumé__Hasib.Mahmud
+      - Résumé__Humaira.Binte.Harun
+      - Résumé__Iftakhar.Ali.Khandokar
+      - Résumé__Jumana.Ahmed
+      - Résumé__Md.Abu.Sayed
+      - Résumé__Md.Al.Emran.Hossain
+      - Résumé__Md.Faizul.Bari
+      - Résumé__Md.Mahmudul.Hasan
+      - Résumé__Md.Rokonuzzaman
+      - Résumé__Md.Sayeduzzaman
+      - Résumé__Mohammed.Farhan.Islam
+      - Résumé__Monjur.Ahmed
+      - Résumé__Mosaddek.Ali.Mithu
+      - Résumé__Sarah.Noor
+    # spectrum resume
+      - Résumé__A.S.M.Estiuk.Sadick
+      - Résumé__Aabid.Rahman
+      - Résumé__Abu.Muhammad.Rashed.Mujib.Noman
+      - Résumé__Adiat.Islam.Sahih
+      - Résumé__Airin.Sultana
+      - Résumé__Aminul.Quader.Khalili
+      - Résumé__Aqib.Asifur.Rahman
+      - Résumé__Arif.Ullah
+      - Résumé__Ashish.Kumar.Das
+      - Résumé__Asif.Hasan.Chowdhury
+      - Résumé__Asma.Ul.Husna
+      - Résumé__Atiqur.Rahman
+      - Résumé__Bappa.Saha
+      - Résumé__Delwar.Hossain
+      - Résumé__Dip.Kumar.Pal
+      - Résumé__Dipika.Debnath
+      - Résumé__Fakhrul.Islam.(Babu)
+      - Résumé__Ferdous.Ara.Ruma
+      - Résumé__Ferdous.Rahman
+      - Résumé__Fiaz.Ahmed
+      - Résumé__Fokrul.Hassan.Zibon
+      - Résumé__Forkan.Bin.Quasem
+      - Résumé__Hasan.Al.Mahmood
+      - Résumé__Ibrahim.Ibna.Md.Liaquat.Ullah
+      - Résumé__Joy.Kabiraj
+      - Résumé__Jubayer.Reza.Chowdhury
+      - Résumé__Jyoti.Basu.Chakma
+      - Résumé__K.M.Zabir.Tarique
+      - Résumé__Kaji.Shahjahan.Omar
+      - Résumé__Kamrul.Islam.Sarek
+      - Résumé__Karzon.Chowdhury
+      - Résumé__Kazi.Md.Mohsin
+      - Résumé__Kazi.Rakibur.Rahman
+      - Résumé__Khaja.Ajijul.Haque.(Mithu)
+      - Résumé__Khandakar.Asif.Hasan
+      - Résumé__Khandakar.Muttakinuzzaman
+      - Résumé__Mahim.Jahan.Mim
+      - Résumé__Manzur.Alam
+      - Résumé__Md.Ashrafur.Rahaman
+      - Résumé__Md.Farhadul.Alam.Jion
+      - Résumé__MD.Ferdous.Mahmud
+      - Résumé__Md.Mehrab.Hossen.Siam
+      - Résumé__Md.Murshid.Sarker
+      - Résumé__Md.Abdul.Kader
+      - Résumé__Md.Abdullah.Al.Mamun
+      - Résumé__Md.Ahsanur.Rahman
+      - Résumé__Md.Al.Shahrior.Rahman
+      - Résumé__Md.Al-Shahariar
+      - Résumé__Md.Anamul.Haque
+      - Résumé__Md.Anisur.Rahman
+      - Résumé__Md.Anowarul.Islam.Rahat
+      - Résumé__Md.Ariful.Islam
+      - Résumé__Md.Asgor.Ali
+      - Résumé__Md.Ashaduzzaman
+      - Résumé__Md.Ashraful.Hossain
+      - Résumé__Md.Aslam.Iqbal
+      - Résumé__Md.Azadul.Karim
+      - Résumé__Md.Fahim.Islam
+      - Résumé__Md.Fazle.Rabby
+      - Résumé__Md.Hasibur.Rahman
+      - Résumé__Md.Humayun.Kabir
+      - Résumé__Md.Ibrahim.Hossen
+      - Résumé__Md.Ibrahim.Ullah
+      - Résumé__Md.Jakir.Hossain
+      - Résumé__Md.Jubaer.Hossain
+      - Résumé__Md.Kamruzzaman.(OM)
+      - Résumé__Md.Kazal.Pk
+      - Résumé__Md.Mahabub.Al-Islam
+      - Résumé__Md.Mahadi.Rahat
+      - Résumé__Md.Mahasin.Alam
+      - Résumé__Md.Mashrurul.Hakim
+      - Résumé__Md.Mazharul.Islam
+      - Résumé__Md.Mominul.Islam
+      - Résumé__Md.Monirul.Islam
+      - Résumé__Md.Motaleb.Hossain
+      - Résumé__Md.Murshadul.Islam
+      - Résumé__Md.Mushfiqur.Rahman
+      - Résumé__Md.Najmul.Hasan.Sharon
+      - Résumé__Md.Nazmul.Hassan
+      - Résumé__Md.Nazmul.Hossain
+      - Résumé__Md.Nurujjaman.Sarker
+      - Résumé__Md.Rabiul.Islam
+      - Résumé__Md.Rakib.Uddin.Chowdhury
+      - Résumé__Md.Raqibul.Islam
+      - Résumé__Md.Rezaul.Islam
+      - Résumé__Md.Rony.Ahmed
+      - Résumé__Md.Saidur.Rahman.(Shamim)
+      - Résumé__Mohammad.Saiful.Islam
+      - Résumé__MD.Saiful.Islam.(DBA)
+      - Résumé__Md.Salman.Hossen
+      - Résumé__Md.Samim.Hosen
+      - Résumé__Md.Sayeem.Khan
+      - Résumé__Md.Shahin.Sheikh
+      - Résumé__Md.Shamsuddin.Pappu
+      - Résumé__Md.Sharafat.Hossain.Kamal
+      - Résumé__Md.Shariful.Islam
+      - Résumé__Md.Shohag.Hossain
+      - Résumé__Md.Siddiqur.Rahman
+      - Résumé__Md.Tuhin.Reza
+      - Résumé__Md.Zahidul.Islam
+      - Résumé__Mehedi.Hasan.Bhuiyan
+      - Résumé__Miskatun.Nahar
+      - Résumé__Mohammad.Main.Uddin
+      - Résumé__Mohammad.Sabbir.Ahmed
+      - Résumé__Muhammad.Myanuddin
+      - Résumé__Mumtahina.Afroz
+      - Résumé__Nafis.Ahmed
+      - Résumé__Nazmul.Hossain.(Tusit)
+      - Résumé__Nur-E-Asma.Tabassum
+      - Résumé__Rahat.Hussain
+      - Résumé__Raihan.Ur.Rashid
+      - Résumé__Rajib.Chowdhury
+      - Résumé__Rishad.Ali.Mimo
+      - Résumé__Rizia.Aktar
+      - Résumé__S.M.Touhidul.Islam.Al-Amin
+      - Résumé__S.M.Azharul.Islam
+      - Résumé__Sagar.Saha
+      - Résumé__Saiful.Islam.(Sumon)
+      - Résumé__Sanjoy.Kumar.Saha
+      - Résumé__Sanmoon.Yasmin
+      - Résumé__Saqeeb.Redwanur.Rahman
+      - Résumé__Sarkar.Abul.Kalam.Azad
+      - Résumé__Sayeda.Fatema.Ferdousi
+      - Résumé__Sayeda.Tanjila
+      - Résumé__Shaikh.Tojibul.Islam
+      - Résumé__Shajir.Uddin.Haider
+      - Résumé__Sharif.Mohmmad.Bin.Safi
+      - Résumé__Shihan.Zaman
+      - Résumé__Shuvo.Das
+      - Résumé__SK.Maruf.Hosen
+      - Résumé__Sonjoy.Kumar
+      - Résumé__Syed.Md.Manzur.Murshed
+      - Résumé__Syed.Tareque.Hasan
+      - Résumé__Tanmoy.Chandra.Dhar
+      - Résumé__Tanveer.Ehsanur.Rahman
+      - Résumé__Tanzin.Rubaiyat
+      - Résumé__Taposh.Kumar
+      - Résumé__Tasnim.Kabir.Ratul
+      - Résumé__Tridib.Biswas
+      - Résumé__Umaeer.Al.Hammad
+    # doer resume
+      - celloscope__résumé__template
+      - Résumé__Abdullah.Al.Maruf
+      - Résumé__Abir.Ahmed
+      - Résumé__Abu.Zahed.Md.Shamshed
+      - Résumé__Ajoy.Kumar.Khan
+      - Résumé__Amjad.Hossain.Polock
+      - Résumé__Arun.Chakraborty
+      - Résumé__Ashfaq.Inteser
+      - Résumé__Ayesha.Siddika
+      - Résumé__Ayesha.Siddiqa.Asha
+      - Résumé__B.M.Ferdous.Mahmud
+      - Résumé__Fahadul.Islam.Shimak
+      - Résumé__Fahima.Rahman
+      - Résumé__Faisal.Ahmed.Anik
+      - Résumé__Farzana.Afrin
+      - Résumé__Gaffar.Khan
+      - Résumé__Hasibul.Hasan.Emon
+      - Résumé__Imran.Howlader
+      - Résumé__Ishrat.Fatima
+      - Résumé__Ishtiak.Ahmed
+      - Résumé__Istiak.Ahmed
+      - Résumé__Jahin.Khan.Shourov
+      - Résumé__Jashim.Uddin.Ahmed
+      - Résumé__K.M.Anisur.Rahman
+      - Résumé__Kanis.Fatema.Mariya
+      - Résumé__Mahamudul.Hasan
+      - Résumé__Mahmudul.Hasan
+      - Résumé__Maria.Nurjahanara.Bhuiyan
+      - Résumé__Md.Jafrul.Ahsan
+      - Résumé__Md.Jahidul.Islam
+      - Résumé__Md.Masud.Rana.(Tuhin)
+      - Résumé__Md.Sahidur.Rahman
+      - Résumé__Md.Shamiul.Islam
+      - Résumé__Md.Zillur.Rahman
+      - Résumé__Md.Abdullah.Al.Salam
+      - Résumé__Md.Abdus.Samad.Patwary
+      - Résumé__Md.Arafat.Rahman.Sayed
+      - Résumé__Md.Bodrul.Alam
+      - Résumé__Md.Bony.Tasnim.Ibna.Razzak
+      - Résumé__Md.Golam.Kibria
+      - Résumé__Md.Habibur.Rahman.Tusher
+      - Résumé__Md.Humayun.Kabir.(BDEx)
+      - Résumé__Md.Humayun.Kabir.(Software)
+      - Résumé__Md.Imtiaz.Mahmood.Sayed
+      - Résumé__Md.Izadul.Ala.Ala.Baksh
+      - Résumé__Md.Jalal.Uddin
+      - Résumé__Md.Jamal.Uddin
+      - Résumé__Md.Kamal.Parvez
+      - Résumé__Md.Kamrul.Hasan.(BDEx)
+      - Résumé__Md.Kamrul.Islam
+      - Résumé__Md.Kamruzzaman
+      - Résumé__Md.Khaleque.Rakibul.Haque
+      - Résumé__Md.Masum.Ahmmed
+      - Résumé__Md.Mizanur.Rahman
+      - Résumé__Md.Mokaddes.Hossain.Talukder
+      - Résumé__Md.Moktadir.Hosan
+      - Résumé__Md.Mokul.Arfan
+      - Résumé__Md.Moniruzzaman.Liton
+      - Résumé__Md.Nahhid.Uj.Jaman.Jisun
+      - Résumé__Md.Noor-E-Alom.Siddique
+      - Résumé__Md.Reasad.Islam
+      - Résumé__Md.Rezaul.Karim.Sarker
+      - Résumé__Md.Shabbir.Hossain.Bhuiya
+      - Résumé__Md.Siam.Samad.Prantik
+      - Résumé__Md.Sohan.Kabir
+      - Résumé__Md.Tauhid.Amir
+      - Résumé__Md.Thoufiq.Zumma
+      - Résumé__Mithun.Kumar.Debnath
+      - Résumé__Mohaiminul.Islam
+      - Résumé__Mohammad.Abul.Hasnat
+      - Résumé__Mohammad.Shahadat.Hossain
+      - Résumé__Mohammad.Ziaul.Hoq
+      - Résumé__Musaddiqur.Rahman.Ovi
+      - Résumé__Ommul.Khair.Musammat.Tahera
+      - Résumé__Palash.Kumar.Sinha
+      - Résumé__Polas.Hossain
+      - Résumé__Rafiqul.Islam.Reyad
+      - Résumé__Rahana.Akter
+      - Résumé__Rasheda.Akter
+      - Résumé__Redwan.Al.Rashed
+      - Résumé__Rizon.Ali
+      - Résumé__Rubayat.Zaman
+      - Résumé__Rubel.Ahammed
+      - Résumé__S.M.Al-Amin
+      - Résumé__Sabiha.Afrin.Bithee
+      - Résumé__Salma.Afroze
+      - Résumé__Sathe.Khan.Majlish
+      - Résumé__Shaikh.Insad.Ibney.Amin
+      - Résumé__Shajidur.Rahman.Chowdury
+      - Résumé__Shanawaz.Durjoy
+      - Résumé__Subrata.Sanyal
+      - Résumé__Sufia.Khanom
+      - Résumé__Suman.Miah
+      - Résumé__Sumshur.Rahman
+      - Résumé__Syed.Ahmad.Mahdi
+      - Résumé__Syed.Ahmad.Rasul
+      - Résumé__Tanvir.Ahammed.Sobuj
+      - Résumé__Tanvir.Ahmed
+      - Résumé__Tanvir.Mallik
+      - Résumé__Umme.Habiba.Rita
+    # celloscope resume
+      - Résumé__Abida.Anjum.Noshin
+      - Résumé__Alif.Arfab.Pavel
+      - Résumé__Altaf.Hossain
+      - Résumé__Amina.Khatun
+      - Résumé__Amena.Shiddika
+      - Résumé__Aminul.Hossain.Sazzad
+      - Résumé__Amiya.Ahamed
+      - Résumé__Anan.Aiman.Tuba
+      - Résumé__Arnab.Basak
+      - Résumé__Asiya.Khatun.(Papiya)
+      - Résumé__Avi.Afrid
+      - Résumé__Deboraj.Saha
+      - Résumé__Dip.Chowdhury
+      - Résumé__Farhad.Hossain
+      - Résumé__Farhana.Naz
+      - Résumé__Heronmoy.Tanchangya.Emon
+      - Résumé__Jannatul.Promy
+      - Résumé__Kamrul.Hasan.Farabee
+      - Résumé__Kamrun.Nahar
+      - Résumé__Khondoker.Tanvir.Hossain
+      - Résumé__Mahabuba.Rahman.(Moon)
+      - Résumé__Mainur.Rahman.Rasel
+      - Résumé__Maly.Mohsem.Ahmed
+      - Résumé__Md.Farhad.Bhuiyan
+      - Résumé__Md.Tahmid.Islam.Bhuiyan
+      - Résumé__Md.Abu.Yousuf.Sajal
+      - Résumé__Md.Asif.Khan.Taj
+      - Résumé__MD.Fuad.Hasan.Chowdhury
+      - Résumé__Md.Hafizur.Rahman
+      - Résumé__Md.Kamruzzaman.Tanim
+      - Résumé__Md.Nazmul.Alam
+      - Résumé__Md.Samiul.Alim
+      - Résumé__Md.Shariar.Kabir
+      - Résumé__Mehedi.Hasan
+      - Résumé__Mohammad.Ashraful.Islam
+      - Résumé__Mohammad.Kamrul.Hasan
+      - Résumé__Mohammad.Mashud.Karim
+      - Résumé__Mohammad.Wakib.Hasan
+      - Résumé__Most.Fahmi.Tazrin
+      - Résumé__Mushfika.Faria
+      - Résumé__Nafi.Uz.Zaman
+      - Résumé__Nasima.Aktar
+      - Résumé__Nayeem.Ahmed
+      - Résumé__Nazmus.Sakib
+      - Résumé__Omar.Faruk
+      - Résumé__Rashida.Akter
+      - Résumé__Reyad.Hossain
+      - Résumé__Rezwan.Huq
+      - Résumé__Rizvi.Mahmud
+      - Résumé__Sakib.Chowdhury
+      - Résumé__Sakib.Ibn.Abdullah
+      - Résumé__Sazzad.Sakib
+      - Résumé__Shafayat.Ahmed
+      - Résumé__Shah.Nafiz.Manjoor
+      - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
+      - Résumé__Shajeda.Akter.Shanta
+      - Résumé__Sharif.Tamjidur.Rahman
+      - Résumé__Syed.Mostofa.Monsur
+      - Résumé__Umme.Rumman.Usha
+      - Résumé__Zubair.Hasan
+    # ael resume
+      - Résumé__Asadul.Haque
+      - Résumé__Asif.Yusuf
+      - Résumé__Assaduzzaman
+      - Résumé__Dipankar.Kumar.Biswas
+      - Résumé__Iqbal.Yusuf
+      - Résumé__Md.Nasir.Uddin
+      - Résumé__Md.Ahsan.Habib.Rocky
+      - Résumé__Md.Atikur.Zaman
+      - Résumé__Md.Mijanur.Rahman
+      - Résumé__Md.Nahidul.Islam.Siddique
+      - Résumé__Md.Sohel.Rana
+      - Résumé__Md.Yousuf.Ali
+      - Résumé__Mir.Earfan.Elahi
+      - Résumé__Mostafa.Jannatul.Ferdows
+      - Résumé__Salman.Ahmed.Firoz
   # pds
-    - pds__blank.template
-    - pds__ACMELL
-    - pds__BB-RTGS
-    - pds__BBA-BPBB
-    - pds__BCC
-    - pds__BCC-AMC
-    - pds__BCC-AMC-2020
-    - pds__BCC-Cisco-Renewal
-    - pds__BCC-DC
-    - pds__BCC-DC-Expansion
-    - pds__BCC-DSCOCP
-    - pds__BCC-HW-Expansion
-    - pds__BCC-Tier-IV-ServerStorage
-    - pds__BDREN-DC-Expansion
-    - pds__BDREN-G-13
-    - pds__BDREN-Network
-    - pds__Beximco-IT
-    - pds__BG(DC)
-    - pds__BPA-Sardah-Police-Academy
-    - pds__BR-DCDR
-    - pds__BRP
-    - pds__BSCCL
-    - pds__BSCCL-Kuakata
-    - pds__BSCCL-SCISCO
-    - pds__BTCL
-    - pds__BTCL-NGNCDR
-    - pds__BTTB
-    - pds__BWDB
-    - pds__CCC-WPSD
-    - pds__CRM
-    - pds__DBBL-DWDM
-    - pds__DISWLS
-    - pds__DMS-UBL
-    - pds__DSEL
-    - pds__DSHE-DC
-    - pds__DSILW(BAF)
-    - pds__DVSIVSS
-    - pds__DWASA
-    - pds__EMS
-    - pds__FOLC
-    - pds__GP-CHQ
-    - pds__GPIGP
-    - pds__iBAS
-    - pds__IBBL
-    - pds__ICBIBL(DR)
-    - pds__ICBISL
-    - pds__IFIC-DC
-    - pds__InterCon
-    - pds__IOWM
-    - pds__ITCL
-    - pds__ITICB
-    - pds__ITNA
-    - pds__IUB
-    - pds__JU
-    - pds__JUB
-    - pds__KTAL
-    - pds__LBBL
-    - pds__MCICT-SASECIH
-    - pds__MOS-ICT
-    - pds__Mosharaf-Group
-    - pds__MTBL-CCTV
-    - pds__MTBL-EBNCDC
-    - pds__NBR-ASYCUDA
-    - pds__NBR-ASYCUDA-SLA
-    - pds__NBR-AW-Network&Security
-    - pds__NBR-AW-Systems
-    - pds__NL-DC
-    - pds__OBL
-    - pds__PHQ-AMC
-    - pds__REB
-    - pds__RHD-MIS-consultancy
-    - pds__RHD-MIS-e-procurement
-    - pds__RWGH
-    - pds__SBFI
-    - pds__SCB
-    - pds__SIBL
-    - pds__SIBL(DC)
-    - pds__SPARRSO-2010
-    - pds__SPARRSO-2012
-    - pds__SSF
-    - pds__SSVPE
-    - pds__SUST-TC
-    - pds__TBL
-    - pds__TDS
-    - pds__UGCB
-    - pds__VHA
-    - pds__WDTGCL
-    - pds__ABBank-CIB
-    - pds__AgraniBank-BACPS
-    - pds__BB-BACPS
-    - pds__BB-CA
-    - pds__BCBL-CIB
-    - pds__BCC-CA
-    - pds__Bdjobs-MPVCC
-    - pds__Biman-HelpDeskHR
-    - pds__Boeing-BangladeshBiman
-    - pds__BRTA-UniVerge
-    - pds__BuySight-BizOps
-    - pds__CapGains-LLC
-    - pds__CCA-IDS
-    - pds__CCC-CSSM
-    - pds__CID-CDMS
-    - pds__CityBank-CityAgent
-    - pds__CityCell-NID-V-SA
-    - pds__ConserveTrack-RDU
-    - pds__ConserveTrack-WCM
-    - pds__EAM-CMMS
-    - pds__GP-HRMS
-    - pds__GP-ROC
-    - pds__GP-WBMS
-    - pds__HabibBank-BACPS
-    - pds__IslamGarments-rmgPro
-    - pds__lekhapora.com
-    - pds__LGED-IPMSRDEC
-    - pds__MarketSharp-CRM
-    - pds__Modhumoti(Kalna)-Bridge-Toll-2022
-    - pds__MTBL-BACPS
-    - pds__NBR-CAMS
-    - pds__NBR-UMS
-    - pds__Nestle-VATsys
-    - pds__OAGN-NAMS
-    - pds__OCAG-AMMS
-    - pds__Partex-OEBS
-    - pds__RA-BRPSharePoint
-    - pds__RA-CWRBS
-    - pds__RA-SRMS
-    - pds__Revnx-Journey
-    - pds__RHD-BDMS
-    - pds__RHD-CBRNIP
-    - pds__RHD-MIS
-    - pds__RHD-MIS-2009
-    - pds__RHD-MIS-2015
-    - pds__RHD-MIS-2017
-    - pds__ROBI-DMS
-    - pds__ROBI-ROC
-    - pds__SAU-ACAS
-    - pds__SCB-CBRM
-    - pds__SCB-OPCCMS
-    - pds__SCB-RTGS
-    - pds__SECL-CSB
-    - pds__SECL-Metrica
-    - pds__SECL-UniVerge
-    - pds__SECL-VATsys
-    - pds__SigmaStream-V2P
-    - pds__SportsBuddy
-    - pds__TrustBank-BACPS
-    - pds__UGC-HEMIS
-    - pds__Unilever-MFGPRO
+    # - pds__blank.template
+    # - pds__ACMELL
+    # - pds__BB-RTGS
+    # - pds__BBA-BPBB
+    # - pds__BCC
+    # - pds__BCC-AMC
+    # - pds__BCC-AMC-2020
+    # - pds__BCC-Cisco-Renewal
+    # - pds__BCC-DC
+    # - pds__BCC-DC-Expansion
+    # - pds__BCC-DSCOCP
+    # - pds__BCC-HW-Expansion
+    # - pds__BCC-Tier-IV-ServerStorage
+    # - pds__BDREN-DC-Expansion
+    # - pds__BDREN-G-13
+    # - pds__BDREN-Network
+    # - pds__Beximco-IT
+    # - pds__BG(DC)
+    # - pds__BPA-Sardah-Police-Academy
+    # - pds__BR-DCDR
+    # - pds__BRP
+    # - pds__BSCCL
+    # - pds__BSCCL-Kuakata
+    # - pds__BSCCL-SCISCO
+    # - pds__BTCL
+    # - pds__BTCL-NGNCDR
+    # - pds__BTTB
+    # - pds__BWDB
+    # - pds__CCC-WPSD
+    # - pds__CRM
+    # - pds__DBBL-DWDM
+    # - pds__DISWLS
+    # - pds__DMS-UBL
+    # - pds__DSEL
+    # - pds__DSHE-DC
+    # - pds__DSILW(BAF)
+    # - pds__DVSIVSS
+    # - pds__DWASA
+    # - pds__EMS
+    # - pds__FOLC
+    # - pds__GP-CHQ
+    # - pds__GPIGP
+    # - pds__iBAS
+    # - pds__IBBL
+    # - pds__ICBIBL(DR)
+    # - pds__ICBISL
+    # - pds__IFIC-DC
+    # - pds__InterCon
+    # - pds__IOWM
+    # - pds__ITCL
+    # - pds__ITICB
+    # - pds__ITNA
+    # - pds__IUB
+    # - pds__JU
+    # - pds__JUB
+    # - pds__KTAL
+    # - pds__LBBL
+    # - pds__MCICT-SASECIH
+    # - pds__MOS-ICT
+    # - pds__Mosharaf-Group
+    # - pds__MTBL-CCTV
+    # - pds__MTBL-EBNCDC
+    # - pds__NBR-ASYCUDA
+    # - pds__NBR-ASYCUDA-SLA
+    # - pds__NBR-AW-Network&Security
+    # - pds__NBR-AW-Systems
+    # - pds__NL-DC
+    # - pds__OBL
+    # - pds__PHQ-AMC
+    # - pds__REB
+    # - pds__RHD-MIS-consultancy
+    # - pds__RHD-MIS-e-procurement
+    # - pds__RWGH
+    # - pds__SBFI
+    # - pds__SCB
+    # - pds__SIBL
+    # - pds__SIBL(DC)
+    # - pds__SPARRSO-2010
+    # - pds__SPARRSO-2012
+    # - pds__SSF
+    # - pds__SSVPE
+    # - pds__SUST-TC
+    # - pds__TBL
+    # - pds__TDS
+    # - pds__UGCB
+    # - pds__VHA
+    # - pds__WDTGCL
+    # - pds__ABBank-CIB
+    # - pds__AgraniBank-BACPS
+    # - pds__BB-BACPS
+    # - pds__BB-CA
+    # - pds__BCBL-CIB
+    # - pds__BCC-CA
+    # - pds__Bdjobs-MPVCC
+    # - pds__Biman-HelpDeskHR
+    # - pds__Boeing-BangladeshBiman
+    # - pds__BRTA-UniVerge
+    # - pds__BuySight-BizOps
+    # - pds__CapGains-LLC
+    # - pds__CCA-IDS
+    # - pds__CCC-CSSM
+    # - pds__CID-CDMS
+    # - pds__CityBank-CityAgent
+    # - pds__CityCell-NID-V-SA
+    # - pds__ConserveTrack-RDU
+    # - pds__ConserveTrack-WCM
+    # - pds__EAM-CMMS
+    # - pds__GP-HRMS
+    # - pds__GP-ROC
+    # - pds__GP-WBMS
+    # - pds__HabibBank-BACPS
+    # - pds__IslamGarments-rmgPro
+    # - pds__lekhapora.com
+    # - pds__LGED-IPMSRDEC
+    # - pds__MarketSharp-CRM
+    # - pds__MTBL-BACPS
+    # - pds__NBR-CAMS
+    # - pds__NBR-UMS
+    # - pds__Nestle-VATsys
+    # - pds__OAGN-NAMS
+    # - pds__OCAG-AMMS
+    # - pds__Partex-OEBS
+    # - pds__RA-BRPSharePoint
+    # - pds__RA-CWRBS
+    # - pds__RA-SRMS
+    # - pds__Revnx-Journey
+    # - pds__RHD-BDMS
+    # - pds__RHD-CBRNIP
+    # - pds__RHD-MIS
+    # - pds__RHD-MIS-2009
+    # - pds__RHD-MIS-2015
+    # - pds__RHD-MIS-2017
+    # - pds__ROBI-DMS
+    # - pds__ROBI-ROC
+    # - pds__SAU-ACAS
+    # - pds__SCB-CBRM
+    # - pds__SCB-OPCCMS
+    # - pds__SCB-RTGS
+    # - pds__SECL-CSB
+    # - pds__SECL-Metrica
+    # - pds__SECL-UniVerge
+    # - pds__SECL-VATsys
+    # - pds__SigmaStream-V2P
+    # - pds__SportsBuddy
+    # - pds__TrustBank-BACPS
+    # - pds__UGC-HEMIS
   # RHD-TMC resume
     # - Résumé__Md.Rezaur.Rahman__RHD-TMC
     # - Résumé__Saifur.Rahman__RHD-TMC
@@ -591,6 +586,7 @@ worksheets:
   # - 05-technical-expertise
   # - 06-job-history
   # - 07-project-roles
+  # - 07-project-roles-RHD-TMC
   # - 08-training
   # - 09-certification
   # - 10-membership
@@ -604,22 +600,23 @@ worksheets:
   # - z-header
 # pds worksheets
   # - '-toc-new'
-  - 00-layout
-  - 01-summary
-  - 02-revenue
-  - 03-contact
-  - 04-joint-venture
-  - 05-people
-  - 06-description
-  - 07-functionality
-  - 08-technology
-  - 09-services
-  - 10-process
-  - 11-complexity
-  - 12-screenshots
-  - z-blank
-  - z-footer
-  - z-header
+  # - 00-layout
+  # - 01-summary
+  # - 02-revenue
+  # - 03-contact
+  # - 04-joint-venture
+  # - 05-people
+  # - 06-description
+  # - 07-functionality
+  # - 08-technology
+  # - 09-services
+  # - 10-process
+  # - 11-complexity
+  # - 12-screenshots
+  # - z-blank
+  # - z-footer
+  # - z-header
+
 # RHD-TMC__EoI__submission
   # - '-toc-new'
   # - 00.02-forwarding letter
@@ -696,30 +693,489 @@ work-specs:
 
 # find and replace patterns
 find-replace-patterns:
-  # - find                : '  '
-  #   replace-with        : ' '
-  # - find                : \n
-  #   replace-with        : ' '
+  # # comma - space after, no space before
+  # - find                : ','
+  #   replace-with        : ', '
   # - find                : ' ,'
   #   replace-with        : ','
+
+  # # period - space after, no space before
+  # - find                : '.'
+  #   replace-with        : '. '
   # - find                : ' .'
   #   replace-with        : '.'
-  # - find                : '• '
+
+  # # semicolon - space after, no space before
+  # - find                : ';'
+  #   replace-with        : '; '
+  # - find                : ' ;'
+  #   replace-with        : ';'
+
+  # # colon - space after, no space before
+  # - find                : ':'
+  #   replace-with        : ': '
+  # - find                : ' :'
+  #   replace-with        : ':'
+
+  # # opening brace - space before, no space after
+  # - find                : '('
+  #   replace-with        : ' ('
+  # - find                : '( '
+  #   replace-with        : '('
+
+  # # closing brace - space after, no space before
+  # - find                : ')'
+  #   replace-with        : ') '
+  # - find                : ' )'
+  #   replace-with        : ')'
+
+  # remove double space
+  # - find                : '  '
+  #   replace-with        : ' '
+
+
+  # - find                : applience
+  #   replace-with        : appliance
+  # - find                : Asistant
+  #   replace-with        : Assistant
+  # - find                : 'Assetmanagement'
+  #   replace-with        : 'Asset Management'
+  # - find                : Auto CAD
+  #   replace-with        : AutoCAD
+  # - find                : Autocad
+  #   replace-with        : AutoCAD
+  # - find                : autocad
+  #   replace-with        : AutoCAD
+  # - find                : bangaldesh
+  #   replace-with        : Bangladesh
+  # - find                : BangladGov
+  #   replace-with        : BanglaGov
+  # - find                : BootStrap
+  #   replace-with        : Bootstrap
+  # - find                : buisness
+  #   replace-with        : business
+  # - find                : capabilyties
+  #   replace-with        : capabilities
+  # - find                : Ceneter
+  #   replace-with        : Center
+  # - find                : challange
+  #   replace-with        : challenge
+  # - find                : chittagong
+  #   replace-with        : Chittagong
+  # - find                : CIvil
+  #   replace-with        : Civil
+  # - find                : Cneter
+  #   replace-with        : Center
+  # - find                : commisioning
+  #   replace-with        : commissioning
+  # - find                : Commisioning
+  #   replace-with        : Commissioning
+  # - find                : Commscope
+  #   replace-with        : CommScope
+  # - find                : Configration
+  #   replace-with        : Configuration
+  # - find                : Coputer
+  #   replace-with        : Computer
+  # - find                : cordinate
+  #   replace-with        : coordinate
+  # - find                : Coustomer
+  #   replace-with        : Customer
+  # - find                : Defferents
+  #   replace-with        : Different
+  # - find                : deplyment
+  #   replace-with        : deployment
+  # - find                : Deplyment
+  #   replace-with        : Deployment
+  # - find                : 'Desig '
+  #   replace-with        : 'Design '
+  # - find                : 'Deta '
+  #   replace-with        : 'Data '
+  # - find                : developement
+  #   replace-with        : development
+  # - find                : Developement
+  #   replace-with        : Development
+  # - find                : Developement
+  #   replace-with        : Development
+  # - find                : Electricl
+  #   replace-with        : Electrical
+  # - find                : Enginnering
+  #   replace-with        : Engineering
+  # - find                : english
+  #   replace-with        : English
+  # - find                : equipments
+  #   replace-with        : equipment
+  # - find                : Equipments
+  #   replace-with        : Equipment
+  # - find                : esxi
+  #   replace-with        : ESXi
+  # - find                : 'etc '
+  #   replace-with        : 'etc. '
+  # - find                : Exchage
+  #   replace-with        : Exchange
+  # - find                : 'Expertis '
+  #   replace-with        : 'Expertise '
+  # - find                : Fibre
+  #   replace-with        : Fiber
+  # - find                : Fushion
+  #   replace-with        : Fusion
+  # - find                : Genaretor
+  #   replace-with        : Generator
+  # - find                : GreenLc
+  #   replace-with        : GreenLC
+  # - find                : HeadQuarter
+  #   replace-with        : Head Quarter
+  # - find                : Implementaion
+  #   replace-with        : Implementation
+  # - find                : 'Inc '
+  #   replace-with        : 'Inc. '
+  # - find                : InfoSarkar
+  #   replace-with        : Info-Sarker
+  # - find                : infrstructure
+  #   replace-with        : infrastructure
+  # - find                : Infrustructure
+  #   replace-with        : Infrastructure
+  # - find                : Instalaltion
+  #   replace-with        : Installation
+  # - find                : installition
+  #   replace-with        : installation
+  # - find                : Instlation
+  #   replace-with        : Installation
+  # - find                : instllation
+  #   replace-with        : installation
+  # - find                : intlation
+  #   replace-with        : installation
+  # - find                : iterateing
+  #   replace-with        : iterating
+  # - find                : javascript
+  #   replace-with        : JavaScript
+  # - find                : Javascript
+  #   replace-with        : JavaScript
+  # - find                : jboss
+  #   replace-with        : JBoss
+  # - find                : Jboss
+  #   replace-with        : JBoss
+  # - find                : kuakata
+  #   replace-with        : Kuakata
+  # - find                : 'labour '
+  #   replace-with        : 'labor '
+  # - find                : ' lan '
+  #   replace-with        : ' LAN '
+  # - find                : 'lan,'
+  #   replace-with        : 'LAN,'
+  # - find                : ' lan/'
+  #   replace-with        : ' LAN/'
+  # - find                : 'lan/'
+  #   replace-with        : 'LAN/'
+  # - find                : Maintanance
+  #   replace-with        : Maintenance
+  # - find                : maintenanec
+  #   replace-with        : maintenance
+  # - find                : maintenence
+  #   replace-with        : maintenance
+  # - find                : maintenence
+  #   replace-with        : maintenance
+  # - find                : maitenance
+  #   replace-with        : maintenance
+  # - find                : 'manage- ment'
+  #   replace-with        : 'management'
+  # - find                : Mangement
+  #   replace-with        : Management
+  # - find                : Mangemnet
+  #   replace-with        : Management
+  # - find                : maximise
+  #   replace-with        : maximize
+  # - find                : Maximising
+  #   replace-with        : Maximizing
+  # - find                : Mikrotik
+  #   replace-with        : MikroTik
+  # - find                : Mikrotik
+  #   replace-with        : MikroTik
+  # - find                : 'More then'
+  #   replace-with        : 'More than'
+  # - find                : multigigabit
+  #   replace-with        : 'multi-gigabit'
+  # - find                : Mymanshing
+  #   replace-with        : Mymensingh
+  # - find                : 'Netbean '
+  #   replace-with        : 'Netbeans '
+  # - find                : ngnix
+  #   replace-with        : NGINX
+  # - find                : 'Nodejs'
+  #   replace-with        : 'Node.js'
+  # - find                : 'Opensource'
+  #   replace-with        : 'Open Source'
+  # - find                : Optmizer
+  #   replace-with        : Optimizer
+  # - find                : orbjective
+  #   replace-with        : objective
+  # - find                : organisation
+  #   replace-with        : organization
+  # - find                : panal
+  #   replace-with        : panel
+  # - find                : Pasific
+  #   replace-with        : Pacific
+  # - find                : persistance
+  #   replace-with        : persistent
+  # - find                : Php
+  #   replace-with        : PHP
+  # - find                : Planing
+  #   replace-with        : Planning
+  # - find                : Polytechnich
+  #   replace-with        : Polytechnic
+  # - find                : Postgresql
+  #   replace-with        : PostgreSQL
+  # - find                : postgreSQL
+  #   replace-with        : PostgreSQL
+  # - find                : Postgress
+  #   replace-with        : PostgreSQL
+  # - find                : poweredge
+  #   replace-with        : PowerEdge
+  # - find                : prepartion
+  #   replace-with        : preparation
+  # - find                : prepration
+  #   replace-with        : preparation
+  # - find                : 'preservinguser'
+  #   replace-with        : 'preserving user'
+  # - find                : 'Professiona '
+  #   replace-with        : 'Professional '
+  # - find                : Proffessionals
+  #   replace-with        : Professionals
+  # - find                : Realise
+  #   replace-with        : Realize
+  # - find                : Rectifire
+  #   replace-with        : Rectifier
+  # - find                : REctifire
+  #   replace-with        : Rectifier
+  # - find                : Rectifire
+  #   replace-with        : Rectifier
+  # - find                : Redhat
+  #   replace-with        : 'Red Hat'
+  # - find                : RedHat
+  #   replace-with        : 'Red Hat'
+  # - find                : reqirement
+  #   replace-with        : requirement
+  # - find                : requiremnt
+  #   replace-with        : requirement
+  # - find                : Schnider
+  #   replace-with        : Schneider
+  # - find                : Seconday
+  #   replace-with        : Secondary
+  # - find                : Shonali
+  #   replace-with        : Sonali
+  # - find                : Sinciarly
+  #   replace-with        : Sincerity
+  # - find                : skype
+  #   replace-with        : Skype
+  # - find                : Softawre
+  #   replace-with        : Software
+  # - find                : softwares
+  #   replace-with        : software
+  # - find                : Sophos
+  #   replace-with        : Sophos
+  # - find                : 'Sparc Server'
+  #   replace-with        : 'SPARC Server'
+  # - find                : Specfication
+  #   replace-with        : Specification
+  # - find                : stageslike
+  #   replace-with        : stages like
+  # - find                : Sysytem
+  #   replace-with        : System
+  # - find                : targetted
+  #   replace-with        : targeted
+  # - find                : Techincal
+  #   replace-with        : Technical
+  # - find                : throughoout
+  #   replace-with        : throughout
+  # - find                : Titash
+  #   replace-with        : Titas
+  # - find                : TomCat
+  #   replace-with        : Tomcat
+  # - find                : Trainning
+  #   replace-with        : Training
+  # - find                : troublshoot
+  #   replace-with        : troubleshoot
+  # - find                : Univeristy
+  #   replace-with        : University
+  # - find                : Vertive
+  #   replace-with        : Vertiv
+  # - find                : VISIO
+  #   replace-with        : Visio
+  # - find                : Voyegar
+  #   replace-with        : Voyager
+  # - find                : 'with.Net'
+  #   replace-with        : 'with .Net'
+  # - find                : 'years experience'
+  #   replace-with        : "years' experience"
+  # - find                : 'years work'
+  #   replace-with        : "years' work"
+  # - find                : " it’s "
+  #   replace-with        : " its "
+  # - find                : Suvervision
+  #   replace-with        : Supervision
+  # - find                : Vlan
+  #   replace-with        : VLAN
+  # - find                : Procesing
+  #   replace-with        : Processing
+  # - find                : Meritious
+  #   replace-with        : Meritorious
+  # - find                : Licesnse
+  #   replace-with        : License
+  # - find                : Pepole
+  #   replace-with        : People
+  # - find                : Netbeanss
+  #   replace-with        : Netbeans
+  # - find                : 'M. Sc'
+  #   replace-with        : 'M.Sc'
+  # - find                : 'B. Sc'
+  #   replace-with        : 'B.Sc'
+  # - find                : 'H. S. C'
+  #   replace-with        : 'H.S.C'
+  # - find                : 'S. S. C'
+  #   replace-with        : 'S.S.C'
+  # - find                : requriement
+  #   replace-with        : requirement
+  # - find                : Professionalls
+  #   replace-with        : Professionals
+  # - find                : ' Ban '
+  #   replace-with        : ' Bank '
+  # - find                : Planing
+  #   replace-with        : Planning
+  # - find                : Maintance
+  #   replace-with        : Maintenance
+  # - find                : Techology
+  #   replace-with        : Technology
+  # - find                : 'Co-ordinating'
+  #   replace-with        : 'Coordinating'
+  # - find                : Ngnix
+  #   replace-with        : NGINX
+  # - find                : 'NodeJs'
+  #   replace-with        : 'Node.js'
+  # - find                : Banbeis
+  #   replace-with        : BANBEIS
+  # - find                : ' sms '
+  #   replace-with        : ' SMS '
+  # - find                : pLAN
+  #   replace-with        : plan
+  # - find                : 'lan Design'
+  #   replace-with        : 'LAN Design'
+  # - find                : Tensorflow
+  #   replace-with        : TensorFlow
+  # - find                : tensorflow
+  #   replace-with        : TensorFlow
+  # - find                : Pytorch
+  #   replace-with        : PyTorch
+  # - find                : Professionall
+  #   replace-with        : Professional
+  # - find                : '. com'
+  #   replace-with        : '.com'
+  # - find                : CEnter
+  #   replace-with        : Center
+  # - find                : Electriacl
+  #   replace-with        : Electrical
+  # - find                : upazilla
+  #   replace-with        : Upazila
+  # - find                : Upazilla
+  #   replace-with        : Upazila
+
+  # - find                : 'reachieved'
+  #   replace-with        : 're-achieved'
+
+  # - find                : Documantation
+  #   replace-with        : Documentation
+  # - find                : 'self learner'
+  #   replace-with        : 'self-learner'
+  # - find                : Behaviour
+  #   replace-with        : Behavior
+  # - find                : Analyser
+  #   replace-with        : Analyzer
+  # - find                : activex
+  #   replace-with        : ActiveX
+
+  # - find                : 'economical '
+  #   replace-with        : 'economic '
+  # - find                : Professionaly
+  #   replace-with        : Professionally
+  # - find                : anytime
+  #   replace-with        : 'any time'
+  # - find                : ' is is '
+  #   replace-with        : ' is '
+  # - find                : 'Grameen phone'
+  #   replace-with        : 'Grameenphone'
+  # - find                : 'grameen phone'
+  #   replace-with        : 'Grameenphone'
+  # - find                : ' specially '
+  #   replace-with        : ' especially '
+  # - find                : Knowlwdge
+  #   replace-with        : Knowlwege
+  # - find                : Univercity
+  #   replace-with        : University
+  # - find                : Achievment
+  #   replace-with        : Achievement
+  # - find                : bigs
+  #   replace-with        : big
+  # - find                : Comvolt
+  #   replace-with        : Commvault
+  # - find                : activex
+  #   replace-with        : ActiveX
+  # - find                : activex
+  #   replace-with        : ActiveX
+
+
+
+ 
+ 
+
+  
+
+
+  # - find                : Curriculam
+  #   replace-with        : Curriculum
+  # - find                : Expertisee
+  #   replace-with        : Expertise
+  # - find                : '..'
+  #   replace-with        : '.'
+  # - find                : 'Inc. luding'
+  #   replace-with        : 'Including'
+  # - find                : Bangaldesh
+  #   replace-with        : Bangladesh
+  # - find                : Professionalll
+  #   replace-with        : Professional
+  # - find                : 'Inc.. ident '
+  #   replace-with        : 'Incident '
+  # - find                : 'WindowsServer2003'
+  #   replace-with        : 'Windows Server 2003'
+  # - find                : 'Windows-Server2003'
+  #   replace-with        : 'Windows Server 2003'
+  # - find                : 'ActiveDirectory'
+  #   replace-with        : 'Active Directory'
+  # - find                : '. js'
+  #   replace-with        : '.js'
+  # - find                : '. io'
+  #   replace-with        : '.io'
+  # - find                : '. ai'
+  #   replace-with        : '.ai'
+
+
+
+  # - find                : '..'
+  #   replace-with        : '.'
+  # - find                : ''
   #   replace-with        : ''
+
+
+
+
+  # remove nultiline
+  # - find                : \n
+  #   replace-with        : ' '
+
+  # remove single dash
   # - find                : '-'
   #   replace-with        : ''
   #   entire-cell         : True
+
+
   # - find                : /data/spectrum/pmo-project-datasheet/
   #   replace-with        : /data/organization/01-spectrum/pmo-project-datasheet/
-  # {'find': '/doer/', 'replace-with': '/03-doer/'},
-  # {'find': '/diploma/', 'replace-with': '/01-diploma/'},
-  # {'find': '/bachelor/', 'replace-with': '/02-bachelor/'},
-  # {'find': '/master/', 'replace-with': '/03-master/'},
-  # {'find': '/01-diploma/03-doer/', 'replace-with': '/03-doer/01-diploma/'},
-  # {'find': '/02-bachelor/03-doer/', 'replace-with': '/03-doer/02-bachelor/'},
-  # {'find': '/03-master/03-doer/', 'replace-with': '/03-doer/03-master/'},
-  # {'find': '/udemy/03-doer/', 'replace-with': '/03-doer/udemy/'},
-  # {'find': '/coursera/03-doer/', 'replace-with': '/03-doer/coursera/'},
-  # {'find': '/institutional-certificates/', 'replace-with': '/institutional-certificates/03-doer/'},
-  # {'find': '/vendor-certificates/', 'replace-with': '/vendor-certificates/03-doer/'},
+
   # -
