@@ -896,14 +896,14 @@ find-replace-patterns:
   #   replace-with        : 'for underground'
   # - find                : Accesories
   #   replace-with        : Accessories
-  - find                : Gasious
-    replace-with        : Gaseous
-  - find                : eqipment
-    replace-with        : equipment
-  - find                : Submaine
-    replace-with        : Submarine
-  - find                : Commissoning
-    replace-with        : Commissioning
+  # - find                : Gasious
+  #   replace-with        : Gaseous
+  # - find                : eqipment
+  #   replace-with        : equipment
+  # - find                : Submaine
+  #   replace-with        : Submarine
+  # - find                : Commissoning
+  #   replace-with        : Commissioning
   # - find                :
   #   replace-with        :
   # - find                :
