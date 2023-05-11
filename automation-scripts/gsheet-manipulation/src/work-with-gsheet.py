@@ -88,7 +88,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # BEGIN resume specific tasks
     # create_06_job_history_new(g_sheet)
-    # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=worksheet_names, range_spec='B4:Z', grouping_columns=2)
+    # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['02-career-highlight'], range_spec='B3:Z', grouping_columns=1)
+    # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['04-managerial-expertise', '05-technical-expertise'], range_spec='B4:Z', grouping_columns=1)
+    # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['06-job-history', '07-project-roles', '07-project-roles-RHD-TMC'], range_spec='B4:Z', grouping_columns=2)
     # END   resume specific tasks
 
 

@@ -20,7 +20,7 @@ def border_and_merge_based_on_column(g_sheet, worksheet_names, range_spec, group
         worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name)
         if worksheet is None:
             error(f"worksheet {worksheet_name} not found", nesting_level=1)
-            return
+            continue
 
         # unmerge the range
         grid_range = a1_range_to_grid_range(range_spec, sheet_id=worksheet.id)
@@ -72,8 +72,6 @@ def border_and_merge_based_on_column(g_sheet, worksheet_names, range_spec, group
 
         # pprint(range_work_specs)
 
-
-    # pprint(requests)
     g_sheet.update_in_batch(values=values, requests=requests, requester='border_and_merge_based_on_column')
 
 

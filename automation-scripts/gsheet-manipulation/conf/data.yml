@@ -578,27 +578,27 @@ destination-gsheets:
 worksheets:
 # resume worksheets
   # - '-toc-new'
-  - 00-layout
-  - 00-layout-RHD-TMC
-  - 01-personal
-  - 02-career-highlight
-  - 03-education
-  - 04-managerial-expertise
-  - 05-technical-expertise
-  - 06-job-history
-  - 07-project-roles
-  - 07-project-roles-RHD-TMC
-  - 08-training
-  - 09-certification
-  - 10-membership
-  - 11-language-proficiency
-  - 12-contact
-  - 13-educational-certificates
-  - 14-vendor-certificates
-  - 15-institutional-certificates
-  - 16-references
-  - z-footer
-  - z-header
+  # - 00-layout
+  # - 00-layout-RHD-TMC
+  # - 01-personal
+  # - 02-career-highlight
+  # - 03-education
+  # - 04-managerial-expertise
+  # - 05-technical-expertise
+  # - 06-job-history
+  # - 07-project-roles
+  # - 07-project-roles-RHD-TMC
+  # - 08-training
+  # - 09-certification
+  # - 10-membership
+  # - 11-language-proficiency
+  # - 12-contact
+  # - 13-educational-certificates
+  # - 14-vendor-certificates
+  # - 15-institutional-certificates
+  # - 16-references
+  # - z-footer
+  # - z-header
 # pds worksheets
   # - '-toc-new'
   # - 00-layout
@@ -847,6 +847,8 @@ find-replace-patterns:
   #   replace-with        : installation
   # - find                : iterateing
   #   replace-with        : iterating
+  # - find                : javascript
+  #   replace-with        : JavaScript
   # - find                : Javascript
   #   replace-with        : JavaScript
   # - find                : jboss
@@ -1005,6 +1007,8 @@ find-replace-patterns:
   #   replace-with        : 'with .Net'
   # - find                : 'years experience'
   #   replace-with        : "years' experience"
+  # - find                : 'years work'
+  #   replace-with        : "years' work"
   # - find                : " it’s "
   #   replace-with        : " its "
   # - find                : Suvervision
@@ -1069,14 +1073,60 @@ find-replace-patterns:
   #   replace-with        : Center
   # - find                : Electriacl
   #   replace-with        : Electrical
+  # - find                : upazilla
+  #   replace-with        : Upazila
+  # - find                : Upazilla
+  #   replace-with        : Upazila
+
+  # - find                : 'reachieved'
+  #   replace-with        : 're-achieved'
+
+  # - find                : Documantation
+  #   replace-with        : Documentation
+  # - find                : 'self learner'
+  #   replace-with        : 'self-learner'
+  # - find                : Behaviour
+  #   replace-with        : Behavior
+  # - find                : Analyser
+  #   replace-with        : Analyzer
+  # - find                : activex
+  #   replace-with        : ActiveX
+
+  # - find                : 'economical '
+  #   replace-with        : 'economic '
+  # - find                : Professionaly
+  #   replace-with        : Professionally
+  # - find                : anytime
+  #   replace-with        : 'any time'
+  # - find                : ' is is '
+  #   replace-with        : ' is '
+  # - find                : 'Grameen phone'
+  #   replace-with        : 'Grameenphone'
+  # - find                : 'grameen phone'
+  #   replace-with        : 'Grameenphone'
+  # - find                : ' specially '
+  #   replace-with        : ' especially '
+  # - find                : Knowlwdge
+  #   replace-with        : Knowlwege
+  # - find                : Univercity
+  #   replace-with        : University
+  # - find                : Achievment
+  #   replace-with        : Achievement
+  # - find                : bigs
+  #   replace-with        : big
+  # - find                : Comvolt
+  #   replace-with        : Commvault
+  # - find                : activex
+  #   replace-with        : ActiveX
+  # - find                : activex
+  #   replace-with        : ActiveX
 
 
 
+ 
+ 
 
-
-
-
-
+  
 
 
   # - find                : Curriculam
