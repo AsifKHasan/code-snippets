@@ -902,7 +902,7 @@ WORKSHEET_STRUCTURE_PDS = {
         'columns': {
             'A': {'halign': 'left', 'size': 100,  },
             'B': {'halign': 'left', 'size': 150,  },
-            'C': {'halign': 'left', 'size':  30,  },
+            'C': {'halign': 'center', 'size':  30,  },
             'D': {'halign': 'left', 'size': 120,  },
             'E': {'halign': 'left', 'size': 500,  },
         },
