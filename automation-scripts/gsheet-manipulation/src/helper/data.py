@@ -66,7 +66,7 @@ WORKSHEET_STRUCTURE_RESUME = {
             'B4': {'value': '2', },
             'C4': {'value': 'DATE OF BIRTH', },
             'D4': {'value': "='01-personal'!D5", },
-            
+
             'B5': {'value': '3', },
             'C5': {'value': 'NATIONALITY', },
             'D5': {'value': "='01-personal'!D6", },
@@ -159,7 +159,7 @@ WORKSHEET_STRUCTURE_RESUME = {
             'B5': {'value': '3', },
             'C5': {'value': 'DATE OF BIRTH', },
             'D5': {'value': "='01-personal'!D5", },
-            
+
             'B6': {'value': '4', },
             'C6': {'value': 'NATIONALITY', },
             'D6': {'value': "='01-personal'!D6", },
@@ -850,18 +850,23 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-rows': 2,
         'frozen-columns': 0,
         'columns': {
-            'A': {'halign': 'left', 'size': 100,  },
-            'B': {'halign': 'left', 'size': 150,  },
-            'C': {'halign': 'left', 'size': 150,  },
-            'D': {'halign': 'left', 'size': 500,  },
+            'A': {'halign': 'left', 'size': 100, 'wrap': True, },
+            'B': {'halign': 'left', 'size': 150, 'wrap': True, },
+            'C': {'halign': 'left', 'size': 150, 'wrap': True, },
+            'D': {'halign': 'left', 'size': 500, 'wrap': True, },
         },
         'review-notes': True,
         'ranges': {
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
-            'A2': {'value': 'review-notes', 'halign': 'left'},
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:C1': {'halign': 'center', },
+            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
+
             'B2': {'value': 'person'},
             'C2': {'value': 'project-role'},
             'D2': {'value': 'functionalities-performed'},
+
             'B3:Z': {'border-color': '#B7B7B7'},
         },
         'cell-empty-markers': [
@@ -1050,4 +1055,4 @@ WORKSHEET_STRUCTURE_PDS = {
 }
 
 # which structure we are using
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS

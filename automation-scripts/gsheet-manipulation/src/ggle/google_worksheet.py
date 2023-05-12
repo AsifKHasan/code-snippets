@@ -385,10 +385,10 @@ class GoogleWorksheet(object):
             row_resize_requests = []
 
 
+        data_validation_requests = []
         if 'columns' in worksheet_struct:
             # requests for column resizing
             column_resize_requests = self.column_resize_requests(column_specs=worksheet_struct['columns'])
-            data_validation_requests = []
 
             #  requests for column formatting
             for col_a1, work_spec in worksheet_struct['columns'].items():
