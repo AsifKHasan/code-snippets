@@ -519,30 +519,57 @@ gsheets:
     # - Résumé__Shuvo.Das
     # - Résumé__Md.Shohag.Hossain
     # - Résumé__Md.Shahin.Sheikh
+
+    - Résumé__Md.Mashrurul.Hakim
+    - Résumé__Saiful.Islam.(Sumon)
+    - Résumé__Md.Jakir.Hossain
+    - Résumé__Ashish.Kumar.Das
+    - Résumé__Ibrahim.Ibna.Md.Liaquat.Ullah
+    - Résumé__Md.Murshid.Sarker
+    - Résumé__Shihan.Zaman
+    - Résumé__Monjur.Ahmed
+    - Résumé__S.M.Azharul.Islam
+    - Résumé__Shaikh.Tojibul.Islam
+    - Résumé__Muhammad.Myanuddin
+    - Résumé__Md.Sharafat.Hossain.Kamal
+    - Résumé__Md.Shariful.Islam
+    - Résumé__Sanjoy.Kumar.Saha
+    - Résumé__Md.Anisur.Rahman
+    - Résumé__Mohammad.Saiful.Islam
+    - Résumé__Atiqur.Rahman
+    - Résumé__Kazi.Rakibur.Rahman
+    - Résumé__MD.Ferdous.Mahmud
+    - Résumé__Md.Murshadul.Islam
+    - Résumé__Rajib.Chowdhury
+    - Résumé__Asma.Ul.Husna
+    - Résumé__Md.Samim.Hosen
+    - Résumé__Raihan.Ur.Rashid
+    - Résumé__Sanmoon.Yasmin
+
   # RHD-TMC pds
-    - pds__DSHE-DC
-    - pds__BCC-DC-Expansion
-    - pds__BSCCL-Kuakata
-    - pds__BR-DCDR
-    - pds__BSCCL
-    - pds__BCC-DC
-    - pds__NBR-ASYCUDA
-    - pds__BDREN-Network
-    - pds__BDREN-DC-Expansion
-    - pds__JU
-    - pds__SUST-TC
-    - pds__MTBL-CCTV
-    - pds__RHD-CBRNIP
-    - pds__SAU-ACAS
-    - pds__CCC-CSSM
-    - pds__RHD-BDMS
-    - pds__OCAG-AMMS
-    - pds__UGC-HEMIS
-    - pds__RHD-MIS-2009
-    - pds__BB-RTGS
-    - pds__RHD-MIS-2015
-    - pds__NBR-ASYCUDA-SLA
-    - pds__NBR-AW-Systems
+    # - pds__DSHE-DC
+    # - pds__BCC-DC-Expansion
+    # - pds__BSCCL-Kuakata
+    # - pds__BR-DCDR
+    # - pds__BSCCL
+    # - pds__BCC-DC
+    # - pds__NBR-ASYCUDA
+    # - pds__BDREN-Network
+    # - pds__BDREN-DC-Expansion
+    # - pds__JU
+    # - pds__SUST-TC
+    # - pds__MTBL-CCTV
+    # - pds__RHD-CBRNIP
+    # - pds__SAU-ACAS
+    # - pds__CCC-CSSM
+    # - pds__RHD-BDMS
+    # - pds__OCAG-AMMS
+    # - pds__UGC-HEMIS
+    # - pds__RHD-MIS-2009
+    # - pds__BB-RTGS
+    # - pds__RHD-MIS-2015
+    # - pds__NBR-ASYCUDA-SLA
+    # - pds__NBR-AW-Systems
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -577,7 +604,7 @@ destination-gsheets:
 # worksheets on which some work will be done
 worksheets:
 # resume worksheets
-  # - '-toc-new'
+  - '-toc-new'
   # - 00-layout
   # - 00-layout-RHD-TMC
   # - 01-personal
@@ -601,18 +628,18 @@ worksheets:
   # - z-header
 # pds worksheets
   # - '-toc-new'
-  - 00-layout
+  # - 00-layout
   # - 01-summary
   # - 02-revenue
   # - 03-contact
   # - 04-joint-venture
-  - 05-people
-  - 06-description
-  - 07-functionality
-  - 08-technology
-  - 09-services
-  - 10-process
-  - 11-complexity
+  # - 05-people
+  # - 06-description
+  # - 07-functionality
+  # - 08-technology
+  # - 09-services
+  # - 10-process
+  # - 11-complexity
   # - 12-screenshots
   # - z-blank
   # - z-footer
@@ -639,6 +666,9 @@ work-specs:
     # 'F3'      :
     #   value             : '00-layout-RHD-TMC'
     #   ws-name-to-link   : '00-layout-RHD-TMC'
+    'F3'      :
+      value             : '00-layout'
+      ws-name-to-link   : '00-layout'
   # z-header
     # 'C3'      :
     #   value             : '=image("https://spectrum-bd.biz/data/artifacts/res/logo/doer-logo-hor-color-563x87.png", 1)'
