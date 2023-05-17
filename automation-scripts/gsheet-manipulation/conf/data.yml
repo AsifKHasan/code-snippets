@@ -613,6 +613,7 @@ worksheets:
   - 04-managerial-expertise
   - 05-technical-expertise
   - 06-job-history
+  - 06-job-history-RHD-TMC
   - 07-project-roles
   - 07-project-roles-RHD-TMC
   - 08-training
@@ -734,8 +735,8 @@ find-replace-patterns:
   #   replace-with        : ')"'
 
   # remove double space, periods
-  # - find                : '  '
-  #   replace-with        : ' '
+  - find                : '  '
+    replace-with        : ' '
   # - find                : '..'
   #   replace-with        : '.'
 
@@ -748,281 +749,281 @@ find-replace-patterns:
   #   replace-with        : ''
   #   entire-cell         : True
 
-  - find                : 'Firepowe '
-    replace-with        : 'Firepower '
-  - find                : 'is is '
-    replace-with        : 'is '
-  - find                : '9i.'
-    replace-with        : '9i,'
-  - find                : Achivement
-    replace-with        : Achievement
-  - find                : activex
-    replace-with        : Activex
-  - find                : adaptating
-    replace-with        : adapting
-  - find                : 'An web'
-    replace-with        : 'A web'
-  - find                : Analyser
-    replace-with        : Analyzer
-  - find                : applicaions
-    replace-with        : applications
-  - find                : applicaiton
-    replace-with        : application
-  - find                : Apraisal
-    replace-with        : Appraisal
-  - find                : Behaviour
-    replace-with        : Behavior
-  - find                : Bhak
-    replace-with        : Bank
-  - find                : Certficate
-    replace-with        : Certificate
-  - find                : CIsco
-    replace-with        : Cisco
-  - find                : Collage
-    replace-with        : College
-  - find                : communcating
-    replace-with        : communicating
-  - find                : Comvolt
-    replace-with        : Commvault
-  - find                : Configaration
-    replace-with        : Configuration
-  - find                : Consortiulm
-    replace-with        : Consortium
-  - find                : consultent
-    replace-with        : consultant
-  - find                : Dlink
-    replace-with        : D-Link
-  - find                : dropwizard
-    replace-with        : Dropwizard
-  - find                : economical
-    replace-with        : economic
-  - find                : efiling
-    replace-with        : e-filing
-  - find                : ESXI
-    replace-with        : ESXi
-  - find                : 'etc,'
-    replace-with        : 'etc.,'
-  - find                : Etherchannel
-    replace-with        : EtherChannel
-  - find                : govt
-    replace-with        : Government
-  - find                : 'grameen phone'
-    replace-with        : 'Grameenphone'
-  - find                : 'Grameen Phone'
-    replace-with        : 'Grameenphone'
-  - find                : Honours
-    replace-with        : Honors
-  - find                : Horizone
-    replace-with        : Horizon
-  - find                : Infomration
-    replace-with        : Information
-  - find                : informations
-    replace-with        : information
-  - find                : 'Infrastructur-'
-    replace-with        : 'Infrastructure-'
-  - find                : intercluster
-    replace-with        : inter-cluster
-  - find                : javascript
-    replace-with        : JavaScript
-  - find                : jhonson
-    replace-with        : Jhonson
-  - find                : jquery
-    replace-with        : jQuery
-  - find                : Knowlwdge
-    replace-with        : Knowledge
-  - find                : Maintenace
-    replace-with        : Maintenance
-  - find                : Manger
-    replace-with        : Manager
-  - find                : Multilatereal
-    replace-with        : Multilateral
-  - find                : Mysql
-    replace-with        : MySQL
-  - find                : Natonal
-    replace-with        : National
-  - find                : opeartion
-    replace-with        : operation
-  - find                : pentesting
-    replace-with        : 'penetration testing'
-  - find                : 'PG SQL'
-    replace-with        : PostgreSQL
-  - find                : postgresql
-    replace-with        : PostgreSQL
-  - find                : PostgresSQL
-    replace-with        : PostgreSQL
-  - find                : Postsales
-    replace-with        : Post-sales
-  - find                : Previllage
-    replace-with        : Privilege
-  - find                : Prince2
-    replace-with        : PRINCE2
-  - find                : Professionaly
-    replace-with        : Professionally
-  - find                : reachieved
-    replace-with        : re-achieved
-  - find                : Schollarship
-    replace-with        : Scholarship
-  - find                : 'Self Awareness'
-    replace-with        : 'Self-Awareness'
-  - find                : 'self learner'
-    replace-with        : 'self-learner'
-  - find                : 'self sufficient'
-    replace-with        : 'selfsufficient'
-  - find                : Serverside
-    replace-with        : 'Server side'
-  - find                : shareing
-    replace-with        : sharing
-  - find                : Softwares
-    replace-with        : Software
-  - find                : Solarwinds
-    replace-with        : SolarWinds
-  - find                : Sparc
-    replace-with        : SPARC
-  - find                : specially
-    replace-with        : wspecially
-  - find                : 'Sql Server'
-    replace-with        : 'SQL Server'
-  - find                : SQLServer
-    replace-with        : 'SQL Server'
-  - find                : 'Sri lanka'
-    replace-with        : 'Sri Lanka'
-  - find                : Supoport
-    replace-with        : Support
-  - find                : Survery
-    replace-with        : Survey
-  - find                : suspectibility
-    replace-with        : susceptibility
-  - find                : technolody
-    replace-with        : technology
-  - find                : theInternet
-    replace-with        : 'the Internet'
-  - find                : ubuntu
-    replace-with        : Ubuntu
-  - find                : Vmware
-    replace-with        : VMware
-  - find                : webex
-    replace-with        : Webex
-  - find                : 'years work'
-    replace-with        : 'years of work'
+  # - find                : 'Firepowe '
+  #   replace-with        : 'Firepower '
+  # - find                : 'is is '
+  #   replace-with        : 'is '
+  # - find                : '9i.'
+  #   replace-with        : '9i,'
+  # - find                : Achivement
+  #   replace-with        : Achievement
+  # - find                : activex
+  #   replace-with        : Activex
+  # - find                : adaptating
+  #   replace-with        : adapting
+  # - find                : 'An web'
+  #   replace-with        : 'A web'
+  # - find                : Analyser
+  #   replace-with        : Analyzer
+  # - find                : applicaions
+  #   replace-with        : applications
+  # - find                : applicaiton
+  #   replace-with        : application
+  # - find                : Apraisal
+  #   replace-with        : Appraisal
+  # - find                : Behaviour
+  #   replace-with        : Behavior
+  # - find                : Bhak
+  #   replace-with        : Bank
+  # - find                : Certficate
+  #   replace-with        : Certificate
+  # - find                : CIsco
+  #   replace-with        : Cisco
+  # - find                : Collage
+  #   replace-with        : College
+  # - find                : communcating
+  #   replace-with        : communicating
+  # - find                : Comvolt
+  #   replace-with        : Commvault
+  # - find                : Configaration
+  #   replace-with        : Configuration
+  # - find                : Consortiulm
+  #   replace-with        : Consortium
+  # - find                : consultent
+  #   replace-with        : consultant
+  # - find                : Dlink
+  #   replace-with        : D-Link
+  # - find                : dropwizard
+  #   replace-with        : Dropwizard
+  # - find                : economical
+  #   replace-with        : economic
+  # - find                : efiling
+  #   replace-with        : e-filing
+  # - find                : ESXI
+  #   replace-with        : ESXi
+  # - find                : 'etc,'
+  #   replace-with        : 'etc.,'
+  # - find                : Etherchannel
+  #   replace-with        : EtherChannel
+  # - find                : govt
+  #   replace-with        : Government
+  # - find                : 'grameen phone'
+  #   replace-with        : 'Grameenphone'
+  # - find                : 'Grameen Phone'
+  #   replace-with        : 'Grameenphone'
+  # - find                : Honours
+  #   replace-with        : Honors
+  # - find                : Horizone
+  #   replace-with        : Horizon
+  # - find                : Infomration
+  #   replace-with        : Information
+  # - find                : informations
+  #   replace-with        : information
+  # - find                : 'Infrastructur-'
+  #   replace-with        : 'Infrastructure-'
+  # - find                : intercluster
+  #   replace-with        : inter-cluster
+  # - find                : javascript
+  #   replace-with        : JavaScript
+  # - find                : jhonson
+  #   replace-with        : Jhonson
+  # - find                : jquery
+  #   replace-with        : jQuery
+  # - find                : Knowlwdge
+  #   replace-with        : Knowledge
+  # - find                : Maintenace
+  #   replace-with        : Maintenance
+  # - find                : Manger
+  #   replace-with        : Manager
+  # - find                : Multilatereal
+  #   replace-with        : Multilateral
+  # - find                : Mysql
+  #   replace-with        : MySQL
+  # - find                : Natonal
+  #   replace-with        : National
+  # - find                : opeartion
+  #   replace-with        : operation
+  # - find                : pentesting
+  #   replace-with        : 'penetration testing'
+  # - find                : 'PG SQL'
+  #   replace-with        : PostgreSQL
+  # - find                : postgresql
+  #   replace-with        : PostgreSQL
+  # - find                : PostgresSQL
+  #   replace-with        : PostgreSQL
+  # - find                : Postsales
+  #   replace-with        : Post-sales
+  # - find                : Previllage
+  #   replace-with        : Privilege
+  # - find                : Prince2
+  #   replace-with        : PRINCE2
+  # - find                : Professionaly
+  #   replace-with        : Professionally
+  # - find                : reachieved
+  #   replace-with        : re-achieved
+  # - find                : Schollarship
+  #   replace-with        : Scholarship
+  # - find                : 'Self Awareness'
+  #   replace-with        : 'Self-Awareness'
+  # - find                : 'self learner'
+  #   replace-with        : 'self-learner'
+  # - find                : 'self sufficient'
+  #   replace-with        : 'selfsufficient'
+  # - find                : Serverside
+  #   replace-with        : 'Server side'
+  # - find                : shareing
+  #   replace-with        : sharing
+  # - find                : Softwares
+  #   replace-with        : Software
+  # - find                : Solarwinds
+  #   replace-with        : SolarWinds
+  # - find                : Sparc
+  #   replace-with        : SPARC
+  # - find                : specially
+  #   replace-with        : wspecially
+  # - find                : 'Sql Server'
+  #   replace-with        : 'SQL Server'
+  # - find                : SQLServer
+  #   replace-with        : 'SQL Server'
+  # - find                : 'Sri lanka'
+  #   replace-with        : 'Sri Lanka'
+  # - find                : Supoport
+  #   replace-with        : Support
+  # - find                : Survery
+  #   replace-with        : Survey
+  # - find                : suspectibility
+  #   replace-with        : susceptibility
+  # - find                : technolody
+  #   replace-with        : technology
+  # - find                : theInternet
+  #   replace-with        : 'the Internet'
+  # - find                : ubuntu
+  #   replace-with        : Ubuntu
+  # - find                : Vmware
+  #   replace-with        : VMware
+  # - find                : webex
+  #   replace-with        : Webex
+  # - find                : 'years work'
+  #   replace-with        : 'years of work'
 
 
-  - find                : Menagement
-    replace-with        : Management
-  - find                : Ddos
-    replace-with        : DDoS
-  - find                : Minstry
-    replace-with        : Ministry
-  - find                : Cisso
-    replace-with        : Cisco
-  - find                : BSC
-    replace-with        : BSc
-  - find                : B.SC
-    replace-with        : BSc
-  - find                : B.S.C
-    replace-with        : BSc
-  - find                : B.Sc
-    replace-with        : BSc
-  - find                : B.SC.
-    replace-with        : BSc
-  - find                : B.Sc.
-    replace-with        : BSc
-  - find                : MSC
-    replace-with        : MSc
-  - find                : M.SC
-    replace-with        : MSc
-  - find                : M.S.C
-    replace-with        : MSc
-  - find                : M.Sc
-    replace-with        : MSc
-  - find                : M.SC.
-    replace-with        : MSc
-  - find                : M.Sc.
-    replace-with        : MSc
-  - find                : writting
-    replace-with        : writing
-  - find                : Ldom
-    replace-with        : LDOM
-  - find                : LDom
-    replace-with        : LDOM
-  - find                : Activites
-    replace-with        : Activities
-  - find                : Certificaition
-    replace-with        : Certification
-  - find                : analysing
-    replace-with        : analyzing
-  - find                : Integrations
-    replace-with        : Integration
-  - find                : Tecnical
-    replace-with        : Technical
-  - find                : Jr.
-    replace-with        : 'Jr. '
-  - find                : Sr.
-    replace-with        : 'Sr. '
-  - find                : Enginerr
-    replace-with        : Engineer
-  - find                : Nerwork
-    replace-with        : Network
-  - find                : Internall
-    replace-with        : Internal
-  - find                : colling
-    replace-with        : cooling
-  - find                : ' upply'
-    replace-with        : ' supply'
-  - find                : ewspecially
-    replace-with        : especially
-  - find                : inhouse
-    replace-with        : in-house
-  - find                : Lumos
-    replace-with        : LUMOS
-  - find                : DataCenter
-    replace-with        : 'Data Center'
-  - find                : relevent
-    replace-with        : relevant
-  - find                : Comford
-    replace-with        : Comfort
-  - find                : Pre-paid
-    replace-with        : Prepaid
-  - find                : Soultion
-    replace-with        : Solution
-  - find                : Insatallation
-    replace-with        : Installation
-  - find                : Centre
-    replace-with        : Center
-  - find                : load-balancer
-    replace-with        : 'Load Balancer'
-  - find                : Comunicate
-    replace-with        : Communicate
-  - find                : Enterns
-    replace-with        : Entrances
-  - find                : bangladesh
-    replace-with        : Bangladesh
-  - find                : Commoscope
-    replace-with        : CommoScope
-  - find                : prodiving
-    replace-with        : providing
-  - find                : Experineced
-    replace-with        : Experienced
-  - find                : Plannign
-    replace-with        : Planning
-  - find                : Mechnical
-    replace-with        : Mechanical
-  - find                : Mechanial
-    replace-with        : Mechanical
-  - find                : Hybrod
-    replace-with        : Hybrid
-  - find                : Solidworks
-    replace-with        : SOLIDWORKS
-  - find                : encorporate
-    replace-with        : incorporate
-  - find                : Raspberri
-    replace-with        : Raspberry
-  - find                : Matrica
-    replace-with        : Metrica
-  - find                : VMWare
-    replace-with        : VMware
-  - find                : photoshop
-    replace-with        : Photoshop
-  - find                : linux
-    replace-with        : Linux
+  # - find                : Menagement
+  #   replace-with        : Management
+  # - find                : Ddos
+  #   replace-with        : DDoS
+  # - find                : Minstry
+  #   replace-with        : Ministry
+  # - find                : Cisso
+  #   replace-with        : Cisco
+  # - find                : BSC
+  #   replace-with        : BSc
+  # - find                : B.SC
+  #   replace-with        : BSc
+  # - find                : B.S.C
+  #   replace-with        : BSc
+  # - find                : B.Sc
+  #   replace-with        : BSc
+  # - find                : B.SC.
+  #   replace-with        : BSc
+  # - find                : B.Sc.
+  #   replace-with        : BSc
+  # - find                : MSC
+  #   replace-with        : MSc
+  # - find                : M.SC
+  #   replace-with        : MSc
+  # - find                : M.S.C
+  #   replace-with        : MSc
+  # - find                : M.Sc
+  #   replace-with        : MSc
+  # - find                : M.SC.
+  #   replace-with        : MSc
+  # - find                : M.Sc.
+  #   replace-with        : MSc
+  # - find                : writting
+  #   replace-with        : writing
+  # - find                : Ldom
+  #   replace-with        : LDOM
+  # - find                : LDom
+  #   replace-with        : LDOM
+  # - find                : Activites
+  #   replace-with        : Activities
+  # - find                : Certificaition
+  #   replace-with        : Certification
+  # - find                : analysing
+  #   replace-with        : analyzing
+  # - find                : Integrations
+  #   replace-with        : Integration
+  # - find                : Tecnical
+  #   replace-with        : Technical
+  # - find                : Jr.
+  #   replace-with        : 'Jr. '
+  # - find                : Sr.
+  #   replace-with        : 'Sr. '
+  # - find                : Enginerr
+  #   replace-with        : Engineer
+  # - find                : Nerwork
+  #   replace-with        : Network
+  # - find                : Internall
+  #   replace-with        : Internal
+  # - find                : colling
+  #   replace-with        : cooling
+  # - find                : ' upply'
+  #   replace-with        : ' supply'
+  # - find                : ewspecially
+  #   replace-with        : especially
+  # - find                : inhouse
+  #   replace-with        : in-house
+  # - find                : Lumos
+  #   replace-with        : LUMOS
+  # - find                : DataCenter
+  #   replace-with        : 'Data Center'
+  # - find                : relevent
+  #   replace-with        : relevant
+  # - find                : Comford
+  #   replace-with        : Comfort
+  # - find                : Pre-paid
+  #   replace-with        : Prepaid
+  # - find                : Soultion
+  #   replace-with        : Solution
+  # - find                : Insatallation
+  #   replace-with        : Installation
+  # - find                : Centre
+  #   replace-with        : Center
+  # - find                : load-balancer
+  #   replace-with        : 'Load Balancer'
+  # - find                : Comunicate
+  #   replace-with        : Communicate
+  # - find                : Enterns
+  #   replace-with        : Entrances
+  # - find                : bangladesh
+  #   replace-with        : Bangladesh
+  # - find                : Commoscope
+  #   replace-with        : CommoScope
+  # - find                : prodiving
+  #   replace-with        : providing
+  # - find                : Experineced
+  #   replace-with        : Experienced
+  # - find                : Plannign
+  #   replace-with        : Planning
+  # - find                : Mechnical
+  #   replace-with        : Mechanical
+  # - find                : Mechanial
+  #   replace-with        : Mechanical
+  # - find                : Hybrod
+  #   replace-with        : Hybrid
+  # - find                : Solidworks
+  #   replace-with        : SOLIDWORKS
+  # - find                : encorporate
+  #   replace-with        : incorporate
+  # - find                : Raspberri
+  #   replace-with        : Raspberry
+  # - find                : Matrica
+  #   replace-with        : Metrica
+  # - find                : VMWare
+  #   replace-with        : VMware
+  # - find                : photoshop
+  #   replace-with        : Photoshop
+  # - find                : linux
+  #   replace-with        : Linux
 
   # -
