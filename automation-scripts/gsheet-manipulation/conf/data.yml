@@ -906,63 +906,123 @@ find-replace-patterns:
     replace-with        : 'years of work'
 
 
-Menagement
-Ddos / DDoS
-Minstry
-Cisso
-BSC
-B.SC
-B.S.C
-B.Sc
-B.SC.
-B.Sc.
-MSC
-M.SC
-M.S.C
-M.Sc
-M.SC.
-M.Sc.
-writting
-Ldom/LDOM
-LDom/LDOM
-Activites
-Certificaition
-analysing
-Integrations
-Tecnical
-Jr.
-Sr.
-Enginerr
-Nerwork
-Internall
-colling
-' upply'
-ewspecially
-inhouse
-Lumos
-DataCenter
-relevent
-Comford
-Pre-paid
-Soultion
-Insatallation
-Centre
-load-balancer
-Comunicate
-Enterns
-bangladesh
-Commoscope
-prodiving
-Experineced
-Plannign
-Mechnical
-Mechanial
-Hybrod
-Solidworks / SOLIDWORKS
-encorporate
-Raspberri / Raspberry
-Matrica / Metrica
-VMWare / VMware
-photoshop
-linux
+  - find                : Menagement
+    replace-with        : Management
+  - find                : Ddos
+    replace-with        : DDoS
+  - find                : Minstry
+    replace-with        : Ministry
+  - find                : Cisso
+    replace-with        : Cisco
+  - find                : BSC
+    replace-with        : BSc
+  - find                : B.SC
+    replace-with        : BSc
+  - find                : B.S.C
+    replace-with        : BSc
+  - find                : B.Sc
+    replace-with        : BSc
+  - find                : B.SC.
+    replace-with        : BSc
+  - find                : B.Sc.
+    replace-with        : BSc
+  - find                : MSC
+    replace-with        : MSc
+  - find                : M.SC
+    replace-with        : MSc
+  - find                : M.S.C
+    replace-with        : MSc
+  - find                : M.Sc
+    replace-with        : MSc
+  - find                : M.SC.
+    replace-with        : MSc
+  - find                : M.Sc.
+    replace-with        : MSc
+  - find                : writting
+    replace-with        : writing
+  - find                : Ldom
+    replace-with        : LDOM
+  - find                : LDom
+    replace-with        : LDOM
+  - find                : Activites
+    replace-with        : Activities
+  - find                : Certificaition
+    replace-with        : Certification
+  - find                : analysing
+    replace-with        : analyzing
+  - find                : Integrations
+    replace-with        : Integration
+  - find                : Tecnical
+    replace-with        : Technical
+  - find                : Jr.
+    replace-with        : 'Jr. '
+  - find                : Sr.
+    replace-with        : 'Sr. '
+  - find                : Enginerr
+    replace-with        : Engineer
+  - find                : Nerwork
+    replace-with        : Network
+  - find                : Internall
+    replace-with        : Internal
+  - find                : colling
+    replace-with        : cooling
+  - find                : ' upply'
+    replace-with        : ' supply'
+  - find                : ewspecially
+    replace-with        : especially
+  - find                : inhouse
+    replace-with        : in-house
+  - find                : Lumos
+    replace-with        : LUMOS
+  - find                : DataCenter
+    replace-with        : 'Data Center'
+  - find                : relevent
+    replace-with        : relevant
+  - find                : Comford
+    replace-with        : Comfort
+  - find                : Pre-paid
+    replace-with        : Prepaid
+  - find                : Soultion
+    replace-with        : Solution
+  - find                : Insatallation
+    replace-with        : Installation
+  - find                : Centre
+    replace-with        : Center
+  - find                : load-balancer
+    replace-with        : 'Load Balancer'
+  - find                : Comunicate
+    replace-with        : Communicate
+  - find                : Enterns
+    replace-with        : Entrances
+  - find                : bangladesh
+    replace-with        : Bangladesh
+  - find                : Commoscope
+    replace-with        : CommoScope
+  - find                : prodiving
+    replace-with        : providing
+  - find                : Experineced
+    replace-with        : Experienced
+  - find                : Plannign
+    replace-with        : Planning
+  - find                : Mechnical
+    replace-with        : Mechanical
+  - find                : Mechanial
+    replace-with        : Mechanical
+  - find                : Hybrod
+    replace-with        : Hybrid
+  - find                : Solidworks
+    replace-with        : SOLIDWORKS
+  - find                : encorporate
+    replace-with        : incorporate
+  - find                : Raspberri
+    replace-with        : Raspberry
+  - find                : Matrica
+    replace-with        : Metrica
+  - find                : VMWare
+    replace-with        : VMware
+  - find                : photoshop
+    replace-with        : Photoshop
+  - find                : linux
+    replace-with        : Linux
+
   # -
