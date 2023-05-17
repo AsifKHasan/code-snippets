@@ -4,7 +4,7 @@ import yaml
 import ftplib
 from pprint import pprint
 
-org = '04-celloscope'
+org = '01-spectrum'
 things = 'photo'
 
 # things we have
@@ -22,8 +22,8 @@ helper_data = yaml.load(open('./ftp-helper.yml', 'r', encoding='utf-8'), Loader=
 things_we_need = helper_data['required-things']
 
 
-print(f"we need [{len(things_we_need)}] {things}s for [{org}]")
-print(f"we have [{len(things_we_have)}] {things}s for [{org}] in ftp [{ftp_directory}]")
+# print(f"we need [{len(things_we_need)}] {things}s for [{org}]")
+# print(f"we have [{len(things_we_have)}] {things}s for [{org}] in ftp [{ftp_directory}]")
 
 # output_list = list(set(things_we_have).intersection(things_we_need))
 # print(f"we have {len(output_list)} correct things")
