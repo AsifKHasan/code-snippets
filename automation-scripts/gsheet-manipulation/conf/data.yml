@@ -604,9 +604,9 @@ destination-gsheets:
 # worksheets on which some work will be done
 worksheets:
 # resume worksheets
-  - '-toc-new'
-  - 00-layout
-  - 00-layout-RHD-TMC
+  # - '-toc-new'
+  # - 00-layout
+  # - 00-layout-RHD-TMC
   - 01-personal
   - 02-career-highlight
   - 03-education
@@ -735,8 +735,8 @@ find-replace-patterns:
   #   replace-with        : ')"'
 
   # remove double space, periods
-  - find                : '  '
-    replace-with        : ' '
+  # - find                : '  '
+  #   replace-with        : ' '
   # - find                : '..'
   #   replace-with        : '.'
 
@@ -1025,5 +1025,77 @@ find-replace-patterns:
   #   replace-with        : Photoshop
   # - find                : linux
   #   replace-with        : Linux
+
+
+  # - find                : Technlogy
+  #   replace-with        : Technology
+  # - find                : Cpacity
+  #   replace-with        : Capacity
+  # - find                : " nos "
+  #   replace-with        : " no's "
+  # - find                : Desiger
+  #   replace-with        : Designer
+  # - find                : BScCL
+  #   replace-with        : BSCCL
+  # - find                : Googel
+  #   replace-with        : Google
+  # - find                : Coomunication
+  #   replace-with        : Communication
+  # - find                : ' pecifications '
+  #   replace-with        : ' specifications '
+  # - find                : Recipsonist
+  #   replace-with        : Receptionist
+  # - find                : Tiver
+  #   replace-with        : Tier
+  # - find                : Trainnig
+  #   replace-with        : Training
+  # - find                : 'ios '
+  #   replace-with        : 'iOS '
+  # - find                : Finetuned
+  #   replace-with        : 'Fine-tuned'
+  # - find                : Enginner
+  #   replace-with        : Engineer
+  # - find                : resolvement
+  #   replace-with        : resolution
+  # - find                : Enginnering
+  #   replace-with        : Engineering
+  # - find                : Madhumoti
+  #   replace-with        : Modhumoti
+  # - find                : centre
+  #   replace-with        : center
+  # - find                : Knowledged
+  #   replace-with        : Knowledge
+  # - find                : vendored
+  #   replace-with        : vendor
+  # - find                : troubleshooted
+  #   replace-with        : troubleshooting
+  # - find                : Asycuda
+  #   replace-with        : ASYCUDA
+  # - find                : packge
+  #   replace-with        : package
+  # - find                : 903series
+  #   replace-with        : '903 series'
+  # - find                : "clients requirement"
+  #   replace-with        : "client's requirement"
+  # - find                : Redhat
+  #   replace-with        : 'Red Hat'
+  # - find                : 'Wireless Ap'
+  #   replace-with        : 'Wireless AP'
+  # - find                : Instalaltion
+  #   replace-with        : Installation
+  # - find                : Rectifire
+  #   replace-with        : Rectifier
+  # - find                : Softawre
+  #   replace-with        : Software
+  # - find                : Camrea
+  #   replace-with        : Camera
+  # - find                : Instalaltion
+  #   replace-with        : Installation
+  # - find                : 'Installation,Testing'
+  #   replace-with        : 'Installation, Testing'
+  # - find                : CEnter
+  #   replace-with        : Center
+  # - find                : Electriacl
+  #   replace-with        : Electrical
 
   # -
