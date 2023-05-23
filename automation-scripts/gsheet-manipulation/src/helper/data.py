@@ -16,7 +16,7 @@ WORKSHEET_STRUCTURE_RESUME = {
             'G': {'halign': 'center', 'size':  80, 'label': 'break'              , 'validation-list': ['page', 'section']},
             'H': {'halign': 'center', 'size':  80, 'label': 'landscape'          , 'validation-list': ['Yes']},
             'I': {'halign': 'center', 'size':  80, 'label': 'page-spec'          , 'validation-list': ['A4', 'A3', 'Letter', 'Legal']},
-            'J': {'halign': 'center', 'size': 100, 'label': 'margin-spec'        , 'validation-list': ['wide', 'medium', 'narrow', 'none', 'book-bind', 'letter-head']},
+            'J': {'halign': 'center', 'size': 100, 'label': 'margin-spec'        , 'validation-list': ['wide', 'medium', 'narrow', 'none', 'book-bind', 'secl-pad']},
             'K': {'halign': 'center', 'size':  80, 'label': 'hide-pageno'        , 'validation-list': ['Yes']},
             'L': {'halign': 'center', 'size':  80, 'label': 'hide-heading'       , 'validation-list': ['Yes']},
             'M': {'halign': 'center', 'size':  80, 'label': 'different-firstpage', 'validation-list': ['Yes']},
