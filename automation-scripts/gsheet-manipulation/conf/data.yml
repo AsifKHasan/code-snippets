@@ -198,15 +198,10 @@ gsheets:
     #   - Résumé__Mahamudul.Hasan
     #   - Résumé__Mahmudul.Hasan
     #   - Résumé__Maria.Nurjahanara.Bhuiyan
-    #   - Résumé__Md.Jafrul.Ahsan
-    #   - Résumé__Md.Jahidul.Islam
-    #   - Résumé__Md.Masud.Rana.(Tuhin)
-    #   - Résumé__Md.Sahidur.Rahman
-    #   - Résumé__Md.Shamiul.Islam
-    #   - Résumé__Md.Zillur.Rahman
     #   - Résumé__Md.Abdullah.Al.Salam
     #   - Résumé__Md.Abdus.Samad.Patwary
     #   - Résumé__Md.Arafat.Rahman.Sayed
+    #   - Résumé__Md.Asaduzzaman
     #   - Résumé__Md.Bodrul.Alam
     #   - Résumé__Md.Bony.Tasnim.Ibna.Razzak
     #   - Résumé__Md.Golam.Kibria
@@ -215,6 +210,8 @@ gsheets:
     #   - Résumé__Md.Humayun.Kabir.(Software)
     #   - Résumé__Md.Imtiaz.Mahmood.Sayed
     #   - Résumé__Md.Izadul.Ala.Ala.Baksh
+    #   - Résumé__Md.Jafrul.Ahsan
+    #   - Résumé__Md.Jahidul.Islam
     #   - Résumé__Md.Jalal.Uddin
     #   - Résumé__Md.Jamal.Uddin
     #   - Résumé__Md.Kamal.Parvez
@@ -222,6 +219,7 @@ gsheets:
     #   - Résumé__Md.Kamrul.Islam
     #   - Résumé__Md.Kamruzzaman
     #   - Résumé__Md.Khaleque.Rakibul.Haque
+    #   - Résumé__Md.Masud.Rana.(Tuhin)
     #   - Résumé__Md.Masum.Ahmmed
     #   - Résumé__Md.Mizanur.Rahman
     #   - Résumé__Md.Mokaddes.Hossain.Talukder
@@ -230,18 +228,24 @@ gsheets:
     #   - Résumé__Md.Moniruzzaman.Liton
     #   - Résumé__Md.Nahhid.Uj.Jaman.Jisun
     #   - Résumé__Md.Noor-E-Alom.Siddique
+    #   - Résumé__Md.Radoan.Ahmed
     #   - Résumé__Md.Reasad.Islam
     #   - Résumé__Md.Rezaul.Karim.Sarker
+    #   - Résumé__Md.Sahidur.Rahman
     #   - Résumé__Md.Shabbir.Hossain.Bhuiya
+    #   - Résumé__Md.Shamiul.Islam
     #   - Résumé__Md.Siam.Samad.Prantik
+    #   - Résumé__Md.Sobuj.Sordar
     #   - Résumé__Md.Sohan.Kabir
     #   - Résumé__Md.Tauhid.Amir
     #   - Résumé__Md.Thoufiq.Zumma
+    #   - Résumé__Md.Zillur.Rahman
     #   - Résumé__Mithun.Kumar.Debnath
     #   - Résumé__Mohaiminul.Islam
     #   - Résumé__Mohammad.Abul.Hasnat
     #   - Résumé__Mohammad.Shahadat.Hossain
     #   - Résumé__Mohammad.Ziaul.Hoq
+    #   - Résumé__Moshiur.Rahman
     #   - Résumé__Musaddiqur.Rahman.Ovi
     #   - Résumé__Ommul.Khair.Musammat.Tahera
     #   - Résumé__Palash.Kumar.Sinha
@@ -251,86 +255,33 @@ gsheets:
     #   - Résumé__Rasheda.Akter
     #   - Résumé__Redwan.Al.Rashed
     #   - Résumé__Rizon.Ali
+    #   - Résumé__Robin.Das
     #   - Résumé__Rubayat.Zaman
     #   - Résumé__Rubel.Ahammed
     #   - Résumé__S.M.Al-Amin
     #   - Résumé__Sabiha.Afrin.Bithee
     #   - Résumé__Salma.Afroze
     #   - Résumé__Sathe.Khan.Majlish
+    #   - Résumé__Sayeedul.Islam.Talukder
     #   - Résumé__Shaikh.Insad.Ibney.Amin
     #   - Résumé__Shajidur.Rahman.Chowdury
     #   - Résumé__Shanawaz.Durjoy
+    #   - Résumé__Sharif.Mohammad.Rafi
+    #   - Résumé__Sharmin.Akter.Pinki
+    #   - Résumé__Shihab.Uddin
     #   - Résumé__Subrata.Sanyal
     #   - Résumé__Sufia.Khanom
     #   - Résumé__Suman.Miah
     #   - Résumé__Sumshur.Rahman
+    #   - Résumé__Susmoy.Saha
     #   - Résumé__Syed.Ahmad.Mahdi
     #   - Résumé__Syed.Ahmad.Rasul
+    #   - Résumé__Tanjim.Ashraf
     #   - Résumé__Tanvir.Ahammed.Sobuj
     #   - Résumé__Tanvir.Ahmed
     #   - Résumé__Tanvir.Mallik
     #   - Résumé__Umme.Habiba.Rita
-    # # celloscope resume
-    #   - Résumé__Abida.Anjum.Noshin
-    #   - Résumé__Alif.Arfab.Pavel
-    #   - Résumé__Altaf.Hossain
-    #   - Résumé__Amina.Khatun
-    #   - Résumé__Amena.Shiddika
-    #   - Résumé__Aminul.Hossain.Sazzad
-    #   - Résumé__Amiya.Ahamed
-    #   - Résumé__Anan.Aiman.Tuba
-    #   - Résumé__Arnab.Basak
-    #   - Résumé__Asiya.Khatun.(Papiya)
-    #   - Résumé__Avi.Afrid
-    #   - Résumé__Deboraj.Saha
-    #   - Résumé__Dip.Chowdhury
-    #   - Résumé__Farhad.Hossain
-    #   - Résumé__Farhana.Naz
-    #   - Résumé__Heronmoy.Tanchangya.Emon
-    #   - Résumé__Jannatul.Promy
-    #   - Résumé__Kamrul.Hasan.Farabee
-    #   - Résumé__Kamrun.Nahar
-    #   - Résumé__Khondoker.Tanvir.Hossain
-    #   - Résumé__Mahabuba.Rahman.(Moon)
-    #   - Résumé__Mainur.Rahman.Rasel
-    #   - Résumé__Maly.Mohsem.Ahmed
-    #   - Résumé__Md.Farhad.Bhuiyan
-    #   - Résumé__Md.Tahmid.Islam.Bhuiyan
-    #   - Résumé__Md.Abu.Yousuf.Sajal
-    #   - Résumé__Md.Asif.Khan.Taj
-    #   - Résumé__MD.Fuad.Hasan.Chowdhury
-    #   - Résumé__Md.Hafizur.Rahman
-    #   - Résumé__Md.Kamruzzaman.Tanim
-    #   - Résumé__Md.Nazmul.Alam
-    #   - Résumé__Md.Samiul.Alim
-    #   - Résumé__Md.Shariar.Kabir
-    #   - Résumé__Mehedi.Hasan
-    #   - Résumé__Mohammad.Ashraful.Islam
-    #   - Résumé__Mohammad.Kamrul.Hasan
-    #   - Résumé__Mohammad.Mashud.Karim
-    #   - Résumé__Mohammad.Wakib.Hasan
-    #   - Résumé__Most.Fahmi.Tazrin
-    #   - Résumé__Mushfika.Faria
-    #   - Résumé__Nafi.Uz.Zaman
-    #   - Résumé__Nasima.Aktar
-    #   - Résumé__Nayeem.Ahmed
-    #   - Résumé__Nazmus.Sakib
-    #   - Résumé__Omar.Faruk
-    #   - Résumé__Rashida.Akter
-    #   - Résumé__Reyad.Hossain
-    #   - Résumé__Rezwan.Huq
-    #   - Résumé__Rizvi.Mahmud
-    #   - Résumé__Sakib.Chowdhury
-    #   - Résumé__Sakib.Ibn.Abdullah
-    #   - Résumé__Sazzad.Sakib
-    #   - Résumé__Shafayat.Ahmed
-    #   - Résumé__Shah.Nafiz.Manjoor
-    #   - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
-    #   - Résumé__Shajeda.Akter.Shanta
-    #   - Résumé__Sharif.Tamjidur.Rahman
-    #   - Résumé__Syed.Mostofa.Monsur
-    #   - Résumé__Umme.Rumman.Usha
-    #   - Résumé__Zubair.Hasan
+    #   - Résumé__Zubair.Azim.Miazi
     # # ael resume
     #   - Résumé__Asadul.Haque
     #   - Résumé__Asif.Yusuf
@@ -495,118 +446,67 @@ gsheets:
     # - pds__TrustBank-BACPS
     # - pds__Unilever-MFGPRO
     # - pds__UGC-HEMIS
-  # RHD-TMC resume
-    # - Résumé__Md.Rezaur.Rahman__RHD-TMC
-    # - Résumé__Saifur.Rahman__RHD-TMC
-    # - Résumé__Mohammad.Main.Uddin
-    # - Résumé__Md.Faizul.Bari
-    # - Résumé__Mamunur.Rashid__RHD-TMC
-    # - Résumé__Sharmin.Sultana__RHD-TMC
-    # - Résumé__Iftakhar.Ali.Khandokar
-    # - Résumé__Md.Raqibul.Islam
-    # - Résumé__Md.Hasibur.Rahman
-    # - Résumé__Md.Mahasin.Alam
-    # - Résumé__Akeed.Anjum
-    # - Résumé__Rishad.Ali.Mimo
-    # - Résumé__Syed.Mostofa.Monsur
-    # - Résumé__Nur-E-Asma.Tabassum
-    # - Résumé__Md.Saidur.Rahman.(Shamim)
-    # - Résumé__Md.Al.Shahrior.Rahman
-    # - Résumé__Taposh.Kumar
-    # - Résumé__Joy.Kabiraj
-    # - Résumé__Md.Ibrahim.Ullah
-    # - Résumé__Jyoti.Basu.Chakma
-    # - Résumé__Shuvo.Das
-    # - Résumé__Md.Shohag.Hossain
-    # - Résumé__Md.Shahin.Sheikh
-
-    # - Résumé__Md.Mashrurul.Hakim
-    # - Résumé__Saiful.Islam.(Sumon)
-    # - Résumé__Md.Jakir.Hossain
-    # - Résumé__Ashish.Kumar.Das
-    # - Résumé__Ibrahim.Ibna.Md.Liaquat.Ullah
-    # - Résumé__Md.Murshid.Sarker
-    # - Résumé__Shihan.Zaman
-    # - Résumé__Monjur.Ahmed
-    # - Résumé__S.M.Azharul.Islam
-    # - Résumé__Shaikh.Tojibul.Islam
-    # - Résumé__Muhammad.Myanuddin
-    # - Résumé__Md.Sharafat.Hossain.Kamal
-    # - Résumé__Md.Shariful.Islam
-    # - Résumé__Sanjoy.Kumar.Saha
-    # - Résumé__Md.Anisur.Rahman
-    # - Résumé__Mohammad.Saiful.Islam
-    # - Résumé__Atiqur.Rahman
-    # - Résumé__Kazi.Rakibur.Rahman
-    # - Résumé__MD.Ferdous.Mahmud
-    # - Résumé__Md.Murshadul.Islam
-    # - Résumé__Rajib.Chowdhury
-    # - Résumé__Asma.Ul.Husna
-    # - Résumé__Md.Samim.Hosen
-    # - Résumé__Raihan.Ur.Rashid
-    # - Résumé__Sanmoon.Yasmin
-
-  # RHD-TMC pds
-    # - pds__DSHE-DC
-    # - pds__BCC-DC-Expansion
-    # - pds__BSCCL-Kuakata
-    # - pds__BR-DCDR
-    # - pds__BSCCL
-    # - pds__BCC-DC
-    # - pds__NBR-ASYCUDA
-    # - pds__BDREN-Network
-    # - pds__BDREN-DC-Expansion
-    # - pds__JU
-    # - pds__SUST-TC
-    # - pds__MTBL-CCTV
-    # - pds__RHD-CBRNIP
-    # - pds__SAU-ACAS
-    # - pds__CCC-CSSM
-    # - pds__RHD-BDMS
-    # - pds__OCAG-AMMS
-    # - pds__UGC-HEMIS
-    # - pds__RHD-MIS-2009
-    # - pds__BB-RTGS
-    # - pds__RHD-MIS-2015
-    # - pds__NBR-ASYCUDA-SLA
-    # - pds__NBR-AW-Systems
+  # MRA-OMS resume
+  - Résumé__Alif.Arfab.Pavel
+  - Résumé__Amiya.Ahamed
+  - Résumé__Arnab.Basak
+  - Résumé__Dipankar.Kumar.Biswas
+  - Résumé__Jyoti.Basu.Chakma
+  - Résumé__Mainur.Rahman.Rasel
+  - Résumé__Maly.Mohsem.Ahmed
+  - Résumé__Md.Ahsan.Habib.Rocky
+  - Résumé__MD.Fuad.Hasan.Chowdhury
+  - Résumé__Md.Kamruzzaman.Tanim
+  - Résumé__Md.Raqibul.Islam
+  - Résumé__Md.Saidur.Rahman.(Shamim)
+  - Résumé__Md.Shariar.Kabir
+  - Résumé__Md.Sohel.Rana
+  - Résumé__Mir.Earfan.Elahi
+  - Résumé__Mohammad.Kamrul.Hasan
+  - Résumé__Mohammad.Ziaul.Hoq
+  - Résumé__Mushfika.Faria
+  - Résumé__Nur-E-Asma.Tabassum
+  - Résumé__Syed.Ahmad.Mahdi
+  - Résumé__Tasnim.Kabir.Ratul
+  - Résumé__Umme.Rumman.Usha
 
 
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
-# RHD-TMC resume
-  # - Résumé__Md.Rezaur.Rahman__RHD-TMC
-  # - Résumé__Saifur.Rahman__RHD-TMC
-  # - Résumé__Mohammad.Main.Uddin
-  # - Résumé__Md.Faizul.Bari
-  # - Résumé__Mamunur.Rashid__RHD-TMC
-  # - Résumé__Sharmin.Sultana__RHD-TMC
-  # - Résumé__Iftakhar.Ali.Khandokar
-  # - Résumé__Md.Raqibul.Islam
-  # - Résumé__Md.Hasibur.Rahman
-  # - Résumé__Md.Mahasin.Alam
-  # - Résumé__Akeed.Anjum
-  # - Résumé__Rishad.Ali.Mimo
-  # - Résumé__Syed.Mostofa.Monsur
-  # - Résumé__Nur-E-Asma.Tabassum
-  # - Résumé__Md.Saidur.Rahman.(Shamim)
-  # - Résumé__Md.Al.Shahrior.Rahman
-  # - Résumé__Taposh.Kumar
-  # - Résumé__Joy.Kabiraj
-  # - Résumé__Md.Ibrahim.Ullah
+# MRA-OMS resume
+  # - Résumé__Alif.Arfab.Pavel
+  # - Résumé__Amiya.Ahamed
+  # - Résumé__Arnab.Basak
+  # - Résumé__Dipankar.Kumar.Biswas
   # - Résumé__Jyoti.Basu.Chakma
-  # - Résumé__Shuvo.Das
-  # - Résumé__Md.Shohag.Hossain
-  # - Résumé__Md.Shahin.Sheikh
+  # - Résumé__Mainur.Rahman.Rasel
+  # - Résumé__Maly.Mohsem.Ahmed
+  # - Résumé__Md.Ahsan.Habib.Rocky
+  # - Résumé__MD.Fuad.Hasan.Chowdhury
+  # - Résumé__Md.Kamruzzaman.Tanim
+  # - Résumé__Md.Raqibul.Islam
+  # - Résumé__Md.Saidur.Rahman.(Shamim)
+  # - Résumé__Md.Shariar.Kabir
+  # - Résumé__Md.Sohel.Rana
+  # - Résumé__Mir.Earfan.Elahi
+  # - Résumé__Mohammad.Kamrul.Hasan
+  # - Résumé__Mohammad.Ziaul.Hoq
+  # - Résumé__Mushfika.Faria
+  # - Résumé__Nur-E-Asma.Tabassum
+  # - Résumé__Syed.Ahmad.Mahdi
+  # - Résumé__Tasnim.Kabir.Ratul
+  # - Résumé__Umme.Rumman.Usha
   # -
 
 
 # worksheets on which some work will be done
 worksheets:
 # resume worksheets
-  - '-toc-new'
+  # - '-toc-new'
   # - 00-layout
+  # - 00-layout-MRA-OMS
   # - 00-layout-RHD-TMC
+  # - 00-layout-WB
   # - 01-personal
   # - 02-career-highlight
   # - 03-education
@@ -665,8 +565,8 @@ work-specs:
     #   halign            : left
   # -toc-new
     # 'F3'      :
-    #   value             : '00-layout-RHD-TMC'
-    #   ws-name-to-link   : '00-layout-RHD-TMC'
+    #   value             : '00-layout-MRA-OMS'
+    #   ws-name-to-link   : '00-layout-MRA-OMS'
     # 'F3'      :
     #   value             : '00-layout'
     #   ws-name-to-link   : '00-layout'

@@ -43,9 +43,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
 
     # worksheet creation, formatting and related tasks
-    g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
+    # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
-    g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1
@@ -61,8 +61,8 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
 
     # cell linking and ordering
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
     # g_sheet.order_worksheets()
 
