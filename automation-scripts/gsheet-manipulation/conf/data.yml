@@ -447,29 +447,34 @@ gsheets:
     # - pds__Unilever-MFGPRO
     # - pds__UGC-HEMIS
   # MRA-OMS resume
-  - Résumé__Alif.Arfab.Pavel
-  - Résumé__Amiya.Ahamed
-  - Résumé__Arnab.Basak
-  - Résumé__Dipankar.Kumar.Biswas
-  - Résumé__Jyoti.Basu.Chakma
-  - Résumé__Mainur.Rahman.Rasel
-  - Résumé__Maly.Mohsem.Ahmed
-  - Résumé__Md.Ahsan.Habib.Rocky
-  - Résumé__MD.Fuad.Hasan.Chowdhury
-  - Résumé__Md.Kamruzzaman.Tanim
-  - Résumé__Md.Raqibul.Islam
-  - Résumé__Md.Saidur.Rahman.(Shamim)
-  - Résumé__Md.Shariar.Kabir
-  - Résumé__Md.Sohel.Rana
-  - Résumé__Mir.Earfan.Elahi
-  - Résumé__Mohammad.Kamrul.Hasan
-  - Résumé__Mohammad.Ziaul.Hoq
-  - Résumé__Mushfika.Faria
-  - Résumé__Nur-E-Asma.Tabassum
-  - Résumé__Syed.Ahmad.Mahdi
-  - Résumé__Tasnim.Kabir.Ratul
-  - Résumé__Umme.Rumman.Usha
-
+  # - Résumé__Alif.Arfab.Pavel
+  # - Résumé__Amiya.Ahamed
+  # - Résumé__Arnab.Basak
+  # - Résumé__Dipankar.Kumar.Biswas
+  # - Résumé__Jahin.Khan.Shourov
+  # - Résumé__Jyoti.Basu.Chakma
+  # - Résumé__Mainur.Rahman.Rasel
+  # - Résumé__Maly.Mohsem.Ahmed
+  # - Résumé__Md.Ahsan.Habib.Rocky
+  # - Résumé__MD.Fuad.Hasan.Chowdhury
+  # - Résumé__Md.Kamruzzaman.Tanim
+  # - Résumé__Md.Nahidul.Islam.Siddique
+  # - Résumé__Md.Raqibul.Islam
+  # - Résumé__Md.Saidur.Rahman.(Shamim)
+  # - Résumé__Md.Shariar.Kabir
+  # - Résumé__Md.Sohel.Rana
+  # - Résumé__Md.Yousuf.Ali
+  # - Résumé__Mir.Earfan.Elahi
+  # - Résumé__Mohammad.Kamrul.Hasan
+  # - Résumé__Mohammad.Ziaul.Hoq
+  # - Résumé__Mushfika.Faria
+  # - Résumé__Nur-E-Asma.Tabassum
+  # - Résumé__Shafayat.Ahmed
+  # - Résumé__Shanawaz.Durjoy
+  # - Résumé__Sharmin.Akter.Pinki
+  # - Résumé__Syed.Ahmad.Mahdi
+  # - Résumé__Tasnim.Kabir.Ratul
+  # - Résumé__Umme.Rumman.Usha
 
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
@@ -496,6 +501,13 @@ destination-gsheets:
   # - Résumé__Syed.Ahmad.Mahdi
   # - Résumé__Tasnim.Kabir.Ratul
   # - Résumé__Umme.Rumman.Usha
+  # - Résumé__Md.Yousuf.Ali
+  # - Résumé__Md.Nahidul.Islam.Siddique
+  # - Résumé__Shafayat.Ahmed
+  # - Résumé__Sharmin.Akter.Pinki
+  # - Résumé__Jahin.Khan.Shourov
+  # - Résumé__Shanawaz.Durjoy
+
   # -
 
 
@@ -545,6 +557,49 @@ worksheets:
   # - z-blank
   # - z-footer
   # - z-header
+# RAJUK-ERP__EoI__submission worksheets
+  # - 00.01-forwarding-letter
+  # - 00.02-executive-summary
+  # - 00.03-submission-guide
+  # - 00.04-terms-glossary
+  # - 00.05-compliance-map
+  # - 01-scope-understanding
+  # - 02-proposed-methodology
+  # - 02.01-agile-methodology
+  # - 02.02-project-management-methodology
+  # - 02.02.01-integrated-project-management
+  # - 02.02.02-ipm-table
+  # - 02.02.03-stakeholder-management
+  # - 02.02.04-resource-management
+  # - 02.02.05-communication-management
+  # - 02.02.06-quality-management
+  # - 02.02.07-risk-management
+  # - 02.02.08-monitor-control-management
+  # - 03-proposed-solution-functional
+  # - 03.01-feature-functions
+  # - 03.02-case-study-1
+  # - 03.03-system-architecture
+  # - 04-proposed-solution-technical
+  # - 04.01-architectural-considerations
+  # - 04.02-logical-architecture
+  # - 04.03-deployment-architecture
+  # - 04.04-build-deployment-staging-process
+  # - 04.05-data-information-security
+  # - 04.06-capacity-planning
+  # - 04.07-tools-technology
+  # - 05-organizational-capabilities
+  # - 05.01-organogram-spectrum
+  # - 05.02-management-personnel
+  # - 05.03-ict-personnel-a
+  # - 05.03-ict-personnel-b
+  # - 05.03-ict-personnel-c
+  # - 06-mandatory-documents
+  # - 06.01-registration-certificates
+  # - 06.02-legal-docs
+  # - 06.03-financial-capacity
+  # - 07-similar-assignments
+  # - 08-staff-planning
+  # - z-blank
 
 
 # work specifications to apply on a list of worksheets
@@ -553,7 +608,7 @@ work-specs:
     # change fonts and vertical alignments for the worksheet
     # 'A1:Z'  :
     #   font-family       : Arial
-    #   font-size         : 10
+    #   font-size         : 11
     #   valign            : top
     # border around cells
     # 'B3:Z'          :
