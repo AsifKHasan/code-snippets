@@ -4,26 +4,28 @@ import yaml
 import ftplib
 from pprint import pprint
 
-org = '01-spectrum'
-things = 'photo'
+# read ftp-helper.yml to get the list of things we need
+helper_data = yaml.load(open('./ftp-helper.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
+data = []
+artifact = helper_data['artifact']
+org = helper_data['org']
+if 'level' in helper_data:
+    ftp_directory = f"/artifacts/{artifact}/{org}/{helper_data['level']}/"
+else:
+    ftp_directory = f"/artifacts/{artifact}/{org}/"
 
-# things we have
+things_we_need = helper_data['required-things']
+
+# connect ftp
 ftp = ftplib.FTP("ftp.spectrum-bd.biz")
 ftp.login("spectrum@spectrum-bd.biz", "B@ngl@1427")
 
-data = []
-ftp_directory = f"/artifacts/{things}/{org}"
 ftp.cwd(ftp_directory)
 things_we_have = ftp.nlst()
 
 
-# read ftp-helper.yml to get the list of things we need
-helper_data = yaml.load(open('./ftp-helper.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
-things_we_need = helper_data['required-things']
-
-
-# print(f"we need [{len(things_we_need)}] {things}s for [{org}]")
-# print(f"we have [{len(things_we_have)}] {things}s for [{org}] in ftp [{ftp_directory}]")
+# print(f"we need [{len(things_we_need)}] {artifact}s for [{org}]")
+# print(f"we have [{len(things_we_have)}] {artifact}s for [{org}] in ftp [{ftp_directory}]")
 
 # output_list = list(set(things_we_have).intersection(things_we_need))
 # print(f"we have {len(output_list)} correct things")
@@ -32,7 +34,7 @@ things_we_need = helper_data['required-things']
 # print(f"we have {len(output_list)} extra/wrong things")
 
 output_list = list(set(things_we_need) - set(things_we_have))
-print(f"we have [{len(output_list)}] missing {things}s for [{org}] in ftp [{ftp_directory}]")
+print(f"we have [{len(output_list)}] missing {artifact}s for [{org}] in ftp [{ftp_directory}]")
 
 output_list.sort()
 for i in range(0, len(output_list)):

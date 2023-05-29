@@ -1,26 +1,34 @@
+# org:      '01-spectrum'
+org:      '02-sscl'
+# org:      '03-doer'
+# org:      '04-celloscope'
+# org:      '05-ael'
+
+# artifact:     'photo'
+# artifact:     'signature'
+artifact:     'educational-certificates'
+
+# level:        '00-course'
+# level:        '01-diploma'
+level:        '02-bachelor'
+# level:        '03-master'
+
 required-things:
-- photo__Md.Mashrurul.Hakim.png
-- photo__Saiful.Islam.(Sumon).png
-- photo__Md.Jakir.Hossain.png
-- photo__Ashish.Kumar.Das.png
-- photo__Ibrahim.Ibna.Md.Liaquat.Ullah.png
-- photo__Md.Murshid.Sarker.png
-- photo__Shihan.Zaman.png
-- photo__Monjur.Ahmed.png
-- photo__S.M.Azharul.Islam.png
-- photo__Shaikh.Tojibul.Islam.png
-- photo__Muhammad.Myanuddin.png
-- photo__Md.Sharafat.Hossain.Kamal.png
-- photo__Md.Shariful.Islam.png
-- photo__Sanjoy.Kumar.Saha.png
-- photo__Md.Anisur.Rahman.png
-- photo__Mohammad.Saiful.Islam.png
-- photo__Atiqur.Rahman.png
-- photo__Kazi.Rakibur.Rahman.png
-- photo__MD.Ferdous.Mahmud.png
-- photo__Md.Murshadul.Islam.png
-- photo__Rajib.Chowdhury.png
-- photo__Asma.Ul.Husna.png
-- photo__Md.Samim.Hosen.png
-- photo__Raihan.Ur.Rashid.png
-- photo__Sanmoon.Yasmin.png
+- Akeed.Anjum__BSc__certificate.png
+- Faridul.Islam.Farhad__BSc__certificate.png
+- Golam.Mostafa__BSc__certificate.png
+- Hasib.Mahmud__BSc__certificate.png
+- Humaira.Binte.Harun__BSc__certificate.png
+- Iftakhar.Ali.Khandokar__BSc__certificate.png
+- Jumana.Ahmed__BSc__certificate.png
+- Md.Al.Emran.Hossain__BSc__certificate.png
+- Md.Abu.Sayed__BBA__certificate.png
+- Md.Faizul.Bari__BSc__certificate.png
+- Md.Mahmudul.Hasan__BSc__certificate.png
+- Md.Mazharul.Islam.Rakib__BA__certificate.png
+- Md.Rokonuzzaman__BSc__certificate.png
+- Md.Sayeduzzaman__BSc__certificate.png
+- Mohammed.Farhan.Islam__BSc__certificate.png
+- Monjur.Ahmed__BSS__certificate.png
+- Mosaddek.Ali.Mithu__BSc__certificate.png
+- Sarah.Noor__BSc__certificate.png
