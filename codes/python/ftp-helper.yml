@@ -1,7 +1,7 @@
 # org:      '01-spectrum'
-org:      '02-sscl'
+# org:      '02-sscl'
 # org:      '03-doer'
-# org:      '04-celloscope'
+org:      '04-celloscope'
 # org:      '05-ael'
 
 # artifact:     'photo'
@@ -14,21 +14,32 @@ level:        '02-bachelor'
 # level:        '03-master'
 
 required-things:
-- Akeed.Anjum__BSc__certificate.png
-- Faridul.Islam.Farhad__BSc__certificate.png
-- Golam.Mostafa__BSc__certificate.png
-- Hasib.Mahmud__BSc__certificate.png
-- Humaira.Binte.Harun__BSc__certificate.png
-- Iftakhar.Ali.Khandokar__BSc__certificate.png
-- Jumana.Ahmed__BSc__certificate.png
-- Md.Al.Emran.Hossain__BSc__certificate.png
-- Md.Abu.Sayed__BBA__certificate.png
-- Md.Faizul.Bari__BSc__certificate.png
-- Md.Mahmudul.Hasan__BSc__certificate.png
-- Md.Mazharul.Islam.Rakib__BA__certificate.png
-- Md.Rokonuzzaman__BSc__certificate.png
-- Md.Sayeduzzaman__BSc__certificate.png
-- Mohammed.Farhan.Islam__BSc__certificate.png
-- Monjur.Ahmed__BSS__certificate.png
-- Mosaddek.Ali.Mithu__BSc__certificate.png
-- Sarah.Noor__BSc__certificate.png
+- Alif.Arfab.Pavel__BSc__certificate.png
+- Altaf.Hossain__Fazil__certificate.png
+- Amiya.Ahamed__BSc__certificate.png
+- Anan.Aiman.Tuba__BSc__certificate.png
+- Arnab.Basak__BSc__certificate.png
+- Farhana.Naz__BSc__certificate.png
+- Kamrun.Nahar__BSc__certificate.png
+- Khondoker.Tanvir.Hossain__BSc__certificate.png
+- Mainur.Rahman.Rasel__BSc__certificate.png
+- Maly.Mohsem.Ahmed__BSc__certificate.png
+- Md.Farhad.Bhuiyan__BSc__certificate.png
+- Md.Asif.Khan.Taj__BSc__certificate.png
+- MD.Fuad.Hasan.Chowdhury__BSc__certificate.png
+- Md.Hafizur.Rahman__BSc__certificate.png
+- Md.Kamruzzaman.Tanim__BSc__certificate.png
+- Md.Nazmul.Alam__BSc__certificate.png
+- Md.Shariar.Kabir__BSc__certificate.png
+- Mehedi.Hasan__BBS__certificate.png
+- Mohammad.Kamrul.Hasan__BSc__certificate.png
+- Mohammad.Mashud.Karim__BSc__certificate.png
+- Mohammad.Wakib.Hasan__BSc__certificate.png
+- Mushfika.Faria__BSc__certificate.png
+- Nasima.Aktar__BCom__certificate.png
+- Sakib.Ibn.Abdullah__BSc__certificate.png
+- Shafayat.Ahmed__BSc__certificate.png
+- Shah.Shafi.Mohammed.Shariful.Alam__BSc__certificate.png
+- Sharif.Tamjidur.Rahman__BSc__certificate.png
+- Syed.Mostofa.Monsur__BSc__certificate.png
+- Umme.Rumman.Usha__BSc__certificate.png
