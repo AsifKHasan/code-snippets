@@ -23,9 +23,9 @@ gsheets:
     #   - Résumé__Md.Al.Emran.Hossain
     #   - Résumé__Md.Faizul.Bari
     #   - Résumé__Md.Mahmudul.Hasan
-      # - Résumé__Md.Mazharul.Islam.Rakib
+    #   - Résumé__Md.Mazharul.Islam.Rakib
     #   - Résumé__Md.Rokonuzzaman
-      # - Résumé__Md.Rubel.Ahamed
+    #   - Résumé__Md.Rubel.Ahamed
     #   - Résumé__Md.Sayeduzzaman
     #   - Résumé__Mohammed.Farhan.Islam
     #   - Résumé__Monjur.Ahmed
@@ -361,283 +361,281 @@ gsheets:
     #   - Résumé__Mostafa.Jannatul.Ferdows
     #   - Résumé__Salman.Ahmed.Firoz
   # # pds
-  #   - pds__blank.template
-  #   - pds__ACMELL
-  #   - pds__BB-RTGS
-  #   - pds__BBA-BPBB
-  #   - pds__BCC
-  #   - pds__BCC-AMC
-  #   - pds__BCC-AMC-2020
-  #   - pds__BCC-Cisco-Renewal
-  #   - pds__BCC-DC
-  #   - pds__BCC-DC-Expansion
-  #   - pds__BCC-DSCOCP
-  #   - pds__BCC-HW-Expansion
-  #   - pds__BCC-Tier-IV-ServerStorage
-  #   - pds__BDREN-DC-Expansion
-  #   - pds__BDREN-G-13
-  #   - pds__BDREN-Network
-  #   - pds__Beximco-IT
-  #   - pds__BG(DC)
-  #   - pds__BPA-Sardah-Police-Academy
-  #   - pds__BR-DCDR
-  #   - pds__BRP
-  #   - pds__BSCCL
-  #   - pds__BSCCL-Kuakata
-  #   - pds__BSCCL-SCISCO
-  #   - pds__BTCL
-  #   - pds__BTCL-NGNCDR
-  #   - pds__BTTB
-  #   - pds__BWDB
-  #   - pds__CCC-WPSD
-  #   - pds__CRM
-  #   - pds__DBBL-DWDM
-  #   - pds__DISWLS
-  #   - pds__DMS-UBL
-  #   - pds__DSEL
-  #   - pds__DSHE-DC
-  #   - pds__DSILW(BAF)
-  #   - pds__DVSIVSS
-  #   - pds__DWASA
-  #   - pds__EMS
-  #   - pds__FOLC
-  #   - pds__GP-CHQ
-  #   - pds__GPIGP
-  #   - pds__iBAS
-  #   - pds__IBBL
-  #   - pds__ICBIBL(DR)
-  #   - pds__ICBISL
-  #   - pds__IFIC-DC
-  #   - pds__InterCon
-  #   - pds__IOWM
-  #   - pds__ITCL
-  #   - pds__ITICB
-  #   - pds__ITNA
-  #   - pds__IUB
-  #   - pds__JU
-  #   - pds__JUB
-  #   - pds__KTAL
-  #   - pds__LBBL
-  #   - pds__MCICT-SASECIH
-  #   - pds__MOS-ICT
-  #   - pds__Mosharaf-Group
-  #   - pds__MTBL-CCTV
-  #   - pds__MTBL-EBNCDC
-  #   - pds__NBR-ASYCUDA
-  #   - pds__NBR-ASYCUDA-SLA
-  #   - pds__NBR-AW-Network&Security
-  #   - pds__NBR-AW-Systems
-  #   - pds__NL-DC
-  #   - pds__OBL
-  #   - pds__PHQ-AMC
-  #   - pds__REB
-  #   - pds__RHD-MIS-consultancy
-  #   - pds__RHD-MIS-e-procurement
-  #   - pds__RWGH
-  #   - pds__SBFI
-  #   - pds__SCB
-  #   - pds__SIBL
-  #   - pds__SIBL(DC)
-  #   - pds__SPARRSO-2010
-  #   - pds__SPARRSO-2012
-  #   - pds__SSF
-  #   - pds__SSVPE
-  #   - pds__SUST-TC
-  #   - pds__TBL
-  #   - pds__TDS
-  #   - pds__UGCB
-  #   - pds__VHA
-  #   - pds__WDTGCL
-  #   - pds__ABBank-CIB
-  #   - pds__AgraniBank-BACPS
-  #   - pds__BB-BACPS
-  #   - pds__BB-CA
-  #   - pds__BCBL-CIB
-  #   - pds__BCC-CA
-  #   - pds__Bdjobs-MPVCC
-  #   - pds__Biman-HelpDeskHR
-  #   - pds__Boeing-BangladeshBiman
-  #   - pds__BRTA-UniVerge
-  #   - pds__BuySight-BizOps
-  #   - pds__CapGains-LLC
-  #   - pds__CCA-IDS
-  #   - pds__CCC-CSSM
-  #   - pds__CID-CDMS
-  #   - pds__CityBank-CityAgent
-  #   - pds__CityCell-NID-V-SA
-  #   - pds__ConserveTrack-RDU
-  #   - pds__ConserveTrack-WCM
-  #   - pds__EAM-CMMS
-  #   - pds__GP-HRMS
-  #   - pds__GP-ROC
-  #   - pds__GP-WBMS
-  #   - pds__HabibBank-BACPS
-  #   - pds__IslamGarments-rmgPro
-  #   - pds__lekhapora.com
-  #   - pds__LGED-IPMSRDEC
-  #   - pds__MarketSharp-CRM
-  #   - pds__MTBL-BACPS
-  #   - pds__NBR-CAMS
-  #   - pds__NBR-UMS
-  #   - pds__Nestle-VATsys
-  #   - pds__OAGN-NAMS
-  #   - pds__OCAG-AMMS
-  #   - pds__Partex-OEBS
-  #   - pds__RA-BRPSharePoint
-  #   - pds__RA-CWRBS
-  #   - pds__RA-SRMS
-  #   - pds__Revnx-Journey
-  #   - pds__RHD-BDMS
-  #   - pds__RHD-CBRNIP
-  #   - pds__RHD-MIS
-  #   - pds__RHD-MIS-2009
-  #   - pds__RHD-MIS-2015
-  #   - pds__RHD-MIS-2017
-  #   - pds__ROBI-DMS
-  #   - pds__ROBI-ROC
-  #   - pds__SAU-ACAS
-  #   - pds__SCB-CBRM
-  #   - pds__SCB-OPCCMS
-  #   - pds__SCB-RTGS
-  #   - pds__SECL-CSB
-  #   - pds__SECL-Metrica
-  #   - pds__SECL-UniVerge
-  #   - pds__SECL-VATsys
-  #   - pds__SigmaStream-V2P
-  #   - pds__SportsBuddy
-  #   - pds__TrustBank-BACPS
-  #   - pds__UGC-HEMIS
-  #   - pds__Unilever-MFGPRO
-
+    # # spectrum pds
+      # - pds__blank.template
+      - pds__ACMELL
+      - pds__BB-RTGS
+      - pds__BBA-BPBB
+      - pds__BCC
+      - pds__BCC-AMC
+      - pds__BCC-AMC-2020
+      - pds__BCC-Cisco-Renewal
+      - pds__BCC-DC
+      - pds__BCC-DC-Expansion
+      - pds__BCC-DSCOCP
+      - pds__BCC-HW-Expansion
+      - pds__BCC-Tier-IV-ServerStorage
+      - pds__BDREN-DC-Expansion
+      - pds__BDREN-G-13
+      - pds__BDREN-Network
+      - pds__Beximco-IT
+      - pds__BG(DC)
+      - pds__BPA-Sardah-Police-Academy
+      - pds__BR-DCDR
+      - pds__BRP
+      - pds__BSCCL
+      - pds__BSCCL-Kuakata
+      - pds__BSCCL-SCISCO
+      - pds__BTCL
+      - pds__BTCL-NGNCDR
+      - pds__BTTB
+      - pds__BWDB
+      - pds__CCC-WPSD
+      - pds__CRM
+      - pds__DBBL-DWDM
+      - pds__DISWLS
+      - pds__DMS-UBL
+      - pds__DSEL
+      - pds__DSHE-DC
+      - pds__DSILW(BAF)
+      - pds__DVSIVSS
+      - pds__DWASA
+      - pds__EMS
+      - pds__FOLC
+      - pds__GP-CHQ
+      - pds__GPIGP
+      - pds__iBAS
+      - pds__IBBL
+      - pds__ICBIBL(DR)
+      - pds__ICBISL
+      - pds__IFIC-DC
+      - pds__InterCon
+      - pds__IOWM
+      - pds__ITCL
+      - pds__ITICB
+      - pds__ITNA
+      - pds__IUB
+      - pds__JU
+      - pds__JUB
+      - pds__KTAL
+      - pds__LBBL
+      - pds__MCICT-SASECIH
+      - pds__MOS-ICT
+      - pds__Mosharaf-Group
+      - pds__MTBL-CCTV
+      - pds__MTBL-EBNCDC
+      - pds__NBR-ASYCUDA
+      - pds__NBR-ASYCUDA-SLA
+      - pds__NBR-AW-Network&Security
+      - pds__NBR-AW-Systems
+      - pds__NL-DC
+      - pds__OBL
+      - pds__PHQ-AMC
+      - pds__REB
+      - pds__RHD-BMMS-2018
+      - pds__RHD-MIS-consultancy
+      - pds__RHD-MIS-e-procurement
+      - pds__RWGH
+      - pds__SBFI
+      - pds__SCB
+      - pds__SIBL
+      - pds__SIBL(DC)
+      - pds__SPARRSO-2010
+      - pds__SPARRSO-2012
+      - pds__SSF
+      - pds__SSVPE
+      - pds__SUST-TC
+      - pds__TBL
+      - pds__TDS
+      - pds__UGCB
+      - pds__VHA
+      - pds__WDTGCL
+      - pds__ABBank-CIB
+      - pds__AgraniBank-BACPS
+      - pds__BB-BACPS
+      - pds__BB-CA
+      - pds__BCBL-CIB
+      - pds__BCC-CA
+      - pds__Bdjobs-MPVCC
+      - pds__Biman-HelpDeskHR
+      - pds__Boeing-BangladeshBiman
+      - pds__BRTA-UniVerge
+      - pds__BuySight-BizOps
+      - pds__CapGains-LLC
+      - pds__CCA-IDS
+      - pds__CCC-CSSM
+      - pds__CID-CDMS
+      - pds__CityBank-CityAgent
+      - pds__CityCell-NID-V-SA
+      - pds__ConserveTrack-RDU
+      - pds__ConserveTrack-WCM
+      - pds__EAM-CMMS
+      - pds__GP-HRMS
+      - pds__GP-ROC
+      - pds__GP-WBMS
+      - pds__HabibBank-BACPS
+      - pds__IslamGarments-rmgPro
+      - pds__lekhapora.com
+      - pds__LGED-IPMSRDEC
+      - pds__MarketSharp-CRM
+      - pds__MTBL-BACPS
+      - pds__NBR-CAMS
+      - pds__NBR-UMS
+      - pds__Nestle-VATsys
+      - pds__OAGN-NAMS
+      - pds__OCAG-AMMS
+      - pds__Partex-OEBS
+      - pds__RA-BRPSharePoint
+      - pds__RA-CWRBS
+      - pds__RA-SRMS
+      - pds__Revnx-Journey
+      - pds__RHD-CBRNIP-TOLL-2022
+      - pds__RHD-MIS-AMC-2009
+      - pds__RHD-MIS-AMC-2015
+      - pds__RHD-MIS-AMC-2017
+      - pds__RHD-TDMS-2020-23
+      - pds__ROBI-DMS
+      - pds__ROBI-ROC
+      - pds__SAU-ACAS
+      - pds__SCB-CBRM
+      - pds__SCB-OPCCMS
+      - pds__SCB-RTGS
+      - pds__SECL-CSB
+      - pds__SECL-Metrica
+      - pds__SECL-UniVerge
+      - pds__SECL-VATsys
+      - pds__SigmaStream-V2P
+      - pds__SportsBuddy
+      - pds__TrustBank-BACPS
+      - pds__UGC-HEMIS
+      - pds__Unilever-MFGPRO
   # # MRA-OMS resume
-  #   - Résumé__Alif.Arfab.Pavel
-  #   - Résumé__Amiya.Ahamed
-  #   - Résumé__Arnab.Basak
-  #   - Résumé__Dipankar.Kumar.Biswas
-  #   - Résumé__Jahin.Khan.Shourov
-  #   - Résumé__Jyoti.Basu.Chakma
-  #   - Résumé__Mainur.Rahman.Rasel
-  #   - Résumé__Maly.Mohsem.Ahmed
-  #   - Résumé__Md.Ahsan.Habib.Rocky
-  #   - Résumé__MD.Fuad.Hasan.Chowdhury
-  #   - Résumé__Md.Kamruzzaman.Tanim
-  #   - Résumé__Md.Nahidul.Islam.Siddique
-  #   - Résumé__Md.Raqibul.Islam
-  #   - Résumé__Md.Saidur.Rahman.(Shamim)
-  #   - Résumé__Md.Shariar.Kabir
-  #   - Résumé__Md.Sohel.Rana
-  #   - Résumé__Md.Yousuf.Ali
-  #   - Résumé__Mir.Earfan.Elahi
-  #   - Résumé__Mohammad.Kamrul.Hasan
-  #   - Résumé__Mohammad.Ziaul.Hoq
-  #   - Résumé__Mushfika.Faria
-  #   - Résumé__Nur-E-Asma.Tabassum
-  #   - Résumé__Shafayat.Ahmed
-  #   - Résumé__Shanawaz.Durjoy
-  #   - Résumé__Sharmin.Akter.Pinki
-  #   - Résumé__Syed.Ahmad.Mahdi
-  #   - Résumé__Tasnim.Kabir.Ratul
-  #   - Résumé__Umme.Rumman.Usha
+    #   - Résumé__Alif.Arfab.Pavel
+    #   - Résumé__Amiya.Ahamed
+    #   - Résumé__Arnab.Basak
+    #   - Résumé__Dipankar.Kumar.Biswas
+    #   - Résumé__Jahin.Khan.Shourov
+    #   - Résumé__Jyoti.Basu.Chakma
+    #   - Résumé__Mainur.Rahman.Rasel
+    #   - Résumé__Maly.Mohsem.Ahmed
+    #   - Résumé__Md.Ahsan.Habib.Rocky
+    #   - Résumé__MD.Fuad.Hasan.Chowdhury
+    #   - Résumé__Md.Kamruzzaman.Tanim
+    #   - Résumé__Md.Nahidul.Islam.Siddique
+    #   - Résumé__Md.Raqibul.Islam
+    #   - Résumé__Md.Saidur.Rahman.(Shamim)
+    #   - Résumé__Md.Shariar.Kabir
+    #   - Résumé__Md.Sohel.Rana
+    #   - Résumé__Md.Yousuf.Ali
+    #   - Résumé__Mir.Earfan.Elahi
+    #   - Résumé__Mohammad.Kamrul.Hasan
+    #   - Résumé__Mohammad.Ziaul.Hoq
+    #   - Résumé__Mushfika.Faria
+    #   - Résumé__Nur-E-Asma.Tabassum
+    #   - Résumé__Shafayat.Ahmed
+    #   - Résumé__Shanawaz.Durjoy
+    #   - Résumé__Sharmin.Akter.Pinki
+    #   - Résumé__Syed.Ahmad.Mahdi
+    #   - Résumé__Tasnim.Kabir.Ratul
+    #   - Résumé__Umme.Rumman.Usha
+  # # RAJUK-ERP resume - sscl
+    # # RAJUK-ERP resume - sscl
+      # - Résumé__Akeed.Anjum
+      # - Résumé__Hasib.Mahmud
+      # - Résumé__Iftakhar.Ali.Khandokar
+      # - Résumé__Jumana.Ahmed
+      # - Résumé__Md.Abu.Sayed
+      # - Résumé__Md.Faizul.Bari
+      # - Résumé__Md.Rokonuzzaman
+      # - Résumé__Monjur.Ahmed
+    # # RAJUK-ERP resume - spectrum
+      # - Résumé__Aabid.Rahman
+      # - Résumé__Adiat.Islam.Sahih
+      # - Résumé__Dipika.Debnath
+      # - Résumé__Ferdous.Rahman
+      # - Résumé__Ashish.Kumar.Das
+      # - Résumé__K.M.Zabir.Tarique
+      # - Résumé__Manzur.Alam
+      # - Résumé__Md.Anisur.Rahman
+      # - Résumé__Md.Ibrahim.Hossen
+      # - Résumé__Md.Jakir.Hossain
+      # - Résumé__Md.Mahabub.Al-Islam
+      # - Résumé__Md.Mashrurul.Hakim
+      # - Résumé__Md.Murshid.Sarker
+      # - Résumé__Md.Nazmul.Hassan
+      # - Résumé__Md.Raqibul.Islam
+      # - Résumé__Md.Sayeem.Khan
+      # - Résumé__Md.Sharafat.Hossain.Kamal
+      # - Résumé__Md.Shariful.Islam
+      # - Résumé__Md.Zahidul.Islam
+      # - Résumé__Mumtahina.Afroz
+      # - Résumé__S.M.Azharul.Islam
+      # - Résumé__Sagar.Saha
+      # - Résumé__Saiful.Islam.(Sumon)
+      # - Résumé__Sayeda.Tanjila
+      # - Résumé__Shaikh.Tojibul.Islam
+      # - Résumé__Shajir.Uddin.Haider
+    # # RAJUK-ERP resume - celloscope
+      # - Résumé__Alif.Arfab.Pavel
+      # - Résumé__Amiya.Ahamed
+      # - Résumé__Anan.Aiman.Tuba
+      # - Résumé__Arnab.Basak
+      # - Résumé__Mainur.Rahman.Rasel
+      # - Résumé__MD.Fuad.Hasan.Chowdhury
+      # - Résumé__Md.Kamruzzaman.Tanim
+      # - Résumé__Md.Shariar.Kabir
+      # - Résumé__Mehedi.Hasan
+      # - Résumé__Mohammad.Kamrul.Hasan
+      # - Résumé__Mohammad.Mashud.Karim
+      # - Résumé__Mohammad.Wakib.Hasan
+      # - Résumé__Mushfika.Faria
+      # - Résumé__Shafayat.Ahmed
+      # - Résumé__Syed.Mostofa.Monsur
+      # - Résumé__Umme.Rumman.Usha
+    # # RAJUK-ERP resume - ael
+      # - Résumé__Assaduzzaman
+      # - Résumé__Dipankar.Kumar.Biswas
+      # - Résumé__Md.Ahsan.Habib.Rocky
+      # - Résumé__Md.Atikur.Zaman
+      # - Résumé__Md.Mijanur.Rahman
+      # - Résumé__Md.Nahidul.Islam.Siddique
+      # - Résumé__Md.Nasir.Uddin
+      # - Résumé__Md.Sohel.Rana
+      # - Résumé__Mir.Earfan.Elahi
+      # - Résumé__Mostafa.Jannatul.Ferdows
 
-# # RAJUK-ERP resume - sscl
-  # - Résumé__Akeed.Anjum
-  # - Résumé__Hasib.Mahmud
-  # - Résumé__Iftakhar.Ali.Khandokar
-  # - Résumé__Jumana.Ahmed
-  # - Résumé__Md.Abu.Sayed
-  # - Résumé__Md.Faizul.Bari
-  # - Résumé__Md.Rokonuzzaman
-  # - Résumé__Monjur.Ahmed
-# # RAJUK-ERP resume - spectrum
-#   - Résumé__Aabid.Rahman
-#   - Résumé__Adiat.Islam.Sahih
-#   - Résumé__Dipika.Debnath
-#   - Résumé__Ferdous.Rahman
-#   - Résumé__Ashish.Kumar.Das
-#   - Résumé__K.M.Zabir.Tarique
-#   - Résumé__Manzur.Alam
-#   - Résumé__Md.Anisur.Rahman
-#   - Résumé__Md.Ibrahim.Hossen
-#   - Résumé__Md.Jakir.Hossain
-#   - Résumé__Md.Mahabub.Al-Islam
-#   - Résumé__Md.Mashrurul.Hakim
-#   - Résumé__Md.Murshid.Sarker
-#   - Résumé__Md.Nazmul.Hassan
-#   - Résumé__Md.Raqibul.Islam
-#   - Résumé__Md.Sayeem.Khan
-#   - Résumé__Md.Sharafat.Hossain.Kamal
-#   - Résumé__Md.Shariful.Islam
-#   - Résumé__Md.Zahidul.Islam
-#   - Résumé__Mumtahina.Afroz
-#   - Résumé__S.M.Azharul.Islam
-#   - Résumé__Sagar.Saha
-#   - Résumé__Saiful.Islam.(Sumon)
-#   - Résumé__Sayeda.Tanjila
-#   - Résumé__Shaikh.Tojibul.Islam
-#   - Résumé__Shajir.Uddin.Haider
-# # RAJUK-ERP resume - celloscope
-#   - Résumé__Alif.Arfab.Pavel
-#   - Résumé__Amiya.Ahamed
-#   - Résumé__Anan.Aiman.Tuba
-#   - Résumé__Arnab.Basak
-#   - Résumé__Mainur.Rahman.Rasel
-#   - Résumé__MD.Fuad.Hasan.Chowdhury
-#   - Résumé__Md.Kamruzzaman.Tanim
-#   - Résumé__Md.Shariar.Kabir
-#   - Résumé__Mehedi.Hasan
-#   - Résumé__Mohammad.Kamrul.Hasan
-#   - Résumé__Mohammad.Mashud.Karim
-#   - Résumé__Mohammad.Wakib.Hasan
-#   - Résumé__Mushfika.Faria
-#   - Résumé__Shafayat.Ahmed
-#   - Résumé__Syed.Mostofa.Monsur
-#   - Résumé__Umme.Rumman.Usha
-# # RAJUK-ERP resume - ael
-#   - Résumé__Assaduzzaman
-#   - Résumé__Dipankar.Kumar.Biswas
-#   - Résumé__Md.Ahsan.Habib.Rocky
-#   - Résumé__Md.Atikur.Zaman
-#   - Résumé__Md.Mijanur.Rahman
-#   - Résumé__Md.Nahidul.Islam.Siddique
-#   - Résumé__Md.Nasir.Uddin
-#   - Résumé__Md.Sohel.Rana
-#   - Résumé__Mir.Earfan.Elahi
-#   - Résumé__Mostafa.Jannatul.Ferdows
 
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
-# MRA-OMS resume
-  # - Résumé__Alif.Arfab.Pavel
-  # - Résumé__Amiya.Ahamed
-  # - Résumé__Arnab.Basak
-  # - Résumé__Dipankar.Kumar.Biswas
-  # - Résumé__Jyoti.Basu.Chakma
-  # - Résumé__Mainur.Rahman.Rasel
-  # - Résumé__Maly.Mohsem.Ahmed
-  # - Résumé__Md.Ahsan.Habib.Rocky
-  # - Résumé__MD.Fuad.Hasan.Chowdhury
-  # - Résumé__Md.Kamruzzaman.Tanim
-  # - Résumé__Md.Raqibul.Islam
-  # - Résumé__Md.Saidur.Rahman.(Shamim)
-  # - Résumé__Md.Shariar.Kabir
-  # - Résumé__Md.Sohel.Rana
-  # - Résumé__Mir.Earfan.Elahi
-  # - Résumé__Mohammad.Kamrul.Hasan
-  # - Résumé__Mohammad.Ziaul.Hoq
-  # - Résumé__Mushfika.Faria
-  # - Résumé__Nur-E-Asma.Tabassum
-  # - Résumé__Syed.Ahmad.Mahdi
-  # - Résumé__Tasnim.Kabir.Ratul
-  # - Résumé__Umme.Rumman.Usha
-  # - Résumé__Md.Yousuf.Ali
-  # - Résumé__Md.Nahidul.Islam.Siddique
-  # - Résumé__Shafayat.Ahmed
-  # - Résumé__Sharmin.Akter.Pinki
-  # - Résumé__Jahin.Khan.Shourov
-  # - Résumé__Shanawaz.Durjoy
-
-  # -
-
+  # # MRA-OMS resume
+    #   - Résumé__Alif.Arfab.Pavel
+    #   - Résumé__Amiya.Ahamed
+    #   - Résumé__Arnab.Basak
+    #   - Résumé__Dipankar.Kumar.Biswas
+    #   - Résumé__Jyoti.Basu.Chakma
+    #   - Résumé__Mainur.Rahman.Rasel
+    #   - Résumé__Maly.Mohsem.Ahmed
+    #   - Résumé__Md.Ahsan.Habib.Rocky
+    #   - Résumé__MD.Fuad.Hasan.Chowdhury
+    #   - Résumé__Md.Kamruzzaman.Tanim
+    #   - Résumé__Md.Raqibul.Islam
+    #   - Résumé__Md.Saidur.Rahman.(Shamim)
+    #   - Résumé__Md.Shariar.Kabir
+    #   - Résumé__Md.Sohel.Rana
+    #   - Résumé__Mir.Earfan.Elahi
+    #   - Résumé__Mohammad.Kamrul.Hasan
+    #   - Résumé__Mohammad.Ziaul.Hoq
+    #   - Résumé__Mushfika.Faria
+    #   - Résumé__Nur-E-Asma.Tabassum
+    #   - Résumé__Syed.Ahmad.Mahdi
+    #   - Résumé__Tasnim.Kabir.Ratul
+    #   - Résumé__Umme.Rumman.Usha
+    #   - Résumé__Md.Yousuf.Ali
+    #   - Résumé__Md.Nahidul.Islam.Siddique
+    #   - Résumé__Shafayat.Ahmed
+    #   - Résumé__Sharmin.Akter.Pinki
+    #   - Résumé__Jahin.Khan.Shourov
+    #   - Résumé__Shanawaz.Durjoy
 
 # worksheets on which some work will be done
 worksheets:
@@ -727,157 +725,157 @@ worksheets:
   # - 07-similar-assignments
   # - 08-staff-planning
   # - z-blank
-
 # MRA-OMS book-2 worksheets
-- 00.01-forwarding-letter
-- 00.02-executive-summary
-- 00.03-terms-glossary
-- 00.04-guide-to-submission
-- 00.05-submission-compliance-map
-- 01-project-planning
-- 01.01-logical-framework-of-project
-- 01.02-module-of-projects
-- 01.03-phase-wise-delivery-plans
-- 01.04-task-work-breakdown
-- 01.05-project-management-setup
-- 01.06-project-steering-committee
-- 01.07-project-monitoring-governance
-- 01.08-project-implementation-committee
-- 02-proposed-technical-solution
-- 02.01-user-management-configuration
-- 02.02-account-management-system
-- 02.03-hr-management-system
-- 02.04-payroll-management-system
-- 02.05-pf-management-system
-- 02.06-inventory-management
-- 02.07-fixed-asset-management
-- 02.08-loan-management
-- 02.09-e-sms-email-sending-system
-- 02.10-vehicle-management-system
-- 02.11-staff-information-bureau
-- 03-methodology-practices
-- 03.01-project-initiation-kickoff-development
-- 03.01.01-project-initiation-process
-- 03.01.02-pm-tools-selection-process
-- 03.01.03-project-charter-business-case
-- 03.01.04-identify-key-stakeholders
-- 03.02-requirement-collection-process
-- 03.02.01-requirement-collection-process
-- 03.02.02-requirement-documentation
-- 03.02.03-requirements-elicitation-activity
-- 03.02.04-consultation-stakeholders-users
-- 03.02.05-prioritize-module-wise-features
-- 03.02.06-requirement-change-management
-- 03.02.07-requirements-gathering-techniques
-- 03.03-software-design-method
-- 03.03.01-design-process-of-software
-- 03.03.02-system-architecture-microservices
-- 03.03.03-software-prototyping-design
-- 03.03.04-entity-relationship-model
-- 03.04-software-development-process
-- 03.04.01-software-development-process-models
-- 03.04.02-tools-technology
-- 03.04.03-programming-techniques
-- 03.04.04-software-artifacts-management
-- 03.04.05-version-control-system
-- 03.04.06-integration-simulation-process
-- 03.05-test-methods-process
-- 03.05.01-software-testing-methodologies
-- 03.05.02-software-testing-levels
-- 03.05.03-test-case-development-methods-models
-- 03.05.04-test-case-execution-methods
-- 03.05.05-test-log-issue-escalation-methods
-- 03.06-integration-methods
-- 03.06.01-system-integration-approaches
-- 03.06.02-legacy-system-integration
-- 03.06.03-third-party-system-integration
-- 03.07-build-release-deployment-plan
-- 03.07.01-version-build-release-plans
-- 03.07.02-build-automation-methods
-- 03.07.03-ci-cd-implementation-methods
-- 03.07.04-release-module-release-process
-- 03.07.05-version-control-tools-techniques
-- 03.08-user-acceptance-test-methods
-- 03.08.01-uat-test-case-development-process
-- 03.08.02-uat-execution-process
-- 03.08.03-assisted-uat-process
-- 03.08.04-uat-staff-training-process
-- 03.09-support-plan-policies-methods
-- 03.09.01-maintenance-policies-processes
-- 03.09.02-technical-support-contacts
-- 03.09.03-first-second-line-support
-- 03.09.04-online-support-end-user-customer
-- 03.09.05-support-tickets-management
-- 03.10-data-management-backup-restore-policy
-- 03.10.01-data-backup-restore-process
-- 03.10.02-database-backup-automation-process
-- 03.10.03-photo-files-other-backup-process
-- 04-implementation-plan
-- 04.01-kick-off-plan-whole-team
-- 04.02-requirement-collection-plan
-- 04.02.01-requirement-collection-schedules
-- 04.02.02-documentation-review-plans
-- 04.02.03-change-management-plan
-- 04.03-system-design-plans
-- 04.04-system-development-plans
-- 04.05-quality-assurance-test-plan
-- 04.05.01-unit-test-plan
-- 04.05.02-functional-test-plan
-- 04.05.03-development-testing-plan
-- 04.05.04-regression-test-plan
-- 04.05.05-usability-accessibility-testing
-- 04.05.06-security-test-plan
-- 04.05.07-acceptance-test-plan
-- 04.05.08-integration-test-plan
-- 04.05.09-smoke-sanity-test-plan
-- 04.05.10-load-stress-test-plan
-- 04.05.11-bug-tracking-plan
-- 04.05.12-test-case-development-plan
-- 04.06-build-release-deployment-plan
-- 04.06.01-version-build-release-plans
-- 04.06.02-build-automation-plan
-- 04.06.03-ci-cd-implementation
-- 04.07-user-acceptance-test-plan
-- 04.08-existing-data-migration-plan
-- 05-data-security-practices
-- 05.01-segmentation-scope-isolation
-- 05.02-data-encryption
-- 05.03-data-discovery
-- 05.04-access-controls
-- 05.05-resiliency
-- 05.06-network-endpoint-security
-- 05.07-security-policy
-- 05.08-os-application-security
-- 05.09-observability
-- 05.10-zero-trust-strategy
-- 05.11-regulations
-- 05.12-awareness-training
-- 06-organization-staffing
-- 06.01-work-distribution-team-composition
-- 06.02-human-resource-for-deployment
-- 07-hosting-plan
-- 07.01-storage-calculation
-- 08-support-maintenance-plans
-- 08.01-software-update-maintenance
-- 08.02-system-database-management
-- 08.03-mitigation-of-technological-changes
-- 08.04-training-during-operation-period
-- 08.05-technical-support-plan
-- 08.06-deliverables-required-smooth-operation
-- 08.07-data-access-control-audit
-- 08.08-transfer-knowledge-handover-plan
-- 08.08.01-training-plans-mra-technical-team
-- 08.08.02-training-plans-mra-non-tech-team
-- 08.08.03-system-maintenance-training
-- 08.08.04-training-documents
-- 08.08.05-technical-manual
-- 08.08.06-training-manual
-- 08.08.07-digital-content
-- 08.09-work-plan-software-activation
-- 08.10-application-database-migration-plan
-- z-blank
-- z-head
-- z-foot
+  - 00.01-forwarding-letter
+  - 00.02-executive-summary
+  - 00.03-terms-glossary
+  - 00.04-guide-to-submission
+  - 00.05-submission-compliance-map
+  - 01-project-planning
+  - 01.01-logical-framework-of-project
+  - 01.02-module-of-projects
+  - 01.03-phase-wise-delivery-plans
+  - 01.04-task-work-breakdown
+  - 01.05-project-management-setup
+  - 01.06-project-steering-committee
+  - 01.07-project-monitoring-governance
+  - 01.08-project-implementation-committee
+  - 02-proposed-technical-solution
+  - 02.01-user-management-configuration
+  - 02.02-account-management-system
+  - 02.03-hr-management-system
+  - 02.04-payroll-management-system
+  - 02.05-pf-management-system
+  - 02.06-inventory-management
+  - 02.07-fixed-asset-management
+  - 02.08-loan-management
+  - 02.09-e-sms-email-sending-system
+  - 02.10-vehicle-management-system
+  - 02.11-staff-information-bureau
+  - 03-methodology-practices
+  - 03.01-project-initiation-kickoff-development
+  - 03.01.01-project-initiation-process
+  - 03.01.02-pm-tools-selection-process
+  - 03.01.03-project-charter-business-case
+  - 03.01.04-identify-key-stakeholders
+  - 03.02-requirement-collection-process
+  - 03.02.01-requirement-collection-process
+  - 03.02.02-requirement-documentation
+  - 03.02.03-requirements-elicitation-activity
+  - 03.02.04-consultation-stakeholders-users
+  - 03.02.05-prioritize-module-wise-features
+  - 03.02.06-requirement-change-management
+  - 03.02.07-requirements-gathering-techniques
+  - 03.03-software-design-method
+  - 03.03.01-design-process-of-software
+  - 03.03.02-system-architecture-microservices
+  - 03.03.03-software-prototyping-design
+  - 03.03.04-entity-relationship-model
+  - 03.04-software-development-process
+  - 03.04.01-software-development-process-models
+  - 03.04.02-tools-technology
+  - 03.04.03-programming-techniques
+  - 03.04.04-software-artifacts-management
+  - 03.04.05-version-control-system
+  - 03.04.06-integration-simulation-process
+  - 03.05-test-methods-process
+  - 03.05.01-software-testing-methodologies
+  - 03.05.02-software-testing-levels
+  - 03.05.03-test-case-development-methods-models
+  - 03.05.04-test-case-execution-methods
+  - 03.05.05-test-log-issue-escalation-methods
+  - 03.06-integration-methods
+  - 03.06.01-system-integration-approaches
+  - 03.06.02-legacy-system-integration
+  - 03.06.03-third-party-system-integration
+  - 03.07-build-release-deployment-plan
+  - 03.07.01-version-build-release-plans
+  - 03.07.02-build-automation-methods
+  - 03.07.03-ci-cd-implementation-methods
+  - 03.07.04-release-module-release-process
+  - 03.07.05-version-control-tools-techniques
+  - 03.08-user-acceptance-test-methods
+  - 03.08.01-uat-test-case-development-process
+  - 03.08.02-uat-execution-process
+  - 03.08.03-assisted-uat-process
+  - 03.08.04-uat-staff-training-process
+  - 03.09-support-plan-policies-methods
+  - 03.09.01-maintenance-policies-processes
+  - 03.09.02-technical-support-contacts
+  - 03.09.03-first-second-line-support
+  - 03.09.04-online-support-end-user-customer
+  - 03.09.05-support-tickets-management
+  - 03.10-data-management-backup-restore-policy
+  - 03.10.01-data-backup-restore-process
+  - 03.10.02-database-backup-automation-process
+  - 03.10.03-photo-files-other-backup-process
+  - 04-implementation-plan
+  - 04.01-kick-off-plan-whole-team
+  - 04.02-requirement-collection-plan
+  - 04.02.01-requirement-collection-schedules
+  - 04.02.02-documentation-review-plans
+  - 04.02.03-change-management-plan
+  - 04.03-system-design-plans
+  - 04.04-system-development-plans
+  - 04.05-quality-assurance-test-plan
+  - 04.05.01-unit-test-plan
+  - 04.05.02-functional-test-plan
+  - 04.05.03-development-testing-plan
+  - 04.05.04-regression-test-plan
+  - 04.05.05-usability-accessibility-testing
+  - 04.05.06-security-test-plan
+  - 04.05.07-acceptance-test-plan
+  - 04.05.08-integration-test-plan
+  - 04.05.09-smoke-sanity-test-plan
+  - 04.05.10-load-stress-test-plan
+  - 04.05.11-bug-tracking-plan
+  - 04.05.12-test-case-development-plan
+  - 04.06-build-release-deployment-plan
+  - 04.06.01-version-build-release-plans
+  - 04.06.02-build-automation-plan
+  - 04.06.03-ci-cd-implementation
+  - 04.07-user-acceptance-test-plan
+  - 04.08-existing-data-migration-plan
+  - 05-data-security-practices
+  - 05.01-segmentation-scope-isolation
+  - 05.02-data-encryption
+  - 05.03-data-discovery
+  - 05.04-access-controls
+  - 05.05-resiliency
+  - 05.06-network-endpoint-security
+  - 05.07-security-policy
+  - 05.08-os-application-security
+  - 05.09-observability
+  - 05.10-zero-trust-strategy
+  - 05.11-regulations
+  - 05.12-awareness-training
+  - 06-organization-staffing
+  - 06.01-work-distribution-team-composition
+  - 06.02-human-resource-for-deployment
+  - 07-hosting-plan
+  - 07.01-storage-calculation
+  - 08-support-maintenance-plans
+  - 08.01-software-update-maintenance
+  - 08.02-system-database-management
+  - 08.03-mitigation-of-technological-changes
+  - 08.04-training-during-operation-period
+  - 08.05-technical-support-plan
+  - 08.06-deliverables-required-smooth-operation
+  - 08.07-data-access-control-audit
+  - 08.08-transfer-knowledge-handover-plan
+  - 08.08.01-training-plans-mra-technical-team
+  - 08.08.02-training-plans-mra-non-tech-team
+  - 08.08.03-system-maintenance-training
+  - 08.08.04-training-documents
+  - 08.08.05-technical-manual
+  - 08.08.06-training-manual
+  - 08.08.07-digital-content
+  - 08.09-work-plan-software-activation
+  - 08.10-application-database-migration-plan
+  - z-blank
+  - z-head
+  - z-foot
+
 
 # work specifications to apply on a list of worksheets
 work-specs:
@@ -891,10 +889,10 @@ work-specs:
     # 'B3:Z'          :
     #   border-color      : '#b7b7b7'
     # link -toc-new at cell A1 and left align the cell
-    'A1'    :
-      value             : '-toc-new'
-      ws-name-to-link   : '-toc-new'
-      halign            : left
+    # 'A1'    :
+    #   value             : '-toc-new'
+    #   ws-name-to-link   : '-toc-new'
+    #   halign            : left
   # -toc-new
     # 'F3'      :
     #   value             : '00-layout-MRA-OMS'
