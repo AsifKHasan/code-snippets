@@ -39,8 +39,10 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
-    # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='06-job-history', new_worksheet_names=['06-job-history-RAJUK-ERP'])
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='07-project-roles', new_worksheet_names=['07-project-roles-RAJUK-ERP'])
     # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
+    # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
 
     # worksheet creation, formatting and related tasks
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
@@ -51,7 +53,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # trailing blank row removal, review-notes, column size in row 1
     # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
     # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
-    g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
+    # g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
 
     # work on ranges etc.
     g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)

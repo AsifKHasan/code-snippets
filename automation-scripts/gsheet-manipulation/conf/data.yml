@@ -23,9 +23,9 @@ gsheets:
     #   - Résumé__Md.Al.Emran.Hossain
     #   - Résumé__Md.Faizul.Bari
     #   - Résumé__Md.Mahmudul.Hasan
-      - Résumé__Md.Mazharul.Islam.Rakib
+      # - Résumé__Md.Mazharul.Islam.Rakib
     #   - Résumé__Md.Rokonuzzaman
-      - Résumé__Md.Rubel.Ahamed
+      # - Résumé__Md.Rubel.Ahamed
     #   - Résumé__Md.Sayeduzzaman
     #   - Résumé__Mohammed.Farhan.Islam
     #   - Résumé__Monjur.Ahmed
@@ -238,128 +238,128 @@ gsheets:
     #   - Résumé__Md.Shamiul.Islam
     #   - Résumé__Md.Siam.Samad.Prantik
     #   - Résumé__Md.Sobuj.Sordar
-      - Résumé__Md.Sohan.Kabir
-      - Résumé__Md.Tauhid.Amir
-      - Résumé__Md.Thoufiq.Zumma
-      - Résumé__Md.Zillur.Rahman
-      - Résumé__Mithun.Kumar.Debnath
-      - Résumé__Mohaiminul.Islam
-      - Résumé__Mohammad.Abul.Hasnat
-      - Résumé__Mohammad.Shahadat.Hossain
-      - Résumé__Mohammad.Ziaul.Hoq
-      - Résumé__Moshiur.Rahman
-      - Résumé__Musaddiqur.Rahman.Ovi
-      - Résumé__Ommul.Khair.Musammat.Tahera
-      - Résumé__Palash.Kumar.Sinha
-      - Résumé__Polas.Hossain
-      - Résumé__Rafiqul.Islam.Reyad
-      - Résumé__Rahana.Akter
-      - Résumé__Rasheda.Akter
-      - Résumé__Redwan.Al.Rashed
-      - Résumé__Rizon.Ali
-      - Résumé__Robin.Das
-      - Résumé__Rubayat.Zaman
-      - Résumé__Rubel.Ahammed
-      - Résumé__S.M.Al-Amin
-      - Résumé__Sabiha.Afrin.Bithee
-      - Résumé__Salma.Afroze
-      - Résumé__Sathe.Khan.Majlish
-      - Résumé__Sayeedul.Islam.Talukder
-      - Résumé__Shaikh.Insad.Ibney.Amin
-      - Résumé__Shajidur.Rahman.Chowdury
-      - Résumé__Shanawaz.Durjoy
-      - Résumé__Sharif.Mohammad.Rafi
-      - Résumé__Sharmin.Akter.Pinki
-      - Résumé__Shihab.Uddin
-      - Résumé__Subrata.Sanyal
-      - Résumé__Sufia.Khanom
-      - Résumé__Suman.Miah
-      - Résumé__Sumshur.Rahman
-      - Résumé__Susmoy.Saha
-      - Résumé__Syed.Ahmad.Mahdi
-      - Résumé__Syed.Ahmad.Rasul
-      - Résumé__Tanjim.Ashraf
-      - Résumé__Tanvir.Ahammed.Sobuj
-      - Résumé__Tanvir.Ahmed
-      - Résumé__Tanvir.Mallik
-      - Résumé__Umme.Habiba.Rita
-      - Résumé__Zubair.Azim.Miazi
-    # celloscope resume
-      - Résumé__Abida.Anjum.Noshin
-      - Résumé__Alif.Arfab.Pavel
-      - Résumé__Altaf.Hossain
-      - Résumé__Amena.Shiddika
-      - Résumé__Amina.Khatun
-      - Résumé__Aminul.Hossain.Sazzad
-      - Résumé__Amiya.Ahamed
-      - Résumé__Anan.Aiman.Tuba
-      - Résumé__Arnab.Basak
-      - Résumé__Avi.Afrid
-      - Résumé__Deboraj.Saha
-      - Résumé__Dip.Chowdhury
-      - Résumé__Farhad.Hossain
-      - Résumé__Farhana.Naz
-      - Résumé__Heronmoy.Tanchangya.Emon
-      - Résumé__Jannatul.Promy
-      - Résumé__Kamrul.Hasan.Farabee
-      - Résumé__Kamrun.Nahar
-      - Résumé__Khondoker.Tanvir.Hossain
-      - Résumé__Mahabuba.Rahman.(Moon)
-      - Résumé__Mainur.Rahman.Rasel
-      - Résumé__Maly.Mohsem.Ahmed
-      - Résumé__Md.Farhad.Bhuiyan
-      - Résumé__Md.Tahmid.Islam.Bhuiyan
-      - Résumé__Md.Abu.Yousuf.Sajal
-      - Résumé__Md.Asif.Khan.Taj
-      - Résumé__MD.Fuad.Hasan.Chowdhury
-      - Résumé__Md.Hafizur.Rahman
-      - Résumé__Md.Kamruzzaman.Tanim
-      - Résumé__Md.Nazmul.Alam
-      - Résumé__Md.Samiul.Alim
-      - Résumé__Md.Shariar.Kabir
-      - Résumé__Mehedi.Hasan
-      - Résumé__Mohammad.Ashraful.Islam
-      - Résumé__Mohammad.Kamrul.Hasan
-      - Résumé__Mohammad.Mashud.Karim
-      - Résumé__Mohammad.Wakib.Hasan
-      - Résumé__Most.Fahmi.Tazrin
-      - Résumé__Mushfika.Faria
-      - Résumé__Nafi.Uz.Zaman
-      - Résumé__Nasima.Aktar
-      - Résumé__Nayeem.Ahmed
-      - Résumé__Nazmus.Sakib
-      - Résumé__Omar.Faruk
-      - Résumé__Rashida.Akter
-      - Résumé__Reyad.Hossain
-      - Résumé__Rezwan.Huq
-      - Résumé__Rizvi.Mahmud
-      - Résumé__Sakib.Chowdhury
-      - Résumé__Sakib.Ibn.Abdullah
-      - Résumé__Sazzad.Sakib
-      - Résumé__Shafayat.Ahmed
-      - Résumé__Shah.Nafiz.Manjoor
-      - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
-      - Résumé__Shajeda.Akter.Shanta
-      - Résumé__Sharif.Tamjidur.Rahman
-      - Résumé__Syed.Mostofa.Monsur
-      - Résumé__Umme.Rumman.Usha
-      - Résumé__Zubair.Hasan    
-    # ael resume
-      - Résumé__Asadul.Haque
-      - Résumé__Asif.Yusuf
-      - Résumé__Assaduzzaman
-      - Résumé__Dipankar.Kumar.Biswas
-      - Résumé__Iqbal.Yusuf
-      - Résumé__Md.Nasir.Uddin
-      - Résumé__Md.Ahsan.Habib.Rocky
-      - Résumé__Md.Atikur.Zaman
-      - Résumé__Md.Mijanur.Rahman
-      - Résumé__Md.Nahidul.Islam.Siddique
-      - Résumé__Md.Sohel.Rana
-      - Résumé__Md.Yousuf.Ali
-      - Résumé__Mir.Earfan.Elahi
-      - Résumé__Mostafa.Jannatul.Ferdows
-      - Résumé__Salman.Ahmed.Firoz
+    #   - Résumé__Md.Sohan.Kabir
+    #   - Résumé__Md.Tauhid.Amir
+    #   - Résumé__Md.Thoufiq.Zumma
+    #   - Résumé__Md.Zillur.Rahman
+    #   - Résumé__Mithun.Kumar.Debnath
+    #   - Résumé__Mohaiminul.Islam
+    #   - Résumé__Mohammad.Abul.Hasnat
+    #   - Résumé__Mohammad.Shahadat.Hossain
+    #   - Résumé__Mohammad.Ziaul.Hoq
+    #   - Résumé__Moshiur.Rahman
+    #   - Résumé__Musaddiqur.Rahman.Ovi
+    #   - Résumé__Ommul.Khair.Musammat.Tahera
+    #   - Résumé__Palash.Kumar.Sinha
+    #   - Résumé__Polas.Hossain
+    #   - Résumé__Rafiqul.Islam.Reyad
+    #   - Résumé__Rahana.Akter
+    #   - Résumé__Rasheda.Akter
+    #   - Résumé__Redwan.Al.Rashed
+    #   - Résumé__Rizon.Ali
+    #   - Résumé__Robin.Das
+    #   - Résumé__Rubayat.Zaman
+    #   - Résumé__Rubel.Ahammed
+    #   - Résumé__S.M.Al-Amin
+    #   - Résumé__Sabiha.Afrin.Bithee
+    #   - Résumé__Salma.Afroze
+    #   - Résumé__Sathe.Khan.Majlish
+    #   - Résumé__Sayeedul.Islam.Talukder
+    #   - Résumé__Shaikh.Insad.Ibney.Amin
+    #   - Résumé__Shajidur.Rahman.Chowdury
+    #   - Résumé__Shanawaz.Durjoy
+    #   - Résumé__Sharif.Mohammad.Rafi
+    #   - Résumé__Sharmin.Akter.Pinki
+    #   - Résumé__Shihab.Uddin
+    #   - Résumé__Subrata.Sanyal
+    #   - Résumé__Sufia.Khanom
+    #   - Résumé__Suman.Miah
+    #   - Résumé__Sumshur.Rahman
+    #   - Résumé__Susmoy.Saha
+    #   - Résumé__Syed.Ahmad.Mahdi
+    #   - Résumé__Syed.Ahmad.Rasul
+    #   - Résumé__Tanjim.Ashraf
+    #   - Résumé__Tanvir.Ahammed.Sobuj
+    #   - Résumé__Tanvir.Ahmed
+    #   - Résumé__Tanvir.Mallik
+    #   - Résumé__Umme.Habiba.Rita
+    #   - Résumé__Zubair.Azim.Miazi
+    # # celloscope resume
+    #   - Résumé__Abida.Anjum.Noshin
+    #   - Résumé__Alif.Arfab.Pavel
+    #   - Résumé__Altaf.Hossain
+    #   - Résumé__Amena.Shiddika
+    #   - Résumé__Amina.Khatun
+    #   - Résumé__Aminul.Hossain.Sazzad
+    #   - Résumé__Amiya.Ahamed
+    #   - Résumé__Anan.Aiman.Tuba
+    #   - Résumé__Arnab.Basak
+    #   - Résumé__Avi.Afrid
+    #   - Résumé__Deboraj.Saha
+    #   - Résumé__Dip.Chowdhury
+    #   - Résumé__Farhad.Hossain
+    #   - Résumé__Farhana.Naz
+    #   - Résumé__Heronmoy.Tanchangya.Emon
+    #   - Résumé__Jannatul.Promy
+    #   - Résumé__Kamrul.Hasan.Farabee
+    #   - Résumé__Kamrun.Nahar
+    #   - Résumé__Khondoker.Tanvir.Hossain
+    #   - Résumé__Mahabuba.Rahman.(Moon)
+    #   - Résumé__Mainur.Rahman.Rasel
+    #   - Résumé__Maly.Mohsem.Ahmed
+    #   - Résumé__Md.Farhad.Bhuiyan
+    #   - Résumé__Md.Tahmid.Islam.Bhuiyan
+    #   - Résumé__Md.Abu.Yousuf.Sajal
+    #   - Résumé__Md.Asif.Khan.Taj
+    #   - Résumé__MD.Fuad.Hasan.Chowdhury
+    #   - Résumé__Md.Hafizur.Rahman
+    #   - Résumé__Md.Kamruzzaman.Tanim
+    #   - Résumé__Md.Nazmul.Alam
+    #   - Résumé__Md.Samiul.Alim
+    #   - Résumé__Md.Shariar.Kabir
+    #   - Résumé__Mehedi.Hasan
+    #   - Résumé__Mohammad.Ashraful.Islam
+    #   - Résumé__Mohammad.Kamrul.Hasan
+    #   - Résumé__Mohammad.Mashud.Karim
+    #   - Résumé__Mohammad.Wakib.Hasan
+    #   - Résumé__Most.Fahmi.Tazrin
+    #   - Résumé__Mushfika.Faria
+    #   - Résumé__Nafi.Uz.Zaman
+    #   - Résumé__Nasima.Aktar
+    #   - Résumé__Nayeem.Ahmed
+    #   - Résumé__Nazmus.Sakib
+    #   - Résumé__Omar.Faruk
+    #   - Résumé__Rashida.Akter
+    #   - Résumé__Reyad.Hossain
+    #   - Résumé__Rezwan.Huq
+    #   - Résumé__Rizvi.Mahmud
+    #   - Résumé__Sakib.Chowdhury
+    #   - Résumé__Sakib.Ibn.Abdullah
+    #   - Résumé__Sazzad.Sakib
+    #   - Résumé__Shafayat.Ahmed
+    #   - Résumé__Shah.Nafiz.Manjoor
+    #   - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
+    #   - Résumé__Shajeda.Akter.Shanta
+    #   - Résumé__Sharif.Tamjidur.Rahman
+    #   - Résumé__Syed.Mostofa.Monsur
+    #   - Résumé__Umme.Rumman.Usha
+    #   - Résumé__Zubair.Hasan    
+    # # ael resume
+    #   - Résumé__Asadul.Haque
+    #   - Résumé__Asif.Yusuf
+    #   - Résumé__Assaduzzaman
+    #   - Résumé__Dipankar.Kumar.Biswas
+    #   - Résumé__Iqbal.Yusuf
+    #   - Résumé__Md.Nasir.Uddin
+    #   - Résumé__Md.Ahsan.Habib.Rocky
+    #   - Résumé__Md.Atikur.Zaman
+    #   - Résumé__Md.Mijanur.Rahman
+    #   - Résumé__Md.Nahidul.Islam.Siddique
+    #   - Résumé__Md.Sohel.Rana
+    #   - Résumé__Md.Yousuf.Ali
+    #   - Résumé__Mir.Earfan.Elahi
+    #   - Résumé__Mostafa.Jannatul.Ferdows
+    #   - Résumé__Salman.Ahmed.Firoz
   # # pds
   #   - pds__blank.template
   #   - pds__ACMELL
@@ -508,6 +508,7 @@ gsheets:
   #   - pds__TrustBank-BACPS
   #   - pds__UGC-HEMIS
   #   - pds__Unilever-MFGPRO
+
   # # MRA-OMS resume
   #   - Résumé__Alif.Arfab.Pavel
   #   - Résumé__Amiya.Ahamed
@@ -537,6 +538,71 @@ gsheets:
   #   - Résumé__Syed.Ahmad.Mahdi
   #   - Résumé__Tasnim.Kabir.Ratul
   #   - Résumé__Umme.Rumman.Usha
+
+# # RAJUK-ERP resume - sscl
+  # - Résumé__Akeed.Anjum
+  # - Résumé__Hasib.Mahmud
+  # - Résumé__Iftakhar.Ali.Khandokar
+  # - Résumé__Jumana.Ahmed
+  # - Résumé__Md.Abu.Sayed
+  # - Résumé__Md.Faizul.Bari
+  # - Résumé__Md.Rokonuzzaman
+  # - Résumé__Monjur.Ahmed
+# # RAJUK-ERP resume - spectrum
+#   - Résumé__Aabid.Rahman
+#   - Résumé__Adiat.Islam.Sahih
+#   - Résumé__Dipika.Debnath
+#   - Résumé__Ferdous.Rahman
+#   - Résumé__Ashish.Kumar.Das
+#   - Résumé__K.M.Zabir.Tarique
+#   - Résumé__Manzur.Alam
+#   - Résumé__Md.Anisur.Rahman
+#   - Résumé__Md.Ibrahim.Hossen
+#   - Résumé__Md.Jakir.Hossain
+#   - Résumé__Md.Mahabub.Al-Islam
+#   - Résumé__Md.Mashrurul.Hakim
+#   - Résumé__Md.Murshid.Sarker
+#   - Résumé__Md.Nazmul.Hassan
+#   - Résumé__Md.Raqibul.Islam
+#   - Résumé__Md.Sayeem.Khan
+#   - Résumé__Md.Sharafat.Hossain.Kamal
+#   - Résumé__Md.Shariful.Islam
+#   - Résumé__Md.Zahidul.Islam
+#   - Résumé__Mumtahina.Afroz
+#   - Résumé__S.M.Azharul.Islam
+#   - Résumé__Sagar.Saha
+#   - Résumé__Saiful.Islam.(Sumon)
+#   - Résumé__Sayeda.Tanjila
+#   - Résumé__Shaikh.Tojibul.Islam
+#   - Résumé__Shajir.Uddin.Haider
+# # RAJUK-ERP resume - celloscope
+#   - Résumé__Alif.Arfab.Pavel
+#   - Résumé__Amiya.Ahamed
+#   - Résumé__Anan.Aiman.Tuba
+#   - Résumé__Arnab.Basak
+#   - Résumé__Mainur.Rahman.Rasel
+#   - Résumé__MD.Fuad.Hasan.Chowdhury
+#   - Résumé__Md.Kamruzzaman.Tanim
+#   - Résumé__Md.Shariar.Kabir
+#   - Résumé__Mehedi.Hasan
+#   - Résumé__Mohammad.Kamrul.Hasan
+#   - Résumé__Mohammad.Mashud.Karim
+#   - Résumé__Mohammad.Wakib.Hasan
+#   - Résumé__Mushfika.Faria
+#   - Résumé__Shafayat.Ahmed
+#   - Résumé__Syed.Mostofa.Monsur
+#   - Résumé__Umme.Rumman.Usha
+# # RAJUK-ERP resume - ael
+#   - Résumé__Assaduzzaman
+#   - Résumé__Dipankar.Kumar.Biswas
+#   - Résumé__Md.Ahsan.Habib.Rocky
+#   - Résumé__Md.Atikur.Zaman
+#   - Résumé__Md.Mijanur.Rahman
+#   - Résumé__Md.Nahidul.Islam.Siddique
+#   - Résumé__Md.Nasir.Uddin
+#   - Résumé__Md.Sohel.Rana
+#   - Résumé__Mir.Earfan.Elahi
+#   - Résumé__Mostafa.Jannatul.Ferdows
 
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
@@ -576,29 +642,28 @@ destination-gsheets:
 # worksheets on which some work will be done
 worksheets:
 # resume worksheets
-  - '-toc-new'
-  - 00-layout
-  - 00-layout-MRA-OMS
-  - 00-layout-RHD-TMC
-  - 00-layout-WB
-  - 01-personal
-  - 02-career-highlight
-  - 03-education
-  - 04-managerial-expertise
-  - 05-technical-expertise
-  - 06-job-history
-  - 06-job-history-RHD-TMC
-  - 07-project-roles
-  - 07-project-roles-RHD-TMC
-  - 08-training
-  - 09-certification
-  - 10-membership
-  - 11-language-proficiency
-  - 12-contact
-  - 13-educational-certificates
-  - 14-vendor-certificates
-  - 15-institutional-certificates
-  - 16-references
+  # - '-toc-new'
+  # - 00-layout
+  # - 00-layout-MRA-OMS
+  # - 00-layout-WB
+  # - 01-personal
+  # - 02-career-highlight
+  # - 03-education
+  # - 04-managerial-expertise
+  # - 05-technical-expertise
+  # - 06-job-history
+  # - 06-job-history-RHD-TMC
+  # - 07-project-roles
+  # - 07-project-roles-RHD-TMC
+  # - 08-training
+  # - 09-certification
+  # - 10-membership
+  # - 11-language-proficiency
+  # - 12-contact
+  # - 13-educational-certificates
+  # - 14-vendor-certificates
+  # - 15-institutional-certificates
+  # - 16-references
   # - z-footer
   # - z-header
 # pds worksheets
@@ -663,23 +728,173 @@ worksheets:
   # - 08-staff-planning
   # - z-blank
 
+# MRA-OMS book-2 worksheets
+- 00.01-forwarding-letter
+- 00.02-executive-summary
+- 00.03-terms-glossary
+- 00.04-guide-to-submission
+- 00.05-submission-compliance-map
+- 01-project-planning
+- 01.01-logical-framework-of-project
+- 01.02-module-of-projects
+- 01.03-phase-wise-delivery-plans
+- 01.04-task-work-breakdown
+- 01.05-project-management-setup
+- 01.06-project-steering-committee
+- 01.07-project-monitoring-governance
+- 01.08-project-implementation-committee
+- 02-proposed-technical-solution
+- 02.01-user-management-configuration
+- 02.02-account-management-system
+- 02.03-hr-management-system
+- 02.04-payroll-management-system
+- 02.05-pf-management-system
+- 02.06-inventory-management
+- 02.07-fixed-asset-management
+- 02.08-loan-management
+- 02.09-e-sms-email-sending-system
+- 02.10-vehicle-management-system
+- 02.11-staff-information-bureau
+- 03-methodology-practices
+- 03.01-project-initiation-kickoff-development
+- 03.01.01-project-initiation-process
+- 03.01.02-pm-tools-selection-process
+- 03.01.03-project-charter-business-case
+- 03.01.04-identify-key-stakeholders
+- 03.02-requirement-collection-process
+- 03.02.01-requirement-collection-process
+- 03.02.02-requirement-documentation
+- 03.02.03-requirements-elicitation-activity
+- 03.02.04-consultation-stakeholders-users
+- 03.02.05-prioritize-module-wise-features
+- 03.02.06-requirement-change-management
+- 03.02.07-requirements-gathering-techniques
+- 03.03-software-design-method
+- 03.03.01-design-process-of-software
+- 03.03.02-system-architecture-microservices
+- 03.03.03-software-prototyping-design
+- 03.03.04-entity-relationship-model
+- 03.04-software-development-process
+- 03.04.01-software-development-process-models
+- 03.04.02-tools-technology
+- 03.04.03-programming-techniques
+- 03.04.04-software-artifacts-management
+- 03.04.05-version-control-system
+- 03.04.06-integration-simulation-process
+- 03.05-test-methods-process
+- 03.05.01-software-testing-methodologies
+- 03.05.02-software-testing-levels
+- 03.05.03-test-case-development-methods-models
+- 03.05.04-test-case-execution-methods
+- 03.05.05-test-log-issue-escalation-methods
+- 03.06-integration-methods
+- 03.06.01-system-integration-approaches
+- 03.06.02-legacy-system-integration
+- 03.06.03-third-party-system-integration
+- 03.07-build-release-deployment-plan
+- 03.07.01-version-build-release-plans
+- 03.07.02-build-automation-methods
+- 03.07.03-ci-cd-implementation-methods
+- 03.07.04-release-module-release-process
+- 03.07.05-version-control-tools-techniques
+- 03.08-user-acceptance-test-methods
+- 03.08.01-uat-test-case-development-process
+- 03.08.02-uat-execution-process
+- 03.08.03-assisted-uat-process
+- 03.08.04-uat-staff-training-process
+- 03.09-support-plan-policies-methods
+- 03.09.01-maintenance-policies-processes
+- 03.09.02-technical-support-contacts
+- 03.09.03-first-second-line-support
+- 03.09.04-online-support-end-user-customer
+- 03.09.05-support-tickets-management
+- 03.10-data-management-backup-restore-policy
+- 03.10.01-data-backup-restore-process
+- 03.10.02-database-backup-automation-process
+- 03.10.03-photo-files-other-backup-process
+- 04-implementation-plan
+- 04.01-kick-off-plan-whole-team
+- 04.02-requirement-collection-plan
+- 04.02.01-requirement-collection-schedules
+- 04.02.02-documentation-review-plans
+- 04.02.03-change-management-plan
+- 04.03-system-design-plans
+- 04.04-system-development-plans
+- 04.05-quality-assurance-test-plan
+- 04.05.01-unit-test-plan
+- 04.05.02-functional-test-plan
+- 04.05.03-development-testing-plan
+- 04.05.04-regression-test-plan
+- 04.05.05-usability-accessibility-testing
+- 04.05.06-security-test-plan
+- 04.05.07-acceptance-test-plan
+- 04.05.08-integration-test-plan
+- 04.05.09-smoke-sanity-test-plan
+- 04.05.10-load-stress-test-plan
+- 04.05.11-bug-tracking-plan
+- 04.05.12-test-case-development-plan
+- 04.06-build-release-deployment-plan
+- 04.06.01-version-build-release-plans
+- 04.06.02-build-automation-plan
+- 04.06.03-ci-cd-implementation
+- 04.07-user-acceptance-test-plan
+- 04.08-existing-data-migration-plan
+- 05-data-security-practices
+- 05.01-segmentation-scope-isolation
+- 05.02-data-encryption
+- 05.03-data-discovery
+- 05.04-access-controls
+- 05.05-resiliency
+- 05.06-network-endpoint-security
+- 05.07-security-policy
+- 05.08-os-application-security
+- 05.09-observability
+- 05.10-zero-trust-strategy
+- 05.11-regulations
+- 05.12-awareness-training
+- 06-organization-staffing
+- 06.01-work-distribution-team-composition
+- 06.02-human-resource-for-deployment
+- 07-hosting-plan
+- 07.01-storage-calculation
+- 08-support-maintenance-plans
+- 08.01-software-update-maintenance
+- 08.02-system-database-management
+- 08.03-mitigation-of-technological-changes
+- 08.04-training-during-operation-period
+- 08.05-technical-support-plan
+- 08.06-deliverables-required-smooth-operation
+- 08.07-data-access-control-audit
+- 08.08-transfer-knowledge-handover-plan
+- 08.08.01-training-plans-mra-technical-team
+- 08.08.02-training-plans-mra-non-tech-team
+- 08.08.03-system-maintenance-training
+- 08.08.04-training-documents
+- 08.08.05-technical-manual
+- 08.08.06-training-manual
+- 08.08.07-digital-content
+- 08.09-work-plan-software-activation
+- 08.10-application-database-migration-plan
+- z-blank
+- z-head
+- z-foot
 
 # work specifications to apply on a list of worksheets
 work-specs:
   # multiple worksheets
     # change fonts and vertical alignments for the worksheet
-    'A1:Z'  :
-      font-family       : Arial
-      font-size         : 11
-      valign            : top
+    # 'A1:Z'  :
+    #   font-family       : Arial
+    #   font-size         : 11
+    #   valign            : top
     # border around cells
     # 'B3:Z'          :
     #   border-color      : '#b7b7b7'
     # link -toc-new at cell A1 and left align the cell
-    # 'A1'    :
-    #   value             : '-toc-new'
-    #   ws-name-to-link   : '-toc-new'
-    #   halign            : left
+    'A1'    :
+      value             : '-toc-new'
+      ws-name-to-link   : '-toc-new'
+      halign            : left
   # -toc-new
     # 'F3'      :
     #   value             : '00-layout-MRA-OMS'
@@ -687,6 +902,13 @@ work-specs:
     # 'F3'      :
     #   value             : '00-layout'
     #   ws-name-to-link   : '00-layout'
+  # 00-layout
+    # 'B14'      :
+    #   value             : '06-job-history-RAJUK-ERP'
+    #   ws-name-to-link   : '06-job-history-RAJUK-ERP'
+    # 'B16'      :
+    #   value             : '07-project-roles-RAJUK-ERP'
+    #   ws-name-to-link   : '07-project-roles-RAJUK-ERP'
   # z-header
     # 'C3'      :
     #   value             : '=image("https://spectrum-bd.biz/data/artifacts/res/logo/doer-logo-hor-color-563x87.png", 1)'
