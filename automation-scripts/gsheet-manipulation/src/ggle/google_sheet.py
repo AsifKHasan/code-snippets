@@ -187,6 +187,13 @@ class GoogleSheet(object):
 
 
 
+    ''' list worksheets of the gsheet
+    '''
+    def list_worksheets(self):
+        return [ ws.title for ws in self.worksheets ]
+
+
+
     ''' order the worksheets of the gsheet alphabetically
     '''
     def order_worksheets(self):
@@ -208,7 +215,7 @@ class GoogleSheet(object):
 
     ''' remove a worksheet
     '''
-    def remove_worksheet(self, worksheet_names_to_remove):
+    def remove_worksheets(self, worksheet_names_to_remove):
         for worksheet_name in worksheet_names_to_remove:
             worksheet_to_remove = self.worksheet_by_name(worksheet_name)
             if worksheet_to_remove:
@@ -281,6 +288,20 @@ class GoogleSheet(object):
                 requests = requests + reqs
 
         self.update_in_batch(values=[], requests=requests, requester='find_and_replace')
+
+
+
+    ''' clear data validations for a range
+    '''
+    def clear_data_validations(self, worksheet_names, range_spec):
+        requests = []
+        for worksheet_name in worksheet_names:
+            worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
+            if worksheet_to_work_on:
+                reqs = worksheet_to_work_on.data_validation_clear_requests(range_spec=range_spec)
+                requests = requests + reqs
+
+        self.update_in_batch(values=[], requests=requests, requester='clear_data_validations')
 
 
 
@@ -391,6 +412,7 @@ class GoogleSheet(object):
         self.update_in_batch(values=[], requests=requests, requester='remove_trailing_blank_rows')
 
 
+
     ''' number of rows and columns of a worksheet
     '''
     def number_of_dimesnions(self, worksheet_name, suppress_log=False):
@@ -399,3 +421,16 @@ class GoogleSheet(object):
             return worksheet.number_of_dimesnions()
         else:
             return 0, 0
+
+
+
+    ''' add rows in a worksheet
+        rows will be added after rows_to_add_at
+    '''
+    def add_rows(self, worksheet_name, rows_to_add_at, rows_to_add):
+        worksheet = self.worksheet_by_name(worksheet_name, suppress_log=False)
+        if worksheet:
+            requests = []
+            reqs = worksheet.dimension_add_requests(rows_to_add_at=rows_to_add_at, rows_to_add=rows_to_add)
+            requests = requests + reqs
+            self.update_in_batch(values=[], requests=requests, requester='add_rows')

@@ -50,78 +50,99 @@ WORKSHEET_STRUCTURE_RESUME = {
             'D': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
             'E': {'size': 270, 'halign': 'center', 'valign': 'top', 'wrap': True},
         },
+        'rows': {
+            '1': {'size': 21, },
+            '2': {'size': 21, },
+            '3': {'size': 21, },
+            '4': {'size': 21, },
+            '5': {'size': 21, },
+            '6': {'size': 8, },
+            '7': {'size': 21, },
+            '8': {'size': 21, },
+            '9': {'size': 8, },
+            '10': {'size': 21, },
+            '11': {'size': 21, },
+            '12': {'size': 8, },
+            '13': {'size': 21, },
+            '14': {'size': 21, },
+            '15': {'size': 8, },
+            '16': {'size': 21, },
+            '17': {'size': 21, },
+            '18': {'size': 8, },
+            '19': {'size': 21, },
+            '20': {'size': 21, },
+            '21': {'size': 8, },
+            '22': {'size': 21, },
+            '23': {'size': 21, },
+            '24': {'size': 8, },
+            '25': {'size': 21, },
+            '26': {'size': 21, },
+            '27': {'size': 8, },
+            '28': {'size': 21, },
+            '29': {'size': 21, },
+        },
         'review-notes': True,
         'ranges': {
             'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
             'B1:E1': {'halign': 'center', },
 
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
+            'A2': {'value': 'review-notes', 'halign': 'left', 'weight': 'bold', },
+            'B2:E2': {'value': 'content', 'halign': 'left', 'weight': 'bold', 'merge': True, },
 
-            'B3': {'value': '1', },
-            'C3': {'value': 'NAME OF RESOURCE', },
+            'B3': {'value': '1', 'weight': 'bold', },
+            'C3': {'value': 'NAME OF RESOURCE', 'weight': 'bold', },
             'D3': {'value': "='01-personal'!D3", },
 
-            'B4': {'value': '2', },
-            'C4': {'value': 'DATE OF BIRTH', },
+            'B4': {'value': '2', 'weight': 'bold', },
+            'C4': {'value': 'DATE OF BIRTH', 'weight': 'bold', },
             'D4': {'value': "='01-personal'!D5", },
 
-            'B5': {'value': '3', },
-            'C5': {'value': 'NATIONALITY', },
+            'B5': {'value': '3', 'weight': 'bold', },
+            'C5': {'value': 'NATIONALITY', 'weight': 'bold', },
             'D5': {'value': "='01-personal'!D6", },
 
             # 'B3:E5': {'border-color': '#B7B7B7', },
 
             'B6': {'value': '', },
-
-            'B7': {'value': '4', },
-            'C7:E7': {'value': 'SUMMARY OF PROFESSIONAL EXPERIENCE', 'merge': True, },
-
+            'B7': {'value': '4', 'weight': 'bold', },
+            'C7:E7': {'value': 'SUMMARY OF PROFESSIONAL EXPERIENCE', 'weight': 'bold', 'merge': True, },
             'B8': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "free"}', },
 
             'B9': {'value': '', },
-
-            'B10': {'value': '5', },
-            'C10:E10': {'value': 'EDUCATION', 'merge': True, },
-
+            'B10': {'value': '5', 'weight': 'bold', },
+            'C10:E10': {'value': 'EDUCATION', 'weight': 'bold', 'merge': True, },
             'B11': {'value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "free"}', },
 
             'B12': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-
-            'B13': {'value': '6', },
-            'C13:E13': {'value': 'EMPLOYMENT RECORD', 'merge': True, },
-
+            'B13': {'value': '6a', 'weight': 'bold', },
+            'C13:E13': {'value': 'EMPLOYMENT RECORD', 'weight': 'bold', 'merge': True, },
             'B14': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "free"}', },
 
-            'B15': {'value': '', },
+            'B15': {'value': '', 'note': '{"content": "free", "new-page": true}', },
+            'B16': {'value': '6b', 'weight': 'bold', },
+            'C16:E16': {'value': 'PROFESSIONAL EXPERIENCE', 'weight': 'bold', 'merge': True, },
+            'B17': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "free"}', },
 
-            'B16': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "free"}', },
+            'B18': {'value': '', 'note': '{"content": "free", "new-page": true}', },
+            'B19': {'value': '7', 'weight': 'bold', },
+            'C19:E19': {'value': 'TECHNICAL EXPERTISE', 'weight': 'bold', 'merge': True, },
+            'B20': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "free"}', },
 
-            'B17': {'value': '', 'note': '{"content": "free", "new-page": true}', },
+            'B21': {'value': '', },
+            'B22': {'value': '8a', 'weight': 'bold', },
+            'C22:E22': {'value': 'PROFESSIONAL TRAINING', 'weight': 'bold', 'merge': True, },
+            'B23': {'value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "free"}', },
 
-            'B18': {'value': '7', },
-            'C18:E18': {'value': 'TECHNICAL EXPERTISE', 'merge': True, },
+            'B24': {'value': '', },
+            'B25': {'value': '8b', 'weight': 'bold', },
+            'C25:E25': {'value': 'PROFESSIONAL CERTIFICATIONS', 'weight': 'bold', 'merge': True, },
+            'B26': {'value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "free"}', },
 
-            'B19': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "free"}', },
-
-            'B20': {'value': '', },
-
-            'B21': {'value': '8', },
-            'C21:E21': {'value': 'TRAINING AND CERTIFICATIONS', 'merge': True, },
-
-            'B22': {'value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "free"}', },
-
-            'B23': {'value': '', },
-
-            'B24': {'value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "free"}', },
-
-            'B25': {'value': '', },
-
-            'B26': {'value': '9', },
-            'C26:E26': {'value': 'LANGUAGES & DEGREE OF PROFICIENCY', 'merge': True, },
-
-            'B27': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "free"}', },
+            'B27': {'value': '', },
+            'B28': {'value': '9', 'weight': 'bold', },
+            'C28:E28': {'value': 'LANGUAGES & DEGREE OF PROFICIENCY', 'weight': 'bold', 'merge': True, },
+            'B29': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "free"}', },
         },
         'cell-empty-markers': [
             'B3:E5',

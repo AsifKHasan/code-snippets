@@ -169,7 +169,6 @@ class GoogleWorksheet(object):
         return col_count
 
 
-
     ''' worksheet methods to be called by gsheet to return back requests, not doing the actual work
     '''
 
@@ -379,7 +378,7 @@ class GoogleWorksheet(object):
 
         if 'rows' in worksheet_struct:
             # requests for row resizing
-            row_resize_requests = worksheet.row_resize_requests(row_specs=worksheet_struct['rows'])
+            row_resize_requests = self.row_resize_requests(row_specs=worksheet_struct['rows'])
 
         else:
             row_resize_requests = []
@@ -487,14 +486,6 @@ class GoogleWorksheet(object):
             request_list.append(request)
 
         return request_list
-
-
-
-    ''' clear data validation for a range
-    '''
-    def clear_data_validation(self, range_spec):
-        requests = self.data_validation_clear_requests(range_spec=range_spec)
-        self.gsheet.update_in_batch(values=[], requests=requests, requester='clear_data_validation')
 
 
 
