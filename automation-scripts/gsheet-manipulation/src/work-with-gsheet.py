@@ -12,6 +12,8 @@ from helper.logger import *
 from task.common_tasks import *
 from task.resume_tasks import *
 
+final_list = []
+
 def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
 
     # BEGIN work on a single worksheet rather than on a list of worksheets
@@ -20,21 +22,26 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # for worksheet_name in worksheet_names:
         # get dimensions
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-        # if num_cols != 26:
+        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+        # num_rows, num_cols = worksheet.number_of_dimesnions()
+        # if num_rows != 27:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
-        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-
-        # clear data validation
-        # worksheet.clear_data_validation(range_spec='A1:Z')
-
         # add dimension
-        # num_rows, num_cols = worksheet.number_of_dimesnions()
         # if num_cols == 25:
         #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
+        # if num_rows == 27:
+        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=15, rows_to_add=1)
+        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=24, rows_to_add=1)
+
+
 
     # -----------------------------------------------------------------------------------
     # END   work on a single worksheet rather than on a list of worksheets
+
+    # global final_list
+    # final_list = list(set(final_list) | set(g_sheet.list_worksheets()))
+    # print(final_list)
 
 
     # worksheet duplication, removal, renaming
@@ -45,6 +52,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
 
     # worksheet creation, formatting and related tasks
+    # g_sheet.clear_data_validation(worksheet_names=worksheet_names, range_spec='A1:Z')
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
     # g_sheet.format_worksheets(worksheet_names=worksheet_names)
