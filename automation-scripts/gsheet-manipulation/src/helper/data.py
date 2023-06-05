@@ -899,10 +899,10 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-rows': 2,
         'frozen-columns': 0,
         'columns': {
-            'A': {'halign': 'left', 'size': 100,  },
-            'B': {'halign': 'left', 'size': 150,  },
-            'C': {'halign': 'center', 'size': 30,  },
-            'D': {'halign': 'left', 'size': 620,  },
+            'A': {'halign': 'left'  , 'size': 100, },
+            'B': {'halign': 'left'  , 'size': 120, },
+            'C': {'halign': 'center', 'size':  30, },
+            'D': {'halign': 'left'  , 'size': 650, },
         },
         'review-notes': True,
         'ranges': {
@@ -921,11 +921,11 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-rows': 2,
         'frozen-columns': 0,
         'columns': {
-            'A': {'halign': 'left', 'size': 100,  },
-            'B': {'halign': 'left', 'size': 150,  },
+            'A': {'halign': 'left'  , 'size': 100,  },
+            'B': {'halign': 'left'  , 'size': 120,  },
             'C': {'halign': 'center', 'size':  30,  },
-            'D': {'halign': 'left', 'size': 120,  },
-            'E': {'halign': 'left', 'size': 500,  },
+            'D': {'halign': 'left'  , 'size': 120,  },
+            'E': {'halign': 'left'  , 'size': 530,  },
         },
         'review-notes': True,
         'ranges': {
@@ -945,10 +945,10 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-rows': 2,
         'frozen-columns': 0,
         'columns': {
-            'A': {'halign': 'left', 'size': 100,  },
-            'B': {'halign': 'left', 'size': 150,  },
-            'C': {'halign': 'center', 'size': 30,  },
-            'D': {'halign': 'left', 'size': 620,  },
+            'A': {'halign': 'left'  , 'size': 100,  },
+            'B': {'halign': 'left'  , 'size': 120,  },
+            'C': {'halign': 'center', 'size':  30,  },
+            'D': {'halign': 'left'  , 'size': 650,  },
         },
         'review-notes': True,
         'ranges': {
@@ -967,10 +967,10 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-rows': 2,
         'frozen-columns': 0,
         'columns': {
-            'A': {'halign': 'left', 'size': 100,  },
-            'B': {'halign': 'left', 'size': 150,  },
-            'C': {'halign': 'center', 'size': 30,  },
-            'D': {'halign': 'left', 'size': 620,  },
+            'A': {'halign': 'left'  , 'size': 100,  },
+            'B': {'halign': 'left'  , 'size': 120,  },
+            'C': {'halign': 'center', 'size':  30,  },
+            'D': {'halign': 'left'  , 'size': 650,  },
         },
         'review-notes': True,
         'ranges': {
@@ -989,10 +989,10 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-rows': 2,
         'frozen-columns': 0,
         'columns': {
-            'A': {'halign': 'left', 'size': 100,  },
-            'B': {'halign': 'left', 'size': 150,  },
-            'C': {'halign': 'center', 'size': 30,  },
-            'D': {'halign': 'left', 'size': 620,  },
+            'A': {'halign': 'left'  , 'size': 100,  },
+            'B': {'halign': 'left'  , 'size': 120,  },
+            'C': {'halign': 'center', 'size':  30,  },
+            'D': {'halign': 'left'  , 'size': 650,  },
         },
         'review-notes': True,
         'ranges': {
@@ -1076,4 +1076,4 @@ WORKSHEET_STRUCTURE_PDS = {
 }
 
 # which structure we are using
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS

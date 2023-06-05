@@ -361,154 +361,154 @@ gsheets:
     #   - Résumé__Mostafa.Jannatul.Ferdows
     #   - Résumé__Salman.Ahmed.Firoz
   # # pds
-    # spectrum pds
-      - pds__blank.template
-      - pds__ACMELL
-      - pds__BB-RTGS
-      - pds__BBA-BPBB
-      - pds__BCC
-      - pds__BCC-AMC
-      - pds__BCC-AMC-2020
-      - pds__BCC-Cisco-Renewal
-      - pds__BCC-DC
-      - pds__BCC-DC-Expansion
-      - pds__BCC-DSCOCP
-      - pds__BCC-HW-Expansion
-      - pds__BCC-Tier-IV-ServerStorage
-      - pds__BDREN-DC-Expansion
-      - pds__BDREN-G-13
-      - pds__BDREN-Network
-      - pds__Beximco-IT
-      - pds__BG(DC)
-      - pds__BPA-Sardah-Police-Academy
-      - pds__BR-DCDR
-      - pds__BRP
-      - pds__BSCCL
-      - pds__BSCCL-Kuakata
-      - pds__BSCCL-SCISCO
-      - pds__BTCL
-      - pds__BTCL-NGNCDR
-      - pds__BTTB
-      - pds__BWDB
-      - pds__CCC-WPSD
-      - pds__CRM
-      - pds__DBBL-DWDM
-      - pds__DISWLS
-      - pds__DMS-UBL
-      - pds__DSEL
-      - pds__DSHE-DC
-      - pds__DSILW(BAF)
-      - pds__DVSIVSS
-      - pds__DWASA
-      - pds__EMS
-      - pds__FOLC
-      - pds__GP-CHQ
-      - pds__GPIGP
-      - pds__iBAS
-      - pds__IBBL
-      - pds__ICBIBL(DR)
-      - pds__ICBISL
-      - pds__IFIC-DC
-      - pds__InterCon
-      - pds__IOWM
-      - pds__ITCL
-      - pds__ITICB
-      - pds__ITNA
-      - pds__IUB
-      - pds__JU
-      - pds__JUB
-      - pds__KTAL
-      - pds__LBBL
-      - pds__MCICT-SASECIH
-      - pds__MOS-ICT
-      - pds__Mosharaf-Group
-      - pds__MTBL-CCTV
-      - pds__MTBL-EBNCDC
-      - pds__NBR-ASYCUDA
-      - pds__NBR-ASYCUDA-SLA
-      - pds__NBR-AW-Network&Security
-      - pds__NBR-AW-Systems
-      - pds__NL-DC
-      - pds__OBL
-      - pds__PHQ-AMC
-      - pds__REB
-      - pds__RHD-BMMS-2018
-      - pds__RHD-MIS-consultancy
-      - pds__RHD-MIS-e-procurement
-      - pds__RWGH
-      - pds__SBFI
-      - pds__SCB
-      - pds__SIBL
-      - pds__SIBL(DC)
-      - pds__SPARRSO-2010
-      - pds__SPARRSO-2012
-      - pds__SSF
-      - pds__SSVPE
-      - pds__SUST-TC
-      - pds__TBL
-      - pds__TDS
-      - pds__UGCB
-      - pds__VHA
-      - pds__WDTGCL
-      - pds__ABBank-CIB
-      - pds__AgraniBank-BACPS
-      - pds__BB-BACPS
-      - pds__BB-CA
-      - pds__BCBL-CIB
-      - pds__BCC-CA
-      - pds__Bdjobs-MPVCC
-      - pds__Biman-HelpDeskHR
-      - pds__Boeing-BangladeshBiman
-      - pds__BRTA-UniVerge
-      - pds__BuySight-BizOps
-      - pds__CapGains-LLC
-      - pds__CCA-IDS
-      - pds__CCC-CSSM
-      - pds__CID-CDMS
-      - pds__CityBank-CityAgent
-      - pds__CityCell-NID-V-SA
-      - pds__ConserveTrack-RDU
-      - pds__ConserveTrack-WCM
-      - pds__EAM-CMMS
-      - pds__GP-HRMS
-      - pds__GP-ROC
-      - pds__GP-WBMS
-      - pds__HabibBank-BACPS
-      - pds__IslamGarments-rmgPro
-      - pds__lekhapora.com
-      - pds__LGED-IPMSRDEC
-      - pds__MarketSharp-CRM
-      - pds__MTBL-BACPS
-      - pds__NBR-CAMS
-      - pds__NBR-UMS
-      - pds__Nestle-VATsys
-      - pds__OAGN-NAMS
-      - pds__OCAG-AMMS
-      - pds__Partex-OEBS
-      - pds__RA-BRPSharePoint
-      - pds__RA-CWRBS
-      - pds__RA-SRMS
-      - pds__Revnx-Journey
-      - pds__RHD-CBRNIP-TOLL-2022
-      - pds__RHD-MIS-AMC-2009
-      - pds__RHD-MIS-AMC-2015
-      - pds__RHD-MIS-AMC-2017
-      - pds__RHD-TDMS-2020-23
-      - pds__ROBI-DMS
-      - pds__ROBI-ROC
-      - pds__SAU-ACAS
-      - pds__SCB-CBRM
-      - pds__SCB-OPCCMS
-      - pds__SCB-RTGS
-      - pds__SECL-CSB
-      - pds__SECL-Metrica
-      - pds__SECL-UniVerge
-      - pds__SECL-VATsys
-      - pds__SigmaStream-V2P
-      - pds__SportsBuddy
-      - pds__TrustBank-BACPS
-      - pds__UGC-HEMIS
-      - pds__Unilever-MFGPRO
+    # # spectrum pds
+    #   - pds__blank.template
+    #   - pds__ACMELL
+    #   - pds__BB-RTGS
+    #   - pds__BBA-BPBB
+    #   - pds__BCC
+    #   - pds__BCC-AMC
+    #   - pds__BCC-AMC-2020
+    #   - pds__BCC-Cisco-Renewal
+    #   - pds__BCC-DC
+    #   - pds__BCC-DC-Expansion
+    #   - pds__BCC-DSCOCP
+    #   - pds__BCC-HW-Expansion
+    #   - pds__BCC-Tier-IV-ServerStorage
+    #   - pds__BDREN-DC-Expansion
+    #   - pds__BDREN-G-13
+    #   - pds__BDREN-Network
+    #   - pds__Beximco-IT
+    #   - pds__BG(DC)
+    #   - pds__BPA-Sardah-Police-Academy
+    #   - pds__BR-DCDR
+    #   - pds__BRP
+    #   - pds__BSCCL
+    #   - pds__BSCCL-Kuakata
+    #   - pds__BSCCL-SCISCO
+    #   - pds__BTCL
+    #   - pds__BTCL-NGNCDR
+    #   - pds__BTTB
+    #   - pds__BWDB
+    #   - pds__CCC-WPSD
+    #   - pds__CRM
+    #   - pds__DBBL-DWDM
+    #   - pds__DISWLS
+    #   - pds__DMS-UBL
+    #   - pds__DSEL
+    #   - pds__DSHE-DC
+    #   - pds__DSILW(BAF)
+    #   - pds__DVSIVSS
+    #   - pds__DWASA
+    #   - pds__EMS
+    #   - pds__FOLC
+    #   - pds__GP-CHQ
+    #   - pds__GPIGP
+    #   - pds__iBAS
+    #   - pds__IBBL
+    #   - pds__ICBIBL(DR)
+    #   - pds__ICBISL
+    #   - pds__IFIC-DC
+    #   - pds__InterCon
+    #   - pds__IOWM
+    #   - pds__ITCL
+    #   - pds__ITICB
+    #   - pds__ITNA
+    #   - pds__IUB
+    #   - pds__JU
+    #   - pds__JUB
+    #   - pds__KTAL
+    #   - pds__LBBL
+    #   - pds__MCICT-SASECIH
+    #   - pds__MOS-ICT
+    #   - pds__Mosharaf-Group
+    #   - pds__MTBL-CCTV
+    #   - pds__MTBL-EBNCDC
+    #   - pds__NBR-ASYCUDA
+    #   - pds__NBR-ASYCUDA-SLA
+    #   - pds__NBR-AW-Network&Security
+    #   - pds__NBR-AW-Systems
+    #   - pds__NL-DC
+    #   - pds__OBL
+    #   - pds__PHQ-AMC
+    #   - pds__REB
+    #   - pds__RHD-BMMS-2018
+    #   - pds__RHD-MIS-consultancy
+    #   - pds__RHD-MIS-e-procurement
+    #   - pds__RWGH
+    #   - pds__SBFI
+    #   - pds__SCB
+    #   - pds__SIBL
+    #   - pds__SIBL(DC)
+    #   - pds__SPARRSO-2010
+    #   - pds__SPARRSO-2012
+    #   - pds__SSF
+    #   - pds__SSVPE
+    #   - pds__SUST-TC
+    #   - pds__TBL
+    #   - pds__TDS
+    #   - pds__UGCB
+    #   - pds__VHA
+    #   - pds__WDTGCL
+    #   - pds__ABBank-CIB
+    #   - pds__AgraniBank-BACPS
+    #   - pds__BB-BACPS
+    #   - pds__BB-CA
+    #   - pds__BCBL-CIB
+    #   - pds__BCC-CA
+    #   - pds__Bdjobs-MPVCC
+    #   - pds__Biman-HelpDeskHR
+    #   - pds__Boeing-BangladeshBiman
+    #   - pds__BuySight-BizOps
+    #   - pds__CapGains-LLC
+    #   - pds__CCA-IDS
+    #   - pds__CCC-CSSM
+    #   - pds__CID-CDMS
+    #   - pds__CityBank-CityAgent
+    #   - pds__CityCell-NID-V-SA
+    #   - pds__ConserveTrack-RDU
+    #   - pds__ConserveTrack-WCM
+    #   - pds__EAM-CMMS
+    #   - pds__GP-HRMS
+    #   - pds__GP-ROC
+    #   - pds__GP-WBMS
+    #   - pds__HabibBank-BACPS
+    #   - pds__IslamGarments-rmgPro
+    #   - pds__lekhapora.com
+    #   - pds__LGED-IPMSRDEC
+    #   - pds__MarketSharp-CRM
+    #   - pds__MTBL-BACPS
+    #   - pds__NBR-CAMS
+    #   - pds__NBR-UMS
+    #   - pds__Nestle-VATsys
+    #   - pds__NTL-uniVerge
+    #   - pds__OAGN-NAMS
+    #   - pds__OCAG-AMMS
+    #   - pds__Partex-OEBS
+    #   - pds__RA-BRPSharePoint
+    #   - pds__RA-CWRBS
+    #   - pds__RA-SRMS
+    #   - pds__Revnx-Journey
+    #   - pds__RHD-CBRNIP-TOLL-2022
+    #   - pds__RHD-MIS-AMC-2009
+    #   - pds__RHD-MIS-AMC-2015
+    #   - pds__RHD-MIS-AMC-2017
+    #   - pds__RHD-TDMS-2020-23
+    #   - pds__ROBI-DMS
+    #   - pds__ROBI-ROC
+    #   - pds__SAU-ACAS
+    #   - pds__SCB-CBRM
+    #   - pds__SCB-OPCCMS
+    #   - pds__SCB-RTGS
+    #   - pds__SECL-CSB
+    #   - pds__SECL-Metrica
+    #   - pds__SECL-UniVerge
+    #   - pds__SECL-VATsys
+    #   - pds__SigmaStream-V2P
+    #   - pds__SportsBuddy
+    #   - pds__TrustBank-BACPS
+    #   - pds__UGC-HEMIS
+    #   - pds__Unilever-MFGPRO
   # # MRA-OMS resume
     #   - Résumé__Alif.Arfab.Pavel
     #   - Résumé__Amiya.Ahamed
@@ -539,76 +539,108 @@ gsheets:
     #   - Résumé__Tasnim.Kabir.Ratul
     #   - Résumé__Umme.Rumman.Usha
   # # RAJUK-ERP resume
-    # # RAJUK-ERP resume - sscl
-    #   - Résumé__Hasib.Mahmud
-    #   - Résumé__Humaira.Binte.Harun
-    #   - Résumé__Iftakhar.Ali.Khandokar
-    #   - Résumé__Jumana.Ahmed
-    #   - Résumé__Md.Abu.Sayed
-    #   - Résumé__Md.Faizul.Bari
-    #   - Résumé__Md.Najmul.Hasan.Sharon
-    #   - Résumé__Md.Rokonuzzaman
-    #   - Résumé__Monjur.Ahmed
-    #   - Résumé__Nuraiyad.Nafiz.Islam
-    # # RAJUK-ERP resume - spectrum
-    #   - Résumé__Adiat.Islam.Sahih
-    #   - Résumé__Ashish.Kumar.Das
-    #   - Résumé__Dipika.Debnath
-    #   - Résumé__Ferdous.Rahman
-    #   - Résumé__K.M.Zabir.Tarique
-    #   - Résumé__Kamrul.Islam.Sarek
-    #   - Résumé__Khandakar.Asif.Hasan
-    #   - Résumé__Manzur.Alam
-    #   - Résumé__Md.Anisur.Rahman
-    #   - Résumé__Md.Farhadul.Alam.Jion
-    #   - Résumé__Md.Ibrahim.Hossen
-    #   - Résumé__Md.Jakir.Hossain
-    #   - Résumé__Md.Mahabub.Al-Islam
-    #   - Résumé__Md.Mashrurul.Hakim
-    #   - Résumé__Md.Murshid.Sarker
-    #   - Résumé__Md.Nazmul.Hassan
-    #   - Résumé__Md.Raqibul.Islam
-    #   - Résumé__Md.Sayeem.Khan
-    #   - Résumé__Md.Sharafat.Hossain.Kamal
-    #   - Résumé__Md.Shariful.Islam
-    #   - Résumé__Md.Zahidul.Islam
-    #   - Résumé__Mumtahina.Afroz
-    #   - Résumé__S.M.Azharul.Islam
-    #   - Résumé__Sagar.Saha
-    #   - Résumé__Saiful.Islam.(Sumon)
-    #   - Résumé__Sayeda.Tanjila
-    #   - Résumé__Shaikh.Tojibul.Islam
-    #   - Résumé__Shajir.Uddin.Haider
-    # # RAJUK-ERP resume - celloscope
-    #   - Résumé__Aabid.Rahman
-    #   - Résumé__Akeed.Anjum
-    #   - Résumé__Alif.Arfab.Pavel
-    #   - Résumé__Amiya.Ahamed
-    #   - Résumé__Anan.Aiman.Tuba
-    #   - Résumé__Arnab.Basak
-    #   - Résumé__Mainur.Rahman.Rasel
-    #   - Résumé__MD.Fuad.Hasan.Chowdhury
-    #   - Résumé__Md.Kamruzzaman.Tanim
-    #   - Résumé__Md.Shariar.Kabir
-    #   - Résumé__Mehedi.Hasan
-    #   - Résumé__Mohammad.Kamrul.Hasan
-    #   - Résumé__Mohammad.Mashud.Karim
-    #   - Résumé__Mohammad.Wakib.Hasan
-    #   - Résumé__Mushfika.Faria
-    #   - Résumé__Shafayat.Ahmed
-    #   - Résumé__Syed.Mostofa.Monsur
-    #   - Résumé__Umme.Rumman.Usha
-    # # RAJUK-ERP resume - ael
-    #   - Résumé__Assaduzzaman
-    #   - Résumé__Dipankar.Kumar.Biswas
-    #   - Résumé__Md.Ahsan.Habib.Rocky
-    #   - Résumé__Md.Atikur.Zaman
-    #   - Résumé__Md.Mijanur.Rahman
-    #   - Résumé__Md.Nahidul.Islam.Siddique
-    #   - Résumé__Md.Nasir.Uddin
-    #   - Résumé__Md.Sohel.Rana
-    #   - Résumé__Mir.Earfan.Elahi
-    #   - Résumé__Mostafa.Jannatul.Ferdows
+    # RAJUK-ERP resume - sscl
+      - Résumé__Akeed.Anjum
+      - Résumé__Hasib.Mahmud
+      - Résumé__Humaira.Binte.Harun
+      - Résumé__Iftakhar.Ali.Khandokar
+      - Résumé__Jumana.Ahmed
+      - Résumé__Md.Abu.Sayed
+      - Résumé__Md.Faizul.Bari
+      - Résumé__Md.Najmul.Hasan.Sharon
+      - Résumé__Md.Rokonuzzaman
+      - Résumé__Monjur.Ahmed
+      - Résumé__Nuraiyad.Nafiz.Islam
+    # RAJUK-ERP resume - spectrum
+      - Résumé__Aabid.Rahman
+      - Résumé__Adiat.Islam.Sahih
+      - Résumé__Ashish.Kumar.Das
+      - Résumé__Asma.Ul.Husna
+      - Résumé__Dipika.Debnath
+      - Résumé__Ferdous.Rahman
+      - Résumé__K.M.Zabir.Tarique
+      - Résumé__Kamrul.Islam.Sarek
+      - Résumé__Khandakar.Asif.Hasan
+      - Résumé__Mahim.Jahan.Mim
+      - Résumé__Manzur.Alam
+      - Résumé__Md.Anisur.Rahman
+      - Résumé__Md.Farhadul.Alam.Jion
+      - Résumé__Md.Ibrahim.Hossen
+      - Résumé__Md.Jakir.Hossain
+      - Résumé__Md.Mahabub.Al-Islam
+      - Résumé__Md.Mashrurul.Hakim
+      - Résumé__Md.Murshid.Sarker
+      - Résumé__Md.Nazmul.Hassan
+      - Résumé__Md.Raqibul.Islam
+      - Résumé__Md.Sayeem.Khan
+      - Résumé__Md.Sharafat.Hossain.Kamal
+      - Résumé__Md.Shariful.Islam
+      - Résumé__Md.Zahidul.Islam
+      - Résumé__Mumtahina.Afroz
+      - Résumé__S.M.Azharul.Islam
+      - Résumé__Sagar.Saha
+      - Résumé__Saiful.Islam.(Sumon)
+      - Résumé__Sanmoon.Yasmin
+      - Résumé__Sayeda.Tanjila
+      - Résumé__Shaikh.Tojibul.Islam
+      - Résumé__Shajir.Uddin.Haider
+    # RAJUK-ERP resume - celloscope
+      - Résumé__Alif.Arfab.Pavel
+      - Résumé__Amiya.Ahamed
+      - Résumé__Anan.Aiman.Tuba
+      - Résumé__Arnab.Basak
+      - Résumé__Mainur.Rahman.Rasel
+      - Résumé__MD.Fuad.Hasan.Chowdhury
+      - Résumé__Md.Kamruzzaman.Tanim
+      - Résumé__Md.Shariar.Kabir
+      - Résumé__Mehedi.Hasan
+      - Résumé__Mohammad.Kamrul.Hasan
+      - Résumé__Mohammad.Mashud.Karim
+      - Résumé__Mohammad.Wakib.Hasan
+      - Résumé__Mushfika.Faria
+      - Résumé__Syed.Mostofa.Monsur
+      - Résumé__Umme.Rumman.Usha
+    # RAJUK-ERP resume - ael
+      - Résumé__Assaduzzaman
+      - Résumé__Dipankar.Kumar.Biswas
+      - Résumé__Md.Ahsan.Habib.Rocky
+      - Résumé__Md.Atikur.Zaman
+      - Résumé__Md.Mijanur.Rahman
+      - Résumé__Md.Nahidul.Islam.Siddique
+      - Résumé__Md.Nasir.Uddin
+      - Résumé__Md.Sohel.Rana
+      - Résumé__Mir.Earfan.Elahi
+      - Résumé__Salman.Ahmed.Firoz
+  # RAJUK-ERP pds
+    # - pds__RHD-CBRNIP-TOLL-2022
+    # - pds__SAU-ACAS
+    # - pds__CCC-CSSM
+    # - pds__RHD-TDMS-2020-23
+    # - pds__OAGN-NAMS
+    # - pds__OCAG-AMMS
+    # - pds__UGC-HEMIS
+    # - pds__RHD-MIS-AMC-2009
+    # - pds__BB-RTGS
+    # - pds__RHD-MIS-AMC-2015
+    # - pds__NBR-ASYCUDA-SLA
+    # - pds__NBR-AW-Systems
+    # - pds__BB-CA
+    # - pds__Partex-OEBS
+    # - pds__SCB-CBRM
+    # - pds__ROBI-ROC
+    # - pds__NTL-uniVerge
+    # - pds__DSHE-DC
+    # - pds__BCC-DC-Expansion
+    # - pds__BSCCL-Kuakata
+    # - pds__BR-DCDR
+    # - pds__BSCCL
+    # - pds__BCC-DC
+    # - pds__NBR-ASYCUDA
+    # - pds__BDREN-Network
+    # - pds__BDREN-DC-Expansion
+    # - pds__JU
+    # - pds__SUST-TC
+    # - pds__MTBL-CCTV
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -650,11 +682,11 @@ worksheets:
   # - 03-contact
   # - 04-joint-venture
   # - 05-people
-  # - 06-description
-  # - 07-functionality
-  # - 08-technology
-  # - 09-services
-  # - 10-process
+  - 06-description
+  - 07-functionality
+  - 08-technology
+  - 09-services
+  - 10-process
   # - 11-complexity
   # - 12-screenshots
   # - z-blank

@@ -115,11 +115,11 @@ class GoogleWorksheet(object):
                     info(f"renamed  worksheet [{response['title']}] to [{self.title}]")
 
                 except:
-                    warn(f"worksheet          [{response['title']}] could not be renamed to [{self.title}]")
+                    error(f"worksheet          [{response['title']}] could not be renamed to [{self.title}]")
 
 
         except:
-            warn(f"could not copy worksheet {self.title} to {destination_gsheet.title}")
+            error(f"could not copy worksheet {self.title} to {destination_gsheet.title}")
 
 
 
@@ -134,7 +134,7 @@ class GoogleWorksheet(object):
             info(f"renamed  worksheet [{old_worksheet_name}] to [{new_worksheet_name}]")
 
         except:
-            warn(f"worksheet [{old_worksheet_name}] could not be renamed to [{new_worksheet_name}]")
+            error(f"worksheet [{old_worksheet_name}] could not be renamed to [{new_worksheet_name}]")
 
 
 
