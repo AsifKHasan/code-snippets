@@ -547,43 +547,43 @@ gsheets:
       - Résumé__Jumana.Ahmed
       - Résumé__Md.Abu.Sayed
       - Résumé__Md.Faizul.Bari
-      - Résumé__Md.Najmul.Hasan.Sharon
       - Résumé__Md.Rokonuzzaman
       - Résumé__Monjur.Ahmed
       - Résumé__Nuraiyad.Nafiz.Islam
-    # RAJUK-ERP resume - spectrum
-      - Résumé__Aabid.Rahman
-      - Résumé__Adiat.Islam.Sahih
-      - Résumé__Ashish.Kumar.Das
-      - Résumé__Asma.Ul.Husna
-      - Résumé__Dipika.Debnath
-      - Résumé__Ferdous.Rahman
-      - Résumé__K.M.Zabir.Tarique
-      - Résumé__Kamrul.Islam.Sarek
-      - Résumé__Khandakar.Asif.Hasan
-      - Résumé__Mahim.Jahan.Mim
-      - Résumé__Manzur.Alam
-      - Résumé__Md.Anisur.Rahman
-      - Résumé__Md.Farhadul.Alam.Jion
-      - Résumé__Md.Ibrahim.Hossen
-      - Résumé__Md.Jakir.Hossain
-      - Résumé__Md.Mahabub.Al-Islam
-      - Résumé__Md.Mashrurul.Hakim
-      - Résumé__Md.Murshid.Sarker
-      - Résumé__Md.Nazmul.Hassan
-      - Résumé__Md.Raqibul.Islam
-      - Résumé__Md.Sayeem.Khan
-      - Résumé__Md.Sharafat.Hossain.Kamal
-      - Résumé__Md.Shariful.Islam
-      - Résumé__Md.Zahidul.Islam
-      - Résumé__Mumtahina.Afroz
-      - Résumé__S.M.Azharul.Islam
-      - Résumé__Sagar.Saha
-      - Résumé__Saiful.Islam.(Sumon)
-      - Résumé__Sanmoon.Yasmin
-      - Résumé__Sayeda.Tanjila
-      - Résumé__Shaikh.Tojibul.Islam
-      - Résumé__Shajir.Uddin.Haider
+    # # RAJUK-ERP resume - spectrum
+    #   - Résumé__Aabid.Rahman
+    #   - Résumé__Adiat.Islam.Sahih
+    #   - Résumé__Ashish.Kumar.Das
+    #   - Résumé__Asma.Ul.Husna
+    #   - Résumé__Dipika.Debnath
+    #   - Résumé__Ferdous.Rahman
+    #   - Résumé__K.M.Zabir.Tarique
+    #   - Résumé__Kamrul.Islam.Sarek
+    #   - Résumé__Khandakar.Asif.Hasan
+    #   - Résumé__Mahim.Jahan.Mim
+    #   - Résumé__Manzur.Alam
+    #   - Résumé__Md.Anisur.Rahman
+    #   - Résumé__Md.Farhadul.Alam.Jion
+    #   - Résumé__Md.Ibrahim.Hossen
+    #   - Résumé__Md.Jakir.Hossain
+    #   - Résumé__Md.Mahabub.Al-Islam
+    #   - Résumé__Md.Mashrurul.Hakim
+    #   - Résumé__Md.Murshid.Sarker
+    #   - Résumé__Md.Najmul.Hasan.Sharon
+    #   - Résumé__Md.Nazmul.Hassan
+    #   - Résumé__Md.Raqibul.Islam
+    #   - Résumé__Md.Sayeem.Khan
+    #   - Résumé__Md.Sharafat.Hossain.Kamal
+    #   - Résumé__Md.Shariful.Islam
+    #   - Résumé__Md.Zahidul.Islam
+    #   - Résumé__Mumtahina.Afroz
+    #   - Résumé__S.M.Azharul.Islam
+    #   - Résumé__Sagar.Saha
+    #   - Résumé__Saiful.Islam.(Sumon)
+    #   - Résumé__Sanmoon.Yasmin
+    #   - Résumé__Sayeda.Tanjila
+    #   - Résumé__Shaikh.Tojibul.Islam
+    #   - Résumé__Shajir.Uddin.Haider
     # RAJUK-ERP resume - celloscope
       - Résumé__Alif.Arfab.Pavel
       - Résumé__Amiya.Ahamed
@@ -651,7 +651,7 @@ destination-gsheets:
 worksheets:
 # resume worksheets
   # - '-toc-new'
-  # - 00-layout
+  - 00-layout
   # - 00-layout-MRA-OMS
   # - 00-layout-WB
   # - 01-personal
@@ -682,11 +682,11 @@ worksheets:
   # - 03-contact
   # - 04-joint-venture
   # - 05-people
-  - 06-description
-  - 07-functionality
-  - 08-technology
-  - 09-services
-  - 10-process
+  # - 06-description
+  # - 07-functionality
+  # - 08-technology
+  # - 09-services
+  # - 10-process
   # - 11-complexity
   # - 12-screenshots
   # - z-blank
@@ -722,11 +722,17 @@ work-specs:
     #   ws-name-to-link   : '00-layout'
   # 00-layout
     # 'B14'      :
-    #   value             : '06-job-history-RAJUK-ERP'
-    #   ws-name-to-link   : '06-job-history-RAJUK-ERP'
+    #   value             : '06-job-history'
+    #   ws-name-to-link   : '06-job-history'
     # 'B17'      :
-    #   value             : '07-project-roles-RAJUK-ERP'
-    #   ws-name-to-link   : '07-project-roles-RAJUK-ERP'
+    #   value             : '07-project-roles'
+    #   ws-name-to-link   : '07-project-roles'
+    'B14'      :
+      value             : '06-job-history-RAJUK-ERP'
+      ws-name-to-link   : '06-job-history-RAJUK-ERP'
+    'B17'      :
+      value             : '07-project-roles-RAJUK-ERP'
+      ws-name-to-link   : '07-project-roles-RAJUK-ERP'
   # z-header
     # 'C3'      :
     #   value             : '=image("https://spectrum-bd.biz/data/artifacts/res/logo/doer-logo-hor-color-563x87.png", 1)'
