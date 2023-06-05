@@ -321,7 +321,7 @@ def build_value_from_work_spec(work_spec, worksheet_dict={}, google_service=None
             if work_spec['ws-name-to-link'] in worksheet_dict:
                 value = f'=HYPERLINK("#gid={worksheet_dict[work_spec["ws-name-to-link"]]}", "{value}")'.lstrip("'")
             else:
-                warn(f".... No Worksheet named {work_spec['ws-name-to-link']}")
+                error(f".... No Worksheet named {work_spec['ws-name-to-link']}")
 
         # it may be hyperlink to another drive file
         elif 'file-name-to-link' in work_spec:
@@ -331,7 +331,7 @@ def build_value_from_work_spec(work_spec, worksheet_dict={}, google_service=None
                 # print(drive_file)
                 value = f'=HYPERLINK("{drive_file["webViewLink"]}", "{value}")'.lstrip("'")
             else:
-                warn(f".... No Drive File named {work_spec['file-name-to-link']}")
+                error(f".... No Drive File named {work_spec['file-name-to-link']}")
 
     return value
 

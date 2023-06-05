@@ -175,7 +175,7 @@ class GoogleSheet(object):
 
                 return GoogleWorksheet(google_service=self.service, gspread_worksheet=ws, gsheet=self)
 
-        warn(f"worksheet [{worksheet_name:<40}] not found", nesting_level=1)
+        error(f"worksheet [{worksheet_name:<40}] not found", nesting_level=1)
 
 
 
@@ -225,7 +225,7 @@ class GoogleSheet(object):
                     info(f"removed  worksheet {worksheet_name}", nesting_level=1)
 
                 except:
-                    info(f"worksheet {worksheet_name} could not be removed", nesting_level=1)
+                    error(f"worksheet {worksheet_name} could not be removed", nesting_level=1)
 
 
 
