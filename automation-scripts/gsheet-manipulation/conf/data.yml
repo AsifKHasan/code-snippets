@@ -1,14 +1,10 @@
 # the gsheet(s) that will be processed
 gsheets:
   # resume
-    # # external resume
-    #   - Résumé__Md.Rezaur.Rahman__RHD-TMC
-    #   - Résumé__Saifur.Rahman__RHD-TMC
-    #   - Résumé__Sharmin.Sultana__RHD-TMC
-    #   - Résumé__Mamunur.Rashid__RHD-TMC
     # # template
     #   - spectrum__Résumé__template
     #   - celloscope__résumé__template
+    # # external resume
     # # sscl resume
     #   - Résumé__Akeed.Anjum
     #   - Résumé__Arif.Hossain
@@ -538,80 +534,14 @@ gsheets:
     #   - Résumé__Syed.Ahmad.Mahdi
     #   - Résumé__Tasnim.Kabir.Ratul
     #   - Résumé__Umme.Rumman.Usha
-  # # RAJUK-ERP resume
-    # # RAJUK-ERP resume - sscl
-    #   - Résumé__Akeed.Anjum
-    #   - Résumé__Hasib.Mahmud
-    #   - Résumé__Humaira.Binte.Harun
-    #   - Résumé__Iftakhar.Ali.Khandokar
-    #   - Résumé__Jumana.Ahmed
-    #   - Résumé__Md.Abu.Sayed
-    #   - Résumé__Md.Faizul.Bari
-    #   - Résumé__Md.Rokonuzzaman
-    #   - Résumé__Monjur.Ahmed
-    #   - Résumé__Nuraiyad.Nafiz.Islam
-    # RAJUK-ERP resume - spectrum
-      - Résumé__Aabid.Rahman
-      - Résumé__Adiat.Islam.Sahih
-      - Résumé__Ashish.Kumar.Das
-      - Résumé__Asma.Ul.Husna
-      - Résumé__Dipika.Debnath
-      - Résumé__Ferdous.Rahman
-      - Résumé__K.M.Zabir.Tarique
-      - Résumé__Kamrul.Islam.Sarek
-      - Résumé__Khandakar.Asif.Hasan
-      - Résumé__Mahim.Jahan.Mim
-      - Résumé__Manzur.Alam
-      - Résumé__Md.Anisur.Rahman
-      - Résumé__Md.Farhadul.Alam.Jion
-      - Résumé__Md.Ibrahim.Hossen
-      - Résumé__Md.Jakir.Hossain
-      - Résumé__Md.Mahabub.Al-Islam
-      - Résumé__Md.Mashrurul.Hakim
-      - Résumé__Md.Murshid.Sarker
-      - Résumé__Md.Najmul.Hasan.Sharon
-      - Résumé__Md.Nazmul.Hassan
-      - Résumé__Md.Raqibul.Islam
-      - Résumé__Md.Sayeem.Khan
-      - Résumé__Md.Sharafat.Hossain.Kamal
-      - Résumé__Md.Shariful.Islam
-      - Résumé__Md.Zahidul.Islam
-      - Résumé__Mumtahina.Afroz
-      - Résumé__S.M.Azharul.Islam
-      - Résumé__Sagar.Saha
-      - Résumé__Saiful.Islam.(Sumon)
-      - Résumé__Sanmoon.Yasmin
-      - Résumé__Sayeda.Tanjila
-      - Résumé__Shaikh.Tojibul.Islam
-      - Résumé__Shajir.Uddin.Haider
-    # # RAJUK-ERP resume - celloscope
-    #   - Résumé__Alif.Arfab.Pavel
-    #   - Résumé__Amiya.Ahamed
-    #   - Résumé__Anan.Aiman.Tuba
-    #   - Résumé__Arnab.Basak
-    #   - Résumé__Mainur.Rahman.Rasel
-    #   - Résumé__MD.Fuad.Hasan.Chowdhury
-    #   - Résumé__Md.Kamruzzaman.Tanim
-    #   - Résumé__Md.Shariar.Kabir
-    #   - Résumé__Mehedi.Hasan
-    #   - Résumé__Mohammad.Kamrul.Hasan
-    #   - Résumé__Mohammad.Mashud.Karim
-    #   - Résumé__Mohammad.Wakib.Hasan
-    #   - Résumé__Mushfika.Faria
-    #   - Résumé__Syed.Mostofa.Monsur
-    #   - Résumé__Umme.Rumman.Usha
-    # # RAJUK-ERP resume - ael
-    #   - Résumé__Assaduzzaman
-    #   - Résumé__Dipankar.Kumar.Biswas
-    #   - Résumé__Md.Ahsan.Habib.Rocky
-    #   - Résumé__Md.Atikur.Zaman
-    #   - Résumé__Md.Mijanur.Rahman
-    #   - Résumé__Md.Nahidul.Islam.Siddique
-    #   - Résumé__Md.Nasir.Uddin
-    #   - Résumé__Md.Sohel.Rana
-    #   - Résumé__Mir.Earfan.Elahi
-    #   - Résumé__Salman.Ahmed.Firoz
-  # RAJUK-ERP pds
+  # # RHD-ITI-AMC-2023 resume
+    # # RHD-ITI-AMC-2023 resume - spectrum
+    #   - Résumé__Mohammad.Main.Uddin
+    #   - Résumé__Md.Raqibul.Islam
+    #   - Résumé__Mohammad.Saiful.Islam
+    #   - Résumé__Shihan.Zaman
+    #   - Résumé__Sanmoon.Yasmin    
+  # RHD-ITI-AMC-2023 pds
     # - pds__RHD-CBRNIP-TOLL-2022
     # - pds__SAU-ACAS
     # - pds__CCC-CSSM
@@ -628,7 +558,6 @@ gsheets:
     # - pds__Partex-OEBS
     # - pds__SCB-CBRM
     # - pds__ROBI-ROC
-    # - pds__NTL-uniVerge
     # - pds__DSHE-DC
     # - pds__BCC-DC-Expansion
     # - pds__BSCCL-Kuakata
@@ -642,7 +571,6 @@ gsheets:
     # - pds__SUST-TC
     # - pds__MTBL-CCTV
 
-
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
 
@@ -651,7 +579,7 @@ destination-gsheets:
 worksheets:
 # resume worksheets
   # - '-toc-new'
-  - 00-layout
+  # - 00-layout
   # - 00-layout-MRA-OMS
   # - 00-layout-WB
   # - 01-personal
@@ -672,8 +600,6 @@ worksheets:
   # - 16-references
   # - z-footer
   # - z-header
-  # - 06-job-history-RHD-TMC
-  # - 07-project-roles-RHD-TMC
 # pds worksheets
   # - '-toc-new'
   # - 00-layout
@@ -692,7 +618,6 @@ worksheets:
   # - z-blank
   # - z-footer
   # - z-header
-# RAJUK-ERP__EoI__submission worksheets
 # MRA-OMS worksheets
 # worsheets to remove
 
