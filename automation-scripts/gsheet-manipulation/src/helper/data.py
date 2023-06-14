@@ -1025,9 +1025,9 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-columns': 0,
         'columns': {
             'A': {'halign': 'left'  , 'size': 100, },
-            'B': {'halign': 'left'  , 'size': 120, },
+            'B': {'halign': 'left'  , 'size': 150, },
             'C': {'halign': 'center', 'size':  30, },
-            'D': {'halign': 'left'  , 'size': 650, },
+            'D': {'halign': 'left'  , 'size': 620, },
         },
         'review-notes': True,
         'ranges': {
@@ -1047,10 +1047,10 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-columns': 0,
         'columns': {
             'A': {'halign': 'left'  , 'size': 100,  },
-            'B': {'halign': 'left'  , 'size': 120,  },
+            'B': {'halign': 'left'  , 'size': 150,  },
             'C': {'halign': 'center', 'size':  30,  },
             'D': {'halign': 'left'  , 'size': 120,  },
-            'E': {'halign': 'left'  , 'size': 530,  },
+            'E': {'halign': 'left'  , 'size': 500,  },
         },
         'review-notes': True,
         'ranges': {
@@ -1071,9 +1071,9 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-columns': 0,
         'columns': {
             'A': {'halign': 'left'  , 'size': 100,  },
-            'B': {'halign': 'left'  , 'size': 120,  },
+            'B': {'halign': 'left'  , 'size': 150,  },
             'C': {'halign': 'center', 'size':  30,  },
-            'D': {'halign': 'left'  , 'size': 650,  },
+            'D': {'halign': 'left'  , 'size': 620,  },
         },
         'review-notes': True,
         'ranges': {
@@ -1093,9 +1093,9 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-columns': 0,
         'columns': {
             'A': {'halign': 'left'  , 'size': 100,  },
-            'B': {'halign': 'left'  , 'size': 120,  },
+            'B': {'halign': 'left'  , 'size': 150,  },
             'C': {'halign': 'center', 'size':  30,  },
-            'D': {'halign': 'left'  , 'size': 650,  },
+            'D': {'halign': 'left'  , 'size': 620,  },
         },
         'review-notes': True,
         'ranges': {
@@ -1115,9 +1115,9 @@ WORKSHEET_STRUCTURE_PDS = {
         'frozen-columns': 0,
         'columns': {
             'A': {'halign': 'left'  , 'size': 100,  },
-            'B': {'halign': 'left'  , 'size': 120,  },
+            'B': {'halign': 'left'  , 'size': 150,  },
             'C': {'halign': 'center', 'size':  30,  },
-            'D': {'halign': 'left'  , 'size': 650,  },
+            'D': {'halign': 'left'  , 'size': 620,  },
         },
         'review-notes': True,
         'ranges': {

@@ -20,19 +20,18 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # -----------------------------------------------------------------------------------
 
     # for worksheet_name in worksheet_names:
-        # get dimensions
-        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-        # num_rows, num_cols = worksheet.number_of_dimesnions()
-        # if num_rows != 27:
-        #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+    #     # get dimensions
+    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
+    #     worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+    #     num_rows, num_cols = worksheet.number_of_dimesnions()
+    #     if num_rows != 6:
+    #         print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
         # add dimension
         # if num_cols == 25:
         #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
-        # if num_rows == 27:
-        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=15, rows_to_add=1)
-        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=24, rows_to_add=1)
+        # if num_rows == 6:
+        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=3, rows_to_add=1)
 
 
 
@@ -71,8 +70,8 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
 
     # cell linking and ordering
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
     # g_sheet.order_worksheets()
 
