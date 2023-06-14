@@ -165,7 +165,7 @@ gsheets:
     #   - Résumé__Taposh.Kumar
     #   - Résumé__Tasnim.Kabir.Ratul
     #   - Résumé__Tridib.Biswas
-    #   - Résumé__Umaeer.Al.Hammad    
+    #   - Résumé__Umaeer.Al.Hammad
     # # doer resume
     #   - Résumé__Abdullah.Al.Maruf
     #   - Résumé__Abir.Ahmed
@@ -505,47 +505,47 @@ gsheets:
     #   - pds__TrustBank-BACPS
     #   - pds__UGC-HEMIS
     #   - pds__Unilever-MFGPRO
-  # # MRA-OMS resume
-  #   # MRA-OMS resume - sscl
-  #     - Résumé__Akeed.Anjum
-  #   # MRA-OMS resume - spectrum
-  #     - Résumé__Jyoti.Basu.Chakma
-  #     - Résumé__Md.Raqibul.Islam
-  #     - Résumé__Md.Saidur.Rahman.(Shamim)
-  #     - Résumé__Nur-E-Asma.Tabassum
-  #     - Résumé__Shajir.Uddin.Haider
-  #     - Résumé__Tasnim.Kabir.Ratul
-  #   # MRA-OMS resume - celloscope
-  #     - Résumé__Amiya.Ahamed
-  #     - Résumé__Arnab.Basak
-  #     - Résumé__Mainur.Rahman.Rasel
-  #     - Résumé__Maly.Mohsem.Ahmed
-  #     - Résumé__MD.Fuad.Hasan.Chowdhury
-  #     - Résumé__Md.Kamruzzaman.Tanim
-  #     - Résumé__Md.Shariar.Kabir
-  #     - Résumé__Mohammad.Kamrul.Hasan
-  #     - Résumé__Mushfika.Faria
-  #     - Résumé__Umme.Rumman.Usha
-  #   # MRA-OMS resume - doer
-  #     - Résumé__Jahin.Khan.Shourov
-  #     - Résumé__Md.Sahidur.Rahman
-  #     - Résumé__Mohammad.Ziaul.Hoq
-  #     - Résumé__Shanawaz.Durjoy
-  #     - Résumé__Syed.Ahmad.Mahdi
-  #   # MRA-OMS resume - ael
-  #     - Résumé__Dipankar.Kumar.Biswas
-  #     - Résumé__Md.Ahsan.Habib.Rocky
-  #     - Résumé__Md.Nahidul.Islam.Siddique
-  #     - Résumé__Md.Sohel.Rana
-  #     - Résumé__Md.Yousuf.Ali
-  #     - Résumé__Mir.Earfan.Elahi
-  # # RHD-ITI-AMC-2023 resume
-    # RHD-ITI-AMC-2023 resume - spectrum
-      - Résumé__Mohammad.Main.Uddin
+  # MRA-OMS resume
+    # MRA-OMS resume - sscl
+      - Résumé__Akeed.Anjum
+    # MRA-OMS resume - spectrum
+      - Résumé__Jyoti.Basu.Chakma
       - Résumé__Md.Raqibul.Islam
-      - Résumé__Mohammad.Saiful.Islam
-      - Résumé__Shihan.Zaman
-      - Résumé__Sanmoon.Yasmin    
+      - Résumé__Md.Saidur.Rahman.(Shamim)
+      - Résumé__Nur-E-Asma.Tabassum
+      - Résumé__Shajir.Uddin.Haider
+      - Résumé__Tasnim.Kabir.Ratul
+    # # MRA-OMS resume - celloscope
+    #   - Résumé__Amiya.Ahamed
+    #   - Résumé__Arnab.Basak
+    #   - Résumé__Mainur.Rahman.Rasel
+    #   - Résumé__Maly.Mohsem.Ahmed
+    #   - Résumé__MD.Fuad.Hasan.Chowdhury
+    #   - Résumé__Md.Kamruzzaman.Tanim
+    #   - Résumé__Md.Shariar.Kabir
+    #   - Résumé__Mohammad.Kamrul.Hasan
+    #   - Résumé__Mushfika.Faria
+    #   - Résumé__Umme.Rumman.Usha
+    # # MRA-OMS resume - doer
+    #   - Résumé__Jahin.Khan.Shourov
+    #   - Résumé__Md.Sahidur.Rahman
+    #   - Résumé__Mohammad.Ziaul.Hoq
+    #   - Résumé__Shanawaz.Durjoy
+    #   - Résumé__Syed.Ahmad.Mahdi
+    # # MRA-OMS resume - ael
+    #   - Résumé__Dipankar.Kumar.Biswas
+    #   - Résumé__Md.Ahsan.Habib.Rocky
+    #   - Résumé__Md.Nahidul.Islam.Siddique
+    #   - Résumé__Md.Sohel.Rana
+    #   - Résumé__Md.Yousuf.Ali
+    #   - Résumé__Mir.Earfan.Elahi
+  # # RHD-ITI-AMC-2023 resume
+    # # RHD-ITI-AMC-2023 resume - spectrum
+    #   - Résumé__Mohammad.Main.Uddin
+    #   - Résumé__Md.Raqibul.Islam
+    #   - Résumé__Mohammad.Saiful.Islam
+    #   - Résumé__Shihan.Zaman
+    #   - Résumé__Sanmoon.Yasmin
   # RHD-ITI-AMC-2023 pds
     # - pds__RHD-CBRNIP-TOLL-2022
     # - pds__SAU-ACAS
@@ -582,15 +582,49 @@ destination-gsheets:
   # - Résumé__Md.Raqibul.Islam
   # - Résumé__Mohammad.Saiful.Islam
   # - Résumé__Shihan.Zaman
-  # - Résumé__Sanmoon.Yasmin    
+  # - Résumé__Sanmoon.Yasmin
+  # MRA-OMS resume
+    # MRA-OMS resume - sscl
+      - Résumé__Akeed.Anjum
+    # MRA-OMS resume - spectrum
+      - Résumé__Jyoti.Basu.Chakma
+      - Résumé__Md.Raqibul.Islam
+      - Résumé__Md.Saidur.Rahman.(Shamim)
+      - Résumé__Nur-E-Asma.Tabassum
+      - Résumé__Shajir.Uddin.Haider
+      - Résumé__Tasnim.Kabir.Ratul
+    # # MRA-OMS resume - celloscope
+    #   - Résumé__Amiya.Ahamed
+    #   - Résumé__Arnab.Basak
+    #   - Résumé__Mainur.Rahman.Rasel
+    #   - Résumé__Maly.Mohsem.Ahmed
+    #   - Résumé__MD.Fuad.Hasan.Chowdhury
+    #   - Résumé__Md.Kamruzzaman.Tanim
+    #   - Résumé__Md.Shariar.Kabir
+    #   - Résumé__Mohammad.Kamrul.Hasan
+    #   - Résumé__Mushfika.Faria
+    #   - Résumé__Umme.Rumman.Usha
+    # # MRA-OMS resume - doer
+    #   - Résumé__Jahin.Khan.Shourov
+    #   - Résumé__Md.Sahidur.Rahman
+    #   - Résumé__Mohammad.Ziaul.Hoq
+    #   - Résumé__Shanawaz.Durjoy
+    #   - Résumé__Syed.Ahmad.Mahdi
+    # # MRA-OMS resume - ael
+    #   - Résumé__Dipankar.Kumar.Biswas
+    #   - Résumé__Md.Ahsan.Habib.Rocky
+    #   - Résumé__Md.Nahidul.Islam.Siddique
+    #   - Résumé__Md.Sohel.Rana
+    #   - Résumé__Md.Yousuf.Ali
+    #   - Résumé__Mir.Earfan.Elahi
 
 
 # worksheets on which some work will be done
 worksheets:
 # resume worksheets
-  - '-toc-new'
+  # - '-toc-new'
   # - 00-layout
-  # - 00-layout-MRA-OMS
+  - 00-layout-MRA-OMS
   # - 00-layout-RHD-ITI-AMC-2023
   # - 00-layout-WB
   # - 01-personal
@@ -842,9 +876,9 @@ work-specs:
     # 'F3'      :
     #   value             : '00-layout-MRA-OMS'
     #   ws-name-to-link   : '00-layout-MRA-OMS'
-    'F3'      :
-      value             : '00-layout-RHD-ITI-AMC-2023'
-      ws-name-to-link   : '00-layout-RHD-ITI-AMC-2023'
+    # 'F3'      :
+    #   value             : '00-layout-RHD-ITI-AMC-2023'
+    #   ws-name-to-link   : '00-layout-RHD-ITI-AMC-2023'
   # 00-layout
     # 'B14'      :
     #   value             : '06-job-history'
@@ -852,12 +886,12 @@ work-specs:
     # 'B17'      :
     #   value             : '07-project-roles'
     #   ws-name-to-link   : '07-project-roles'
-    # 'B14'      :
-    #   value             : '06-job-history-RAJUK-ERP'
-    #   ws-name-to-link   : '06-job-history-RAJUK-ERP'
-    # 'B17'      :
-    #   value             : '07-project-roles-RAJUK-ERP'
-    #   ws-name-to-link   : '07-project-roles-RAJUK-ERP'
+    'B29'      :
+      value             : '06-job-history-MRA-OMS'
+      ws-name-to-link   : '06-job-history-MRA-OMS'
+    'B32'      :
+      value             : '07-project-roles-MRA-OMS'
+      ws-name-to-link   : '07-project-roles-MRA-OMS'
   # z-header
     # 'C3'      :
     #   value             : '=image("https://spectrum-bd.biz/data/artifacts/res/logo/doer-logo-hor-color-563x87.png", 1)'

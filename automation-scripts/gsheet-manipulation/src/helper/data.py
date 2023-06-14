@@ -148,6 +148,131 @@ WORKSHEET_STRUCTURE_RESUME = {
             'B3:E5',
         ],
     },
+    '00-layout-MRA-OMS': {
+        'num-rows': 49,
+        'num-columns': 9,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'B': {'size':  40, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'C': {'size': 180, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'D': {'size':  50, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'E': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'F': {'size':  50, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'G': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'H': {'size': 300, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+            'I': {'size': 320, 'halign': 'left', 'valign': 'top', 'wrap': True, },
+        },
+        'review-notes': True,
+        'ranges': {
+            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
+
+            'A2': {'value': 'review-notes', 'halign': 'left', },
+            'B1:I1': {'halign': 'center', },
+            'B2:I2': {'value': 'content', 'halign': 'left', 'merge': True, },
+
+            'B3:G3': {'merge': True, 'halign': 'left', 'value': 'Name of the Consultant', },
+            'H3:I3': {'merge': True, 'halign': 'left', 'value': 'DOER Services Ltd.', },
+
+            'B4:G4': {'merge': True, 'halign': 'left', 'weight': 'bold', 'value': 'RFP IDENTIFICATION NO:', },
+            'H4:I4': {'merge': True, 'halign': 'left', 'weight': 'bold', 'value': '53.04.0000.002.07.011.23-1306', },
+
+            'B5:G5': {'merge': True, 'halign': 'left', 'value': 'Name of the Client', },
+            'H5:I5': {'merge': True, 'halign': 'left', 'value': 'Microcredit Regulatory Authority', },
+
+            'B7': {'value': '1', },
+            'C7:G7': {'value': 'PROPOSED POSITION', },
+            'H7': {'value': "", },
+
+            'B8': {'value': '2', },
+            'C8': {'value': 'NAME OF RESOURCE', },
+            'D8': {'value': "='01-personal'!D3", },
+
+            'B9': {'value': '3', },
+            'C9': {'value': 'DATE OF BIRTH', },
+            'D9': {'value': "='01-personal'!D5", },
+
+            'B10': {'value': '4', },
+            'C10': {'value': 'NATIONALITY', },
+            'D10': {'value': "='01-personal'!D6", },
+
+            # 'B3:E6': {'border-color': '#B7B7B7', },
+
+            'B7': {'value': '', },
+
+            'B8': {'value': '4', },
+            'C8:E8': {'value': 'SUMMARY OF PROFESSIONAL EXPERIENCE', 'merge': True, },
+
+            'B9': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "free"}', },
+
+            'B10': {'value': '', },
+
+            'B11': {'value': '5', },
+            'C11:E11': {'value': 'EDUCATION', 'merge': True, },
+
+            'B12': {'value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "free"}', },
+
+            'B13': {'value': '', 'note': '{"content": "free", "new-page": true}', },
+
+            'B14': {'value': '6', },
+            'C14:E14': {'value': 'EMPLOYMENT RECORD', 'merge': True, },
+
+            'B15': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "free"}', },
+
+            'B16': {'value': '', },
+
+            'B17': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "free"}', },
+
+            'B18': {'value': '', 'note': '{"content": "free", "new-page": true}', },
+
+            'B19': {'value': '7', },
+            'C19:E19': {'value': 'TECHNICAL EXPERTISE', 'merge': True, },
+
+            'B20': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "free"}', },
+
+            'B21': {'value': '', },
+
+            'B22': {'value': '8', },
+            'C22:E22': {'value': 'TRAINING AND CERTIFICATIONS', 'merge': True, },
+
+            'B23': {'value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "free"}', },
+
+            'B24': {'value': '', },
+
+            'B25': {'value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "free"}', },
+
+            'B26': {'value': '', },
+
+            'B27': {'value': '9', },
+            'C27:E27': {'value': 'LANGUAGES & DEGREE OF PROFICIENCY', 'merge': True, },
+
+            'B28': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "free"}', },
+        },
+        'cell-empty-markers': [
+            'B3:I5',
+            'B7:I10',
+            'B12:I13',
+            'B15:I16',
+            'B18:I19',
+            'B21:I21',
+            'B23:I24',
+            'B26:I26',
+            'B28:I29',
+            'B31:I32',
+            'B34:I35',
+            'B37:I37',
+            'B39:I39',
+            'B41:I41',
+            'D43',
+            'F43',
+            'D45:G47',
+            'H45:I47',
+            'D48:G49',
+            'H48:I49',
+        ],
+    },
     '00-layout-RHD-TMC': {
         'num-rows': 28,
         'num-columns': 5,
@@ -1076,4 +1201,4 @@ WORKSHEET_STRUCTURE_PDS = {
 }
 
 # which structure we are using
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
