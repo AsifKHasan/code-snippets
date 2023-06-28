@@ -1,6 +1,8 @@
 cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 
 # pdf pages as png
+pdftocairo -png -r 300 -f 1 -l 1 ~/Downloads/jun152023brpd08e.pdf ~/Downloads/
+
 pdftocairo -png -r 300 -f 11 -l 30 data/Ancholic_Bhasar_Ovidhan.pdf data/vernacular/vernacular
 pdftocairo -png -f 1 -l 1 -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
@@ -10,6 +12,9 @@ pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul
 pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul.Hakim__Schneider__Best-Practices-for-Building-a-New-Data-Center.pdf"
 
 # ocr an image for text
+tesseract ~/Downloads/01.png ~/Downloads/01 -l ben
+
+
 tesseract data/rov/rov-55.png out/rov/rov-55 -l ben
 
 tesseract data/vernacular/abc-008.png out/vernacular/abc-008 -l ben
