@@ -9,6 +9,7 @@ from pprint import pprint
 from task import *
 from helper.utils import *
 from helper.logger import *
+from helper.data import *
 
 ''' create worksheets according to spec defined in WORKSHEET_STRUCTURE
 '''
@@ -93,26 +94,28 @@ def new_toc_from_toc(gsheet):
 
     requests = []
 
-    # unhide all columns
-    requests = requests + toc_new_ws.column_unhide_request()
+    gsheet.clear_conditional_formats(worksheet_names=['toc_new_ws_name'])
 
-    # if there are 20 columns in -toc-new, insert two columns at position 16 (Q) (override-header and override-footer)
+    # unhide all columns
+    requests = requests + toc_new_ws.column_unhide_requests()
+
+    # if there are 20 columns in -toc-new, insert three columns at position 16 (Q) (override-header, override-footer, backgrounf-image)
     if (toc_new_ws.col_count() == 20):
-        requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='Q', cols_to_add=2)
+        requests = requests + toc_new_ws.dimension_add_requests(cols_to_add_at='Q', cols_to_add=3)
 
 
     # add 3 new columns after G - 'landscape', 'page-spec', 'margin-spec'. Column G we will use for 'break'
-    requests = requests + toc_new_ws.dimension_add_request(cols_to_add_at='H', cols_to_add=3)
+    requests = requests + toc_new_ws.dimension_add_requests(cols_to_add_at='H', cols_to_add=3)
 
     WORKSHEET_SPEC = WORKSHEET_STRUCTURE['-toc-new']
 
 
     #  resize columns
-    requests = requests + toc_new_ws.column_resize_request(WORKSHEET_SPEC['columns'])
+    requests = requests + toc_new_ws.column_resize_requests(WORKSHEET_SPEC['columns'])
 
 
     # batch the requests
-    gsheet.update_in_batch(request_list=requests)
+    gsheet.update_in_batch(values=[], requests=requests)
 
 
     # for each column
@@ -132,19 +135,19 @@ def new_toc_from_toc(gsheet):
 
         # set validation rules
         range_spec = f"{col_a1}3:{col_a1}"
-        requests = requests + toc_new_ws.data_validation_clear_request(range_spec)
+        requests = requests + toc_new_ws.data_validation_clear_requests(range_spec)
         if ('validation-list' in col_data):
-            requests = requests + toc_new_ws.data_validation_from_list_request(range_spec, col_data['validation-list'])
+            requests = requests + toc_new_ws.data_validation_from_list_requests(range_spec, col_data['validation-list'])
 
 
     # get the work range requests
-    values, formats = toc_new_ws.range_work_request(range_work_specs=range_work_specs)
+    values, formats = toc_new_ws.range_work_requests(range_work_specs=range_work_specs)
     requests = requests + formats
 
 
-    range_spec = 'C3:U'
-    vals_list = toc_new_ws.get_values(range=range_spec, major_dimension='ROWS')
-    for row in vals_list:
+    range_spec = 'C3:V'
+    vals_list = toc_new_ws.get_values_in_batch(ranges=[range_spec], major_dimension='ROWS')
+    for row in vals_list[0]:
         row_len = len(row)
 
         # for column C (process) (range C3:C), change values to blank if it is -
@@ -218,13 +221,13 @@ def new_toc_from_toc(gsheet):
     values.append({'range': range_spec, 'values': vals_list})
 
     # clear conditional formatting
-    requests = requests + toc_new_ws.conditional_formatting_rules_clear_request()
+    requests = requests + toc_new_ws.conditional_formatting_rules_clear_requests()
 
     # conditional formatting for blank cells
-    requests = requests + toc_new_ws.conditional_formatting_for_blank_cells_request(WORKSHEET_SPEC['cell-empty-markers'])
+    requests = requests + toc_new_ws.conditional_formatting_for_blank_cells_requests(WORKSHEET_SPEC['cell-empty-markers'])
 
     #  freeze rows and columns
-    requests = requests + toc_new_ws.dimension_freeze_request(frozen_rows=WORKSHEET_SPEC['frozen-rows'], frozen_cols=WORKSHEET_SPEC['frozen-columns'])
+    requests = requests + toc_new_ws.dimension_freeze_requests(frozen_rows=WORKSHEET_SPEC['frozen-rows'], frozen_cols=WORKSHEET_SPEC['frozen-columns'])
 
 
     value_count = len(values)
@@ -234,11 +237,8 @@ def new_toc_from_toc(gsheet):
     info(f"generated  .. {format_count} dynamic formats", nesting_level=1)
 
     info(f"formatting .. ranges", nesting_level=1)
-    gsheet.update_in_batch(request_list=requests)
+    gsheet.update_in_batch(values=values, requests=requests)
     info(f"formatted  .. {format_count} ranges", nesting_level=1)
-
-    info(f"updating   .. ranges", nesting_level=1)
-    toc_new_ws.update_values_in_batch(values=values)
     info(f"updated    .. {value_count} ranges", nesting_level=1)
 
 

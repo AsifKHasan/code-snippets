@@ -8,7 +8,7 @@ IF "%1"=="" GOTO WITHOUT_ARG
 set GSHEET="%1"
 
 pushd .\src
-.\work-with-gsheet.py  --gsheet "%GSHEET%"
+python work-with-gsheet.py  --gsheet "%GSHEET%"
 if errorlevel 1 (
   popd
   exit /b %errorlevel%
@@ -19,7 +19,7 @@ goto :EOF
 
 :WITHOUT_ARG
 pushd .\src
-.\work-with-gsheet.py
+python work-with-gsheet.py
 if errorlevel 1 (
   popd
   exit /b %errorlevel%

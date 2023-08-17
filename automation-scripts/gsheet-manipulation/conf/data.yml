@@ -580,7 +580,6 @@ worksheets:
   # - z-footer
   # - z-header
 
-
 # work specifications to apply on a list of worksheets
 work-specs:
   # multiple worksheets
