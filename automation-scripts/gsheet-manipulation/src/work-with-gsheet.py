@@ -83,7 +83,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
 
     # BEGIN common tasks
-    new_toc_from_toc(g_sheet)
+    # new_toc_from_toc(g_sheet)
     # END   common tasks
 
 
