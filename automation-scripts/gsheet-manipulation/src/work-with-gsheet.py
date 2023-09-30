@@ -68,10 +68,10 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
 
     # cell linking and ordering
-    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
 
     # copy worksheets to another gsheet
