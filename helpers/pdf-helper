@@ -1,7 +1,8 @@
 cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 
 # pdf pages as png
-pdftocairo -png -r 300 -f 1 -l 1 ~/Downloads/jun152023brpd08e.pdf ~/Downloads/
+pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\2023-08-28__Board Resolution (TOR).pdf" "C:\Users\Asif\Downloads\personal\abc"
+pdftocairo -png -gray "C:\Users\Asif\Downloads\2017-09-18__BB__Circular_Guideline_Letter.pdf" "C:\Users\Asif\Downloads\abc"
 
 pdftocairo -png -r 300 -f 11 -l 30 data/Ancholic_Bhasar_Ovidhan.pdf data/vernacular/vernacular
 pdftocairo -png -f 1 -l 1 -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
@@ -12,7 +13,8 @@ pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul
 pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul.Hakim__Schneider__Best-Practices-for-Building-a-New-Data-Center.pdf"
 
 # ocr an image for text
-tesseract ~/Downloads/01.png ~/Downloads/01 -l ben
+tesseract "C:\Users\Asif\Downloads\abc-1.png" "C:\Users\Asif\Downloads\05" -l eng+ben
+tesseract "C:\Users\Asif\Downloads\personal\abc\abc-6.png" "C:\Users\Asif\Downloads\personal\abc\06" -l eng+ben
 
 
 tesseract data/rov/rov-55.png out/rov/rov-55 -l ben
