@@ -539,8 +539,6 @@ worksheets:
 # resume worksheets
   # - '-toc-new'
   # - 00-layout
-  # - 00-layout-MRA-OMS
-  # - 00-layout-RHD-ITI-AMC-2023
   # - 00-layout-WB
   # - 01-personal
   # - 02-career-highlight
