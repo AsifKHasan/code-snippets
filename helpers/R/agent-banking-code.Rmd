@@ -1,0 +1,18 @@
+library(dplyr)
+
+# Get content into a data frame
+full_data <- read.csv("/home/asif/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv", header = FALSE, sep = "\t")
+
+# outlet ratio (rural/urban)
+data <- select(code, bank, outlets-ratio)
+
+# Create data
+data <- data.frame(
+  x=LETTERS[1:26], 
+  y=abs(rnorm(26))
+)
+ 
+# Plot
+ggplot(data, aes(x=x, y=y)) +
+  geom_point() + 
+  geom_segment( aes(x=x, xend=x, y=0, yend=y))
