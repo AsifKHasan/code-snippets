@@ -3,10 +3,11 @@ import pandas as pd
 from plotnine import *
 import matplotlib.pyplot as plt
 
-# data_path = "/home/asif/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
-data_path = "D:/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
+data_path = "/home/asif/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
+# data_path = "D:/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
 
-image_dir = "C:/Users/Asif/Downloads"
+image_dir = "/home/asif/Downloads"
+# image_dir = "C:/Users/Asif/Downloads"
 
 last_q = '2023-Q2'
 
@@ -21,25 +22,41 @@ latest_data = all_data[all_data['quarter'] == last_q]
 ###
 # BEGIN Customer Accounts
 
-data = latest_data[['code',  'accounts-urban', 'accounts-rural', 'accounts-male', 'accounts-female', 'accounts-othergender', 'accounts-current', 'accounts-saving', 'accounts-othertype']]
-# calculate accounts-total
-data["accounts_total"] = data['accounts-rural'] + data['accounts-urban']
+accounts_data = latest_data[['code',  'accounts-urban', 'accounts-rural', 'accounts-male', 'accounts-female', 'accounts-othergender', 'accounts-current', 'accounts-saving', 'accounts-othertype']]
+
+# rename columns
+dict = {
+        'accounts-urban' : 'urban', 
+        'accounts-rural' : 'rural', 
+        'accounts-male' : 'male', 
+        'accounts-female' : 'female', 
+        'accounts-othergender' : 'other', 
+        'accounts-current' : 'current', 
+        'accounts-saving' : 'savings', 
+        'accounts-othertype' : 'others'
+    }
+ 
+accounts_data.rename(columns=dict, inplace=True)
+
+
+# calculate total
+accounts_data["total"] = accounts_data.rural + accounts_data.urban
 
 # merge less than 2% banks into Other Banks
-data["new_code"] = np.where((data.accounts_total / data.accounts_total.sum() > 0.02), data["code"], "Other Banks")
-new_data = data.groupby(data.new_code)["accounts_total"].agg(accounts_total='sum')
-new_data.reset_index(names="code", inplace=True)
+accounts_data["new_code"] = np.where((accounts_data.total / accounts_data.total.sum() > 0.02), accounts_data.code, "Other Banks")
+accounts_data = accounts_data.groupby(accounts_data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
+accounts_data.rename(columns={'new_code': 'code'}, inplace=True)
 
 explode = (0.2, 0, 0, 0, 0, 0)
 fig, ax = plt.subplots()
-ax.pie(new_data.accounts_total, 
-       labels=new_data.code, 
+ax.pie(accounts_data.total, 
+       labels=accounts_data.code, 
        autopct='%1.2f%%',
        colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue'],
     #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
        startangle=180,
        textprops={'size': 'smaller'}, 
-       radius=1.5,
+       radius=1.4,
        explode=explode,
        wedgeprops = {"edgecolor":"gray", 
                     'linewidth': 1, 
@@ -50,6 +67,46 @@ p1_path = f"{image_dir}/accounts__cumulative__top-banks.png"
 fig.savefig(p1_path)
 
 fig.show()
+
+# customer account distribution by banks
+# pivot so that columns become rows
+accounts_data['rural'] = accounts_data.rural / accounts_data.total * 100
+accounts_data['urban'] = accounts_data.urban / accounts_data.total * 100
+accounts_data['male'] = accounts_data.male / accounts_data.total * 100
+accounts_data['female'] = accounts_data.female / accounts_data.total * 100
+accounts_data['other'] = accounts_data.other / accounts_data.total * 100
+accounts_data['current'] = accounts_data.current / accounts_data.total * 100
+accounts_data['savings'] = accounts_data.savings / accounts_data.total * 100
+accounts_data['others'] = accounts_data.others / accounts_data.total * 100
+accounts_pivot = pd.melt(accounts_data, id_vars=['code'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'other'])
+
+
+# https://plotnine.readthedocs.io/en/v0.12.3/generated/plotnine.geoms.geom_col.html#two-variable-bar-plot
+dodge_text = position_dodge(width=0.9)
+ccolor = '#555555'
+
+# Gallery Plot
+
+(ggplot(accounts_pivot, aes(x='code', y='value', fill='variable'))
+ + geom_col(stat='identity', position='dodge', show_legend=False)
+ + geom_text(aes(y=-.5, label='variable'),
+             position=dodge_text,
+             color=ccolor, size=8, angle=45, va='top')              # modified
+ + geom_text(aes(label='value'),
+             position=dodge_text,
+             size=8, va='bottom', format_string='{}%')
+ + lims(y=(-5, 60))
+ + theme(panel_background=element_rect(fill='white'),               # new
+         axis_title_y=element_blank(),
+         axis_line_x=element_line(color='black'),
+         axis_line_y=element_blank(),
+         axis_text_y=element_blank(),
+         axis_text_x=element_text(color=ccolor),
+         axis_ticks_major_y=element_blank(),
+         panel_grid=element_blank(),
+         panel_border=element_blank())
+)
+
 
 # END Customer Accounts
 ###
