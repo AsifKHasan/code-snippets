@@ -3,11 +3,11 @@ import pandas as pd
 from plotnine import *
 import matplotlib.pyplot as plt
 
-data_path = "/home/asif/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
-# data_path = "D:/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
+# data_path = "/home/asif/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
+data_path = "D:/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
 
-image_dir = "/home/asif/Downloads"
-# image_dir = "C:/Users/Asif/Downloads"
+# image_dir = "/home/asif/Downloads"
+image_dir = "C:/Users/Asif/Downloads"
 
 last_q = '2023-Q2'
 
@@ -64,7 +64,7 @@ ax.pie(accounts_data.total,
     )
 
 p1_path = f"{image_dir}/accounts__cumulative__top-banks.png"
-fig.savefig(p1_path)
+fig.savefig(fname=p1_path, dpi=150)
 
 fig.show()
 
@@ -78,35 +78,158 @@ accounts_data['other'] = accounts_data.other / accounts_data.total * 100
 accounts_data['current'] = accounts_data.current / accounts_data.total * 100
 accounts_data['savings'] = accounts_data.savings / accounts_data.total * 100
 accounts_data['others'] = accounts_data.others / accounts_data.total * 100
-accounts_pivot = pd.melt(accounts_data, id_vars=['code'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'other'])
+accounts_pivot = pd.melt(accounts_data, id_vars=['code'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
 
 # https://plotnine.readthedocs.io/en/v0.12.3/generated/plotnine.geoms.geom_col.html#two-variable-bar-plot
 dodge_text = position_dodge(width=0.9)
-ccolor = '#555555'
+ccolor = '#333333'
 
-# Gallery Plot
+# gender based
+variables = ['male', 'female', 'other']
+p1 = ggplot(
+        accounts_pivot[accounts_pivot.variable.isin(variables) & (accounts_pivot.value > 0)], 
+        aes(x='code', y='value', fill='variable')
+    ) + \
+    geom_col(
+        stat='identity', 
+        position='dodge', 
+        show_legend=False
+    ) + \
+    geom_text(
+        aes(y=-.5, label='variable'),
+        position=dodge_text,
+        color=ccolor, 
+        size=8, 
+        angle=45, 
+        va='top'
+    ) + \
+    geom_text(
+        aes(label='value'),
+        position=dodge_text,
+        size=6, 
+        va='bottom', 
+        format_string='{:.1f}%'
+    ) + \
+    lims(
+        y=(-5, 70)
+    ) + \
+    scale_fill_manual(
+        values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
+    ) + \
+    theme(
+        # panel_background=element_rect(fill='white'),
+        axis_title_y=element_blank(),
+        axis_line_y=element_blank(),
+        axis_text_y=element_blank(),
+        axis_ticks_major_y=element_blank(),
+        axis_title_x=element_blank(),
+        axis_line_x=element_line(color='black'),
+        axis_text_x=element_text(color=ccolor),
+        panel_grid=element_blank(),
+        panel_border=element_blank()
+    )
 
-(ggplot(accounts_pivot, aes(x='code', y='value', fill='variable'))
- + geom_col(stat='identity', position='dodge', show_legend=False)
- + geom_text(aes(y=-.5, label='variable'),
-             position=dodge_text,
-             color=ccolor, size=8, angle=45, va='top')              # modified
- + geom_text(aes(label='value'),
-             position=dodge_text,
-             size=8, va='bottom', format_string='{}%')
- + lims(y=(-5, 60))
- + theme(panel_background=element_rect(fill='white'),               # new
-         axis_title_y=element_blank(),
-         axis_line_x=element_line(color='black'),
-         axis_line_y=element_blank(),
-         axis_text_y=element_blank(),
-         axis_text_x=element_text(color=ccolor),
-         axis_ticks_major_y=element_blank(),
-         panel_grid=element_blank(),
-         panel_border=element_blank())
-)
+p1_path = f"{image_dir}/accounts__cumulative__gender-ratio__top-banks.png"
+p1.save(filename=p1_path, dpi=150)
 
+
+# account type based
+variables = ['current', 'savings', 'others']
+p2 = ggplot(
+        accounts_pivot[accounts_pivot.variable.isin(variables) & (accounts_pivot.value > 0)], 
+        aes(x='code', y='value', fill='variable')
+    ) + \
+    geom_col(
+        stat='identity', 
+        position='dodge', 
+        show_legend=False
+    ) + \
+    geom_text(
+        aes(y=-.5, label='variable'),
+        position=dodge_text,
+        color=ccolor, 
+        size=8, 
+        angle=45, 
+        va='top'
+    ) + \
+    geom_text(
+        aes(label='value'),
+        position=dodge_text,
+        size=6, 
+        va='bottom', 
+        format_string='{:.1f}%'
+    ) + \
+    lims(
+        y=(-5, 100)
+    ) + \
+    scale_fill_manual(
+        values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
+    ) + \
+    theme(
+        # panel_background=element_rect(fill='white'),
+        axis_title_y=element_blank(),
+        axis_line_y=element_blank(),
+        axis_text_y=element_blank(),
+        axis_ticks_major_y=element_blank(),
+        axis_title_x=element_blank(),
+        axis_line_x=element_line(color='black'),
+        axis_text_x=element_text(color=ccolor),
+        panel_grid=element_blank(),
+        panel_border=element_blank()
+    )
+
+p2_path = f"{image_dir}/accounts__cumulative__type-ratio__top-banks.png"
+p2.save(filename=p2_path, dpi=150)
+
+
+# location based
+variables = ['rural', 'urban']
+p3 = ggplot(
+        accounts_pivot[accounts_pivot.variable.isin(variables) & (accounts_pivot.value > 0)], 
+        aes(x='code', y='value', fill='variable')
+    ) + \
+    geom_col(
+        stat='identity', 
+        position='dodge', 
+        show_legend=False
+    ) + \
+    geom_text(
+        aes(y=-.5, label='variable'),
+        position=dodge_text,
+        color=ccolor, 
+        size=8, 
+        angle=45, 
+        va='top'
+    ) + \
+    geom_text(
+        aes(label='value'),
+        position=dodge_text,
+        size=6, 
+        va='bottom', 
+        format_string='{:.1f}%'
+    ) + \
+    lims(
+        y=(-5, 100)
+    ) + \
+    scale_fill_manual(
+        values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
+    ) + \
+    theme(
+        # panel_background=element_rect(fill='white'),
+        axis_title_y=element_blank(),
+        axis_line_y=element_blank(),
+        axis_text_y=element_blank(),
+        axis_ticks_major_y=element_blank(),
+        axis_title_x=element_blank(),
+        axis_line_x=element_line(color='black'),
+        axis_text_x=element_text(color=ccolor),
+        panel_grid=element_blank(),
+        panel_border=element_blank()
+    )
+
+p3_path = f"{image_dir}/accounts__cumulative__location-ratio__top-banks.png"
+p3.save(filename=p3_path, dpi=150)
 
 # END Customer Accounts
 ###
