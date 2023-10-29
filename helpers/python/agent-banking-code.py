@@ -20,6 +20,113 @@ latest_data = all_data[all_data['quarter'] == last_q]
 
 
 ###
+# BEGIN Remittance
+
+remittance_data = latest_data[['code', 'remittance-urban', 'remittance-rural']]
+
+# rename columns
+dict = {
+        'remittance-urban' : 'urban', 
+        'remittance-rural' : 'rural'
+    }
+ 
+remittance_data.rename(columns=dict, inplace=True)
+
+
+# calculate total
+remittance_data["total"] = remittance_data.rural + remittance_data.urban
+
+# merge less than 2% banks into Other Banks
+remittance_data["new_code"] = np.where(remittance_data.total > 10000.00, remittance_data.code, "Other Banks")
+remittance_data = remittance_data.groupby(remittance_data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum'})
+remittance_data.rename(columns={'new_code': 'code'}, inplace=True)
+
+remittance_data['explode'] = np.where(remittance_data.code == 'Agrani', 0.2, 0)
+fig, ax = plt.subplots()
+ax.pie(remittance_data.total, 
+       labels=remittance_data.code, 
+       autopct='%1.2f%%',
+       colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'mistyrose', 'azure', 'lavenderblush', 'honeydew', 'aliceblue'],
+    #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
+       startangle=180,
+       textprops={'size': 'smaller'}, 
+       radius=1.4,
+       explode=remittance_data['explode'].tolist(),
+       wedgeprops = {"edgecolor":"gray", 
+                    'linewidth': 1, 
+                    'antialiased': True}
+    )
+
+p1_path = f"{image_dir}/remittance__cumulative__top-banks.png"
+fig.savefig(fname=p1_path, dpi=150)
+
+fig.show()
+
+# customer account distribution by banks
+# pivot so that columns become rows
+remittance_data['rural'] = remittance_data.rural / remittance_data.total * 100
+remittance_data['urban'] = remittance_data.urban / remittance_data.total * 100
+remittance_pivot = pd.melt(remittance_data, id_vars=['code'], value_vars=['urban', 'rural'])
+
+
+# https://plotnine.readthedocs.io/en/v0.12.3/generated/plotnine.geoms.geom_col.html#two-variable-bar-plot
+dodge_text = position_dodge(width=0.9)
+ccolor = '#333333'
+
+# location based
+variables = ['rural', 'urban']
+p1 = ggplot(
+        remittance_pivot[remittance_pivot.variable.isin(variables) & (remittance_pivot.value > 0)], 
+        aes(x='code', y='value', fill='variable')
+    ) + \
+    geom_col(
+        stat='identity', 
+        position='dodge', 
+        show_legend=False
+    ) + \
+    geom_text(
+        aes(y=-.5, label='variable'),
+        position=dodge_text,
+        color=ccolor, 
+        size=8, 
+        angle=45, 
+        va='top'
+    ) + \
+    geom_text(
+        aes(label='value'),
+        position=dodge_text,
+        size=6, 
+        va='bottom', 
+        format_string='{:.1f}%'
+    ) + \
+    lims(
+        y=(-5, 100)
+    ) + \
+    scale_fill_manual(
+        values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
+    ) + \
+    theme(
+        # panel_background=element_rect(fill='white'),
+        axis_title_y=element_blank(),
+        axis_line_y=element_blank(),
+        axis_text_y=element_blank(),
+        axis_ticks_major_y=element_blank(),
+        axis_title_x=element_blank(),
+        axis_line_x=element_line(color='black'),
+        axis_text_x=element_text(color=ccolor),
+        panel_grid=element_blank(),
+        panel_border=element_blank()
+    )
+
+p1_path = f"{image_dir}/remittance__cumulative__location-ratio__top-banks.png"
+p1.save(filename=p1_path, dpi=150)
+
+
+# END Lending
+###
+
+
+###
 # BEGIN Lending
 
 lending_data = latest_data[['code', 'lending-urban', 'lending-rural', 'lending-male', 'lending-female', 'lending-othergender']]
@@ -40,21 +147,23 @@ lending_data.rename(columns=dict, inplace=True)
 lending_data["total"] = lending_data.rural + lending_data.urban
 
 # merge less than 2% banks into Other Banks
-lending_data["new_code"] = np.where((lending_data.total / lending_data.total.sum() > 0.02), lending_data.code, "Other Banks")
+lending_data["new_code"] = np.where(lending_data.total > 100.00, lending_data.code, "Other Banks")
 lending_data = lending_data.groupby(lending_data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum'})
 lending_data.rename(columns={'new_code': 'code'}, inplace=True)
 
-explode = (0.2, 0, 0, 0, 0, 0, 0)
+new_lending_data = lending_data.sample(frac=1)
+new_lending_data['explode'] = np.where(new_lending_data.total > 500.00, 0, 0.3)
+
 fig, ax = plt.subplots()
-ax.pie(lending_data.total, 
-       labels=lending_data.code, 
+ax.pie(new_lending_data.total, 
+       labels=new_lending_data.code, 
        autopct='%1.2f%%',
-       colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'yellow'],
+       colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'mistyrose', 'azure', 'lavenderblush', 'honeydew', 'aliceblue'],
     #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
-       startangle=180,
+       startangle=0,
        textprops={'size': 'smaller'}, 
-       radius=1.4,
-       explode=explode,
+       radius=1.2,
+       explode=new_lending_data["explode"].tolist(),
        wedgeprops = {"edgecolor":"gray", 
                     'linewidth': 1, 
                     'antialiased': True}
