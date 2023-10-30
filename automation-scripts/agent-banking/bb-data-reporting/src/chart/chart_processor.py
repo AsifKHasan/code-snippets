@@ -4,40 +4,9 @@ import pandas as pd
 from plotnine import *
 import matplotlib.pyplot as plt
 
-# CSV_PATH = "/home/asif/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
-CSV_PATH = "D:/projects/asif@github/code-snippets/helpers/R/agent-banking-data.csv"
-
-# IMAGE_DIR = "/home/asif/Downloads"
-IMAGE_DIR = "C:/Users/Asif/Downloads"
-
-
 ''' account charts
 '''
-def account_charts_cumulative(latest_data):
-    data = latest_data[['code',  'account-urban', 'account-rural', 'account-male', 'account-female', 'account-othergender', 'account-current', 'account-savings', 'account-othertype']]
-
-    # rename columns
-    dict = {
-            'account-urban' : 'urban', 
-            'account-rural' : 'rural', 
-            'account-male' : 'male', 
-            'account-female' : 'female', 
-            'account-othergender' : 'other', 
-            'account-current' : 'current', 
-            'account-savings' : 'savings', 
-            'account-othertype' : 'others'
-        }
-    
-    data.rename(columns=dict, inplace=True)
-
-
-    # calculate total
-    data["total"] = data.rural + data.urban
-
-    # merge banks with less than 2% of total accounts into Other Banks
-    data["new_code"] = np.where((data.total / data.total.sum() > 0.02), data.code, "Other Banks")
-    data = data.groupby(data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
-    data.rename(columns={'new_code': 'code'}, inplace=True)
+def account_charts_cumulative(data, config):
 
     data['explode'] = np.where(data.code == 'Agrani', 0.2, 0)
     fig, ax = plt.subplots()
@@ -55,7 +24,7 @@ def account_charts_cumulative(latest_data):
                         'antialiased': True}
         )
 
-    p1_path = f"{IMAGE_DIR}/accounts__cumulative__top-banks.png"
+    p1_path = f"{config['out-dir']}/accounts__cumulative__top-banks.png"
     fig.savefig(fname=p1_path, dpi=150)
 
     # fig.show()
@@ -122,7 +91,7 @@ def account_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p1_path = f"{IMAGE_DIR}/accounts__cumulative__gender-ratio__top-banks.png"
+    p1_path = f"{config['out-dir']}/accounts__cumulative__gender-ratio__top-banks.png"
     p1.save(filename=p1_path, dpi=150)
 
 
@@ -171,7 +140,7 @@ def account_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p2_path = f"{IMAGE_DIR}/accounts__cumulative__type-ratio__top-banks.png"
+    p2_path = f"{config['out-dir']}/accounts__cumulative__type-ratio__top-banks.png"
     p2.save(filename=p2_path, dpi=150)
 
 
@@ -220,38 +189,14 @@ def account_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p3_path = f"{IMAGE_DIR}/accounts__cumulative__location-ratio__top-banks.png"
+    p3_path = f"{config['out-dir']}/accounts__cumulative__location-ratio__top-banks.png"
     p3.save(filename=p3_path, dpi=150)
 
 
 
 ''' deposit charts
 '''
-def deposit_charts_cumulative(latest_data):
-    data = latest_data[['code', 'deposit-urban', 'deposit-rural', 'deposit-male', 'deposit-female', 'deposit-othergender', 'deposit-current', 'deposit-savings', 'deposit-othertype']]
-
-    # rename columns
-    dict = {
-            'deposit-urban' : 'urban', 
-            'deposit-rural' : 'rural', 
-            'deposit-male' : 'male', 
-            'deposit-female' : 'female', 
-            'deposit-othergender' : 'other', 
-            'deposit-current' : 'current', 
-            'deposit-savings' : 'savings', 
-            'deposit-othertype' : 'others'
-        }
-    
-    data.rename(columns=dict, inplace=True)
-
-
-    # calculate total
-    data["total"] = data.rural + data.urban
-
-    # merge less than 2% banks into Other Banks
-    data["new_code"] = np.where((data.total / data.total.sum() > 0.02), data.code, "Other Banks")
-    data = data.groupby(data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
-    data.rename(columns={'new_code': 'code'}, inplace=True)
+def deposit_charts_cumulative(data, config):
 
     data['explode'] = np.where(data.code == 'Agrani', 0.2, 0)
     fig, ax = plt.subplots()
@@ -269,7 +214,7 @@ def deposit_charts_cumulative(latest_data):
                         'antialiased': True}
         )
 
-    p1_path = f"{IMAGE_DIR}/deposit__cumulative__top-banks.png"
+    p1_path = f"{config['out-dir']}/deposit__cumulative__top-banks.png"
     fig.savefig(fname=p1_path, dpi=150)
 
     # fig.show()
@@ -336,7 +281,7 @@ def deposit_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p1_path = f"{IMAGE_DIR}/deposit__cumulative__gender-ratio__top-banks.png"
+    p1_path = f"{config['out-dir']}/deposit__cumulative__gender-ratio__top-banks.png"
     p1.save(filename=p1_path, dpi=150)
 
 
@@ -385,7 +330,7 @@ def deposit_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p2_path = f"{IMAGE_DIR}/deposit__cumulative__type-ratio__top-banks.png"
+    p2_path = f"{config['out-dir']}/deposit__cumulative__type-ratio__top-banks.png"
     p2.save(filename=p2_path, dpi=150)
 
 
@@ -434,35 +379,14 @@ def deposit_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p3_path = f"{IMAGE_DIR}/deposit__cumulative__location-ratio__top-banks.png"
+    p3_path = f"{config['out-dir']}/deposit__cumulative__location-ratio__top-banks.png"
     p3.save(filename=p3_path, dpi=150)
 
 
 
 ''' lending charts
 '''
-def lending_charts_cumulative(latest_data):
-    data = latest_data[['code', 'lending-urban', 'lending-rural', 'lending-male', 'lending-female', 'lending-othergender']]
-
-    # rename columns
-    dict = {
-            'lending-urban' : 'urban', 
-            'lending-rural' : 'rural', 
-            'lending-male' : 'male', 
-            'lending-female' : 'female', 
-            'lending-othergender' : 'other'
-        }
-    
-    data.rename(columns=dict, inplace=True)
-
-
-    # calculate total
-    data["total"] = data.rural + data.urban
-
-    # merge less than 2% banks into Other Banks
-    data["new_code"] = np.where(data.total > 100.00, data.code, "Other Banks")
-    data = data.groupby(data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum'})
-    data.rename(columns={'new_code': 'code'}, inplace=True)
+def lending_charts_cumulative(data, config):
 
     new_data = data.sample(frac=1)
     new_data['explode'] = np.where(new_data.total > 500.00, 0, 0.3)
@@ -482,7 +406,7 @@ def lending_charts_cumulative(latest_data):
                         'antialiased': True}
         )
 
-    p1_path = f"{IMAGE_DIR}/lending__cumulative__top-banks.png"
+    p1_path = f"{config['out-dir']}/lending__cumulative__top-banks.png"
     fig.savefig(fname=p1_path, dpi=150)
 
     # fig.show()
@@ -546,7 +470,7 @@ def lending_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p1_path = f"{IMAGE_DIR}/lending__cumulative__location-ratio__top-banks.png"
+    p1_path = f"{config['out-dir']}/lending__cumulative__location-ratio__top-banks.png"
     p1.save(filename=p1_path, dpi=150)
 
     # gender based
@@ -594,31 +518,14 @@ def lending_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p2_path = f"{IMAGE_DIR}/lending__cumulative__gender-ratio__top-banks.png"
+    p2_path = f"{config['out-dir']}/lending__cumulative__gender-ratio__top-banks.png"
     p2.save(filename=p2_path, dpi=150)
 
 
 
 ''' remittance charts
 '''
-def remittance_charts_cumulative(latest_data):
-    data = latest_data[['code', 'remittance-urban', 'remittance-rural']]
-
-    # rename columns
-    dict = {
-            'remittance-urban' : 'urban', 
-            'remittance-rural' : 'rural'
-        }
-    
-    data.rename(columns=dict, inplace=True)
-
-    # calculate total
-    data["total"] = data.rural + data.urban
-
-    # merge less than 2% banks into Other Banks
-    data["new_code"] = np.where(data.total > 10000.00, data.code, "Other Banks")
-    data = data.groupby(data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum'})
-    data.rename(columns={'new_code': 'code'}, inplace=True)
+def remittance_charts_cumulative(data, config):
 
     data['explode'] = np.where(data.code == 'Agrani', 0.2, 0)
     fig, ax = plt.subplots()
@@ -636,7 +543,7 @@ def remittance_charts_cumulative(latest_data):
                         'antialiased': True}
         )
 
-    p1_path = f"{IMAGE_DIR}/remittance__cumulative__top-banks.png"
+    p1_path = f"{config['out-dir']}/remittance__cumulative__top-banks.png"
     fig.savefig(fname=p1_path, dpi=150)
 
     # fig.show()
@@ -697,15 +604,15 @@ def remittance_charts_cumulative(latest_data):
             panel_border=element_blank()
         )
 
-    p1_path = f"{IMAGE_DIR}/remittance__cumulative__location-ratio__top-banks.png"
+    p1_path = f"{config['out-dir']}/remittance__cumulative__location-ratio__top-banks.png"
     p1.save(filename=p1_path, dpi=150)
 
 
 
 ''' outlet ratio
 '''
-def outlet_ratio_cumulative(latest_data):
-    data = latest_data[['code', 'outlet-urban', 'outlet-rural']]
+def outlet_ratio_cumulative(input_data, config):
+    data = input_data[['code', 'outlet-urban', 'outlet-rural']]
     data['outlet-ratio'] = data['outlet-rural'] / data['outlet-urban']
 
     # the axes
@@ -740,7 +647,7 @@ def outlet_ratio_cumulative(latest_data):
         ylab("Rural/Urban outlet ratio")
 
     # save as image
-    p1_path = f"{IMAGE_DIR}/outlet-ratio__cumulative__top-{top_values_to_select}-banks.png"
+    p1_path = f"{config['out-dir']}/outlet-ratio__cumulative__top-{top_values_to_select}-banks.png"
     p1.save(filename=p1_path)
 
 
@@ -763,7 +670,7 @@ def outlet_ratio_cumulative(latest_data):
             ylab("Rural/Urban outlet ratio")
 
     # save as image
-    p2_path = f"{IMAGE_DIR}/outlet-ratio__cumulative__bottom-{bottom_values_to_select}-banks.png"
+    p2_path = f"{config['out-dir']}/outlet-ratio__cumulative__bottom-{bottom_values_to_select}-banks.png"
     p2.save(filename=p2_path)
 
 
@@ -773,25 +680,3 @@ def outlet_ratio_cumulative(latest_data):
 def setup_theme():
     theme_set(theme_538())
 
-
-
-''' read data from csv file
-'''
-def read_csv_data(csv_path):
-    return pd.read_csv(csv_path, sep='\t', thousands=',')
-
-
-
-if __name__ == '__main__':
-    all_data = read_csv_data(csv_path=CSV_PATH)
-    setup_theme()
-
-    # cumulative report upto a qyarter end
-    LAST_Q = '2023-Q2'
-    latest_data = all_data[all_data.quarter == LAST_Q] 
-
-    account_charts_cumulative(latest_data=latest_data)
-    deposit_charts_cumulative(latest_data=latest_data)
-    lending_charts_cumulative(latest_data=latest_data)
-    remittance_charts_cumulative(latest_data=latest_data)
-    outlet_ratio_cumulative(latest_data=latest_data)
