@@ -2,7 +2,12 @@
 import yaml
 
 from data.data_processor import *
-from chart.chart_processor import *
+from chart.chart_base import *
+from chart.outlet_charts import *
+from chart.account_charts import *
+from chart.deposit_charts import *
+from chart.lending_charts import *
+from chart.remittance_charts import *
 
 
 if __name__ == '__main__':
