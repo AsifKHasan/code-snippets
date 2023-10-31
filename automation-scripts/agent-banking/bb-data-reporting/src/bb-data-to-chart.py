@@ -28,25 +28,26 @@ if __name__ == '__main__':
     latest_data = all_data[all_data.quarter == config["last-quarter"]]
 
     outlet_chart = OutletChart(data=latest_data, config=config)
-    outlet_chart.outlet_ratio_by_bank()
+    outlet_chart.outlet_ratio_comparison()
 
     account_chart = AccountChart(data=latest_data, config=config)
     account_chart.distribution_by_bank()
-    account_chart.distribution_by_location_by_bank()
-    account_chart.distribution_by_gender_by_bank()
-    account_chart.distribution_by_type_by_bank()
+    account_chart.comparison_by_location()
+    account_chart.comparison_by_gender()
+    account_chart.comparison_by_type()
+    account_chart.per_outlet_comparison_by_location()
 
     deposit_chart = DepositChart(data=latest_data, config=config)
     deposit_chart.distribution_by_bank()
-    deposit_chart.distribution_by_location_by_bank()
-    deposit_chart.distribution_by_gender_by_bank()
-    deposit_chart.distribution_by_type_by_bank()
+    deposit_chart.comparison_by_location()
+    deposit_chart.comparison_by_gender()
+    deposit_chart.comparison_by_type()
 
     lending_chart = LendingChart(data=latest_data, config=config)
     lending_chart.distribution_by_bank()
-    lending_chart.distribution_by_location_by_bank()
-    lending_chart.distribution_by_gender_by_bank()
+    lending_chart.comparison_by_location()
+    lending_chart.comparison_by_gender()
 
     remittance_chart = RemittanceChart(data=latest_data, config=config)
     remittance_chart.distribution_by_bank()
-    remittance_chart.distribution_by_location_by_bank()
+    remittance_chart.comparison_by_location()

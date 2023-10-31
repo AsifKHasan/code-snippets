@@ -21,10 +21,12 @@ class AccountChart(ChartBase):
     ''' setup data
     '''
     def setup_data(self, data):
-        self.data = data[['code',  'account-urban', 'account-rural', 'account-male', 'account-female', 'account-othergender', 'account-current', 'account-savings', 'account-othertype']]
+        self.data = data[['code', 'bank', 'outlet-urban', 'outlet-rural', 'account-urban', 'account-rural', 'account-male', 'account-female', 'account-othergender', 'account-current', 'account-savings', 'account-othertype']]
 
         # rename columns
         dict = {
+                'outlet-urban' : 'urban_outlets', 
+                'outlet-rural' : 'rural_outlets', 
                 'account-urban' : 'urban', 
                 'account-rural' : 'rural', 
                 'account-male' : 'male', 
@@ -39,24 +41,51 @@ class AccountChart(ChartBase):
 
 
         # calculate total
-        self.data["total"] = self.data.rural + self.data.urban
+        self.data['total_outlets'] = self.data.urban_outlets + self.data.rural_outlets
+        self.data['total'] = self.data.rural + self.data.urban
+
+        # per outlet data
+        columns_to_update = ['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others']
+        self.data_per_outlet = pd.DataFrame()
+        self.data_per_outlet['code'] = self.data['code']
+        self.data_per_outlet['bank'] = self.data['bank']
+        self.data_per_outlet['total'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['rural'] = self.data['rural'] / self.data['rural_outlets']
+        self.data_per_outlet['urban'] = self.data['urban'] / self.data['urban_outlets']
+        self.data_per_outlet['male'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['female'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['other'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['current'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['savings'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['others'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet = self.data_per_outlet.round()
+        self.data_per_outlet = self.data_per_outlet.nlargest(16, 'total')
+
+        self.data_per_outlet = pd.melt(self.data_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
+
 
         # merge banks with less than 2% of total accounts into Other Banks
         self.data['new_code'] = np.where((self.data.total / self.data.total.sum() > 0.02), self.data.code, "Other Banks")
-        self.data = self.data.groupby(self.data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
-        self.data.rename(columns={'new_code': 'code'}, inplace=True)
+        self.data['new_bank'] = np.where((self.data.total / self.data.total.sum() > 0.02), self.data.bank, "Other Banks")
+        self.data = self.data.groupby([self.data.new_code, self.data.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
+        self.data.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
-        # pivot so that columns become rows
-        self.pivot_data = self.data
-        self.pivot_data['rural'] = self.pivot_data.rural / self.data.total * 100
-        self.pivot_data['urban'] = self.pivot_data.urban / self.data.total * 100
-        self.pivot_data['male'] = self.pivot_data.male / self.data.total * 100
-        self.pivot_data['female'] = self.pivot_data.female / self.data.total * 100
-        self.pivot_data['other'] = self.pivot_data.other / self.data.total * 100
-        self.pivot_data['current'] = self.pivot_data.current / self.data.total * 100
-        self.pivot_data['savings'] = self.pivot_data.savings / self.data.total * 100
-        self.pivot_data['others'] = self.pivot_data.others / self.data.total * 100
-        self.pivot_data = pd.melt(self.pivot_data, id_vars=['code'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
+        # pivot so that columns become rows (for percent bar charts)
+        self.data_in_percent = self.data.copy()
+        self.data_in_percent['rural'] = self.data_in_percent.rural / self.data.total * 100
+        self.data_in_percent['urban'] = self.data_in_percent.urban / self.data.total * 100
+        self.data_in_percent['male'] = self.data_in_percent.male / self.data.total * 100
+        self.data_in_percent['female'] = self.data_in_percent.female / self.data.total * 100
+        self.data_in_percent['other'] = self.data_in_percent.other / self.data.total * 100
+        self.data_in_percent['current'] = self.data_in_percent.current / self.data.total * 100
+        self.data_in_percent['savings'] = self.data_in_percent.savings / self.data.total * 100
+        self.data_in_percent['others'] = self.data_in_percent.others / self.data.total * 100
+        self.data_in_percent = pd.melt(self.data_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
+
+
+        # print(self.data)
+        # print(self.data_in_percent)
+        # print(self.data_per_outlet)
 
 
 
@@ -80,23 +109,24 @@ class AccountChart(ChartBase):
                             'antialiased': True}
         )
 
-        chart_path = f"{self.config['out-dir']}/accounts__cumulative__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/account__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
         # fig.show()
 
 
 
-    ''' distribution by location by bank (percent bar chart)
+    ''' comparison by location (percent bar chart)
+        https://plotnine.readthedocs.io/en/v0.12.3/generated/plotnine.geoms.geom_col.html#two-variable-bar-plot
     '''
-    def distribution_by_location_by_bank(self):
+    def comparison_by_location(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
 
         variables = ['rural', 'urban']
         chart = ggplot(
-                self.pivot_data[self.pivot_data.variable.isin(variables) & (self.pivot_data.value > 0)], 
+                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
             ) + \
             geom_col(
@@ -138,22 +168,21 @@ class AccountChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/accounts__cumulative__location-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/account__comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
-    ''' distribution by gender by bank (percent bar chart)
-        # https://plotnine.readthedocs.io/en/v0.12.3/generated/plotnine.geoms.geom_col.html#two-variable-bar-plot
+    ''' comparison by gender (percent bar chart)
     '''
-    def distribution_by_gender_by_bank(self):
+    def comparison_by_gender(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
 
         variables = ['male', 'female', 'other']
         chart = ggplot(
-                self.pivot_data[self.pivot_data.variable.isin(variables) & (self.pivot_data.value > 0)], 
+                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
             ) + \
             geom_col(
@@ -195,21 +224,21 @@ class AccountChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/accounts__cumulative__gender-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/account__comparison_by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
-    ''' distribution by type by bank (percent bar chart)
+    ''' comparison by type (percent bar chart)
     '''
-    def distribution_by_type_by_bank(self):
+    def comparison_by_type(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
 
         variables = ['current', 'savings', 'others']
         chart = ggplot(
-                self.pivot_data[self.pivot_data.variable.isin(variables) & (self.pivot_data.value > 0)], 
+                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
             ) + \
             geom_col(
@@ -251,5 +280,64 @@ class AccountChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/accounts__cumulative__type-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/account__comparison_by_type__end-of__{self.config['last-quarter']}.png"
+        chart.save(filename=chart_path, dpi=150, verbose=False)
+
+
+
+    ''' per outlet comparison by location (bar chart)
+    '''
+    def per_outlet_comparison_by_location(self):
+
+        dodge_text = position_dodge(width=0.9)
+        ccolor = '#333333'
+
+        variables = ['rural', 'urban']
+        data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
+
+        chart = ggplot(
+                data, 
+                aes(x='code', y='value', fill='variable')
+            ) + \
+            geom_col(
+                stat='identity', 
+                position='dodge', 
+                show_legend=False
+            ) + \
+            geom_text(
+                aes(y=-.5, label='variable'),
+                position=dodge_text,
+                color=ccolor, 
+                size=8, 
+                angle=45, 
+                va='top'
+            ) + \
+            geom_text(
+                aes(label='value'),
+                position=dodge_text,
+                size=6, 
+                va='bottom', 
+                format_string='{:.0f}'
+            ) + \
+            lims(
+            #     y=(-10, 1500)
+            ) + \
+            scale_fill_manual(
+                values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
+            ) + \
+            theme(
+                # panel_background=element_rect(fill='white'),
+                figure_size=(11.5, 8.5),
+                axis_title_y=element_blank(),
+                axis_line_y=element_blank(),
+                axis_text_y=element_blank(),
+                axis_ticks_major_y=element_blank(),
+                axis_title_x=element_blank(),
+                axis_line_x=element_line(color='black'),
+                axis_text_x=element_text(color=ccolor),
+                panel_grid=element_blank(),
+                panel_border=element_blank()
+            )
+
+        chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

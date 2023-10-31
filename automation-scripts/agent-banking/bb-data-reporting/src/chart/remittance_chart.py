@@ -68,14 +68,14 @@ class RemittanceChart(ChartBase):
                             'antialiased': True}
             )
 
-        chart_path = f"{self.config['out-dir']}/remittance__cumulative__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/remittance__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
 
 
-    ''' distribution by location by bank (percent bar chart)
+    ''' comparison by location (percent bar chart)
     '''
-    def distribution_by_location_by_bank(self):
+    def comparison_by_location(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -125,5 +125,5 @@ class RemittanceChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/remittance__cumulative__location-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/remittance__comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

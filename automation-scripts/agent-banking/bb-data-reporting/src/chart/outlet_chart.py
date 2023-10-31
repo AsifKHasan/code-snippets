@@ -26,9 +26,9 @@ class OutletChart(ChartBase):
 
 
 
-    ''' outlet ratio
+    ''' outlet ratio comparison (lollypop chart)
     '''
-    def outlet_ratio_by_bank(self):
+    def outlet_ratio_comparison(self):
 
         # the axes
         x = 'code'
@@ -63,7 +63,7 @@ class OutletChart(ChartBase):
             ylab("Rural/Urban outlet ratio")
 
         # save as image
-        p1_path = f"{self.config['out-dir']}/outlet-ratio__cumulative__top-{top_values_to_select}-banks.png"
+        p1_path = f"{self.config['out-dir']}/outlet-ratio__comparison__top-banks__end-of__{self.config['last-quarter']}.png"
         p1.save(filename=p1_path, dpi=150, verbose=False)
 
 
@@ -87,5 +87,5 @@ class OutletChart(ChartBase):
             ylab("Rural/Urban outlet ratio")
 
         # save as image
-        p2_path = f"{self.config['out-dir']}/outlet-ratio__cumulative__bottom-{bottom_values_to_select}-banks.png"
+        p2_path = f"{self.config['out-dir']}/outlet-ratio__comparison__bottom-banks__end-of__{self.config['last-quarter']}.png"
         p2.save(filename=p2_path, dpi=150, verbose=False)

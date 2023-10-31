@@ -81,16 +81,16 @@ class DepositChart(ChartBase):
                             'antialiased': True}
             )
 
-        chart_path = f"{self.config['out-dir']}/deposit__cumulative__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/deposit__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
         # fig.show()
 
 
 
-    ''' distribution by location by bank (percent bar chart)
+    ''' comparison by location by bank (percent bar chart)
     '''
-    def distribution_by_location_by_bank(self):
+    def comparison_by_location(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -139,14 +139,14 @@ class DepositChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/deposit__cumulative__location-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/deposit__comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
-    ''' distribution by gender by bank (percent bar chart)
+    ''' comparison by gender by bank (percent bar chart)
     '''
-    def distribution_by_gender_by_bank(self):
+    def comparison_by_gender(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -195,14 +195,14 @@ class DepositChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/deposit__cumulative__gender-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/deposit__comparison_by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
-    ''' distribution by type by bank (percent bar chart)
+    ''' comparison by type by bank (percent bar chart)
     '''
-    def distribution_by_type_by_bank(self):
+    def comparison_by_type(self):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -251,5 +251,5 @@ class DepositChart(ChartBase):
                 panel_border=element_blank()
             )
 
-        chart_path = f"{self.config['out-dir']}/deposit__cumulative__type-ratio__top-banks.png"
+        chart_path = f"{self.config['out-dir']}/deposit__comparison_by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
