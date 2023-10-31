@@ -2,12 +2,13 @@
 import yaml
 import pandas as pd
 
-
 from chart.outlet_chart import OutletChart
 from chart.account_chart import AccountChart
 from chart.deposit_chart import DepositChart
 from chart.lending_chart import LendingChart
 from chart.remittance_chart import RemittanceChart
+
+from helper.logger import *
 
 
 ''' read data from csv file

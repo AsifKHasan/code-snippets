@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 from plotnine import *
 
+from helper.logger import *
+
+
 class ChartBase(object):
 
     ''' constructor

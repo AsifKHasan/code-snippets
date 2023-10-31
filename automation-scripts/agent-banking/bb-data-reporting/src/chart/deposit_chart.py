@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 from chart.chart_base import ChartBase
 
+from helper.logger import *
+
 
 class DepositChart(ChartBase):
 
@@ -33,7 +35,7 @@ class DepositChart(ChartBase):
                 'deposit-othertype' : 'others'
             }
         
-        self.data.rename(columns=dict, inplace=True)
+        self.data = self.data.rename(columns=dict)
 
 
         # calculate total
@@ -42,7 +44,7 @@ class DepositChart(ChartBase):
         # merge less than 2% banks into Other Banks
         self.data["new_code"] = np.where((self.data.total / self.data.total.sum() > 0.02), self.data.code, "Other Banks")
         self.data = self.data.groupby(self.data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
-        self.data.rename(columns={'new_code': 'code'}, inplace=True)
+        self.data = self.data.rename(columns={'new_code': 'code'})
 
 
         # pivot so that columns become rows
@@ -138,7 +140,7 @@ class DepositChart(ChartBase):
             )
 
         chart_path = f"{self.config['out-dir']}/deposit__cumulative__location-ratio__top-banks.png"
-        chart.save(filename=chart_path, dpi=150)
+        chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
@@ -194,7 +196,7 @@ class DepositChart(ChartBase):
             )
 
         chart_path = f"{self.config['out-dir']}/deposit__cumulative__gender-ratio__top-banks.png"
-        chart.save(filename=chart_path, dpi=150)
+        chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
@@ -250,4 +252,4 @@ class DepositChart(ChartBase):
             )
 
         chart_path = f"{self.config['out-dir']}/deposit__cumulative__type-ratio__top-banks.png"
-        chart.save(filename=chart_path, dpi=150)
+        chart.save(filename=chart_path, dpi=150, verbose=False)

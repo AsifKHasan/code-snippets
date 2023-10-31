@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 from chart.chart_base import ChartBase
 
+from helper.logger import *
+
 
 class RemittanceChart(ChartBase):
 
@@ -27,7 +29,7 @@ class RemittanceChart(ChartBase):
                 'remittance-rural' : 'rural'
             }
         
-        self.data.rename(columns=dict, inplace=True)
+        self.data = self.data.rename(columns=dict)
 
         # calculate total
         self.data["total"] = self.data.rural + self.data.urban
@@ -35,7 +37,7 @@ class RemittanceChart(ChartBase):
         # merge less than 2% banks into Other Banks
         self.data["new_code"] = np.where(self.data.total > 10000.00, self.data.code, "Other Banks")
         self.data = self.data.groupby(self.data.new_code, as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum'})
-        self.data.rename(columns={'new_code': 'code'}, inplace=True)
+        self.data = self.data.rename(columns={'new_code': 'code'})
 
 
         # pivot so that columns become rows
@@ -124,4 +126,4 @@ class RemittanceChart(ChartBase):
             )
 
         chart_path = f"{self.config['out-dir']}/remittance__cumulative__location-ratio__top-banks.png"
-        chart.save(filename=chart_path, dpi=150)
+        chart.save(filename=chart_path, dpi=150, verbose=False)

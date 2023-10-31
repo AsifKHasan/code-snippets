@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 from chart.chart_base import ChartBase
 
+from helper.logger import *
+
 
 class OutletChart(ChartBase):
 
@@ -20,7 +22,7 @@ class OutletChart(ChartBase):
     '''
     def setup_data(self, data):
         self.data = data[['code', 'outlet-urban', 'outlet-rural']]
-        self.data['outlet-ratio'] = self.data['outlet-rural'] / self.data['outlet-urban']
+        self.data = self.data.assign(outlet_ratio = self.data['outlet-rural'] / self.data['outlet-urban'])
 
 
 
@@ -30,7 +32,7 @@ class OutletChart(ChartBase):
 
         # the axes
         x = 'code'
-        y = 'outlet-ratio'
+        y = 'outlet_ratio'
 
         top_values_to_select = 10
         bottom_values_to_select = len(self.data) - top_values_to_select
@@ -41,7 +43,7 @@ class OutletChart(ChartBase):
 
         # top N banks
         p1 = ggplot(
-                self.data.nlargest(top_values_to_select, 'outlet-ratio'), 
+                self.data.nlargest(top_values_to_select, 'outlet_ratio'), 
                 aes(x=x, y=y, color='code')
             ) + \
             geom_point() + \
@@ -53,7 +55,8 @@ class OutletChart(ChartBase):
             scale_color_manual(values=colors) + \
             guides(color = False, size = False)
 
-        p1 = p1 + theme(
+        p1 = p1 + \
+            theme(
                     axis_text_x=element_text(family="Arial", weight="light", style="normal", size=8, color="black", angle=45, hjust=1)
                 ) + \
             xlab("Banks") + \
@@ -61,12 +64,12 @@ class OutletChart(ChartBase):
 
         # save as image
         p1_path = f"{self.config['out-dir']}/outlet-ratio__cumulative__top-{top_values_to_select}-banks.png"
-        p1.save(filename=p1_path)
+        p1.save(filename=p1_path, dpi=150, verbose=False)
 
 
         # bottom M banks
         p2 = ggplot(
-                self.data.nsmallest(bottom_values_to_select, 'outlet-ratio'), 
+                self.data.nsmallest(bottom_values_to_select, 'outlet_ratio'), 
                 aes(x=x, y=y)
             ) + \
             geom_point() + \
@@ -76,12 +79,13 @@ class OutletChart(ChartBase):
                 family="Arial", fontweight="light", fontstyle="normal"
             )
 
-        p2 = p2 + theme(
-                    axis_text_x=element_text(family="Arial", weight="light", style="normal", size=7, color="black", angle=45, hjust=1)
-                ) + \
-                xlab("Banks") + \
-                ylab("Rural/Urban outlet ratio")
+        p2 = p2 + \
+            theme(
+                axis_text_x=element_text(family="Arial", weight="light", style="normal", size=7, color="black", angle=45, hjust=1)
+            ) + \
+            xlab("Banks") + \
+            ylab("Rural/Urban outlet ratio")
 
         # save as image
         p2_path = f"{self.config['out-dir']}/outlet-ratio__cumulative__bottom-{bottom_values_to_select}-banks.png"
-        p2.save(filename=p2_path)
+        p2.save(filename=p2_path, dpi=150, verbose=False)
