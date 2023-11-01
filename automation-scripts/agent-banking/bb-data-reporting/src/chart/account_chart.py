@@ -52,12 +52,12 @@ class AccountChart(ChartBase):
         self.data_per_outlet['total'] = self.data['total'] / self.data['total_outlets']
         self.data_per_outlet['rural'] = self.data['rural'] / self.data['rural_outlets']
         self.data_per_outlet['urban'] = self.data['urban'] / self.data['urban_outlets']
-        self.data_per_outlet['male'] = self.data['total'] / self.data['total_outlets']
-        self.data_per_outlet['female'] = self.data['total'] / self.data['total_outlets']
-        self.data_per_outlet['other'] = self.data['total'] / self.data['total_outlets']
-        self.data_per_outlet['current'] = self.data['total'] / self.data['total_outlets']
-        self.data_per_outlet['savings'] = self.data['total'] / self.data['total_outlets']
-        self.data_per_outlet['others'] = self.data['total'] / self.data['total_outlets']
+        self.data_per_outlet['male'] = self.data['male'] / self.data['total_outlets']
+        self.data_per_outlet['female'] = self.data['female'] / self.data['total_outlets']
+        self.data_per_outlet['other'] = self.data['other'] / self.data['total_outlets']
+        self.data_per_outlet['current'] = self.data['current'] / self.data['total_outlets']
+        self.data_per_outlet['savings'] = self.data['savings'] / self.data['total_outlets']
+        self.data_per_outlet['others'] = self.data['others'] / self.data['total_outlets']
         self.data_per_outlet = self.data_per_outlet.round()
         self.data_per_outlet = self.data_per_outlet.nlargest(16, 'total')
 
@@ -323,12 +323,8 @@ class AccountChart(ChartBase):
                 va='bottom', 
                 format_string='{:.0f}'
             ) + \
-            lims(
-                y=(-40, 1500)
-            ) + \
-            scale_fill_manual(
-                values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
-            ) + \
+            scale_fill_manual(values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) + \
+            lims(y=(-40, 1500)) + \
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -344,4 +340,114 @@ class AccountChart(ChartBase):
             )
 
         chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_location__end-of__{self.config['last-quarter']}.png"
+        chart.save(filename=chart_path, dpi=150, verbose=False)
+
+
+
+    ''' per outlet comparison by gender (bar chart)
+    '''
+    def per_outlet_comparison_by_gender(self):
+
+        dodge_text = position_dodge(width=0.9)
+        ccolor = '#333333'
+
+        variables = ['male', 'female', 'other']
+        data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
+
+        chart = ggplot(
+                data, 
+                aes(x='code', y='value', fill='variable')
+            ) + \
+            geom_col(
+                stat='identity', 
+                position='dodge', 
+                show_legend=False
+            ) + \
+            geom_text(
+                aes(y=-.5, label='variable'),
+                position=dodge_text,
+                color=ccolor, 
+                size=11, 
+                angle=45, 
+                va='top'
+            ) + \
+            geom_text(
+                aes(label='value'),
+                position=dodge_text,
+                size=8, 
+                va='bottom', 
+                format_string='{:.0f}'
+            ) + \
+            scale_fill_manual(values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) + \
+            lims(y=(-40, 900)) + \
+            theme(
+                # panel_background=element_rect(fill='white'),
+                figure_size=(12, 8),
+                axis_title_y=element_blank(),
+                axis_line_y=element_blank(),
+                axis_text_y=element_blank(),
+                axis_ticks_major_y=element_blank(),
+                axis_title_x=element_blank(),
+                axis_line_x=element_line(color='black'),
+                axis_text_x=element_text(color=ccolor, size=14, angle=45),
+                panel_grid=element_blank(),
+                panel_border=element_blank()
+            )
+
+        chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_gender__end-of__{self.config['last-quarter']}.png"
+        chart.save(filename=chart_path, dpi=150, verbose=False)
+
+
+
+    ''' per outlet comparison by account type (bar chart)
+    '''
+    def per_outlet_comparison_by_type(self):
+
+        dodge_text = position_dodge(width=0.9)
+        ccolor = '#333333'
+
+        variables = ['current', 'savings', 'others']
+        data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
+
+        chart = ggplot(
+                data, 
+                aes(x='code', y='value', fill='variable')
+            ) + \
+            geom_col(
+                stat='identity', 
+                position='dodge', 
+                show_legend=False
+            ) + \
+            geom_text(
+                aes(y=-.5, label='variable'),
+                position=dodge_text,
+                color=ccolor, 
+                size=11, 
+                angle=45, 
+                va='top'
+            ) + \
+            geom_text(
+                aes(label='value'),
+                position=dodge_text,
+                size=8, 
+                va='bottom', 
+                format_string='{:.0f}'
+            ) + \
+            scale_fill_manual(values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) + \
+            lims(y=(-60, 1300)) + \
+            theme(
+                # panel_background=element_rect(fill='white'),
+                figure_size=(12, 8),
+                axis_title_y=element_blank(),
+                axis_line_y=element_blank(),
+                axis_text_y=element_blank(),
+                axis_ticks_major_y=element_blank(),
+                axis_title_x=element_blank(),
+                axis_line_x=element_line(color='black'),
+                axis_text_x=element_text(color=ccolor, size=14, angle=45),
+                panel_grid=element_blank(),
+                panel_border=element_blank()
+            )
+
+        chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

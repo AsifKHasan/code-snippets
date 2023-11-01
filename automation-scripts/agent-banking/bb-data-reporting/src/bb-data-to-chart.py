@@ -37,6 +37,8 @@ if __name__ == '__main__':
     account_chart.comparison_by_gender()
     account_chart.comparison_by_type()
     account_chart.per_outlet_comparison_by_location()
+    account_chart.per_outlet_comparison_by_gender()
+    account_chart.per_outlet_comparison_by_type()
 
     deposit_chart = DepositChart(data=latest_data, config=config)
     deposit_chart.distribution_by_bank()
