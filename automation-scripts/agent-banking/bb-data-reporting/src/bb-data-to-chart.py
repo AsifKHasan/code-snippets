@@ -28,6 +28,7 @@ if __name__ == '__main__':
     latest_data = all_data[all_data.quarter == config["last-quarter"]]
 
     outlet_chart = OutletChart(data=latest_data, config=config)
+    outlet_chart.distribution_by_bank()
     outlet_chart.outlet_ratio_comparison()
 
     account_chart = AccountChart(data=latest_data, config=config)

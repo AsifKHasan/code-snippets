@@ -21,8 +21,41 @@ class OutletChart(ChartBase):
     ''' setup data
     '''
     def setup_data(self, data):
-        self.data = data[['code', 'outlet-urban', 'outlet-rural']]
+        self.data = data[['code', 'bank', 'outlet-urban', 'outlet-rural']]
+        self.data = self.data.assign(total = self.data['outlet-rural'] + self.data['outlet-urban'])
         self.data = self.data.assign(outlet_ratio = self.data['outlet-rural'] / self.data['outlet-urban'])
+
+        # merge banks with less than 2% of total outlets into Other Banks (for distribution)
+        self.data_top_banks = self.data.copy()
+        self.data_top_banks['new_code'] = np.where((self.data_top_banks.total / self.data_top_banks.total.sum() > 0.02), self.data_top_banks.code, "Other Banks")
+        self.data_top_banks['new_bank'] = np.where((self.data_top_banks.total / self.data_top_banks.total.sum() > 0.02), self.data_top_banks.bank, "Other Banks")
+        self.data_top_banks = self.data_top_banks.groupby([self.data_top_banks.new_code, self.data_top_banks.new_bank], as_index=False).agg({'total': 'sum', 'outlet-urban': 'sum', 'outlet-rural': 'sum'})
+        self.data_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
+
+
+    ''' distribution by bank (pie chart)
+    '''
+    def distribution_by_bank(self):
+
+        self.data_top_banks['explode'] = np.where(self.data_top_banks.code == 'Agrani', 0.2, 0)
+        chart, ax = plt.subplots()
+        plt.figure(figsize=(10,10))
+        ax.pie(self.data_top_banks.total, 
+            labels=self.data_top_banks.code, 
+            autopct='%1.2f%%',
+            colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'mistyrose', 'azure', 'lavenderblush', 'honeydew', 'aliceblue'],
+            #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
+            startangle=180,
+            textprops={'size': 'smaller'}, 
+            radius=1.4,
+            explode=self.data_top_banks['explode'].tolist(),
+            wedgeprops = {"edgecolor":"gray", 
+                            'linewidth': 1, 
+                            'antialiased': True}
+        )
+
+        chart_path = f"{self.config['out-dir']}/outlet__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
+        chart.savefig(fname=chart_path, dpi=150)
 
 
 
@@ -49,16 +82,15 @@ class OutletChart(ChartBase):
             geom_point() + \
             geom_segment(aes(x=x, xend=x, y=0, yend=y)) + \
             geom_text(
-                aes(label=y), size=7, angle=30, format_string="{:.2f}", nudge_x=0.3, nudge_y=5, 
+                aes(label=y), size=10, angle=30, format_string="{:.2f}", nudge_x=0.3, nudge_y=0.3, 
                 family="Arial", fontweight="light", fontstyle="normal"
             ) + \
             scale_color_manual(values=colors) + \
-            guides(color = False, size = False)
-
-        p1 = p1 + \
+            guides(color = False, size = False) + \
             theme(
-                    axis_text_x=element_text(family="Arial", weight="light", style="normal", size=8, color="black", angle=45, hjust=1)
-                ) + \
+                figure_size=(10, 4),
+                axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
+            ) + \
             xlab("Banks") + \
             ylab("Rural/Urban outlet ratio")
 
@@ -75,13 +107,12 @@ class OutletChart(ChartBase):
             geom_point() + \
             geom_segment(aes(x=x, xend=x, y=0, yend=y)) + \
             geom_text(
-                aes(label=y), size=6, angle=30, format_string="{:.2f}", nudge_x=0.3, nudge_y=0.3, 
+                aes(label=y), size=10, angle=30, format_string="{:.2f}", nudge_x=0.4, nudge_y=0.4, 
                 family="Arial", fontweight="light", fontstyle="normal"
-            )
-
-        p2 = p2 + \
+            ) + \
             theme(
-                axis_text_x=element_text(family="Arial", weight="light", style="normal", size=7, color="black", angle=45, hjust=1)
+                figure_size=(10, 4),
+                axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
             ) + \
             xlab("Banks") + \
             ylab("Rural/Urban outlet ratio")

@@ -63,6 +63,7 @@ class LendingChart(ChartBase):
         new_data['explode'] = np.where(new_data.total > 500.00, 0, 0.3)
 
         chart, ax = plt.subplots()
+        plt.figure(figsize=(10,10))
         ax.pie(new_data.total, 
             labels=new_data.code, 
             autopct='%1.2f%%',
@@ -103,32 +104,33 @@ class LendingChart(ChartBase):
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
                 color=ccolor, 
-                size=8, 
+                size=10, 
                 angle=45, 
                 va='top'
             ) + \
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
-                size=6, 
+                size=10, 
                 va='bottom', 
                 format_string='{:.1f}%'
             ) + \
             lims(
-                y=(-5, 100)
+                y=(-10, 100)
             ) + \
             scale_fill_manual(
                 values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
             ) + \
             theme(
                 # panel_background=element_rect(fill='white'),
+                figure_size=(10, 5),
                 axis_title_y=element_blank(),
                 axis_line_y=element_blank(),
                 axis_text_y=element_blank(),
                 axis_ticks_major_y=element_blank(),
                 axis_title_x=element_blank(),
                 axis_line_x=element_line(color='black'),
-                axis_text_x=element_text(color=ccolor),
+                axis_text_x=element_text(color=ccolor, size=12),
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
@@ -159,32 +161,33 @@ class LendingChart(ChartBase):
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
                 color=ccolor, 
-                size=8, 
+                size=10, 
                 angle=45, 
                 va='top'
             ) + \
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
-                size=6, 
+                size=10, 
                 va='bottom', 
                 format_string='{:.1f}%'
             ) + \
             lims(
-                y=(-5, 100)
+                y=(-10, 100)
             ) + \
             scale_fill_manual(
                 values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
             ) + \
             theme(
                 # panel_background=element_rect(fill='white'),
+                figure_size=(10, 5),
                 axis_title_y=element_blank(),
                 axis_line_y=element_blank(),
                 axis_text_y=element_blank(),
                 axis_ticks_major_y=element_blank(),
                 axis_title_x=element_blank(),
                 axis_line_x=element_line(color='black'),
-                axis_text_x=element_text(color=ccolor),
+                axis_text_x=element_text(color=ccolor, size=12),
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
