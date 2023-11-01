@@ -45,12 +45,19 @@ if __name__ == '__main__':
     deposit_chart.comparison_by_location()
     deposit_chart.comparison_by_gender()
     deposit_chart.comparison_by_type()
+    deposit_chart.per_outlet_comparison_by_location()
+    deposit_chart.per_outlet_comparison_by_gender()
+    deposit_chart.per_outlet_comparison_by_type()
+
 
     lending_chart = LendingChart(data=latest_data, config=config)
     lending_chart.distribution_by_bank()
     lending_chart.comparison_by_location()
     lending_chart.comparison_by_gender()
+    # lending_chart.per_outlet_comparison_by_location()
+    # lending_chart.per_outlet_comparison_by_gender()
 
     remittance_chart = RemittanceChart(data=latest_data, config=config)
     remittance_chart.distribution_by_bank()
     remittance_chart.comparison_by_location()
+    # remittance_chart.per_outlet_comparison_by_location()

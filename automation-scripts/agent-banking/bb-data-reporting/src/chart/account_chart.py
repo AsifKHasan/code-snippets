@@ -45,7 +45,6 @@ class AccountChart(ChartBase):
         self.data['total'] = self.data.rural + self.data.urban
 
         # per outlet data
-        columns_to_update = ['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others']
         self.data_per_outlet = pd.DataFrame()
         self.data_per_outlet['code'] = self.data['code']
         self.data_per_outlet['bank'] = self.data['bank']
@@ -96,7 +95,8 @@ class AccountChart(ChartBase):
         self.data['explode'] = np.where(self.data.code == 'Agrani', 0.2, 0)
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
-        ax.pie(self.data.total, 
+        ax.pie(
+            self.data.total, 
             labels=self.data.code, 
             autopct='%1.2f%%',
             colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue'],
@@ -105,9 +105,7 @@ class AccountChart(ChartBase):
             textprops={'size': 'smaller'}, 
             radius=1.4,
             explode=self.data['explode'].tolist(),
-            wedgeprops = {"edgecolor":"gray", 
-                            'linewidth': 1, 
-                            'antialiased': True}
+            wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
         chart_path = f"{self.config['out-dir']}/account__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
@@ -126,15 +124,16 @@ class AccountChart(ChartBase):
         ccolor = '#333333'
 
         variables = ['rural', 'urban']
-        chart = ggplot(
+        chart = (
+            ggplot(
                 self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -142,20 +141,16 @@ class AccountChart(ChartBase):
                 size=12, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=10, 
                 va='bottom', 
                 format_string='{:.1f}%'
-            ) + \
-            lims(
-                y=(-10, 100)
-            ) + \
-            scale_fill_manual(
-                values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
-            ) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
@@ -169,6 +164,7 @@ class AccountChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/account__comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
@@ -183,15 +179,16 @@ class AccountChart(ChartBase):
         ccolor = '#333333'
 
         variables = ['male', 'female', 'other']
-        chart = ggplot(
+        chart = (
+            ggplot(
                 self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -199,20 +196,16 @@ class AccountChart(ChartBase):
                 size=12, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=10, 
                 va='bottom', 
                 format_string='{:.1f}%'
-            ) + \
-            lims(
-                y=(-10, 70)
-            ) + \
-            scale_fill_manual(
-                values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
-            ) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
@@ -226,6 +219,7 @@ class AccountChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/account__comparison_by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
@@ -240,15 +234,16 @@ class AccountChart(ChartBase):
         ccolor = '#333333'
 
         variables = ['current', 'savings', 'others']
-        chart = ggplot(
+        chart = (
+            ggplot(
                 self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -256,20 +251,16 @@ class AccountChart(ChartBase):
                 size=12, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=10, 
                 va='bottom', 
                 format_string='{:.1f}%'
-            ) + \
-            lims(
-                y=(-15, 100)
-            ) + \
-            scale_fill_manual(
-                values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
-            ) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-15, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
@@ -283,6 +274,7 @@ class AccountChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/account__comparison_by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
@@ -299,15 +291,16 @@ class AccountChart(ChartBase):
         variables = ['rural', 'urban']
         data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
 
-        chart = ggplot(
+        chart = (
+            ggplot(
                 data, 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -315,16 +308,16 @@ class AccountChart(ChartBase):
                 size=11, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=8, 
                 va='bottom', 
                 format_string='{:.0f}'
-            ) + \
-            scale_fill_manual(values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) + \
-            lims(y=(-40, 1500)) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-40, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -338,6 +331,7 @@ class AccountChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
@@ -354,15 +348,16 @@ class AccountChart(ChartBase):
         variables = ['male', 'female', 'other']
         data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
 
-        chart = ggplot(
+        chart = (
+            ggplot(
                 data, 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -370,16 +365,16 @@ class AccountChart(ChartBase):
                 size=11, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=8, 
                 va='bottom', 
                 format_string='{:.0f}'
-            ) + \
-            scale_fill_manual(values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) + \
-            lims(y=(-40, 900)) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-40, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -393,6 +388,7 @@ class AccountChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
@@ -409,15 +405,16 @@ class AccountChart(ChartBase):
         variables = ['current', 'savings', 'others']
         data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
 
-        chart = ggplot(
+        chart = (
+            ggplot(
                 data, 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -425,16 +422,16 @@ class AccountChart(ChartBase):
                 size=11, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=8, 
                 va='bottom', 
                 format_string='{:.0f}'
-            ) + \
-            scale_fill_manual(values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) + \
-            lims(y=(-60, 1300)) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-60, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -448,6 +445,7 @@ class AccountChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

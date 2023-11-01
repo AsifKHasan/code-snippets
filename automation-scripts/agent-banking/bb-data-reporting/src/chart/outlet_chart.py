@@ -40,7 +40,8 @@ class OutletChart(ChartBase):
         self.data_top_banks['explode'] = np.where(self.data_top_banks.code == 'Agrani', 0.2, 0)
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
-        ax.pie(self.data_top_banks.total, 
+        ax.pie(
+            self.data_top_banks.total, 
             labels=self.data_top_banks.code, 
             autopct='%1.2f%%',
             colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'mistyrose', 'azure', 'lavenderblush', 'honeydew', 'aliceblue'],
@@ -49,9 +50,7 @@ class OutletChart(ChartBase):
             textprops={'size': 'smaller'}, 
             radius=1.4,
             explode=self.data_top_banks['explode'].tolist(),
-            wedgeprops = {"edgecolor":"gray", 
-                            'linewidth': 1, 
-                            'antialiased': True}
+            wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
         chart_path = f"{self.config['out-dir']}/outlet__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
@@ -75,24 +74,26 @@ class OutletChart(ChartBase):
         # radius = {code:  for code in self.data['code'].tolist()}
 
         # top N banks
-        p1 = ggplot(
+        p1 = (
+            ggplot(
                 self.data.nlargest(top_values_to_select, 'outlet_ratio'), 
                 aes(x=x, y=y, color='code')
-            ) + \
-            geom_point() + \
-            geom_segment(aes(x=x, xend=x, y=0, yend=y)) + \
+            ) +
+            geom_point() +
+            geom_segment(aes(x=x, xend=x, y=0, yend=y)) +
             geom_text(
                 aes(label=y), size=10, angle=30, format_string="{:.2f}", nudge_x=0.3, nudge_y=0.3, 
                 family="Arial", fontweight="light", fontstyle="normal"
-            ) + \
-            scale_color_manual(values=colors) + \
-            guides(color = False, size = False) + \
+            ) +
+            scale_color_manual(values=colors) +
+            guides(color = False, size = False) +
+            xlab("Banks") +
+            ylab("Rural/Urban outlet ratio") + 
             theme(
                 figure_size=(10, 4),
                 axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
-            ) + \
-            xlab("Banks") + \
-            ylab("Rural/Urban outlet ratio")
+            )
+        )
 
         # save as image
         p1_path = f"{self.config['out-dir']}/outlet-ratio__comparison__top-banks__end-of__{self.config['last-quarter']}.png"
@@ -100,22 +101,24 @@ class OutletChart(ChartBase):
 
 
         # bottom M banks
-        p2 = ggplot(
+        p2 = (
+            ggplot(
                 self.data.nsmallest(bottom_values_to_select, 'outlet_ratio'), 
                 aes(x=x, y=y)
-            ) + \
-            geom_point() + \
-            geom_segment(aes(x=x, xend=x, y=0, yend=y)) + \
+            ) +
+            geom_point() +
+            geom_segment(aes(x=x, xend=x, y=0, yend=y)) +
             geom_text(
                 aes(label=y), size=10, angle=30, format_string="{:.2f}", nudge_x=0.4, nudge_y=0.4, 
                 family="Arial", fontweight="light", fontstyle="normal"
-            ) + \
+            ) +
+            xlab("Banks") +
+            ylab("Rural/Urban outlet ratio") +
             theme(
                 figure_size=(10, 4),
                 axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
-            ) + \
-            xlab("Banks") + \
-            ylab("Rural/Urban outlet ratio")
+            )
+        )
 
         # save as image
         p2_path = f"{self.config['out-dir']}/outlet-ratio__comparison__bottom-banks__end-of__{self.config['last-quarter']}.png"

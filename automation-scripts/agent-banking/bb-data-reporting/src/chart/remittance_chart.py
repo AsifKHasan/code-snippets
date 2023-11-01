@@ -41,10 +41,10 @@ class RemittanceChart(ChartBase):
 
 
         # pivot so that columns become rows
-        self.pivot_data = self.data
-        self.pivot_data['rural'] = self.pivot_data.rural / self.pivot_data.total * 100
-        self.pivot_data['urban'] = self.pivot_data.urban / self.pivot_data.total * 100
-        self.pivot_data = pd.melt(self.pivot_data, id_vars=['code'], value_vars=['urban', 'rural'])
+        self.data_in_percent = self.data
+        self.data_in_percent['rural'] = self.data_in_percent.rural / self.data_in_percent.total * 100
+        self.data_in_percent['urban'] = self.data_in_percent.urban / self.data_in_percent.total * 100
+        self.data_in_percent = pd.melt(self.data_in_percent, id_vars=['code'], value_vars=['urban', 'rural'])
 
 
 
@@ -55,7 +55,8 @@ class RemittanceChart(ChartBase):
         self.data['explode'] = np.where(self.data.code == 'Agrani', 0.2, 0)
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
-        ax.pie(self.data.total, 
+        ax.pie(
+            self.data.total, 
             labels=self.data.code, 
             autopct='%1.2f%%',
             colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'mistyrose', 'azure', 'lavenderblush', 'honeydew', 'aliceblue'],
@@ -64,10 +65,8 @@ class RemittanceChart(ChartBase):
             textprops={'size': 'smaller'}, 
             radius=1.4,
             explode=self.data['explode'].tolist(),
-            wedgeprops = {"edgecolor":"gray", 
-                            'linewidth': 1, 
-                            'antialiased': True}
-            )
+            wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
+        )
 
         chart_path = f"{self.config['out-dir']}/remittance__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
@@ -83,15 +82,16 @@ class RemittanceChart(ChartBase):
 
         # location based
         variables = ['rural', 'urban']
-        chart = ggplot(
-                self.pivot_data[self.pivot_data.variable.isin(variables) & (self.pivot_data.value > 0)], 
+        chart = (
+            ggplot(
+                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
-            ) + \
+            ) +
             geom_col(
                 stat='identity', 
                 position='dodge', 
                 show_legend=False
-            ) + \
+            ) +
             geom_text(
                 aes(y=-.5, label='variable'),
                 position=dodge_text,
@@ -99,20 +99,16 @@ class RemittanceChart(ChartBase):
                 size=10, 
                 angle=45, 
                 va='top'
-            ) + \
+            ) +
             geom_text(
                 aes(label='value'),
                 position=dodge_text,
                 size=10, 
                 va='bottom', 
                 format_string='{:.1f}%'
-            ) + \
-            lims(
-                y=(-10, 100)
-            ) + \
-            scale_fill_manual(
-                values = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
-            ) + \
+            ) +
+            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(11.5, 8.5),
@@ -126,6 +122,7 @@ class RemittanceChart(ChartBase):
                 panel_grid=element_blank(),
                 panel_border=element_blank()
             )
+        )
 
         chart_path = f"{self.config['out-dir']}/remittance__comparison_by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
