@@ -15,6 +15,7 @@ class DepositChart(ChartBase):
     '''
     def __init__(self, data, config):
         super().__init__(data=data, config=config)
+        self.type = 'deposit'
 
 
 
@@ -58,8 +59,9 @@ class DepositChart(ChartBase):
         self.data_per_outlet['savings'] = self.data['savings'] / self.data['total_outlets']
         self.data_per_outlet['others'] = self.data['others'] / self.data['total_outlets']
         # self.data_per_outlet = self.data_per_outlet.round()
-        self.data_per_outlet = self.data_per_outlet.nlargest(8, 'total')
 
+        # keep the top N
+        self.data_per_outlet = self.data_per_outlet.nlargest(8, 'total')
         self.data_per_outlet = pd.melt(self.data_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
 
@@ -104,7 +106,7 @@ class DepositChart(ChartBase):
             wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__distribution__by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
         # fig.show()
@@ -161,7 +163,7 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__comparison_by_location__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -216,7 +218,7 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__comparison_by_gender__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -271,7 +273,7 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__comparison_by_type__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -312,7 +314,7 @@ class DepositChart(ChartBase):
                 format_string='{:.2f}'
             ) +
             scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
-            lims(y=(-30, None)) +
+            lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -328,7 +330,7 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__per_outlet_comparison_by_location__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -369,7 +371,7 @@ class DepositChart(ChartBase):
                 format_string='{:.2f}'
             ) + 
             scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
-            lims(y=(-30, None)) +
+            lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -385,7 +387,7 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__per_outlet_comparison_by_gender__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -426,7 +428,7 @@ class DepositChart(ChartBase):
                 format_string='{:.2f}'
             ) +
             scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
-            lims(y=(-30, None)) +
+            lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(12, 8),
@@ -442,5 +444,5 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/deposit__per_outlet_comparison_by_type__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

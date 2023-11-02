@@ -15,6 +15,7 @@ class AccountChart(ChartBase):
     '''
     def __init__(self, data, config):
         super().__init__(data=data, config=config)
+        self.type = 'account'
 
 
 
@@ -58,8 +59,9 @@ class AccountChart(ChartBase):
         self.data_per_outlet['savings'] = self.data['savings'] / self.data['total_outlets']
         self.data_per_outlet['others'] = self.data['others'] / self.data['total_outlets']
         self.data_per_outlet = self.data_per_outlet.round()
-        self.data_per_outlet = self.data_per_outlet.nlargest(16, 'total')
 
+        # keep the top N
+        self.data_per_outlet = self.data_per_outlet.nlargest(16, 'total')
         self.data_per_outlet = pd.melt(self.data_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
 
@@ -68,6 +70,7 @@ class AccountChart(ChartBase):
         self.data['new_bank'] = np.where((self.data.total / self.data.total.sum() > 0.02), self.data.bank, "Other Banks")
         self.data = self.data.groupby([self.data.new_code, self.data.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
         self.data.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
+
 
         # pivot so that columns become rows (for percent bar charts)
         self.data_in_percent = self.data.copy()
@@ -108,7 +111,7 @@ class AccountChart(ChartBase):
             wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
-        chart_path = f"{self.config['out-dir']}/account__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__distribution__by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
         # fig.show()
@@ -166,7 +169,7 @@ class AccountChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/account__comparison_by_location__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -221,7 +224,7 @@ class AccountChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/account__comparison_by_gender__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -276,7 +279,7 @@ class AccountChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/account__comparison_by_type__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -333,7 +336,7 @@ class AccountChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_location__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_location__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -390,7 +393,7 @@ class AccountChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_gender__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_gender__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
@@ -447,5 +450,5 @@ class AccountChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/account__per_outlet_comparison_by_type__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_type__end-of__{self.config['last-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

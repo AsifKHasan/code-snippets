@@ -54,10 +54,10 @@ if __name__ == '__main__':
     lending_chart.distribution_by_bank()
     lending_chart.comparison_by_location()
     lending_chart.comparison_by_gender()
-    # lending_chart.per_outlet_comparison_by_location()
-    # lending_chart.per_outlet_comparison_by_gender()
+    lending_chart.per_outlet_comparison_by_location()
+    lending_chart.per_outlet_comparison_by_gender()
 
     remittance_chart = RemittanceChart(data=latest_data, config=config)
     remittance_chart.distribution_by_bank()
     remittance_chart.comparison_by_location()
-    # remittance_chart.per_outlet_comparison_by_location()
+    remittance_chart.per_outlet_comparison_by_location()

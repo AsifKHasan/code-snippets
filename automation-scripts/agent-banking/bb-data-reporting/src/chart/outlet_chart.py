@@ -15,6 +15,7 @@ class OutletChart(ChartBase):
     '''
     def __init__(self, data, config):
         super().__init__(data=data, config=config)
+        self.type = 'outlet'
 
 
 
@@ -31,6 +32,7 @@ class OutletChart(ChartBase):
         self.data_top_banks['new_bank'] = np.where((self.data_top_banks.total / self.data_top_banks.total.sum() > 0.02), self.data_top_banks.bank, "Other Banks")
         self.data_top_banks = self.data_top_banks.groupby([self.data_top_banks.new_code, self.data_top_banks.new_bank], as_index=False).agg({'total': 'sum', 'outlet-urban': 'sum', 'outlet-rural': 'sum'})
         self.data_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
+
 
 
     ''' distribution by bank (pie chart)
@@ -53,7 +55,7 @@ class OutletChart(ChartBase):
             wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
-        chart_path = f"{self.config['out-dir']}/outlet__distribution_by_bank__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__distribution__by_bank__end-of__{self.config['last-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
 
@@ -96,7 +98,7 @@ class OutletChart(ChartBase):
         )
 
         # save as image
-        p1_path = f"{self.config['out-dir']}/outlet-ratio__comparison__top-banks__end-of__{self.config['last-quarter']}.png"
+        p1_path = f"{self.config['out-dir']}/{self.type}__comparison__by_ratio__top-banks__end-of__{self.config['last-quarter']}.png"
         p1.save(filename=p1_path, dpi=150, verbose=False)
 
 
@@ -121,5 +123,5 @@ class OutletChart(ChartBase):
         )
 
         # save as image
-        p2_path = f"{self.config['out-dir']}/outlet-ratio__comparison__bottom-banks__end-of__{self.config['last-quarter']}.png"
+        p2_path = f"{self.config['out-dir']}/{self.type}__comparison__by_ratio__bottom-banks__end-of__{self.config['last-quarter']}.png"
         p2.save(filename=p2_path, dpi=150, verbose=False)

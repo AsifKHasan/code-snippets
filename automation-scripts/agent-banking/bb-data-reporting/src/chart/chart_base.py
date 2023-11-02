@@ -14,6 +14,8 @@ class ChartBase(object):
         self.setup_theme()
         self.setup_data(data=data)
 
+        self.type = None
+
 
 
     ''' ggplot theme setup
