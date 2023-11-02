@@ -13,16 +13,16 @@ class DepositChart(ChartBase):
 
     ''' constructor
     '''
-    def __init__(self, data, config):
-        super().__init__(data=data, config=config)
+    def __init__(self, current_data, previous_data, config):
+        super().__init__(current_data=current_data, previous_data=previous_data, config=config)
         self.type = 'deposit'
 
 
 
     ''' setup data
     '''
-    def setup_data(self, data):
-        self.data = data[['code', 'bank', 'outlet-urban', 'outlet-rural', 'deposit-urban', 'deposit-rural', 'deposit-male', 'deposit-female', 'deposit-othergender', 'deposit-current', 'deposit-savings', 'deposit-othertype']]
+    def setup_data(self, current_data, previous_data):
+        self.data_current = current_data[['code', 'bank', 'outlet-urban', 'outlet-rural', 'deposit-urban', 'deposit-rural', 'deposit-male', 'deposit-female', 'deposit-othergender', 'deposit-current', 'deposit-savings', 'deposit-othertype']]
 
         # rename columns
         dict = {
@@ -38,75 +38,77 @@ class DepositChart(ChartBase):
                 'deposit-othertype' : 'others'
             }
         
-        self.data = self.data.rename(columns=dict)
+        self.data_current = self.data_current.rename(columns=dict)
 
 
         # calculate total
-        self.data['total_outlets'] = self.data.urban_outlets + self.data.rural_outlets
-        self.data["total"] = self.data.rural + self.data.urban
+        self.data_current['total_outlets'] = self.data_current.urban_outlets + self.data_current.rural_outlets
+        self.data_current["total"] = self.data_current.rural + self.data_current.urban
+
 
         # per outlet data
-        self.data_per_outlet = pd.DataFrame()
-        self.data_per_outlet['code'] = self.data['code']
-        self.data_per_outlet['bank'] = self.data['bank']
-        self.data_per_outlet['total'] = self.data['total'] / self.data['total_outlets']
-        self.data_per_outlet['rural'] = self.data['rural'] / self.data['rural_outlets']
-        self.data_per_outlet['urban'] = self.data['urban'] / self.data['urban_outlets']
-        self.data_per_outlet['male'] = self.data['male'] / self.data['total_outlets']
-        self.data_per_outlet['female'] = self.data['female'] / self.data['total_outlets']
-        self.data_per_outlet['other'] = self.data['other'] / self.data['total_outlets']
-        self.data_per_outlet['current'] = self.data['current'] / self.data['total_outlets']
-        self.data_per_outlet['savings'] = self.data['savings'] / self.data['total_outlets']
-        self.data_per_outlet['others'] = self.data['others'] / self.data['total_outlets']
-        # self.data_per_outlet = self.data_per_outlet.round()
+        self.data_current_per_outlet = pd.DataFrame()
+        self.data_current_per_outlet['code'] = self.data_current['code']
+        self.data_current_per_outlet['bank'] = self.data_current['bank']
+        self.data_current_per_outlet['total'] = self.data_current['total'] / self.data_current['total_outlets']
+        self.data_current_per_outlet['rural'] = self.data_current['rural'] / self.data_current['rural_outlets']
+        self.data_current_per_outlet['urban'] = self.data_current['urban'] / self.data_current['urban_outlets']
+        self.data_current_per_outlet['male'] = self.data_current['male'] / self.data_current['total_outlets']
+        self.data_current_per_outlet['female'] = self.data_current['female'] / self.data_current['total_outlets']
+        self.data_current_per_outlet['other'] = self.data_current['other'] / self.data_current['total_outlets']
+        self.data_current_per_outlet['current'] = self.data_current['current'] / self.data_current['total_outlets']
+        self.data_current_per_outlet['savings'] = self.data_current['savings'] / self.data_current['total_outlets']
+        self.data_current_per_outlet['others'] = self.data_current['others'] / self.data_current['total_outlets']
+        # self.data_current_per_outlet = self.data_current_per_outlet.round()
 
         # keep the top N
-        self.data_per_outlet = self.data_per_outlet.nlargest(8, 'total')
-        self.data_per_outlet = pd.melt(self.data_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
+        top_n = 8
+        self.data_current_per_outlet = self.data_current_per_outlet.nlargest(top_n, 'total')
+        self.data_current_per_outlet = pd.melt(self.data_current_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
 
         # merge less than 2% banks into Other Banks
-        self.data["new_code"] = np.where((self.data.total / self.data.total.sum() > 0.02), self.data.code, "Other Banks")
-        self.data['new_bank'] = np.where((self.data.total / self.data.total.sum() > 0.02), self.data.bank, "Other Banks")
-        self.data = self.data.groupby([self.data.new_code, self.data.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
-        self.data.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
+        self.data_current["new_code"] = np.where((self.data_current.total / self.data_current.total.sum() > 0.02), self.data_current.code, "Other Banks")
+        self.data_current['new_bank'] = np.where((self.data_current.total / self.data_current.total.sum() > 0.02), self.data_current.bank, "Other Banks")
+        self.data_current = self.data_current.groupby([self.data_current.new_code, self.data_current.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
+        self.data_current.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
 
         # pivot so that columns become rows
-        self.data_in_percent = self.data.copy()
-        self.data_in_percent['rural'] = self.data_in_percent.rural / self.data_in_percent.total * 100
-        self.data_in_percent['urban'] = self.data_in_percent.urban / self.data_in_percent.total * 100
-        self.data_in_percent['male'] = self.data_in_percent.male / self.data_in_percent.total * 100
-        self.data_in_percent['female'] = self.data_in_percent.female / self.data_in_percent.total * 100
-        self.data_in_percent['other'] = self.data_in_percent.other / self.data_in_percent.total * 100
-        self.data_in_percent['current'] = self.data_in_percent.current / self.data_in_percent.total * 100
-        self.data_in_percent['savings'] = self.data_in_percent.savings / self.data_in_percent.total * 100
-        self.data_in_percent['others'] = self.data_in_percent.others / self.data_in_percent.total * 100
-        self.data_in_percent = pd.melt(self.data_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
+        self.data_current_in_percent = self.data_current.copy()
+        self.data_current_in_percent['rural'] = self.data_current_in_percent.rural / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['urban'] = self.data_current_in_percent.urban / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['male'] = self.data_current_in_percent.male / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['female'] = self.data_current_in_percent.female / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['other'] = self.data_current_in_percent.other / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['current'] = self.data_current_in_percent.current / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['savings'] = self.data_current_in_percent.savings / self.data_current_in_percent.total * 100
+        self.data_current_in_percent['others'] = self.data_current_in_percent.others / self.data_current_in_percent.total * 100
+        self.data_current_in_percent = pd.melt(self.data_current_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
 
 
     ''' distribution by bank (pie chart)
     '''
-    def distribution_by_bank(self):
+    def distribution_by_bank(self, data_range):
 
-        self.data['explode'] = np.where(self.data.code == 'Agrani', 0.2, 0)
+        self.data_current['explode'] = np.where(self.data_current.code == 'Agrani', 0.2, 0)
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
         ax.pie(
-            self.data.total, 
-            labels=self.data.code, 
+            self.data_current.total, 
+            labels=self.data_current.code, 
             autopct='%1.2f%%',
             colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'yellow'],
             #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
             startangle=180,
             textprops={'size': 'smaller'}, 
             radius=1.4,
-            explode=self.data['explode'].tolist(),
+            explode=self.data_current['explode'].tolist(),
             wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__distribution__by_bank__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__distribution__by_bank__{data_range}__{self.config['current-quarter']}.png"
         chart.savefig(fname=chart_path, dpi=150)
 
         # fig.show()
@@ -115,7 +117,7 @@ class DepositChart(ChartBase):
 
     ''' comparison by location by bank (percent bar chart)
     '''
-    def comparison_by_location(self):
+    def comparison_by_location(self, data_range):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -123,7 +125,7 @@ class DepositChart(ChartBase):
         variables = ['rural', 'urban']
         chart = (
             ggplot(
-                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
+                self.data_current_in_percent[self.data_current_in_percent.variable.isin(variables) & (self.data_current_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -163,14 +165,14 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_location__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_location__{data_range}__{self.config['current-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
     ''' comparison by gender by bank (percent bar chart)
     '''
-    def comparison_by_gender(self):
+    def comparison_by_gender(self, data_range):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -178,7 +180,7 @@ class DepositChart(ChartBase):
         variables = ['male', 'female', 'other']
         chart = (
             ggplot(
-                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
+                self.data_current_in_percent[self.data_current_in_percent.variable.isin(variables) & (self.data_current_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -218,14 +220,14 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_gender__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_gender__{data_range}__{self.config['current-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
     ''' comparison by type by bank (percent bar chart)
     '''
-    def comparison_by_type(self):
+    def comparison_by_type(self, data_range):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
@@ -233,7 +235,7 @@ class DepositChart(ChartBase):
         variables = ['current', 'savings', 'others']
         chart = (
             ggplot(
-                self.data_in_percent[self.data_in_percent.variable.isin(variables) & (self.data_in_percent.value > 0)], 
+                self.data_current_in_percent[self.data_current_in_percent.variable.isin(variables) & (self.data_current_in_percent.value > 0)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -273,20 +275,20 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_type__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__comparison__by_type__{data_range}__{self.config['current-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
     ''' per outlet comparison by location (bar chart)
     '''
-    def per_outlet_comparison_by_location(self):
+    def per_outlet_comparison_by_location(self, data_range):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
 
         variables = ['rural', 'urban', 'total']
-        data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
+        data = self.data_current_per_outlet[self.data_current_per_outlet.variable.isin(variables) & (self.data_current_per_outlet.value > 0)]
 
         chart = (
             ggplot(
@@ -330,20 +332,20 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_location__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_location__{data_range}__{self.config['current-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
     ''' per outlet comparison by gender (bar chart)
     '''
-    def per_outlet_comparison_by_gender(self):
+    def per_outlet_comparison_by_gender(self, data_range):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
 
         variables = ['male', 'female', 'other']
-        data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
+        data = self.data_current_per_outlet[self.data_current_per_outlet.variable.isin(variables) & (self.data_current_per_outlet.value > 0)]
 
         chart = (
             ggplot(
@@ -387,20 +389,20 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_gender__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_gender__{data_range}__{self.config['current-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)
 
 
 
     ''' per outlet comparison by account type (bar chart)
     '''
-    def per_outlet_comparison_by_type(self):
+    def per_outlet_comparison_by_type(self, data_range):
 
         dodge_text = position_dodge(width=0.9)
         ccolor = '#333333'
 
         variables = ['current', 'savings', 'others']
-        data = self.data_per_outlet[self.data_per_outlet.variable.isin(variables) & (self.data_per_outlet.value > 0)]
+        data = self.data_current_per_outlet[self.data_current_per_outlet.variable.isin(variables) & (self.data_current_per_outlet.value > 0)]
 
         chart = (
             ggplot(
@@ -444,5 +446,5 @@ class DepositChart(ChartBase):
             )
         )
 
-        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_type__end-of__{self.config['last-quarter']}.png"
+        chart_path = f"{self.config['out-dir']}/{self.type}__per_outlet__comparison__by_type__{data_range}__{self.config['current-quarter']}.png"
         chart.save(filename=chart_path, dpi=150, verbose=False)

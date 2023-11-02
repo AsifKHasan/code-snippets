@@ -20,44 +20,47 @@ def read_csv_data(csv_path):
 
 if __name__ == '__main__':
     # configuration
-    config = yaml.load(open("../conf/config.yml", 'r', encoding='utf-8'), Loader=yaml.FullLoader)
+    config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
 
-    all_data = read_csv_data(csv_path=config["csv-path"])
+    all_data = read_csv_data(csv_path=config['csv-path'])
 
-    # cumulative report upto a quarter end
-    latest_data = all_data[all_data.quarter == config["last-quarter"]]
+    # get the previous quarter
+    previous_quarter = config['quarters'][config['quarters'].index(config['current-quarter']) - 1]
 
-    outlet_chart = OutletChart(data=latest_data, config=config)
-    outlet_chart.distribution_by_bank()
-    outlet_chart.outlet_ratio_comparison()
+    # get the latest and previous quarter data
+    current_data = all_data[all_data.quarter == config['current-quarter']]
+    previous_data = all_data[all_data.quarter == previous_quarter]
 
-    account_chart = AccountChart(data=latest_data, config=config)
-    account_chart.distribution_by_bank()
-    account_chart.comparison_by_location()
-    account_chart.comparison_by_gender()
-    account_chart.comparison_by_type()
-    account_chart.per_outlet_comparison_by_location()
-    account_chart.per_outlet_comparison_by_gender()
-    account_chart.per_outlet_comparison_by_type()
+    # outlet_chart = OutletChart(current_data=current_data, previous_data=previous_data, config=config)
+    # outlet_chart.distribution_by_bank(data_range='cumulative')
+    # outlet_chart.outlet_ratio_comparison(data_range='cumulative')
 
-    deposit_chart = DepositChart(data=latest_data, config=config)
-    deposit_chart.distribution_by_bank()
-    deposit_chart.comparison_by_location()
-    deposit_chart.comparison_by_gender()
-    deposit_chart.comparison_by_type()
-    deposit_chart.per_outlet_comparison_by_location()
-    deposit_chart.per_outlet_comparison_by_gender()
-    deposit_chart.per_outlet_comparison_by_type()
+    account_chart = AccountChart(current_data=current_data, previous_data=previous_data, config=config)
+    # account_chart.distribution_by_bank(data_range='cumulative')
+    # account_chart.comparison_by_location(data_range='cumulative')
+    # account_chart.comparison_by_gender(data_range='cumulative')
+    # account_chart.comparison_by_type(data_range='cumulative')
+    # account_chart.per_outlet_comparison_by_location(data_range='cumulative')
+    # account_chart.per_outlet_comparison_by_gender(data_range='cumulative')
+    # account_chart.per_outlet_comparison_by_type(data_range='cumulative')
 
+    # deposit_chart = DepositChart(current_data=current_data, previous_data=previous_data, config=config)
+    # deposit_chart.distribution_by_bank(data_range='cumulative')
+    # deposit_chart.comparison_by_location(data_range='cumulative')
+    # deposit_chart.comparison_by_gender(data_range='cumulative')
+    # deposit_chart.comparison_by_type(data_range='cumulative')
+    # deposit_chart.per_outlet_comparison_by_location(data_range='cumulative')
+    # deposit_chart.per_outlet_comparison_by_gender(data_range='cumulative')
+    # deposit_chart.per_outlet_comparison_by_type(data_range='cumulative')
 
-    lending_chart = LendingChart(data=latest_data, config=config)
-    lending_chart.distribution_by_bank()
-    lending_chart.comparison_by_location()
-    lending_chart.comparison_by_gender()
-    lending_chart.per_outlet_comparison_by_location()
-    lending_chart.per_outlet_comparison_by_gender()
+    # lending_chart = LendingChart(current_data=current_data, previous_data=previous_data, config=config)
+    # lending_chart.distribution_by_bank(data_range='cumulative')
+    # lending_chart.comparison_by_location(data_range='cumulative')
+    # lending_chart.comparison_by_gender(data_range='cumulative')
+    # lending_chart.per_outlet_comparison_by_location(data_range='cumulative')
+    # lending_chart.per_outlet_comparison_by_gender(data_range='cumulative')
 
-    remittance_chart = RemittanceChart(data=latest_data, config=config)
-    remittance_chart.distribution_by_bank()
-    remittance_chart.comparison_by_location()
-    remittance_chart.per_outlet_comparison_by_location()
+    # remittance_chart = RemittanceChart(current_data=current_data, previous_data=previous_data, config=config)
+    # remittance_chart.distribution_by_bank(data_range='cumulative')
+    # remittance_chart.comparison_by_location(data_range='cumulative')
+    # remittance_chart.per_outlet_comparison_by_location(data_range='cumulative')
