@@ -8,11 +8,11 @@ class ChartBase(object):
 
     ''' constructor
     '''
-    def __init__(self, current_data, previous_data, config):
+    def __init__(self, cumulative_data, period_data, config):
         self.config = config
 
         self.setup_theme()
-        self.setup_data(current_data=current_data, previous_data=previous_data)
+        self.setup_data(cumulative_data=cumulative_data, period_data=period_data)
 
         self.type = None
 
@@ -27,5 +27,5 @@ class ChartBase(object):
 
     ''' setup data
     '''
-    def setup_data(self, current_data, previous_data):
+    def setup_data(self, cumulative_data, period_data):
         pass

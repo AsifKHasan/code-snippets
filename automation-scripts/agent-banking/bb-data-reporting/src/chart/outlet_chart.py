@@ -13,15 +13,15 @@ class OutletChart(ChartBase):
 
     ''' constructor
     '''
-    def __init__(self, current_data, previous_data, config):
-        super().__init__(current_data=current_data, previous_data=previous_data, config=config)
+    def __init__(self, cumulative_data, period_data, config):
+        super().__init__(cumulative_data=cumulative_data, period_data=period_data, config=config)
         self.type = 'outlet'
 
 
 
     ''' setup data
     '''
-    def setup_data(self, current_data, previous_data):
+    def setup_data(self, cumulative_data, period_data):
         self.data_current = current_data[['code', 'bank', 'outlet-urban', 'outlet-rural']]
         self.data_current = self.data_current.assign(total = self.data_current['outlet-rural'] + self.data_current['outlet-urban'])
         self.data_current = self.data_current.assign(outlet_ratio = self.data_current['outlet-rural'] / self.data_current['outlet-urban'])

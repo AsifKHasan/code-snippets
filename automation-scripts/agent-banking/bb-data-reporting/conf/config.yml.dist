@@ -1,4 +1,13 @@
-csv-path:              "../data/bb-quarterly-data.csv"
-out-dir:               "../out"
-last-quarter:          "2023-Q2"
+csv-path:              '../data/bb-quarterly-data.csv'
+out-dir:               '../out'
+current-quarter:       '2023-Q2'
+quarters:
+- '2022-Q1'
+- '2022-Q2'
+- '2022-Q3'
+- '2022-Q4'
+- '2023-Q1'
+- '2023-Q2'
+- '2023-Q3'
+- '2023-Q4'
 

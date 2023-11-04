@@ -13,15 +13,15 @@ class LendingChart(ChartBase):
 
     ''' constructor
     '''
-    def __init__(self, current_data, previous_data, config):
-        super().__init__(current_data=current_data, previous_data=previous_data, config=config)
+    def __init__(self, cumulative_data, period_data, config):
+        super().__init__(cumulative_data=cumulative_data, period_data=period_data, config=config)
         self.type = 'lending'
 
 
 
     ''' setup data
     '''
-    def setup_data(self, current_data, previous_data):
+    def setup_data(self, cumulative_data, period_data):
         self.data_current = current_data[['code', 'bank', 'outlet-urban', 'outlet-rural', 'lending-urban', 'lending-rural', 'lending-male', 'lending-female', 'lending-othergender']]
 
         # rename columns
