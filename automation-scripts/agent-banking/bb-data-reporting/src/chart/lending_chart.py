@@ -77,13 +77,15 @@ class LendingChart(ChartBase):
 
 
         # merge less than 2% banks into Other Banks
-        self.data_cumulative["new_code"] = np.where(self.data_cumulative.total > 100.00, self.data_cumulative.code, 'Other Banks')
-        self.data_cumulative["new_bank"] = np.where(self.data_cumulative.total > 100.00, self.data_cumulative.code, 'Other Banks')
+        pct_threshold = 0.02
+        self.data_cumulative["new_code"] = np.where(self.data_cumulative.total / self.data_cumulative.total.sum() >= pct_threshold, self.data_cumulative.code, 'Other Banks')
+        self.data_cumulative["new_bank"] = np.where(self.data_cumulative.total / self.data_cumulative.total.sum() >= pct_threshold, self.data_cumulative.code, 'Other Banks')
         self.data_cumulative = self.data_cumulative.groupby([self.data_cumulative.new_code, self.data_cumulative.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum'})
         self.data_cumulative = self.data_cumulative.rename(columns={'new_code': 'code', 'new_bank': 'bank'})
 
-        self.data_period["new_code"] = np.where(self.data_period.total > 100.00, self.data_period.code, 'Other Banks')
-        self.data_period["new_bank"] = np.where(self.data_period.total > 100.00, self.data_period.code, 'Other Banks')
+        pct_threshold = 0.02
+        self.data_period["new_code"] = np.where(self.data_period.total / self.data_period.total.sum() >= pct_threshold, self.data_period.code, 'Other Banks')
+        self.data_period["new_bank"] = np.where(self.data_period.total / self.data_period.total.sum() >= pct_threshold, self.data_period.code, 'Other Banks')
         self.data_period = self.data_period.groupby([self.data_period.new_code, self.data_period.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum'})
         self.data_period = self.data_period.rename(columns={'new_code': 'code', 'new_bank': 'bank'})
 
@@ -106,6 +108,10 @@ class LendingChart(ChartBase):
         self.data_period_in_percent = pd.melt(self.data_period_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other'])
 
 
+        # print(self.data_cumulative)
+        # print(self.data_period)
+
+
 
     ''' distribution by bank (pie chart)
     '''
@@ -113,7 +119,8 @@ class LendingChart(ChartBase):
         data = self.data_cumulative if data_range == 'cumulative' else self.data_period
 
         data = data.sample(frac=1)
-        data['explode'] = np.where(data.total > 500.00, 0, 0.3)
+        data = data[data.total > 0]
+        explode = np.where(data.total > 500.00, 0, 0.3)
 
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
@@ -126,7 +133,7 @@ class LendingChart(ChartBase):
             startangle=0,
             textprops={'size': 'smaller'}, 
             radius=1.2,
-            explode=data["explode"],
+            explode=explode,
             wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 

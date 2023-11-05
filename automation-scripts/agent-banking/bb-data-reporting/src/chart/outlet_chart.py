@@ -22,25 +22,48 @@ class OutletChart(ChartBase):
     ''' setup data
     '''
     def setup_data(self, cumulative_data, period_data):
-        self.data_cumulative = cumulative_data[['current_outlet_total', 'current_outlet_rural', 'current_outlet_urban', 'outlet_total', 'outlet_urban', 'outlet_rural']]
-        self.data_cumulative = self.data_cumulative.assign(total = self.data_cumulative['outlet-rural'] + self.data_cumulative['outlet-urban'])
-        self.data_cumulative = self.data_cumulative.assign(outlet_ratio = self.data_cumulative['outlet-rural'] / self.data_cumulative['outlet-urban'])
+        # rename columns
+        dict = {
+            'outlet_total' : 'total', 
+            'outlet_urban' : 'urban', 
+            'outlet_rural' : 'rural'
+        }
+
+        self.data_cumulative = cumulative_data[['outlet_total', 'outlet_urban', 'outlet_rural']]
+        self.data_cumulative = self.data_cumulative.assign(outlet_ratio = self.data_cumulative.outlet_rural / self.data_cumulative.outlet_urban)
+        self.data_cumulative = self.data_cumulative.rename(columns=dict)
+
+        self.data_period = period_data[['outlet_total', 'outlet_urban', 'outlet_rural']]
+        self.data_period = self.data_period.assign(outlet_ratio = self.data_period.outlet_rural / self.data_period.outlet_urban)
+        self.data_period = self.data_period.rename(columns=dict)
+
+        self.data_cumulative = self.data_cumulative.reset_index()
+        self.data_period = self.data_period.reset_index()
+
 
         # merge banks with less than 2% of total outlets into Other Banks (for distribution)
+        pct_threshold = 0.02
         self.data_cumulative_top_banks = self.data_cumulative.copy()
-        self.data_cumulative_top_banks['new_code'] = np.where((self.data_cumulative_top_banks.total / self.data_cumulative_top_banks.total.sum() > 0.02), self.data_cumulative_top_banks.code, 'Other Banks')
-        self.data_cumulative_top_banks['new_bank'] = np.where((self.data_cumulative_top_banks.total / self.data_cumulative_top_banks.total.sum() > 0.02), self.data_cumulative_top_banks.bank, 'Other Banks')
-        self.data_cumulative_top_banks = self.data_cumulative_top_banks.groupby([self.data_cumulative_top_banks.new_code, self.data_cumulative_top_banks.new_bank], as_index=False).agg({'total': 'sum', 'outlet-urban': 'sum', 'outlet-rural': 'sum'})
+        self.data_cumulative_top_banks['new_code'] = np.where((self.data_cumulative_top_banks.total / self.data_cumulative_top_banks.total.sum() > pct_threshold), self.data_cumulative_top_banks.code, 'Other Banks')
+        self.data_cumulative_top_banks['new_bank'] = np.where((self.data_cumulative_top_banks.total / self.data_cumulative_top_banks.total.sum() > pct_threshold), self.data_cumulative_top_banks.bank, 'Other Banks')
+        self.data_cumulative_top_banks = self.data_cumulative_top_banks.groupby([self.data_cumulative_top_banks.new_code, self.data_cumulative_top_banks.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum'})
         self.data_cumulative_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
+        pct_threshold = 0.02
+        self.data_period_top_banks = self.data_period.copy()
+        self.data_period_top_banks['new_code'] = np.where((self.data_period_top_banks.total / self.data_period_top_banks.total.sum() > pct_threshold), self.data_period_top_banks.code, 'Other Banks')
+        self.data_period_top_banks['new_bank'] = np.where((self.data_period_top_banks.total / self.data_period_top_banks.total.sum() > pct_threshold), self.data_period_top_banks.bank, 'Other Banks')
+        self.data_period_top_banks = self.data_period_top_banks.groupby([self.data_period_top_banks.new_code, self.data_period_top_banks.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum'})
+        self.data_period_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
 
     ''' distribution by bank (pie chart)
     '''
     def distribution_by_bank(self, data_range):
-        data = self.data_cumulative if data_range == 'cumulative' else self.data_period
+        data = self.data_cumulative_top_banks if data_range == 'cumulative' else self.data_period_top_banks
 
-        data['explode'] = np.where(data.code == 'Agrani', 0.2, 0)
+        data = data[data.total > 0]
+        explode = np.where(data.code == 'Agrani', 0.2, 0)
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
         ax.pie(
@@ -52,7 +75,7 @@ class OutletChart(ChartBase):
             startangle=180,
             textprops={'size': 'smaller'}, 
             radius=1.4,
-            explode=data['explode'],
+            explode=explode,
             wedgeprops={'edgecolor': 'gray', 'linewidth': 1, 'antialiased': True}
         )
 
@@ -64,22 +87,27 @@ class OutletChart(ChartBase):
     ''' outlet ratio comparison (lollypop chart)
     '''
     def outlet_ratio_comparison(self, data_range):
+        data = self.data_cumulative if data_range == 'cumulative' else self.data_period
+        data = data.replace([np.inf, -np.inf], np.nan)
+        data = data.dropna()
+        data = data[data.outlet_ratio > 0]
+        print(data)
 
         # the axes
         x = 'code'
         y = 'outlet_ratio'
 
         top_values_to_select = 10
-        bottom_values_to_select = len(self.data_cumulative) - top_values_to_select
+        bottom_values_to_select = len(data) - top_values_to_select
 
         color_dict = {'Agrani': '#5b0f00'}
-        colors = {code: color_dict.get(code, '#434343') for code in self.data_cumulative['code'].tolist()}
-        # radius = {code:  for code in self.data_cumulative['code'].tolist()}
+        colors = {code: color_dict.get(code, '#434343') for code in data['code'].tolist()}
+        # radius = {code: } for code in data['code'].tolist()}
 
         # top N banks
         p1 = (
             ggplot(
-                self.data_cumulative.nlargest(top_values_to_select, 'outlet_ratio'), 
+                data.nlargest(top_values_to_select, 'outlet_ratio'), 
                 aes(x=x, y=y, color='code')
             ) +
             geom_point() +
@@ -92,8 +120,9 @@ class OutletChart(ChartBase):
             guides(color = False, size = False) +
             xlab("Banks") +
             ylab("Rural/Urban outlet ratio") + 
+            lims(y=(-10, None)) +
             theme(
-                figure_size=(10, 4),
+                figure_size=(11.5, 5),
                 axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
             )
         )
@@ -106,7 +135,7 @@ class OutletChart(ChartBase):
         # bottom M banks
         p2 = (
             ggplot(
-                self.data_cumulative.nsmallest(bottom_values_to_select, 'outlet_ratio'), 
+                data.nsmallest(bottom_values_to_select, 'outlet_ratio'), 
                 aes(x=x, y=y)
             ) +
             geom_point() +
@@ -117,8 +146,9 @@ class OutletChart(ChartBase):
             ) +
             xlab("Banks") +
             ylab("Rural/Urban outlet ratio") +
+            lims(y=(-10, None)) +
             theme(
-                figure_size=(10, 4),
+                figure_size=(11.5, 5),
                 axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
             )
         )
