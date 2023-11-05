@@ -44,6 +44,7 @@ class AccountChart(ChartBase):
         self.data_cumulative = self.data_cumulative.reset_index()
         self.data_period = self.data_period.reset_index()
 
+
         # per outlet data
         self.data_cumulative_per_outlet = pd.DataFrame()
         self.data_cumulative_per_outlet['code'] = self.data_cumulative['code']
