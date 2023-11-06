@@ -57,6 +57,11 @@ class OutletChart(ChartBase):
         self.data_period_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
 
+        print(self.data_cumulative)
+        print(self.data_period)
+
+
+
     ''' distribution by bank (pie chart)
     '''
     def distribution_by_bank(self, data_range):
@@ -70,7 +75,7 @@ class OutletChart(ChartBase):
             data.total, 
             labels=data.code, 
             autopct='%1.2f%%',
-            colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'mistyrose', 'azure', 'lavenderblush', 'honeydew', 'aliceblue'],
+            colors=self.color_list,
             #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
             startangle=180,
             textprops={'size': 'smaller'}, 
@@ -91,7 +96,7 @@ class OutletChart(ChartBase):
         data = data.replace([np.inf, -np.inf], np.nan)
         data = data.dropna()
         data = data[data.outlet_ratio > 0]
-        print(data)
+        # print(data)
 
         # the axes
         x = 'code'

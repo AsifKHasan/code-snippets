@@ -141,7 +141,7 @@ class DepositChart(ChartBase):
             data.total, 
             labels=data.code, 
             autopct='%1.2f%%',
-            colors=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue', 'yellow'],
+            colors=self.color_list,
             #    shadow={'ox': -0.04, 'edgecolor': 'none', 'shade': 0.9},
             startangle=180,
             textprops={'size': 'smaller'}, 
@@ -191,7 +191,7 @@ class DepositChart(ChartBase):
                 va='bottom', 
                 format_string='{:.1f}%'
             ) +
-            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            scale_fill_manual(values=self.color_list) +
             lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
@@ -247,7 +247,7 @@ class DepositChart(ChartBase):
                 va='bottom', 
                 format_string='{:.1f}%'
             ) +
-            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            scale_fill_manual(values=self.color_list) +
             lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
@@ -303,7 +303,7 @@ class DepositChart(ChartBase):
                 va='bottom', 
                 format_string='{:.1f}%'
             ) +
-            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            scale_fill_manual(values=self.color_list) +
             lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
@@ -361,7 +361,7 @@ class DepositChart(ChartBase):
                 va='bottom', 
                 format_string='{:.2f}'
             ) +
-            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            scale_fill_manual(values=self.color_list) +
             lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
@@ -419,7 +419,7 @@ class DepositChart(ChartBase):
                 va='bottom', 
                 format_string='{:.2f}'
             ) + 
-            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            scale_fill_manual(values=self.color_list) +
             lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
@@ -477,7 +477,7 @@ class DepositChart(ChartBase):
                 va='bottom', 
                 format_string='{:.2f}'
             ) +
-            scale_fill_manual(values=['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']) +
+            scale_fill_manual(values=self.color_list) +
             lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),

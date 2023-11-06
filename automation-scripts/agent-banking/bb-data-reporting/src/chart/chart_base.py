@@ -16,6 +16,10 @@ class ChartBase(object):
 
         self.type = None
 
+        # self.color_list = ['olivedrab', 'rosybrown', 'gray', 'saddlebrown', 'khaki', 'steelblue']
+        self.color_list = ['#d9ead3', '#d0e0e3', '#c9daf8', '#cfe2f3', '#d9d2e9', '#ead1dc', '#e6b8af', '#f4cccc', '#fce5cd', '#fff2cc', ]
+        
+
 
 
     ''' ggplot theme setup
