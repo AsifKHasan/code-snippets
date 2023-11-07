@@ -21,7 +21,6 @@ class ChartBase(object):
         
 
 
-
     ''' ggplot theme setup
     '''
     def setup_theme(self):

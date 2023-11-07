@@ -85,13 +85,14 @@ class DepositChart(ChartBase):
         self.data_period_per_outlet = pd.melt(self.data_period_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
 
-        # merge less than 2% banks into Other Banks
+        # merge banks with less than 2% of total deposit into Other Banks (for distribution chart)
         pct_threshold = 0.02
         self.data_cumulative["new_code"] = np.where((self.data_cumulative.total / self.data_cumulative.total.sum() > pct_threshold), self.data_cumulative.code, 'Other Banks')
         self.data_cumulative['new_bank'] = np.where((self.data_cumulative.total / self.data_cumulative.total.sum() > pct_threshold), self.data_cumulative.bank, 'Other Banks')
         self.data_cumulative = self.data_cumulative.groupby([self.data_cumulative.new_code, self.data_cumulative.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum', 'current': 'sum', 'savings': 'sum', 'others': 'sum'})
         self.data_cumulative.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
+        # merge banks with less than 2% of total deposit into Other Banks (for distribution chart)
         pct_threshold = 0.02
         self.data_period["new_code"] = np.where((self.data_period.total / self.data_period.total.sum() > pct_threshold), self.data_period.code, 'Other Banks')
         self.data_period['new_bank'] = np.where((self.data_period.total / self.data_period.total.sum() > pct_threshold), self.data_period.bank, 'Other Banks')
@@ -112,6 +113,7 @@ class DepositChart(ChartBase):
         self.data_cumulative_in_percent = pd.melt(self.data_cumulative_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
 
         self.data_period_in_percent = self.data_period.copy()
+        self.data_period_in_percent['total'] = self.data_period_in_percent.rural.abs() + self.data_period_in_percent.urban.abs()
         self.data_period_in_percent['rural'] = self.data_period_in_percent.rural / self.data_period_in_percent.total * 100
         self.data_period_in_percent['urban'] = self.data_period_in_percent.urban / self.data_period_in_percent.total * 100
         self.data_period_in_percent['male'] = self.data_period_in_percent.male / self.data_period_in_percent.total * 100
@@ -121,6 +123,7 @@ class DepositChart(ChartBase):
         self.data_period_in_percent['savings'] = self.data_period_in_percent.savings / self.data_period_in_percent.total * 100
         self.data_period_in_percent['others'] = self.data_period_in_percent.others / self.data_period_in_percent.total * 100
         self.data_period_in_percent = pd.melt(self.data_period_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other', 'current', 'savings', 'others'])
+        # self.data_period_in_percent = self.data_period_in_percent[self.data_period_in_percent['value'] > 0]
 
 
         # print(self.data_cumulative)
@@ -168,7 +171,8 @@ class DepositChart(ChartBase):
         variables = ['rural', 'urban']
         chart = (
             ggplot(
-                data[data.variable.isin(variables) & (data.value > 0)], 
+                # data[data.variable.isin(variables) & (data.value > 0)], 
+                data[data.variable.isin(variables)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -192,7 +196,7 @@ class DepositChart(ChartBase):
                 format_string='{:.1f}%'
             ) +
             scale_fill_manual(values=self.color_list) +
-            lims(y=(-10, None)) +
+            # lims(y=(-100, 100)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
@@ -224,7 +228,8 @@ class DepositChart(ChartBase):
         variables = ['male', 'female', 'other']
         chart = (
             ggplot(
-                data[data.variable.isin(variables) & (data.value > 0)], 
+                # data[data.variable.isin(variables) & (data.value > 0)], 
+                data[data.variable.isin(variables)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -248,7 +253,7 @@ class DepositChart(ChartBase):
                 format_string='{:.1f}%'
             ) +
             scale_fill_manual(values=self.color_list) +
-            lims(y=(-10, None)) +
+            # lims(y=(-100, 100)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
@@ -280,7 +285,8 @@ class DepositChart(ChartBase):
         variables = ['current', 'savings', 'others']
         chart = (
             ggplot(
-                data[data.variable.isin(variables) & (data.value > 0)], 
+                # data[data.variable.isin(variables) & (data.value > 0)], 
+                data[data.variable.isin(variables)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -304,7 +310,7 @@ class DepositChart(ChartBase):
                 format_string='{:.1f}%'
             ) +
             scale_fill_manual(values=self.color_list) +
-            lims(y=(-10, None)) +
+            # lims(y=(-100, 100)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),

@@ -30,18 +30,18 @@ class OutletChart(ChartBase):
         }
 
         self.data_cumulative = cumulative_data[['outlet_total', 'outlet_urban', 'outlet_rural']]
-        self.data_cumulative = self.data_cumulative.assign(outlet_ratio = self.data_cumulative.outlet_rural / self.data_cumulative.outlet_urban)
+        self.data_cumulative['outlet_ratio'] = np.where(self.data_cumulative.outlet_urban > 0, self.data_cumulative.outlet_rural / self.data_cumulative.outlet_urban, self.data_cumulative.outlet_rural)
         self.data_cumulative = self.data_cumulative.rename(columns=dict)
 
         self.data_period = period_data[['outlet_total', 'outlet_urban', 'outlet_rural']]
-        self.data_period = self.data_period.assign(outlet_ratio = self.data_period.outlet_rural / self.data_period.outlet_urban)
+        self.data_period['outlet_ratio'] = np.where(self.data_period.outlet_urban > 0, self.data_period.outlet_rural / self.data_period.outlet_urban, self.data_period.outlet_rural)
         self.data_period = self.data_period.rename(columns=dict)
 
         self.data_cumulative = self.data_cumulative.reset_index()
         self.data_period = self.data_period.reset_index()
 
 
-        # merge banks with less than 2% of total outlets into Other Banks (for distribution)
+        # merge banks with less than 2% of total outlets into Other Banks (for distribution chart)
         pct_threshold = 0.02
         self.data_cumulative_top_banks = self.data_cumulative.copy()
         self.data_cumulative_top_banks['new_code'] = np.where((self.data_cumulative_top_banks.total / self.data_cumulative_top_banks.total.sum() > pct_threshold), self.data_cumulative_top_banks.code, 'Other Banks')
@@ -49,7 +49,8 @@ class OutletChart(ChartBase):
         self.data_cumulative_top_banks = self.data_cumulative_top_banks.groupby([self.data_cumulative_top_banks.new_code, self.data_cumulative_top_banks.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum'})
         self.data_cumulative_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
-        pct_threshold = 0.02
+        # merge banks with less than 5% of total outlets into Other Banks (for distribution chart)
+        pct_threshold = 0.05
         self.data_period_top_banks = self.data_period.copy()
         self.data_period_top_banks['new_code'] = np.where((self.data_period_top_banks.total / self.data_period_top_banks.total.sum() > pct_threshold), self.data_period_top_banks.code, 'Other Banks')
         self.data_period_top_banks['new_bank'] = np.where((self.data_period_top_banks.total / self.data_period_top_banks.total.sum() > pct_threshold), self.data_period_top_banks.bank, 'Other Banks')
@@ -57,8 +58,8 @@ class OutletChart(ChartBase):
         self.data_period_top_banks.rename(columns={'new_code': 'code', 'new_bank': 'bank'}, inplace=True)
 
 
-        print(self.data_cumulative)
-        print(self.data_period)
+        # print(self.data_cumulative)
+        # print(self.data_period)
 
 
 
@@ -125,7 +126,7 @@ class OutletChart(ChartBase):
             guides(color = False, size = False) +
             xlab("Banks") +
             ylab("Rural/Urban outlet ratio") + 
-            lims(y=(-10, None)) +
+            lims(y=(0, None)) +
             theme(
                 figure_size=(11.5, 5),
                 axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)
@@ -151,7 +152,7 @@ class OutletChart(ChartBase):
             ) +
             xlab("Banks") +
             ylab("Rural/Urban outlet ratio") +
-            lims(y=(-10, None)) +
+            lims(y=(0, None)) +
             theme(
                 figure_size=(11.5, 5),
                 axis_text_x=element_text(family="Arial", weight="light", style="normal", size=10, color="black", angle=45, hjust=1)

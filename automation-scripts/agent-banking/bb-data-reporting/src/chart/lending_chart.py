@@ -76,14 +76,15 @@ class LendingChart(ChartBase):
         self.data_period_per_outlet = pd.melt(self.data_period_per_outlet, id_vars=['code', 'bank'], value_vars=['total', 'urban', 'rural', 'male', 'female', 'other'])
 
 
-        # merge less than 2% banks into Other Banks
-        pct_threshold = 0.02
+        # merge banks with less than 0.3% of total lending into Other Banks (for distribution chart)
+        pct_threshold = 0.003
         self.data_cumulative["new_code"] = np.where(self.data_cumulative.total / self.data_cumulative.total.sum() >= pct_threshold, self.data_cumulative.code, 'Other Banks')
         self.data_cumulative["new_bank"] = np.where(self.data_cumulative.total / self.data_cumulative.total.sum() >= pct_threshold, self.data_cumulative.code, 'Other Banks')
         self.data_cumulative = self.data_cumulative.groupby([self.data_cumulative.new_code, self.data_cumulative.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum'})
         self.data_cumulative = self.data_cumulative.rename(columns={'new_code': 'code', 'new_bank': 'bank'})
 
-        pct_threshold = 0.02
+        # merge banks with less than 0.5% of total lending into Other Banks (for distribution chart)
+        pct_threshold = 0.005
         self.data_period["new_code"] = np.where(self.data_period.total / self.data_period.total.sum() >= pct_threshold, self.data_period.code, 'Other Banks')
         self.data_period["new_bank"] = np.where(self.data_period.total / self.data_period.total.sum() >= pct_threshold, self.data_period.code, 'Other Banks')
         self.data_period = self.data_period.groupby([self.data_period.new_code, self.data_period.new_bank], as_index=False).agg({'total': 'sum', 'urban': 'sum', 'rural': 'sum', 'male': 'sum', 'female': 'sum', 'other': 'sum'})
@@ -100,6 +101,7 @@ class LendingChart(ChartBase):
         self.data_cumulative_in_percent = pd.melt(self.data_cumulative_in_percent, id_vars=['code', 'bank'], value_vars=['urban', 'rural', 'male', 'female', 'other'])
 
         self.data_period_in_percent = self.data_period.copy()
+        self.data_period_in_percent['total'] = self.data_period_in_percent.rural.abs() + self.data_period_in_percent.urban.abs()
         self.data_period_in_percent['rural'] = self.data_period_in_percent.rural / self.data_period_in_percent.total * 100
         self.data_period_in_percent['urban'] = self.data_period_in_percent.urban / self.data_period_in_percent.total * 100
         self.data_period_in_percent['male'] = self.data_period_in_percent.male / self.data_period_in_percent.total * 100
@@ -118,9 +120,9 @@ class LendingChart(ChartBase):
     def distribution_by_bank(self, data_range):
         data = self.data_cumulative if data_range == 'cumulative' else self.data_period
 
-        data = data.sample(frac=1)
         data = data[data.total > 0]
-        explode = np.where(data.total > 500.00, 0, 0.3)
+        data = data.sample(frac=1)
+        explode = np.where(data.code == 'Agrani', 0.3, 0)
 
         chart, ax = plt.subplots()
         plt.figure(figsize=(10,10))
@@ -153,7 +155,8 @@ class LendingChart(ChartBase):
         variables = ['rural', 'urban']
         chart = (
             ggplot(
-                data[data.variable.isin(variables) & (data.value > 0)], 
+                # data[data.variable.isin(variables) & (data.value > 0)], 
+                data[data.variable.isin(variables)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -177,7 +180,7 @@ class LendingChart(ChartBase):
                 format_string='{:.1f}%'
             ) +
             scale_fill_manual(values=self.color_list) +
-            lims(y=(-10, None)) +
+            # lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
@@ -209,7 +212,8 @@ class LendingChart(ChartBase):
         variables = ['male', 'female', 'other']
         chart = (
             ggplot(
-                data[data.variable.isin(variables) & (data.value > 0)], 
+                # data[data.variable.isin(variables) & (data.value > 0)], 
+                data[data.variable.isin(variables)], 
                 aes(x='code', y='value', fill='variable')
             ) +
             geom_col(
@@ -233,7 +237,7 @@ class LendingChart(ChartBase):
                 format_string='{:.1f}%'
             ) +
             scale_fill_manual(values=self.color_list) +
-            lims(y=(-10, None)) +
+            # lims(y=(-10, None)) +
             theme(
                 # panel_background=element_rect(fill='white'),
                 figure_size=(10, 5),
