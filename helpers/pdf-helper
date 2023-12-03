@@ -4,6 +4,8 @@ cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\2023-08-28__Board Resolution (TOR).pdf" "C:\Users\Asif\Downloads\personal\abc"
 pdftocairo -png -gray "C:\Users\Asif\Downloads\2023-08-02__Bishod Audit Forwarding & Reply 2022.pdf" "C:\Users\Asif\Downloads\abc"
 
+pdftocairo -png -r 300 -gray "/home/asif/Downloads/W.P-PSC-5th-27.11.2023.pdf" "/home/asif/Downloads/abc/abc"
+
 pdftocairo -png -r 300 -f 11 -l 30 data/Ancholic_Bhasar_Ovidhan.pdf data/vernacular/vernacular
 pdftocairo -png -f 1 -l 1 -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
@@ -13,7 +15,13 @@ pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul
 pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul.Hakim__Schneider__Best-Practices-for-Building-a-New-Data-Center.pdf"
 
 # ocr an image for text
-tesseract "C:\Users\Asif\Downloads\abc-2.png" "C:\Users\Asif\Downloads\02" -l eng+ben
+for f in /home/asif/Downloads/abc/abc-*.png;
+do
+  echo "$f"
+  tesseract "$f" "$f" -l ben+eng
+done
+
+tesseract "/home/asif/Downloads/abc/abc-01.png" "/home/asif/Downloads/abc/out/01" -l eng+ben
 tesseract "C:\Users\Asif\Downloads\abc-3.png" "C:\Users\Asif\Downloads\03" -l eng+ben
 tesseract "C:\Users\Asif\Downloads\abc-4.png" "C:\Users\Asif\Downloads\04" -l eng+ben
 tesseract "C:\Users\Asif\Downloads\abc-5.png" "C:\Users\Asif\Downloads\05" -l eng+ben
