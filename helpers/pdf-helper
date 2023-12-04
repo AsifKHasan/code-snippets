@@ -4,15 +4,9 @@ cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\2023-08-28__Board Resolution (TOR).pdf" "C:\Users\Asif\Downloads\personal\abc"
 pdftocairo -png -gray "C:\Users\Asif\Downloads\2023-08-02__Bishod Audit Forwarding & Reply 2022.pdf" "C:\Users\Asif\Downloads\abc"
 
-pdftocairo -png -r 300 -gray "/home/asif/Downloads/W.P-PSC-5th-27.11.2023.pdf" "/home/asif/Downloads/abc/abc"
+pdftocairo -png -r 300 -gray "/home/asif/Downloads/PSC Meeting Minutes-5th.pdf" "/home/asif/Downloads/abc/abc"
 
-pdftocairo -png -r 300 -f 11 -l 30 data/Ancholic_Bhasar_Ovidhan.pdf data/vernacular/vernacular
-pdftocairo -png -f 1 -l 1 -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
-
-pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul.Hakim__Cisco__CCNA-SP.pdf"
-pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul.Hakim__Infor__EAM-Functional-Consultant.pdf"
-pdftocairo -png -r 96 -cropbox -gray "C:\Users\Asif Hasan\Downloads\Md.Mashrurul.Hakim__Schneider__Best-Practices-for-Building-a-New-Data-Center.pdf"
 
 # ocr an image for text
 for f in /home/asif/Downloads/abc/abc-*.png;
@@ -22,27 +16,7 @@ do
 done
 
 tesseract "/home/asif/Downloads/abc/abc-01.png" "/home/asif/Downloads/abc/out/01" -l eng+ben
-tesseract "C:\Users\Asif\Downloads\abc-3.png" "C:\Users\Asif\Downloads\03" -l eng+ben
-tesseract "C:\Users\Asif\Downloads\abc-4.png" "C:\Users\Asif\Downloads\04" -l eng+ben
-tesseract "C:\Users\Asif\Downloads\abc-5.png" "C:\Users\Asif\Downloads\05" -l eng+ben
-tesseract "C:\Users\Asif\Downloads\abc-6.png" "C:\Users\Asif\Downloads\06" -l eng+ben
-tesseract "C:\Users\Asif\Downloads\abc-7.png" "C:\Users\Asif\Downloads\07" -l eng+ben
 
-tesseract "C:\Users\Asif\Downloads\personal\abc\abc-6.png" "C:\Users\Asif\Downloads\personal\abc\06" -l eng+ben
-
-
-tesseract data/rov/rov-55.png out/rov/rov-55 -l ben
-
-tesseract data/vernacular/abc-008.png out/vernacular/abc-008 -l ben
-
-tesseract data/ppa/ppa-gray-001.png out/ppa/ppa-gray-001 -l ben+eng
-tesseract data/ppa/ppa-mono-001.png out/ppa/ppa-mono-001 -l ben+eng
-
-for f in data/ppa/*;
-do
-  echo "$f"
-  # tesseract "$f" "$f" -l ben+eng
-done
 
 
 for %f in (*.*) do ren "%f" "z-%f"
