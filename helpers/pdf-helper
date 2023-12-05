@@ -20,7 +20,7 @@ tesseract "/home/asif/Downloads/abc/abc-01.png" "/home/asif/Downloads/abc/out/01
 
 
 for %f in (*.*) do ren "%f" "z-%f"
-for %f in (data\ppa\*.png) do tesseract %f out/ppa/%~nf -l ben+eng
+for %f in (D:\projects\asif@github\code-snippets\helpers\ocr-data\PSC-05\png\*.png) do tesseract %f D:\projects\asif@github\code-snippets\helpers\ocr-data\PSC-05\txt\%~nf -l ben+eng
 
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"

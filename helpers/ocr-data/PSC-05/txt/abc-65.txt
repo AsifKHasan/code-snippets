@@ -1,0 +1,40 @@
+৫.৬
+
+“Automated ICT System of Grameen Bank” প্রকল্পের আওতায় এরিয়া
+তথ্য ব্যবস্থাপনা কেন্দ্রের কার্যক্রম পরিচালনার জন্য ৪০০ টি কম্পিউটার ক্রয় প্রসঙ্গে ।
+
+আগামী od, জানুয়ারী ২০২৪ হতে “Automated ICT System of Grameen Bank”
+প্রকল্পের আওতায় তথ্য ব্যবস্থাপনা কেন্দ্রের মাধ্যমে শাখার কম্পিউটারায়ন কার্যক্রম পরিচালিত হবে |
+“Automated ICT System of Grameen Bank” প্রকল্পের আওতায় ফিল্ড পর্যায়ের
+কার্যক্রম পরিচালনার জন্য ডিসেম্বর'২৩ মাসে ৩০০টি এবং জানুয়ারী'২৪ মাসে ১০০টি মোট ৪০০টি
+কম্পিউটার ক্রয়ের সিদ্ধান্ত গৃহীত হয় | কম্পিউটার ক্রয়ের জন্য DPP তে ডিসেম্বর'২৩ মাসে বাজেট
+ধরা আছে ২.২০ কোটি টাকা এবং SHAM’ LB মাসে বাজেট ধরা আছে ৫.০০ কোটি টাকা |
+
+DPP তে তথ্য ব্যবস্থাপনা কেন্দ্রের ব্যবহারের জন্য Intel Core 13 Processor/ Intel Core
+15 Processor/ AMD Ryzen 5 #Pticda কথা বলা হয়েছে 1 Walton Digitech
+Industries Ltd. থেকে Processor Benchmark করার জন্য অত্র কার্যালয়ে AMD
+Ryzen 5 প্রসেসর সমৃদ্ধ Desktop PC সরবরাহ করেন | যাতে পাওয়ারফুল Processor
+Intel Core i9 13900k এর Score 100% ধরে এটার সাথে Compare করে দেখা যায়
+AMD Ryzen 5 Processor with 8 GB RAM এর Single Thread এর Score
+68% এবং Multi Thread এর Score 29% যেখানে কর্তৃপক্ষ কর্তৃক সিদ্ধান্ত নেয়া Intel
+10" Gen Core 13 Processor with 8 GB RAM এর Single Thread এর Score
+55% এবং Multi Thread এর Score 15% | এমনকি 111 Gen Intel Core i5 With
+16 GB RAM এর Single Thread এর Score 65% এবং Multi Thread এর Score
+26% | অর্থ্যাৎ AMD Ryzen 5 Processor with 8 GB এর Performance, 11"
+Gen Intel Core 15 With 16 GB RAM এর Performance এর তুলনায়ও বেশী
+(AE, পৃষ্ঠা ৯৪-১০৯) । উল্লেখ্য যে, AMD Ryzen 5 Processor এর সাথে 16 GB
+RAM ব্যবহার করলে Performance আরও বৃদ্ধি পাবে |
+
+Walton Digitech Industries Ltd. থেকে প্রেরিত মুল্য তালিকা (সংযুক্ত, পৃষ্ঠা ৯৪-
+১০৯)উপস্থাপন করা হলো |
+
+উপরোক্ত Performance Comparison এবং মুল্যের প্রেক্ষিতে Intel 101) Gen Core 13
+Processor বা 111) Gen Intel Core 15 এর পরিবর্তে AMD Ryzen 5 Processor
+ব্যবহার করা যেতে ACA |
+
+প্রস্তাব 8
+৫.৬.১ গ্রামীণ ব্যাংক, ফিল্ড পর্যায়ের তথ্য ব্যবস্থাপনা কেন্দ্রের জন্য আলোচনা করে ডিসেম্বর'২৩
+মাসে ৩০০টি এবং জানুয়ারী'২৪ মাসে ১০০টি কম্পিউটার ক্রয় করার প্রস্তাব করা হলো |
+
+৬৫
+
