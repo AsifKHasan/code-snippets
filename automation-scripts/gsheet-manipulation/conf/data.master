@@ -364,6 +364,7 @@
 # pds gsheets
   - pds__spectrum__blank.template
   - pds__celloscope__blank.template
+  - pds__doer__blank.template
   # spectrum pds
     - pds__ACMELL
     - pds__BB-RTGS
@@ -512,25 +513,27 @@
     - pds__UGC-HEMIS
     - pds__Unilever-MFGPRO
   # doer pds
-    - pds__doer.blank
-    - pds__AgraniBank-Agent-Banking
-    - pds__AgraniBank-e-KYC
-    - pds__AgraniBank-Master-Agent
-    - pds__AgraniBank-Remittance-Only-Point
-    - pds__AgraniBank-SMS-Alert
-    - pds__IDRA-ALO
-    - pds__IDRA-e-KYC
-    - pds__IDRA-Policy-Repository
-    - pds__IDRA-SMS-Email
-    - pds__IDRA-UMP
+    - pds__doer__ACML-HR-Management-System
+    - pds__doer__AgraniBank-Agent-Banking
+    - pds__doer__AgraniBank-e-KYC
+    - pds__doer__AgraniBank-IB
+    - pds__doer__AgraniBank-Master-Agent
+    - pds__doer__AgraniBank-Remittance-Only-Point
+    - pds__doer__AgraniBank-SMS-Alert
+    - pds__doer__IDRA-ALO
+    - pds__doer__IDRA-e-KYC
+    - pds__doer__IDRA-Policy-Repository
+    - pds__doer__IDRA-SMS-Email
+    - pds__doer__IDRA-UMP
+    - pds__doer__MRA-IMS
+    - pds__doer__MRA-OMS
+    - pds__doer__PAMCL-Accounts-Management-System
   # celloscope pds
-    - pds__celloscope__AEL-accounting
+    - pds__celloscope__AEL-Accounting
     - pds__celloscope__Crossworld-uniVerge
-    - pds__celloscope__MRA-IMS
-    - pds__celloscope__MRA-OMS
     - pds__celloscope__NBR-FFBT-ARDS
-    - pds__celloscope__NRBCB-agent-banking
-    - pds__celloscope__NRBCB-e-kyc
+    - pds__celloscope__NRBCB-Agent-Banking
+    - pds__celloscope__NRBCB-e-KYC
     - pds__celloscope__SAU-ACAS-2023
     - pds__celloscope__TeleExchange-uniVerge
 
@@ -605,12 +608,6 @@
       value             : 'A4'
     'J4'      :
       value             : 'narrow'
-    'O4'      :
-      value             : 'z-header'
-      ws-name-to-link   : 'z-header'
-    'R4'      :
-      value             : 'z-footer'
-      ws-name-to-link   : 'z-footer'
 
     'C3'      :
       value             : 'Yes'

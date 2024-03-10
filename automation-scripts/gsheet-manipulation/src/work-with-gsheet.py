@@ -45,6 +45,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
     # g_sheet.rename_worksheet(worksheet_name='z-header', new_worksheet_name='z-head')
     # g_sheet.rename_worksheet(worksheet_name="z-footer", new_worksheet_name="z-foot")
+    # g_sheet.rename_worksheet(worksheet_name="00-layout-WB", new_worksheet_name="00-layout")
 
     # worksheet creation, formatting and related tasks
     # g_sheet.clear_data_validation(worksheet_names=worksheet_names, range_spec='A1:Z')
@@ -65,9 +66,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
     # cell linking and ordering
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
-    g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
     # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet

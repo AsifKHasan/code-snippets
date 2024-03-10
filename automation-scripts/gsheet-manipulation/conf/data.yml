@@ -1,5 +1,21 @@
 # the gsheet(s) that will be processed
 gsheets:
+    - pds__doer__blank.template
+    - pds__doer__ACML-HR-Management-System
+    - pds__doer__AgraniBank-Agent-Banking
+    - pds__doer__AgraniBank-e-KYC
+    - pds__doer__AgraniBank-IB
+    - pds__doer__AgraniBank-Master-Agent
+    - pds__doer__AgraniBank-Remittance-Only-Point
+    - pds__doer__AgraniBank-SMS-Alert
+    - pds__doer__IDRA-ALO
+    - pds__doer__IDRA-e-KYC
+    - pds__doer__IDRA-Policy-Repository
+    - pds__doer__IDRA-SMS-Email
+    - pds__doer__IDRA-UMP
+    - pds__doer__MRA-IMS
+    - pds__doer__MRA-OMS
+    - pds__doer__PAMCL-Accounts-Management-System
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -8,9 +24,49 @@ destination-gsheets:
 
 # worksheets on which some work will be done
 worksheets:
+    - '-toc-new'
 
 # work specifications to apply on a list of worksheets
 work-specs:
+    'F3'      :
+      value             : '00-layout-USAID'
+      ws-name-to-link   : '00-layout-USAID'
+    'O3'      :
+      value             : 'z-head'
+      ws-name-to-link   : 'z-head'
+    'O4'      :
+      value             : 'z-head'
+      ws-name-to-link   : 'z-head'
+    'O5'      :
+      value             : 'z-head'
+      ws-name-to-link   : 'z-head'
+    'O6'      :
+      value             : 'z-head'
+      ws-name-to-link   : 'z-head'
+    'O7'      :
+      value             : 'z-head'
+      ws-name-to-link   : 'z-head'
+    'O8'      :
+      value             : 'z-head'
+      ws-name-to-link   : 'z-head'
+    'R3'      :
+      value             : 'z-foot'
+      ws-name-to-link   : 'z-foot'
+    'R4'      :
+      value             : 'z-foot'
+      ws-name-to-link   : 'z-foot'
+    'R5'      :
+      value             : 'z-foot'
+      ws-name-to-link   : 'z-foot'
+    'R6'      :
+      value             : 'z-foot'
+      ws-name-to-link   : 'z-foot'
+    'R7'      :
+      value             : 'z-foot'
+      ws-name-to-link   : 'z-foot'
+    'R8'      :
+      value             : 'z-foot'
+      ws-name-to-link   : 'z-foot'
 
 
 # find and replace patterns
