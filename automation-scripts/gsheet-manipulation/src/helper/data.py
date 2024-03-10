@@ -2,883 +2,2099 @@
 
 # Resume structure
 WORKSHEET_STRUCTURE_RESUME = {
-    '-toc-new': {
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-
-        'columns': {
-            'A': {'halign': 'center', 'size':  60, 'label': 'section'            , },
-            'B': {'halign': 'left',   'size': 200, 'label': 'heading'            , },
-            'C': {'halign': 'center', 'size':  80, 'label': 'process'            , 'validation-list': ['Yes']},
-            'D': {'halign': 'center', 'size':  80, 'label': 'level'              , 'validation-list': ['0', '1', '2', '3', '4', '5', '6']},
-            'E': {'halign': 'center', 'size':  80, 'label': 'content-type'       , 'validation-list': ['gsheet', 'lof', 'lot', 'pdf', 'table', 'toc']},
-            'F': {'halign': 'left',   'size': 200, 'label': 'link'               , },
-            'G': {'halign': 'center', 'size':  80, 'label': 'break'              , 'validation-list': ['page', 'section']},
-            'H': {'halign': 'center', 'size':  80, 'label': 'landscape'          , 'validation-list': ['Yes']},
-            'I': {'halign': 'center', 'size':  80, 'label': 'page-spec'          , 'validation-list': ['A4', 'A3', 'Letter', 'Legal']},
-            'J': {'halign': 'center', 'size': 100, 'label': 'margin-spec'        , 'validation-list': ['wide', 'medium', 'narrow', 'none', 'book-bind', 'secl-pad']},
-            'K': {'halign': 'center', 'size':  80, 'label': 'hide-pageno'        , 'validation-list': ['Yes']},
-            'L': {'halign': 'center', 'size':  80, 'label': 'hide-heading'       , 'validation-list': ['Yes']},
-            'M': {'halign': 'center', 'size':  80, 'label': 'different-firstpage', 'validation-list': ['Yes']},
-            'N': {'halign': 'left',   'size':  80, 'label': 'header-first'       , },
-            'O': {'halign': 'left',   'size':  80, 'label': 'header-odd'         , },
-            'P': {'halign': 'left',   'size':  80, 'label': 'header-even'        , },
-            'Q': {'halign': 'left',   'size':  80, 'label': 'footer-first'       , },
-            'R': {'halign': 'left',   'size':  80, 'label': 'footer-odd'         , },
-            'S': {'halign': 'left',   'size':  80, 'label': 'footer-even'        , },
-            'T': {'halign': 'center', 'size':  80, 'label': 'override-header'    , 'validation-list': ['Yes']},
-            'U': {'halign': 'center', 'size':  80, 'label': 'override-footer'    , 'validation-list': ['Yes']},
-            'V': {'halign': 'left',   'size': 100, 'label': 'background-image'   , },
-            'W': {'halign': 'left',   'size':  80, 'label': 'responsible'        , },
-            'X': {'halign': 'left',   'size':  80, 'label': 'reviewer'           , },
-            'Y': {'halign': 'left',   'size': 160, 'label': 'status'             , 'validation-list': ['pending', 'under-documentation', 'ready-for-review', 'under-review', 'finalized']},
-            'Z': {'halign': 'left',   'size': 300, 'label': 'comment'            , },
+    "-toc-new": {
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {
+                "halign": "center",
+                "size": 60,
+                "label": "section",
+            },
+            "B": {
+                "halign": "left",
+                "size": 200,
+                "label": "heading",
+            },
+            "C": {
+                "halign": "center",
+                "size": 80,
+                "label": "process",
+                "validation-list": ["Yes"],
+            },
+            "D": {
+                "halign": "center",
+                "size": 80,
+                "label": "level",
+                "validation-list": ["0", "1", "2", "3", "4", "5", "6"],
+            },
+            "E": {
+                "halign": "center",
+                "size": 80,
+                "label": "content-type",
+                "validation-list": ["gsheet", "lof", "lot", "pdf", "table", "toc"],
+            },
+            "F": {
+                "halign": "left",
+                "size": 200,
+                "label": "link",
+            },
+            "G": {
+                "halign": "center",
+                "size": 80,
+                "label": "break",
+                "validation-list": ["page", "section"],
+            },
+            "H": {
+                "halign": "center",
+                "size": 80,
+                "label": "landscape",
+                "validation-list": ["Yes"],
+            },
+            "I": {
+                "halign": "center",
+                "size": 80,
+                "label": "page-spec",
+                "validation-list": ["A4", "A3", "Letter", "Legal"],
+            },
+            "J": {
+                "halign": "center",
+                "size": 100,
+                "label": "margin-spec",
+                "validation-list": [
+                    "wide",
+                    "medium",
+                    "narrow",
+                    "none",
+                    "book-bind",
+                    "secl-pad",
+                ],
+            },
+            "K": {
+                "halign": "center",
+                "size": 80,
+                "label": "hide-pageno",
+                "validation-list": ["Yes"],
+            },
+            "L": {
+                "halign": "center",
+                "size": 80,
+                "label": "hide-heading",
+                "validation-list": ["Yes"],
+            },
+            "M": {
+                "halign": "center",
+                "size": 80,
+                "label": "different-firstpage",
+                "validation-list": ["Yes"],
+            },
+            "N": {
+                "halign": "left",
+                "size": 80,
+                "label": "header-first",
+            },
+            "O": {
+                "halign": "left",
+                "size": 80,
+                "label": "header-odd",
+            },
+            "P": {
+                "halign": "left",
+                "size": 80,
+                "label": "header-even",
+            },
+            "Q": {
+                "halign": "left",
+                "size": 80,
+                "label": "footer-first",
+            },
+            "R": {
+                "halign": "left",
+                "size": 80,
+                "label": "footer-odd",
+            },
+            "S": {
+                "halign": "left",
+                "size": 80,
+                "label": "footer-even",
+            },
+            "T": {
+                "halign": "center",
+                "size": 80,
+                "label": "override-header",
+                "validation-list": ["Yes"],
+            },
+            "U": {
+                "halign": "center",
+                "size": 80,
+                "label": "override-footer",
+                "validation-list": ["Yes"],
+            },
+            "V": {
+                "halign": "left",
+                "size": 100,
+                "label": "background-image",
+            },
+            "W": {
+                "halign": "left",
+                "size": 80,
+                "label": "responsible",
+            },
+            "X": {
+                "halign": "left",
+                "size": 80,
+                "label": "reviewer",
+            },
+            "Y": {
+                "halign": "left",
+                "size": 160,
+                "label": "status",
+                "validation-list": [
+                    "pending",
+                    "under-documentation",
+                    "ready-for-review",
+                    "under-review",
+                    "finalized",
+                ],
+            },
+            "Z": {
+                "halign": "left",
+                "size": 300,
+                "label": "comment",
+            },
         },
-        'cell-empty-markers': [
-            'W3:Y'
+        "cell-empty-markers": ["W3:Y"],
+    },
+    "00-layout": {
+        "num-rows": 27,
+        "num-columns": 5,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "valign": "top", "wrap": True},
+            "B": {"size": 30, "halign": "left", "valign": "top", "wrap": True},
+            "C": {"size": 250, "halign": "left", "valign": "top", "wrap": True},
+            "D": {"size": 250, "halign": "left", "valign": "top", "wrap": True},
+            "E": {"size": 270, "halign": "center", "valign": "top", "wrap": True},
+        },
+        "rows": {
+            "1": {
+                "size": 21,
+            },
+            "2": {
+                "size": 21,
+            },
+            "3": {
+                "size": 21,
+            },
+            "4": {
+                "size": 21,
+            },
+            "5": {
+                "size": 21,
+            },
+            "6": {
+                "size": 8,
+            },
+            "7": {
+                "size": 21,
+            },
+            "8": {
+                "size": 21,
+            },
+            "9": {
+                "size": 8,
+            },
+            "10": {
+                "size": 21,
+            },
+            "11": {
+                "size": 21,
+            },
+            "12": {
+                "size": 8,
+            },
+            "13": {
+                "size": 21,
+            },
+            "14": {
+                "size": 21,
+            },
+            "15": {
+                "size": 8,
+            },
+            "16": {
+                "size": 21,
+            },
+            "17": {
+                "size": 21,
+            },
+            "18": {
+                "size": 8,
+            },
+            "19": {
+                "size": 21,
+            },
+            "20": {
+                "size": 21,
+            },
+            "21": {
+                "size": 8,
+            },
+            "22": {
+                "size": 21,
+            },
+            "23": {
+                "size": 21,
+            },
+            "24": {
+                "size": 8,
+            },
+            "25": {
+                "size": 21,
+            },
+            "26": {
+                "size": 21,
+            },
+            "27": {
+                "size": 8,
+            },
+            "28": {
+                "size": 21,
+            },
+            "29": {
+                "size": 21,
+            },
+        },
+        "review-notes": True,
+        "ranges": {
+            # whole worksheet
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            # -toc-new link
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            # column size in pixels
+            "B1:E1": {
+                "halign": "center",
+            },
+            # column label - review-notes
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+                "weight": "bold",
+            },
+            # column label - content
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "weight": "bold",
+                "merge": True,
+            },
+            # name of resource
+            "B3": {
+                "value": "1",
+                "weight": "bold",
+            },
+            "C3": {
+                "value": "NAME OF RESOURCE",
+                "weight": "bold",
+            },
+            "D3": {
+                "value": "='01-personal'!D3",
+            },
+            # date of birth
+            "B4": {
+                "value": "2",
+                "weight": "bold",
+            },
+            "C4": {
+                "value": "DATE OF BIRTH",
+                "weight": "bold",
+            },
+            "D4": {
+                "value": "='01-personal'!D5",
+            },
+            # nationality
+            "B5": {
+                "value": "3",
+                "weight": "bold",
+            },
+            "C5": {
+                "value": "NATIONALITY",
+                "weight": "bold",
+            },
+            "D5": {
+                "value": "='01-personal'!D6",
+            },
+            # nationality
+            "E3:E5": {
+                "value": "='01-personal'!E3",
+                "merge": True 
+            },
+
+            # summary of prefessional experience
+            "B6": {
+                "value": "",
+            },
+            "B7": {
+                "value": "4",
+                "weight": "bold",
+            },
+            "C7:E7": {
+                "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B8": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "note": '{"content": "free"}',
+            },
+            # education
+            "B9": {
+                "value": "",
+            },
+            "B10": {
+                "value": "5",
+                "weight": "bold",
+            },
+            "C10:E10": {
+                "value": "EDUCATION",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B11": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "note": '{"content": "free"}',
+            },
+            # employment record
+            "B12": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B13": {
+                "value": "6a",
+                "weight": "bold",
+            },
+            "C13:E13": {
+                "value": "EMPLOYMENT RECORD",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B14": {
+                "value": "06-job-history",
+                "ws-name-to-link": "06-job-history",
+                "note": '{"content": "free"}',
+            },
+            # professional experience
+            "B15": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B16": {
+                "value": "6b",
+                "weight": "bold",
+            },
+            "C16:E16": {
+                "value": "PROFESSIONAL EXPERIENCE",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B17": {
+                "value": "07-project-roles",
+                "ws-name-to-link": "07-project-roles",
+                "note": '{"content": "free"}',
+            },
+            # technical expertise
+            "B18": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B19": {
+                "value": "7",
+                "weight": "bold",
+            },
+            "C19:E19": {
+                "value": "TECHNICAL EXPERTISE",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B20": {
+                "value": "05-technical-expertise",
+                "ws-name-to-link": "05-technical-expertise",
+                "note": '{"content": "free"}',
+            },
+            # professional training
+            "B21": {
+                "value": "",
+            },
+            "B22": {
+                "value": "8a",
+                "weight": "bold",
+            },
+            "C22:E22": {
+                "value": "PROFESSIONAL TRAINING",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B23": {
+                "value": "08-training",
+                "ws-name-to-link": "08-training",
+                "note": '{"content": "free"}',
+            },
+            # professional certificates
+            "B24": {
+                "value": "",
+            },
+            "B25": {
+                "value": "8b",
+                "weight": "bold",
+            },
+            "C25:E25": {
+                "value": "PROFESSIONAL CERTIFICATIONS",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B26": {
+                "value": "09-certification",
+                "ws-name-to-link": "09-certification",
+                "note": '{"content": "free"}',
+            },
+            # language proficency
+            "B27": {
+                "value": "",
+            },
+            "B28": {
+                "value": "9",
+                "weight": "bold",
+            },
+            "C28:E28": {
+                "value": "LANGUAGES & DEGREE OF PROFICIENCY",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B29": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "note": '{"content": "free"}',
+            },
+        },
+        "cell-empty-markers": [
+            "B3:E5",
         ],
     },
-    '00-layout': {
-        'num-rows': 27,
-        'num-columns': 5,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'B': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'C': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'D': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'E': {'size': 270, 'halign': 'center', 'valign': 'top', 'wrap': True},
+    "00-layout-MRA-OMS": {
+        "num-rows": 49,
+        "num-columns": 9,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {
+                "size": 100,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "B": {
+                "size": 40,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "C": {
+                "size": 180,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "D": {
+                "size": 50,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "E": {
+                "size": 30,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "F": {
+                "size": 50,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "G": {
+                "size": 30,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "H": {
+                "size": 300,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "I": {
+                "size": 320,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
         },
-        'rows': {
-            '1': {'size': 21, },
-            '2': {'size': 21, },
-            '3': {'size': 21, },
-            '4': {'size': 21, },
-            '5': {'size': 21, },
-            '6': {'size': 8, },
-            '7': {'size': 21, },
-            '8': {'size': 21, },
-            '9': {'size': 8, },
-            '10': {'size': 21, },
-            '11': {'size': 21, },
-            '12': {'size': 8, },
-            '13': {'size': 21, },
-            '14': {'size': 21, },
-            '15': {'size': 8, },
-            '16': {'size': 21, },
-            '17': {'size': 21, },
-            '18': {'size': 8, },
-            '19': {'size': 21, },
-            '20': {'size': 21, },
-            '21': {'size': 8, },
-            '22': {'size': 21, },
-            '23': {'size': 21, },
-            '24': {'size': 8, },
-            '25': {'size': 21, },
-            '26': {'size': 21, },
-            '27': {'size': 8, },
-            '28': {'size': 21, },
-            '29': {'size': 21, },
-        },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-
-            'A2': {'value': 'review-notes', 'halign': 'left', 'weight': 'bold', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'weight': 'bold', 'merge': True, },
-
-            'B3': {'value': '1', 'weight': 'bold', },
-            'C3': {'value': 'NAME OF RESOURCE', 'weight': 'bold', },
-            'D3': {'value': "='01-personal'!D3", },
-
-            'B4': {'value': '2', 'weight': 'bold', },
-            'C4': {'value': 'DATE OF BIRTH', 'weight': 'bold', },
-            'D4': {'value': "='01-personal'!D5", },
-
-            'B5': {'value': '3', 'weight': 'bold', },
-            'C5': {'value': 'NATIONALITY', 'weight': 'bold', },
-            'D5': {'value': "='01-personal'!D6", },
-
-            # 'B3:E5': {'border-color': '#B7B7B7', },
-
-            'B6': {'value': '', },
-            'B7': {'value': '4', 'weight': 'bold', },
-            'C7:E7': {'value': 'SUMMARY OF PROFESSIONAL EXPERIENCE', 'weight': 'bold', 'merge': True, },
-            'B8': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "free"}', },
-
-            'B9': {'value': '', },
-            'B10': {'value': '5', 'weight': 'bold', },
-            'C10:E10': {'value': 'EDUCATION', 'weight': 'bold', 'merge': True, },
-            'B11': {'value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "free"}', },
-
-            'B12': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-            'B13': {'value': '6a', 'weight': 'bold', },
-            'C13:E13': {'value': 'EMPLOYMENT RECORD', 'weight': 'bold', 'merge': True, },
-            'B14': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "free"}', },
-
-            'B15': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-            'B16': {'value': '6b', 'weight': 'bold', },
-            'C16:E16': {'value': 'PROFESSIONAL EXPERIENCE', 'weight': 'bold', 'merge': True, },
-            'B17': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "free"}', },
-
-            'B18': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-            'B19': {'value': '7', 'weight': 'bold', },
-            'C19:E19': {'value': 'TECHNICAL EXPERTISE', 'weight': 'bold', 'merge': True, },
-            'B20': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "free"}', },
-
-            'B21': {'value': '', },
-            'B22': {'value': '8a', 'weight': 'bold', },
-            'C22:E22': {'value': 'PROFESSIONAL TRAINING', 'weight': 'bold', 'merge': True, },
-            'B23': {'value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "free"}', },
-
-            'B24': {'value': '', },
-            'B25': {'value': '8b', 'weight': 'bold', },
-            'C25:E25': {'value': 'PROFESSIONAL CERTIFICATIONS', 'weight': 'bold', 'merge': True, },
-            'B26': {'value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "free"}', },
-
-            'B27': {'value': '', },
-            'B28': {'value': '9', 'weight': 'bold', },
-            'C28:E28': {'value': 'LANGUAGES & DEGREE OF PROFICIENCY', 'weight': 'bold', 'merge': True, },
-            'B29': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "free"}', },
-        },
-        'cell-empty-markers': [
-            'B3:E5',
-        ],
-    },
-    '00-layout-MRA-OMS': {
-        'num-rows': 49,
-        'num-columns': 9,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'B': {'size':  40, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'C': {'size': 180, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'D': {'size':  50, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'E': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'F': {'size':  50, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'G': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'H': {'size': 300, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-            'I': {'size': 320, 'halign': 'left', 'valign': 'top', 'wrap': True, },
-        },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:I1': {'halign': 'center', },
-            'B2:I2': {'value': 'content', 'halign': 'left', 'merge': True, },
-
-            'B3:G3': {'merge': True, 'halign': 'left', 'value': 'Name of the Consultant', },
-            'H3:I3': {'merge': True, 'halign': 'left', 'value': 'DOER Services Ltd.', },
-
-            'B4:G4': {'merge': True, 'halign': 'left', 'weight': 'bold', 'value': 'RFP IDENTIFICATION NO:', },
-            'H4:I4': {'merge': True, 'halign': 'left', 'weight': 'bold', 'value': '53.04.0000.002.07.011.23-1306', },
-
-            'B5:G5': {'merge': True, 'halign': 'left', 'value': 'Name of the Client', },
-            'H5:I5': {'merge': True, 'halign': 'left', 'value': 'Microcredit Regulatory Authority', },
-
-            'B7': {'value': '1', },
-            'C7:G7': {'value': 'PROPOSED POSITION', },
-            'H7': {'value': "", },
-
-            'B8': {'value': '2', },
-            'C8': {'value': 'NAME OF RESOURCE', },
-            'D8': {'value': "='01-personal'!D3", },
-
-            'B9': {'value': '3', },
-            'C9': {'value': 'DATE OF BIRTH', },
-            'D9': {'value': "='01-personal'!D5", },
-
-            'B10': {'value': '4', },
-            'C10': {'value': 'NATIONALITY', },
-            'D10': {'value': "='01-personal'!D6", },
-
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:I1": {
+                "halign": "center",
+            },
+            "B2:I2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3:G3": {
+                "merge": True,
+                "halign": "left",
+                "value": "Name of the Consultant",
+            },
+            "H3:I3": {
+                "merge": True,
+                "halign": "left",
+                "value": "DOER Services Ltd.",
+            },
+            "B4:G4": {
+                "merge": True,
+                "halign": "left",
+                "weight": "bold",
+                "value": "RFP IDENTIFICATION NO:",
+            },
+            "H4:I4": {
+                "merge": True,
+                "halign": "left",
+                "weight": "bold",
+                "value": "53.04.0000.002.07.011.23-1306",
+            },
+            "B5:G5": {
+                "merge": True,
+                "halign": "left",
+                "value": "Name of the Client",
+            },
+            "H5:I5": {
+                "merge": True,
+                "halign": "left",
+                "value": "Microcredit Regulatory Authority",
+            },
+            "B7": {
+                "value": "1",
+            },
+            "C7:G7": {
+                "value": "PROPOSED POSITION",
+            },
+            "H7": {
+                "value": "",
+            },
+            "B8": {
+                "value": "2",
+            },
+            "C8": {
+                "value": "NAME OF RESOURCE",
+            },
+            "D8": {
+                "value": "='01-personal'!D3",
+            },
+            "B9": {
+                "value": "3",
+            },
+            "C9": {
+                "value": "DATE OF BIRTH",
+            },
+            "D9": {
+                "value": "='01-personal'!D5",
+            },
+            "B10": {
+                "value": "4",
+            },
+            "C10": {
+                "value": "NATIONALITY",
+            },
+            "D10": {
+                "value": "='01-personal'!D6",
+            },
             # 'B3:E6': {'border-color': '#B7B7B7', },
-
-            'B7': {'value': '', },
-
-            'B8': {'value': '4', },
-            'C8:E8': {'value': 'SUMMARY OF PROFESSIONAL EXPERIENCE', 'merge': True, },
-
-            'B9': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "free"}', },
-
-            'B10': {'value': '', },
-
-            'B11': {'value': '5', },
-            'C11:E11': {'value': 'EDUCATION', 'merge': True, },
-
-            'B12': {'value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "free"}', },
-
-            'B13': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-
-            'B14': {'value': '6', },
-            'C14:E14': {'value': 'EMPLOYMENT RECORD', 'merge': True, },
-
-            'B15': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "free"}', },
-
-            'B16': {'value': '', },
-
-            'B17': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "free"}', },
-
-            'B18': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-
-            'B19': {'value': '7', },
-            'C19:E19': {'value': 'TECHNICAL EXPERTISE', 'merge': True, },
-
-            'B20': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "free"}', },
-
-            'B21': {'value': '', },
-
-            'B22': {'value': '8', },
-            'C22:E22': {'value': 'TRAINING AND CERTIFICATIONS', 'merge': True, },
-
-            'B23': {'value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "free"}', },
-
-            'B24': {'value': '', },
-
-            'B25': {'value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "free"}', },
-
-            'B26': {'value': '', },
-
-            'B27': {'value': '9', },
-            'C27:E27': {'value': 'LANGUAGES & DEGREE OF PROFICIENCY', 'merge': True, },
-
-            'B28': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "free"}', },
+            "B7": {
+                "value": "",
+            },
+            "B8": {
+                "value": "4",
+            },
+            "C8:E8": {
+                "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
+                "merge": True,
+            },
+            "B9": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "note": '{"content": "free"}',
+            },
+            "B10": {
+                "value": "",
+            },
+            "B11": {
+                "value": "5",
+            },
+            "C11:E11": {
+                "value": "EDUCATION",
+                "merge": True,
+            },
+            "B12": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "note": '{"content": "free"}',
+            },
+            "B13": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B14": {
+                "value": "6",
+            },
+            "C14:E14": {
+                "value": "EMPLOYMENT RECORD",
+                "merge": True,
+            },
+            "B15": {
+                "value": "06-job-history",
+                "ws-name-to-link": "06-job-history",
+                "note": '{"content": "free"}',
+            },
+            "B16": {
+                "value": "",
+            },
+            "B17": {
+                "value": "07-project-roles",
+                "ws-name-to-link": "07-project-roles",
+                "note": '{"content": "free"}',
+            },
+            "B18": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B19": {
+                "value": "7",
+            },
+            "C19:E19": {
+                "value": "TECHNICAL EXPERTISE",
+                "merge": True,
+            },
+            "B20": {
+                "value": "05-technical-expertise",
+                "ws-name-to-link": "05-technical-expertise",
+                "note": '{"content": "free"}',
+            },
+            "B21": {
+                "value": "",
+            },
+            "B22": {
+                "value": "8",
+            },
+            "C22:E22": {
+                "value": "TRAINING AND CERTIFICATIONS",
+                "merge": True,
+            },
+            "B23": {
+                "value": "08-training",
+                "ws-name-to-link": "08-training",
+                "note": '{"content": "free"}',
+            },
+            "B24": {
+                "value": "",
+            },
+            "B25": {
+                "value": "09-certification",
+                "ws-name-to-link": "09-certification",
+                "note": '{"content": "free"}',
+            },
+            "B26": {
+                "value": "",
+            },
+            "B27": {
+                "value": "9",
+            },
+            "C27:E27": {
+                "value": "LANGUAGES & DEGREE OF PROFICIENCY",
+                "merge": True,
+            },
+            "B28": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "note": '{"content": "free"}',
+            },
         },
-        'cell-empty-markers': [
-            'B3:I5',
-            'B7:I10',
-            'B12:I13',
-            'B15:I16',
-            'B18:I19',
-            'B21:I21',
-            'B23:I24',
-            'B26:I26',
-            'B28:I29',
-            'B31:I32',
-            'B34:I35',
-            'B37:I37',
-            'B39:I39',
-            'B41:I41',
-            'D43',
-            'F43',
-            'D45:G47',
-            'H45:I47',
-            'D48:G49',
-            'H48:I49',
+        "cell-empty-markers": [
+            "B3:I5",
+            "B7:I10",
+            "B12:I13",
+            "B15:I16",
+            "B18:I19",
+            "B21:I21",
+            "B23:I24",
+            "B26:I26",
+            "B28:I29",
+            "B31:I32",
+            "B34:I35",
+            "B37:I37",
+            "B39:I39",
+            "B41:I41",
+            "D43",
+            "F43",
+            "D45:G47",
+            "H45:I47",
+            "D48:G49",
+            "H48:I49",
         ],
     },
-    '00-layout-RHD-TMC': {
-        'num-rows': 28,
-        'num-columns': 5,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'B': {'size':  30, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'C': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'D': {'size': 250, 'halign': 'left', 'valign': 'top', 'wrap': True},
-            'E': {'size': 270, 'halign': 'center', 'valign': 'top', 'wrap': True},
+    "00-layout-RHD-TMC": {
+        "num-rows": 28,
+        "num-columns": 5,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "valign": "top", "wrap": True},
+            "B": {"size": 30, "halign": "left", "valign": "top", "wrap": True},
+            "C": {"size": 250, "halign": "left", "valign": "top", "wrap": True},
+            "D": {"size": 250, "halign": "left", "valign": "top", "wrap": True},
+            "E": {"size": 270, "halign": "center", "valign": "top", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-
-            'B3': {'value': '1', },
-            'C3': {'value': 'PROPOSED POSITION', },
-            'D3': {'value': "", },
-
-            'B4': {'value': '2', },
-            'C4': {'value': 'NAME OF RESOURCE', },
-            'D4': {'value': "='01-personal'!D3", },
-
-            'B5': {'value': '3', },
-            'C5': {'value': 'DATE OF BIRTH', },
-            'D5': {'value': "='01-personal'!D5", },
-
-            'B6': {'value': '4', },
-            'C6': {'value': 'NATIONALITY', },
-            'D6': {'value': "='01-personal'!D6", },
-
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "1",
+            },
+            "C3": {
+                "value": "PROPOSED POSITION",
+            },
+            "D3": {
+                "value": "",
+            },
+            "B4": {
+                "value": "2",
+            },
+            "C4": {
+                "value": "NAME OF RESOURCE",
+            },
+            "D4": {
+                "value": "='01-personal'!D3",
+            },
+            "B5": {
+                "value": "3",
+            },
+            "C5": {
+                "value": "DATE OF BIRTH",
+            },
+            "D5": {
+                "value": "='01-personal'!D5",
+            },
+            "B6": {
+                "value": "4",
+            },
+            "C6": {
+                "value": "NATIONALITY",
+            },
+            "D6": {
+                "value": "='01-personal'!D6",
+            },
             # 'B3:E6': {'border-color': '#B7B7B7', },
-
-            'B7': {'value': '', },
-
-            'B8': {'value': '4', },
-            'C8:E8': {'value': 'SUMMARY OF PROFESSIONAL EXPERIENCE', 'merge': True, },
-
-            'B9': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'note': '{"content": "free"}', },
-
-            'B10': {'value': '', },
-
-            'B11': {'value': '5', },
-            'C11:E11': {'value': 'EDUCATION', 'merge': True, },
-
-            'B12': {'value': '03-education', 'ws-name-to-link': '03-education', 'note': '{"content": "free"}', },
-
-            'B13': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-
-            'B14': {'value': '6', },
-            'C14:E14': {'value': 'EMPLOYMENT RECORD', 'merge': True, },
-
-            'B15': {'value': '06-job-history', 'ws-name-to-link': '06-job-history', 'note': '{"content": "free"}', },
-
-            'B16': {'value': '', },
-
-            'B17': {'value': '07-project-roles', 'ws-name-to-link': '07-project-roles', 'note': '{"content": "free"}', },
-
-            'B18': {'value': '', 'note': '{"content": "free", "new-page": true}', },
-
-            'B19': {'value': '7', },
-            'C19:E19': {'value': 'TECHNICAL EXPERTISE', 'merge': True, },
-
-            'B20': {'value': '05-technical-expertise', 'ws-name-to-link': '05-technical-expertise', 'note': '{"content": "free"}', },
-
-            'B21': {'value': '', },
-
-            'B22': {'value': '8', },
-            'C22:E22': {'value': 'TRAINING AND CERTIFICATIONS', 'merge': True, },
-
-            'B23': {'value': '08-training', 'ws-name-to-link': '08-training', 'note': '{"content": "free"}', },
-
-            'B24': {'value': '', },
-
-            'B25': {'value': '09-certification', 'ws-name-to-link': '09-certification', 'note': '{"content": "free"}', },
-
-            'B26': {'value': '', },
-
-            'B27': {'value': '9', },
-            'C27:E27': {'value': 'LANGUAGES & DEGREE OF PROFICIENCY', 'merge': True, },
-
-            'B28': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'note': '{"content": "free"}', },
+            "B7": {
+                "value": "",
+            },
+            "B8": {
+                "value": "4",
+            },
+            "C8:E8": {
+                "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
+                "merge": True,
+            },
+            "B9": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "note": '{"content": "free"}',
+            },
+            "B10": {
+                "value": "",
+            },
+            "B11": {
+                "value": "5",
+            },
+            "C11:E11": {
+                "value": "EDUCATION",
+                "merge": True,
+            },
+            "B12": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "note": '{"content": "free"}',
+            },
+            "B13": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B14": {
+                "value": "6",
+            },
+            "C14:E14": {
+                "value": "EMPLOYMENT RECORD",
+                "merge": True,
+            },
+            "B15": {
+                "value": "06-job-history",
+                "ws-name-to-link": "06-job-history",
+                "note": '{"content": "free"}',
+            },
+            "B16": {
+                "value": "",
+            },
+            "B17": {
+                "value": "07-project-roles",
+                "ws-name-to-link": "07-project-roles",
+                "note": '{"content": "free"}',
+            },
+            "B18": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B19": {
+                "value": "7",
+            },
+            "C19:E19": {
+                "value": "TECHNICAL EXPERTISE",
+                "merge": True,
+            },
+            "B20": {
+                "value": "05-technical-expertise",
+                "ws-name-to-link": "05-technical-expertise",
+                "note": '{"content": "free"}',
+            },
+            "B21": {
+                "value": "",
+            },
+            "B22": {
+                "value": "8",
+            },
+            "C22:E22": {
+                "value": "TRAINING AND CERTIFICATIONS",
+                "merge": True,
+            },
+            "B23": {
+                "value": "08-training",
+                "ws-name-to-link": "08-training",
+                "note": '{"content": "free"}',
+            },
+            "B24": {
+                "value": "",
+            },
+            "B25": {
+                "value": "09-certification",
+                "ws-name-to-link": "09-certification",
+                "note": '{"content": "free"}',
+            },
+            "B26": {
+                "value": "",
+            },
+            "B27": {
+                "value": "9",
+            },
+            "C27:E27": {
+                "value": "LANGUAGES & DEGREE OF PROFICIENCY",
+                "merge": True,
+            },
+            "B28": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "note": '{"content": "free"}',
+            },
         },
-        'cell-empty-markers': [
-            'B3:E6',
+        "cell-empty-markers": [
+            "B3:E6",
         ],
     },
-    '00-layout-USAID-FFBT': {
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  60},
-            'C': {'size': 340},
-            'D': {'size': 400},
+    "00-layout-USAID-FFBT": {
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 60},
+            "C": {"size": 340},
+            "D": {"size": 400},
         },
-        'rows': {
-            '5': {'size': 10},
-            '8': {'size':  10},
-            '11': {'size': 10},
-            '14': {'size': 10},
-            '17': {'size': 10},
+        "rows": {
+            "5": {"size": 10},
+            "8": {"size": 10},
+            "11": {"size": 10},
+            "14": {"size": 10},
+            "17": {"size": 10},
         },
-        'ranges': {
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new'},
-            'A2': {'value': 'review-notes', 'weight': 'bold'},
-            'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True},
-
-            'B3:C3': {'value': 'Name:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True},
-            'D3': {'value': 'Proposed Position:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7'},
-
-            'B4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
-            'C4': {'value': "='01-personal'!D3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True},
-            'D4': {'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7'},
-
-            'B5:D5': {'merge': True, 'font-size': 4},
-
-            'B6:D6': {'value': 'Summary of personnel experience', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
-            'B7:D7': {'value': '02-career-highlight', 'ws-name-to-link': '02-career-highlight', 'merge': True, 'note': '{"content": "free"}'},
-
-            'B8:D8': {'merge': True, 'font-size': 4},
-
-            'B9:D9': {'value': 'EDUCATION:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
-            'B10:D10': {'value': '03-education', 'ws-name-to-link': '03-education', 'merge': True, 'note': '{"content": "free"}'},
-
-            'B11:D11': {'merge': True, 'font-size': 4},
-
-            'B12:D12': {'value': 'PROFESSIONAL EXPERIENCE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free", "new-page": true}'},
-            'B13:D13': {'value': '06-job-history-USAID-FFBT', 'ws-name-to-link': '06-job-history-USAID-FFBT', 'merge': True, 'note': '{"content": "free"}'},
-
-            'B14:D14': {'merge': True, 'font-size': 4},
-
-            'B15:D15': {'value': 'LANGUAGE:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
-            'B16:D16': {'value': '11-language-proficiency', 'ws-name-to-link': '11-language-proficiency', 'merge': True, 'note': '{"content": "free"}'},
-
-            'B17:D17': {'merge': True, 'font-size': 4},
-
-            'B18:D18': {'value': 'REFERENCES:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'merge': True, 'note': '{"content": "free"}'},
-            'B19:D19': {'value': '16-references', 'ws-name-to-link': '16-references', 'merge': True, 'note': '{"content": "free"}'},
+        "ranges": {
+            "A1": {"value": "-toc-new", "ws-name-to-link": "-toc-new"},
+            "A2": {"value": "review-notes", "weight": "bold"},
+            "B2:D2": {"value": "content", "weight": "bold", "merge": True},
+            "B3:C3": {
+                "value": "Name:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
+            "D3": {
+                "value": "Proposed Position:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4": {"weight": "normal", "fgcolor": "#434343", "border-color": "#B7B7B7"},
+            "C4": {
+                "value": "='01-personal'!D3",
+                "weight": "normal",
+                "fgcolor": "#434343",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
+            "D4": {"weight": "normal", "fgcolor": "#434343", "border-color": "#B7B7B7"},
+            "B5:D5": {"merge": True, "font-size": 4},
+            "B6:D6": {
+                "value": "Summary of personnel experience",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B7:D7": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B8:D8": {"merge": True, "font-size": 4},
+            "B9:D9": {
+                "value": "EDUCATION:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B10:D10": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B11:D11": {"merge": True, "font-size": 4},
+            "B12:D12": {
+                "value": "PROFESSIONAL EXPERIENCE:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B13:D13": {
+                "value": "06-job-history-USAID-FFBT",
+                "ws-name-to-link": "06-job-history-USAID-FFBT",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B14:D14": {"merge": True, "font-size": 4},
+            "B15:D15": {
+                "value": "LANGUAGE:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B16:D16": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B17:D17": {"merge": True, "font-size": 4},
+            "B18:D18": {
+                "value": "REFERENCES:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B19:D19": {
+                "value": "16-references",
+                "ws-name-to-link": "16-references",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
         },
-        'cell-empty-markers': [
-            'B4:D4',
+        "cell-empty-markers": [
+            "B4:D4",
         ],
     },
-    '01-personal': {
-        'num-columns': 5,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  30, 'halign': 'center', 'wrap': True},
-            'C': {'size': 130, 'halign': 'left', 'wrap': True},
-            'D': {'size': 320, 'halign': 'left', 'wrap': True},
-            'E': {'size': 320, 'halign': 'center', 'wrap': True},
+    "01-personal": {
+        "num-columns": 5,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 30, "halign": "center", "wrap": True},
+            "C": {"size": 130, "halign": "left", "wrap": True},
+            "D": {"size": 320, "halign": "left", "wrap": True},
+            "E": {"size": 320, "halign": "center", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z'
+        "cell-empty-markers": ["B3:Z"],
+    },
+    "02-career-highlight": {
+        "num-columns": 4,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 150, "halign": "left", "wrap": True},
+            "C": {"size": 30, "halign": "center", "wrap": True},
+            "D": {"size": 620, "halign": "left", "wrap": True},
+        },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:D1": {
+                "halign": "center",
+            },
+            "B2:D2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+        },
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '02-career-highlight': {
-        'num-columns': 4,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 150, 'halign': 'left', 'wrap': True},
-            'C': {'size':  30, 'halign': 'center', 'wrap': True},
-            'D': {'size': 620, 'halign': 'left', 'wrap': True},
+    "03-education": {
+        "num-columns": 5,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 80, "halign": "center", "wrap": True},
+            "C": {"size": 210, "halign": "left", "wrap": True},
+            "D": {"size": 210, "halign": "left", "wrap": True},
+            "E": {"size": 300, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:D1': {'halign': 'center', },
-            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Year",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "Degree",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3": {
+                "value": "Subject/Discipline",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "E3": {
+                "value": "Institute",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '03-education': {
-        'num-columns': 5,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  80, 'halign': 'center', 'wrap': True},
-            'C': {'size': 210, 'halign': 'left', 'wrap': True},
-            'D': {'size': 210, 'halign': 'left', 'wrap': True},
-            'E': {'size': 300, 'halign': 'left', 'wrap': True},
+    "04-managerial-expertise": {
+        "num-columns": 4,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 170, "halign": "left", "wrap": True},
+            "C": {"size": 30, "halign": "center", "wrap": True},
+            "D": {"size": 600, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-
-            'B3': {'value': 'Year', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'Degree', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3': {'value': 'Subject/Discipline', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'E3': {'value': 'Institute', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:D1": {
+                "halign": "center",
+            },
+            "B2:D2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Area",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3:D3": {
+                "value": "Expertise",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '04-managerial-expertise': {
-        'num-columns': 4,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 170, 'halign': 'left', 'wrap': True},
-            'C': {'size':  30, 'halign': 'center', 'wrap': True},
-            'D': {'size': 600, 'halign': 'left', 'wrap': True},
+    "05-technical-expertise": {
+        "num-columns": 4,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 170, "halign": "left", "wrap": True},
+            "C": {"size": 30, "halign": "center", "wrap": True},
+            "D": {"size": 600, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:D1': {'halign': 'center', },
-            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:D1": {
+                "halign": "center",
+            },
+            "B2:D2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Area",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3:D3": {
+                "value": "Expertise",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '05-technical-expertise': {
-        'num-columns': 4,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 170, 'halign': 'left', 'wrap': True},
-            'C': {'size':  30, 'halign': 'center', 'wrap': True},
-            'D': {'size': 600, 'halign': 'left', 'wrap': True},
+    "06-job-history": {
+        "num-columns": 5,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 60, "halign": "center", "wrap": True},
+            "C": {"size": 60, "halign": "center", "wrap": True},
+            "D": {"size": 30, "wrap": True},
+            "E": {"size": 650, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:D1': {'halign': 'center', },
-            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Area', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3:D3': {'value': 'Expertise', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "From",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "To",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3:E3": {
+                "value": "Employment History",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '06-job-history': {
-        'num-columns': 5,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  60, 'halign': 'center', 'wrap': True},
-            'C': {'size':  60, 'halign': 'center', 'wrap': True},
-            'D': {'size':  30, 'wrap': True},
-            'E': {'size': 650, 'halign': 'left', 'wrap': True},
+    "06-job-history-USAID-FFBT": {
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 65, "halign": "center", "wrap": True},
+            "C": {"size": 65, "halign": "center", "wrap": True},
+            "D": {"size": 30, "wrap": True},
+            "E": {"size": 640, "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'From', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'To', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3:E3': {'value': 'Employment History', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+        "ranges": {
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "B1": {"value": "65", "halign": "center"},
+            "C1": {"value": "65", "halign": "center"},
+            "D1": {"value": "30", "halign": "center"},
+            "E1": {"value": "640", "halign": "center"},
+            "B2:E2": {"value": "content", "halign": "left", "merge": True},
         },
-        'cell-empty-markers': [
-            'B3:Z',
+    },
+    "07-project-roles": {
+        "num-columns": 5,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 60, "halign": "center", "wrap": True},
+            "C": {"size": 60, "halign": "center", "wrap": True},
+            "D": {"size": 30, "wrap": True},
+            "E": {"size": 650, "halign": "left", "wrap": True},
+        },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "From",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "To",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3:E3": {
+                "value": "Company/Project/Position/ Relevant Technical and Management Experience",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
+        },
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '06-job-history-USAID-FFBT': {
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  65, 'halign': 'center', 'wrap': True},
-            'C': {'size':  65, 'halign': 'center', 'wrap': True},
-            'D': {'size':  30, 'wrap': True},
-            'E': {'size': 640, 'wrap': True},
+    "08-training": {
+        "num-columns": 4,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 80, "halign": "center", "wrap": True},
+            "C": {"size": 450, "halign": "left", "wrap": True},
+            "D": {"size": 370, "halign": "left", "wrap": True},
         },
-        'ranges': {
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left'},
-            'B1': {'value': '65', 'halign': 'center'},
-            'C1': {'value': '65', 'halign': 'center'},
-            'D1': {'value': '30', 'halign': 'center'},
-            'E1': {'value': '640', 'halign': 'center'},
-
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True},
-
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:D1": {
+                "halign": "center",
+            },
+            "B2:D2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Year",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "Training",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3": {
+                "value": "Institute",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-    },
-    '07-project-roles': {
-        'num-columns': 5,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  60, 'halign': 'center', 'wrap': True},
-            'C': {'size':  60, 'halign': 'center', 'wrap': True},
-            'D': {'size':  30, 'wrap': True},
-            'E': {'size': 650, 'halign': 'left', 'wrap': True},
-        },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'From', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'To', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3:E3': {'value': 'Company/Project/Position/ Relevant Technical and Management Experience', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
-        },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '08-training': {
-        'num-columns': 4,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  80, 'halign': 'center', 'wrap': True},
-            'C': {'size': 450, 'halign': 'left', 'wrap': True},
-            'D': {'size': 370, 'halign': 'left', 'wrap': True},
+    "09-certification": {
+        "num-columns": 5,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 70, "halign": "center", "wrap": True},
+            "C": {"size": 150, "halign": "left", "wrap": True},
+            "D": {"size": 280, "halign": "left", "wrap": True},
+            "E": {"size": 300, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:D1': {'halign': 'center', },
-            'B2:D2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Year', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'Training', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3': {'value': 'Institute', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Year",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "Vendor/OEM/ Subject",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3": {
+                "value": "Certification",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "E3": {
+                "value": "Details",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '09-certification': {
-        'num-columns': 5,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size':  70, 'halign': 'center', 'wrap': True},
-            'C': {'size': 150, 'halign': 'left', 'wrap': True},
-            'D': {'size': 280, 'halign': 'left', 'wrap': True},
-            'E': {'size': 300, 'halign': 'left', 'wrap': True},
+    "10-membership": {
+        "num-columns": 6,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 250, "halign": "left", "wrap": True},
+            "C": {"size": 150, "halign": "left", "wrap": True},
+            "D": {"size": 125, "halign": "center", "wrap": True},
+            "E": {"size": 125, "halign": "center", "wrap": True},
+            "F": {"size": 150, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Year', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'Vendor/OEM/ Subject', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3': {'value': 'Certification', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'E3': {'value': 'Details', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:F1": {
+                "halign": "center",
+            },
+            "B2:F2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Professional Organization/Society",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "Membership Rank/Level",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3": {
+                "value": "Membership ID/Number",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "E3": {
+                "value": "Member Since",
+                "halign": "center",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "F3": {
+                "value": "Details",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '10-membership': {
-        'num-columns': 6,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 250, 'halign': 'left', 'wrap': True},
-            'C': {'size': 150, 'halign': 'left', 'wrap': True},
-            'D': {'size': 125, 'halign': 'center', 'wrap': True},
-            'E': {'size': 125, 'halign': 'center', 'wrap': True},
-            'F': {'size': 150, 'halign': 'left', 'wrap': True},
+    "11-language-proficiency": {
+        "num-columns": 5,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 110, "halign": "left", "wrap": True},
+            "C": {"size": 230, "halign": "left", "wrap": True},
+            "D": {"size": 230, "halign": "left", "wrap": True},
+            "E": {"size": 230, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:F1': {'halign': 'center', },
-            'B2:F2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Professional Organization/Society', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'Membership Rank/Level', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3': {'value': 'Membership ID/Number', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'E3': {'value': 'Member Since', 'halign': 'center', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'F3': {'value': 'Details', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Language",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "Speaking",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3": {
+                "value": "Reading",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "E3": {
+                "value": "Writing",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '11-language-proficiency': {
-        'num-columns': 5,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 110, 'halign': 'left', 'wrap': True},
-            'C': {'size': 230, 'halign': 'left', 'wrap': True},
-            'D': {'size': 230, 'halign': 'left', 'wrap': True},
-            'E': {'size': 230, 'halign': 'left', 'wrap': True},
+    "12-contact": {
+        "num-columns": 3,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 200, "halign": "left", "wrap": True},
+            "C": {"size": 600, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:E1': {'halign': 'center', },
-            'B2:E2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Language', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'Speaking', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3': {'value': 'Reading', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'E3': {'value': 'Writing', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:C1": {
+                "halign": "center",
+            },
+            "B2:C2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:C4",
         ],
     },
-    '12-contact': {
-        'num-columns': 3,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 200, 'halign': 'left', 'wrap': True},
-            'C': {'size': 600, 'halign': 'left', 'wrap': True},
+    "13-educational-certificates": {
+        "num-columns": 2,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 800, "halign": "center", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:C1': {'halign': 'center', },
-            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1": {
+                "halign": "center",
+            },
+            "B2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:C4',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '13-educational-certificates': {
-        'num-columns': 2,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 800, 'halign': 'center', 'wrap': True},
+    "14-vendor-certificates": {
+        "num-columns": 2,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 800, "halign": "center", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1': {'halign': 'center', },
-            'B2': {'value': 'content', 'halign': 'left', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1": {
+                "halign": "center",
+            },
+            "B2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '14-vendor-certificates': {
-        'num-columns': 2,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 800, 'halign': 'center', 'wrap': True},
+    "15-institutional-certificates": {
+        "num-columns": 2,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 800, "halign": "center", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1': {'halign': 'center', },
-            'B2': {'value': 'content', 'halign': 'left', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1": {
+                "halign": "center",
+            },
+            "B2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '15-institutional-certificates': {
-        'num-columns': 2,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 800, 'halign': 'center', 'wrap': True},
+    "16-references": {
+        "num-columns": 6,
+        "frozen-rows": 3,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 140, "halign": "left", "wrap": True},
+            "C": {"size": 150, "halign": "left", "wrap": True},
+            "D": {"size": 190, "halign": "left", "wrap": True},
+            "E": {"size": 190, "halign": "left", "wrap": True},
+            "F": {"size": 130, "halign": "left", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1': {'halign': 'center', },
-            'B2': {'value': 'content', 'halign': 'left', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:F1": {
+                "halign": "center",
+            },
+            "B2:F2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "Name",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "note": '{"repeat-rows": 1}',
+            },
+            "C3": {
+                "value": "Position",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "D3": {
+                "value": "Company",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "E3": {
+                "value": "Email",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "F3": {
+                "value": "Phone Number",
+                "halign": "left",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4:Z": {
+                "border-color": "#B7B7B7",
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    '16-references': {
-        'num-columns': 6,
-        'frozen-rows': 3,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 140, 'halign': 'left', 'wrap': True},
-            'C': {'size': 150, 'halign': 'left', 'wrap': True},
-            'D': {'size': 190, 'halign': 'left', 'wrap': True},
-            'E': {'size': 190, 'halign': 'left', 'wrap': True},
-            'F': {'size': 130, 'halign': 'left', 'wrap': True},
+    "z-header": {
+        "num-columns": 3,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 600, "halign": "left", "wrap": True},
+            "C": {"size": 200, "halign": "right", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:F1': {'halign': 'center', },
-            'B2:F2': {'value': 'content', 'halign': 'left', 'merge': True, },
-            'B3': {'value': 'Name', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'note': '{"repeat-rows": 1}', },
-            'C3': {'value': 'Position', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'D3': {'value': 'Company', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'E3': {'value': 'Email', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'F3': {'value': 'Phone Number', 'halign': 'left', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
-            'B4:Z': {'border-color': '#B7B7B7', },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:C1": {
+                "halign": "center",
+            },
+            "B2:C2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
-    'z-header': {
-        'num-columns': 3,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 600, 'halign': 'left', 'wrap': True},
-            'C': {'size': 200, 'halign': 'right', 'wrap': True},
+    "z-footer": {
+        "num-columns": 3,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 600, "halign": "left", "wrap": True},
+            "C": {"size": 200, "halign": "right", "wrap": True},
         },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:C1': {'halign': 'center', },
-            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:C1": {
+                "halign": "center",
+            },
+            "B2:C2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
         },
-        'cell-empty-markers': [
-            'B3:Z',
-        ],
-    },
-    'z-footer': {
-        'num-columns': 3,
-        'frozen-rows': 2,
-        'frozen-columns': 0,
-        'columns': {
-            'A': {'size': 100, 'halign': 'left', 'wrap': True},
-            'B': {'size': 600, 'halign': 'left', 'wrap': True},
-            'C': {'size': 200, 'halign': 'right', 'wrap': True},
-        },
-        'review-notes': True,
-        'ranges': {
-            'A1:Z': {'valign': 'top', 'wrap': True, 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'no-border': True, },
-            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', 'halign': 'left', },
-            'A2': {'value': 'review-notes', 'halign': 'left', },
-            'B1:C1': {'halign': 'center', },
-            'B2:C2': {'value': 'content', 'halign': 'left', 'merge': True, },
-        },
-        'cell-empty-markers': [
-            'B3:Z',
+        "cell-empty-markers": [
+            "B3:Z",
         ],
     },
 }

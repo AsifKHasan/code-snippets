@@ -24,16 +24,14 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
     #     worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
     #     num_rows, num_cols = worksheet.number_of_dimesnions()
-    #     if num_rows != 6:
+    #     if num_rows != 29:
     #         print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
 
-        # add dimension
-        # if num_cols == 25:
-        #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
-        # if num_rows == 6:
-        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=3, rows_to_add=1)
-
-
+    # add dimension
+    # if num_cols == 25:
+    #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
+    # if num_rows == 6:
+    #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=3, rows_to_add=1)
 
     # -----------------------------------------------------------------------------------
     # END   work on a single worksheet rather than on a list of worksheets
@@ -42,11 +40,11 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # final_list = list(set(final_list) | set(g_sheet.list_worksheets()))
     # print(final_list)
 
-
     # worksheet duplication, removal, renaming
     # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
-    # g_sheet.rename_worksheet(worksheet_name='00-layout', new_worksheet_name='00-layout-WB')
     # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
+    # g_sheet.rename_worksheet(worksheet_name='z-header', new_worksheet_name='z-head')
+    # g_sheet.rename_worksheet(worksheet_name="z-footer", new_worksheet_name="z-foot")
 
     # worksheet creation, formatting and related tasks
     # g_sheet.clear_data_validation(worksheet_names=worksheet_names, range_spec='A1:Z')
@@ -66,13 +64,11 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # find and replace in worksheets
     # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
-
     # cell linking and ordering
     g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
-    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
-    g_sheet.order_worksheets()
-
+    g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=[])
+    # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet
     # for destination_gsheet_name in destination_gsheet_names:
@@ -81,17 +77,14 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     #         for worksheet_name in worksheet_names:
     #             g_sheet.copy_worksheet_to_gsheet(destination_gsheet=destination_gsheet, worksheet_name_to_copy=worksheet_name)
 
-
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # END   common tasks
-
 
     # BEGIN adhoc tasks
     # populate_range(g_sheet=g_sheet)
     # insert_a_row_with_values(g_sheet=g_sheet)
     # END   adhoc tasks
-
 
     # BEGIN resume specific tasks
     # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['02-career-highlight'], range_spec='B3:Z', grouping_columns=1)
@@ -99,12 +92,10 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['06-job-history', '07-project-roles', '07-project-roles-RHD-TMC'], range_spec='B4:Z', grouping_columns=2)
     # END   resume specific tasks
 
-
     # BEGIN PDS specific tasks
     # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['06-description', '07-functionality', '08-technology', '09-services', '10-process'], range_spec='B3:Z', grouping_columns=1)
     # border_and_merge_based_on_column(g_sheet=g_sheet, worksheet_names=['05-people'], range_spec='B3:Z', grouping_columns=2)
     # END   PDS specific tasks
-
 
     # BEGIN drive/file related
     # g_sheet.share(email='asif.hasan@gmail.com', perm_type='user', role='owner')
