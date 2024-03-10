@@ -9,7 +9,6 @@ destination-gsheets:
 # worksheets on which some work will be done
 worksheets:
 
-
 # work specifications to apply on a list of worksheets
 work-specs:
 
