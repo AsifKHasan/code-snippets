@@ -1,21 +1,43 @@
 # the gsheet(s) that will be processed
 gsheets:
-    - pds__doer__blank.template
-    - pds__doer__ACML-HR-Management-System
-    - pds__doer__AgraniBank-Agent-Banking
-    - pds__doer__AgraniBank-e-KYC
-    - pds__doer__AgraniBank-IB
-    - pds__doer__AgraniBank-Master-Agent
-    - pds__doer__AgraniBank-Remittance-Only-Point
-    - pds__doer__AgraniBank-SMS-Alert
-    - pds__doer__IDRA-ALO
-    - pds__doer__IDRA-e-KYC
-    - pds__doer__IDRA-Policy-Repository
-    - pds__doer__IDRA-SMS-Email
-    - pds__doer__IDRA-UMP
-    - pds__doer__MRA-IMS
-    - pds__doer__MRA-OMS
-    - pds__doer__PAMCL-Accounts-Management-System
+    # - pds__SSCL__blank.template
+    # - pds__SSCL__Augmedix-RoutePlanner
+    # - pds__SSCL__NBR-CA-MGT
+    # - pds__SSCL__NBR-CAAMS
+    # - pds__SSCL__NBR-D-BOND
+    # - pds__SSCL__NBR-RMS
+    # - pds__SSCL__NBR-SRO
+    # - pds__SSCL__NBR-UMS
+    # - pds__SSCL__PBL-LC-RPA
+    # - pds__SSCL__PBL-SCF
+    # - pds__SSCL__RHD-BRTA-API
+    # - pds__SSCL__INFINIGENT-EAS
+
+    # - pds__doer__blank.template
+    # - pds__doer__ACML-HR-Management-System
+    # - pds__doer__AgraniBank-Agent-Banking
+    # - pds__doer__AgraniBank-e-KYC
+    # - pds__doer__AgraniBank-IB
+    # - pds__doer__AgraniBank-Master-Agent
+    # - pds__doer__AgraniBank-Remittance-Only-Point
+    # - pds__doer__AgraniBank-SMS-Alert
+    # - pds__doer__IDRA-ALO
+    # - pds__doer__IDRA-e-KYC
+    # - pds__doer__IDRA-Policy-Repository
+    # - pds__doer__IDRA-SMS-Email
+    # - pds__doer__IDRA-UMP
+    # - pds__doer__MRA-IMS
+    # - pds__doer__MRA-OMS
+    # - pds__doer__PAMCL-Accounts-Management-System
+
+    # - pds__celloscope__blank.template
+    # - pds__celloscope__AEL-Accounting
+    # - pds__celloscope__Crossworld-uniVerge
+    # - pds__celloscope__NBR-FFBT-ARDS
+    # - pds__celloscope__NRBCB-Agent-Banking
+    # - pds__celloscope__NRBCB-e-KYC
+    # - pds__celloscope__SAU-ACAS-2023
+    # - pds__celloscope__TeleExchange-uniVerge
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -27,12 +49,13 @@ worksheets:
     # - '-toc-new'
     - '00-layout'
     # - '00-layout-USAID'
+    - '00-layout-WB'
 
 # work specifications to apply on a list of worksheets
 work-specs:
     'F3'      :
-      value             : '00-layout-USAID'
-      ws-name-to-link   : '00-layout-USAID'
+      value             : '00-layout'
+      ws-name-to-link   : '00-layout'
     'O3'      :
       value             : 'z-head'
       ws-name-to-link   : 'z-head'
