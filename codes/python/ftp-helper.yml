@@ -1,7 +1,7 @@
 # org:      '01-spectrum'
-org:      '02-sscl'
+# org:      '02-sscl'
 # org:      '03-doer'
-# org:      '04-celloscope'
+org:      '04-celloscope'
 # org:      '05-ael'
 
 artifact:     'photo'
@@ -14,68 +14,70 @@ artifact:     'photo'
 # level:        '03-master'
 
 required-things:
-- photo__Abdullah.Nazmus.Sakib.png
-- photo__Abrar.Jahin.Niloy.png
-- photo__Abu.Musa.Sakib.png
-- photo__Afroja.Akter.png
-- photo__Al-Hai.Rezwan.Huq.png
-- photo__Alif.Arfab.Pavel.png
-- photo__Altaf.Hossain.png
-- photo__Amena.Shiddika.png
-- photo__Aminul.Hossain.Sazzad.png
-- photo__Amiya.Ahamed.png
-- photo__Anan.Aiman.Tuba.png
-- photo__Arnab.Basak.png
-- photo__Avi.Afrid.png
-- photo__Deboraj.Saha.png
-- photo__Faisal.Ahmed.png
-- photo__Farhana.Naz.png
-- photo__Heronmoy.Tanchangya.Emon.png
-- photo__Kamrul.Hasan.Farabee.png
-- photo__Kamrun.Nahar.png
-- photo__Khondoker.Tanvir.Hossain.png
-- photo__Mahabuba.Rahman.(Moon).png
-- photo__Mainur.Rahman.Rasel.png
-- photo__Maly.Mohsem.Ahmed.png
-- photo__Md.Aiobi.Habib.Mijan.png
-- photo__Md.Boktiar.Mahbub.Murad.png
-- photo__Md.Farhad.Bhuiyan.png
-- photo__Md.Abu.Yousuf.Sajal.png
-- photo__Md.Asif.Khan.Taj.png
-- photo__Md.Atiar.Rahman.png
-- photo__MD.Fuad.Hasan.Chowdhury.png
-- photo__Md.Hafizur.Rahman.png
-- photo__Md.Kamruzzaman.Tanim.png
-- photo__Md.Nazmul.Alam.png
-- photo__Md.Sadik.Hasan.Rafi.png
-- photo__Md.Samiul.Alim.png
-- photo__Md.Shariar.Kabir.png
-- photo__Md.Tahmid.Islam.Bhuiyan.png
-- photo__Mehedi.Hasan.png
-- photo__Mehedi.Hasan.(Medu).png
-- photo__Mohammad.Kamrul.Hasan.png
-- photo__Mohammad.Mashud.Karim.png
-- photo__Mohammad.Wakib.Hasan.png
-- photo__Muhammad.Zubair.Hasan.png
-- photo__Mushfika.Faria.png
-- photo__Nasima.Aktar.png
-- photo__Nayeem.Ahmed.png
-- photo__Nazmus.Sakib.png
-- photo__Omar.Faruk.png
-- photo__Rashida.Akter.png
-- photo__Reyad.Hossain.png
-- photo__Rizvi.Mahmud.png
-- photo__Sakib.Chowdhury.png
-- photo__Sakib.Ibn.Abdullah.png
-- photo__Salil.Chakma.png
-- photo__Sazzad.Hossan.Sakib.png
-- photo__Shafayat.Ahmed.png
-- photo__Shah.Nafiz.Manjoor.png
-- photo__Shah.Shafi.Mohammed.Shariful.Alam.png
-- photo__Shajeda.Akter.Shanta.png
-- photo__Sharif.Tamjidur.Rahman.png
-- photo__Sheikh.Iftekhar.Ahmed.png
-- photo__Syed.Mostofa.Monsur.png
-- photo__Tahia.Tasnim.png
-- photo__Trimita.Chakma.png
-- photo__Umme.Rumman.Usha.png
+    - Résumé__Abdullah.Nazmus.Sakib
+    - Résumé__Abrar.Jahin.Niloy
+    - Résumé__Abu.Musa.Sakib
+    - Résumé__Afroja.Akter
+    - Résumé__Al-Hai.Rezwan.Huq
+    - Résumé__Alif.Arfab.Pavel
+    - Résumé__Altaf.Hossain
+    - Résumé__Amena.Shiddika
+    - Résumé__Aminul.Hossain.Sazzad
+    - Résumé__Amiya.Ahamed
+    - Résumé__Anan.Aiman.Tuba
+    - Résumé__Arnab.Basak
+    - Résumé__Avi.Afrid
+    - Résumé__Deboraj.Saha
+    - Résumé__Faisal.Ahmed
+    - Résumé__Farhana.Naz
+    - Résumé__Heronmoy.Tanchangya.Emon
+    - Résumé__Kamrul.Hasan.Farabee
+    - Résumé__Kamrun.Nahar
+    - Résumé__Khondoker.Tanvir.Hossain
+    - Résumé__Mahabuba.Rahman.Munia
+    - Résumé__Mainur.Rahman.Rasel
+    - Résumé__Maly.Mohsem.Ahmed
+    - Résumé__Md.Abu.Yousuf.Sajal
+    - Résumé__Md.Aiobi.Habib.Mijan
+    - Résumé__Md.Asif.Khan.Taj
+    - Résumé__Md.Atiar.Rahman
+    - Résumé__Md.Boktiar.Mahbub.Murad
+    - Résumé__Md.Farhad.Bhuiyan
+    - Résumé__MD.Fuad.Hasan.Chowdhury
+    - Résumé__Md.Hafizur.Rahman
+    - Résumé__Md.Kamruzzaman.Tanim
+    - Résumé__Md.Nazmul.Alam
+    - Résumé__Md.Sadik.Hasan.Rafi
+    - Résumé__Md.Samiul.Alim
+    - Résumé__Md.Shariar.Kabir
+    - Résumé__Md.Tahmid.Islam.Bhuiyan
+    - Résumé__Mehedi.Hasan
+    - Résumé__Mehedi.Hasan.(Medu)
+    - Résumé__Mohammad.Kamrul.Hasan
+    - Résumé__Mohammad.Mashud.Karim
+    - Résumé__Mohammad.Wakib.Hasan
+    - Résumé__Muhammad.Zubair.Hasan
+    - Résumé__Mushfika.Faria
+    - Résumé__Nahid.Karim.Ankur
+    - Résumé__Nasima.Aktar
+    - Résumé__Nayeem.Ahmed
+    - Résumé__Nazia.Hossain
+    - Résumé__Nazmus.Sakib
+    - Résumé__Omar.Faruk
+    - Résumé__Rashida.Akter
+    - Résumé__Reyad.Hossain
+    - Résumé__Rizvi.Mahmud
+    - Résumé__Sakib.Chowdhury
+    - Résumé__Sakib.Ibn.Abdullah
+    - Résumé__Salil.Chakma
+    - Résumé__Sazzad.Hossan.Sakib
+    - Résumé__Shafayat.Ahmed
+    - Résumé__Shah.Nafiz.Manjoor
+    - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
+    - Résumé__Shajeda.Akter.Shanta
+    - Résumé__Sharif.Tamjidur.Rahman
+    - Résumé__Sheikh.Iftekhar.Ahmed
+    - Résumé__Syed.Mostofa.Monsur
+    - Résumé__Tahia.Tasnim
+    - Résumé__Trimita.Chakma
+    - Résumé__Umme.Rumman.Usha
