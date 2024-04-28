@@ -2114,55 +2114,67 @@ WORKSHEET_STRUCTURE_PDS = {
         },
         'review-notes': True,
         'ranges': {
+            # row 1
             # link to -toc-new
             'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', },
             # label - review-notes
-            'A2': {'value': 'review-notes', 'weight': 'bold', },
             # column sizes in pixel
             'B1:D1': {'halign': 'center', },
+
+            # row 2
+            'A2': {'value': 'review-notes', 'weight': 'bold', },
             # label - content
             'B2:D2': {'value': 'content', 'weight': 'bold', 'merge': True, },
 
+            # row 3
             # label - Assignment Name
             'B3:C3': {'value': 'Assignment Name:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
             # label - Country
             'D3': {'value': 'Country:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
 
+            # row 4
             # content - Assignment Name
             'B4:C4': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
             # content - Country
             'D4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
 
+            # row 5
             # label - Location within Country
             'B5:C5': {'value': 'Location within Country:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
             # label - Duration of assignment (months)
             'D5': {'value': 'Duration of assignment (months):', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
 
+            # row 6
             # content - Assignment Location within country
             'B6:C6': {'value': "='01-summary'!C7", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
             # content - Duration of assignment (months)
             'D6': {'value': "='01-summary'!C8", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
 
+            # row 7
             # label - Name of Client
             'B7:C7': {'value': 'Name of Client:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
             # label - Approximate value of the Project (In BDT)
             'D7': {'value': 'Approximate value of the Project (In BDT):', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
 
+            # row 8
             # content - Name of Client
             'B8:C8': {'value': "='01-summary'!C9", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
             # content - Total Revenue
             'D8': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
 
+            # row 9
             # label - Address
             'B9:C9': {'value': 'Address', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
             # label - Approx. value of the services provided by your firm under the contract
             'D9': {'value': 'Approx. value of the services provided by your firm under the contract:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
 
+            # row 10
             # content - Address
             'B10:C10': {'value': "='01-summary'!C10", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"keep-line-breaks": true}', },
             # content - Total Revenue
             'D10': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
 
+            # row 11
             # label - Start Date (Month/Year)
             'B11': {'value': 'Start Date (Month/Year):', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
             # label - Completion Date (Month/Year)
@@ -2170,6 +2182,7 @@ WORKSHEET_STRUCTURE_PDS = {
             # label - No. of person-months of the assignment
             'D11': {'value': 'No. of person-months of the assignment:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
 
+            # row 12
             # content - Start Date
             'B12': {'value': "='01-summary'!C13", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
             # content - Completion Date
@@ -2177,71 +2190,106 @@ WORKSHEET_STRUCTURE_PDS = {
             # content - Professional Staff-Months
             'D12': {'value': "='01-summary'!C12", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
 
+            # row 13
             # label - Name of joint venture partner or sub-consultants, if any
             'B13:C13': {'value': 'Name of joint venture partner or sub-consultants, if any:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
             # label - No. of months of Professional Staff Provided by your firm under the contract
             'D13': {'value': 'No. of months of Professional Staff Provided by your firm under the contract:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
 
+            # row 16
             # content - 04-joint-venture
             'B14:C14': {'value': '04-joint-venture', 'ws-name-to-link': '04-joint-venture', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, },
             # content - Professional Staff-Months
             'D14': {'value': "='01-summary'!C12", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', },
 
+            # row 15
             'B15:D15': {'merge': True},
 
+            # row 16
             # label - Name of Senior Staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed
             'B16:D16': {'value': 'Name of Senior Staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 17
             # content - 05-people
             'B17:D17': {'value': '05-people', 'ws-name-to-link': '05-people', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
 
+            # row 18
             'B18:D18': {'merge': True, },
 
+            # row 19
             # label - Narrative Description of Project
             'B19:D19': {'value': 'Narrative Description of Project:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free", "new-page": true}', },
+
+            # row 20
             # label - Project Description
             'B20:D20': {'value': 'Project Description', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 21
             # content - 06-description
             'B21:D21': {'value': '06-description', 'ws-name-to-link': '06-description', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
 
+            # row 22
             'B22:D22': {'merge': True, },
 
+            # row 23
             # label - Functionality
             'B23:D23': {'value': 'Functionality', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 24
             # content - 07-functionality
             'B24:D24': {'value': '07-functionality', 'ws-name-to-link': '07-functionality', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
 
+            # row 25
             'B25:D25': {'merge': True, },
 
+            # row 26
             # label - Technology
             'B26:D26': {'value': 'Technology', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 27
             # content - 08-technology
             'B27:D27': {'value': '08-technology', 'ws-name-to-link': '08-technology', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
 
+            # row 28
             'B28:D28': {'merge': True, },
 
+            # row 29
             # label - Narrative Descriptions of works performed by your organization
             'B29:D29': {'value': 'Narrative Descriptions of works performed by your organization:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free", "new-page": true}', },
+
+            # row 30
             # label - Services Provided
             'B30:D30': {'value': 'Services Provided', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 31
             # content - 09-services
             'B31:D31': {'value': '09-services', 'ws-name-to-link': '09-services', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
 
+            # row 32
             'B32:D32': {'merge': True, },
 
+            # row 33
             # label - Processes Adopted
             'B33:D33': {'value': 'Processes Adopted', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 34
             # content - 10-process
             'B34:D34': {'value': '10-process', 'ws-name-to-link': '10-process', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
 
+            # row 35
             'B35:D35': {'merge': True, },
 
+            # row 36
             # label - Firm’s Name
             'B36': {'value': "Firm's Name:", 'weight': 'normal', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', },
             # content - 10-process
             'C36:D36': {'value': 'DOER Services Ltd.', 'weight': 'normal', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'merge': True, },
 
+            # row 37-38
             # label - Authorized Signature
             'B37:B38': {'value': 'Authorized Signature:', 'weight': 'normal', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 37-38
             # content - Authorized Signature
             'C37:D38': {'value': None, 'weight': 'normal', 'fgcolor': '#666666', 'bgcolor': '#FFFFFF', 'border-color': '#B7B7B7', 'merge': True, },
         },
@@ -2254,6 +2302,169 @@ WORKSHEET_STRUCTURE_PDS = {
             'B29:D31',
             'B33:D34',
             'C36:D36',
+        ],
+    },
+    '00-layout-USAID': {
+        'num-rows': 24,
+        'num-columns': 8,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True, },
+            'B': {'size':  30, 'halign': 'left', 'wrap': True, },
+            'C': {'size': 160, 'halign': 'left', 'wrap': True, },
+            'D': {'size':  70, 'halign': 'left', 'wrap': True, },
+            'E': {'size': 160, 'halign': 'left', 'wrap': True, },
+            'F': {'size':  30, 'halign': 'left', 'wrap': True, },
+            'G': {'size': 170, 'halign': 'left', 'wrap': True, },
+            'H': {'size': 240, 'halign': 'left', 'wrap': True, },
+        },
+        'review-notes': True,
+        'ranges': {
+            # row 1
+            # link to -toc-new
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', },
+            # column sizes in pixel
+            'B1:H1': {'halign': 'center', },
+
+            # row 2
+            # label - review-notes
+            'A2': {'value': 'review-notes', 'weight': 'bold', },
+            # label - content
+            'B2:H2': {'value': 'content', 'weight': 'bold', 'merge': True, },
+
+            # row 3
+            # label - PAST PERFORMANCE REPORT - SHORT FORM						
+            'B3:H3': {'value': 'PAST PERFORMANCE REPORT - SHORT FORM', 'weight': 'normal', 'fgcolor': '#FFFFFF', 'bgcolor': '#45818e', 'border-color': '#B7B7B7', 'halign': 'center', 'merge': True, },
+
+            # row 3
+            # label - 1.
+            'B4:B5': {'value': '1.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Name of Contracting Entity
+            'C4:E4': {'value': 'Name of Contracting Entity:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - 2.
+            'F4': {'value': '2.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Contract No.
+            'G4': {'value': 'Contract No.:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Contract No.
+            'H4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 5
+            # content - Name of Contracting Entity
+            'C5:E5': {'value': "='01-summary'!C9", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - 3.
+            'F5': {'value': '3.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Contract Type
+            'G5': {'value': 'Contract Type:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Contract Type
+            'H5': {'value': "='01-summary'!C5", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 6
+            # label - 
+            'B6:B7': {'value': '', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Dates
+            'C6:C7': {'value': 'Dates:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Start
+            'D6': {'value': 'Start:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Start
+            'E6': {'value': "='01-summary'!C13", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - 4.
+            'F6': {'value': '4.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Contract value (TEC)
+            'G6:G7': {'value': 'Contract value (TEC):', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Contract value (TEC)
+            'H6:H7': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 7
+            # label - End
+            'D7': {'value': 'End:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - End
+            'E7': {'value': "='01-summary'!C14", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 8
+            'B8:H8': {'merge': True},
+
+            # row 9
+            # label - Project Title
+            'B9:C9': {'value': 'Project Title:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Project Title
+            'D9:H9': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 10
+            # label - Place(s) of Performance
+            'B10:C10': {'value': 'Place(s) of Performance:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Place(s) of Performance
+            'D10:H10': {'value': "='01-summary'!C7", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 11
+            'B11:H11': {'merge': True},
+
+
+            # row 12
+            # label - Scope of Work
+            'B12:H12': {'value': 'Scope of Work:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 13
+            # content - 06-description
+            'B13:H13': {'value': '06-description', 'ws-name-to-link': '06-description', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 14
+            'B14:H14': {'merge': True},
+
+            # row 15
+            # label - Skills/Expertise Required
+            'B15:H15': {'value': 'Skills/Expertise Required:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 16
+            # content - 08-technology
+            'B16:H16': {'value': '08-technology', 'ws-name-to-link': '08-technology', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 17
+            'B17:H17': {'merge': True},
+
+            # row 18
+            # label - 6.
+            'B18': {'value': '6.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # label - Problems: (If problems encountered on this contract, explain corrective action taken.)
+            'C18:H18': {'value': 'Problems: (If problems encountered on this contract, explain corrective action taken.)', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 19
+            # content - 11-complexity
+            'B19:H19': {'value': '11-complexity', 'ws-name-to-link': '11-complexity', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 20
+            'B20:H20': {'merge': True},
+
+            # row 21
+            # label - 8.
+            'B21': {'value': '8.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # label - Contact Reference: (Name, Telephone Number, E-mail address, and Mailing Address)
+            'C21:H21': {'value': 'Contact Reference: (Name, Telephone Number, E-mail address, and Mailing Address)', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 22
+            # content - 03-contact
+            'B22:H22': {'value': '03-contact', 'ws-name-to-link': '03-contact', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 23
+            'B23:H23': {'merge': True},
+
+            # row 24
+            # label - 9.
+            'B24': {'value': '9.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # label - Bidder
+            'C24': {'value': 'Bidder:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Bidder
+            'D24:H24': {'value': 'DOER Services Ltd.', 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+        },
+        'cell-empty-markers': [
+            'B3:H5',
+            'C3:H7',
+            'B9:H10',
+            'B12:H13',
+            'B15:H16',
+            'B18:H19',
+            'B21:H22',
+            'B24:H24',
         ],
     },
     '01-summary': {
