@@ -2473,6 +2473,21 @@ WORKSHEET_STRUCTURE_PDS = {
     },
 }
 
+
+# Adhoc worksheet structure
+WORKSHEET_STRUCTURE_ADHOC = {
+    "006-executive": {
+        "columns": {
+            "D": {
+                "halign": "center",
+                "size": 80,
+                "validation-list": ["OMIT", "CHANGE", "BANK"],
+            },
+        },
+    },
+}
+
+
 # which structure we are using
 # WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
 WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS

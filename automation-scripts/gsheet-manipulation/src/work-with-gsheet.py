@@ -52,7 +52,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
 
-    g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
 
     # trailing blank row removal, review-notes, column size in row 1

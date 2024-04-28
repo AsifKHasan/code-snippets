@@ -23,14 +23,10 @@ class GoogleWorksheet(object):
         self.id = self.gspread_worksheet.id
         self.title = self.gspread_worksheet.title
 
-
-
     ''' get values
     '''
     def get_col_values(self, col_a1):
         return self.gspread_worksheet.col_values(LETTER_TO_COLUMN[col_a1])
-
-
 
     ''' get values in batch
     '''
@@ -52,8 +48,6 @@ class GoogleWorksheet(object):
 
         return None
 
-
-
     ''' get values from a1 notation
         get_values_in_batch is preferred
     '''
@@ -74,8 +68,6 @@ class GoogleWorksheet(object):
 
         return None
 
-
-
     ''' get a range from a1 notation
     '''
     def get_range(self, range_spec, try_for=3):
@@ -94,8 +86,6 @@ class GoogleWorksheet(object):
                     warn(f"get range failed in [{try_count}] try", nesting_level=1)
 
         return None
-
-
 
     ''' copy worksheet to another gsheet
     '''
@@ -117,11 +107,8 @@ class GoogleWorksheet(object):
                 except:
                     error(f"worksheet          [{response['title']}] could not be renamed to [{self.title}]")
 
-
         except:
             error(f"could not copy worksheet {self.title} to {destination_gsheet.title}")
-
-
 
     ''' rename a worksheet
     '''
@@ -136,8 +123,6 @@ class GoogleWorksheet(object):
         except:
             error(f"worksheet [{old_worksheet_name}] could not be renamed to [{new_worksheet_name}]")
 
-
-
     ''' get start_index of trailing blank rows from the worksheet
     '''
     def trailing_blank_row_start_index(self):
@@ -145,14 +130,10 @@ class GoogleWorksheet(object):
         values = self.gspread_worksheet.get_values()
         return len(values)
 
-
-
     ''' number of rows and columns of the worksheet
     '''
     def number_of_dimesnions(self):
         return self.gspread_worksheet.row_count, self.gspread_worksheet.col_count
-
-
 
     ''' number of rows of the worksheet
     '''
@@ -160,14 +141,11 @@ class GoogleWorksheet(object):
         row_count, _ = self.number_of_dimesnions()
         return row_count
 
-
-
     ''' number of columns of the worksheet
     '''
     def col_count(self):
         _, col_count = self.number_of_dimesnions()
         return col_count
-
 
     ''' worksheet methods to be called by gsheet to return back requests, not doing the actual work
     '''
@@ -182,16 +160,12 @@ class GoogleWorksheet(object):
 
         return request_list
 
-
-
     ''' remove extra columns
     '''
     def remove_extra_columns_requests(self, cols_to_remove_from, cols_to_remove_to):
         request_list = self.dimension_remove_requests(cols_to_remove_from=cols_to_remove_from, cols_to_remove_to=cols_to_remove_to)
         info(f"columns(s) {cols_to_remove_from}-{cols_to_remove_to} to be removed", nesting_level=1)
         return request_list
-
-
 
     ''' add extra columns
     '''
@@ -200,8 +174,6 @@ class GoogleWorksheet(object):
         info(f"[{cols_to_add}] column(s) to be added at [{cols_to_add_at}]", nesting_level=1)
         return request_list
 
-
-
     ''' remove trailing blank rows
     '''
     def remove_trailing_blank_rows_requests(self):
@@ -209,8 +181,6 @@ class GoogleWorksheet(object):
         request_list = self.dimension_remove_requests(rows_to_remove_from=rows_to_remove_from, rows_to_remove_to=rows_to_remove_to)
         info(f"rows {rows_to_remove_from}-{rows_to_remove_to} to be removed", nesting_level=1)
         return request_list
-
-
 
     ''' dimensions add request
     '''
@@ -238,8 +208,6 @@ class GoogleWorksheet(object):
 
         return requests
 
-
-
     ''' dimensions remove request
     '''
     def dimension_remove_requests(self, cols_to_remove_from=None, cols_to_remove_to=None, rows_to_remove_from=None, rows_to_remove_to=None):
@@ -265,8 +233,6 @@ class GoogleWorksheet(object):
                 requests.append(build_delete_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=rows_to_remove_from, end_index=rows_to_remove_to))
 
         return requests
-
-
 
     ''' link cells of a worksheet to drive-file/worksheet based type
         type is valid only if the range has two columns
@@ -334,8 +300,6 @@ class GoogleWorksheet(object):
 
         return self.range_work_requests(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
 
-
-
     ''' link cells to drive files request where cells values are names of drive files
     '''
     def cell_to_drive_file_link_requests(self, range_specs_for_cells_to_link):
@@ -350,8 +314,6 @@ class GoogleWorksheet(object):
                     range_work_specs[cell.address] = {'value': cell.value, 'file-name-to-link': cell.value}
 
         return self.range_work_requests(range_work_specs=range_work_specs)
-
-
 
     ''' link cells to worksheets request where cells values are names of worksheets
     '''
@@ -368,8 +330,6 @@ class GoogleWorksheet(object):
 
         return self.range_work_requests(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
 
-
-
     ''' format a worksheet according to spec defined in WORKSHEET_STRUCTURE
     '''
     def format_worksheet_requests(self, worksheet_dict, worksheet_struct):
@@ -382,7 +342,6 @@ class GoogleWorksheet(object):
 
         else:
             row_resize_requests = []
-
 
         data_validation_requests = []
         if 'columns' in worksheet_struct:
@@ -405,20 +364,17 @@ class GoogleWorksheet(object):
         else:
             column_resize_requests, values, column_format_requests = [], [], []
 
-
         # get the ranges and formatting requests
         if 'ranges' in worksheet_struct:
             values, range_format_requests = self.range_work_requests(range_work_specs=worksheet_struct['ranges'], worksheet_dict=worksheet_dict)
         else:
             values, range_format_requests = [], []
 
-
         # conditional formatting for blank cells
         if 'cell-empty-markers' in worksheet_struct:
             conditional_format_requests = self.conditional_formatting_for_blank_cells_requests(range_specs=worksheet_struct['cell-empty-markers'])
         else:
             conditional_format_requests = []
-
 
         # will there be review-notes in the worksheet
         if 'review-notes' in worksheet_struct:
@@ -430,13 +386,10 @@ class GoogleWorksheet(object):
         else:
             review_notes_format_requests = []
 
-
         # merge formats
         requests = row_resize_requests + column_resize_requests + column_format_requests + data_validation_requests + range_format_requests + conditional_format_requests + review_notes_format_requests
 
         return values, requests
-
-
 
     ''' find and replace in worksheet
     '''
@@ -454,8 +407,6 @@ class GoogleWorksheet(object):
 
         return find_replace_requests
 
-
-
     ''' put column size in pixels in row 1 for all columns except A
     '''
     def column_pixels_in_top_row_requests(self, column_sizes):
@@ -469,8 +420,6 @@ class GoogleWorksheet(object):
             range_work_specs[cell_a1] = {'value': column_width, 'halign': 'center'}
 
         return self.range_work_requests(range_work_specs=range_work_specs, worksheet_dict={})
-
-
 
     ''' clear all conditional formats
     '''
@@ -487,8 +436,6 @@ class GoogleWorksheet(object):
 
         return request_list
 
-
-
     ''' conditional formatting request for blank cells
     '''
     def conditional_formatting_for_blank_cells_requests(self, range_specs):
@@ -496,8 +443,6 @@ class GoogleWorksheet(object):
         rule = build_conditional_format_rule(ranges=ranges, condition_type="BLANK", condition_values=[], format={"backgroundColor": hex_to_rgba("#fff2cc")})
 
         return [rule]
-
-
 
     ''' conditional formatting request for blank cells
     '''
@@ -509,8 +454,6 @@ class GoogleWorksheet(object):
 
         return [rule]
 
-
-
     ''' data validation from list request
     '''
     def data_validation_from_list_requests(self, range_spec, values, input_message=None):
@@ -519,8 +462,6 @@ class GoogleWorksheet(object):
         rule = build_data_validation_rule(range=range, condition_type='ONE_OF_LIST', condition_values=values, input_message=input_message)
 
         return [rule]
-
-
 
     ''' data validation from list request
     '''
@@ -531,8 +472,6 @@ class GoogleWorksheet(object):
 
         return [rule]
 
-
-
     ''' work on a range work specs requests for value and format updates
     '''
     def range_work_requests(self, range_work_specs={}, worksheet_dict={}):
@@ -540,6 +479,8 @@ class GoogleWorksheet(object):
         values = []
         merges = []
         borders = []
+        data_validation_requests = []
+
         for range_spec, work_spec in range_work_specs.items():
             # value
             if 'value' in work_spec:
@@ -562,7 +503,6 @@ class GoogleWorksheet(object):
             if repeat_cell:
                 formats.append(repeat_cell)
 
-
             # borders
             border_style = 'SOLID'
             if 'no-border' in work_spec:
@@ -578,9 +518,11 @@ class GoogleWorksheet(object):
                 broder_object = {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id)}
                 borders.append({'updateBorders': {**broder_object, **build_border_around_spec(border_color=work_spec['border-color'], border_style=border_style, inner_border=inner_border)}})
 
-        return values, merges + formats + borders
+            if "validation-list" in work_spec:
+                data_validation_requests = data_validation_requests + self.data_validation_clear_requests(range_spec)
+                data_validation_requests = data_validation_requests + self.data_validation_from_list_requests(range_spec, work_spec["validation-list"])
 
-
+        return values, merges + formats + borders + data_validation_requests
 
     ''' resize columns request as per spec
     '''
@@ -595,8 +537,6 @@ class GoogleWorksheet(object):
 
         return dimension_update_requests
 
-
-
     ''' resize rows request as per spec
     '''
     def row_resize_requests(self, row_specs):
@@ -606,8 +546,6 @@ class GoogleWorksheet(object):
             dimension_update_requests.append(dimension_update_request)
 
         return dimension_update_requests
-
-
 
     ''' unhide columns request
     '''
@@ -620,8 +558,6 @@ class GoogleWorksheet(object):
         dimension_update_requests.append(dimension_update_request)
 
         return dimension_update_requests
-
-
 
     ''' hide columns request
     '''
@@ -636,8 +572,6 @@ class GoogleWorksheet(object):
             dimension_update_requests.append(dimension_update_request)
 
         return dimension_update_requests
-
-
 
     ''' freeze row and column request
     '''

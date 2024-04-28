@@ -599,6 +599,13 @@
 
 # work-specs:
   # multiple worksheets
+  # data validation
+    'D3:D':
+      validation-list:
+        - OMIT
+        - CHANGE
+        - BANK
+
   # change fonts and vertical alignments for the worksheet
     'A1:Z'  :
       font-family       : Arial
