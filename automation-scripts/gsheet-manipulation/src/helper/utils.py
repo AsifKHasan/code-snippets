@@ -271,6 +271,20 @@ def build_conditional_format_rule(ranges, condition_type, condition_values, form
 
 
 
+''' build format string from conditional-format format object
+    format is a dict which needs to be manipulated
+    backgroundColor -> hex_to_rgba(backgroundColor)
+'''
+def conditional_format_from_object(format):
+    new_format = {}
+    if 'backgroundColor' in format:
+        new_format['backgroundColor'] = hex_to_rgba(format['backgroundColor'])
+
+    return new_format
+
+
+
+
 ''' build a data validation rule
     condition_values is a list of strings
 '''

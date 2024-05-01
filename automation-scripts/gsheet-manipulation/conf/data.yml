@@ -83,17 +83,50 @@ worksheets:
   - '066-recommendations'
   - '067-recommendations'
   - '068-recommendations'
-  
+
+
 # work specifications to apply on a list of worksheets
 work-specs:
   # data validation
-    'D3:D':
-      validation-list:
-        - BANK
-        - CHANGE
-        - MOVE
-        - OK
-        - OMIT
+
+
+  # conditional formatting 
+  'A3:Z' :
+    # review-notes
+    conditional-formats:
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=not(isblank($A:$A))'
+        format    : 
+          backgroundColor : "#f4cccc"
+
+  'D3:F' :
+    # CUSTOM_FORMULA
+    conditional-formats:
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="BANK"'
+        format    : 
+          backgroundColor : "#c9daf8"
+
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="CHANGE"'
+        format    : 
+          backgroundColor : "#fff2cc"
+
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="MOVE"'
+        format    : 
+          backgroundColor : "#d9d2e9"
+
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="OMIT"'
+        format    : 
+          backgroundColor : "#f4cccc"
+
 
 
 # find and replace patterns

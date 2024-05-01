@@ -600,13 +600,53 @@
 
 
 # work-specs:
-  # multiple worksheets
+  # conditional formatting 
+  'A3:Z' :
+    # review-notes
+    conditional-formats:
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=not(isblank($A:$A))'
+        format    : 
+          backgroundColor : "#f4cccc"
+
+  'D3:F' :
+    # CUSTOM_FORMULA
+    conditional-formats:
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="BANK"'
+        format    : 
+          backgroundColor : "#c9daf8"
+
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="CHANGE"'
+        format    : 
+          backgroundColor : "#fff2cc"
+
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="MOVE"'
+        format    : 
+          backgroundColor : "#d9d2e9"
+
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=$D:$D="OMIT"'
+        format    : 
+          backgroundColor : "#f4cccc"
+
+
+
   # data validation
     'D3:D':
       validation-list:
-        - OMIT
-        - CHANGE
         - BANK
+        - CHANGE
+        - MOVE
+        - OK
+        - OMIT
 
   # change fonts and vertical alignments for the worksheet
     'A1:Z'  :

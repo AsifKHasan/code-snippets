@@ -436,6 +436,8 @@ class GoogleWorksheet(object):
 
         return request_list
 
+
+
     ''' conditional formatting request for blank cells
     '''
     def conditional_formatting_for_blank_cells_requests(self, range_specs):
@@ -443,6 +445,8 @@ class GoogleWorksheet(object):
         rule = build_conditional_format_rule(ranges=ranges, condition_type="BLANK", condition_values=[], format={"backgroundColor": hex_to_rgba("#fff2cc")})
 
         return [rule]
+
+
 
     ''' conditional formatting request for blank cells
     '''
@@ -453,6 +457,8 @@ class GoogleWorksheet(object):
         rule = build_conditional_format_rule(ranges=[range], condition_type="CUSTOM_FORMULA", condition_values=["=not(isblank($A:$A))"], format={"backgroundColor": hex_to_rgba("#f4cccc")})
 
         return [rule]
+
+
 
     ''' data validation from list request
     '''
@@ -472,6 +478,8 @@ class GoogleWorksheet(object):
 
         return [rule]
 
+
+
     ''' work on a range work specs requests for value and format updates
     '''
     def range_work_requests(self, range_work_specs={}, worksheet_dict={}):
@@ -480,6 +488,7 @@ class GoogleWorksheet(object):
         merges = []
         borders = []
         data_validation_requests = []
+        conditional_format_requests = []
 
         for range_spec, work_spec in range_work_specs.items():
             # value
@@ -518,11 +527,22 @@ class GoogleWorksheet(object):
                 broder_object = {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id)}
                 borders.append({'updateBorders': {**broder_object, **build_border_around_spec(border_color=work_spec['border-color'], border_style=border_style, inner_border=inner_border)}})
 
-            if "validation-list" in work_spec:
+            if 'validation-list' in work_spec:
                 data_validation_requests = data_validation_requests + self.data_validation_clear_requests(range_spec)
-                data_validation_requests = data_validation_requests + self.data_validation_from_list_requests(range_spec, work_spec["validation-list"])
+                data_validation_requests = data_validation_requests + self.data_validation_from_list_requests(range_spec, work_spec['validation-list'])
 
-        return values, merges + formats + borders + data_validation_requests
+            if 'conditional-formats' in work_spec:
+                ranges = [a1_range_to_grid_range(range_spec, sheet_id=self.id)]
+                for conditional_format in work_spec['conditional-formats']:
+                    condition_type = conditional_format['type']
+                    condition_values = conditional_format['values']
+                    format = conditional_format_from_object(conditional_format['format'])
+
+                    conditional_format_requests = conditional_format_requests + [build_conditional_format_rule(ranges=ranges, condition_type=condition_type, condition_values=condition_values, format=format)]
+
+        return values, merges + formats + borders + data_validation_requests + conditional_format_requests
+
+
 
     ''' resize columns request as per spec
     '''

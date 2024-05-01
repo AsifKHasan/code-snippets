@@ -62,7 +62,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.column_pixels_in_top_row(worksheet_names=worksheet_names)
 
     # work on ranges etc.
-    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
+    g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
     # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
