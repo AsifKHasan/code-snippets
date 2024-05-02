@@ -203,7 +203,7 @@ def build_duplicate_sheet_request(worksheet_id, new_worksheet_name, new_workshee
 
 
 
-'''
+''' find and replace request builder
 '''
 def build_find_replace_request(worksheet_id, search_for, replace_with, regex=False, include_formulas=False, entire_cell=False):
     return {
@@ -222,24 +222,22 @@ def build_find_replace_request(worksheet_id, search_for, replace_with, regex=Fal
 
 ''' gsheet border spec for border around a range
 '''
-def build_border_around_spec(border_color, border_style='SOLID', inner_border=True):
+def build_border_around_spec(border_list, border_color, border_style='SOLID', inner_border=True):
     color = hex_to_rgba(border_color)
     border = {
         "style": border_style,
-        # "color": color,
         "colorStyle": {
             "rgbColor": color
         }
     }
 
     borders = {
-        "top": border,
-        "bottom": border,
-        "left": border,
-        "right": border,
         "innerHorizontal": border if inner_border else None,
         "innerVertical": border if inner_border else None,
     }
+
+    for side in border_list:
+        borders[side] = border
 
     return borders
 
@@ -281,7 +279,6 @@ def conditional_format_from_object(format):
         new_format['backgroundColor'] = hex_to_rgba(format['backgroundColor'])
 
     return new_format
-
 
 
 

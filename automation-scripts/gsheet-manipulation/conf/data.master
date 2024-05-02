@@ -600,6 +600,17 @@
 
 
 # work-specs:
+  # borders -> border-list [] : border-style [DOTTED, DASHED, SOLID, SOLID_MEDIUM, SOLID_THICK, NONE, DOUBLE]
+  'D3:D':
+    border-color  : '#000000'
+    inner-border  : False
+    border-list   : 
+      - left
+      - right
+    border-style  : DASHED
+
+
+
   # conditional formatting 
   'A3:Z' :
     # review-notes
