@@ -331,14 +331,23 @@ class GoogleSheet(object):
         global WORKSHEET_STRUCTURE
         values, requests = [], []
         worksheet_dict = self.worksheets_as_dict()
+        worksheet_struct = None
+
+        # we may have a specific workload defined for the worksheet and if there is not, we may have a common (*) worksload defined
         for worksheet_name in worksheet_names:
             if worksheet_name not in WORKSHEET_STRUCTURE:
                 warn(f"No structure defined for formatting [{worksheet_name}]", nesting_level=1)
-                continue
+                if '*' in WORKSHEET_STRUCTURE:
+                    worksheet_struct = WORKSHEET_STRUCTURE['*']
+                    info(f"But a common structure (*) was defined for formatting [{worksheet_name}]", nesting_level=1)
+                else:
+                    continue
+            
+            else:
+                worksheet_struct = WORKSHEET_STRUCTURE[worksheet_name]
 
             worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
             if worksheet_to_work_on:
-                worksheet_struct = WORKSHEET_STRUCTURE[worksheet_name]
                 vals, reqs = worksheet_to_work_on.format_worksheet_requests(worksheet_dict=worksheet_dict, worksheet_struct=worksheet_struct)
                 values = values + vals
                 requests = requests + reqs
