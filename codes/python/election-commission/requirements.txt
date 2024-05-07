@@ -1,0 +1,10 @@
+# pip install torch==2.2.1
+# https://ghostscript.com/releases/gsdnld.html
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+pypdf2
+pypdf
+mymupdf
+easyocr
+ocrmypdf
+camelot-py
