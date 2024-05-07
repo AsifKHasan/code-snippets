@@ -1,0 +1,5 @@
+1. Clran pdf - remove watermark (images) and unnecessary pages
+PyMuPDF-Utilities/examples/replace-image/remove.py
+voter-original.pdf -> voter-cleaned.pdf
+
+2. 

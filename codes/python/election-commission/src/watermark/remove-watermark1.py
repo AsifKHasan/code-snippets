@@ -3,12 +3,15 @@
 from pypdf import PdfReader, PdfWriter
 from pypdf.generic import ContentStream, NameObject, TextStringObject
 
+input_pdf = '../data/voter-original.pdf'
+output_pdf = '../out/voter-wo-watermark.pdf'
+
 # The watermark text
 wm_text = "চূড়ান্ত ভোটার তালিকা"
 replace_with = ""
 
 # Load PDF into pyPDF
-reader = PdfReader("C:/Users/Asif Hasan/Downloads/personal/voter-list/voter-original.pdf")
+reader = PdfReader(input_pdf)
 writer = PdfWriter()
 
 for page in reader.pages:
@@ -35,5 +38,5 @@ for page in reader.pages:
     writer.add_page(page)
 
 # Write the stream
-with open("C:/Users/Asif Hasan/Downloads/personal/voter-list/voter-wo-watermark.pdf", "wb") as fh:
+with open(output_pdf, 'wb') as fh:
     writer.write(fh)

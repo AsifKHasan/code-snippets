@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 
 import fitz
-# Solution 2
 # Open the PDF file
-pdf = fitz.open('C:/Users/Asif Hasan/Downloads/personal/voter-list/voter-original.pdf')
+
+input_pdf = '../data/voter-original.pdf'
+output_pdf = '../out/voter-wo-watermark.pdf'
+
+pdf = fitz.open(input_pdf)
 
 # Iterate over the pages in the PDF file
 for page in pdf:
@@ -18,4 +21,4 @@ for page in pdf:
             page.deleteAnnot(annotation)
     
 # Save the PDF with the watermark removed
-pdf.save('C:/Users/Asif Hasan/Downloads/personal/voter-list/voter-wo-watermark.pdf')
+pdf.save(output_pdf)
