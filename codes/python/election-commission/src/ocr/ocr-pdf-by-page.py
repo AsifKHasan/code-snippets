@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import fitz
-import fitz
 import ocrmypdf
 import sys
 import io

@@ -1,13 +1,26 @@
-cd D:\projects\asif@github\code-snippets\codes\python\election-commission\src
+PROJ_HOME=/home/asif/projects/asif@github/code-snippets/codes/python/election-commission
+
+cd ${PROJ_HOME}\src
 cd D:\projects\tools\PyMuPDF-Utilities\examples
 
 1. Clean pdf - remove watermark (images) and unnecessary pages
 PyMuPDF-Utilities/examples/replace-image/remove.py
 voter-original.pdf -> voter-cleaned.pdf
 
+2. pages images
+pdftocairo -png -gray "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/page-imgs/page"
+
+
+
 2. 
 ocrmypdf --force-ocr -l ben --clean --pages 1-2 --oversample 300 --sidecar D:/projects/asif@github/code-snippets/codes/python/election-commission/out/output.txt D:/projects/asif@github/code-snippets/codes/python/election-commission/out/voter-cleaned.pdf D:/projects/asif@github/code-snippets/codes/python/election-commission/out/voter-cleaned-out.pdf
 ocrmypdf --force-ocr -l ben --clean --sidecar D:/projects/asif@github/code-snippets/codes/python/election-commission/out/output.txt D:/projects/asif@github/code-snippets/codes/python/election-commission/out/voter-cleaned.pdf D:/projects/asif@github/code-snippets/codes/python/election-commission/out/voter-cleaned-out.pdf
+
+ocrmypdf --force-ocr -l ben --clean --sidecar ${PROJ_HOME}/out/output.txt ${PROJ_HOME}/out/voter-cleaned.pdf ${PROJ_HOME}/out/voter-cleaned-out.pdf
+
+
+
+
 
 \n০ - \n\n০
 \n১ - \n\n১
