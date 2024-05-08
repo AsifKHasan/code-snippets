@@ -211,8 +211,8 @@ def ocr_segments(image_segments):
 				dilation = cv2.dilate(resizing, kernel,iterations=1)
 				erosion = cv2.erode(dilation, kernel,iterations=1)
 
-				# text = pytesseract.image_to_string(erosion, lang='ben', config=config)
-				text = pytesseract.image_to_pdf_or_hocr(box['img'], lang='ben', config=config, extension='hocr')
+				text = pytesseract.image_to_string(erosion, lang='ben', config=config)
+				# text = pytesseract.image_to_pdf_or_hocr(box['img'], lang='ben', config=config, extension='hocr')
 				# text = pytesseract.run_and_get_output(box['img'], lang='eng+ben', config=config, extension='hocr')
 
 				box['ocr'] = text.strip()
@@ -235,7 +235,7 @@ def save_ocr_texts(image_segments, ocr_output_path):
 			for box in col:
 				# file.write(f"{row_num}x{col_num}-{idx}")
 				# file.write('\n"\n')
-				# file.write(box['ocr'])
+				file.write(box['ocr'])
 				print(box['ocr'])
 				# file.write(box['ocr'].replace('\n', ' '))
 				# file.write('\n"\n\n')

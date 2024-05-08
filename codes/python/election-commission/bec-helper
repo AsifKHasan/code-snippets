@@ -1,4 +1,8 @@
-PROJ_HOME=/home/asif/projects/asif@github/code-snippets/codes/python/election-commission
+PROJ_HOME="/home/asif/projects/asif@github/code-snippets/codes/python/election-commission"
+cd ${PROJ_HOME}
+
+set PROJ_HOME="D:/projects/asif@github/code-snippets/codes/python/election-commission"
+cd %PROJ_HOME%
 
 cd ${PROJ_HOME}\src
 cd D:\projects\tools\PyMuPDF-Utilities\examples
@@ -8,8 +12,13 @@ PyMuPDF-Utilities/examples/replace-image/remove.py
 voter-original.pdf -> voter-cleaned.pdf
 
 2. pages images
-pdftocairo -png -gray "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/page-imgs/page"
+pdftocairo -png "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/page-imgs/page"
+pdftocairo -png "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/page-imgs/page"
 
+
+3. do ocr
+tesseract "${PROJ_HOME}/out/page-imgs/page-01.png" "${PROJ_HOME}/out/txt/page-01.txt" -l ben
+tesseract "%PROJ_HOME%/out/page-imgs/page-01.png" "%PROJ_HOME%/out/txt/page-01.txt" -l ben
 
 
 2. 
