@@ -20,7 +20,7 @@ def ocr_the_page(page):
     ocrmypdf.ocr(
         inbytes,  # input 1-pager
         outbytes,  # ouput 1-pager
-        language="eng+ben",  # modify as required e.g. ("eng", "ger")
+        language="ben",  # modify as required e.g. ("eng", "ger")
         output_type="pdf",  # only need simple PDF format
         # add more paramneters, e.g. to enforce OCR-ing, etc., e.g.
         # force_ocr=True, redo_ocr=True

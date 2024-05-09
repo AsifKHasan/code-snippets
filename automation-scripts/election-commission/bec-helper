@@ -12,13 +12,13 @@ PyMuPDF-Utilities/examples/replace-image/remove.py
 voter-original.pdf -> voter-cleaned.pdf
 
 2. pages images
-pdftocairo -r 300 -png "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/page-imgs/page"
-pdftocairo -png "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/page-imgs/page"
+pdftocairo -r 600 -png "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/pages/page"
+pdftocairo -r 600 -png "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/pages/page"
 
 
 3. do ocr
-tesseract "${PROJ_HOME}/out/segments/page-01__2x1-1.png" "${PROJ_HOME}/out/txt/page-01__2x1-1.txt" -l ben
-tesseract "%PROJ_HOME%/out/page-imgs/page-01.png" "%PROJ_HOME%/out/txt/page-01.txt" -l ben
+tesseract "${PROJ_HOME}/out/segments/page-01__2x1-1.png" "${PROJ_HOME}/out/texts/page-01__2x1-1.txt" -l ben
+tesseract "%PROJ_HOME%/out/segments/page-01__2x1-1.png" "%PROJ_HOME%/out/texts/page-01__2x1-1.txt" -l ben
 
 
 2. 

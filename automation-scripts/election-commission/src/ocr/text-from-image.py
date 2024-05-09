@@ -11,6 +11,8 @@ import argparse
 import cv2
 import numpy as np
 import pytesseract
+import matplotlib.pyplot as plt
+from PIL import Image
 
 from pprint import pprint
 
@@ -25,9 +27,9 @@ PROJ_DIR = "../.."
 input_pdf = f"{PROJ_DIR}/out/voter-cleaned.pdf"
 output_txt = f"{PROJ_DIR}/out/voter-cleaned.txt"
 
-IMG_PATH = "{}/out/page-imgs/{}.png"
+IMG_PATH = "{}/out/pages/{}.png"
 IMG_OUTPUT_PATH = "{}/out/segments/{}__{}x{}-{}.png"
-OCR_OUTPUT_PATH = "{}/out/txt/{}.txt"
+OCR_OUTPUT_PATH = "{}/out/texts/{}.txt"
 
 def get_kernels(img, img_bin, thresh):
 	kernel_len = np.array(img).shape[1]//100
@@ -195,12 +197,36 @@ def save_image_segments(image_segments, img_name, img_output_path):
 				y, x, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
 
 				# remove boxes with less than a specified height
-				if h > 250:
+				if h > 500:
+					img = box['img']
+
+					# crop to remove black borders
+					img = img[9:h-9, 9:w-9]
+
+					# manipulate image
+					kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+
+					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
+					# img = cv2.resize(img, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
+					# img = cv2.copyMakeBorder(img, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[255,255])
+					# img = cv2.dilate(img, kernel,iterations=1)
+					# img = cv2.erode(img, kernel,iterations=1)
+					# show_image(img=img)
+
+					# Perform morphological operations to remove noise
+					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
+					img = cv2.resize(img, None, fx=6, fy=6, interpolation=cv2.INTER_CUBIC)
+
 					output_path = img_output_path.format(PROJ_DIR, img_name, row_num, col_num, idx)
-					cv2.imwrite(output_path, box['img'])
+					rgb_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+					pil_image = Image.fromarray(rgb_image)
+					pil_image.save(output_path, dpi=(600,600))
 					box['do-ocr'] = True
+					box['img'] = img
+	
 				else:
 					box['do-ocr'] = False
+
 
 				idx = idx + 1
 
@@ -210,11 +236,7 @@ def save_image_segments(image_segments, img_name, img_output_path):
 
 
 def ocr_segments(image_segments):
-	config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
-	# config = '-c preserve_interword_spaces=1 --psm 6'
-	# config = '-c preserve_interword_spaces=1 --psm 11 --oem 3'
-	# config = '-c preserve_interword_spaces=1 --psm 12 --oem 3'
-	# config = '-c preserve_interword_spaces=0 --psm 11 --oem 3'
+	config = '-c preserve_interword_spaces=1 --psm 4 --dpi 600 --oem 3'
 
 	row_num = 1
 	for row in image_segments:
@@ -224,24 +246,22 @@ def ocr_segments(image_segments):
 			for box in col:
 				if box['do-ocr']:
 					img = box['img']
+
 					kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-					img = cv2.copyMakeBorder(img, 4, 4, 4, 4, cv2.BORDER_CONSTANT, value=[255,255])
-					img = cv2.resize(img, None, fx=10, fy=10, interpolation=cv2.INTER_CUBIC)
-					# img = cv2.dilate(img, kernel,iterations=1)
-					img = cv2.erode(img, kernel,iterations=1)
-					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
-					# img = 255 - img
 
 					# Perform morphological operations to remove noise
-					# kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
 					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
-					# # img = cv2.resize(img, None, fx=10, fy=10, interpolation=cv2.INTER_CUBIC)
-					# # img = 255 - img
+					# img = cv2.resize(img, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
+
+					# img = cv2.copyMakeBorder(img, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[255,255])
+					# img = cv2.dilate(img, kernel,iterations=1)
+					# img = cv2.erode(img, kernel,iterations=1)
+					# show_image(img=img)
+
+					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
+					# img = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
 
 					text = pytesseract.image_to_string(img, lang='ben', config=config)
-					# text = pytesseract.image_to_pdf_or_hocr(box['img'], lang='ben', config=config, extension='hocr')
-					# text = pytesseract.run_and_get_output(box['img'], lang='eng+ben', config=config, extension='hocr')
-
 					box['ocr'] = text.strip()
 
 				idx = idx + 1
@@ -264,14 +284,10 @@ def save_ocr_texts(image_segments, ocr_output_path):
 					ocr_text = box['ocr'].strip()
 					ocr_text = ocr_text.replace('\n\n', '\n')
 					if ocr_text != "":
-						# file.write(f"{row_num}x{col_num}-{idx}")
-						# file.write('\n"\n')
 						file.write(ocr_text)
 						file.write('\n\n')
 						print(ocr_text)
 						print()
-						# file.write(box['ocr'].replace('\n', ' '))
-						# file.write('\n"\n\n')
 
 				idx = idx + 1
 
@@ -280,6 +296,12 @@ def save_ocr_texts(image_segments, ocr_output_path):
 		row_num = row_num + 1
 
 	file.close
+
+
+def show_image(img):
+	image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+	plt.imshow(image)
+	plt.show()
 
 
 if __name__ == '__main__':
