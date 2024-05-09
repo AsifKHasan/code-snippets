@@ -1,0 +1,49 @@
+PROJ_HOME="/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+cd ${PROJ_HOME}
+
+set PROJ_HOME="D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
+cd %PROJ_HOME%
+
+cd ${PROJ_HOME}\src
+cd D:\projects\tools\PyMuPDF-Utilities\examples
+
+1. Clean pdf - remove watermark (images) and unnecessary pages
+PyMuPDF-Utilities/examples/replace-image/remove.py
+voter-original.pdf -> voter-cleaned.pdf
+
+2. pages images
+pdftocairo -r 300 -png "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/page-imgs/page"
+pdftocairo -png "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/page-imgs/page"
+
+
+3. do ocr
+tesseract "${PROJ_HOME}/out/segments/page-01__2x1-1.png" "${PROJ_HOME}/out/txt/page-01__2x1-1.txt" -l ben
+tesseract "%PROJ_HOME%/out/page-imgs/page-01.png" "%PROJ_HOME%/out/txt/page-01.txt" -l ben
+
+
+2. 
+ocrmypdf --force-ocr -l ben --clean --pages 1-2 --oversample 300 --sidecar "%PROJ_HOME%/out/output.txt" "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/voter-cleaned-out.pdf"
+ocrmypdf --force-ocr -l ben --clean --sidecar "%PROJ_HOME%/out/output.txt" "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/voter-cleaned-out.pdf"
+
+ocrmypdf --force-ocr -l ben --clean --sidecar "${PROJ_HOME}/out/output.txt" "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/voter-cleaned-out.pdf"
+
+
+
+
+
+\n০ - \n\n০
+\n১ - \n\n১
+
+\n\n\n -> \n\n
+\n \n\n -> \n\n
+
+
+মুস্ডরিয়া
+মুস্ুরিয়া -> মুশুরিয়া
+\গ্ৃহিনী -> গ্ৃহিনী
+
+
+
+
+জেলা: .+ -> 
+ভোটার এলাকার কোড:.+ ->
