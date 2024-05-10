@@ -8,6 +8,7 @@
 import platform
 import argparse
 
+import easyocr
 import cv2
 import numpy as np
 import pytesseract
@@ -235,6 +236,29 @@ def save_image_segments(image_segments, img_name, img_output_path):
 		row_num = row_num + 1
 
 
+def ocr_segments_easyocr(image_segments):
+	easyocr_reader = easyocr.Reader(['bn'])
+
+	row_num = 1
+	for row in image_segments:
+		col_num = 1
+		for col in row:
+			idx = 1
+			for box in col:
+				if box['do-ocr']:
+					img = box['img']
+
+					texts = easyocr_reader.readtext(img, detail=0, paragraph=True)
+					text = '\n'.join(texts)
+					box['ocr'] = text.strip()
+
+				idx = idx + 1
+
+			col_num = col_num + 1
+
+		row_num = row_num + 1
+
+
 def ocr_segments(image_segments):
 	config = '-c preserve_interword_spaces=1 --psm 4 --dpi 600 --oem 3'
 
@@ -316,4 +340,5 @@ if __name__ == '__main__':
 	image_segments = segment_image(image_path=img_path, no_segmentation=False)
 	save_image_segments(image_segments=image_segments, img_name=img_name, img_output_path=IMG_OUTPUT_PATH)
 	ocr_segments(image_segments=image_segments)
+	# ocr_segments_easyocr(image_segments=image_segments)
 	save_ocr_texts(image_segments=image_segments, ocr_output_path=ocr_output_path)
