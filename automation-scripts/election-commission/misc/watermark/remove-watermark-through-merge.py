@@ -3,9 +3,9 @@
 from pypdf import PdfReader, PdfWriter
 from pypdf.generic import ContentStream, NameObject, TextStringObject
 
-PROJ_DIR = "../.."
-input_pdf = f"{PROJ_DIR}/data/voter-original.pdf"
-output_pdf = f"{PROJ_DIR}/out/voter-wo-watermark.pdf"
+PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+input_pdf = f"{PROJ_DIR}/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
+output_pdf = f"{PROJ_DIR}/out/cleaned/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
 
 # The watermark text
 wm_text = "চূড়ান্ত ভোটার তালিকা"
