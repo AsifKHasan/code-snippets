@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 ''' usage:
-    ./pdf-to-db.py --directory ${PROJ_HOME} assuming that there is a directory named *data* under this
+    ./pdf-to-db.py --directory ${PROJ_HOME}
+    pdf-to-db.py --directory %PROJ_HOME%
+    assuming that there is a directory named *data* under this
 '''
 
 import os
@@ -120,7 +122,8 @@ def clean_and_save_pdfs():
     for file_name, data in DATA.items():
         input_pdf = f"{data['root-dir']}/{data['source-dir']}/{file_name}"
         output_pdf = f"{data['root-dir']}/{data['cleaned-dir']}/{file_name}"
-        clean_pdf(input_pdf=input_pdf, output_pdf=output_pdf)
+        debug(f"cleaning [{data['source-dir']}/{file_name}] to [{data['cleaned-dir']}/{file_name}]")
+        clean_pdf(input_pdf=input_pdf, output_pdf=output_pdf, watermark_is_image=False)
 
 
 
@@ -131,7 +134,7 @@ def traverse_directory(root_path):
         path = root.replace(ROOT_DIR, '')
         for file in files:
             if file.endswith('.pdf'):
-                DATA[file] = {'root-dir': ROOT_DIR, 'source-dir': path, 'cleaned-dir': None, 'division': {}, 'district': {}, 'upazila': {}, 'city-corporation': {}, 'union': {}, 'ward': {}, 'voter-area': {}, 'voter-gender': {}, 'voter-count': {}, 'voter-data': []}
+                DATA[file] = {'root-dir': ROOT_DIR, 'source-dir': path.replace('\\', '/'), 'cleaned-dir': None, 'division': {}, 'district': {}, 'upazila': {}, 'city-corporation': {}, 'union': {}, 'ward': {}, 'voter-area': {}, 'voter-gender': {}, 'voter-count': {}, 'voter-data': []}
             else:
                 warn(f"{file} is not a pdf ... skipping")
 
@@ -143,7 +146,7 @@ if __name__ == '__main__':
 	args = vars(ap.parse_args())
 
     # there must be a *data* directory under ROOT_DIR
-	ROOT_DIR = args['directory']
+	ROOT_DIR = args['directory'].replace('\\', '/')
 	traverse_directory(root_path=f"{ROOT_DIR}/data")
 	parse_data_objects()
 	clean_and_save_pdfs()

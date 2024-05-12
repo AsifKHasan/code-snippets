@@ -2,9 +2,10 @@
 
 import fitz
 
-PROJ_DIR = '..'
-input_pdf = f"{PROJ_DIR}/data/voter-original.pdf"
-output_pdf = f"{PROJ_DIR}/out/voter-cleaned.pdf"
+PROJ_DIR = "D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
+# PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+input_pdf = f"{PROJ_DIR}/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
+output_pdf = f"{PROJ_DIR}/out/cleaned/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
 
 def img_replace(page, xref, filename=None, stream=None, pixmap=None):
     """Replace image identified by xref.
