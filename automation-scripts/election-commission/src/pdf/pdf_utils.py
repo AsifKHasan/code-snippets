@@ -32,12 +32,12 @@ def img_replace(page, xref, filename=None, stream=None, pixmap=None):
 ''' clear watermark and delete specific pages
 '''
 def clean_pdf(input_pdf, output_pdf, watermark_is_image=True):
-    wm_text = b'\x00/\x00O\x00Y\x00K\x01"\x00\x03\x00\xcf\x00A\x00K\x004\x00K\x00D\x00\x03\x009\x00K\x00L\x00E\x00*\x00K'
     
     # open input
     doc = fitz.open(input_pdf)
 
     if watermark_is_image:
+        wm_text = b'\x00/\x00O\x00Y\x00K\x01"\x00\x03\x00\xcf\x00A\x00K\x004\x00K\x00D\x00\x03\x009\x00K\x00L\x00E\x00*\x00K'
         # remove all images in all pages
         for page in doc:
             images = page.get_images()  
@@ -57,31 +57,49 @@ def clean_pdf(input_pdf, output_pdf, watermark_is_image=True):
         doc.ez_save(output_pdf, garbage=4)
 
     else:
-        reader = PdfReader(input_pdf)
-        writer = PdfWriter()
+        wm_text = b'002f004f0059004b0122000300cf0041004b0034004b004400030039004b004c0045002a004b'
+        replace_with = b''
 
-        l = [0] + list(range(2, len(reader.pages)))
-        for p in l:
-            page = reader.pages[p]
+        # remove text
+        for page in doc:
+            for xref in page.get_contents():
+                stream = doc.xref_stream(xref)
+                stream = stream.replace(wm_text, replace_with)
+                doc.update_stream(xref, stream)
 
-            # Get the current page's contents
-            content_object = page["/Contents"]
-            content = ContentStream(content_object, reader)
+        # remove second page
+        l = [0] + list(range(2, doc.page_count))
+        doc.select(l)
 
-            # Loop over all pdf elements
-            for operands, operator in content.operations:
-                # Was told to adapt this part dependent on my PDF file
-                if operator == b"Tj":
-                    if len(operands) and operands[0] == wm_text:
-                        operands[0] = TextStringObject("")
+        # save output
+        doc.ez_save(output_pdf, garbage=4)
 
-            # Set the modified content as content object on the page
-            page.__setitem__(NameObject("/Contents"), content)
+    # else:
+    #     reader = PdfReader(input_pdf)
+    #     writer = PdfWriter()
 
-            # Add the page to the output
-            writer.add_page(page)
+    #     l = [0] + list(range(2, len(reader.pages)))
+    #     for p in l:
+    #         page = reader.pages[p]
 
-        # Write the stream
-        with open(output_pdf, 'wb') as fh:
-            writer.write(fh)
+    #         # Get the current page's contents
+    #         content_object = page["/Contents"]
+    #         content = ContentStream(content_object, reader)
+
+    #         # Loop over all pdf elements
+    #         for operands, operator in content.operations:
+    #             # Was told to adapt this part dependent on my PDF file
+    #             if operator == b"Tj":
+    #                 if len(operands) and operands[0] == wm_text:
+    #                     operands[0] = TextStringObject("")
+
+    #         # Set the modified content as content object on the page
+    #         page.__setitem__(NameObject("/Contents"), content)
+
+    #         # Add the page to the output
+    #         writer.add_page(page)
+
+    #     # Write the stream
+    #     with open(output_pdf, 'wb') as fh:
+    #         writer.write(fh)
 
