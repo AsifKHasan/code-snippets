@@ -1,8 +1,23 @@
 #!/usr/bin/env python3
 
 import fitz
+import pprint
 from pypdf import PdfReader, PdfWriter
 from pypdf.generic import ContentStream, NameObject, TextStringObject
+
+
+def page_text(pdf_file, page_num):
+    # open input
+    doc = fitz.open(pdf_file)
+
+    page = doc[0]
+    # texts = page.get_text('html')
+    text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=600, full=True)
+    texts = text_page.extractText(sort=True)
+    
+    return texts
+            
+
 
 def img_replace(page, xref, filename=None, stream=None, pixmap=None):
     """Replace image identified by xref.

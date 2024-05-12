@@ -77,7 +77,7 @@ DATA = {}
 
 
 
-'''
+''' parse path and filename to get some basic info
 '''
 def parse_data_objects():
     for file_name, data in DATA.items():
@@ -101,7 +101,7 @@ def parse_data_objects():
 
 
 
-'''
+''' print data gathered
 '''
 def print_data():
     print(ROOT_DIR)
@@ -116,7 +116,7 @@ def print_data():
 
 
 
-'''
+''' remove watermark and remove second page which is blank
 '''
 def clean_and_save_pdfs():
     for file_name, data in DATA.items():
@@ -127,14 +127,32 @@ def clean_and_save_pdfs():
 
 
 
+''' parse the first page of the pdf
+'''
+def parse_top_sheet():
+    for file_name, data in DATA.items():
+        pdf_file = f"{data['root-dir']}/{data['cleaned-dir']}/{file_name}"
+        page_texts = page_text(pdf_file=pdf_file, page_num=0)
+
+        # get gender - ভোটার তালিকা - (মহিলা)
+        print(page_texts)
+
+
+
 ''' traverse input directory for (pdf) files and collect information in a dictionary for each file
 '''
-def traverse_directory(root_path):
+def traverse_directory(root_path, limit=0):
+    count = 0
     for root, dirs, files in os.walk(root_path):
         path = root.replace(ROOT_DIR, '')
+
         for file in files:
             if file.endswith('.pdf'):
                 DATA[file] = {'root-dir': ROOT_DIR, 'source-dir': path.replace('\\', '/'), 'cleaned-dir': None, 'division': {}, 'district': {}, 'upazila': {}, 'city-corporation': {}, 'union': {}, 'ward': {}, 'voter-area': {}, 'voter-gender': {}, 'voter-count': {}, 'voter-data': []}
+                count = count + 1
+                if limit and count >= limit:
+                    return
+
             else:
                 warn(f"{file} is not a pdf ... skipping")
 
@@ -147,7 +165,8 @@ if __name__ == '__main__':
 
     # there must be a *data* directory under ROOT_DIR
 	ROOT_DIR = args['directory'].replace('\\', '/')
-	traverse_directory(root_path=f"{ROOT_DIR}/data")
+	traverse_directory(root_path=f"{ROOT_DIR}/data", limit=1)
 	parse_data_objects()
 	clean_and_save_pdfs()
+	parse_top_sheet()
 	print_data()

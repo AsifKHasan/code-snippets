@@ -4,8 +4,9 @@ import fitz
 import easyocr
 import time
 
-PROJ_DIR = '../..'
-input_pdf = f"{PROJ_DIR}/out/voter-cleaned.pdf"
+PROJ_DIR = "D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
+# PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+input_pdf = f"{PROJ_DIR}/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
 output_txt = f"{PROJ_DIR}/out/voter-cleaned.txt"
 
 easyocr_reader = easyocr.Reader(["en"])
@@ -52,13 +53,16 @@ def get_easyocr(page, bbox):
 doc = fitz.open(input_pdf)
 ocr_count = 0
 texts = []
-for page in doc[0:1]:
-    text_blocks = page.get_text("dict", flags=0)["blocks"]
+for page in doc:
+    print(page)
+    page_dict = page.get_text("dict")
+    print(page_dict)
+    text_blocks = page_dict["blocks"]
     for b in text_blocks:
         for l in b["lines"]:
             for s in l["spans"]:
                 ocr_count += 1
-                # print("before: '%s'" % text)
+                print("before: '%s'" % text)
                 new_text = get_easyocr(page, s["bbox"])
                 print(new_text)
 

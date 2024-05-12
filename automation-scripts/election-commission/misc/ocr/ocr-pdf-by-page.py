@@ -5,9 +5,11 @@ import ocrmypdf
 import sys
 import io
 
-PROJ_DIR = '..'
-input_pdf = f"{PROJ_DIR}/out/voter-cleaned.pdf"
+PROJ_DIR = "D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
+# PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+input_pdf = f"{PROJ_DIR}/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
 output_txt = f"{PROJ_DIR}/out/voter-cleaned.txt"
+
 
 def ocr_the_page(page):
     """Extract the text from passed-in PDF page."""
@@ -23,7 +25,7 @@ def ocr_the_page(page):
         language="ben",  # modify as required e.g. ("eng", "ger")
         output_type="pdf",  # only need simple PDF format
         # add more paramneters, e.g. to enforce OCR-ing, etc., e.g.
-        # force_ocr=True, redo_ocr=True
+        force_ocr=True
     )
     ocr_pdf = fitz.open("pdf", outbytes.getvalue())  # read output as fitz PDF
     text = ocr_pdf[0].get_text()  # ...and extract text from the page
@@ -36,3 +38,5 @@ if __name__ == "__main__":
         text = ocr_the_page(page)
         with open(output_txt, 'w', encoding="UTF-8") as fh:
             fh.writelines(text)
+
+        break

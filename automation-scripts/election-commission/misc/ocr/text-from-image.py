@@ -8,7 +8,7 @@
 import platform
 import argparse
 
-import easyocr
+# import easyocr
 import cv2
 import numpy as np
 import pytesseract
@@ -24,13 +24,17 @@ if platform.system() == 'Windows':
 else:
 	pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
-PROJ_DIR = "../.."
-input_pdf = f"{PROJ_DIR}/out/voter-cleaned.pdf"
+PROJ_DIR = "D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
+# PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+input_pdf = f"{PROJ_DIR}/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
 output_txt = f"{PROJ_DIR}/out/voter-cleaned.txt"
+
 
 IMG_PATH = "{}/out/pages/{}.png"
 IMG_OUTPUT_PATH = "{}/out/segments/{}__{}x{}-{}.png"
 OCR_OUTPUT_PATH = "{}/out/texts/{}.txt"
+
+SEGMENT_MIN_HEIGHT = 100
 
 def get_kernels(img, img_bin, thresh):
 	kernel_len = np.array(img).shape[1]//100
@@ -198,7 +202,7 @@ def save_image_segments(image_segments, img_name, img_output_path):
 				y, x, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
 
 				# remove boxes with less than a specified height
-				if h > 500:
+				if h > SEGMENT_MIN_HEIGHT:
 					img = box['img']
 
 					# crop to remove black borders
@@ -339,6 +343,6 @@ if __name__ == '__main__':
 
 	image_segments = segment_image(image_path=img_path, no_segmentation=False)
 	save_image_segments(image_segments=image_segments, img_name=img_name, img_output_path=IMG_OUTPUT_PATH)
-	ocr_segments(image_segments=image_segments)
+	# ocr_segments(image_segments=image_segments)
 	# ocr_segments_easyocr(image_segments=image_segments)
-	save_ocr_texts(image_segments=image_segments, ocr_output_path=ocr_output_path)
+	# save_ocr_texts(image_segments=image_segments, ocr_output_path=ocr_output_path)

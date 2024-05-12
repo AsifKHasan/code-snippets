@@ -1,10 +1,15 @@
 PROJ_HOME="/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
 cd ${PROJ_HOME}
+cd ${PROJ_HOME}\src
 
 set PROJ_HOME="D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
 cd %PROJ_HOME%
+cd %PROJ_HOME%\src
 
-cd ${PROJ_HOME}\src
+
+set TESSDATA_PREFIX=C:/Program Files/Tesseract-OCR/tessdata
+
+
 cd D:\projects\tools\PyMuPDF-Utilities\examples
 
 1. Clean pdf - remove watermark (images) and unnecessary pages
@@ -12,8 +17,9 @@ PyMuPDF-Utilities/examples/replace-image/remove.py
 voter-original.pdf -> voter-cleaned.pdf
 
 2. pages images
-pdftocairo -r 600 -png "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/pages/page"
-pdftocairo -r 600 -png "%PROJ_HOME%/out/voter-cleaned.pdf" "%PROJ_HOME%/out/pages/page"
+set PDF_FILE="/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
+pdftocairo -r 600 -png "${PROJ_HOME}/%PDF_FILE%" "${PROJ_HOME}/out/pages/page"
+pdftocairo -r 600 -png "%PROJ_HOME%/%PDF_FILE%" "%PROJ_HOME%/out/pages/page"
 
 
 3. do ocr
