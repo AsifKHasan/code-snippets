@@ -7,6 +7,7 @@
 '''
 
 import os
+import re
 import argparse
 
 from helper.logger import *
@@ -132,10 +133,118 @@ def clean_and_save_pdfs():
 def parse_top_sheet():
     for file_name, data in DATA.items():
         pdf_file = f"{data['root-dir']}/{data['cleaned-dir']}/{file_name}"
-        page_texts = page_text(pdf_file=pdf_file, page_num=0)
+        page_texts = page_text_tesseract(pdf_file=pdf_file, page_num=0)
+        # page_texts = page_text_easyocr(pdf_file=pdf_file, page_num=0)
+        # page_texts = page_text_mupdf(pdf_file=pdf_file, page_num=0)
+
+        print(page_texts)
+        
+        # tesseract output parsing
+        # keep only lines of interest
+        prefixes = ['উপজেলা/থানা', 'ইউনিয়ন/ পৌর ওয়ার্ড', 'ওয়ার্ড নম্বর', 'ভোটার এলাকা', 'সর্বমোট ভোটার সংখ্যা', 'ভোটার এলাকার নম্বর', 'মোট ', ]
+        lines = page_texts.split('\n')
+        filtered_lines = [line for line in lines if any(line.startswith(prefix) for prefix in prefixes)]
+
+        if len(filtered_lines) != 5:
+            error(f"top sheet should have [5] lines, but found [{len(filtered_lines)}] lines")
+
+        # text = '\n'.join(filtered_lines)
+
+        # Upazila and City corporation are in the first line
+        # উপজেলা/থানা              দেলদুয়ার                                        সিটি কর্পোরেশন/ পৌরসভা
+        text = filtered_lines[0]
+        regex = re.compile(r'উপজেলা/থানা\s+?(?P<upazila>.*?)\s+সিটি কর্পোরেশন/ পৌরসভা\s*?(?P<city>.*)', re.MULTILINE)
+        m = regex.match(text)
+        if m and m.group('upazila'):
+            upazila = m.group('upazila').strip()
+            debug(f"upazila/thana is [{upazila}]")
+
+        else:
+            error(f"could not parse upazila/thana name")
+
+        if m and m.group('city'):
+            city = m.group('city').strip()
+            debug(f"city corporation/pourasava is [{city}]")
+
+        else:
+            error(f"could not parse city corporation/pourasava name")
+
+
+        # Union is in second line
+        # ইউনিয়ন/ পৌর ওয়ার্ড ডুবাইল
+        text = filtered_lines[1]
+        regex = re.compile(r'ইউনিয়ন/ পৌর ওয়ার্ড\s+?(?P<union>.*)', re.MULTILINE)
+        m = regex.match(text)
+        if m and m.group('union'):
+            union = m.group('union').strip()
+            debug(f"union/ward is [{union}]")
+
+        else:
+            error(f"could not parse union/word name")
+
+
+        # Ward number is in third line
+        # ওয়ার্ড নম্বর ইউনিয়ন পরিষদের জন্য) ২
+        text = filtered_lines[2]
+        regex = re.compile(r'ওয়ার্ড নম্বর [(]*ইউনিয়ন পরিষদের জন্য[)]*\s+?(?P<ward>.*)', re.MULTILINE)
+        m = regex.match(text)
+        if m and m.group('ward'):
+            ward = m.group('ward').strip()
+            debug(f"ward number is [{ward}]")
+
+        else:
+            error(f"could not parse ward number")
+
+
+        # Voter area and Total Voter Count are in the fourth line
+        # ভোটার এলাকা         ইসলামপুর                            সর্বমোট ভোটার সংখ্যা                 ১০২০
+        text = filtered_lines[3]
+        regex = re.compile(r'ভোটার এলাকা\s+?(?P<voter_area>.*?)\s+সর্বমোট ভোটার সংখ্যা\s*?(?P<total_voters>.*)', re.MULTILINE)
+        m = regex.match(text)
+        if m and m.group('voter_area'):
+            voter_area = m.group('voter_area').strip()
+            debug(f"voter area is [{voter_area}]")
+
+        else:
+            error(f"could not parse voter area name")
+
+        if m and m.group('total_voters'):
+            total_voters = m.group('total_voters').strip()
+            debug(f"total voters [{total_voters}]")
+
+        else:
+            error(f"could not parse total voter number")
+
+
+        # Voter area number and Voter Count by gender are in the fifth line
+        # ভোটার এলাকার নম্বর ০১৮১                           মোট পুরুষ ভোটার সংখ্যা             ৫০৮
+        text = filtered_lines[4]
+        regex = re.compile(r'ভোটার এলাকার নম্বর\s+?(?P<voter_area_number>.*?)\s+মোট (?P<voter_gender>.*?) ভোটার সংখ্যা\s*?(?P<gender_voters>.*)', re.MULTILINE)
+        m = regex.match(text)
+        if m and m.group('voter_area_number'):
+            voter_area_number = m.group('voter_area_number').strip()
+            debug(f"voter area number is [{voter_area_number}]")
+
+        else:
+            error(f"could not parse voter area number")
+
+        if m and m.group('voter_gender'):
+            voter_gender = m.group('voter_gender').strip()
+            debug(f"voter gender is [{voter_gender}]")
+
+        else:
+            voter_gender = 'UNKNOWN'
+            error(f"could not parse voter gender")
+
+        if m and m.group('gender_voters'):
+            gender_voters = m.group('gender_voters').strip()
+            debug(f"total {voter_gender} voters [{gender_voters}]")
+
+        else:
+            error(f"could not parse {voter_gender} voter number")
+
 
         # get gender - ভোটার তালিকা - (মহিলা)
-        print(page_texts)
 
 
 

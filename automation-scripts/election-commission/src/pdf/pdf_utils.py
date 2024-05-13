@@ -1,19 +1,84 @@
 #!/usr/bin/env python3
 
+import io
 import fitz
-import pprint
-from pypdf import PdfReader, PdfWriter
-from pypdf.generic import ContentStream, NameObject, TextStringObject
+# import pprint
+# import easyocr
+import pytesseract
+import ocrmypdf
+from PIL import Image
+# from pypdf import PdfReader, PdfWriter
+# from pypdf.generic import ContentStream, NameObject, TextStringObject
+from pdf2image import convert_from_path
+
+mat = fitz.Matrix(2, 2)  # high resolution matrix
+
+def ocr_the_page(page):
+    """Extract the text from passed-in PDF page."""
+    src = page.parent  # the page's document
+    doc = fitz.open()  # make temporary 1-pager
+    doc.insert_pdf(src, from_page=page.number, to_page=page.number)
+    pdfbytes = doc.tobytes()
+    inbytes = io.BytesIO(pdfbytes)  # transform to BytesIO object
+    outbytes = io.BytesIO()  # let ocrmypdf store its result pdf here
+    ocrmypdf.ocr(
+        inbytes,  # input 1-pager
+        outbytes,  # ouput 1-pager
+        # image_dpi=600,
+        language="ben",  # modify as required e.g. ("eng", "ger")
+        output_type="pdf",  # only need simple PDF format
+        # add more paramneters, e.g. to enforce OCR-ing, etc., e.g.
+        force_ocr=True,
+        clean=True,
+        # remove_background=True,
+        progress_bar=False,
+        # oversample=600,
+    )
+    ocr_pdf = fitz.open("pdf", outbytes.getvalue())  # read output as fitz PDF
+    text = ocr_pdf[0].get_text()  # ...and extract text from the page
+    return text  # return it
+
+'''
+'''
+def page_text_tesseract(pdf_file, page_num):
+    config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
+
+    pages = convert_from_path(pdf_file, dpi=600, first_page=page_num, last_page=page_num+1)
+    for page_no, img in enumerate(pages):
+        text = pytesseract.image_to_string(img, lang='ben', config=config)
+
+    return text
 
 
-def page_text(pdf_file, page_num):
+
+def page_text_easyocr(pdf_file, page_num):
+    global mat
+    easyocr_reader = easyocr.Reader(['bn'])
+
     # open input
     doc = fitz.open(pdf_file)
 
-    page = doc[0]
+    page = doc[page_num]
+    pix = page.get_pixmap(colorspace=fitz.csGRAY, matrix=mat)
+    img = pix.tobytes("png")
+
+    texts = easyocr_reader.readtext(img, detail=0, paragraph=True)
+    text = '\n'.join(texts)
+
+    return text
+
+
+
+def page_text_mupdf(pdf_file, page_num):
+    # open input
+    doc = fitz.open(pdf_file)
+
+    page = doc[page_num]
     # texts = page.get_text('html')
     text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=600, full=True)
     texts = text_page.extractText(sort=True)
+
+    # texts = ocr_the_page(page)
     
     return texts
             

@@ -8,7 +8,7 @@
 import platform
 import argparse
 
-# import easyocr
+import easyocr
 import cv2
 import numpy as np
 import pytesseract

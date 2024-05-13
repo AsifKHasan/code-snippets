@@ -1,12 +1,12 @@
 PROJ_HOME="/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
 cd ${PROJ_HOME}
-cd ${PROJ_HOME}\src
+cd ${PROJ_HOME}/src
 
 set PROJ_HOME="D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
 cd %PROJ_HOME%
 cd %PROJ_HOME%\src
 
-
+export TESSDATA_PREFIX=/usr/share/tesseract-ocr/5/tessdata
 set TESSDATA_PREFIX=C:/Program Files/Tesseract-OCR/tessdata
 
 

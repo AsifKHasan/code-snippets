@@ -5,8 +5,8 @@ import ocrmypdf
 import sys
 import io
 
-PROJ_DIR = "D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
-# PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
+# PROJ_DIR = "D:/projects/asif@github/code-snippets/automation-scripts/election-commission"
+PROJ_DIR = "/home/asif/projects/asif@github/code-snippets/automation-scripts/election-commission"
 input_pdf = f"{PROJ_DIR}/data/30-Dhaka/93-Tangail/23-Delduar/109-Atia/930119/930119_com_1745_female_without_photo_103_2024-3-21.pdf"
 output_txt = f"{PROJ_DIR}/out/voter-cleaned.txt"
 
@@ -34,7 +34,7 @@ def ocr_the_page(page):
 
 if __name__ == "__main__":
     doc = fitz.open(input_pdf)
-    for page in doc:
+    for page in doc[0:1]:
         text = ocr_the_page(page)
         with open(output_txt, 'w', encoding="UTF-8") as fh:
             fh.writelines(text)
