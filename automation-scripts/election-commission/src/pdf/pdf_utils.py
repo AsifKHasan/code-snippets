@@ -40,10 +40,12 @@ def ocr_the_page(page):
     text = ocr_pdf[0].get_text()  # ...and extract text from the page
     return text  # return it
 
+
+
 '''
 '''
-def page_text_tesseract(image_file, dpi=600):
-    config = f"-c preserve_interword_spaces=1 --dpi {dpi} --psm 4 --oem 3"
+def page_text_tesseract(image_file, dpi=600, psm=4, oem=3):
+    config = f"-c preserve_interword_spaces=1 --dpi {dpi} --psm {psm} --oem {oem}"
 
     image = cv2.imread(image_file)
 
@@ -64,6 +66,8 @@ def page_text_tesseract(image_file, dpi=600):
 
 
 
+'''
+'''
 def page_text_easyocr(pdf_file, page_num):
     global mat
     easyocr_reader = easyocr.Reader(['bn'])
@@ -82,6 +86,8 @@ def page_text_easyocr(pdf_file, page_num):
 
 
 
+'''
+'''
 def page_text_mupdf(image_file):
 
     doc = fitz.open()
@@ -112,6 +118,8 @@ def page_text_mupdf(image_file):
             
 
 
+'''
+'''
 def img_replace(page, xref, filename=None, stream=None, pixmap=None):
     """Replace image identified by xref.
 
@@ -137,14 +145,14 @@ def img_replace(page, xref, filename=None, stream=None, pixmap=None):
 
 
 
-''' clear watermark and delete specific pages
+''' clear watermark and save pdf pages as image
 '''
-def clean_pdf(input_pdf, output_img_folder, do_nothing=False, clean_images=False, watermark_is_image=True, dpi=300):
+def clean_and_pagify(input_pdf, output_img_folder, no_page_saving=False, clean_images=False, watermark_is_image=True, dpi=300):
     
     # open input
     doc = fitz.open(input_pdf)
 
-    if do_nothing:
+    if no_page_saving:
         return len(doc)
 
     if clean_images:
@@ -418,7 +426,7 @@ def segment_image(page_image_path, no_segmentation=False):
 
 '''
 '''
-def save_image_segments(image_segments, page_image_name, segment_output_directory, segment_min_height=3500):
+def save_image_segments(image_segments, page_image_name, segment_output_directory, segment_min_height=3500, dpi=600):
 	count_saved = 0
 	row_num = 1
 	for row in image_segments:
@@ -452,7 +460,7 @@ def save_image_segments(image_segments, page_image_name, segment_output_director
 					output_path = f"{segment_output_directory}/{page_image_name}__{row_num}x{col_num}-{idx}.png"
 					rgb_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 					pil_image = Image.fromarray(rgb_image)
-					pil_image.save(output_path, dpi=(600,600))
+					pil_image.save(output_path, dpi=(dpi,dpi))
 					box['do-ocr'] = True
 					box['img'] = img
 
@@ -469,3 +477,6 @@ def save_image_segments(image_segments, page_image_name, segment_output_director
 		row_num = row_num + 1
 
 	return count_saved
+
+
+

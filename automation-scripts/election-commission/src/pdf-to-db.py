@@ -9,6 +9,7 @@
 import os
 import re
 import argparse
+import glob
 
 from helper.logger import *
 from pdf.pdf_utils import *
@@ -94,6 +95,7 @@ def parse_data_objects(file_name, data):
     # prepare page-dir
     data['pages-dir'] = f"{data['source-dir'].replace('/data/', '/out/', 1)}/{data['voter-area']['code-from-path']}-{data['voter-gender']['from-path']}/pages"
     data['segments-dir'] = f"{data['source-dir'].replace('/data/', '/out/', 1)}/{data['voter-area']['code-from-path']}-{data['voter-gender']['from-path']}/segments"
+    data['texts-dir'] = f"{data['source-dir'].replace('/data/', '/out/', 1)}/{data['voter-area']['code-from-path']}-{data['voter-gender']['from-path']}/texts"
 
     # make sure the pages dir exists
     pages_dir = f"{data['root-dir']}/{data['pages-dir']}"
@@ -101,6 +103,9 @@ def parse_data_objects(file_name, data):
 
     segments_dir = f"{data['root-dir']}/{data['segments-dir']}"
     os.makedirs(segments_dir, exist_ok=True)
+
+    texts_dir = f"{data['root-dir']}/{data['texts-dir']}"
+    os.makedirs(texts_dir, exist_ok=True)
 
 
 
@@ -118,13 +123,13 @@ def print_header(file_name, data):
 
 ''' remove watermark and save pdf pages as individual images
 '''
-def clean_and_save_pdfs(file_name, data, do_nothing=False, dpi=600):
+def clean_and_save_pages(file_name, data, no_page_saving=False, dpi=600):
     input_pdf = f"{data['root-dir']}/{data['source-dir']}/{file_name}"
     debug(f"generating page images at [{dpi}] dpi", nesting_level=1)
 
     # directory where output images will be saved
     output_img_folder = f"{data['root-dir']}/{data['pages-dir']}"
-    num_pages = clean_pdf(input_pdf=input_pdf, output_img_folder=output_img_folder, do_nothing=do_nothing, clean_images=True, watermark_is_image=False, dpi=dpi)
+    num_pages = clean_and_pagify(input_pdf=input_pdf, output_img_folder=output_img_folder, no_page_saving=no_page_saving, clean_images=True, watermark_is_image=False, dpi=dpi)
     data['page-count'] = num_pages
     debug(f"[{num_pages}] page images generated at [{dpi}] dpi", nesting_level=1)
     print()
@@ -186,7 +191,7 @@ def parse_top_sheet(file_name, data, dpi=600):
     # Union is in second line
     # ইউনিয়ন/ পৌর ওয়ার্ড ডুবাইল
     text = filtered_lines[1]
-    regex = re.compile(r'ইউনিয়ন/ পৌর ওয়ার্ড\s+?(?P<union>.*)', re.MULTILINE)
+    regex = re.compile(r'ইউনিয়ন/ পৌর ওয়ার্ড.*\s+?(?P<union>.*)', re.MULTILINE)
     m = regex.match(text)
     if m and m.group('union'):
         union = m.group('union').strip()
@@ -260,9 +265,12 @@ def parse_top_sheet(file_name, data, dpi=600):
 
 
 
-''' parse pages through OCR
+''' segment pages for text blocks
 '''
-def parse_pages(file_name, data, page_list=None):
+def segment_pages(file_name, data, no_segmentation=False, page_list=None, dpi=600):
+    if no_segmentation:
+        return
+
     for page_no in range(2, data['page-count']):
         if page_list and page_no in page_list:
             page_image_name = f"page-{page_no:03d}"
@@ -274,11 +282,63 @@ def parse_pages(file_name, data, page_list=None):
             image_segments = segment_image(page_image_path=page_image_path, no_segmentation=False)
             info(f"[{len(image_segments)}] segments found", nesting_level=2)
 
-            segments_saved = save_image_segments(image_segments=image_segments, page_image_name=page_image_name, segment_output_directory=segment_output_directory, segment_min_height=500)
-            info(f"[{segments_saved}] segments saved", nesting_level=2)
-            # ocr_segments(image_segments=image_segments)
-            # ocr_segments_easyocr(image_segments=image_segments)
-            # save_ocr_texts(image_segments=image_segments, ocr_output_path=ocr_output_path)
+            segments_saved = save_image_segments(image_segments=image_segments, page_image_name=page_image_name, segment_output_directory=segment_output_directory, segment_min_height=500, dpi=dpi)
+            info(f"[{segments_saved}] segments saved at [{dpi}] dpi", nesting_level=2)
+
+            print()
+
+    print()
+
+
+
+''' parse segments through OCR
+'''
+def parse_segments(file_name, data, page_list=None, dpi=600):
+    num_lines_in_segment = 6
+    for page_no in range(2, data['page-count']):
+        if page_list and page_no in page_list:
+            page_image_name = f"page-{page_no:03d}"
+            image_segments_path = f"{data['root-dir']}/{data['segments-dir']}/{page_image_name}"
+
+            if not os.path.exists(image_segments_path):
+                warn(f"segments directory for [{page_image_name}] : [{image_segments_path}] does not exist", nesting_level=2)
+                continue
+
+            text_output_directory = f"{data['root-dir']}/{data['texts-dir']}/{page_image_name}"
+            os.makedirs(text_output_directory, exist_ok=True)
+
+
+            # traverse segments-dir for .png files
+            info(f"parsing segments for [{page_image_name}]", nesting_level=2)
+            segment_files = glob.glob('*.png', root_dir=image_segments_path)
+            segment_count = 0
+            for segment_file in segment_files:
+                segment_count = segment_count + 1
+                segment_path = f"{image_segments_path}/{segment_file}"
+                text_output_path = f"{text_output_directory}/{segment_file.replace('.png', '.txt')}"
+
+                info(f"parsing segment [{segment_file}]", nesting_level=3)
+                text = page_text_tesseract(image_file=segment_path, dpi=dpi)
+
+                # process text
+                text = text.strip()
+                text = text.replace('\n\n', '\n')
+                if text != "":
+                    with open(text_output_path, 'w', encoding='UTF-8') as fh:
+                        fh.write(text)
+
+                # validate text
+                text_lines = text.split('\n')
+                if len(text_lines) != num_lines_in_segment:
+                    error(f"expected [{num_lines_in_segment}] lines, found [{len(text_lines)}]", nesting_level=4)
+                else:
+                    debug(f"found [{len(text_lines)}] lines", nesting_level=4)
+
+
+                info(f"parsing segment [{segment_file}] .. DONE", nesting_level=3)
+                print()
+ 
+            info(f"[{segment_count}] segment(s) parsed for [{page_image_name}]", nesting_level=2)
 
             print()
 
@@ -328,17 +388,22 @@ if __name__ == '__main__':
 
     # there must be a *data* directory under ROOT_DIR
 	ROOT_DIR = args['directory'].replace('\\', '/')
-	path_patterns = [r".*930119_.+_female.*"]
+	# path_patterns = [r".*930119_.+_female.*"]
+	path_patterns = [r".*930119.*"]
 	DATA = traverse_directory(root_path=f"{ROOT_DIR}/data", path_patterns=path_patterns)
 	info(ROOT_DIR, nesting_level=0)
 	for file_name, data in DATA.items():
 		info(f"{file_name}", nesting_level=0)
 
 		parse_data_objects(file_name=file_name, data=data)
-		clean_and_save_pdfs(file_name=file_name, data=data, do_nothing=False, dpi=600)
+		no_page_saving = False
+		clean_and_save_pages(file_name=file_name, data=data, no_page_saving=no_page_saving, dpi=600)
 		print_header(file_name=file_name, data=data)
 		parse_top_sheet(file_name=file_name, data=data, dpi=400)
-		parse_pages(file_name=file_name, data=data, page_list=[2])
+		page_list = [2]
+		no_segmentation = False
+		segment_pages(file_name=file_name, data=data, no_segmentation=no_segmentation, page_list=page_list, dpi=600)
+		parse_segments(file_name=file_name, data=data, page_list=page_list, dpi=600)
         
 		info(f"{file_name} .. DONE", nesting_level=0)
 		print()
