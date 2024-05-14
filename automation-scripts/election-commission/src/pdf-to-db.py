@@ -93,12 +93,12 @@ def parse_data_objects():
         data['voter-gender']['from-path'] = parts[3]
         data['voter-count']['gender-from-path'] = int(parts[2])
 
-        # prepare cleaned-dir
-        data['cleaned-dir'] = data['source-dir'].replace('/data/', '/out/cleaned/', 1)
+        # prepare page-dir
+        data['pages-dir'] = f"{data['source-dir'].replace('/data/', '/out/pages/', 1)}/{data['voter-area']['code-from-path']}-{data['voter-gender']['from-path']}"
 
-        # make sure the cleaned dir exists
-        cleaned_dir = f"{data['root-dir']}/{data['cleaned-dir']}"
-        os.makedirs(cleaned_dir, exist_ok=True)
+        # make sure the pages dir exists
+        pages_dir = f"{data['root-dir']}/{data['pages-dir']}"
+        os.makedirs(pages_dir, exist_ok=True)
 
 
 
@@ -109,6 +109,7 @@ def print_data():
     for file_name, data in DATA.items():
         info(data['source-dir'])
         info(f".. {file_name}")
+        # info(f".. {data['pages']} pages")
         info(f".... voter area   : {data['voter-area']['code-from-path']}")
         info(f".... voter gender : {data['voter-gender']['from-path']}")
         info(f".... voter count  : {data['voter-count']['gender-from-path']}")
@@ -117,14 +118,17 @@ def print_data():
 
 
 
-''' remove watermark and remove second page which is blank
+''' remove watermark and save pdf pages as individual images
 '''
 def clean_and_save_pdfs():
     for file_name, data in DATA.items():
         input_pdf = f"{data['root-dir']}/{data['source-dir']}/{file_name}"
-        output_pdf = f"{data['root-dir']}/{data['cleaned-dir']}/{file_name}"
-        debug(f"cleaning [{data['source-dir']}/{file_name}] to [{data['cleaned-dir']}/{file_name}]")
-        clean_pdf(input_pdf=input_pdf, output_pdf=output_pdf, watermark_is_image=False)
+        debug(f"processing source [{data['source-dir']}/{file_name}]")
+
+        # directory where output images will be saved
+        output_img_folder = f"{data['root-dir']}/{data['pages-dir']}"
+        num_pages = clean_pdf(input_pdf=input_pdf, output_img_folder=output_img_folder, clean_images=True, watermark_is_image=False, dpi=600)
+        data['pages'] = num_pages
 
 
 
@@ -132,8 +136,10 @@ def clean_and_save_pdfs():
 '''
 def parse_top_sheet():
     for file_name, data in DATA.items():
+        page_no = 0
+        top_sheet_image = f"{data['root-dir']}/{data['pages-dir']}/page-{page_no:03d}.png"
         pdf_file = f"{data['root-dir']}/{data['cleaned-dir']}/{file_name}"
-        page_texts = page_text_tesseract(pdf_file=pdf_file, page_num=0)
+        page_texts = page_text_tesseract(image_file=top_sheet_image)
         # page_texts = page_text_easyocr(pdf_file=pdf_file, page_num=0)
         # page_texts = page_text_mupdf(pdf_file=pdf_file, page_num=0)
 

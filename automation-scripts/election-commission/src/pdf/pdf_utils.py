@@ -2,6 +2,7 @@
 
 import io
 import fitz
+import cv2
 # import pprint
 # import easyocr
 import pytesseract
@@ -40,12 +41,11 @@ def ocr_the_page(page):
 
 '''
 '''
-def page_text_tesseract(pdf_file, page_num):
+def page_text_tesseract(image_file):
     config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
 
-    pages = convert_from_path(pdf_file, dpi=600, first_page=page_num, last_page=page_num+1)
-    for page_no, img in enumerate(pages):
-        text = pytesseract.image_to_string(img, lang='ben', config=config)
+    img = cv2.imread(image_file)
+    text = pytesseract.image_to_string(img, lang='ben', config=config)
 
     return text
 
@@ -75,7 +75,7 @@ def page_text_mupdf(pdf_file, page_num):
 
     page = doc[page_num]
     # texts = page.get_text('html')
-    text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=600, full=True)
+    text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=300, full=True)
     texts = text_page.extractText(sort=True)
 
     # texts = ocr_the_page(page)
@@ -111,10 +111,22 @@ def img_replace(page, xref, filename=None, stream=None, pixmap=None):
 
 ''' clear watermark and delete specific pages
 '''
-def clean_pdf(input_pdf, output_pdf, watermark_is_image=True):
+def clean_pdf(input_pdf, output_img_folder, clean_images=False, watermark_is_image=True, dpi=300):
     
     # open input
     doc = fitz.open(input_pdf)
+
+    if clean_images:
+        for page in doc:
+            images = page.get_images()  
+            for item in images:
+                item = images[0]
+                old_xref = item[0]
+
+                pix = fitz.Pixmap(fitz.csGRAY, (0, 0, 1, 1), 1)
+                pix.clear_with()
+                img_replace(page, old_xref, pixmap=pix)
+
 
     if watermark_is_image:
         wm_text = b'\x00/\x00O\x00Y\x00K\x01"\x00\x03\x00\xcf\x00A\x00K\x004\x00K\x00D\x00\x03\x009\x00K\x00L\x00E\x00*\x00K'
@@ -147,12 +159,18 @@ def clean_pdf(input_pdf, output_pdf, watermark_is_image=True):
                 stream = stream.replace(wm_text, replace_with)
                 doc.update_stream(xref, stream)
 
+            # save as image
+            pix = page.get_pixmap(dpi=dpi)
+            pix.save(f"{output_img_folder}/page-{page.number:03d}.png")        
+
+    return len(doc)
+
         # remove second page
-        l = [0] + list(range(2, doc.page_count))
-        doc.select(l)
+        # l = [0] + list(range(2, doc.page_count))
+        # doc.select(l)
 
         # save output
-        doc.ez_save(output_pdf, garbage=4)
+        # doc.ez_save(output_pdf, garbage=4)
 
     # else:
     #     reader = PdfReader(input_pdf)

@@ -23,8 +23,8 @@ pdftocairo -r 600 -png "%PROJ_HOME%/%PDF_FILE%" "%PROJ_HOME%/out/pages/page"
 
 
 3. do ocr
-tesseract "${PROJ_HOME}/out/segments/page-01__2x1-1.png" "${PROJ_HOME}/out/texts/page-01__2x1-1.txt" -l ben
-tesseract "%PROJ_HOME%/out/segments/page-01__2x1-1.png" "%PROJ_HOME%/out/texts/page-01__2x1-1.txt" -l ben
+tesseract "${PROJ_HOME}/out/pages/30-Dhaka/93-Tangail/23-Delduar/227-Dubail/930181/930181-male/page-000.png" "${PROJ_HOME}/out/texts/page-000.txt" -l ben
+tesseract "%PROJ_HOME%/out/pages/30-Dhaka/93-Tangail/23-Delduar/227-Dubail/930181/930181-male/page-000.png" "%PROJ_HOME%/out/texts/page-000.txt" -l ben
 
 
 2. 
