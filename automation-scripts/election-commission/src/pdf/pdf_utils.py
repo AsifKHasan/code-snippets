@@ -3,16 +3,17 @@
 import io
 import fitz
 import cv2
+import numpy as np
+import pytesseract
+from PIL import Image
+
+# import pymupdf
 # import pprint
 # import easyocr
-import pytesseract
-import ocrmypdf
-from PIL import Image
-# from pypdf import PdfReader, PdfWriter
-# from pypdf.generic import ContentStream, NameObject, TextStringObject
-from pdf2image import convert_from_path
+# import ocrmypdf
 
-mat = fitz.Matrix(2, 2)  # high resolution matrix
+# high resolution matrix
+mat = fitz.Matrix(2, 2)
 
 def ocr_the_page(page):
     """Extract the text from passed-in PDF page."""
@@ -41,11 +42,23 @@ def ocr_the_page(page):
 
 '''
 '''
-def page_text_tesseract(image_file):
-    config = '-c preserve_interword_spaces=1 --psm 4 --oem 3'
+def page_text_tesseract(image_file, dpi=600):
+    config = f"-c preserve_interword_spaces=1 --dpi {dpi} --psm 4 --oem 3"
 
-    img = cv2.imread(image_file)
-    text = pytesseract.image_to_string(img, lang='ben', config=config)
+    image = cv2.imread(image_file)
+
+    # Convert to grayscale, apply Gaussian blur, and threshold
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    blur = cv2.GaussianBlur(gray, (3, 3), 0)
+    thresh = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+
+    # Remove noise using morphological operations
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+    opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=1)
+    invert = 255 - opening
+
+    # img = cv2.imread(image_file)
+    text = pytesseract.image_to_string(invert, lang='ben', config=config)
 
     return text
 
@@ -69,14 +82,29 @@ def page_text_easyocr(pdf_file, page_num):
 
 
 
-def page_text_mupdf(pdf_file, page_num):
-    # open input
-    doc = fitz.open(pdf_file)
+def page_text_mupdf(image_file):
 
-    page = doc[page_num]
+    doc = fitz.open()
+    pix = fitz.Pixmap(image_file)
+    imgpdf = fitz.open("pdf", pix.pdfocr_tobytes())
+    doc.insert_pdf(imgpdf)
+    pix = None
+    page = doc[0]
     # texts = page.get_text('html')
-    text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=300, full=True)
+    text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=500, full=True)
     texts = text_page.extractText(sort=True)
+
+    # texts = ocr_the_page(page)
+
+
+    # open input
+    # pix = Pixmap(image_file)
+    # doc = fitz.open(pdf_file)
+
+    # page = doc[page_num]
+    # texts = page.get_text('html')
+    # text_page = page.get_textpage_ocr(flags=3, language='ben', dpi=300, full=True)
+    # texts = text_page.extractText(sort=True)
 
     # texts = ocr_the_page(page)
     
@@ -111,10 +139,13 @@ def img_replace(page, xref, filename=None, stream=None, pixmap=None):
 
 ''' clear watermark and delete specific pages
 '''
-def clean_pdf(input_pdf, output_img_folder, clean_images=False, watermark_is_image=True, dpi=300):
+def clean_pdf(input_pdf, output_img_folder, do_nothing=False, clean_images=False, watermark_is_image=True, dpi=300):
     
     # open input
     doc = fitz.open(input_pdf)
+
+    if do_nothing:
+        return len(doc)
 
     if clean_images:
         for page in doc:
@@ -201,3 +232,240 @@ def clean_pdf(input_pdf, output_img_folder, clean_images=False, watermark_is_ima
     #     with open(output_pdf, 'wb') as fh:
     #         writer.write(fh)
 
+
+
+SEGMENT_MIN_HEIGHT = 100
+
+'''
+'''
+def get_kernels(img, img_bin, thresh):
+	kernel_len = np.array(img).shape[1]//100
+	ver_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1, kernel_len))
+	hor_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (kernel_len, 1))
+	kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+
+	return img_bin, kernel,  ver_kernel, hor_kernel
+
+
+
+'''
+'''
+def get_vertical_lines(img_bin,ver_kernel):
+	image_1 = cv2.erode(img_bin, ver_kernel, iterations=3)
+	vertical_lines = cv2.dilate(image_1, ver_kernel, iterations=3)
+
+	return vertical_lines
+
+
+
+'''
+'''
+def get_horizontal_lines(img_bin,hor_kernel):
+	image_2 = cv2.erode(img_bin, hor_kernel, iterations=3)
+	horizontal_lines = cv2.dilate(image_2, hor_kernel, iterations=3)
+
+	return horizontal_lines
+
+
+
+'''
+'''
+def get_list_of_box(img, contours):
+	boxes = []
+	# img_height, *_ = img.shape
+	img_height = 1000
+
+	for c in contours:
+		x, y, w, h = cv2.boundingRect(c)
+
+		if (20 < h < img_height):
+			image = cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 255), 2)
+			cropped = img[y:y+h, x:x+w]
+			# cv2_imshow(crop_img)
+
+			boxes.append({'img': cropped, 'box': [x, y, w, h]})
+
+	return boxes
+
+
+
+'''
+'''
+def get_row_and_columns(boxes, mean):
+	rows = []
+	cols = []
+	j = 0
+
+	for i in range(len(boxes)):
+		if (i == 0):
+			cols.append(boxes[i])
+			previous = boxes[i]
+		else:
+			if (boxes[i]['box'][1] <= previous['box'][1] + mean / 2):
+				cols.append(boxes[i])
+				previous = boxes[i]
+				if (i == len(boxes) - 1):
+					rows.append(cols)
+			else:
+				rows.append(cols)
+				cols = []
+				previous = boxes[i]
+				cols.append(boxes[i])
+
+	return rows, cols
+
+
+
+'''
+'''
+def sort_contours(cnts, method="left-to-right"):
+	reverse = False
+	i = 0
+
+	if method == "right-to-left" or method == "bottom-to-top":
+		reverse = True
+
+	if method == "top-to-bottom" or method == "bottom-to-top":
+		i = 1
+
+	bounding_boxes = [cv2.boundingRect(c) for c in cnts]
+	(cnts, bounding_boxes) = zip(*sorted(zip(cnts, bounding_boxes), key = lambda b:b[1][i], reverse=reverse))
+
+	return (cnts, bounding_boxes)
+
+
+
+'''
+'''
+def arrange_boxes_in_order(row, countcol, center):
+	final_boxes = []
+
+	for i in range(len(row)):
+		lis = []
+		for k in range(countcol):
+			lis.append([])
+
+		for j in range(len(row[i])):
+			diff = abs(center- (row[i][j]['box'][0] + row[i][j]['box'][2] / 4))
+			minimum = min(diff)
+			indexing = list(diff).index(minimum)
+			lis[indexing].append(row[i][j])
+
+		final_boxes.append(lis)
+
+	return final_boxes
+
+
+
+'''
+'''
+def segment_image(page_image_path, no_segmentation=False):
+	# Read image from which text needs to be extracted
+	img = cv2.imread(page_image_path, cv2.IMREAD_GRAYSCALE)
+
+	# Preprocessing the image starts
+
+	# Performing OTSU threshold
+	thresh, img_bin = cv2.threshold(img, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
+	# thresh, img_bin = cv2.threshold(img, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+	# img_bin = 255 - img_bin
+
+	# img_bin, kernel, ver_kernel, hor_kernel  = get_kernels(img, img_bin, thresh)
+	# vertical_lines = get_vertical_lines(img_bin, ver_kernel)
+	# horizontal_lines = get_horizontal_lines(img_bin, hor_kernel)
+
+	# img_vh = cv2.addWeighted(vertical_lines, 0.5, horizontal_lines, 0.5, 0.0)
+	# img_vh = cv2.addWeighted(vertical_lines, 0.1, horizontal_lines, 0.1, 0.0)
+	# img_vh = cv2.erode(~img_vh, kernel, iterations=1)
+	# thresh, img_vh = cv2.threshold(img_vh, 128, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+	# thresh, img_vh = cv2.threshold(img_vh, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
+	# bitxor = cv2.bitwise_xor(img,img_vh)
+	# bitnot = cv2.bitwise_not(bitxor)
+
+	contours, hierarchy = cv2.findContours(img_bin, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+	# contours, hierarchy = cv2.findContours(img_bin, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+	contours, bounding_boxes = sort_contours(contours, method="top-to-bottom")
+
+	for c in contours:
+		x, y, w, h = cv2.boundingRect(c)
+		cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 0), 1)
+
+	# output_path = IMG_OUTPUT_PATH.format(PROJ_DIR, img_name, 0, 0, 0)
+	# cv2.imwrite(output_path, img)
+
+	heights = [bounding_boxes[i][3] for i in range(len(bounding_boxes))]
+	mean = np.mean(heights)
+
+	# print(f"found {len(contours)} contours")
+	boxes = get_list_of_box(img, contours)
+	# print(f"found {len(boxes)} boxes")
+	rows, cols = get_row_and_columns(boxes, mean)
+
+	num_cols = 0
+	for i in range(len(rows)):
+		count = len(rows[i])
+		if count > num_cols:
+			num_cols = count
+
+	center = [int(rows[i][j]['box'][0] + rows[i][j]['box'][2] / 2) for j in range(len(rows[i])) if rows[0]]
+	center = np.array(center)
+	center.sort()
+	final_boxes = arrange_boxes_in_order(rows, num_cols, center)
+
+	return final_boxes
+
+
+
+'''
+'''
+def save_image_segments(image_segments, page_image_name, segment_output_directory, segment_min_height=3500):
+	count_saved = 0
+	row_num = 1
+	for row in image_segments:
+		col_num = 1
+		for col in row:
+			idx = 1
+			for box in col:
+				y, x, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
+
+				# remove boxes with less than a specified height
+				if h > segment_min_height:
+					img = box['img']
+
+					# crop to remove black borders
+					img = img[9:h-9, 9:w-9]
+
+					# manipulate image
+					kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+
+					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
+					# img = cv2.resize(img, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
+					# img = cv2.copyMakeBorder(img, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[255,255])
+					# img = cv2.dilate(img, kernel,iterations=1)
+					# img = cv2.erode(img, kernel,iterations=1)
+					# show_image(img=img)
+
+					# Perform morphological operations to remove noise
+					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
+					img = cv2.resize(img, None, fx=6, fy=6, interpolation=cv2.INTER_CUBIC)
+
+					output_path = f"{segment_output_directory}/{page_image_name}__{row_num}x{col_num}-{idx}.png"
+					rgb_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+					pil_image = Image.fromarray(rgb_image)
+					pil_image.save(output_path, dpi=(600,600))
+					box['do-ocr'] = True
+					box['img'] = img
+
+					count_saved = count_saved + 1
+	
+				else:
+					box['do-ocr'] = False
+
+
+				idx = idx + 1
+
+			col_num = col_num + 1
+
+		row_num = row_num + 1
+
+	return count_saved
