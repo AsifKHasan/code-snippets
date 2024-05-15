@@ -5,12 +5,15 @@ import fitz
 import cv2
 import numpy as np
 import pytesseract
-from PIL import Image
+from PIL import Image, ImageOps
 
 # import pymupdf
 # import pprint
 # import easyocr
 # import ocrmypdf
+
+from helper.logger import *
+
 
 # high resolution matrix
 mat = fitz.Matrix(2, 2)
@@ -46,21 +49,27 @@ def ocr_the_page(page):
 '''
 def page_text_tesseract(image_file, dpi=600, psm=4, oem=3):
     config = f"-c preserve_interword_spaces=1 --dpi {dpi} --psm {psm} --oem {oem}"
+    # config = f"-c preserve_interword_spaces=1"
 
     image = cv2.imread(image_file)
 
+    # TODO: make resize work
+    # image = cv2.resize(image, None, fx=1, fy=1, interpolation=cv2.INTER_CUBIC)
+
+
+    # TODO: undersatnd what is getting changed through this
     # Convert to grayscale, apply Gaussian blur, and threshold
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    blur = cv2.GaussianBlur(gray, (3, 3), 0)
-    thresh = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    image = cv2.GaussianBlur(image, (3, 3), 0)
+    image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)[1]
 
     # Remove noise using morphological operations
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-    opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=1)
-    invert = 255 - opening
+    image = cv2.morphologyEx(image, cv2.MORPH_OPEN, kernel, iterations=1)
+    image = 255 - image
 
-    # img = cv2.imread(image_file)
-    text = pytesseract.image_to_string(invert, lang='ben', config=config)
+    text = pytesseract.image_to_string(image, lang='ben', config=config)
+    # text = pytesseract.image_to_string(image, lang='ben')
 
     return text
 
@@ -147,7 +156,7 @@ def img_replace(page, xref, filename=None, stream=None, pixmap=None):
 
 ''' clear watermark and save pdf pages as image
 '''
-def clean_and_pagify(input_pdf, output_img_folder, no_page_saving=False, clean_images=False, watermark_is_image=True, dpi=300):
+def clean_and_pagify(input_pdf, output_img_folder, no_page_saving=False, clean_images=False, watermark_is_image=True, dpi=300, first_page_dpi=600):
     
     # open input
     doc = fitz.open(input_pdf)
@@ -199,7 +208,11 @@ def clean_and_pagify(input_pdf, output_img_folder, no_page_saving=False, clean_i
                 doc.update_stream(xref, stream)
 
             # save as image
-            pix = page.get_pixmap(dpi=dpi)
+            if page.number == 0:
+                pix = page.get_pixmap(dpi=first_page_dpi)
+            else:
+                pix = page.get_pixmap(dpi=dpi)
+
             pix.save(f"{output_img_folder}/page-{page.number:03d}.png")        
 
     return len(doc)
@@ -367,7 +380,7 @@ def arrange_boxes_in_order(row, countcol, center):
 
 '''
 '''
-def segment_image(page_image_path, no_segmentation=False):
+def segment_image(page_image_path, no_segmentation=False, nesting_level=0):
 	# Read image from which text needs to be extracted
 	img = cv2.imread(page_image_path, cv2.IMREAD_GRAYSCALE)
 
@@ -404,9 +417,9 @@ def segment_image(page_image_path, no_segmentation=False):
 	heights = [bounding_boxes[i][3] for i in range(len(bounding_boxes))]
 	mean = np.mean(heights)
 
-	# print(f"found {len(contours)} contours")
+	debug(f"found {len(contours)} contours", nesting_level=nesting_level)
 	boxes = get_list_of_box(img, contours)
-	# print(f"found {len(boxes)} boxes")
+	debug(f"found {len(boxes)} boxes", nesting_level=nesting_level)
 	rows, cols = get_row_and_columns(boxes, mean)
 
 	num_cols = 0
@@ -426,7 +439,18 @@ def segment_image(page_image_path, no_segmentation=False):
 
 '''
 '''
-def save_image_segments(image_segments, page_image_name, segment_output_directory, segment_min_height=3500, dpi=600):
+def save_image_segments(image_segments, page_image_path, page_image_name, segment_output_directory, segment_min_height=3500, dpi=600, nesting_level=0):
+	crop_left_by = 5
+	crop_right_by = 5
+	crop_top_by = 5
+	crop_bottom_by = 5
+	resize_x_by = 2
+	resize_y_by = 2
+	border_xy = 10
+
+    # open the page image
+	page_img = Image.open(page_image_path)
+
 	count_saved = 0
 	row_num = 1
 	for row in image_segments:
@@ -434,41 +458,32 @@ def save_image_segments(image_segments, page_image_name, segment_output_director
 		for col in row:
 			idx = 1
 			for box in col:
-				y, x, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
+				x, y, w, h = box['box'][0], box['box'][1], box['box'][2], box['box'][3]
+                
 
 				# remove boxes with less than a specified height
+				segment_name = f"{page_image_name}__{row_num}x{col_num}-{idx:02d}"
+				segment_output_path = f"{segment_output_directory}/{segment_name}.png"
 				if h > segment_min_height:
-					img = box['img']
+					# crop for segments
+					left = x + crop_left_by
+					top = y + crop_top_by
+					right = left + w - crop_left_by - crop_right_by
+					bottom = top + h - crop_top_by - crop_bottom_by
+					segment_img = page_img.crop((left, top, right, bottom))
 
-					# crop to remove black borders
-					img = img[9:h-9, 9:w-9]
+                    # extend image by adding white border
+					segment_img = ImageOps.expand(segment_img, border=border_xy, fill='white')
 
-					# manipulate image
-					kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
-
-					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
-					# img = cv2.resize(img, None, fx=3, fy=3, interpolation=cv2.INTER_CUBIC)
-					# img = cv2.copyMakeBorder(img, 1, 1, 1, 1, cv2.BORDER_CONSTANT, value=[255,255])
-					# img = cv2.dilate(img, kernel,iterations=1)
-					# img = cv2.erode(img, kernel,iterations=1)
-					# show_image(img=img)
-
-					# Perform morphological operations to remove noise
-					# img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel, iterations=1)
-					img = cv2.resize(img, None, fx=6, fy=6, interpolation=cv2.INTER_CUBIC)
-
-					output_path = f"{segment_output_directory}/{page_image_name}__{row_num}x{col_num}-{idx}.png"
-					rgb_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-					pil_image = Image.fromarray(rgb_image)
-					pil_image.save(output_path, dpi=(dpi,dpi))
-					box['do-ocr'] = True
-					box['img'] = img
+					# segment_img.save(segment_output_path, dpi=(dpi,dpi))
+					segment_img.save(segment_output_path)
+					debug(f"segment [{segment_name}] saved, height [{h}]", nesting_level=nesting_level)
 
 					count_saved = count_saved + 1
 	
 				else:
-					box['do-ocr'] = False
-
+					# debug(f"segment [{segment_name}] ignored, height [{h}]is less than allowed [{segment_min_height}]", nesting_level=nesting_level)
+					pass
 
 				idx = idx + 1
 

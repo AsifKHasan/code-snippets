@@ -123,13 +123,13 @@ def print_header(file_name, data):
 
 ''' remove watermark and save pdf pages as individual images
 '''
-def clean_and_save_pages(file_name, data, no_page_saving=False, dpi=600):
+def clean_and_save_pages(file_name, data, no_page_saving=False, dpi=600, first_page_dpi=600):
     input_pdf = f"{data['root-dir']}/{data['source-dir']}/{file_name}"
     debug(f"generating page images at [{dpi}] dpi", nesting_level=1)
 
     # directory where output images will be saved
     output_img_folder = f"{data['root-dir']}/{data['pages-dir']}"
-    num_pages = clean_and_pagify(input_pdf=input_pdf, output_img_folder=output_img_folder, no_page_saving=no_page_saving, clean_images=True, watermark_is_image=False, dpi=dpi)
+    num_pages = clean_and_pagify(input_pdf=input_pdf, output_img_folder=output_img_folder, no_page_saving=no_page_saving, clean_images=True, watermark_is_image=False, dpi=dpi, first_page_dpi=first_page_dpi)
     data['page-count'] = num_pages
     debug(f"[{num_pages}] page images generated at [{dpi}] dpi", nesting_level=1)
     print()
@@ -267,7 +267,7 @@ def parse_top_sheet(file_name, data, dpi=600):
 
 ''' segment pages for text blocks
 '''
-def segment_pages(file_name, data, no_segmentation=False, page_list=None, dpi=600):
+def segment_pages(file_name, data, no_segmentation=False, page_list=None, dpi=300):
     if no_segmentation:
         return
 
@@ -279,10 +279,10 @@ def segment_pages(file_name, data, no_segmentation=False, page_list=None, dpi=60
             os.makedirs(segment_output_directory, exist_ok=True)
 
             info(f"segmenting [{page_image_name}.png]", nesting_level=1)
-            image_segments = segment_image(page_image_path=page_image_path, no_segmentation=False)
+            image_segments = segment_image(page_image_path=page_image_path, no_segmentation=False, nesting_level=3)
             info(f"[{len(image_segments)}] segments found", nesting_level=2)
 
-            segments_saved = save_image_segments(image_segments=image_segments, page_image_name=page_image_name, segment_output_directory=segment_output_directory, segment_min_height=500, dpi=dpi)
+            segments_saved = save_image_segments(image_segments=image_segments, page_image_path=page_image_path, page_image_name=page_image_name, segment_output_directory=segment_output_directory, segment_min_height=300, dpi=dpi, nesting_level=3)
             info(f"[{segments_saved}] segments saved at [{dpi}] dpi", nesting_level=2)
 
             print()
@@ -310,7 +310,18 @@ def parse_segments(file_name, data, page_list=None, dpi=600):
 
             # traverse segments-dir for .png files
             info(f"parsing segments for [{page_image_name}]", nesting_level=2)
-            segment_files = glob.glob('*.png', root_dir=image_segments_path)
+            
+            # glob works in Python 3.10 or higher only
+            # segment_files = glob.glob('*.png', root_dir=image_segments_path)
+
+            segment_files = []
+            for root, dirs, files in os.walk(image_segments_path):
+                for file in files:
+                    if(file.endswith(".png")):
+                        segment_files.append(file)
+
+            segment_files = sorted(segment_files)
+
             segment_count = 0
             for segment_file in segment_files:
                 segment_count = segment_count + 1
@@ -388,22 +399,22 @@ if __name__ == '__main__':
 
     # there must be a *data* directory under ROOT_DIR
 	ROOT_DIR = args['directory'].replace('\\', '/')
-	# path_patterns = [r".*930119_.+_female.*"]
-	path_patterns = [r".*930119.*"]
+	path_patterns = [r".*930119_.+_female.*"]
+	# path_patterns = [r".*930119.*"]
 	DATA = traverse_directory(root_path=f"{ROOT_DIR}/data", path_patterns=path_patterns)
 	info(ROOT_DIR, nesting_level=0)
 	for file_name, data in DATA.items():
 		info(f"{file_name}", nesting_level=0)
 
 		parse_data_objects(file_name=file_name, data=data)
-		no_page_saving = False
-		clean_and_save_pages(file_name=file_name, data=data, no_page_saving=no_page_saving, dpi=600)
+		no_page_saving = True
+		clean_and_save_pages(file_name=file_name, data=data, no_page_saving=no_page_saving, dpi=300, first_page_dpi=600)
 		print_header(file_name=file_name, data=data)
 		parse_top_sheet(file_name=file_name, data=data, dpi=400)
 		page_list = [2]
 		no_segmentation = False
-		segment_pages(file_name=file_name, data=data, no_segmentation=no_segmentation, page_list=page_list, dpi=600)
-		parse_segments(file_name=file_name, data=data, page_list=page_list, dpi=600)
+		segment_pages(file_name=file_name, data=data, no_segmentation=no_segmentation, page_list=page_list, dpi=300)
+		parse_segments(file_name=file_name, data=data, page_list=page_list, dpi=300)
         
 		info(f"{file_name} .. DONE", nesting_level=0)
 		print()
