@@ -407,11 +407,14 @@ if __name__ == '__main__':
 		info(f"{file_name}", nesting_level=0)
 
 		parse_data_objects(file_name=file_name, data=data)
-		no_page_saving = True
+		
+        no_page_saving = False
 		clean_and_save_pages(file_name=file_name, data=data, no_page_saving=no_page_saving, dpi=300, first_page_dpi=600)
 		print_header(file_name=file_name, data=data)
-		parse_top_sheet(file_name=file_name, data=data, dpi=400)
-		page_list = [2]
+		
+        parse_top_sheet(file_name=file_name, data=data, dpi=400)
+		
+        page_list = [2]
 		no_segmentation = False
 		segment_pages(file_name=file_name, data=data, no_segmentation=no_segmentation, page_list=page_list, dpi=300)
 		parse_segments(file_name=file_name, data=data, page_list=page_list, dpi=300)
