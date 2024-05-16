@@ -46,44 +46,43 @@ destination-gsheets:
 
 # worksheets on which some work will be done
 worksheets:
-  - '006-executive'
-  - '007-executive'
-  - '008-executive'
-  - '024-findings'
-  - '025-findings'
-  - '026-findings'
-  - '027-findings'
-  - '028-findings'
-  - '029-findings'
-  - '030-findings'
-  - '031-findings'
-  - '032-findings'
-  - '033-findings'
-  - '034-findings'
-  - '035-findings'
-  - '036-findings'
-  - '037-findings'
-  - '038-findings'
-  - '039-findings'
-  - '040-findings'
-  - '041-findings'
-  - '042-findings'
-  - '044-payments'
-  - '045-payments'
-  - '046-payments'
-  - '047-payments'
-  - '048-payments'
-  - '049-payments'
-  - '050-payments'
-  - '060-viability-comments'
-  - '062-recommendations'
-  - '063-recommendations'
-  - '064-recommendations'
-  - '065-recommendations'
-  - '066-recommendations'
-  - '067-recommendations'
-  - '068-recommendations'
-
+  - 00-coverpage
+  - 01.a-general
+  - 01.b-request-proposal
+  - 01.c-proposal-preparation
+  - 01.d-proposal-submission
+  - 01.e-proposal-opening-evaluation
+  - 01.f-contract-award
+  - 02-pds
+  - 03.a-general
+  - 03.b-contract
+  - 03.c-personnel-sub-consultants
+  - 03.d-consultant-obligations
+  - 03.e-client-obligations
+  - 03.f-consultants-payments
+  - 03.g-time-control
+  - 04-pcc
+  - 06.01-general
+  - 06.02-scope
+  - 06.03-technical-specs
+  - 06.04-requirements
+  - 06.04.a-installation-deployment
+  - 06.04.b-post-sales-support
+  - 06.04.c-functional
+  - 06.04.d-non-functional
+  - 06.04.e-documentation
+  - 06.04.f-critical-components
+  - 06.04.g-information-security
+  - 06.04.h-integration-approach
+  - 06.04.i-uat
+  - 06.04.j-risk-management-plan
+  - 06.05-team-composition
+  - 06.06-deliverables
+  - 06.07-payment-schedule
+  - 06.08-qualification-criteria
+  - 06.09-evaluation-method
+  - z-head
+  - z-foot
 
 # work specifications to apply on a list of worksheets
 work-specs:
@@ -94,6 +93,14 @@ work-specs:
 
 
   # conditional formatting 
+  'A3:Z' :
+    # review-notes
+    conditional-formats:
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=not(isblank($A:$A))'
+        format    : 
+          backgroundColor : "#f4cccc"
 
 
 
