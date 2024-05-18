@@ -60,7 +60,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
     # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
     # g_sheet.column_pixels_in_row(worksheet_names=worksheet_names, row_to_update=1)
-    # g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
+    g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
 
     # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)

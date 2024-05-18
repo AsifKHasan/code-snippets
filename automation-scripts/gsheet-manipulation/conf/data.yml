@@ -54,14 +54,14 @@ worksheets:
   # - 01.e-proposal-opening-evaluation
   # - 01.f-contract-award
   # - 02-pds
-  # - 03.a-general
-  # - 03.b-contract
-  # - 03.c-personnel-sub-consultants
-  # - 03.d-consultant-obligations
-  # - 03.e-client-obligations
-  # - 03.f-consultants-payments
-  # - 03.g-time-control
-  - 04-pcc
+  - 03.a-general
+  - 03.b-contract
+  - 03.c-personnel-sub-consultants
+  - 03.d-consultant-obligations
+  - 03.e-client-obligations
+  - 03.f-consultants-payments
+  - 03.g-time-control
+  # - 04-pcc
   # - 06.01-general
   # - 06.02-scope
   # - 06.03-technical-specs
