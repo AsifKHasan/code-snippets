@@ -376,17 +376,32 @@ class GoogleSheet(object):
 
     ''' put column size in pixels in row 1 for all columns except A
     '''
-    def column_pixels_in_top_row(self, worksheet_names):
+    def column_pixels_in_row(self, worksheet_names, row_to_update):
         values, requests = [], []
         column_sizes = self.get_column_sizes()
         for worksheet_name in worksheet_names:
             worksheet = self.worksheet_by_name(worksheet_name)
             if worksheet:
-                vals, reqs = worksheet.column_pixels_in_top_row_requests(column_sizes=column_sizes)
+                vals, reqs = worksheet.column_pixels_in_top_row_requests(column_sizes=column_sizes, row_to_update=row_to_update)
                 values = values + vals
                 requests = requests + reqs
 
-        self.update_in_batch(values=values, requests=requests, requester='column_pixels_in_top_row')
+        self.update_in_batch(values=values, requests=requests, requester='column_pixels_in_row')
+
+
+
+    ''' resize columns with the size mentioned in pixel number in row 1 for that column
+    '''
+    def resize_columns_from_values_in_row(self, worksheet_names, row_to_consult):
+        values, requests = [], []
+        for worksheet_name in worksheet_names:
+            worksheet = self.worksheet_by_name(worksheet_name)
+            if worksheet:
+                vals, reqs = worksheet.resize_columns_from_values_in_row_requests(row_to_consult=row_to_consult)
+                values = values + vals
+                requests = requests + reqs
+
+        self.update_in_batch(values=values, requests=requests, requester='resize_columns_from_values_in_row')
 
 
 

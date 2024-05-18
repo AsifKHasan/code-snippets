@@ -25,10 +25,17 @@ class GoogleWorksheet(object):
 
 
 
-    ''' get values
+    ''' get values for a column - column in A1 notation
     '''
     def get_col_values(self, col_a1):
         return self.gspread_worksheet.col_values(LETTER_TO_COLUMN[col_a1])
+
+
+
+    ''' get values for a row - row starts with 1
+    '''
+    def get_row_values(self, row_num):
+        return self.gspread_worksheet.row_values(row_num)
 
 
 
@@ -451,6 +458,33 @@ class GoogleWorksheet(object):
 
 
 
+    ''' resize columns with the size mentioned in pixel number in row 1 for that column
+    '''
+    def resize_columns_from_values_in_row_requests(self, row_to_consult):
+        values = []
+        requests = []
+        column_specs = {}
+
+        # get the full row values
+        row_values = self.get_row_values(row_num=row_to_consult)
+        col_num = 1
+        for row_value in row_values:
+            col_a1 = COLUMN_TO_LETTER[col_num]
+            if row_value.isnumeric():
+                col_size = int(row_value)
+                # print(f"[{self.title}] column [{col_a1}] will be resized to [{col_size}]")
+                column_specs[col_a1] = {'size': col_size}
+
+            else:
+                # print(f"[{self.title}] column [{col_a1}] has a non-int value [{row_value}] will not be resized")
+                pass
+
+            col_num = col_num + 1
+            requests = requests + self.column_resize_requests(column_specs=column_specs)
+
+        return values, requests
+
+
     ''' put column size in pixels in row 1 for all columns except A
     '''
     def column_pixels_in_top_row_requests(self, column_sizes):
@@ -458,6 +492,7 @@ class GoogleWorksheet(object):
         range_work_specs = {}
         values = []
         requests = []
+
         for col_num in range(1, self.col_count()):
             cell_a1 = f"{column_to_letter(col_num + 1)}1"
             column_width = column_sizes[self.title][col_num]

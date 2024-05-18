@@ -93,14 +93,14 @@ work-specs:
 
 
   # conditional formatting 
-  'A3:Z' :
-    # review-notes
-    conditional-formats:
-      - type      : 'CUSTOM_FORMULA'
-        values    :
-          -  '=not(isblank($A:$A))'
-        format    : 
-          backgroundColor : "#f4cccc"
+  # 'A3:Z' :
+  #   # review-notes
+  #   conditional-formats:
+  #     - type      : 'CUSTOM_FORMULA'
+  #       values    :
+  #         -  '=not(isblank($A:$A))'
+  #       format    : 
+  #         backgroundColor : "#f4cccc"
 
 
 
