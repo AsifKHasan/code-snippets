@@ -19,19 +19,25 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # BEGIN work on a single worksheet rather than on a list of worksheets
     # -----------------------------------------------------------------------------------
 
-    # for worksheet_name in worksheet_names:
-    #     # get dimensions
-    #     num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-    #     worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-    #     num_rows, num_cols = worksheet.number_of_dimesnions()
-    #     if num_rows != 29:
-    #         print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+    for worksheet_name in worksheet_names:
+        # get dimensions
+        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
 
-    # add dimension
-    # if num_cols == 25:
-    #     worksheet.add_extra_columns(cols_to_add_at='V', cols_to_add=1)
-    # if num_rows == 6:
-    #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=3, rows_to_add=1)
+        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+
+        # num_rows, num_cols = worksheet.number_of_dimesnions()
+        # if num_rows != 29:
+        #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+
+        # add dimension
+        # if num_cols == 25:
+        # if True:
+        #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=1)
+        
+        # if num_rows == 6:
+        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=3, rows_to_add=1)
+
+        pass
 
     # -----------------------------------------------------------------------------------
     # END   work on a single worksheet rather than on a list of worksheets

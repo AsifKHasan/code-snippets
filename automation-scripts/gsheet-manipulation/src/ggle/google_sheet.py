@@ -458,3 +458,16 @@ class GoogleSheet(object):
             reqs = worksheet.dimension_add_requests(rows_to_add_at=rows_to_add_at, rows_to_add=rows_to_add)
             requests = requests + reqs
             self.update_in_batch(values=[], requests=requests, requester='add_rows')
+
+
+
+    ''' add column in a worksheet
+        columns will be added after rows_to_add_at
+    '''
+    def add_columns(self, worksheet_name, cols_to_add_at, cols_to_add):
+        worksheet = self.worksheet_by_name(worksheet_name, suppress_log=False)
+        if worksheet:
+            requests = []
+            reqs = worksheet.dimension_add_requests(cols_to_add_at=cols_to_add_at, cols_to_add=cols_to_add)
+            requests = requests + reqs
+            self.update_in_batch(values=[], requests=requests, requester='add_columns')

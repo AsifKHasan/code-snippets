@@ -176,10 +176,11 @@ class GoogleWorksheet(object):
 
 
 
+
     ''' worksheet methods to be called by gsheet to return back requests, not doing the actual work
     '''
 
-    ''' bulk create multiple worksheets by duplicating this worksheet
+    ''' bulk create multiple worksheets by duplicating this worksheet request
     '''
     def duplicate_worksheet_requests(self, new_worksheet_names):
         request_list = []
@@ -191,7 +192,7 @@ class GoogleWorksheet(object):
 
 
 
-    ''' remove extra columns
+    ''' remove extra columns request
     '''
     def remove_extra_columns_requests(self, cols_to_remove_from, cols_to_remove_to):
         request_list = self.dimension_remove_requests(cols_to_remove_from=cols_to_remove_from, cols_to_remove_to=cols_to_remove_to)
@@ -200,16 +201,7 @@ class GoogleWorksheet(object):
 
 
 
-    ''' add extra columns
-    '''
-    def add_extra_columns_requests(self, cols_to_add_at, cols_to_add=1):
-        request_list = self.dimension_add_requests(cols_to_add_at=cols_to_add_at, cols_to_add=cols_to_add)
-        info(f"[{cols_to_add}] column(s) to be added at [{cols_to_add_at}]", nesting_level=1)
-        return request_list
-
-
-
-    ''' remove trailing blank rows
+    ''' remove trailing blank rows request
     '''
     def remove_trailing_blank_rows_requests(self):
         rows_to_remove_from, rows_to_remove_to = self.trailing_blank_row_start_index(), 'end'
@@ -275,7 +267,7 @@ class GoogleWorksheet(object):
 
 
 
-    ''' link cells of a worksheet to drive-file/worksheet based type
+    ''' link cells of a worksheet to drive-file/worksheet based type request
         type is valid only if the range has two columns
         if the range has only one column default to worksheet link
     '''
@@ -343,7 +335,7 @@ class GoogleWorksheet(object):
 
 
 
-    ''' link cells to drive files request where cells values are names of drive files
+    ''' link cells to drive files request where cells values are names of drive files request
     '''
     def cell_to_drive_file_link_requests(self, range_specs_for_cells_to_link):
         range_work_specs = {}
@@ -483,6 +475,7 @@ class GoogleWorksheet(object):
             requests = requests + self.column_resize_requests(column_specs=column_specs)
 
         return values, requests
+
 
 
     ''' put column size in pixels in row 1 for all columns except A
