@@ -612,8 +612,17 @@
 
 
   # conditional formatting 
+  # format column E if blank and column D has some value
+  'E4:E' :
+    conditional-formats:
+      - type      : 'CUSTOM_FORMULA'
+        values    :
+          -  '=and(not(isblank($D:$D)), isblank($E:$E))'
+        format    : 
+          backgroundColor : "#f4cccc"
+
+  # review-notes
   'A3:Z' :
-    # review-notes
     conditional-formats:
       - type      : 'CUSTOM_FORMULA'
         values    :
@@ -664,8 +673,9 @@
       font-family       : Arial
       font-size         : 11
       valign            : top
-      border around cells
-    
+
+
+    # border around cells
     'B3:Z'          :
       border-color      : '#b7b7b7'
       link -toc-new at cell A1 and left align the cell

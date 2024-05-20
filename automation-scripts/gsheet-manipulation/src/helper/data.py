@@ -2687,14 +2687,11 @@ WORKSHEET_STRUCTURE_PDS = {
 
 # Adhoc worksheet structure
 WORKSHEET_STRUCTURE_ADHOC = {
-    "*": {
-        "columns": {
-            'A': {'size': 100, },
-            'B': {'size':  40, },
-            'C': {'size': 560, },
-            'D': {'size':  80, },
-            'E': {'size':  40, },
-            'F': {'size': 560, },
+    '*': {
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True, },
         },
     },
 }

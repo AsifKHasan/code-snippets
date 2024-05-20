@@ -375,6 +375,10 @@ class GoogleWorksheet(object):
         # work on the columns - size, alignemnts, fonts and wrapping
         range_work_specs = {}
 
+        #  freeze rows and columns
+        frozen_rows, frozen_columns = worksheet_struct.get('frozen-rows', 0), worksheet_struct.get('frozen-columns', 0)
+        dimension_freeze_requests = self.dimension_freeze_requests(frozen_rows=frozen_rows, frozen_cols=frozen_columns)
+
         if 'rows' in worksheet_struct:
             # requests for row resizing
             row_resize_requests = self.row_resize_requests(row_specs=worksheet_struct['rows'])
@@ -426,7 +430,7 @@ class GoogleWorksheet(object):
             review_notes_format_requests = []
 
         # merge formats
-        requests = row_resize_requests + column_resize_requests + column_format_requests + data_validation_requests + range_format_requests + conditional_format_requests + review_notes_format_requests
+        requests = dimension_freeze_requests + row_resize_requests + column_resize_requests + column_format_requests + data_validation_requests + range_format_requests + conditional_format_requests + review_notes_format_requests
 
         return values, requests
 

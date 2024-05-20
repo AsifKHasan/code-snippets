@@ -16,6 +16,10 @@ final_list = []
 
 def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
 
+    if worksheet_names is None : worksheet_names = []
+    if work_specs is None : work_specs = {}
+    if find_replace_patterns is None : find_replace_patterns = []
+
     # BEGIN work on a single worksheet rather than on a list of worksheets
     # -----------------------------------------------------------------------------------
 
@@ -32,10 +36,11 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # add dimension
         # if num_cols == 25:
         # if True:
-        #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=1)
+        #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=3)
         
         # if num_rows == 6:
-        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=3, rows_to_add=1)
+        # if True:
+        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=2, rows_to_add=1)
 
         pass
 
@@ -140,9 +145,9 @@ if __name__ == '__main__':
         gsheet_names = config['gsheets']
 
     destination_gsheet_names = config['destination-gsheets']
-    worksheet_names = config['worksheets']
-    work_specs = config['work-specs']
-    find_replace_patterns = config['find-replace-patterns']
+    worksheet_names = config.get('worksheets', [])
+    work_specs = config.get('work-specs', {})
+    find_replace_patterns = config.get('find-replace-patterns', [])
 
     g_service = GoogleService('../conf/credential.json')
     count = 0
