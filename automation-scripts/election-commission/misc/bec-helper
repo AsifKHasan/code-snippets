@@ -33,23 +33,3 @@ ocrmypdf --force-ocr -l ben --clean --sidecar "%PROJ_HOME%/out/output.txt" "%PRO
 
 ocrmypdf --force-ocr -l ben --clean --sidecar "${PROJ_HOME}/out/output.txt" "${PROJ_HOME}/out/voter-cleaned.pdf" "${PROJ_HOME}/out/voter-cleaned-out.pdf"
 
-
-
-
-
-\n০ - \n\n০
-\n১ - \n\n১
-
-\n\n\n -> \n\n
-\n \n\n -> \n\n
-
-
-মুস্ডরিয়া
-মুস্ুরিয়া -> মুশুরিয়া
-\গ্ৃহিনী -> গ্ৃহিনী
-
-
-
-
-জেলা: .+ -> 
-ভোটার এলাকার কোড:.+ ->
