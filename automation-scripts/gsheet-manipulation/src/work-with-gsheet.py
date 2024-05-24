@@ -71,7 +71,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
     # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
     # g_sheet.column_pixels_in_row(worksheet_names=worksheet_names, row_to_update=1)
-    g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
+    # g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
 
     # work on ranges etc.
     # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
@@ -82,7 +82,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # cell linking and ordering
     # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
-    # g_sheet.link_cells_to_drive_files(worksheet_name='cost', range_specs_for_cells_to_link=['M3:M'])
+    # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
     # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet

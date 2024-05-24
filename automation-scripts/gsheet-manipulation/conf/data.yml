@@ -63,20 +63,20 @@ worksheets:
   # - 03.g-time-control
   # - 04-pcc
   
-  - 05.a-technical-forms
-  - 05.a.1-technical-submission
-  - 05.a.2-organization-experience
-  - 05.a.3-comments-suggestions
-  - 05.a.4-methodology-work-plan
-  - 05.a.5-work-schedule
-  - 05.a.6-team-task
-  - 05.a.7-staffing-schedule
-  - 05.a.8-curriculum-vitae
-  - 05.b-financial-forms
-  - 05.b.1-financial-submission
-  - 05.b.2-cost-summary
-  - 05.b.3-staff-remuneration
-  - 05.b.4-reimbursable-expenses
+  # - 05.a-technical-forms
+  # - 05.a.1-technical-submission
+  # - 05.a.2-organization-experience
+  # - 05.a.3-comments-suggestions
+  # - 05.a.4-methodology-work-plan
+  # - 05.a.5-work-schedule
+  # - 05.a.6-team-task
+  # - 05.a.7-staffing-schedule
+  # - 05.a.8-curriculum-vitae
+  # - 05.b-financial-forms
+  # - 05.b.1-financial-submission
+  # - 05.b.2-cost-summary
+  # - 05.b.3-staff-remuneration
+  # - 05.b.4-reimbursable-expenses
 
   # - 06.01-general
   # - 06.02-scope
@@ -104,6 +104,7 @@ worksheets:
 
   # - z-head
   # - z-foot
+
 
 # work specifications to apply on a list of worksheets
 work-specs:
