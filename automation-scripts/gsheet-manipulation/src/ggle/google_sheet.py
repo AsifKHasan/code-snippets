@@ -333,8 +333,12 @@ class GoogleSheet(object):
         worksheet_dict = self.worksheets_as_dict()
         worksheet_struct = None
 
-        # we may have a specific workload defined for the worksheet and if there is not, we may have a common (*) worksload defined
+        # get conditional formats
+        conditional_formats = self.get_conditional_formats(try_for=3)
+
+        # we may have a specific workload defined for the worksheet and if there is not, we may have a common (*) workload defined
         for worksheet_name in worksheet_names:
+            # clear existing conditional formats
             if worksheet_name not in WORKSHEET_STRUCTURE:
                 warn(f"No structure defined for formatting [{worksheet_name}]", nesting_level=1)
                 if '*' in WORKSHEET_STRUCTURE:
@@ -348,6 +352,11 @@ class GoogleSheet(object):
 
             worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
             if worksheet_to_work_on:
+                # clear conditional formats
+                number_of_rules = len(conditional_formats[worksheet_name])
+                reqs = worksheet_to_work_on.clear_conditional_formats_requests(number_of_rules=number_of_rules)
+                requests = requests + reqs
+
                 vals, reqs = worksheet_to_work_on.format_worksheet_requests(worksheet_dict=worksheet_dict, worksheet_struct=worksheet_struct)
                 values = values + vals
                 requests = requests + reqs

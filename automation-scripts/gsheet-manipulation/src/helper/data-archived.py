@@ -165,9 +165,8 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "cell-empty-markers": ["W3:Y"],
     },
-
     "00-layout": {
-        "num-rows": 29,
+        "num-rows": 27,
         "num-columns": 5,
         "frozen-rows": 2,
         "frozen-columns": 0,
@@ -270,305 +269,354 @@ WORKSHEET_STRUCTURE_RESUME = {
         "review-notes": True,
         "ranges": {
             # whole worksheet
-                "A1:Z": {
-                    "valign": "top",
-                    "wrap": True,
-                    "bgcolor": "#FFFFFF",
-                    "border-color": "#B7B7B7",
-                    "no-border": True,
-                },
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            # -toc-new link
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            # column size in pixels
+            "B1:E1": {
+                "halign": "center",
+            },
+            # column label - review-notes
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+                "weight": "bold",
+            },
+            # column label - content
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "weight": "bold",
+                "merge": True,
+            },
+            # name of resource
+            "B3": {
+                "value": "1",
+                "weight": "bold",
+            },
+            "C3": {
+                "value": "NAME OF RESOURCE",
+                "weight": "bold",
+            },
+            "D3": {
+                "value": "='01-personal'!D3",
+            },
+            # date of birth
+            "B4": {
+                "value": "2",
+                "weight": "bold",
+            },
+            "C4": {
+                "value": "DATE OF BIRTH",
+                "weight": "bold",
+            },
+            "D4": {
+                "value": "='01-personal'!D5",
+            },
+            # nationality
+            "B5": {
+                "value": "3",
+                "weight": "bold",
+            },
+            "C5": {
+                "value": "NATIONALITY",
+                "weight": "bold",
+            },
+            "D5": {
+                "value": "='01-personal'!D6",
+            },
+            # nationality
+            "E3:E5": {
+                "value": "='01-personal'!E3",
+                "merge": True 
+            },
 
-            # row 1 : -toc-new and column sizes
-                "A1": {
-                    "value": "-toc-new",
-                    "ws-name-to-link": "-toc-new",
-                    "halign": "left",
-                },
-                "B1": {
-                    "value": "30",
-                    "halign": "center",
-                },
-                "C1": {
-                    "value": "250",
-                    "halign": "center",
-                },
-                "D1": {
-                    "value": "250",
-                    "halign": "center",
-                },
-                "E1": {
-                    "value": "270",
-                    "halign": "center",
-                },
-
-            # row 2 : column label - review-notes
-                "A2": {
-                    "value": "review-notes",
-                    "halign": "left",
-                    "weight": "bold",
-                },
-                "B2:E2": {
-                    "value": "content",
-                    "halign": "left",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 3: name of resource
-                "B3": {
-                    "value": "1",
-                    "weight": "bold",
-                },
-                "C3": {
-                    "value": "NAME OF RESOURCE",
-                    "weight": "bold",
-                },
-                "D3": {
-                    "value": "='01-personal'!D3",
-                },
-                # photograph
-                "E3:E5": {
-                    "value": "='01-personal'!E3",
-                    "merge": True 
-                },
-
-            # row 4: date of birth
-                "B4": {
-                    "value": "2",
-                    "weight": "bold",
-                },
-                "C4": {
-                    "value": "DATE OF BIRTH",
-                    "weight": "bold",
-                },
-                "D4": {
-                    "value": "='01-personal'!D5",
-                },
-
-            # row 5: nationality
-                "B5": {
-                    "value": "3",
-                    "weight": "bold",
-                },
-                "C5": {
-                    "value": "NATIONALITY",
-                    "weight": "bold",
-                },
-                "D5": {
-                    "value": "='01-personal'!D6",
-                },
-            
-            # row 6: blank
-                "B6:I6": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 7: summary of prefessional experience
-                "B7": {
-                    "value": "4",
-                    "weight": "bold",
-                },
-                "C7:E7": {
-                    "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 8: summary of prefessional experience
-                "B8:E8": {
-                    "value": "02-career-highlight",
-                    "ws-name-to-link": "02-career-highlight",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-            
-            # row 9: blank
-                "B9:I9": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 10: education
-                "B10": {
-                    "value": "5",
-                    "weight": "bold",
-                },
-                "C10:E10": {
-                    "value": "EDUCATION",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 11: education
-                "B11:E11": {
-                    "value": "03-education",
-                    "ws-name-to-link": "03-education",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 12: blank
-                "B12:I12": {
-                    "value": "",
-                    "note": '{"content": "free", "new-page": true}',
-                    "merge": True,
-                },
-
-            # row 13: employment record
-                "B13": {
-                    "value": "6a",
-                    "weight": "bold",
-                },
-                "C13:E13": {
-                    "value": "EMPLOYMENT RECORD",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 14: employment record
-                "B14": {
-                    "value": "06-job-history",
-                    "ws-name-to-link": "06-job-history",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 15: blank
-                "B15:I15": {
-                    "value": "",
-                    "note": '{"content": "free", "new-page": true}',
-                    "merge": True,
-                },
-
-            # row 16: professional experience
-                "B16": {
-                    "value": "6b",
-                    "weight": "bold",
-                },
-                "C16:E16": {
-                    "value": "PROFESSIONAL EXPERIENCE",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 17: professional experience
-                "B17": {
-                    "value": "07-project-roles",
-                    "ws-name-to-link": "07-project-roles",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 18: blank
-                "B18:I18": {
-                    "value": "",
-                    "note": '{"content": "free", "new-page": true}',
-                    "merge": True,
-                },
-
-            # row 19: technical expertise
-                "B19": {
-                    "value": "7",
-                    "weight": "bold",
-                },
-                "C19:E19": {
-                    "value": "TECHNICAL EXPERTISE",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 20: technical expertise
-                "B20": {
-                    "value": "05-technical-expertise",
-                    "ws-name-to-link": "05-technical-expertise",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 21: blank
-                "B21:I21": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 22: professional training
-                "B22": {
-                    "value": "8a",
-                    "weight": "bold",
-                },
-                "C22:E22": {
-                    "value": "PROFESSIONAL TRAINING",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 23: professional training
-                "B23:E23": {
-                    "value": "08-training",
-                    "ws-name-to-link": "08-training",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 24: blank
-                "B24:I24": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 25: professional certificates
-                "B25": {
-                    "value": "8b",
-                    "weight": "bold",
-                },
-                "C25:E25": {
-                    "value": "PROFESSIONAL CERTIFICATIONS",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 26: professional certificates
-                "B26": {
-                    "value": "09-certification",
-                    "ws-name-to-link": "09-certification",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 27: blank
-                "B27:I27": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 28: language proficency
-                "B28": {
-                    "value": "9",
-                    "weight": "bold",
-                },
-                "C28:E28": {
-                    "value": "LANGUAGES & DEGREE OF PROFICIENCY",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 29: language proficency
-                "B29": {
-                    "value": "11-language-proficiency",
-                    "ws-name-to-link": "11-language-proficiency",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
+            # summary of prefessional experience
+            "B6": {
+                "value": "",
+            },
+            "B7": {
+                "value": "4",
+                "weight": "bold",
+            },
+            "C7:E7": {
+                "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B8": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "note": '{"content": "free"}',
+            },
+            # education
+            "B9": {
+                "value": "",
+            },
+            "B10": {
+                "value": "5",
+                "weight": "bold",
+            },
+            "C10:E10": {
+                "value": "EDUCATION",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B11": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "note": '{"content": "free"}',
+            },
+            # employment record
+            "B12": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B13": {
+                "value": "6a",
+                "weight": "bold",
+            },
+            "C13:E13": {
+                "value": "EMPLOYMENT RECORD",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B14": {
+                "value": "06-job-history",
+                "ws-name-to-link": "06-job-history",
+                "note": '{"content": "free"}',
+            },
+            # professional experience
+            "B15": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B16": {
+                "value": "6b",
+                "weight": "bold",
+            },
+            "C16:E16": {
+                "value": "PROFESSIONAL EXPERIENCE",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B17": {
+                "value": "07-project-roles",
+                "ws-name-to-link": "07-project-roles",
+                "note": '{"content": "free"}',
+            },
+            # technical expertise
+            "B18": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B19": {
+                "value": "7",
+                "weight": "bold",
+            },
+            "C19:E19": {
+                "value": "TECHNICAL EXPERTISE",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B20": {
+                "value": "05-technical-expertise",
+                "ws-name-to-link": "05-technical-expertise",
+                "note": '{"content": "free"}',
+            },
+            # professional training
+            "B21": {
+                "value": "",
+            },
+            "B22": {
+                "value": "8a",
+                "weight": "bold",
+            },
+            "C22:E22": {
+                "value": "PROFESSIONAL TRAINING",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B23": {
+                "value": "08-training",
+                "ws-name-to-link": "08-training",
+                "note": '{"content": "free"}',
+            },
+            # professional certificates
+            "B24": {
+                "value": "",
+            },
+            "B25": {
+                "value": "8b",
+                "weight": "bold",
+            },
+            "C25:E25": {
+                "value": "PROFESSIONAL CERTIFICATIONS",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B26": {
+                "value": "09-certification",
+                "ws-name-to-link": "09-certification",
+                "note": '{"content": "free"}',
+            },
+            # language proficency
+            "B27": {
+                "value": "",
+            },
+            "B28": {
+                "value": "9",
+                "weight": "bold",
+            },
+            "C28:E28": {
+                "value": "LANGUAGES & DEGREE OF PROFICIENCY",
+                "weight": "bold",
+                "merge": True,
+            },
+            "B29": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "note": '{"content": "free"}',
+            },
         },
-
         "cell-empty-markers": [
             "B3:E5",
         ],
     },
-
-    "00-layout-PS7": {
-        "num-rows": 44,
+    "00-layout-USAID": {
+        "columns": {
+            "A": {"size": 100, "halign": "left", "wrap": True},
+            "B": {"size": 60},
+            "C": {"size": 340},
+            "D": {"size": 400},
+        },
+        "rows": {
+            "5": {"size": 10},
+            "8": {"size": 10},
+            "11": {"size": 10},
+            "14": {"size": 10},
+            "17": {"size": 10},
+        },
+        "ranges": {
+            "A1": {"value": "-toc-new", "ws-name-to-link": "-toc-new"},
+            "A2": {"value": "review-notes", "weight": "bold"},
+            "B2:D2": {"value": "content", "weight": "bold", "merge": True},
+            "B3:C3": {
+                "value": "Name:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
+            "D3": {
+                "value": "Proposed Position:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#F3F3F3",
+                "border-color": "#B7B7B7",
+            },
+            "B4": {"weight": "normal", "fgcolor": "#434343", "border-color": "#B7B7B7"},
+            "C4": {
+                "value": "='01-personal'!D3",
+                "weight": "normal",
+                "fgcolor": "#434343",
+                "border-color": "#B7B7B7",
+                "merge": True,
+            },
+            "D4": {"weight": "normal", "fgcolor": "#434343", "border-color": "#B7B7B7"},
+            "B5:D5": {"merge": True, "font-size": 4},
+            "B6:D6": {
+                "value": "Summary of personnel experience",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B7:D7": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B8:D8": {"merge": True, "font-size": 4},
+            "B9:D9": {
+                "value": "EDUCATION:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B10:D10": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B11:D11": {"merge": True, "font-size": 4},
+            "B12:D12": {
+                "value": "PROFESSIONAL EXPERIENCE:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B13:D13": {
+                "value": "06-job-history-USAID-FFBT",
+                "ws-name-to-link": "06-job-history-USAID-FFBT",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B14:D14": {"merge": True, "font-size": 4},
+            "B15:D15": {
+                "value": "LANGUAGE:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B16:D16": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B17:D17": {"merge": True, "font-size": 4},
+            "B18:D18": {
+                "value": "REFERENCES:",
+                "weight": "bold",
+                "fgcolor": "#666666",
+                "bgcolor": "#FFFFFF",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+            "B19:D19": {
+                "value": "16-references",
+                "ws-name-to-link": "16-references",
+                "merge": True,
+                "note": '{"content": "free"}',
+            },
+        },
+        "cell-empty-markers": [
+            "B4:D4",
+        ],
+    },
+    "00-layout-MRA-OMS": {
+        "num-rows": 49,
         "num-columns": 9,
         "frozen-rows": 2,
         "frozen-columns": 0,
@@ -628,556 +676,421 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "wrap": True,
             },
         },
-        "rows": {
-            "1": {
-                "size": 21,
+        "review-notes": True,
+        "ranges": {
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
             },
-            "2": {
-                "size": 21,
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
             },
-            "3": {
-                "size": 21,
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
             },
-            "4": {
-                "size": 21,
+            "B1:I1": {
+                "halign": "center",
             },
-            "5": {
-                "size": 21,
+            "B2:I2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
             },
-            "6": {
-                "size": 21,
+            "B3:G3": {
+                "merge": True,
+                "halign": "left",
+                "value": "Name of the Consultant",
             },
-            "7": {
-                "size": 8,
+            "H3:I3": {
+                "merge": True,
+                "halign": "left",
+                "value": "DOER Services Ltd.",
             },
-            "8": {
-                "size": 21,
+            "B4:G4": {
+                "merge": True,
+                "halign": "left",
+                "weight": "bold",
+                "value": "RFP IDENTIFICATION NO:",
             },
-            "9": {
-                "size": 21,
+            "H4:I4": {
+                "merge": True,
+                "halign": "left",
+                "weight": "bold",
+                "value": "53.04.0000.002.07.011.23-1306",
             },
-            "10": {
-                "size": 8,
+            "B5:G5": {
+                "merge": True,
+                "halign": "left",
+                "value": "Name of the Client",
             },
-            "11": {
-                "size": 21,
+            "H5:I5": {
+                "merge": True,
+                "halign": "left",
+                "value": "Microcredit Regulatory Authority",
             },
-            "12": {
-                "size": 21,
+            "B7": {
+                "value": "1",
             },
-            "13": {
-                "size": 8,
+            "C7:G7": {
+                "value": "PROPOSED POSITION",
             },
-            "14": {
-                "size": 21,
+            "H7": {
+                "value": "",
             },
-            "15": {
-                "size": 21,
+            "B8": {
+                "value": "2",
             },
-            "16": {
-                "size": 8,
+            "C8": {
+                "value": "NAME OF RESOURCE",
             },
-            "17": {
-                "size": 21,
+            "D8": {
+                "value": "='01-personal'!D3",
             },
-            "18": {
-                "size": 8,
+            "B9": {
+                "value": "3",
             },
-            "19": {
-                "size": 21,
+            "C9": {
+                "value": "DATE OF BIRTH",
             },
-            "20": {
-                "size": 21,
+            "D9": {
+                "value": "='01-personal'!D5",
             },
-            "21": {
-                "size": 8,
+            "B10": {
+                "value": "4",
             },
-            "22": {
-                "size": 21,
+            "C10": {
+                "value": "NATIONALITY",
             },
-            "23": {
-                "size": 8,
+            "D10": {
+                "value": "='01-personal'!D6",
             },
-            "24": {
-                "size": 21,
+            # 'B3:E6': {'border-color': '#B7B7B7', },
+            "B7": {
+                "value": "",
             },
-            "25": {
-                "size": 21,
+            "B8": {
+                "value": "4",
             },
-            "26": {
-                "size": 8,
+            "C8:E8": {
+                "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
+                "merge": True,
             },
-            "27": {
-                "size": 21,
+            "B9": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "note": '{"content": "free"}',
             },
-            "28": {
-                "size": 8,
+            "B10": {
+                "value": "",
             },
-            "29": {
-                "size": 21,
+            "B11": {
+                "value": "5",
             },
-            "30": {
-                "size": 21,
+            "C11:E11": {
+                "value": "EDUCATION",
+                "merge": True,
             },
-            "31": {
-                "size": 8,
+            "B12": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "note": '{"content": "free"}',
             },
-            "32": {
-                "size": 21,
+            "B13": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
             },
-            "33": {
-                "size": 21,
+            "B14": {
+                "value": "6",
             },
-            "34": {
-                "size": 21,
+            "C14:E14": {
+                "value": "EMPLOYMENT RECORD",
+                "merge": True,
             },
-            "35": {
-                "size": 21,
+            "B15": {
+                "value": "06-job-history",
+                "ws-name-to-link": "06-job-history",
+                "note": '{"content": "free"}',
             },
-            "36": {
-                "size": 21,
+            "B16": {
+                "value": "",
             },
-            "37": {
-                "size": 21,
+            "B17": {
+                "value": "07-project-roles",
+                "ws-name-to-link": "07-project-roles",
+                "note": '{"content": "free"}',
             },
-            "38": {
-                "size": 21,
+            "B18": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
             },
-            "39": {
-                "size": 21,
+            "B19": {
+                "value": "7",
             },
-            "40": {
-                "size": 21,
+            "C19:E19": {
+                "value": "TECHNICAL EXPERTISE",
+                "merge": True,
             },
-            "41": {
-                "size": 21,
+            "B20": {
+                "value": "05-technical-expertise",
+                "ws-name-to-link": "05-technical-expertise",
+                "note": '{"content": "free"}',
             },
-            "42": {
-                "size": 21,
+            "B21": {
+                "value": "",
             },
-            "43": {
-                "size": 21,
+            "B22": {
+                "value": "8",
             },
-            "44": {
-                "size": 21,
+            "C22:E22": {
+                "value": "TRAINING AND CERTIFICATIONS",
+                "merge": True,
             },
+            "B23": {
+                "value": "08-training",
+                "ws-name-to-link": "08-training",
+                "note": '{"content": "free"}',
+            },
+            "B24": {
+                "value": "",
+            },
+            "B25": {
+                "value": "09-certification",
+                "ws-name-to-link": "09-certification",
+                "note": '{"content": "free"}',
+            },
+            "B26": {
+                "value": "",
+            },
+            "B27": {
+                "value": "9",
+            },
+            "C27:E27": {
+                "value": "LANGUAGES & DEGREE OF PROFICIENCY",
+                "merge": True,
+            },
+            "B28": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "note": '{"content": "free"}',
+            },
+        },
+        "cell-empty-markers": [
+            "B3:I5",
+            "B7:I10",
+            "B12:I13",
+            "B15:I16",
+            "B18:I19",
+            "B21:I21",
+            "B23:I24",
+            "B26:I26",
+            "B28:I29",
+            "B31:I32",
+            "B34:I35",
+            "B37:I37",
+            "B39:I39",
+            "B41:I41",
+            "D43",
+            "F43",
+            "D45:G47",
+            "H45:I47",
+            "D48:G49",
+            "H48:I49",
+        ],
+    },
+    "00-layout-RHD-TMC": {
+        "num-rows": 28,
+        "num-columns": 5,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "columns": {
+            "A": {"size": 100, "halign": "left", "valign": "top", "wrap": True},
+            "B": {"size": 30, "halign": "left", "valign": "top", "wrap": True},
+            "C": {"size": 250, "halign": "left", "valign": "top", "wrap": True},
+            "D": {"size": 250, "halign": "left", "valign": "top", "wrap": True},
+            "E": {"size": 270, "halign": "center", "valign": "top", "wrap": True},
         },
         "review-notes": True,
         "ranges": {
-            # full worksheet
-                "A1:Z": {
-                    "valign": "top",
-                    "wrap": True,
-                    "bgcolor": "#FFFFFF",
-                    "border-color": "#B7B7B7",
-                    "no-border": True,
-                },
-
-            # row 1 : -tow-new and column sizes
-                "A1": {
-                    "value": "-toc-new",
-                    "ws-name-to-link": "-toc-new",
-                    "halign": "left",
-                },
-                "B1": {
-                    "value": "40",
-                    "halign": "center",
-                },
-                "C1": {
-                    "value": "180",
-                    "halign": "center",
-                },
-                "D1": {
-                    "value": "50",
-                    "halign": "center",
-                },
-                "E1": {
-                    "value": "30",
-                    "halign": "center",
-                },
-                "F1": {
-                    "value": "50",
-                    "halign": "center",
-                },
-                "G1": {
-                    "value": "30",
-                    "halign": "center",
-                },
-                "H1": {
-                    "value": "300",
-                    "halign": "center",
-                },
-                "I1": {
-                    "value": "320",
-                    "halign": "center",
-                },
-
-            # row 2 : review-notes and column labels
-                "A2": {
-                    "value": "review-notes",
-                    "halign": "left",
-                },
-                "B2:I2": {
-                    "value": "content",
-                    "halign": "left",
-                    "merge": True,
-                },
-
-            # row 3 : proposed position, photograph
-                "B3": {
-                    "value": "1",
-                    "weight": "bold",
-                },
-                "C3:G3": {
-                    "value": "PROPOSED POSITION FOR THIS PROJECT",
-                    "weight": "bold",
-                    "merge": True,
-                },
-                "H3": {
-                    "value": "",
-                },
-                # photograph
-                "I3:I6": {
-                    "value": "='01-personal'!E3",
-                    "halign": "center",
-                    "merge": True,
-                },
-
-            # row 4 : staff name
-                "B4": {
-                    "value": "2",
-                    "weight": "bold",
-                },
-                "C4:G4": {
-                    "value": "NAME OF STAFF",
-                    "weight": "bold",
-                    "merge": True,
-                },
-                "H4": {
-                    "value": "='01-personal'!D3",
-                },
-
-            # row 5 : date of birth
-                "B5": {
-                    "value": "3",
-                    "weight": "bold",
-                },
-                "C5:G5": {
-                    "value": "DATE OF BIRTH",
-                    "weight": "bold",
-                },
-                "H5": {
-                    "value": "='01-personal'!D5",
-                },
-
-            # row 6 : nationality
-                "B6": {
-                    "value": "4",
-                    "weight": "bold",
-                },
-                "C6:G6": {
-                    "value": "NATIONALITY",
-                    "weight": "bold",
-                    "merge": True,
-                },
-                "H6": {
-                    "value": "='01-personal'!D6",
-                },
-
-            # row 7 : blank
-                "B7:I7": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 8 : membership
-                "B8": {
-                    "value": "5",
-                    "weight": "bold",
-                },
-                "C8:I8": {
-                    "value": "MEMBERSHIP IN PROFESSIONAL SOCIETIES",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 9 : membership
-                "B9:I9": {
-                    "value": "10-membership",
-                    "ws-name-to-link": "10-membership",
-                    "note": '{"content": "free"}',
-                },
-
-            # row 10 : blank
-                "B10:I10": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 11 : education
-                "B11": {
-                    "value": "6",
-                    "weight": "bold",
-                },
-                "C11:I11": {
-                    "value": "EDUCATION",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 12 : education
-                "B12:I12": {
-                    "value": "03-education",
-                    "ws-name-to-link": "03-education",
-                    "note": '{"content": "free"}',
-                },
-
-            # row 13 : blank
-                "B13:I13": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 14 : training
-                "B14": {
-                    "value": "7",
-                    "weight": "bold",
-                },
-                "C14:I14": {
-                    "value": "OTHER TRAINING",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 15 : training
-                "B15:I15": {
-                    "value": "08-training",
-                    "ws-name-to-link": "08-training",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 16 : blank
-                "B16:I16": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 17 : certification
-                "B17:I17": {
-                    "value": "09-certification",
-                    "ws-name-to-link": "09-certification",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 18 : blank
-                "B18:I18": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 19 : language
-                "B19": {
-                    "value": "8",
-                    "weight": "bold",
-                },
-                "C19:I19": {
-                    "value": "LANGUAGES & DEGREE OF PROFICIENCY",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 20 : language
-                "B20:I20": {
-                    "value": "11-language-proficiency",
-                    "ws-name-to-link": "11-language-proficiency",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 21 : blank
-                "B21:I21": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 22 : work countries
-                "B22": {
-                    "value": "9",
-                    "weight": "bold",
-                },
-                "C22:G22": {
-                    "value": "COUNTRIES OF WORK EXPERIENCE",
-                    "merge": True,
-                },
-                "H22:I22": {
-                    # "value": "",
-                    "merge": True,
-                },
-
-            # row 23 : blank
-                "B23:I23": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 24 : employment
-                "B24": {
-                    "value": "6",
-                    "weight": "bold",
-                },
-                "C24:I24": {
-                    "value": "EMPLOYMENT RECORD",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 25 : employment
-                "B25:I25": {
-                    "value": "06-job-history",
-                    "ws-name-to-link": "06-job-history",
-                    "note": '{"content": "free"}',
-                },
-
-            # row 26 : blank
-                "B26:I26": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 27 : project roles
-                "B27:I27": {
-                    "value": "07-project-roles",
-                    "ws-name-to-link": "07-project-roles",
-                    "note": '{"content": "free"}',
-                },
-
-            # row 28 : blank
-                "B28:I28": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 29 : work undertaken
-                "B29": {
-                    "value": "11",
-                    "weight": "bold",
-                },
-                "C29:I29": {
-                    "value": "WORK UNDERTAKEN THAT BEST ILLUSTRATES YOUR CAPABILITY TO HANDLE THIS ASSIGNMENT",
-                    "weight": "bold",
-                    "merge": True,
-                },
-
-            # row 30 : work undertaken
-                "B30:I30": {
-                    "value": "02-career-highlight",
-                    "ws-name-to-link": "02-career-highlight",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                },
-
-            # row 31 : blank
-                "B31:I31": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 32 : undertaking
-                "B32:I32": {
-                    "merge": True,
-                },
-
-            # row 33 : blank
-                "B33:I33": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 34 : undertaking
-                "B34:I34": {
-                    "merge": True,
-                },
-
-            # row 35 : blank
-                "B35:I35": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 36 : undertaking
-                "B36:I36": {
-                    "merge": True,
-                },
-
-            # row 37 : blank
-                "B37:I37": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 38 : 
-                "D38": {
-                    "value": "Yes",
-                    "halign": "right",
-                },
-                "E38": {
-                    "value": "✔",
-                    "halign": "center",
-                },
-                "F38": {
-                    "value": "No",
-                    "halign": "right",
-                },
-                "H38": {
-                    "value": "Signature",
-                    "halign": "right",
-                },
-                "I38:I42": {
-                    "value": "",
-                    "merge": True,
-                },
-
-            # row 43 : 
-                "H43": {
-                    "value": "Date of Signing",
-                    "halign": "right",
-                },
-                "I43": {
-                    "value": "",
-                    "halign": "center",
-                },
-
-            # row 44 : 
-                "I44": {
-                    "value": "Day / Month / Year",
-                    "halign": "center",
-                },
+            "A1:Z": {
+                "valign": "top",
+                "wrap": True,
+                "bgcolor": "#FFFFFF",
+                "border-color": "#B7B7B7",
+                "no-border": True,
+            },
+            "A1": {
+                "value": "-toc-new",
+                "ws-name-to-link": "-toc-new",
+                "halign": "left",
+            },
+            "A2": {
+                "value": "review-notes",
+                "halign": "left",
+            },
+            "B1:E1": {
+                "halign": "center",
+            },
+            "B2:E2": {
+                "value": "content",
+                "halign": "left",
+                "merge": True,
+            },
+            "B3": {
+                "value": "1",
+            },
+            "C3": {
+                "value": "PROPOSED POSITION",
+            },
+            "D3": {
+                "value": "",
+            },
+            "B4": {
+                "value": "2",
+            },
+            "C4": {
+                "value": "NAME OF RESOURCE",
+            },
+            "D4": {
+                "value": "='01-personal'!D3",
+            },
+            "B5": {
+                "value": "3",
+            },
+            "C5": {
+                "value": "DATE OF BIRTH",
+            },
+            "D5": {
+                "value": "='01-personal'!D5",
+            },
+            "B6": {
+                "value": "4",
+            },
+            "C6": {
+                "value": "NATIONALITY",
+            },
+            "D6": {
+                "value": "='01-personal'!D6",
+            },
+            # 'B3:E6': {'border-color': '#B7B7B7', },
+            "B7": {
+                "value": "",
+            },
+            "B8": {
+                "value": "4",
+            },
+            "C8:E8": {
+                "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
+                "merge": True,
+            },
+            "B9": {
+                "value": "02-career-highlight",
+                "ws-name-to-link": "02-career-highlight",
+                "note": '{"content": "free"}',
+            },
+            "B10": {
+                "value": "",
+            },
+            "B11": {
+                "value": "5",
+            },
+            "C11:E11": {
+                "value": "EDUCATION",
+                "merge": True,
+            },
+            "B12": {
+                "value": "03-education",
+                "ws-name-to-link": "03-education",
+                "note": '{"content": "free"}',
+            },
+            "B13": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B14": {
+                "value": "6",
+            },
+            "C14:E14": {
+                "value": "EMPLOYMENT RECORD",
+                "merge": True,
+            },
+            "B15": {
+                "value": "06-job-history",
+                "ws-name-to-link": "06-job-history",
+                "note": '{"content": "free"}',
+            },
+            "B16": {
+                "value": "",
+            },
+            "B17": {
+                "value": "07-project-roles",
+                "ws-name-to-link": "07-project-roles",
+                "note": '{"content": "free"}',
+            },
+            "B18": {
+                "value": "",
+                "note": '{"content": "free", "new-page": true}',
+            },
+            "B19": {
+                "value": "7",
+            },
+            "C19:E19": {
+                "value": "TECHNICAL EXPERTISE",
+                "merge": True,
+            },
+            "B20": {
+                "value": "05-technical-expertise",
+                "ws-name-to-link": "05-technical-expertise",
+                "note": '{"content": "free"}',
+            },
+            "B21": {
+                "value": "",
+            },
+            "B22": {
+                "value": "8",
+            },
+            "C22:E22": {
+                "value": "TRAINING AND CERTIFICATIONS",
+                "merge": True,
+            },
+            "B23": {
+                "value": "08-training",
+                "ws-name-to-link": "08-training",
+                "note": '{"content": "free"}',
+            },
+            "B24": {
+                "value": "",
+            },
+            "B25": {
+                "value": "09-certification",
+                "ws-name-to-link": "09-certification",
+                "note": '{"content": "free"}',
+            },
+            "B26": {
+                "value": "",
+            },
+            "B27": {
+                "value": "9",
+            },
+            "C27:E27": {
+                "value": "LANGUAGES & DEGREE OF PROFICIENCY",
+                "merge": True,
+            },
+            "B28": {
+                "value": "11-language-proficiency",
+                "ws-name-to-link": "11-language-proficiency",
+                "note": '{"content": "free"}',
+            },
         },
-
         "cell-empty-markers": [
-            "B3:I5",
-            "B8:I9",
-            "B11:I12",
-            "B14:I15",
-            "B19:I20",
-            "B22:I22",
-            "B24:I25",
-            "B27:I27",
-            "B32:I32",
-            "B29:I30",
-            "B32:I32",
-            "B34:I34",
-            "B36:I36",
-            "D38:F38",
-            "H38",
-            "I38:I42",
-            "H43:I43",
-            "I44",
+            "B3:E6",
         ],
     },
-
     "01-personal": {
         "num-columns": 5,
         "frozen-rows": 2,
@@ -1221,7 +1134,6 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "cell-empty-markers": ["B3:Z"],
     },
-
     "02-career-highlight": {
         "num-columns": 4,
         "frozen-rows": 2,
@@ -1263,7 +1175,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "03-education": {
         "num-columns": 5,
         "frozen-rows": 3,
@@ -1334,7 +1245,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "04-managerial-expertise": {
         "num-columns": 4,
         "frozen-rows": 3,
@@ -1390,7 +1300,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "05-technical-expertise": {
         "num-columns": 4,
         "frozen-rows": 3,
@@ -1446,7 +1355,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "06-job-history": {
         "num-columns": 5,
         "frozen-rows": 3,
@@ -1509,7 +1417,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "06-job-history-USAID": {
         "columns": {
             "A": {"size": 100, "halign": "left", "wrap": True},
@@ -1531,7 +1438,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B2:E2": {"value": "content", "halign": "left", "merge": True},
         },
     },
-
     "07-project-roles": {
         "num-columns": 5,
         "frozen-rows": 3,
@@ -1594,7 +1500,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "08-training": {
         "num-columns": 4,
         "frozen-rows": 3,
@@ -1658,7 +1563,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "09-certification": {
         "num-columns": 5,
         "frozen-rows": 3,
@@ -1729,7 +1633,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "10-membership": {
         "num-columns": 6,
         "frozen-rows": 3,
@@ -1807,7 +1710,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "11-language-proficiency": {
         "num-columns": 5,
         "frozen-rows": 3,
@@ -1878,7 +1780,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "12-contact": {
         "num-columns": 3,
         "frozen-rows": 2,
@@ -1922,7 +1823,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:C4",
         ],
     },
-
     "13-educational-certificates": {
         "num-columns": 2,
         "frozen-rows": 2,
@@ -1962,7 +1862,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "14-vendor-certificates": {
         "num-columns": 2,
         "frozen-rows": 2,
@@ -2002,7 +1901,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "15-institutional-certificates": {
         "num-columns": 2,
         "frozen-rows": 2,
@@ -2042,7 +1940,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "16-references": {
         "num-columns": 6,
         "frozen-rows": 3,
@@ -2120,7 +2017,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "z-head": {
         "num-columns": 3,
         "frozen-rows": 2,
@@ -2161,7 +2057,6 @@ WORKSHEET_STRUCTURE_RESUME = {
             "B3:Z",
         ],
     },
-
     "z-foot": {
         "num-columns": 3,
         "frozen-rows": 2,
@@ -2409,6 +2304,169 @@ WORKSHEET_STRUCTURE_PDS = {
             'C36:D36',
         ],
     },
+    '00-layout-USAID': {
+        'num-rows': 24,
+        'num-columns': 8,
+        'frozen-rows': 2,
+        'frozen-columns': 0,
+        'columns': {
+            'A': {'size': 100, 'halign': 'left', 'wrap': True, },
+            'B': {'size':  30, 'halign': 'left', 'wrap': True, },
+            'C': {'size': 160, 'halign': 'left', 'wrap': True, },
+            'D': {'size':  70, 'halign': 'left', 'wrap': True, },
+            'E': {'size': 160, 'halign': 'left', 'wrap': True, },
+            'F': {'size':  30, 'halign': 'left', 'wrap': True, },
+            'G': {'size': 170, 'halign': 'left', 'wrap': True, },
+            'H': {'size': 240, 'halign': 'left', 'wrap': True, },
+        },
+        'review-notes': True,
+        'ranges': {
+            # row 1
+            # link to -toc-new
+            'A1': {'value': '-toc-new', 'ws-name-to-link': '-toc-new', },
+            # column sizes in pixel
+            'B1:H1': {'halign': 'center', },
+
+            # row 2
+            # label - review-notes
+            'A2': {'value': 'review-notes', 'weight': 'bold', },
+            # label - content
+            'B2:H2': {'value': 'content', 'weight': 'bold', 'merge': True, },
+
+            # row 3
+            # label - PAST PERFORMANCE REPORT - SHORT FORM						
+            'B3:H3': {'value': 'PAST PERFORMANCE REPORT - SHORT FORM', 'weight': 'normal', 'fgcolor': '#FFFFFF', 'bgcolor': '#45818e', 'border-color': '#B7B7B7', 'halign': 'center', 'merge': True, },
+
+            # row 3
+            # label - 1.
+            'B4:B5': {'value': '1.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Name of Contracting Entity
+            'C4:E4': {'value': 'Name of Contracting Entity:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - 2.
+            'F4': {'value': '2.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Contract No.
+            'G4': {'value': 'Contract No.:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Contract No.
+            'H4': {'value': "='01-summary'!C4", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 5
+            # content - Name of Contracting Entity
+            'C5:E5': {'value': "='01-summary'!C9", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - 3.
+            'F5': {'value': '3.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Contract Type
+            'G5': {'value': 'Contract Type:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Contract Type
+            'H5': {'value': "='01-summary'!C5", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 6
+            # label - 
+            'B6:B7': {'value': '', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Dates
+            'C6:C7': {'value': 'Dates:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Start
+            'D6': {'value': 'Start:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Start
+            'E6': {'value': "='01-summary'!C13", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - 4.
+            'F6': {'value': '4.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', 'merge': True, },
+            # label - Contract value (TEC)
+            'G6:G7': {'value': 'Contract value (TEC):', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Contract value (TEC)
+            'H6:H7': {'value': "='02-revenue'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 7
+            # label - End
+            'D7': {'value': 'End:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - End
+            'E7': {'value': "='01-summary'!C14", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 8
+            'B8:H8': {'merge': True},
+
+            # row 9
+            # label - Project Title
+            'B9:C9': {'value': 'Project Title:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Project Title
+            'D9:H9': {'value': "='01-summary'!C3", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 10
+            # label - Place(s) of Performance
+            'B10:C10': {'value': 'Place(s) of Performance:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Place(s) of Performance
+            'D10:H10': {'value': "='01-summary'!C7", 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+
+            # row 11
+            'B11:H11': {'merge': True},
+
+
+            # row 12
+            # label - Scope of Work
+            'B12:H12': {'value': 'Scope of Work:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 13
+            # content - 06-description
+            'B13:H13': {'value': '06-description', 'ws-name-to-link': '06-description', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 14
+            'B14:H14': {'merge': True},
+
+            # row 15
+            # label - Skills/Expertise Required
+            'B15:H15': {'value': 'Skills/Expertise Required:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 16
+            # content - 08-technology
+            'B16:H16': {'value': '08-technology', 'ws-name-to-link': '08-technology', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 17
+            'B17:H17': {'merge': True},
+
+            # row 18
+            # label - 6.
+            'B18': {'value': '6.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # label - Problems: (If problems encountered on this contract, explain corrective action taken.)
+            'C18:H18': {'value': 'Problems: (If problems encountered on this contract, explain corrective action taken.)', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 19
+            # content - 11-complexity
+            'B19:H19': {'value': '11-complexity', 'ws-name-to-link': '11-complexity', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 20
+            'B20:H20': {'merge': True},
+
+            # row 21
+            # label - 8.
+            'B21': {'value': '8.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # label - Contact Reference: (Name, Telephone Number, E-mail address, and Mailing Address)
+            'C21:H21': {'value': 'Contact Reference: (Name, Telephone Number, E-mail address, and Mailing Address)', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+
+            # row 22
+            # content - 03-contact
+            'B22:H22': {'value': '03-contact', 'ws-name-to-link': '03-contact', 'weight': 'normal', 'border-color': '#B7B7B7', 'merge': True, 'note': '{"content": "free"}', },
+
+            # row 23
+            'B23:H23': {'merge': True},
+
+            # row 24
+            # label - 9.
+            'B24': {'value': '9.', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # label - Bidder
+            'C24': {'value': 'Bidder:', 'weight': 'bold', 'fgcolor': '#666666', 'bgcolor': '#F3F3F3', 'border-color': '#B7B7B7', },
+            # content - Bidder
+            'D24:H24': {'value': 'DOER Services Ltd.', 'weight': 'normal', 'fgcolor': '#434343', 'border-color': '#B7B7B7', 'merge': True, },
+        },
+        'cell-empty-markers': [
+            'B3:H5',
+            'C3:H7',
+            'B9:H10',
+            'B12:H13',
+            'B15:H16',
+            'B18:H19',
+            'B21:H22',
+            'B24:H24',
+        ],
+    },
     '01-summary': {
     },
     '02-revenue': {
@@ -2640,6 +2698,5 @@ WORKSHEET_STRUCTURE_ADHOC = {
 
 
 # which structure we are using
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
-# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
-# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC
+# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC
