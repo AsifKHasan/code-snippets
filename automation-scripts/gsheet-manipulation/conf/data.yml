@@ -18,10 +18,10 @@ destination-gsheets:
 
 # worksheets on which some work will be done
 worksheets:
-  - '-toc-new'
-#  - 00-layout
-#  - 00-layout-PS7
-#  - 00-layout-WB
+  # - '-toc-new'
+  #  - 00-layout
+   - 00-layout-PS7
+  #  - 00-layout-WB
 
 # work specifications to apply on a list of worksheets
 work-specs:

@@ -598,7 +598,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "wrap": True,
             },
             "E": {
-                "size": 30,
+                "size": 40,
                 "halign": "left",
                 "valign": "top",
                 "wrap": True,
@@ -610,7 +610,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "wrap": True,
             },
             "G": {
-                "size": 30,
+                "size": 40,
                 "halign": "left",
                 "valign": "top",
                 "wrap": True,
@@ -622,7 +622,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "wrap": True,
             },
             "I": {
-                "size": 320,
+                "size": 300,
                 "halign": "left",
                 "valign": "top",
                 "wrap": True,
@@ -792,7 +792,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "halign": "center",
                 },
                 "E1": {
-                    "value": "30",
+                    "value": "40",
                     "halign": "center",
                 },
                 "F1": {
@@ -800,7 +800,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "halign": "center",
                 },
                 "G1": {
-                    "value": "30",
+                    "value": "40",
                     "halign": "center",
                 },
                 "H1": {
@@ -808,7 +808,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "halign": "center",
                 },
                 "I1": {
-                    "value": "320",
+                    "value": "300",
                     "halign": "center",
                 },
 
@@ -827,14 +827,16 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B3": {
                     "value": "1",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
                 },
                 "C3:G3": {
                     "value": "PROPOSED POSITION FOR THIS PROJECT",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
                 "H3": {
-                    "value": "",
+                    # "value": "",
                 },
                 # photograph
                 "I3:I6": {
@@ -847,10 +849,12 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B4": {
                     "value": "2",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
                 },
                 "C4:G4": {
                     "value": "NAME OF STAFF",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
                 "H4": {
@@ -861,10 +865,13 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B5": {
                     "value": "3",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
                 },
                 "C5:G5": {
                     "value": "DATE OF BIRTH",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "merge": True,
                 },
                 "H5": {
                     "value": "='01-personal'!D5",
@@ -873,21 +880,31 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 6 : nationality
                 "B6": {
                     "value": "4",
+                    "bgcolor": "#F3F3F3",
                     "weight": "bold",
                 },
                 "C6:G6": {
                     "value": "NATIONALITY",
                     "weight": "bold",
+                    "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
                 "H6": {
                     "value": "='01-personal'!D6",
                 },
 
+            # row 3-6 : border around
+                "B3:I6": {
+                    "border-color": "#E0E0E0",
+                    "inner-border": False, 
+                },
+
             # row 7 : blank
                 "B7:I7": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 8 : membership
@@ -908,10 +925,18 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "note": '{"content": "free"}',
                 },
 
+            # row 8-9 : border around
+                "B8:I9": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
+                },
+
             # row 10 : blank
                 "B10:I10": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 11 : education
@@ -932,10 +957,18 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "note": '{"content": "free"}',
                 },
 
+            # row 11-12 : border around
+                "B11:I12": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
+                },
+
             # row 13 : blank
                 "B13:I13": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 14 : training
@@ -957,10 +990,18 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "merge": True,
                 },
 
+            # row 14-15 : border around
+                "B14:I15": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
+                },
+
             # row 16 : blank
                 "B16:I16": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 17 : certification
@@ -974,7 +1015,9 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 18 : blank
                 "B18:I18": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 19 : language
@@ -996,10 +1039,18 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "merge": True,
                 },
 
+            # row 19-20 : border around
+                "B19:I20": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
+                },
+
             # row 21 : blank
                 "B21:I21": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 22 : work countries
@@ -1009,22 +1060,30 @@ WORKSHEET_STRUCTURE_RESUME = {
                 },
                 "C22:G22": {
                     "value": "COUNTRIES OF WORK EXPERIENCE",
+                    "weight": "bold",
                     "merge": True,
                 },
                 "H22:I22": {
-                    # "value": "",
+                    "value": "='01-personal'!D13",
                     "merge": True,
+                },
+                # border around
+                "B22:I22": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
                 },
 
             # row 23 : blank
                 "B23:I23": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 24 : employment
                 "B24": {
-                    "value": "6",
+                    "value": "10",
                     "weight": "bold",
                 },
                 "C24:I24": {
@@ -1040,10 +1099,18 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "note": '{"content": "free"}',
                 },
 
+            # row 24-25 : border around
+                "B24:I25": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
+                },
+
             # row 26 : blank
                 "B26:I26": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 27 : project roles
@@ -1056,7 +1123,9 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 28 : blank
                 "B28:I28": {
                     "value": "",
+                    "note": '{"new-page": true, "content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 29 : work undertaken
@@ -1078,10 +1147,18 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "merge": True,
                 },
 
+            # row 29-30 : border around
+                "B29:I30": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": False, 
+                },
+
             # row 31 : blank
                 "B31:I31": {
                     "value": "",
+                    "note": '{"content": "free"}',
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 32 : undertaking
@@ -1093,6 +1170,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B33:I33": {
                     "value": "",
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 34 : undertaking
@@ -1104,6 +1182,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B35:I35": {
                     "value": "",
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 36 : undertaking
@@ -1115,20 +1194,28 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B37:I37": {
                     "value": "",
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 38 : 
-                "D38": {
+                "B38:D38": {
                     "value": "Yes",
                     "halign": "right",
+                    "merge": True,
                 },
                 "E38": {
                     "value": "✔",
                     "halign": "center",
+                    "border-color": "#B7B7B7",
                 },
                 "F38": {
                     "value": "No",
                     "halign": "right",
+                },
+                "G38": {
+                    "value": "",
+                    "halign": "center",
+                    "border-color": "#B7B7B7",
                 },
                 "H38": {
                     "value": "Signature",
@@ -1136,6 +1223,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 },
                 "I38:I42": {
                     "value": "",
+                    "border-color": "#B7B7B7",
                     "merge": True,
                 },
 
@@ -1147,6 +1235,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "I43": {
                     "value": "",
                     "halign": "center",
+                    "border-color": "#B7B7B7",
                 },
 
             # row 44 : 
@@ -1583,7 +1672,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "border-color": "#B7B7B7",
             },
             "D3:E3": {
-                "value": "Company/Project/Position/ Relevant Technical and Management Experience",
+                "value": "Company/ Project/ Position and Technical/ Management Experience",
                 "halign": "left",
                 "bgcolor": "#F3F3F3",
                 "border-color": "#B7B7B7",
