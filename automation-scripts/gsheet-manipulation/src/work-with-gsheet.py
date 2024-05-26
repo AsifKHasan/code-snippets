@@ -63,7 +63,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
 
-    g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
 
@@ -74,7 +74,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
 
     # work on ranges etc.
-    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
+    g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
     # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
@@ -85,7 +85,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
     # g_sheet.order_worksheets()
 
-    # copy worksheets to another gsheet
+    # # copy worksheets to another gsheet
     # for destination_gsheet_name in destination_gsheet_names:
     #     destination_gsheet = g_service.open(gsheet_name=destination_gsheet_name)
     #     if destination_gsheet:
