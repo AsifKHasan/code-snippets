@@ -74,16 +74,16 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
 
     # work on ranges etc.
-    g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
+    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
 
     # find and replace in worksheets
     # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
     # cell linking and ordering
-    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
-    # g_sheet.order_worksheets()
+    g_sheet.order_worksheets()
 
     # # copy worksheets to another gsheet
     # for destination_gsheet_name in destination_gsheet_names:

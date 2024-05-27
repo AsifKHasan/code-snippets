@@ -1,16 +1,24 @@
 # the gsheet(s) that will be processed
 gsheets:
-  - Résumé__Md.Faizul.Bari
-  - Résumé__Syed.Mostofa.Monsur
-  - Résumé__Umme.Rumman.Usha
-  - Résumé__Mushfika.Faria
-  - Résumé__Md.Shariar.Kabir
-  - Résumé__Alif.Arfab.Pavel
-  - Résumé__Farhana.Naz
-  - Résumé__Khondoker.Tanvir.Hossain
-  - Résumé__Maly.Mohsem.Ahmed
-  - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
-  - Résumé__Mohammad.Kamrul.Hasan
+  - BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
+  - BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
+  - BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
+  - BEC-AI-Chatbot__rfp-technical-response__book-4-of-6__work-schedule-staff
+  - BEC-AI-Chatbot__rfp-technical-response__book-5-of-6__technical-solution
+  - BEC-AI-Chatbot__rfp-technical-response__book-6-of-6__compliance-matrix
+  - BEC-AI-Chatbot__rfp-financial-response__book-1-of-1__financial-proposal
+
+  # - Résumé__Md.Faizul.Bari
+  # - Résumé__Syed.Mostofa.Monsur
+  # - Résumé__Umme.Rumman.Usha
+  # - Résumé__Mushfika.Faria
+  # - Résumé__Md.Shariar.Kabir
+  # - Résumé__Alif.Arfab.Pavel
+  # - Résumé__Farhana.Naz
+  # - Résumé__Khondoker.Tanvir.Hossain
+  # - Résumé__Maly.Mohsem.Ahmed
+  # - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
+  # - Résumé__Mohammad.Kamrul.Hasan
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -29,7 +37,7 @@ destination-gsheets:
 
 # worksheets on which some work will be done
 worksheets:
-  - '-toc-new'
+  # - '-toc-new'
   #  - 00-layout
   #  - 00-layout-PS7
   #  - 00-layout-WB
