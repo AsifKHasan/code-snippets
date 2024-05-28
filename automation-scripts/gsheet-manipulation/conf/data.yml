@@ -62,16 +62,6 @@ work-specs:
     # 'C7':
     #   value             : ''
 
-    'C43': 
-        values            :
-          - text          : 'Hello'
-            format: 
-              bold        : true
-          - text          : ', Here I am again'
-            format        : 
-              bold        : false
-        halign            : 'left'
-  
 
 # find and replace patterns
 find-replace-patterns:
