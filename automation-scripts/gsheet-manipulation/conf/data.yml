@@ -9,18 +9,18 @@ gsheets:
   # - BEC-AI-Chatbot__rfp-financial-response__book-1-of-1__financial-proposal
 
   - Résumé__Md.Faizul.Bari
-  # - Résumé__Syed.Mostofa.Monsur
-  # - Résumé__Umme.Rumman.Usha
-  # - Résumé__Mushfika.Faria
-  # - Résumé__Md.Shariar.Kabir
-  # - Résumé__Alif.Arfab.Pavel
-  # - Résumé__Farhana.Naz
-  # - Résumé__Khondoker.Tanvir.Hossain
-  # - Résumé__Maly.Mohsem.Ahmed
-  # - Résumé__Md.Nazmul.Alam
-  # - Résumé__Mohammad.Kamrul.Hasan
-  # - Résumé__Amiya.Ahamed
-  # - Résumé__Al-Hai.Rezwan.Huq
+  - Résumé__Syed.Mostofa.Monsur
+  - Résumé__Umme.Rumman.Usha
+  - Résumé__Mushfika.Faria
+  - Résumé__Md.Shariar.Kabir
+  - Résumé__Alif.Arfab.Pavel
+  - Résumé__Farhana.Naz
+  - Résumé__Khondoker.Tanvir.Hossain
+  - Résumé__Maly.Mohsem.Ahmed
+  - Résumé__Md.Nazmul.Alam
+  - Résumé__Mohammad.Kamrul.Hasan
+  - Résumé__Amiya.Ahamed
+  - Résumé__Al-Hai.Rezwan.Huq
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -33,8 +33,10 @@ destination-gsheets:
   # - Résumé__Farhana.Naz
   # - Résumé__Khondoker.Tanvir.Hossain
   # - Résumé__Maly.Mohsem.Ahmed
-  # - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
+  # - Résumé__Md.Nazmul.Alam
   # - Résumé__Mohammad.Kamrul.Hasan
+  # - Résumé__Amiya.Ahamed
+  # - Résumé__Al-Hai.Rezwan.Huq
 
 
 # worksheets on which some work will be done
