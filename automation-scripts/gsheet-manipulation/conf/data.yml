@@ -1,14 +1,14 @@
 # the gsheet(s) that will be processed
 gsheets:
-  - BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
-  - BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
-  - BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
-  - BEC-AI-Chatbot__rfp-technical-response__book-4-of-6__work-schedule-staff
-  - BEC-AI-Chatbot__rfp-technical-response__book-5-of-6__technical-solution
-  - BEC-AI-Chatbot__rfp-technical-response__book-6-of-6__compliance-matrix
-  - BEC-AI-Chatbot__rfp-financial-response__book-1-of-1__financial-proposal
+  # - BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
+  # - BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
+  # - BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
+  # - BEC-AI-Chatbot__rfp-technical-response__book-4-of-6__work-schedule-staff
+  # - BEC-AI-Chatbot__rfp-technical-response__book-5-of-6__technical-solution
+  # - BEC-AI-Chatbot__rfp-technical-response__book-6-of-6__compliance-matrix
+  # - BEC-AI-Chatbot__rfp-financial-response__book-1-of-1__financial-proposal
 
-  # - Résumé__Md.Faizul.Bari
+  - Résumé__Md.Faizul.Bari
   # - Résumé__Syed.Mostofa.Monsur
   # - Résumé__Umme.Rumman.Usha
   # - Résumé__Mushfika.Faria
@@ -17,8 +17,10 @@ gsheets:
   # - Résumé__Farhana.Naz
   # - Résumé__Khondoker.Tanvir.Hossain
   # - Résumé__Maly.Mohsem.Ahmed
-  # - Résumé__Shah.Shafi.Mohammed.Shariful.Alam
+  # - Résumé__Md.Nazmul.Alam
   # - Résumé__Mohammad.Kamrul.Hasan
+  # - Résumé__Amiya.Ahamed
+  # - Résumé__Al-Hai.Rezwan.Huq
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -39,27 +41,37 @@ destination-gsheets:
 worksheets:
   # - '-toc-new'
   #  - 00-layout
-  #  - 00-layout-PS7
+   - 00-layout-PS7
   #  - 00-layout-WB
 
 
 # work specifications to apply on a list of worksheets
 work-specs:
-    'F3':
-      value             : '00-layout-PS7'
-      ws-name-to-link   : '00-layout-PS7'
-      halign            : left
-    'C3':
-      value             : 'Yes'
-    'C4':
-      value             : ''
-    'C5':
-      value             : 'Yes'
-    'C6':
-      value             : ''
-    'C7':
-      value             : ''
+    # 'F3':
+    #   value             : '00-layout-PS7'
+    #   ws-name-to-link   : '00-layout-PS7'
+    #   halign            : left
+    # 'C3':
+    #   value             : 'Yes'
+    # 'C4':
+    #   value             : ''
+    # 'C5':
+    #   value             : 'Yes'
+    # 'C6':
+    #   value             : ''
+    # 'C7':
+    #   value             : ''
 
+    'C43': 
+        values            :
+          - text          : 'Hello'
+            format: 
+              bold        : true
+          - text          : ', Here I am again'
+            format        : 
+              bold        : false
+        halign            : 'left'
+  
 
 # find and replace patterns
 find-replace-patterns:

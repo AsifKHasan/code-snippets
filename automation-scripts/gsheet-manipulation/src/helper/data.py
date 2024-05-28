@@ -179,92 +179,29 @@ WORKSHEET_STRUCTURE_RESUME = {
             "E": {"size": 270, "halign": "center", "valign": "top", "wrap": True},
         },
         "rows": {
-            "1": {
-                "size": 21,
-            },
-            "2": {
-                "size": 21,
-            },
-            "3": {
-                "size": 21,
-            },
-            "4": {
-                "size": 21,
-            },
-            "5": {
-                "size": 21,
-            },
             "6": {
                 "size": 8,
-            },
-            "7": {
-                "size": 21,
-            },
-            "8": {
-                "size": 21,
             },
             "9": {
                 "size": 8,
             },
-            "10": {
-                "size": 21,
-            },
-            "11": {
-                "size": 21,
-            },
             "12": {
                 "size": 8,
-            },
-            "13": {
-                "size": 21,
-            },
-            "14": {
-                "size": 21,
             },
             "15": {
                 "size": 8,
             },
-            "16": {
-                "size": 21,
-            },
-            "17": {
-                "size": 21,
-            },
             "18": {
                 "size": 8,
-            },
-            "19": {
-                "size": 21,
-            },
-            "20": {
-                "size": 21,
             },
             "21": {
                 "size": 8,
             },
-            "22": {
-                "size": 21,
-            },
-            "23": {
-                "size": 21,
-            },
             "24": {
                 "size": 8,
             },
-            "25": {
-                "size": 21,
-            },
-            "26": {
-                "size": 21,
-            },
             "27": {
                 "size": 8,
-            },
-            "28": {
-                "size": 21,
-            },
-            "29": {
-                "size": 21,
             },
         },
         "review-notes": True,
@@ -629,137 +566,35 @@ WORKSHEET_STRUCTURE_RESUME = {
             },
         },
         "rows": {
-            "1": {
-                "size": 21,
-            },
-            "2": {
-                "size": 21,
-            },
-            "3": {
-                "size": 21,
-            },
-            "4": {
-                "size": 21,
-            },
-            "5": {
-                "size": 21,
-            },
-            "6": {
-                "size": 21,
-            },
             "7": {
                 "size": 8,
-            },
-            "8": {
-                "size": 21,
-            },
-            "9": {
-                "size": 21,
             },
             "10": {
                 "size": 8,
             },
-            "11": {
-                "size": 21,
-            },
-            "12": {
-                "size": 21,
-            },
             "13": {
                 "size": 8,
-            },
-            "14": {
-                "size": 21,
-            },
-            "15": {
-                "size": 21,
             },
             "16": {
                 "size": 8,
             },
-            "17": {
-                "size": 21,
-            },
             "18": {
                 "size": 8,
-            },
-            "19": {
-                "size": 21,
-            },
-            "20": {
-                "size": 21,
             },
             "21": {
                 "size": 8,
             },
-            "22": {
-                "size": 21,
-            },
             "23": {
                 "size": 8,
-            },
-            "24": {
-                "size": 21,
-            },
-            "25": {
-                "size": 21,
             },
             "26": {
                 "size": 8,
             },
-            "27": {
-                "size": 21,
-            },
             "28": {
                 "size": 8,
             },
-            "29": {
-                "size": 21,
-            },
-            "30": {
-                "size": 21,
-            },
             "31": {
                 "size": 8,
-            },
-            "32": {
-                "size": 21,
-            },
-            "33": {
-                "size": 21,
-            },
-            "34": {
-                "size": 21,
-            },
-            "35": {
-                "size": 21,
-            },
-            "36": {
-                "size": 21,
-            },
-            "37": {
-                "size": 21,
-            },
-            "38": {
-                "size": 21,
-            },
-            "39": {
-                "size": 21,
-            },
-            "40": {
-                "size": 21,
-            },
-            "41": {
-                "size": 21,
-            },
-            "42": {
-                "size": 21,
-            },
-            "43": {
-                "size": 21,
-            },
-            "44": {
-                "size": 21,
             },
         },
         "review-notes": True,
@@ -773,7 +608,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "no-border": True,
                 },
 
-            # row 1 : -tow-new and column sizes
+            # row 1 : -toc-new and column sizes
                 "A1": {
                     "value": "-toc-new",
                     "ws-name-to-link": "-toc-new",
@@ -1163,6 +998,12 @@ WORKSHEET_STRUCTURE_RESUME = {
 
             # row 32 : undertaking
                 "B32:I32": {
+                    "values": [
+                        {   "text": "CERTIFICATION ",
+                            "format": {}},
+                        {   "text": "[Do not amend this Certification].",
+                            "format": {"italic": True}},
+                    ],
                     "merge": True,
                 },
 
@@ -1175,7 +1016,9 @@ WORKSHEET_STRUCTURE_RESUME = {
 
             # row 34 : undertaking
                 "B34:I34": {
+                    "value": "I, the undersigned, certify that (i) I was not a former employee of the Client immediately before the submission of this proposal, and (ii) to the best of my knowledge and belief, this bio-data correctly describes myself, my qualifications, and my experience. I understand that any willful misstatement described herein may lead to my disqualification or dismissal, if engaged.",
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 35 : blank
@@ -1187,7 +1030,16 @@ WORKSHEET_STRUCTURE_RESUME = {
 
             # row 36 : undertaking
                 "B36:I36": {
+                    "values": [
+                        {   "text": "I have been employed by ",
+                            "format": {}},
+                        {   "text": "='01-personal'!D11",
+                            "format": {"bold": True}},
+                        {   "text": " continuously for the last twelve (12) months as regular full time staff. Indicate \"Yes\" or \"No\" in the boxes below:",
+                            "format": {}},
+                    ],
                     "merge": True,
+                    "no-border": True,
                 },
 
             # row 37 : blank

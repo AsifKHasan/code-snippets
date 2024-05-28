@@ -52,8 +52,107 @@ def build_add_sheet_request(worksheet_name, sheet_index, num_rows, num_cols, fro
 
 ''' build a repeatCell from work_spec
 '''
-def build_repeatcell_from_work_spec(range, work_spec):
+def build_repeatcell_from_work_spec(range, work_spec, gsheet):
     fields = []
+
+    # textFormatRuns/values
+    text_format_runs = []
+    formatted_value = ''
+    if 'values' in work_spec:
+        start_index = 0
+        for value in work_spec['values']:
+            # buld the text
+            if value['text'].startswith('='):
+                resolved_values = gsheet.get_range_values(value['text'][1:])
+                resolved_value = resolved_values['values'][0][0]
+                # print(resolved_values)
+            else:
+                resolved_value = value['text']
+
+            formatted_value = f"{formatted_value}{resolved_value}"
+
+            # TextFormat
+            text_format = value['format']
+
+
+            # fgcolor
+            fg_color = None
+            if 'fgcolor' in text_format:
+                fg_color = text_format['fgcolor']
+                fields.append('textFormatRuns.format.foregroundColor')
+
+
+            # font-family
+            font_family = None
+            if 'font-family' in text_format:
+                font_family = text_format['font-family']
+                fields.append('textFormatRuns.format.fontFamily')
+
+
+            # font-size
+            font_size = None
+            if 'font-size' in text_format:
+                font_size = text_format['font-size']
+                fields.append('textFormatRuns.format.fontSize')
+
+
+            # bold
+            bold = False
+            if 'bold' in text_format:
+                bold = text_format['bold']
+                fields.append('textFormatRuns.format.bold')
+
+
+            # italic
+            italic = False
+            if 'italic' in text_format:
+                italic = text_format['italic']
+                fields.append('textFormatRuns.format.italic')
+
+
+            # strikethrough
+            strikethrough = False
+            if 'strikethrough' in text_format:
+                strikethrough = text_format['strikethrough']
+                fields.append('textFormatRuns.format.strikethrough')
+
+
+            # underline
+            underline = False
+            if 'underline' in text_format:
+                underline = text_format['underline']
+                fields.append('textFormatRuns.format.underline')
+
+            # build the text_format_run
+            text_format_run = {
+                'startIndex': start_index,
+                'format' : {
+                    'foregroundColor': None if fg_color is None else hex_to_rgba(fg_color),
+                    'fontFamily': font_family,
+                    'fontSize': font_size,
+                    'bold': bold,
+                    'italic': italic,
+                    'strikethrough': strikethrough,
+                    'underline': underline,
+                }
+            }
+
+            # update start_index
+            start_index = len(formatted_value)
+
+            # append the text_format_run into the list
+            text_format_runs.append(text_format_run)
+
+        # update fields
+        fields.append('userEnteredValue.stringValue')
+        fields.append('textFormatRuns')
+        # fields.append('textFormatRuns.textFormat.bold')
+
+        # text_format_runs = [
+        #                 {"format": {"bold": True}, "startIndex": 0},
+        #                 {"format": {"bold": False}, "startIndex": 11},
+        #             ]
+
 
     # valign
     valign = None
@@ -115,13 +214,32 @@ def build_repeatcell_from_work_spec(range, work_spec):
         fields.append('userEnteredFormat.textFormat.fontSize')
 
 
-    # weight
+    # bold
     bold = False
-    if 'weight' in work_spec:
-        if work_spec['weight'] == 'bold':
-            bold = True
-
+    if 'bold' in work_spec:
+        bold = work_spec['bold']
         fields.append('userEnteredFormat.textFormat.bold')
+
+
+    # italic
+    italic = False
+    if 'italic' in work_spec:
+        italic = work_spec['italic']
+        fields.append('userEnteredFormat.textFormat.italic')
+
+
+    # strikethrough
+    strikethrough = False
+    if 'strikethrough' in work_spec:
+        strikethrough = work_spec['strikethrough']
+        fields.append('userEnteredFormat.textFormat.strikethrough')
+
+
+    # underline
+    underline = False
+    if 'underline' in work_spec:
+        underline = work_spec['underline']
+        fields.append('userEnteredFormat.textFormat.underline')
 
 
     # note
@@ -139,6 +257,7 @@ def build_repeatcell_from_work_spec(range, work_spec):
       'repeatCell': {
         'range': range,
         'cell': {
+            'userEnteredValue': {'stringValue': formatted_value},
             'userEnteredFormat': {
                 'verticalAlignment': valign,
                 'horizontalAlignment': halign,
@@ -149,9 +268,13 @@ def build_repeatcell_from_work_spec(range, work_spec):
                     'foregroundColor': None if fg_color is None else hex_to_rgba(fg_color),
                     'fontFamily': font_family,
                     'fontSize': font_size,
-                    'bold': bold
+                    'bold': bold,
+                    'italic': italic,
+                    'strikethrough': strikethrough,
+                    'underline': underline,
                 },
             },
+            'textFormatRuns': text_format_runs,
             'note': note,
         },
         'fields': ','.join(fields)

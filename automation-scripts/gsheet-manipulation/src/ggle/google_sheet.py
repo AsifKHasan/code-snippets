@@ -30,6 +30,13 @@ class GoogleSheet(object):
 
 
 
+    ''' get range values
+    '''
+    def get_range_values(self, range_spec):
+        return self.gspread_sheet.values_get(range_spec, params={})
+
+
+
     ''' get conditional formats
     '''
     def get_conditional_formats(self, try_for=3):

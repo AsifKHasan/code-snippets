@@ -588,7 +588,7 @@ class GoogleWorksheet(object):
                 merges.append({'mergeCells': {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id), 'mergeType': merge_type}})
 
             # formats
-            repeat_cell = build_repeatcell_from_work_spec(a1_range_to_grid_range(range_spec, sheet_id=self.id), work_spec)
+            repeat_cell = build_repeatcell_from_work_spec(range=a1_range_to_grid_range(range_spec, sheet_id=self.id), work_spec=work_spec, gsheet=self.gsheet)
             if repeat_cell:
                 formats.append(repeat_cell)
 
