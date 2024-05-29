@@ -471,6 +471,27 @@ def build_value_from_work_spec(work_spec, worksheet_dict={}, google_service=None
 
 
 
+''' build dimension autosize request
+    note: index is 0 based
+'''
+def build_dimension_autosize_request(sheet_id, dimension, start_index, end_index):
+    range_spec = {
+        "sheetId": sheet_id,
+        "dimension": dimension,
+        "startIndex": start_index - 1,
+        "endIndex": end_index
+    }
+
+    dimension_autosize_request = {
+      "autoResizeDimensions": {
+        "dimensions": range_spec,
+      },
+    }
+
+    return dimension_autosize_request
+
+
+
 ''' build dimension size update request
     note: index is 0 based
 '''

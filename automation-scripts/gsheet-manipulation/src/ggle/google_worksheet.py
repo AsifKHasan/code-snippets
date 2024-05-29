@@ -379,6 +379,26 @@ class GoogleWorksheet(object):
         frozen_rows, frozen_columns = worksheet_struct.get('frozen-rows', 0), worksheet_struct.get('frozen-columns', 0)
         dimension_freeze_requests = self.dimension_freeze_requests(frozen_rows=frozen_rows, frozen_cols=frozen_columns)
 
+        num_rows = self.row_count()
+
+        # all rows to default-row-size if present
+        row_defaultsize_requests = []
+        if 'default-row-size' in worksheet_struct:
+            default_row_size = worksheet_struct['default-row-size']
+            default_size_work_requests = {}
+            for r in range(1, num_rows+1):
+                default_size_work_requests[str(r)] = {"size": default_row_size}
+
+            row_defaultsize_requests = self.row_resize_requests(row_specs=default_size_work_requests)
+
+
+        # autosize rows only if autosize-rows is true
+        autosize_rows = worksheet_struct.get('autosize-rows', False)
+        row_autosize_requests = []
+        if autosize_rows:
+            row_autosize_request = self.row_autosize_request(start_index=1, end_index=num_rows)
+            row_autosize_requests.append(row_autosize_request)
+
         if 'rows' in worksheet_struct:
             # requests for row resizing
             row_resize_requests = self.row_resize_requests(row_specs=worksheet_struct['rows'])
@@ -430,7 +450,7 @@ class GoogleWorksheet(object):
             review_notes_format_requests = []
 
         # merge formats
-        requests = dimension_freeze_requests + row_resize_requests + column_resize_requests + column_format_requests + data_validation_requests + range_format_requests + conditional_format_requests + review_notes_format_requests
+        requests = dimension_freeze_requests + row_defaultsize_requests + row_autosize_requests + row_resize_requests + column_resize_requests + column_format_requests + data_validation_requests + range_format_requests + conditional_format_requests + review_notes_format_requests
 
         return values, requests
 
@@ -657,6 +677,15 @@ class GoogleWorksheet(object):
             dimension_update_requests.append(dimension_update_request)
 
         return dimension_update_requests
+
+
+
+    ''' autosize rows request
+    '''
+    def row_autosize_request(self, start_index, end_index):
+        dimension_autosize_requests = build_dimension_autosize_request(sheet_id=self.id, dimension='ROWS', start_index=start_index, end_index=end_index)
+
+        return dimension_autosize_requests
 
 
 

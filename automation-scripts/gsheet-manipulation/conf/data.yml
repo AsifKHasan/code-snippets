@@ -8,19 +8,19 @@ gsheets:
   # - BEC-AI-Chatbot__rfp-technical-response__book-6-of-6__compliance-matrix
   # - BEC-AI-Chatbot__rfp-financial-response__book-1-of-1__financial-proposal
 
-  - Résumé__Md.Faizul.Bari
-  - Résumé__Syed.Mostofa.Monsur
-  - Résumé__Umme.Rumman.Usha
-  - Résumé__Mushfika.Faria
-  - Résumé__Md.Shariar.Kabir
-  - Résumé__Alif.Arfab.Pavel
-  - Résumé__Farhana.Naz
-  - Résumé__Khondoker.Tanvir.Hossain
-  - Résumé__Maly.Mohsem.Ahmed
-  - Résumé__Md.Nazmul.Alam
-  - Résumé__Mohammad.Kamrul.Hasan
-  - Résumé__Amiya.Ahamed
-  - Résumé__Al-Hai.Rezwan.Huq
+  # - Résumé__Md.Faizul.Bari
+  # - Résumé__Syed.Mostofa.Monsur
+  # - Résumé__Umme.Rumman.Usha
+  # - Résumé__Mushfika.Faria
+  # - Résumé__Md.Shariar.Kabir
+  # - Résumé__Arnab.Basak
+  # - Résumé__Farhana.Naz
+  # - Résumé__Khondoker.Tanvir.Hossain
+  # - Résumé__Maly.Mohsem.Ahmed
+  # - Résumé__Md.Nazmul.Alam
+  # - Résumé__Mohammad.Kamrul.Hasan
+  # - Résumé__Amiya.Ahamed
+  # - Résumé__Al-Hai.Rezwan.Huq
 
 
 # gsheets which are targets for some activities like copy worksheet
@@ -29,7 +29,7 @@ destination-gsheets:
   # - Résumé__Umme.Rumman.Usha
   # - Résumé__Mushfika.Faria
   # - Résumé__Md.Shariar.Kabir
-  # - Résumé__Alif.Arfab.Pavel
+  # - Résumé__Arnab.Basak
   # - Résumé__Farhana.Naz
   # - Résumé__Khondoker.Tanvir.Hossain
   # - Résumé__Maly.Mohsem.Ahmed
@@ -43,7 +43,7 @@ destination-gsheets:
 worksheets:
   # - '-toc-new'
   #  - 00-layout
-   - 00-layout-PS7
+  #  - 00-layout-PS7
   #  - 00-layout-WB
 
 

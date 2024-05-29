@@ -509,6 +509,8 @@ WORKSHEET_STRUCTURE_RESUME = {
         "num-columns": 9,
         "frozen-rows": 2,
         "frozen-columns": 0,
+        "default-row-size": 21,
+        "autosize-rows": True,
         "columns": {
             "A": {
                 "size": 100,
