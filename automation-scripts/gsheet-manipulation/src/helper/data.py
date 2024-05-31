@@ -2147,7 +2147,7 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
 }
 
-# Resume structure
+# PDS structure
 WORKSHEET_STRUCTURE_PDS = {
     '00-layout': {
         'num-rows': 38,
@@ -2354,8 +2354,8 @@ WORKSHEET_STRUCTURE_PDS = {
     },
 
     "00-layout-PS7": {
-        "num-rows": 40,
-        "num-columns": 3,
+        "num-rows": 41,
+        "num-columns": 4,
         "frozen-rows": 2,
         "frozen-columns": 0,
         "default-row-size": 21,
@@ -2408,9 +2408,6 @@ WORKSHEET_STRUCTURE_PDS = {
             "35": {
                 "size": 8,
             },
-            "38": {
-                "size": 8,
-            },
         },
         "review-notes": True,
         "ranges": {
@@ -2454,58 +2451,278 @@ WORKSHEET_STRUCTURE_PDS = {
                 },
 
             # row 3 : assignment name, approximate value
-                "B3": {
-                    "value": "1",
+                "B3:C3": {
+                    "value": "Assignment Name:",
                     "weight": "bold",
                     "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
                 },
-                "C3:G3": {
-                    "value": "PROPOSED POSITION FOR THIS PROJECT",
+                "D3": {
+                    "value": "Approx value of the Contract (Tk. Lacs):",
                     "weight": "bold",
                     "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+
+            # row 4 : assignment name, approximate value
+                "B4:C4": {
+                    "value": "='01-summary'!C3",
+                    "halign": "left",
                     "merge": True,
                 },
-                "H3": {
-                    # "value": "",
+                "D4": {
+                    "value": "='02-revenue'!C3",
+                    "halign": "left",
                 },
-                # photograph
-                "I3:I6": {
-                    "value": "='01-personal'!E3",
-                    "halign": "center",
+
+            # row 5 : Country and Duration of assignment (months):
+                "B5:C5": {
+                    "value": "Country:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
                     "merge": True,
                 },
+                "D5": {
+                    "value": "Duration of assignment (months):",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+
+            # row 6 : Country and Duration of assignment (months):
+                "B6:C6": {
+                    "value": "='01-summary'!C5",
+                    "halign": "left",
+                    "merge": True,
+                },
+                "D6:D8": {
+                    "value": "='01-summary'!C6",
+                    "halign": "left",
+                },
+
+            # row 7 : Location within country:
+                "B7:C7": {
+                    "value": "Location within country:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 8 : Location within country:
+                "B8:C8": {
+                    "value": "='01-summary'!C7",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 9 : Client and Total No of staff-month of the assignment:
+                "B9:C9": {
+                    "value": "Name of Client:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
+                },
+                "D9": {
+                    "value": "Total No of staff-month of the assignment:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+
+            # row 10 : Client and Total No of staff-month of the assignment:
+                "B10:C10": {
+                    "value": "='01-summary'!C7",
+                    "halign": "left",
+                    "merge": True,
+                },
+                "D10:D12": {
+                    "value": "='01-summary'!C10",
+                    "halign": "left",
+                },
+
+            # row 11 : Address:
+                "B11:C11": {
+                    "value": "Address:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 12 : Address
+                "B12:C12": {
+                    "value": "='01-summary'!C8",
+                    "halign": "left",
+                    "note": '{"keep-line-breaks": true}',
+                    "merge": True,
+                },
+
+            # row 13 : Start/End Date and Approx value of services provided by your firm under the contract (Tk. Lacs):
+                "B13": {
+                    "value": "Start Date (Month/Year):",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C13": {
+                    "value": "Completion Date (Month/Year):",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "D13": {
+                    "value": "Approx value of services provided by your firm under the contract (Tk. Lacs):",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+
+            # row 14 : Start/End Date and Approx value of services provided by your firm under the contract (Tk. Lacs):
+                "B14": {
+                    "value": "='01-summary'!C11",
+                    "halign": "left",
+                },
+                "C14": {
+                    "value": "='01-summary'!C12",
+                    "halign": "left",
+                },
+                "D14": {
+                    "value": "='02-revenue'!C3",
+                    "halign": "left",
+                },
+
+            # row 15 : blank
+                "B15:D15": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 16 : joint venture
+                "B16:C16": {
+                    "value": "Name of Joint Venture/Associated Consultants, if any:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
+                },
+                "D16": {
+                    "value": "No of Staff-Months of Key professional staff provided by Joint Venture/Associated Consultants:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+
+            # row 17 : joint venture
+                "B17:D17": {
+                    "value": "04-joint-venture",
+                    "ws-name-to-link": "04-joint-venture",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 18 : blank
+                "B18:D18": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 19 : Name of senior professional staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:
+                "B19:D19": {
+                    "value": "Name of senior professional staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 20 : Name of senior professional staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:
+                "B20:D20": {
+                    "value": "05-people",
+                    "ws-name-to-link": "05-people",
+                    # "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 21 : blank
+                "B21:D21": {
+                    "value": "",
+                    "note": '{"content": "free", "new-page": true}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+
+
+            # row 25 : blank
+                "B25:D25": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 28 : blank
+                "B28:D28": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 31 : blank
+                "B31:D31": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 35 : blank
+                "B35:D35": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 38 : blank
+                "B38:D38": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
           },
 
         "cell-empty-markers": [
-            "B3:I5",
-            "B8:I9",
-            "B11:I12",
-            "B14:I15",
-            "B19:I20",
-            "B22:I22",
-            "B24:I25",
-            "B27:I27",
-            "B32:I32",
-            "B29:I30",
-            "B32:I32",
-            "B34:I34",
-            "B36:I36",
-            "D38:F38",
-            "H38",
-            "I38:I42",
-            "H43:I43",
-            "I44",
+            "B4:D14",
+            "C39:D39",
+            "C40:D41",
         ],
     },
 
     '01-summary': {
     },
+
     '02-revenue': {
     },
+
     '03-contact': {
     },
+
     '04-joint-venture': {
     },
+
     '05-people': {
         'num-columns': 4,
         'frozen-rows': 2,
@@ -2534,6 +2751,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '06-description': {
         'num-columns': 4,
         'frozen-rows': 2,
@@ -2556,6 +2774,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '07-functionality': {
         'num-columns': 5,
         'frozen-rows': 2,
@@ -2580,6 +2799,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '08-technology': {
         'num-columns': 4,
         'frozen-rows': 2,
@@ -2602,6 +2822,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '09-services': {
         'num-columns': 4,
         'frozen-rows': 2,
@@ -2624,6 +2845,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '10-process': {
         'num-columns': 4,
         'frozen-rows': 2,
@@ -2646,6 +2868,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '11-complexity': {
         'num-columns': 3,
         'frozen-rows': 2,
@@ -2667,10 +2890,13 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z'
         ],
     },
+
     '12-screenhots': {
     },
+
     'z-blank': {
     },
+
     'z-head': {
         'num-columns': 3,
         'frozen-rows': 2,
@@ -2692,6 +2918,7 @@ WORKSHEET_STRUCTURE_PDS = {
             'B3:Z',
         ],
     },
+
     'z-foot': {
         'num-columns': 3,
         'frozen-rows': 2,
@@ -2729,6 +2956,6 @@ WORKSHEET_STRUCTURE_ADHOC = {
 
 
 # which structure we are using
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
-# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
+# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
 # WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC

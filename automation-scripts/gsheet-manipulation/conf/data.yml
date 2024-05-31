@@ -4,13 +4,6 @@ gsheets:
   # - sscl__Résumé__template
   # - celloscope__résumé__template
 
-  - pds__spectrum__blank.template
-  # - pds__SSCL__blank.template
-  # - pds__doer__blank.template
-  # - pds__celloscope__blank.template
-
-
-
   # - BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
   # - BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
   # - BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
@@ -34,6 +27,13 @@ gsheets:
   # - Résumé__Al-Hai.Rezwan.Huq
 
 
+
+  # - pds__spectrum__blank.template
+  # - pds__SSCL__blank.template
+  # - pds__doer__blank.template
+  # - pds__celloscope__blank.template
+  - pds__BCC-GRP-2023
+
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
   # - Résumé__Syed.Mostofa.Monsur
@@ -54,7 +54,7 @@ destination-gsheets:
 worksheets:
   # - '-toc-new'
   #  - 00-layout
-  #  - 00-layout-PS7
+   - 00-layout-PS7
   #  - 00-layout-WB
 
 
