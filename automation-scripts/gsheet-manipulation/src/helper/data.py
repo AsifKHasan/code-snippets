@@ -2352,6 +2352,152 @@ WORKSHEET_STRUCTURE_PDS = {
             'C36:D36',
         ],
     },
+
+    "00-layout-PS7": {
+        "num-rows": 40,
+        "num-columns": 3,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "default-row-size": 21,
+        "autosize-rows": True,
+        "columns": {
+            "A": {
+                "size": 100,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "B": {
+                "size": 240,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "C": {
+                "size": 240,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "D": {
+                "size": 320,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+        },
+        "rows": {
+            "15": {
+                "size": 8,
+            },
+            "18": {
+                "size": 8,
+            },
+            "21": {
+                "size": 8,
+            },
+            "25": {
+                "size": 8,
+            },
+            "28": {
+                "size": 8,
+            },
+            "31": {
+                "size": 8,
+            },
+            "35": {
+                "size": 8,
+            },
+            "38": {
+                "size": 8,
+            },
+        },
+        "review-notes": True,
+        "ranges": {
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "240",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "240",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "53200",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:D2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : assignment name, approximate value
+                "B3": {
+                    "value": "1",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                },
+                "C3:G3": {
+                    "value": "PROPOSED POSITION FOR THIS PROJECT",
+                    "weight": "bold",
+                    "bgcolor": "#F3F3F3",
+                    "merge": True,
+                },
+                "H3": {
+                    # "value": "",
+                },
+                # photograph
+                "I3:I6": {
+                    "value": "='01-personal'!E3",
+                    "halign": "center",
+                    "merge": True,
+                },
+          },
+
+        "cell-empty-markers": [
+            "B3:I5",
+            "B8:I9",
+            "B11:I12",
+            "B14:I15",
+            "B19:I20",
+            "B22:I22",
+            "B24:I25",
+            "B27:I27",
+            "B32:I32",
+            "B29:I30",
+            "B32:I32",
+            "B34:I34",
+            "B36:I36",
+            "D38:F38",
+            "H38",
+            "I38:I42",
+            "H43:I43",
+            "I44",
+        ],
+    },
+
     '01-summary': {
     },
     '02-revenue': {

@@ -1,5 +1,16 @@
 # the gsheet(s) that will be processed
 gsheets:
+  # - spectrum__Résumé__template
+  # - sscl__Résumé__template
+  # - celloscope__résumé__template
+
+  - pds__spectrum__blank.template
+  # - pds__SSCL__blank.template
+  # - pds__doer__blank.template
+  # - pds__celloscope__blank.template
+
+
+
   # - BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
   # - BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
   # - BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
