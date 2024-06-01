@@ -20,7 +20,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     if work_specs is None : work_specs = {}
     if find_replace_patterns is None : find_replace_patterns = []
 
-    # BEGIN work on a single worksheet rather than on a list of worksheets
+    # BEGIN work on worksheet dimensions
     # -----------------------------------------------------------------------------------
 
     for worksheet_name in worksheet_names:
@@ -30,22 +30,23 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
 
         # num_rows, num_cols = worksheet.number_of_dimesnions()
-        # if num_rows != 29:
+        # if num_rows != 21:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+        #     # g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at='end', rows_to_add=1)
 
         # add dimension
         # if num_cols == 25:
         # if True:
         #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=3)
         
-        # if num_rows == 6:
+        # if num_rows == 18:
         # if True:
-        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at=2, rows_to_add=1)
+            # g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at='end', rows_to_add=1)
 
         pass
 
     # -----------------------------------------------------------------------------------
-    # END   work on a single worksheet rather than on a list of worksheets
+    # END   work on worksheet dimensions
 
     # global final_list
     # final_list = list(set(final_list) | set(g_sheet.list_worksheets()))
@@ -63,7 +64,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
 
-    g_sheet.format_worksheets(worksheet_names=worksheet_names)
+    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
 
@@ -80,7 +81,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
 
     # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
+    # g_sheet.link_cells_to_drive_files(worksheet_name='-toc-new', range_specs_for_cells_to_link=['G3:G'])
     # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.order_worksheets()

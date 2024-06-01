@@ -242,23 +242,23 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "A2": {
                     "value": "review-notes",
                     "halign": "left",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "B2:E2": {
                     "value": "content",
                     "halign": "left",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
             # row 3: name of resource
                 "B3": {
                     "value": "1",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C3": {
                     "value": "NAME OF RESOURCE",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "D3": {
                     "value": "='01-personal'!D3",
@@ -272,11 +272,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 4: date of birth
                 "B4": {
                     "value": "2",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C4": {
                     "value": "DATE OF BIRTH",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "D4": {
                     "value": "='01-personal'!D5",
@@ -285,11 +285,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 5: nationality
                 "B5": {
                     "value": "3",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C5": {
                     "value": "NATIONALITY",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "D5": {
                     "value": "='01-personal'!D6",
@@ -304,11 +304,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 7: summary of prefessional experience
                 "B7": {
                     "value": "4",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C7:E7": {
                     "value": "SUMMARY OF PROFESSIONAL EXPERIENCE",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -329,11 +329,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 10: education
                 "B10": {
                     "value": "5",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C10:E10": {
                     "value": "EDUCATION",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -355,11 +355,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 13: employment record
                 "B13": {
                     "value": "6a",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C13:E13": {
                     "value": "EMPLOYMENT RECORD",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -381,11 +381,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 16: professional experience
                 "B16": {
                     "value": "6b",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C16:E16": {
                     "value": "PROFESSIONAL EXPERIENCE",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -407,11 +407,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 19: technical expertise
                 "B19": {
                     "value": "7",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C19:E19": {
                     "value": "TECHNICAL EXPERTISE",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -432,11 +432,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 22: professional training
                 "B22": {
                     "value": "8a",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C22:E22": {
                     "value": "PROFESSIONAL TRAINING",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -457,11 +457,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 25: professional certificates
                 "B25": {
                     "value": "8b",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C25:E25": {
                     "value": "PROFESSIONAL CERTIFICATIONS",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -482,11 +482,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 28: language proficency
                 "B28": {
                     "value": "9",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C28:E28": {
                     "value": "LANGUAGES & DEGREE OF PROFICIENCY",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -663,12 +663,12 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 3 : proposed position, photograph
                 "B3": {
                     "value": "1",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                 },
                 "C3:G3": {
                     "value": "PROPOSED POSITION FOR THIS PROJECT",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
@@ -685,12 +685,12 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 4 : staff name
                 "B4": {
                     "value": "2",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                 },
                 "C4:G4": {
                     "value": "NAME OF STAFF",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
@@ -701,12 +701,12 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 5 : date of birth
                 "B5": {
                     "value": "3",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                 },
                 "C5:G5": {
                     "value": "DATE OF BIRTH",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
@@ -718,11 +718,11 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B6": {
                     "value": "4",
                     "bgcolor": "#F3F3F3",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C6:G6": {
                     "value": "NATIONALITY",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "merge": True,
                 },
@@ -747,11 +747,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 8 : membership
                 "B8": {
                     "value": "5",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C8:I8": {
                     "value": "MEMBERSHIP IN PROFESSIONAL SOCIETIES",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -779,11 +779,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 11 : education
                 "B11": {
                     "value": "6",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C11:I11": {
                     "value": "EDUCATION",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -811,11 +811,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 14 : training
                 "B14": {
                     "value": "7",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C14:I14": {
                     "value": "OTHER TRAINING",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -860,11 +860,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 19 : language
                 "B19": {
                     "value": "8",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C19:I19": {
                     "value": "LANGUAGES & DEGREE OF PROFICIENCY",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -893,11 +893,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 22 : work countries
                 "B22": {
                     "value": "9",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C22:G22": {
                     "value": "COUNTRIES OF WORK EXPERIENCE",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
                 "H22:I22": {
@@ -921,11 +921,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 24 : employment
                 "B24": {
                     "value": "10",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C24:I24": {
                     "value": "EMPLOYMENT RECORD",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -968,11 +968,11 @@ WORKSHEET_STRUCTURE_RESUME = {
             # row 29 : work undertaken
                 "B29": {
                     "value": "11",
-                    "weight": "bold",
+                    "bold": True,
                 },
                 "C29:I29": {
                     "value": "WORK UNDERTAKEN THAT BEST ILLUSTRATES YOUR CAPABILITY TO HANDLE THIS ASSIGNMENT",
-                    "weight": "bold",
+                    "bold": True,
                     "merge": True,
                 },
 
@@ -2418,6 +2418,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "bgcolor": "#FFFFFF",
                     "border-color": "#B7B7B7",
                     "no-border": True,
+                    "bold": False,
                 },
 
             # row 1 : -toc-new and column sizes
@@ -2435,7 +2436,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "halign": "center",
                 },
                 "D1": {
-                    "value": "53200",
+                    "value": "320",
                     "halign": "center",
                 },
 
@@ -2443,24 +2444,26 @@ WORKSHEET_STRUCTURE_PDS = {
                 "A2": {
                     "value": "review-notes",
                     "halign": "left",
+                    "bold": True,
                 },
                 "B2:D2": {
                     "value": "content",
                     "halign": "left",
+                    "bold": True,
                     "merge": True,
                 },
 
             # row 3 : assignment name, approximate value
                 "B3:C3": {
                     "value": "Assignment Name:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "merge": True,
                 },
                 "D3": {
                     "value": "Approx value of the Contract (Tk. Lacs):",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
@@ -2479,33 +2482,33 @@ WORKSHEET_STRUCTURE_PDS = {
             # row 5 : Country and Duration of assignment (months):
                 "B5:C5": {
                     "value": "Country:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "merge": True,
                 },
                 "D5": {
                     "value": "Duration of assignment (months):",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
 
             # row 6 : Country and Duration of assignment (months):
                 "B6:C6": {
-                    "value": "='01-summary'!C5",
+                    "value": "='01-summary'!C6",
                     "halign": "left",
                     "merge": True,
                 },
                 "D6:D8": {
-                    "value": "='01-summary'!C6",
+                    "value": "='01-summary'!C8",
                     "halign": "left",
                 },
 
             # row 7 : Location within country:
                 "B7:C7": {
                     "value": "Location within country:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "merge": True,
@@ -2521,33 +2524,33 @@ WORKSHEET_STRUCTURE_PDS = {
             # row 9 : Client and Total No of staff-month of the assignment:
                 "B9:C9": {
                     "value": "Name of Client:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "merge": True,
                 },
                 "D9": {
                     "value": "Total No of staff-month of the assignment:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
 
             # row 10 : Client and Total No of staff-month of the assignment:
                 "B10:C10": {
-                    "value": "='01-summary'!C7",
+                    "value": "='01-summary'!C9",
                     "halign": "left",
                     "merge": True,
                 },
                 "D10:D12": {
-                    "value": "='01-summary'!C10",
+                    "value": "='01-summary'!C12",
                     "halign": "left",
                 },
 
             # row 11 : Address:
                 "B11:C11": {
                     "value": "Address:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "merge": True,
@@ -2555,7 +2558,7 @@ WORKSHEET_STRUCTURE_PDS = {
 
             # row 12 : Address
                 "B12:C12": {
-                    "value": "='01-summary'!C8",
+                    "value": "='01-summary'!C10",
                     "halign": "left",
                     "note": '{"keep-line-breaks": true}',
                     "merge": True,
@@ -2564,30 +2567,30 @@ WORKSHEET_STRUCTURE_PDS = {
             # row 13 : Start/End Date and Approx value of services provided by your firm under the contract (Tk. Lacs):
                 "B13": {
                     "value": "Start Date (Month/Year):",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
                 "C13": {
                     "value": "Completion Date (Month/Year):",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
                 "D13": {
                     "value": "Approx value of services provided by your firm under the contract (Tk. Lacs):",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
 
             # row 14 : Start/End Date and Approx value of services provided by your firm under the contract (Tk. Lacs):
                 "B14": {
-                    "value": "='01-summary'!C11",
+                    "value": "='01-summary'!C13",
                     "halign": "left",
                 },
                 "C14": {
-                    "value": "='01-summary'!C12",
+                    "value": "='01-summary'!C14",
                     "halign": "left",
                 },
                 "D14": {
@@ -2606,14 +2609,14 @@ WORKSHEET_STRUCTURE_PDS = {
             # row 16 : joint venture
                 "B16:C16": {
                     "value": "Name of Joint Venture/Associated Consultants, if any:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "merge": True,
                 },
                 "D16": {
                     "value": "No of Staff-Months of Key professional staff provided by Joint Venture/Associated Consultants:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                 },
@@ -2637,7 +2640,7 @@ WORKSHEET_STRUCTURE_PDS = {
             # row 19 : Name of senior professional staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:
                 "B19:D19": {
                     "value": "Name of senior professional staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:",
-                    "weight": "bold",
+                    "bold": True,
                     "bgcolor": "#F3F3F3",
                     "halign": "left",
                     "note": '{"content": "free"}',
@@ -2648,7 +2651,7 @@ WORKSHEET_STRUCTURE_PDS = {
                 "B20:D20": {
                     "value": "05-people",
                     "ws-name-to-link": "05-people",
-                    # "note": '{"content": "free"}',
+                    "note": '{"content": "free"}',
                     "merge": True,
                 },
 
@@ -2660,7 +2663,33 @@ WORKSHEET_STRUCTURE_PDS = {
                     "no-border": True,
                 },
 
+            # row 22 : Narrative description of Project
+                "B22:D22": {
+                    "value": "Narrative description of Project:",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
 
+            # row 23 : Project Description
+                "B23:D23": {
+                    "value": "Project Description",
+                    "bold": True,
+                    "italic": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 24 : Project Description
+                "B24:D24": {
+                    "value": "06-description",
+                    "ws-name-to-link": "06-description",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
 
             # row 25 : blank
                 "B25:D25": {
@@ -2668,6 +2697,25 @@ WORKSHEET_STRUCTURE_PDS = {
                     "note": '{"content": "free"}',
                     "merge": True,
                     "no-border": True,
+                },
+
+            # row 26 : Functionality
+                "B26:D26": {
+                    "value": "Functionality",
+                    "bold": True,
+                    "italic": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 27 : Functionality
+                "B27:D27": {
+                    "value": "07-functionality",
+                    "ws-name-to-link": "07-functionality",
+                    "note": '{"content": "free"}',
+                    "merge": True,
                 },
 
             # row 28 : blank
@@ -2678,12 +2726,60 @@ WORKSHEET_STRUCTURE_PDS = {
                     "no-border": True,
                 },
 
+            # row 29 : Technology
+                "B29:D29": {
+                    "value": "Technology",
+                    "bold": True,
+                    "italic": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 30 : Technology
+                "B30:D30": {
+                    "value": "08-technology",
+                    "ws-name-to-link": "08-technology",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
             # row 31 : blank
                 "B31:D31": {
                     "value": "",
                     "note": '{"content": "free"}',
                     "merge": True,
                     "no-border": True,
+                },
+
+            # row 32 : Description of actual services provided by your Staff
+                "B32:D32": {
+                    "value": "Description of actual services provided by your Staff:",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 33 : Services Provided
+                "B33:D33": {
+                    "value": "Services Provided",
+                    "bold": True,
+                    "italic": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 34 : Services Provided
+                "B34:D34": {
+                    "value": "09-services",
+                    "ws-name-to-link": "09-services",
+                    "note": '{"content": "free"}',
+                    "merge": True,
                 },
 
             # row 35 : blank
@@ -2694,6 +2790,25 @@ WORKSHEET_STRUCTURE_PDS = {
                     "no-border": True,
                 },
 
+            # row 36 : Processes Adopted
+                "B36:D36": {
+                    "value": "Processes Adopted",
+                    "bold": True,
+                    "italic": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
+            # row 37 : Processes Adopted
+                "B37:D37": {
+                    "value": "10-process",
+                    "ws-name-to-link": "10-process",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                },
+
             # row 38 : blank
                 "B38:D38": {
                     "value": "",
@@ -2702,6 +2817,30 @@ WORKSHEET_STRUCTURE_PDS = {
                     "no-border": True,
                 },
 
+            # row 39 : Firm’s Name
+                "B39": {
+                    "value": "Firm’s Name:",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C39:D39": {
+                    "value": "='01-summary'!C21",
+                    "merge": True,
+                },
+
+            # row 40-41 : Authorised Signature
+                "B40:B41": {
+                    "value": "Authorised Signature:",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                    "merge": True,
+                },
+                "C40:D41": {
+                    # "value": "",
+                    "merge": True,
+                },
           },
 
         "cell-empty-markers": [
@@ -2712,6 +2851,313 @@ WORKSHEET_STRUCTURE_PDS = {
     },
 
     '01-summary': {
+        "num-rows": 21,
+        "num-columns": 3,
+        "frozen-rows": 2,
+        "frozen-columns": 0,
+        "default-row-size": 21,
+        "autosize-rows": True,
+        "columns": {
+            "A": {
+                "size": 100,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "B": {
+                "size": 300,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+            "C": {
+                "size": 500,
+                "halign": "left",
+                "valign": "top",
+                "wrap": True,
+            },
+        },
+        "review-notes": True,
+        "ranges": {
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "bold": False,
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                    "bold": False,
+                },
+                "B1": {
+                    "value": "300",
+                    "halign": "center",
+                    "bold": False,
+                },
+                "C1": {
+                    "value": "500",
+                    "halign": "center",
+                    "bold": False,
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                    "bold": True,
+                },
+                "B2:C2": {
+                    "value": "content",
+                    "halign": "left",
+                    "bold": True,
+                    "merge": True,
+                },
+
+            # row 3 : 
+                "B3": {
+                    "value": "Assignment Name",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C3": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 4 : Contract No.
+                "B4": {
+                    "value": "Contract No.",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C4": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 5 : Contract Type
+                "B5": {
+                    "value": "Contract Type",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C5": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 6 : Country
+                "B6": {
+                    "value": "Country",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C6": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 7 : Assignment Location within Country
+                "B7": {
+                    "value": "Assignment Location within Country",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C7": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 8 : Duration of Assignment (months)
+                "B8": {
+                    "value": "Duration of Assignment (months)",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C8": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 9 : Name of Client
+                "B9": {
+                    "value": "Name of Client",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C9": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 10 : Address
+                "B10": {
+                    "value": "Address",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C10": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 11: Professional Staff Count
+                "B11": {
+                    "value": "Professional Staff Count",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C11": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 12 : Professional Staff-Months
+                "B12": {
+                    "value": "Professional Staff-Months",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C12": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 13 : Start Date
+                "B13": {
+                    "value": "Start Date",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C13": {
+                    "halign": "left",
+                    "date-format": "Mmm/YYYY",
+                    "bold": False,
+                },
+
+            # row 14 : Completion Date
+                "B14": {
+                    "value": "Completion Date",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C14": {
+                    "halign": "left",
+                    "date-format": "Mmm/YYYY",
+                    "bold": False,
+                },
+
+            # row 15 : Live URL
+                "B15": {
+                    "value": "Live URL",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C15": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 16 : Demo URL
+                "B16": {
+                    "value": "Demo URL",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C16": {
+                    "halign": "left",
+                    "bold": False,
+                },
+
+            # row 17 : Is Joint Venture?
+                "B17": {
+                    "value": "Is Joint Venture?",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C17": {
+                    "halign": "center",
+                    "checkbox": True,
+                    "bold": False,
+                },
+
+            # row 18 : Screenshot Available?
+                "B18": {
+                    "value": "Screenshot Available?",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C18": {
+                    "halign": "center",
+                    "checkbox": True,
+                    "bold": False,
+                },
+
+            # row 19 : WCC Available?
+                "B19": {
+                    "value": "WCC Available?",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C19": {
+                    "halign": "center",
+                    "checkbox": True,
+                    "bold": False,
+                },
+
+            # row 20 : WO/PO Available?
+                "B20": {
+                    "value": "WO/PO Available?",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C20": {
+                    "halign": "center",
+                    "checkbox": True,
+                    "bold": False,
+                },
+
+            # row 21 : Organization Name
+                "B21": {
+                    "value": "Organization Name",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "C21": {
+                    "halign": "left",
+                    "checkbox": False,
+                    "bold": False,
+                },
+        },
+        "cell-empty-markers": [
+            "C3:C21",
+        ],
     },
 
     '02-revenue': {

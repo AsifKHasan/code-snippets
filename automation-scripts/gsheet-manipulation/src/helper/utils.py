@@ -146,12 +146,6 @@ def build_repeatcell_from_work_spec(range, work_spec, gsheet):
         # update fields
         fields.append('userEnteredValue.stringValue')
         fields.append('textFormatRuns')
-        # fields.append('textFormatRuns.textFormat.bold')
-
-        # text_format_runs = [
-        #                 {"format": {"bold": True}, "startIndex": 0},
-        #                 {"format": {"bold": False}, "startIndex": 11},
-        #             ]
 
 
     # valign
@@ -179,8 +173,14 @@ def build_repeatcell_from_work_spec(range, work_spec, gsheet):
         fields.append('userEnteredFormat.wrapStrategy')
 
 
-    # number-format
     number_format = None
+    # number-format
+    if 'number-format' in work_spec:
+        number_format = {'type': 'NUMBER', 'pattern': work_spec['number-format']}
+        fields.append('userEnteredFormat.numberFormat')
+
+
+    # date-format
     if 'date-format' in work_spec:
         number_format = {'type': 'DATE', 'pattern': work_spec['date-format']}
         fields.append('userEnteredFormat.numberFormat')

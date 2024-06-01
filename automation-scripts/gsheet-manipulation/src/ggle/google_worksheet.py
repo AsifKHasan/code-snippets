@@ -229,11 +229,11 @@ class GoogleWorksheet(object):
             # rows to be added
             if rows_to_add_at == 'end':
                 # rows to be appended at the end
-                requests.append(build_append_dimension_request(worksheet_id=self.id, dimension='ROWS', length=rows_to_add))
+                requests.append(build_append_dimension_request(worksheet_id=self.id, dimension='ROWS', length=rows_to_add, inherit_from_before=False))
 
             else:
                 # rows to be inserted at some index
-                requests.append(build_insert_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=rows_to_add_at, length=rows_to_add, inherit_from_before=True))
+                requests.append(build_insert_dimension_request(worksheet_id=self.id, dimension='ROWS', start_index=rows_to_add_at, length=rows_to_add, inherit_from_before=False))
 
         return requests
 
@@ -569,7 +569,18 @@ class GoogleWorksheet(object):
 
 
 
-    ''' data validation from list request
+    ''' boolean/checkbox data validation request
+    '''
+    def data_validation_boolean_requests(self, range_spec, input_message=None):
+        range = a1_range_to_grid_range(range_spec, sheet_id=self.id)
+
+        rule = build_data_validation_rule(range=range, condition_type='BOOLEAN', condition_values=[], input_message=input_message)
+
+        return [rule]
+
+
+
+    ''' clear data validation request
     '''
     def data_validation_clear_requests(self, range_spec):
         range = a1_range_to_grid_range(range_spec, sheet_id=self.id)
@@ -615,9 +626,12 @@ class GoogleWorksheet(object):
             # borders
             update_border = False
             border_style = 'SOLID'
+
+            no_border = True
             if 'no-border' in work_spec:
                 update_border = True
                 no_border = work_spec['no-border']
+
                 if no_border:
                     border_style = 'NONE'
 
@@ -647,11 +661,18 @@ class GoogleWorksheet(object):
                 border_object = {'range': a1_range_to_grid_range(range_spec, sheet_id=self.id)}
                 borders.append({'updateBorders': {**border_object, **build_border_around_spec(border_list=border_list, border_color=border_color, border_style=border_style, inner_border=inner_border)}})
 
-
+            # there is a list validation
             if 'validation-list' in work_spec:
                 data_validation_requests = data_validation_requests + self.data_validation_clear_requests(range_spec)
                 data_validation_requests = data_validation_requests + self.data_validation_from_list_requests(range_spec, work_spec['validation-list'])
 
+            # boolean value, to be rendered as checkbox
+            if 'checkbox' in work_spec:
+                data_validation_requests = data_validation_requests + self.data_validation_clear_requests(range_spec)
+                if work_spec['checkbox']:
+                    data_validation_requests = data_validation_requests + self.data_validation_boolean_requests(range_spec)
+
+            # conditional formats are to be applied
             if 'conditional-formats' in work_spec:
                 ranges = [a1_range_to_grid_range(range_spec, sheet_id=self.id)]
                 for conditional_format in work_spec['conditional-formats']:

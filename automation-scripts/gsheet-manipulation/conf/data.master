@@ -364,23 +364,37 @@
 
 
 # pds gsheets
-  # spectrum pds
+  # template
     - pds__spectrum__blank.template
+    - pds__SSCL__blank.template
+    - pds__doer__blank.template
+    - pds__celloscope__blank.template
+
+  # spectrum pds
     - pds__ACMELL
-    - pds__BB-RTGS
+    - pds__Airforce-Network-2021
+    - pds__BANBEIS
+    - pds__BB-PAM-2022
+    - pds__BB-RTGS_2023
+    - pds__BB-RTGS-2018
     - pds__BBA-BPBB
     - pds__BCC
     - pds__BCC-AMC
     - pds__BCC-AMC-2020
+    - pds__BCC-Cisco-CON-Renewal-2023
     - pds__BCC-Cisco-Renewal
     - pds__BCC-DC
     - pds__BCC-DC-Expansion
     - pds__BCC-DSCOCP
+    - pds__BCC-Huawei-AMC
     - pds__BCC-HW-Expansion
+    - pds__BCC-Infra-AMC-2022-2025
     - pds__BCC-Tier-IV-ServerStorage
     - pds__BDREN-DC-Expansion
     - pds__BDREN-G-13
     - pds__BDREN-Network
+    - pds__BDREN-Trust-AMC-2020
+    - pds__BDREN-Trust-AMC-2022
     - pds__Beximco-IT
     - pds__BG(DC)
     - pds__BPA-Sardah-Police-Academy
@@ -388,11 +402,13 @@
     - pds__BRP
     - pds__BSCCL
     - pds__BSCCL-Kuakata
-    - pds__BSCCL-SCISCO
+    - pds__BSCCL-CISCO
     - pds__BTCL
     - pds__BTCL-NGNCDR
     - pds__BTTB
     - pds__BWDB
+    - pds__CCA-Central-Repository-2021
+    - pds__CCA-esign-Database-2021
     - pds__CCC-WPSD
     - pds__CRM
     - pds__DBBL-DWDM
@@ -429,13 +445,19 @@
     - pds__MTBL-EBNCDC
     - pds__NBR-ASYCUDA
     - pds__NBR-ASYCUDA-SLA
-    - pds__NBR-AW-Network&Security
+    - pds__NBR-AW-CTG-Lot-01
+    - pds__NBR-AW-DHK-Lot-02
+    - pds__NBR-AW-Network-Security
     - pds__NBR-AW-Systems
+    - pds__NBR-NSW
     - pds__NL-DC
     - pds__OBL
     - pds__PHQ-AMC
+    - pds__Police-HQ-Network
     - pds__REB
     - pds__RHD-BMMS-2018
+    - pds__RHD-ITI-AMC-2017
+    - pds__RHD-ITI-AMC-2021
     - pds__RHD-MIS-consultancy
     - pds__RHD-MIS-e-procurement
     - pds__RWGH
@@ -459,6 +481,7 @@
     - pds__BB-CA
     - pds__BCBL-CIB
     - pds__BCC-CA
+    - pds__BCC-GRP-2023
     - pds__Bdjobs-MPVCC
     - pds__Biman-HelpDeskHR
     - pds__Boeing-BangladeshBiman
@@ -481,6 +504,7 @@
     - pds__LGED-IPMSRDEC
     - pds__MarketSharp-CRM
     - pds__MTBL-BACPS
+    - pds__NBR-BSW-2024
     - pds__NBR-CAMS
     - pds__NBR-UMS
     - pds__Nestle-VATsys
@@ -488,14 +512,15 @@
     - pds__OAGN-NAMS
     - pds__OCAG-AMMS
     - pds__Partex-OEBS
+    - pds__Payra-Port-Sophos-Renewal-2023
     - pds__RA-BRPSharePoint
     - pds__RA-CWRBS
     - pds__RA-SRMS
     - pds__Revnx-Journey
+    - pds__RHD-BDMS-2016-17
     - pds__RHD-CBRNIP-TOLL-2022
     - pds__RHD-MIS-AMC-2009
     - pds__RHD-MIS-AMC-2015
-    - pds__RHD-MIS-AMC-2017
     - pds__RHD-TDMS-2020-23
     - pds__ROBI-DMS
     - pds__ROBI-ROC
@@ -509,11 +534,11 @@
     - pds__SECL-VATsys
     - pds__SigmaStream-V2P
     - pds__SportsBuddy
+    - pds__TeleExchange-uniVerge
     - pds__TrustBank-BACPS
     - pds__UGC-HEMIS
     - pds__Unilever-MFGPRO
   # SSCL pds
-    - pds__SSCL__blank.template
     - pds__SSCL__Augmedix-RoutePlanner
     - pds__SSCL__NBR-CA-MGT
     - pds__SSCL__NBR-CAAMS
@@ -526,7 +551,6 @@
     - pds__SSCL__RHD-BRTA-API
     - pds__SSCL__INFINIGENT-EAS
   # doer pds
-    - pds__doer__blank.template
     - pds__doer__ACML-HR-Management-System
     - pds__doer__AgraniBank-Agent-Banking
     - pds__doer__AgraniBank-e-KYC
@@ -543,7 +567,6 @@
     - pds__doer__MRA-OMS
     - pds__doer__PAMCL-Accounts-Management-System
   # celloscope pds
-    - pds__celloscope__blank.template
     - pds__celloscope__AEL-Accounting
     - pds__celloscope__Crossworld-uniVerge
     - pds__celloscope__NBR-FFBT-ARDS
@@ -551,6 +574,7 @@
     - pds__celloscope__NRBCB-e-KYC
     - pds__celloscope__SAU-ACAS-2023
     - pds__celloscope__TeleExchange-uniVerge
+
 
 # worksheets:
   # resume worksheets

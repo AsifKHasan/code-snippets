@@ -1,80 +1,81 @@
 # the gsheet(s) that will be processed
 gsheets:
-  # - spectrum__Résumé__template
-  # - sscl__Résumé__template
-  # - celloscope__résumé__template
+# pds gsheets
+  # - pds__BCC-GRP-2023
+  # - pds__RHD-CBRNIP-TOLL-2022
+  # - pds__SAU-ACAS
+  # - pds__CCC-CSSM
+  # - pds__UGC-HEMIS
+  # - pds__RHD-BDMS-2016-17
+  # - pds__OCAG-AMMS
+  # - pds__OAGN-NAMS
+  # - pds__RHD-MIS-AMC-2009
+  # - pds__BB-RTGS-2018
+  # - pds__RHD-MIS-AMC-2015
+  # - pds__NBR-ASYCUDA-SLA
+  # - pds__NBR-AW-Systems
+  # - pds__BB-CA
+  # - pds__Partex-OEBS
+  # - pds__SCB-CBRM
+  # - pds__ROBI-ROC
+  # - pds__doer__AgraniBank-IB
+  # - pds__doer__AgraniBank-Agent-Banking
+  # - pds__doer__AgraniBank-e-KYC
+  # - pds__doer__AgraniBank-Master-Agent
+  # - pds__doer__AgraniBank-Remittance-Only-Point
+  # - pds__doer__AgraniBank-SMS-Alert
+  # - pds__doer__IDRA-ALO
+  # - pds__doer__IDRA-e-KYC
+  # - pds__doer__IDRA-Policy-Repository
+  # - pds__doer__IDRA-SMS-Email
+  # - pds__doer__IDRA-UMP
+  # - pds__doer__MRA-IMS
+  # - pds__doer__MRA-OMS
+  # - pds__SSCL__PBL-LC-RPA
+  # - pds__SSCL__PBL-SCF
+  # - pds__SSCL__RHD-BRTA-API
+  # - pds__SSCL__NBR-CA-MGT
+  # - pds__SSCL__NBR-CAAMS
+  # - pds__SSCL__NBR-D-BOND
+  # - pds__SSCL__NBR-RMS
+  # - pds__SSCL__NBR-SRO
+  # - pds__SSCL__NBR-UMS
+  # - pds__celloscope__NRBCB-Agent-Banking
+  # - pds__celloscope__NRBCB-e-KYC
+  # - pds__celloscope__SAU-ACAS-2023
+  # - pds__celloscope__NBR-FFBT-ARDS
+  # - pds__celloscope__Crossworld-uniVerge
+  # - pds__celloscope__TeleExchange-uniVerge
 
-  # - BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
-  # - BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
-  # - BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
-  # - BEC-AI-Chatbot__rfp-technical-response__book-4-of-6__work-schedule-staff
-  # - BEC-AI-Chatbot__rfp-technical-response__book-5-of-6__technical-solution
-  # - BEC-AI-Chatbot__rfp-technical-response__book-6-of-6__compliance-matrix
-  # - BEC-AI-Chatbot__rfp-financial-response__book-1-of-1__financial-proposal
-
-  # - Résumé__Md.Faizul.Bari
-  # - Résumé__Syed.Mostofa.Monsur
-  # - Résumé__Umme.Rumman.Usha
-  # - Résumé__Mushfika.Faria
-  # - Résumé__Md.Shariar.Kabir
-  # - Résumé__Arnab.Basak
-  # - Résumé__Farhana.Naz
-  # - Résumé__Khondoker.Tanvir.Hossain
-  # - Résumé__Maly.Mohsem.Ahmed
-  # - Résumé__Md.Nazmul.Alam
-  # - Résumé__Mohammad.Kamrul.Hasan
-  # - Résumé__Amiya.Ahamed
-  # - Résumé__Al-Hai.Rezwan.Huq
-
-
-
-  # - pds__spectrum__blank.template
-  # - pds__SSCL__blank.template
-  # - pds__doer__blank.template
-  # - pds__celloscope__blank.template
-  - pds__BCC-GRP-2023
 
 # gsheets which are targets for some activities like copy worksheet
 destination-gsheets:
-  # - Résumé__Syed.Mostofa.Monsur
-  # - Résumé__Umme.Rumman.Usha
-  # - Résumé__Mushfika.Faria
-  # - Résumé__Md.Shariar.Kabir
-  # - Résumé__Arnab.Basak
-  # - Résumé__Farhana.Naz
-  # - Résumé__Khondoker.Tanvir.Hossain
-  # - Résumé__Maly.Mohsem.Ahmed
-  # - Résumé__Md.Nazmul.Alam
-  # - Résumé__Mohammad.Kamrul.Hasan
-  # - Résumé__Amiya.Ahamed
-  # - Résumé__Al-Hai.Rezwan.Huq
 
 
 # worksheets on which some work will be done
 worksheets:
   # - '-toc-new'
-  #  - 00-layout
-   - 00-layout-PS7
-  #  - 00-layout-WB
+  # - 00-layout-PS7
+  # - 01-summary
+  # - z-head
 
 
 # work specifications to apply on a list of worksheets
 work-specs:
-    # 'F3':
-    #   value             : '00-layout-PS7'
-    #   ws-name-to-link   : '00-layout-PS7'
-    #   halign            : left
-    # 'C3':
-    #   value             : 'Yes'
-    # 'C4':
-    #   value             : ''
-    # 'C5':
-    #   value             : 'Yes'
-    # 'C6':
-    #   value             : ''
-    # 'C7':
-    #   value             : ''
-
+    'F3':
+      value             : '00-layout-PS7'
+      ws-name-to-link   : '00-layout-PS7'
+      halign            : left
+    'C3':
+      value             : 'Yes'
+    'C4':
+      value             : ''
+    'C5':
+      value             : 'Yes'
+    'C6':
+      value             : ''
+    'C7':
+      value             : ''
 
 # find and replace patterns
 find-replace-patterns:

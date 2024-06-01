@@ -360,7 +360,7 @@ class GoogleSheet(object):
             worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
             if worksheet_to_work_on:
                 # clear conditional formats
-                number_of_rules = len(conditional_formats[worksheet_name])
+                number_of_rules = len(conditional_formats.get(worksheet_name, []))
                 reqs = worksheet_to_work_on.clear_conditional_formats_requests(number_of_rules=number_of_rules)
                 requests = requests + reqs
 
