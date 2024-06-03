@@ -48,7 +48,7 @@ class GoogleSheet(object):
             try:
                 request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, includeGridData=True, fields=fields)
                 response = request.execute()
-                debug(f"get conditional formats passed in [{try_count}] try", nesting_level=1)
+                # debug(f"get conditional formats passed in [{try_count}] try", nesting_level=1)
                 if 'sheets' in response:
                     for sheet in response['sheets']:
                         if 'conditionalFormats' in sheet:
@@ -77,7 +77,7 @@ class GoogleSheet(object):
             try:
                 request = self.service.gsheet_service.spreadsheets().get(spreadsheetId=self.id, includeGridData=True, fields=fields)
                 response = request.execute()
-                debug(f"get worksheet passed in [{try_count}] try", nesting_level=1)
+                # debug(f"get worksheet passed in [{try_count}] try", nesting_level=1)
                 column_sizes = {sheet['properties']['title']: [ pixel_size['pixelSize'] for pixel_size in sheet['data'][0]['columnMetadata'] ] for sheet in response['sheets']}
                 return column_sizes
             except Exception as e:
@@ -128,7 +128,7 @@ class GoogleSheet(object):
         for try_count in range(1, try_for+1):
             try:
                 response = self.gspread_sheet.batch_update(body={'requests': request_list})
-                debug(f"[{requester}] batch-update passed in [{try_count}] try", nesting_level=1)
+                # debug(f"[{requester}] batch-update passed in [{try_count}] try", nesting_level=1)
                 return response
             except Exception as e:
                 print(e)
@@ -153,7 +153,7 @@ class GoogleSheet(object):
             try:
                 request = self.service.gsheet_service.spreadsheets().values().batchUpdate(spreadsheetId=self.id, body=batch_update_values_request_body)
                 response = request.execute()
-                debug(f"[{requester}] value-update passed in [{try_count}] try", nesting_level=1)
+                # debug(f"[{requester}] value-update passed in [{try_count}] try", nesting_level=1)
                 return response
             except Exception as e:
                 print(e)

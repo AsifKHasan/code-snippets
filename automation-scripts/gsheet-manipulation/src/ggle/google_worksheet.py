@@ -46,7 +46,7 @@ class GoogleWorksheet(object):
         for try_count in range(1, try_for+1):
             try:
                 values = self.gspread_worksheet.batch_get(ranges, major_dimension=major_dimension, value_render_option=ValueRenderOption.formatted)
-                debug(f"get values in batch passed in [{try_count}] try", nesting_level=1)
+                # debug(f"get values in batch passed in [{try_count}] try", nesting_level=1)
                 return values
 
             except Exception as e:
@@ -69,7 +69,7 @@ class GoogleWorksheet(object):
         for try_count in range(1, try_for+1):
             try:
                 values = self.gspread_worksheet.get_values(range_spec, value_render_option='ValueRenderOption.formatted')
-                debug(f"get values passed in [{try_count}] try", nesting_level=1)
+                # debug(f"get values passed in [{try_count}] try", nesting_level=1)
                 return values
             except Exception as e:
                 print(e)
@@ -90,7 +90,7 @@ class GoogleWorksheet(object):
         for try_count in range(1, try_for+1):
             try:
                 ws_range = self.gspread_worksheet.range(range_spec)
-                debug(f"get range passed in [{try_count}] try", nesting_level=1)
+                # debug(f"get range passed in [{try_count}] try", nesting_level=1)
                 return ws_range
             except Exception as e:
                 print(e)

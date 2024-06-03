@@ -23,26 +23,32 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # BEGIN work on worksheet dimensions
     # -----------------------------------------------------------------------------------
 
+    # add rows
     for worksheet_name in worksheet_names:
-        # get dimensions
+        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+        # num_rows, num_cols = worksheet.number_of_dimesnions()
         # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
 
-        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-
-        # num_rows, num_cols = worksheet.number_of_dimesnions()
-        # if num_rows != 21:
+        # if num_rows == 5:
+        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at='end', rows_to_add=1)
+        # else:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
-        #     # g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at='end', rows_to_add=1)
-
-        # add dimension
-        # if num_cols == 25:
-        # if True:
-        #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=3)
+        #     pass
         
-        # if num_rows == 18:
-        # if True:
-            # g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at='end', rows_to_add=1)
+        pass
 
+    # add columns
+    for worksheet_name in worksheet_names:
+        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
+        # num_rows, num_cols = worksheet.number_of_dimesnions()
+        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
+
+        # if num_cols == 5:
+        #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=1)
+        # else:
+        #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
+        #     pass
+        
         pass
 
     # -----------------------------------------------------------------------------------

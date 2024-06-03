@@ -1051,7 +1051,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "no-border": True,
                 },
 
-            # row 38 : 
+            # row 38 : Yes/No nd Signature
                 "B38:D38": {
                     "value": "Yes",
                     "halign": "right",
@@ -1076,23 +1076,26 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "halign": "right",
                 },
                 "I38:I42": {
-                    "value": "",
+                    "value": "='01-personal'!F3",
                     "border-color": "#B7B7B7",
+                    "halign": "center",
+                    "valign": "middle",
                     "merge": True,
                 },
 
-            # row 43 : 
+            # row 43 : Date of Signing
                 "H43": {
                     "value": "Date of Signing",
                     "halign": "right",
                 },
                 "I43": {
-                    "value": "",
+                    # "value": "",
+                    "value": "12 / 06 / 2024",
                     "halign": "center",
                     "border-color": "#B7B7B7",
                 },
 
-            # row 44 : 
+            # row 44 : Day Format
                 "I44": {
                     "value": "Day / Month / Year",
                     "halign": "center",
@@ -1122,47 +1125,116 @@ WORKSHEET_STRUCTURE_RESUME = {
     },
 
     "01-personal": {
-        "num-columns": 5,
+        "num-rows": 14,
+        "num-columns": 6,
         "frozen-rows": 2,
         "frozen-columns": 0,
+        "default-row-size": 21,
+        "autosize-rows": True,
         "columns": {
             "A": {"size": 100, "halign": "left", "wrap": True},
             "B": {"size": 30, "halign": "center", "wrap": True},
-            "C": {"size": 130, "halign": "left", "wrap": True},
-            "D": {"size": 320, "halign": "left", "wrap": True},
-            "E": {"size": 320, "halign": "center", "wrap": True},
+            "C": {"size": 140, "halign": "left", "wrap": True},
+            "D": {"size": 230, "halign": "left", "wrap": True},
+            "E": {"size": 250, "halign": "center", "wrap": True},
+            "F": {"size": 150, "halign": "center", "wrap": True},
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:E1": {
-                "halign": "center",
-            },
-            "B2:E2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "font-family": "Arial",
+                    "font-size": 10,
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                    "bold": False,
+                },
+                "B1": {
+                    "value": "30",
+                    "halign": "center",
+                    "bold": False,
+                },
+                "C1": {
+                    "value": "140",
+                    "halign": "center",
+                    "bold": False,
+                },
+                "D1": {
+                    "value": "230",
+                    "halign": "center",
+                    "bold": False,
+                },
+                "E1": {
+                    "value": "250",
+                    "halign": "center",
+                    "bold": False,
+                },
+                "F1": {
+                    "value": "150",
+                    "halign": "center",
+                    "bold": False,
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                    "bold": True,
+                },
+                "B2:F2": {
+                    "value": "content",
+                    "halign": "left",
+                    "bold": True,
+                    "merge": True,
+                },
+
+            # row 3 : name. photo, signature
+                "B3": {
+                    "value": "1",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "center",
+                },
+                "C3": {
+                    "value": "Name",
+                    "bold": True,
+                    "bgcolor": "#F3F3F3",
+                    "halign": "left",
+                },
+                "D3": {
+                    "bold": False,
+                    "halign": "left",
+                },
+                "E3:E14": {
+                    "bold": False,
+                    "halign": "center",
+                    "valign": "middle",
+                    "merge": True,
+                },
+                "F3:F14": {
+                    "bold": False,
+                    "halign": "center",
+                    "valign": "middle",
+                    "merge": True,
+                },
+
+            # B3:F : border around  
+                "B3:F": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True,
+                },
         },
-        "cell-empty-markers": ["B3:Z"],
+        "cell-empty-markers": ["B3:F"],
     },
 
     "02-career-highlight": {
@@ -2944,7 +3016,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "merge": True,
                 },
 
-            # row 3 : 
+            # row 3 : Assignment Name
                 "B3": {
                     "value": "Assignment Name",
                     "bold": True,
@@ -3438,6 +3510,6 @@ WORKSHEET_STRUCTURE_ADHOC = {
 
 
 # which structure we are using
-# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
 # WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC
+# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC
