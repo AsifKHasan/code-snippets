@@ -1,7 +1,7 @@
 # the gsheet(s) that will be processed
 gsheets:
 # pds gsheets
-  - pds__BCC-GRP-2023
+  # - pds__BCC-GRP-2023
   # - pds__RHD-CBRNIP-TOLL-2022
   # - pds__SAU-ACAS
   # - pds__CCC-CSSM
@@ -55,10 +55,10 @@ destination-gsheets:
 # worksheets on which some work will be done
 worksheets:
   # - '-toc-new'
-  - 00-layout-PS7
+  # - 00-layout-PS7
   # - 01-summary
   # - z-head
-
+  
 
 # work specifications to apply on a list of worksheets
 # work-specs:

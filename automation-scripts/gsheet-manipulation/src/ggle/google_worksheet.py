@@ -442,7 +442,8 @@ class GoogleWorksheet(object):
         # will there be review-notes in the worksheet
         if 'review-notes' in worksheet_struct:
             if worksheet_struct['review-notes']:
-                review_notes_format_requests = self.conditional_formatting_for_review_notes_requests(num_cols=worksheet_struct['num-columns'])
+                num_cols = worksheet_struct.get('num-columns', 26)
+                review_notes_format_requests = self.conditional_formatting_for_review_notes_requests(num_cols=num_cols)
             else:
                 review_notes_format_requests = []
 

@@ -3421,11 +3421,23 @@ WORKSHEET_STRUCTURE_ADHOC = {
         'columns': {
             'A': {'size': 100, 'halign': 'left', 'wrap': True, },
         },
+        'review-notes': True,
+        "ranges": {
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+        },
     },
 }
 
 
 # which structure we are using
 # WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_RESUME
-WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
-# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC
+# WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_PDS
+WORKSHEET_STRUCTURE = WORKSHEET_STRUCTURE_ADHOC
