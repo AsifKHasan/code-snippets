@@ -2611,6 +2611,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "value": "Name of Joint Venture/Associated Consultants, if any:",
                     "bold": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "merge": True,
                 },
@@ -2618,6 +2619,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "value": "No of Staff-Months of Key professional staff provided by Joint Venture/Associated Consultants:",
                     "bold": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                 },
 
@@ -2642,6 +2644,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "value": "Name of senior professional staff (Project Director/Coordinator, Team Leader) Involved and Functions Performed:",
                     "bold": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2668,6 +2671,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "value": "Narrative description of Project:",
                     "bold": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2679,6 +2683,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "bold": True,
                     "italic": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "merge": True,
                 },
@@ -2705,6 +2710,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "bold": True,
                     "italic": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2732,6 +2738,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "bold": True,
                     "italic": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2758,6 +2765,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "value": "Description of actual services provided by your Staff:",
                     "bold": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2769,6 +2777,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "bold": True,
                     "italic": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2796,6 +2805,7 @@ WORKSHEET_STRUCTURE_PDS = {
                     "bold": True,
                     "italic": True,
                     "bgcolor": "#F3F3F3",
+                    "border-color": "#B7B7B7",
                     "halign": "left",
                     "note": '{"content": "free"}',
                     "merge": True,
@@ -2841,8 +2851,22 @@ WORKSHEET_STRUCTURE_PDS = {
                     # "value": "",
                     "merge": True,
                 },
-          },
 
+            # B3:D14 : border around and inner
+                "B3:D14": {
+                    "border-color": "#B7B7B7",
+                    "no-border": False,
+                    "inner-border": True,
+                },
+
+            # B39:D41 : border around and inner
+                "B39:D41": {
+                    "border-color": "#B7B7B7",
+                    "no-border": False,
+                    "inner-border": True,
+                },
+
+        },
         "cell-empty-markers": [
             "B4:D14",
             "C39:D39",
