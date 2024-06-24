@@ -660,6 +660,107 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "merge": True,
                 },
 
+            # row 7 : blank
+                "B7:I7": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 10 : blank
+                "B10:I10": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 13 : blank
+                "B13:I13": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 16 : blank
+                "B16:I16": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 18 : blank
+                "B18:I18": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 21 : blank
+                "B21:I21": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 23 : blank
+                "B23:I23": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 26 : blank
+                "B26:I26": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 28 : blank
+                "B28:I28": {
+                    "value": "",
+                    "note": '{"new-page": true, "content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 31 : blank
+                "B31:I31": {
+                    "value": "",
+                    "note": '{"content": "free"}',
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 33 : blank
+                "B33:I33": {
+                    "value": "",
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 35 : blank
+                "B35:I35": {
+                    "value": "",
+                    "merge": True,
+                    "no-border": True,
+                },
+
+            # row 37 : blank
+                "B37:I37": {
+                    "value": "",
+                    "merge": True,
+                    "no-border": True,
+                },
+
             # row 3 : proposed position, photograph
                 "B3": {
                     "value": "1",
@@ -732,16 +833,8 @@ WORKSHEET_STRUCTURE_RESUME = {
 
             # row 3-6 : border around
                 "B3:I6": {
-                    "border-color": "#E0E0E0",
-                    "inner-border": False, 
-                },
-
-            # row 7 : blank
-                "B7:I7": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
                 },
 
             # row 8 : membership
@@ -768,14 +861,6 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "inner-border": False, 
                 },
 
-            # row 10 : blank
-                "B10:I10": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
-                },
-
             # row 11 : education
                 "B11": {
                     "value": "6",
@@ -798,14 +883,6 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B11:I12": {
                     "border-color": "#B7B7B7",
                     "inner-border": False, 
-                },
-
-            # row 13 : blank
-                "B13:I13": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
                 },
 
             # row 14 : training
@@ -833,28 +910,12 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "inner-border": False, 
                 },
 
-            # row 16 : blank
-                "B16:I16": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
-                },
-
             # row 17 : certification
                 "B17:I17": {
                     "value": "09-certification",
                     "ws-name-to-link": "09-certification",
                     "note": '{"content": "free"}',
                     "merge": True,
-                },
-
-            # row 18 : blank
-                "B18:I18": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
                 },
 
             # row 19 : language
@@ -882,14 +943,6 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "inner-border": False, 
                 },
 
-            # row 21 : blank
-                "B21:I21": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
-                },
-
             # row 22 : work countries
                 "B22": {
                     "value": "9",
@@ -908,14 +961,6 @@ WORKSHEET_STRUCTURE_RESUME = {
                 "B22:I22": {
                     "border-color": "#B7B7B7",
                     "inner-border": False, 
-                },
-
-            # row 23 : blank
-                "B23:I23": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
                 },
 
             # row 24 : employment
@@ -942,27 +987,11 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "inner-border": False, 
                 },
 
-            # row 26 : blank
-                "B26:I26": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
-                },
-
             # row 27 : project roles
                 "B27:I27": {
                     "value": "07-project-roles",
                     "ws-name-to-link": "07-project-roles",
                     "note": '{"content": "free"}',
-                },
-
-            # row 28 : blank
-                "B28:I28": {
-                    "value": "",
-                    "note": '{"new-page": true, "content": "free"}',
-                    "merge": True,
-                    "no-border": True,
                 },
 
             # row 29 : work undertaken
@@ -990,14 +1019,6 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "inner-border": False, 
                 },
 
-            # row 31 : blank
-                "B31:I31": {
-                    "value": "",
-                    "note": '{"content": "free"}',
-                    "merge": True,
-                    "no-border": True,
-                },
-
             # row 32 : undertaking
                 "B32:I32": {
                     "values": [
@@ -1009,23 +1030,9 @@ WORKSHEET_STRUCTURE_RESUME = {
                     "merge": True,
                 },
 
-            # row 33 : blank
-                "B33:I33": {
-                    "value": "",
-                    "merge": True,
-                    "no-border": True,
-                },
-
             # row 34 : undertaking
                 "B34:I34": {
                     "value": "I, the undersigned, certify that (i) I was not a former employee of the Client immediately before the submission of this proposal, and (ii) to the best of my knowledge and belief, this bio-data correctly describes myself, my qualifications, and my experience. I understand that any willful misstatement described herein may lead to my disqualification or dismissal, if engaged.",
-                    "merge": True,
-                    "no-border": True,
-                },
-
-            # row 35 : blank
-                "B35:I35": {
-                    "value": "",
                     "merge": True,
                     "no-border": True,
                 },
@@ -1040,13 +1047,6 @@ WORKSHEET_STRUCTURE_RESUME = {
                         {   "text": " continuously for the last twelve (12) months as regular full time staff. Indicate \"Yes\" or \"No\" in the boxes below:",
                             "format": {}},
                     ],
-                    "merge": True,
-                    "no-border": True,
-                },
-
-            # row 37 : blank
-                "B37:I37": {
-                    "value": "",
                     "merge": True,
                     "no-border": True,
                 },
@@ -1090,7 +1090,7 @@ WORKSHEET_STRUCTURE_RESUME = {
                 },
                 "I43": {
                     # "value": "",
-                    "value": "12 / 06 / 2024",
+                    "value": "20 / 06 / 2024",
                     "halign": "center",
                     "border-color": "#B7B7B7",
                 },
@@ -1249,30 +1249,50 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:D1": {
-                "halign": "center",
-            },
-            "B2:D2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "150",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "30",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "620",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:D2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3-end : border around
+                "B3:D": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1292,58 +1312,69 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:E1": {
-                "halign": "center",
-            },
-            "B2:E2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Year",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "Degree",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3": {
-                "value": "Subject/Discipline",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "E3": {
-                "value": "Institute",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "80",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "210",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "210",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "300",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:E2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Year",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "Degree",
+                },
+                "D3": {
+                    "value": "Subject/Discipline",
+                },
+                "E3": {
+                    "value": "Institute",
+                },
+
+            # row 3-end : border around
+                "B3:E": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1362,44 +1393,61 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:D1": {
-                "halign": "center",
-            },
-            "B2:D2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Area",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3:D3": {
-                "value": "Expertise",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "merge": True,
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "170",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "30",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "600",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:D2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Area",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3:D3": {
+                    "value": "Expertise",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3-end : border around
+                "B3:D": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1418,44 +1466,61 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:D1": {
-                "halign": "center",
-            },
-            "B2:D2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Area",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3:D3": {
-                "value": "Expertise",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "merge": True,
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "170",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "30",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "600",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:D2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Area",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3:D3": {
+                    "value": "Expertise",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3-end : border around
+                "B3:D": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1475,76 +1540,71 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:E1": {
-                "halign": "center",
-            },
-            "B2:E2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "From",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "To",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3:E3": {
-                "value": "Employment History",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "merge": True,
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "60",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "60",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "30",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "650",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:E2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "From",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "To",
+                },
+                "D3:E3": {
+                    "value": "Employment History",
+                    "merge": True,
+                },
+
+            # row 3-end : border around
+                "B3:E": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
         ],
-    },
-
-    "06-job-history-USAID": {
-        "columns": {
-            "A": {"size": 100, "halign": "left", "wrap": True},
-            "B": {"size": 65, "halign": "center", "wrap": True},
-            "C": {"size": 65, "halign": "center", "wrap": True},
-            "D": {"size": 30, "wrap": True},
-            "E": {"size": 640, "wrap": True},
-        },
-        "ranges": {
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "B1": {"value": "65", "halign": "center"},
-            "C1": {"value": "65", "halign": "center"},
-            "D1": {"value": "30", "halign": "center"},
-            "E1": {"value": "640", "halign": "center"},
-            "B2:E2": {"value": "content", "halign": "left", "merge": True},
-        },
     },
 
     "07-project-roles": {
@@ -1560,50 +1620,67 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:E1": {
-                "halign": "center",
-            },
-            "B2:E2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "From",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "To",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3:E3": {
-                "value": "Company/ Project/ Position and Technical/ Management Experience",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "merge": True,
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "60",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "60",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "30",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "650",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:E2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "From",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "To",
+                },
+                "D3:E3": {
+                    "value": "Company/Project/Position/ Relevant Technical and Management Experience",
+                    "merge": True,
+                },
+
+            # row 3-end : border around
+                "B3:E": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1622,52 +1699,62 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:D1": {
-                "halign": "center",
-            },
-            "B2:D2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Year",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "Training",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3": {
-                "value": "Institute",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "80",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "450",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "370",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:D2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Year",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "Training",
+                },
+                "D3": {
+                    "value": "Institute",
+                },
+
+            # row 3-end : border around
+                "B3:D": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1687,58 +1774,69 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:E1": {
-                "halign": "center",
-            },
-            "B2:E2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Year",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "Vendor/OEM/ Subject",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3": {
-                "value": "Certification",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "E3": {
-                "value": "Details",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "70",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "150",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "280",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "300",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:E2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Year",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "Vendor/ OEM/ Subject",
+                },
+                "D3": {
+                    "value": "Certification",
+                },
+                "E3": {
+                    "value": "Details",
+                },
+
+            # row 3-end : border around
+                "B3:E": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1759,64 +1857,76 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:F1": {
-                "halign": "center",
-            },
-            "B2:F2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Professional Organization/Society",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "Membership Rank/Level",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3": {
-                "value": "Membership ID/Number",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "E3": {
-                "value": "Member Since",
-                "halign": "center",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "F3": {
-                "value": "Details",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "250",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "150",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "125",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "125",
+                    "halign": "center",
+                },
+                "F1": {
+                    "value": "150",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:F2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Professional Organization/ Society",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "Membership Rank/ Level",
+                },
+                "D3": {
+                    "value": "Membership ID/ Number",
+                },
+                "E3": {
+                    "value": "Member Since",
+                },
+                "F3": {
+                    "value": "Details",
+                },
+
+            # row 3-end : border around
+                "B3:F": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1836,58 +1946,69 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:E1": {
-                "halign": "center",
-            },
-            "B2:E2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Language",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "Speaking",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3": {
-                "value": "Reading",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "E3": {
-                "value": "Writing",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "110",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "230",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "230",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "230",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:E2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Language",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "Speaking",
+                },
+                "D3": {
+                    "value": "Reading",
+                },
+                "E3": {
+                    "value": "Writing",
+                },
+
+            # row 3-end : border around
+                "B3:E": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -1905,36 +2026,49 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:C1": {
-                "halign": "center",
-            },
-            "B2:C2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "200",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "600",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:C2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3-end : border around
+                "B3:C": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
-            "B3:C4",
+            "B3:C",
         ],
     },
 
@@ -2072,64 +2206,76 @@ WORKSHEET_STRUCTURE_RESUME = {
         },
         "review-notes": True,
         "ranges": {
-            "A1:Z": {
-                "valign": "top",
-                "wrap": True,
-                "bgcolor": "#FFFFFF",
-                "border-color": "#B7B7B7",
-                "no-border": True,
-            },
-            "A1": {
-                "value": "-toc-new",
-                "ws-name-to-link": "-toc-new",
-                "halign": "left",
-            },
-            "A2": {
-                "value": "review-notes",
-                "halign": "left",
-            },
-            "B1:F1": {
-                "halign": "center",
-            },
-            "B2:F2": {
-                "value": "content",
-                "halign": "left",
-                "merge": True,
-            },
-            "B3": {
-                "value": "Name",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-                "note": '{"repeat-rows": 1}',
-            },
-            "C3": {
-                "value": "Position",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "D3": {
-                "value": "Company",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "E3": {
-                "value": "Email",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "F3": {
-                "value": "Phone Number",
-                "halign": "left",
-                "bgcolor": "#F3F3F3",
-                "border-color": "#B7B7B7",
-            },
-            "B4:Z": {
-                "border-color": "#B7B7B7",
-            },
+            # full worksheet
+                "A1:Z": {
+                    "valign": "top",
+                    "wrap": True,
+                    "bgcolor": "#FFFFFF",
+                    "border-color": "#B7B7B7",
+                    "no-border": True,
+                },
+
+            # row 1 : -toc-new and column sizes
+                "A1": {
+                    "value": "-toc-new",
+                    "ws-name-to-link": "-toc-new",
+                    "halign": "left",
+                },
+                "B1": {
+                    "value": "140",
+                    "halign": "center",
+                },
+                "C1": {
+                    "value": "150",
+                    "halign": "center",
+                },
+                "D1": {
+                    "value": "190",
+                    "halign": "center",
+                },
+                "E1": {
+                    "value": "190",
+                    "halign": "center",
+                },
+                "F1": {
+                    "value": "130",
+                    "halign": "center",
+                },
+
+            # row 2 : review-notes and column labels
+                "A2": {
+                    "value": "review-notes",
+                    "halign": "left",
+                },
+                "B2:F2": {
+                    "value": "content",
+                    "halign": "left",
+                    "merge": True,
+                },
+
+            # row 3 : column headers
+                "B3": {
+                    "value": "Name",
+                    "note": '{"repeat-rows": 1}',
+                },
+                "C3": {
+                    "value": "Position",
+                },
+                "D3": {
+                    "value": "Company",
+                },
+                "E3": {
+                    "value": "Email",
+                },
+                "F3": {
+                    "value": "Phone Number",
+                },
+
+            # row 3-end : border around
+                "B3:F": {
+                    "border-color": "#B7B7B7",
+                    "inner-border": True, 
+                },
         },
         "cell-empty-markers": [
             "B3:Z",
@@ -2218,6 +2364,7 @@ WORKSHEET_STRUCTURE_RESUME = {
         ],
     },
 }
+
 
 # PDS structure
 WORKSHEET_STRUCTURE_PDS = {
