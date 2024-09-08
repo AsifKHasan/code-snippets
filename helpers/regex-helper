@@ -5,3 +5,31 @@ regex = r'উপজেলা/থানা\s*(?P<upazila>.*) \s+ সিটি ক
 m = re.match(regex, line)
 m.group('upazila')
 m.group('city')
+
+
+CBS
+----------------------
+NL to SPACE
+\r\n
+ 
+
+double SPACE to single SPACE
+
+
+numbered items in COL 1
+([0-9]+\.[0-9]+\.[0-9]+) 
+\n$1\t
+
+ROMAN items in COL 3
+ ([ivx]+\.) 
+\n\t\t$1\t
+
+
+ROMAN i. not to be in a new line
+\n\t\ti\.
+\ti\.
+
+
+lettered items in COL 4
+( [a-z][.)] )
+\n\t\t\t$1\t
