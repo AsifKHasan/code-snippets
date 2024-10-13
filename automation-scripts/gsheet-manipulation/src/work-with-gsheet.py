@@ -90,7 +90,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
     g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
     g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
-    g_sheet.order_worksheets()
+    # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet
     # for destination_gsheet_name in destination_gsheet_names:
@@ -156,7 +156,9 @@ if __name__ == '__main__':
     work_specs = config.get('work-specs', {})
     find_replace_patterns = config.get('find-replace-patterns', [])
 
-    g_service = GoogleService('../conf/credential.json')
+    # g_service = GoogleService('../conf/credential-spectrum-895-221613.json')
+    g_service = GoogleService('../conf/credential-celloscope-2024-160107.json')
+
     count = 0
     num_gsheets = len(gsheet_names)
     for gsheet_name in gsheet_names:

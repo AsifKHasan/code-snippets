@@ -639,7 +639,24 @@
     - z-blank
     - z-foot
     - z-head
-
+# profile worksheets
+    - 00-coverpage
+    - 01-personal-profile
+    - 01.01-family
+    - 01.02-address
+    - 01.03-banking
+    - 02-professional-profile
+    - 02.01-education
+    - 02.02-jobs
+    - 02.03-training
+    - 02.04-certification
+    - 02.05-skills
+    - 02.06-projects
+    - 03.01-increment
+    - 03.02-events
+    - 03.03-cautions
+    - 03.04-medical
+    - 04-notes
 
 
 # work-specs:
