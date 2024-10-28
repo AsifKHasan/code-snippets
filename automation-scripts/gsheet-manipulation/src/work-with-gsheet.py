@@ -77,7 +77,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # trailing blank row removal, review-notes, column size in row 1
     # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
     # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
-    # g_sheet.column_pixels_in_row(worksheet_names=worksheet_names, row_to_update=1)
+    g_sheet.column_pixels_in_row(worksheet_names=worksheet_names, row_to_update=1)
     # g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
 
     # work on ranges etc.
@@ -88,8 +88,8 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # cell linking and ordering
     # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
     # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet
@@ -151,13 +151,13 @@ if __name__ == '__main__':
     else:
         gsheet_names = config['gsheets']
 
+    credential_json = config['credential-json']
     destination_gsheet_names = config['destination-gsheets']
     worksheet_names = config.get('worksheets', [])
     work_specs = config.get('work-specs', {})
     find_replace_patterns = config.get('find-replace-patterns', [])
 
-    # g_service = GoogleService('../conf/credential-spectrum-895-221613.json')
-    g_service = GoogleService('../conf/credential-celloscope-2024-160107.json')
+    g_service = GoogleService(credential_json)
 
     count = 0
     num_gsheets = len(gsheet_names)

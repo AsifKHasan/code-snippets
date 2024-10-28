@@ -505,14 +505,14 @@ class GoogleWorksheet(object):
 
     ''' put column size in pixels in row 1 for all columns except A
     '''
-    def column_pixels_in_top_row_requests(self, column_sizes):
+    def column_pixels_in_top_row_requests(self, column_sizes, row_to_update):
         # for coumns B to end
         range_work_specs = {}
         values = []
         requests = []
 
         for col_num in range(1, self.col_count()):
-            cell_a1 = f"{column_to_letter(col_num + 1)}1"
+            cell_a1 = f"{column_to_letter(col_num + 1)}{row_to_update}"
             column_width = column_sizes[self.title][col_num]
             range_work_specs[cell_a1] = {'value': column_width, 'halign': 'center'}
 

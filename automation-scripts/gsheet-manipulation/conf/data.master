@@ -1,3 +1,8 @@
+# the google credential for accessing the gsheet(s) (this file is not in the repo)
+credential-json: '../conf/credential.json'
+
+
+
 # resume gsheets
   # template
     - spectrum__Résumé__template
@@ -595,6 +600,7 @@
     - pds__celloscope__TeleExchange-uniVerge
 
 
+
 # worksheets:
   # resume worksheets
     - '-toc-new'
@@ -657,6 +663,7 @@
     - 03.03-cautions
     - 03.04-medical
     - 04-notes
+
 
 
 # work-specs:

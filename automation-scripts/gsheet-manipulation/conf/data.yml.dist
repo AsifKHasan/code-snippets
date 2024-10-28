@@ -1,3 +1,7 @@
+# the google credential for accessing the gsheet(s) (this file is not in the repo)
+credential-json: '../conf/credential.json'
+
+
 # the gsheet(s) that will be processed
 gsheets:
 

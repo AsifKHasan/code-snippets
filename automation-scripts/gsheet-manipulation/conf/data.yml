@@ -1,3 +1,6 @@
+credential-json: '../conf/credential-spectrum-895-221613.json'
+# credential-json: '../conf/credential-celloscope-2024-160107.json'
+
 # the gsheet(s) that will be processed
 gsheets:
 
@@ -13,69 +16,33 @@ destination-gsheets:
 # worksheets on which some work will be done
 worksheets:
   # resume worksheets
-    # - '-toc-new'
-    # - 00-layout
-    # - 00-layout-PS7
-    # - 00-layout-WB
-    # - 01-personal
-    # - 02-career-highlight
-    # - 03-education
-    # - 04-managerial-expertise
-    # - 05-technical-expertise
-    # - 06-job-history
-    # - 07-project-roles
-    # - 08-training
-    # - 09-certification
-    # - 10-membership
-    # - 11-language-proficiency
-    # - 12-contact
-    # - 13-educational-certificates
-    # - 14-vendor-certificates
-    # - 15-institutional-certificates
-    # - 16-references
-    # - 17-national-id
-    # - z-foot
-    # - z-head
 
   # pds worksheets
-    # - '-toc-new'
-    # - 00-layout
-    # - 00-layout-PS7
-    # - 01-summary
-    # - 02-revenue
-    # - 03-contact
-    # - 04-joint-venture
-    # - 05-people
-    # - 06-description
-    # - 07-functionality
-    # - 08-technology
-    # - 09-services
-    # - 10-process
-    # - 11-complexity
-    # - 12-screenshots
-    # - z-blank
-    # - z-foot
-    # - z-head
 
   # profile worksheets
-    # - '-toc-new'
-    - 00-coverpage
-    - 01-personal-profile
-    - 01.01-family
-    - 01.02-address
-    - 01.03-banking
-    - 02-professional-profile
-    - 02.01-education
-    - 02.02-jobs
-    - 02.03-training
-    - 02.04-certification
-    - 02.05-skills
-    - 02.06-projects
-    - 03.01-increment
-    - 03.02-events
-    - 03.03-cautions
-    - 03.04-medical
-    - 04-notes
+
+  - 00.00-coverpage
+  - 00.01-executive-summary
+  - 01-background
+  - 02-casestudy-cement
+  - 03-problem-analysis
+  - 04-issue-identification
+  - 05-importance-vat
+  - 06-existing-vat-application
+  - 07-statistics-report
+  - 08-proposed-solution
+  - 09-mushak-forms
+  - 10-study-material
+  - 11-conclusion
+  - 12-references
+  - a01-casestudy-stakeholder
+  - a02-vat-soft-companies
+  - a02-vat-soft-companies-copy
+  - a03-cement-companies
+  - a03-cement-companies-copy
+  - a04-vatpayer-companies
+  - z-foot
+  - z-head
 
 # work specifications to apply on a list of worksheets
 work-specs:
