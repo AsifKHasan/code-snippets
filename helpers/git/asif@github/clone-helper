@@ -1,5 +1,6 @@
 cd D:\projects\asif@github
 
+git clone https://github.com/AsifKHasan/asifkhasan.github.io.git
 git clone https://github.com/AsifKHasan/algorithms-with-games.git
 git clone https://github.com/AsifKHasan/automatigo.git
 git clone https://github.com/AsifKHasan/bangla-language.git
