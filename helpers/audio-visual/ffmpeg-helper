@@ -12,7 +12,7 @@ sox "C:\Users\Asif Hasan\Downloads\audio\somoy-tv.wav" -t raw - | python -m rhas
 
 
 youtube-dl https://www.youtube.com/watch?v=SETrurolzMo
-ffmpeg -i somoy-tv.mp4 somoy-tv.wav
+ffmpeg -i bangla.ogg bangla.wav
 sox somoy-tv.wav somoy-tv-.wav silence 1 1.0 0% 1 2.0 0% : newfile : restart
 
 

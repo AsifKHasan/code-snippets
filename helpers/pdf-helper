@@ -4,7 +4,7 @@ cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\2023-08-28__Board Resolution (TOR).pdf" "C:\Users\Asif\Downloads\personal\abc"
 pdftocairo -png -gray "C:\Users\Asif\Downloads\2023-08-02__Bishod Audit Forwarding & Reply 2022.pdf" "C:\Users\Asif\Downloads\abc"
 
-pdftocairo -png -r 600 -cropbox "/home/asif/Downloads/bec-chatbot-ganttchart-for-ahq.pdf" "/home/asif/Downloads/abc/abc"
+pdftocairo -png -r 600 -cropbox "/home/asif/Downloads/time-bound-reform-proposal.pdf" "/home/asif/Downloads/abc/abc"
 
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 
@@ -15,7 +15,7 @@ do
   tesseract "$f" "$f" -l ben+eng
 done
 
-tesseract "/home/asif/Downloads/abc/abc-01.png" "/home/asif/Downloads/abc/out/01" -l eng+ben
+tesseract "/home/asif/Downloads/abc/abc-02.png" "/home/asif/Downloads/abc/out/02" -l ben
 tesseract "C:\Users\Asif Hasan\Downloads\page-1.png" "C:\Users\Asif Hasan\Downloads\text" -l eng
 
 

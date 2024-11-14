@@ -1,0 +1,4 @@
+(defalias 'plus #'+)
+(defalias 'quotient #'/)
+(defalias 'times #'*)
+(defalias 'difference #'-)
