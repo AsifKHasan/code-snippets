@@ -14,6 +14,8 @@ xclip -sel clip < ~/.ssh/id_ed25519.pub
 
 
 # migrate to SSH from HTTPS
+
+git remote set-url origin git@github.com:AsifKHasan/asifkhasan.github.io.git
 git remote set-url origin git@github.com:AsifKHasan/algorithms-with-games.git
 git remote set-url origin git@github.com:AsifKHasan/automatigo.git
 git remote set-url origin git@github.com:AsifKHasan/bangla-language.git

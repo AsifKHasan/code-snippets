@@ -1,5 +1,6 @@
 cd D:\projects\asif@github
 
+pushd asifkhasan.github.io.git & git pull & popd
 pushd algorithms-with-games & git pull & popd
 pushd asifkhasan.github.io & git pull & popd
 pushd automatigo & git pull & popd
@@ -11,6 +12,7 @@ pushd visualization-explorations & git pull & popd
 
 cd /home/asif/projects/asif@github
 
+pushd asifkhasan.github.io.git ; git pull ; popd
 pushd algorithms-with-games ; git pull ; popd
 pushd asifkhasan.github.io ; git pull ; popd
 pushd automatigo ; git pull ; popd
