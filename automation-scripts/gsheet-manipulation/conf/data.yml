@@ -22,34 +22,82 @@ worksheets:
   # profile worksheets
 
   - 00.00-coverpage
-  - 00.01-executive-summary
   - 01-background
-  - 02-casestudy-cement
-  - 03-problem-analysis
-  - 04-issue-identification
-  - 05-importance-vat
-  - 06-existing-vat-application
-  - 07-statistics-report
-  - 08-proposed-solution
-  - 09-mushak-forms
-  - 10-study-material
-  - 11-conclusion
-  - 12-references
-  - a01-casestudy-stakeholder
-  - a02-vat-soft-companies
-  - a02-vat-soft-companies-copy
-  - a03-cement-companies
-  - a03-cement-companies-copy
-  - a04-vatpayer-companies
-  - z-foot
-  - z-head
+  - 02-general-overview
+  - 03-goals-objective
+  - 03.01-specific-objective
+  - 04-scope-of-work
+  - 04.01-design-develop-e-ticketing
+  - 04.02-integration-iot-devices
+  - 04.03-integration-vts
+  - 04.04-logical-processes
+  - 04.04.01-admin-control-dashboard
+  - 04.04.02-online-ticket-purchase
+  - 04.04.03-ticket-sale-at-counter
+  - 04.04.04-reports-module
+  - 04.04.05-ticket-validation
+  - 04.04.06-trip-calculation
+  - 04.05-components-to-integrate
+  - 04.06-design-system-architecture
+  - 04.07-equipment-setup
+  - 05-general-features
+  - 06.01-client-server-model
+  - 06.02-security-privacy
+  - 06.02.01-bnda-security
+  - 06.02.02-application-security
+  - 06.02.03-user-interface-security
+  - 06.02.04-data-security
+  - 06.02.5-login-security
+  - 06.03-application-requirement
+  - 06.04-interoperability-data-exchange
+  - 06.05-system-audit-feature
+  - 07.01-device-configuration
+  - 07.02-hosting-ipr
+  - 07.03-ui-ux
+  - 07.04-server-pc-internet
+  - 07.05-ticketing-printing-reporting
+  - 08-general-terms-condition
+  - 09-risk-analysis-mitigation
+  - 10-software-engineering-srs
+  - 11-training
+  - 12-os-platform-compatibility
+  - 13-data-accuracy
+  - 14-extendibility
+  - 15-database-migration
+  - 16-availability-reliability
+  - 17-summarized-project-proposal
+  - 18-configuration-of-backup-server
+  - 19-knowledge-transfer
+  - 20-time-period
+  - 21-security-warranty-maintenance
+  - 22-code-data-administration
+  - 23-testing-trial
+  - 24-acceptance
+  - 25-other-conditions
+  - 26-disqualification
+  - 27-extra-maintenance-support
+  - 28-miscellaneous-terms-conditions
+  - 30-desired-outcomes
+  - 31.01-combined-deliverables
+  - 32-reporting-arrangement
+  - 33-client-input
+  - 34-assignment-duration
+  - 35-institutional-arrangement
+  - 36-team-composition
+  - 36.01-key-expert
+  - 36.02-non-key-expert
+  - 36.03-timelines-effort
+  - 37-eligibility-criteria
+  - 38-selection-procedure
+  - 39-use-case-diagram
+  - 40-work-flow-diagram
 
 # work specifications to apply on a list of worksheets
 work-specs:
-  'A1'    :
-    value             : '-toc-new'
-    ws-name-to-link   : '-toc-new'
-    halign            : left
+  'A1:Z'  :
+    font-family       : Arial
+    font-size         : 11
+    valign            : top
 
 
 # find and replace patterns

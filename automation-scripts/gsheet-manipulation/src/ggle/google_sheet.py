@@ -222,8 +222,8 @@ class GoogleSheet(object):
 
     ''' remove a worksheet
     '''
-    def remove_worksheets(self, worksheet_names_to_remove):
-        for worksheet_name in worksheet_names_to_remove:
+    def remove_worksheets(self, worksheet_names):
+        for worksheet_name in worksheet_names:
             worksheet_to_remove = self.worksheet_by_name(worksheet_name)
             if worksheet_to_remove:
                 try:
@@ -238,10 +238,10 @@ class GoogleSheet(object):
 
     ''' bulk create multiple worksheets by duplicating a given worksheet
     '''
-    def duplicate_worksheet(self, worksheet_name_to_duplicate, new_worksheet_names):
+    def duplicate_worksheet(self, worksheet_name_to_duplicate, worksheet_names):
         worksheet_to_duplicate = self.worksheet_by_name(worksheet_name_to_duplicate)
         if worksheet_to_duplicate:
-            requests = worksheet_to_duplicate.duplicate_worksheet_requests(new_worksheet_names)
+            requests = worksheet_to_duplicate.duplicate_worksheet_requests(new_worksheet_names=worksheet_names)
             self.update_in_batch(values=[], requests=requests, requester='duplicate_worksheet')
 
 
@@ -353,7 +353,7 @@ class GoogleSheet(object):
                     info(f"But a common structure (*) was defined for formatting [{worksheet_name}]", nesting_level=1)
                 else:
                     continue
-            
+
             else:
                 worksheet_struct = WORKSHEET_STRUCTURE[worksheet_name]
 

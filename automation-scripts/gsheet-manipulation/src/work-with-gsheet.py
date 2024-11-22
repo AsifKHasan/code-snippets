@@ -34,7 +34,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # else:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
         #     pass
-        
+
         pass
 
     # add columns
@@ -48,7 +48,7 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
         # else:
         #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
         #     pass
-        
+
         pass
 
     # -----------------------------------------------------------------------------------
@@ -59,8 +59,8 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # print(final_list)
 
     # worksheet duplication, removal, renaming
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', new_worksheet_names=worksheet_names)
-    # g_sheet.remove_worksheets(worksheet_names_to_remove=worksheet_names)
+    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', worksheet_names=worksheet_names)
+    # g_sheet.remove_worksheets(worksheet_names=worksheet_names)
     # g_sheet.rename_worksheet(worksheet_name='z-header', new_worksheet_name='z-head')
     # g_sheet.rename_worksheet(worksheet_name="z-footer", new_worksheet_name="z-foot")
     # g_sheet.rename_worksheet(worksheet_name="00-layout-WB", new_worksheet_name="00-layout")
@@ -88,9 +88,9 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
 
     # cell linking and ordering
     # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
-    g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
-    g_sheet.order_worksheets()
+    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
+    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
+    # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet
     # for destination_gsheet_name in destination_gsheet_names:
