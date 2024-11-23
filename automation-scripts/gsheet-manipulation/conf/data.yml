@@ -1,6 +1,9 @@
 credential-json: '../conf/credential-spectrum-895-221613.json'
 # credential-json: '../conf/credential-celloscope-2024-160107.json'
 
+gsheet-tasks:
+
+
 # the gsheet(s) that will be processed
 gsheets:
 
@@ -10,11 +13,11 @@ gsheets:
 
 
 # gsheets which are targets for some activities like copy worksheet
-destination-gsheets:
+destination-gsheet-names:
 
 
 # worksheets on which some work will be done
-worksheets:
+worksheet-names:
   # resume worksheets
 
   # pds worksheets
@@ -24,10 +27,6 @@ worksheets:
 
 # work specifications to apply on a list of worksheets
 work-specs:
-  'A1:Z'  :
-    font-family       : Arial
-    font-size         : 11
-    valign            : top
 
 
 # find and replace patterns

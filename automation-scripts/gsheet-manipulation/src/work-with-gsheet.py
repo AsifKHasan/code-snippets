@@ -14,11 +14,47 @@ from task.resume_tasks import *
 
 final_list = []
 
-def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names, work_specs, find_replace_patterns):
+def execute_gsheet_tasks(g_sheet, g_service, gsheet_tasks=[], worksheet_names=[], destination_gsheet_names=[], work_specs={}, find_replace_patterns=[]):
+    for gsheet_task_def in gsheet_tasks:
+        task_name = gsheet_task_def['task']
+        if hasattr(g_sheet, task_name) and callable(getattr(g_sheet, task_name)):
+            # arguments
+            args_dict = {}
+            for k, v in gsheet_task_def.items():
+                if k == 'task':
+                    pass
 
-    if worksheet_names is None : worksheet_names = []
-    if work_specs is None : work_specs = {}
-    if find_replace_patterns is None : find_replace_patterns = []
+                elif k == 'worksheet_names' and v == True:
+                    args_dict[k] = worksheet_names
+
+                elif k == 'destination_gsheet_names' and v == True:
+                    args_dict[k] = destination_gsheet_names
+
+                elif k == 'work_specs' and v == True:
+                    args_dict[k] = work_specs
+
+                elif k == 'find_replace_patterns' and v == True:
+                    args_dict[k] = find_replace_patterns
+
+                else:
+                    args_dict[k] = v
+
+
+            # execute the task
+            try:
+                task = getattr(g_sheet, task_name)
+                debug(f"executing task [{task_name}]")
+                task(**args_dict)
+                debug(f"executed  task [{task_name}]")
+            except Exception as e:
+                error(str(e))
+
+        else:
+            error(f"g_sheet has no method [{task_name}]")
+
+
+
+def work_on_gsheet(g_sheet, g_service, worksheet_names=[], destination_gsheet_names=[], work_specs={}, find_replace_patterns=[]):
 
     # BEGIN work on worksheet dimensions
     # -----------------------------------------------------------------------------------
@@ -58,39 +94,8 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names, destination_gsheet_names
     # final_list = list(set(final_list) | set(g_sheet.list_worksheets()))
     # print(final_list)
 
-    # worksheet duplication, removal, renaming
-    # g_sheet.duplicate_worksheet(worksheet_name_to_duplicate='z-blank', worksheet_names=worksheet_names)
-    # g_sheet.remove_worksheets(worksheet_names=worksheet_names)
-    # g_sheet.rename_worksheet(worksheet_name='z-header', new_worksheet_name='z-head')
-    # g_sheet.rename_worksheet(worksheet_name="z-footer", new_worksheet_name="z-foot")
-    # g_sheet.rename_worksheet(worksheet_name="00-layout-WB", new_worksheet_name="00-layout")
-
-    # worksheet creation, formatting and related tasks
-    # g_sheet.clear_data_validation(worksheet_names=worksheet_names, range_spec='A1:Z')
-    # g_sheet.clear_conditional_formats(worksheet_names=worksheet_names)
-    # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
-
     # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
-    # g_sheet.create_review_notes_conditional_formatting(worksheet_names=worksheet_names)
-
-    # trailing blank row removal, review-notes, column size in row 1
-    # g_sheet.remove_extra_columns(worksheet_names=worksheet_names, cols_to_remove_from='F', cols_to_remove_to='end')
-    # g_sheet.remove_trailing_blank_rows(worksheet_names=worksheet_names)
-    # g_sheet.column_pixels_in_row(worksheet_names=worksheet_names, row_to_update=1)
-    # g_sheet.resize_columns_from_values_in_row(worksheet_names=worksheet_names, row_to_consult=1)
-
-    # work on ranges etc.
-    # g_sheet.work_on_ranges(worksheet_names=worksheet_names, range_work_specs=work_specs)
-
-    # find and replace in worksheets
-    # g_sheet.find_and_replace(worksheet_names=worksheet_names, find_replace_patterns=find_replace_patterns)
-
-    # cell linking and ordering
-    # g_sheet.link_cells_to_drive_files(worksheet_name='files-folders', range_specs_for_cells_to_link=['F3:F'])
-    # g_sheet.link_cells_based_on_type(worksheet_name='-toc-new', range_specs_for_cells_to_link=['E3:F'])
-    # g_sheet.link_cells_to_worksheet(worksheet_name='-toc-new', range_specs_for_cells_to_link=['O3:O', 'R3:R'])
-    # g_sheet.order_worksheets()
 
     # copy worksheets to another gsheet
     # for destination_gsheet_name in destination_gsheet_names:
@@ -152,8 +157,9 @@ if __name__ == '__main__':
         gsheet_names = config['gsheets']
 
     credential_json = config['credential-json']
-    destination_gsheet_names = config['destination-gsheets']
-    worksheet_names = config.get('worksheets', [])
+    destination_gsheet_names = config.get('destination-gsheet-names', [])
+    gsheet_tasks = config.get('gsheet-tasks', [])
+    worksheet_names = config.get('worksheet-names', [])
     work_specs = config.get('work-specs', {})
     find_replace_patterns = config.get('find-replace-patterns', [])
 
@@ -172,7 +178,8 @@ if __name__ == '__main__':
             # raise e
 
         if g_sheet:
-            work_on_gsheet(g_sheet=g_sheet, g_service=g_service, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
+            execute_gsheet_tasks(g_sheet=g_sheet, g_service=g_service, gsheet_tasks=gsheet_tasks, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
+            # work_on_gsheet(g_sheet=g_sheet, g_service=g_service, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")
 

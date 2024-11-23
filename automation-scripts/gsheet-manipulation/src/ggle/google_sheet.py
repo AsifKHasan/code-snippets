@@ -238,7 +238,7 @@ class GoogleSheet(object):
 
     ''' bulk create multiple worksheets by duplicating a given worksheet
     '''
-    def duplicate_worksheet(self, worksheet_name_to_duplicate, worksheet_names):
+    def duplicate_worksheet(self, worksheet_names, worksheet_name_to_duplicate):
         worksheet_to_duplicate = self.worksheet_by_name(worksheet_name_to_duplicate)
         if worksheet_to_duplicate:
             requests = worksheet_to_duplicate.duplicate_worksheet_requests(new_worksheet_names=worksheet_names)
@@ -374,15 +374,15 @@ class GoogleSheet(object):
 
     ''' work on a (list of) worksheet's range of work specs for value and format updates
     '''
-    def work_on_ranges(self, worksheet_names, range_work_specs={}):
+    def work_on_ranges(self, worksheet_names, work_specs={}):
         requests = []
         values = []
         worksheet_dict = self.worksheets_as_dict()
         for worksheet_name in worksheet_names:
-            # info(f"working on .. [{len(range_work_specs.keys())}] ranges on [{worksheet_name}]", nesting_level=1)
+            # info(f"working on .. [{len(work_specs.keys())}] ranges on [{worksheet_name}]", nesting_level=1)
             worksheet_to_work_on = self.worksheet_by_name(worksheet_name)
             if worksheet_to_work_on:
-                vals, reqs = worksheet_to_work_on.range_work_requests(range_work_specs=range_work_specs, worksheet_dict=worksheet_dict)
+                vals, reqs = worksheet_to_work_on.range_work_requests(range_work_specs=work_specs, worksheet_dict=worksheet_dict)
                 values = values + vals
                 requests = requests + reqs
 
@@ -426,7 +426,7 @@ class GoogleSheet(object):
     def remove_extra_columns(self, worksheet_names, cols_to_remove_from, cols_to_remove_to):
         requests = []
         for worksheet_name in worksheet_names:
-            worksheet = self.worksheet_by_name(worksheet_name)
+            worksheet = self.worksheet_by_name(worksheet_name=worksheet_name)
             if worksheet:
                 # check if the worksheet column count is valid for the operation
                 if worksheet.col_count() >= LETTER_TO_COLUMN[cols_to_remove_from]:
@@ -487,3 +487,20 @@ class GoogleSheet(object):
             reqs = worksheet.dimension_add_requests(cols_to_add_at=cols_to_add_at, cols_to_add=cols_to_add)
             requests = requests + reqs
             self.update_in_batch(values=[], requests=requests, requester='add_columns')
+
+
+
+    ''' create review-notes conditional formatting
+    '''
+    def create_review_notes_conditional_formatting(self, worksheet_names):
+        requests = []
+        for worksheet_name in worksheet_names:
+            worksheet = self.worksheet_by_name(worksheet_name=worksheet_name)
+            info(f"updating review-notes conditional formatting for worksheet {worksheet_name}", nesting_level=1)
+            if worksheet:
+                # Get number of columns
+                num_cols = worksheet.col_count()
+                requests = requests + worksheet.conditional_formatting_for_review_notes_requests(num_cols=num_cols)
+
+        # finally update in batch
+        self.update_in_batch(values=[], requests=requests, requester='create_review_notes_conditional_formatting')

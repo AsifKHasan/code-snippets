@@ -1,8 +1,3 @@
-# the google credential for accessing the gsheet(s) (this file is not in the repo)
-credential-json: '../conf/credential.json'
-
-
-
 # resume gsheets
   # template
     - spectrum__Résumé__template
@@ -601,7 +596,7 @@ credential-json: '../conf/credential.json'
 
 
 
-# worksheets:
+# worksheet-names:
   # resume worksheets
     - '-toc-new'
     - 00-layout
@@ -645,7 +640,7 @@ credential-json: '../conf/credential.json'
     - z-blank
     - z-foot
     - z-head
-# profile worksheets
+  # profile worksheets
     - 00-coverpage
     - 01-personal-profile
     - 01.01-family
@@ -671,21 +666,21 @@ credential-json: '../conf/credential.json'
   'D3:D':
     border-color  : '#000000'
     inner-border  : False
-    border-list   : 
+    border-list   :
       - left
       - right
     border-style  : DASHED
 
 
 
-  # conditional formatting 
+  # conditional formatting
   # format column E if blank and column D has some value
   'E4:E' :
     conditional-formats:
       - type      : 'CUSTOM_FORMULA'
         values    :
           -  '=and(not(isblank($D:$D)), isblank($E:$E))'
-        format    : 
+        format    :
           backgroundColor : "#f4cccc"
 
   # review-notes
@@ -694,7 +689,7 @@ credential-json: '../conf/credential.json'
       - type      : 'CUSTOM_FORMULA'
         values    :
           -  '=not(isblank($A:$A))'
-        format    : 
+        format    :
           backgroundColor : "#f4cccc"
 
   'D3:F' :
@@ -703,25 +698,25 @@ credential-json: '../conf/credential.json'
       - type      : 'CUSTOM_FORMULA'
         values    :
           -  '=$D:$D="BANK"'
-        format    : 
+        format    :
           backgroundColor : "#c9daf8"
 
       - type      : 'CUSTOM_FORMULA'
         values    :
           -  '=$D:$D="CHANGE"'
-        format    : 
+        format    :
           backgroundColor : "#fff2cc"
 
       - type      : 'CUSTOM_FORMULA'
         values    :
           -  '=$D:$D="MOVE"'
-        format    : 
+        format    :
           backgroundColor : "#d9d2e9"
 
       - type      : 'CUSTOM_FORMULA'
         values    :
           -  '=$D:$D="OMIT"'
-        format    : 
+        format    :
           backgroundColor : "#f4cccc"
 
 
@@ -746,7 +741,7 @@ credential-json: '../conf/credential.json'
     'B3:Z'          :
       border-color      : '#b7b7b7'
       link -toc-new at cell A1 and left align the cell
-    
+
     'A1'    :
       value             : '-toc-new'
       ws-name-to-link   : '-toc-new'
