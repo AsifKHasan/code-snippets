@@ -97,13 +97,6 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names=[], destination_gsheet_na
     # g_sheet.format_worksheets(worksheet_names=worksheet_names)
     # g_sheet.create_worksheets(worksheet_names=worksheet_names)
 
-    # copy worksheets to another gsheet
-    # for destination_gsheet_name in destination_gsheet_names:
-    #     destination_gsheet = g_service.open(gsheet_name=destination_gsheet_name)
-    #     if destination_gsheet:
-    #         for worksheet_name in worksheet_names:
-    #             g_sheet.copy_worksheet_to_gsheet(destination_gsheet=destination_gsheet, worksheet_name_to_copy=worksheet_name)
-
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # END   common tasks

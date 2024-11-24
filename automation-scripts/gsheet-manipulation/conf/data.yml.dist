@@ -27,6 +27,9 @@ gsheet-tasks:
   - task                                        : rename_worksheet
     worksheet_name                              : 'z-header'
     new_worksheet_name                          : 'z-head'
+  - task                                        : copy_worksheets_to_other_gsheets
+    worksheet_names                             : true
+    destination_gsheet_names                    : true
 
   # worksheet creation, formatting and related tasks
   - task                                        : clear_data_validations
@@ -39,6 +42,8 @@ gsheet-tasks:
   - task                                        : create_review_notes_conditional_formatting
     worksheet_names                             : true
   - task                                        : create_worksheets
+    worksheet_names                             : true
+  - task                                        : format_worksheets
     worksheet_names                             : true
 
   # trailing blank row removal, review-notes, column sizing

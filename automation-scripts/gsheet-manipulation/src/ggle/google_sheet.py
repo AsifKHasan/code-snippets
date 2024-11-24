@@ -504,3 +504,19 @@ class GoogleSheet(object):
 
         # finally update in batch
         self.update_in_batch(values=[], requests=requests, requester='create_review_notes_conditional_formatting')
+
+
+
+    ''' copy worksheets to another gsheet
+    '''
+    def copy_worksheets_to_other_gsheets(self, worksheet_names, destination_gsheet_names):
+        for destination_gsheet_name in destination_gsheet_names:
+            destination_gsheet = self.service.open(gsheet_name=destination_gsheet_name)
+            if destination_gsheet:
+                for worksheet_name in worksheet_names:
+                    info(f"copying [{worksheet_name}] to gsheet [{destination_gsheet_name}]", nesting_level=1)
+                    self.copy_worksheet_to_gsheet(destination_gsheet=destination_gsheet, worksheet_name_to_copy=worksheet_name)
+            
+            else:
+                warn(f"destination gsheet [{destination_gsheet_name}] not found", nesting_level=1)
+
