@@ -94,9 +94,6 @@ def work_on_gsheet(g_sheet, g_service, worksheet_names=[], destination_gsheet_na
     # final_list = list(set(final_list) | set(g_sheet.list_worksheets()))
     # print(final_list)
 
-    # g_sheet.format_worksheets(worksheet_names=worksheet_names)
-    # g_sheet.create_worksheets(worksheet_names=worksheet_names)
-
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # END   common tasks
