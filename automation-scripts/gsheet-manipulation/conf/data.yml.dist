@@ -37,8 +37,6 @@ gsheet-tasks:
     range_spec                                  : 'A1:Z'
   - task                                        : clear_conditional_formats
     worksheet_names                             : true
-  - task                                        : format_worksheets
-    worksheet_names                             : true
   - task                                        : create_review_notes_conditional_formatting
     worksheet_names                             : true
   - task                                        : create_worksheets
