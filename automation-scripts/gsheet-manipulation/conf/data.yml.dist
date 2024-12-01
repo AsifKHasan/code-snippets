@@ -1,5 +1,8 @@
+# log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
+log-level:                  1
+
 # the google credential for accessing the gsheet(s) (this file is not in the repo)
-credential-json: '../conf/credential.json'
+credential-json:            '../conf/credential.json'
 
 gsheet-tasks:
   # cell linking and ordering
