@@ -142,7 +142,7 @@ if __name__ == '__main__':
     # read config.yml to get the list of gsheets and other data
     config = yaml.load(open('../conf/data.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
 
-    logger.LOG_LEVEL = config['log-level']
+    logger.LOG_LEVEL = config.get('log-level', 0)
 
     if 'gsheet' in args and args["gsheet"] != '':
         gsheet_names = [args["gsheet"]]
