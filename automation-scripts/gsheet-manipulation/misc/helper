@@ -1,8 +1,14 @@
+{
+  "footnote": {
+    "*": "PM denotes the unit of Person-Month, which is used to measure the indicative amount of work performed across the Development and Maintenance phases."
+  }
+}
+
 git add -A & git commit -m "updated" & git push
 git add -A ; git commit -m "updated" ; git push
 
 CMD="./work-with-gsheet.sh"
-${CMD} 
+${CMD}
 ${CMD} BEC-AI-Chatbot__rfp-technical-response__book-1-of-6__proposal-submission
 ${CMD} BEC-AI-Chatbot__rfp-technical-response__book-2-of-6__organization-experience
 ${CMD} BEC-AI-Chatbot__rfp-technical-response__book-3-of-6__methodology-workplan
