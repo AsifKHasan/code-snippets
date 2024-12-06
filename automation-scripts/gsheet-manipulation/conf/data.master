@@ -661,6 +661,11 @@
 
 
 
+# worksheet-names-excluded:
+  - '-*'
+  - 'z-*'
+
+
 # work-specs:
   # borders -> border-list [] : border-style [DOTTED, DASHED, SOLID, SOLID_MEDIUM, SOLID_THICK, NONE, DOUBLE]
   'D3:D':

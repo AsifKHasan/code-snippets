@@ -15,7 +15,7 @@ from task.resume_tasks import *
 
 final_list = []
 
-def execute_gsheet_tasks(g_sheet, g_service, gsheet_tasks=[], worksheet_names=[], destination_gsheet_names=[], work_specs={}, find_replace_patterns=[]):
+def execute_gsheet_tasks(g_sheet, g_service, gsheet_tasks=[], worksheet_names=[], worksheet_names_excluded=[], destination_gsheet_names=[], work_specs={}, find_replace_patterns=[]):
     for gsheet_task_def in gsheet_tasks:
         task_name = gsheet_task_def['task']
         if hasattr(g_sheet, task_name) and callable(getattr(g_sheet, task_name)):
@@ -26,7 +26,7 @@ def execute_gsheet_tasks(g_sheet, g_service, gsheet_tasks=[], worksheet_names=[]
                     pass
 
                 elif k == 'worksheet_names' and v == True:
-                    args_dict[k] = worksheet_names
+                    args_dict[k] = g_sheet.matching_worksheet_names(worksheet_names=worksheet_names, worksheet_names_excluded=worksheet_names_excluded)
 
                 elif k == 'destination_gsheet_names' and v == True:
                     args_dict[k] = destination_gsheet_names
@@ -44,7 +44,13 @@ def execute_gsheet_tasks(g_sheet, g_service, gsheet_tasks=[], worksheet_names=[]
             # execute the task
             try:
                 task = getattr(g_sheet, task_name)
-                debug(f"executing task [{task_name}]")
+                info(f"executing task [{task_name}]")
+
+                if 'worksheet_names' in args_dict:
+                    debug(f"worksheets to work on")
+                    for x in args_dict['worksheet_names']:
+                        trace(f".. {x}")
+
                 task(**args_dict)
                 debug(f"executed  task [{task_name}]")
             except Exception as e:
@@ -153,6 +159,7 @@ if __name__ == '__main__':
     destination_gsheet_names = config.get('destination-gsheet-names', [])
     gsheet_tasks = config.get('gsheet-tasks', [])
     worksheet_names = config.get('worksheet-names', [])
+    worksheet_names_excluded = config.get('worksheet-names-excluded', [])
     work_specs = config.get('work-specs', {})
     find_replace_patterns = config.get('find-replace-patterns', [])
 
@@ -171,7 +178,7 @@ if __name__ == '__main__':
             # raise e
 
         if g_sheet:
-            execute_gsheet_tasks(g_sheet=g_sheet, g_service=g_service, gsheet_tasks=gsheet_tasks, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
+            execute_gsheet_tasks(g_sheet=g_sheet, g_service=g_service, gsheet_tasks=gsheet_tasks, worksheet_names=worksheet_names, worksheet_names_excluded=worksheet_names_excluded, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
             # work_on_gsheet(g_sheet=g_sheet, g_service=g_service, worksheet_names=worksheet_names, destination_gsheet_names=destination_gsheet_names, work_specs=work_specs, find_replace_patterns=find_replace_patterns)
             # work_on_drive(g_service=g_service, g_sheet=g_sheet)
             info(f"processed  {count:>4}/{num_gsheets} gsheet {gsheet_name}\n")

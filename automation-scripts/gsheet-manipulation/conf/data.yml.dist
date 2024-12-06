@@ -80,8 +80,12 @@ gsheets:
 destination-gsheet-names:
 
 
-# worksheets on which some work will be done
+# worksheets on which some work will be done, supports RE
 worksheet-names:
+
+
+# worksheets to be excluded, support RE
+worksheet-names-excluded:
 
 
 # work specifications to apply on a list of worksheets

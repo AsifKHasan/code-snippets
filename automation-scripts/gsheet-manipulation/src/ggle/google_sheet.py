@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import re
 import gspread
 from gspread.utils import *
 from gspread.exceptions import *
@@ -28,6 +29,34 @@ class GoogleSheet(object):
 
         self.worksheets = self.gspread_sheet.worksheets()
 
+
+
+    ''' given a list of names and exlusion list, get the worksheets with matching names exluding worksheets with matching names in the exlusion list
+    '''
+    def matching_worksheet_names(self, worksheet_names, worksheet_names_excluded):
+        all_worksheet_names = self.list_worksheets()
+        included_worksheets = []
+        for ws_name in all_worksheet_names:
+            # if it matches any in the inclusion list, include it
+            for inclusion_pattern in worksheet_names:
+                m = re.match(inclusion_pattern, ws_name)
+                if m:
+                    included_worksheets.append(ws_name)
+                    continue
+
+        excluded_worksheets = []
+        for ws_name in included_worksheets:
+            # if it matches any in the exlusion list, include it
+            for exclusion_pattern in worksheet_names_excluded:
+                m = re.match(exclusion_pattern, ws_name)
+                if m:
+                    excluded_worksheets.append(ws_name)
+                    continue
+            
+        # finally the matching list
+        matching_worksheets = [x for x in included_worksheets if x not in excluded_worksheets]
+
+        return matching_worksheets
 
 
     ''' get range values
