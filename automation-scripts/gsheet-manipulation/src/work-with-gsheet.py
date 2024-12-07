@@ -63,44 +63,6 @@ def execute_gsheet_tasks(g_sheet, g_service, gsheet_tasks=[], worksheet_names=[]
 
 def work_on_gsheet(g_sheet, g_service, worksheet_names=[], destination_gsheet_names=[], work_specs={}, find_replace_patterns=[]):
 
-    # BEGIN work on worksheet dimensions
-    # -----------------------------------------------------------------------------------
-
-    # add rows
-    for worksheet_name in worksheet_names:
-        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-        # num_rows, num_cols = worksheet.number_of_dimesnions()
-        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-
-        # if num_rows == 5:
-        #     g_sheet.add_rows(worksheet_name=worksheet_name, rows_to_add_at='end', rows_to_add=1)
-        # else:
-        #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
-        #     pass
-
-        pass
-
-    # add columns
-    for worksheet_name in worksheet_names:
-        # worksheet = g_sheet.worksheet_by_name(worksheet_name=worksheet_name, suppress_log=True)
-        # num_rows, num_cols = worksheet.number_of_dimesnions()
-        # num_rows, num_cols = g_sheet.number_of_dimesnions(worksheet_name=worksheet_name, suppress_log=True)
-
-        # if num_cols == 5:
-        #     g_sheet.add_columns(worksheet_name=worksheet_name, cols_to_add_at='end', cols_to_add=1)
-        # else:
-        #     print(f"[{g_sheet.title:<50}]: [{worksheet_name:<50}] : {num_cols} columns, {num_rows} rows")
-        #     pass
-
-        pass
-
-    # -----------------------------------------------------------------------------------
-    # END   work on worksheet dimensions
-
-    # global final_list
-    # final_list = list(set(final_list) | set(g_sheet.list_worksheets()))
-    # print(final_list)
-
     # BEGIN common tasks
     # new_toc_from_toc(g_sheet)
     # END   common tasks
@@ -156,12 +118,23 @@ if __name__ == '__main__':
         gsheet_names = config['gsheets']
 
     credential_json = config['credential-json']
+
     destination_gsheet_names = config.get('destination-gsheet-names', [])
+    if destination_gsheet_names is None: destination_gsheet_names = []
+
     gsheet_tasks = config.get('gsheet-tasks', [])
+    if gsheet_tasks is None: gsheet_tasks = []
+
     worksheet_names = config.get('worksheet-names', [])
+    if worksheet_names is None: worksheet_names = []
+
     worksheet_names_excluded = config.get('worksheet-names-excluded', [])
+    if worksheet_names_excluded is None: worksheet_names_excluded = []
+
     work_specs = config.get('work-specs', {})
+
     find_replace_patterns = config.get('find-replace-patterns', [])
+    if find_replace_patterns is None: find_replace_patterns = []
 
     g_service = GoogleService(credential_json)
 

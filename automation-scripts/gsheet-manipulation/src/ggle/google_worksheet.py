@@ -223,7 +223,8 @@ class GoogleWorksheet(object):
 
             else:
                 # columns to be inserted at some index
-                requests.append(build_insert_dimension_request(worksheet_id=self.id, dimension='COLUMNS', start_index=LETTER_TO_COLUMN[cols_to_add_at]-1, length=cols_to_add, inherit_from_before=False))
+                start_index = LETTER_TO_COLUMN[cols_to_add_at]-1
+                requests.append(build_insert_dimension_request(worksheet_id=self.id, dimension='COLUMNS', start_index=start_index, length=cols_to_add, inherit_from_before=False))
 
         if rows_to_add_at and rows_to_add:
             # rows to be added
@@ -650,7 +651,7 @@ class GoogleWorksheet(object):
                 update_border = True
                 border_color = work_spec['border-color']
 
-                # borders may depend on the existence of another optional key (border-list). It may be absent which means all borders or a list with values from the set (left, top, right, bottom)
+            # borders may depend on the existence of another optional key (border-list). It may be absent which means all borders or a list with values from the set (left, top, right, bottom)
             if 'border-list' in work_spec:
                 update_border = True
                 border_list = work_spec['border-list']

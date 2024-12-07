@@ -61,6 +61,18 @@ gsheet-tasks:
     worksheet_names                             : true
     row_to_consult                              : 1
 
+  # add rows and columns
+  # - task                                        : add_rows
+  #   worksheet_names                             : true
+  #   rows_to_add_at                              : end
+  #   rows_to_add                                 : 1
+  #   when_row_count_is                           : 15
+  # - task                                        : add_columns
+  #   worksheet_names                             : true
+  #   cols_to_add_at                              : 'B'
+  #   cols_to_add                                 : 1
+  #   when_col_count_is                           : 6
+
   # work on ranges etc.
   - task                                        : work_on_ranges
     worksheet_names                             : true
