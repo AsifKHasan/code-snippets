@@ -16,7 +16,7 @@ do
 done
 
 tesseract "/home/asif/Downloads/abc/abc-02.png" "/home/asif/Downloads/abc/out/02" -l ben
-tesseract "C:\Users\Asif Hasan\Downloads\page-1.png" "C:\Users\Asif Hasan\Downloads\text" -l eng
+tesseract "C:\Users\Asif Hasan\Downloads\abc.png" "C:\Users\Asif Hasan\Downloads\text" -l ben
 
 
 
