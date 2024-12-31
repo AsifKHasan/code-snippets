@@ -9,6 +9,9 @@ sox "C:\Users\Asif Hasan\Downloads\audio\somoy-tv.wav" -t raw - | python -m rhas
 
 
 
+ffmpeg -i meeting__2024-12-23.m4a -f segment -segment_time 60 meeting__2024-12-23__%02d.wav
+
+curl -X POST http://172.16.4.132:2712/meeting-transcribe-and-summarize/v1 -F "file1=@meeting__2024-12-23__00.wav"
 
 
 youtube-dl https://www.youtube.com/watch?v=SETrurolzMo
