@@ -1,3 +1,32 @@
+jekyll
+------------------------------------------
+
+# we must be on gh-pages branch
+git checkout gh-pages
+
+http://127.0.0.1:4000/
+
+bundle install
+bundle exec jekyll serve
+
+
+bundle update github-pages
+
+
+
+
+
+
+
+
+
+
+
+
+
+hugo
+------------------------------------------
+
 baseURL = "https://asifkhasan.github.io/"
 languageCode = "en-us"
 title = "Asif Hasan"
@@ -17,6 +46,19 @@ git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/Pape
 hugo server
 
 hugo new content content/translations/my-first-post.md
+
+
+
+
+
+
+# Thoughts and writings
+
+# Thoughts from other people
+
+# Poetry (and translations)
+
+# Literary Translations
 
 
 কিছুদিন আগে চোখে পড়ল লেখাটা - *the quiet art of attention* - https://billwear.github.io/art-of-attention.html. শিঁকে ধরে বেশ জোরেশোরে একটা নাড়া দিল, এমনই যে বাংলায় অনুবাদ করাটা একটা অবশ্য-কর্তব্য মনে হতে লাগল, নাইলে শান্তি নাই।
