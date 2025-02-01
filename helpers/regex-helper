@@ -33,3 +33,18 @@ ROMAN i. not to be in a new line
 lettered items in COL 4
 ( [a-z][.)] )
 \n\t\t\t$1\t
+
+
+
+
+\n \n \n -> \n
+
+^(\([০-৯]+\)) -> $1\t
+
+^(\([ক-ম]+\)) -> \t$1\t
+
+([1-9]+) -> FN{$1}
+
+" -> '
+
+([1-9]+) (.+) -> {"footnote": {"$1": "$2"}}
