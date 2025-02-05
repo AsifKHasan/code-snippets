@@ -1,6 +1,7 @@
 ^[0-9]+\. .+\n
 .+ =
 
+
 regex = r'উপজেলা/থানা\s*(?P<upazila>.*) \s+ সিটি কর্পোরেশন/ পৌরসভা\s*(?P<city>.*)$'
 m = re.match(regex, line)
 m.group('upazila')
@@ -20,6 +21,7 @@ numbered items in COL 1
 ([0-9]+\.[0-9]+\.[0-9]+) 
 \n$1\t
 
+
 ROMAN items in COL 3
  ([ivx]+\.) 
 \n\t\t$1\t
@@ -35,17 +37,24 @@ lettered items in COL 4
 \n\t\t\t$1\t
 
 
+patterns:
+- search        : '\n \n \n'
+  replace       : '\n'
 
-(.+)\r\n([০-৯]+।) -> \n$1 $1\n
+- search        : '(.+)\n([0-9০-৯\[ ]+।) '
+  replace       : '\n$2 $1\n'
 
-\n \n \n -> \n
+- search        : '^([0-9\[\]\s]*\([০-৯]+[ক-গ]\)) '
+  replace       : '$1\t\t\t'
 
-^(\([০-৯]+\)) -> $1\t\t\t
+- search        : '^([0-9\[\]\s]*\([ক-ম]+\)) '
+  replace       : '\t$1\t\t'
 
-^(\([ক-ম]+\)) -> \t$1\t\t
+- search        : '([0-9]+)'
+  replace       : 'FN{$1}'
 
-([0-9]+) -> FN{$1}
+- search        : '"'
+  replace       : "'"
 
-" -> '
-
-([1-9]+) (.+) -> {"footnote": {"$1": "$2"}}
+- search        : '([0-9]+) (.+)'
+  replace       : '{"footnote": {"$1": "$2"}}'
