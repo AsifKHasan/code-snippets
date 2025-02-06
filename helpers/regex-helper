@@ -38,13 +38,13 @@ lettered items in COL 4
 
 
 patterns:
-- search        : '\n \n \n'
+- search        : '\n\s*\n'
   replace       : '\n'
 
 - search        : '(.+)\n([0-9০-৯\[ ]+।) '
   replace       : '\n$2 $1\n'
 
-- search        : '^([0-9\[\]\s]*\([০-৯]+[ক-গ]\)) '
+- search        : '^([0-9\[\]\s]*\([০-৯]+[ক-গ]*\)) '
   replace       : '$1\t\t\t'
 
 - search        : '^([0-9\[\]\s]*\([ক-ম]+\)) '
