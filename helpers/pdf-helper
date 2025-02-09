@@ -1,10 +1,10 @@
 cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 
 # pdf pages as png
-pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\2023-08-28__Board Resolution (TOR).pdf" "C:\Users\Asif\Downloads\personal\abc"
-pdftocairo -png -gray "C:\Users\Asif\Downloads\2023-08-02__Bishod Audit Forwarding & Reply 2022.pdf" "C:\Users\Asif\Downloads\abc"
+pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\.pdf" "C:\Users\Asif\Downloads\personal\abc"
+pdftocairo -png -gray "C:\Users\Asif\Downloads\.pdf" "C:\Users\Asif\Downloads\abc"
 
-pdftocairo -png -r 600 -cropbox "/home/asif/Downloads/time-bound-reform-proposal.pdf" "/home/asif/Downloads/abc/abc"
+pdftocairo -png -r 600 -cropbox "/home/asif/Downloads/.pdf" "/home/asif/Downloads/abc/abc"
 
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 
@@ -21,7 +21,7 @@ tesseract "C:\Users\Asif Hasan\Downloads\abc.png" "C:\Users\Asif Hasan\Downloads
 
 
 for %f in (*.*) do ren "%f" "z-%f"
-for %f in (D:\projects\asif@github\code-snippets\helpers\ocr-data\PSC-05\png\*.png) do tesseract %f D:\projects\asif@github\code-snippets\helpers\ocr-data\PSC-05\txt\%~nf -l ben+eng
+for %f in (C:\Users\Asif\Downloads\abc\*.png) do tesseract %f C:\Users\Asif\Downloads\abc\txt\%~nf -l ben+eng
 
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
