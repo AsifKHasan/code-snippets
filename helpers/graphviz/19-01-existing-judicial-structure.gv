@@ -1,0 +1,72 @@
+digraph G {
+    splines=ortho;
+    // Layout settings to position nodes
+    rankdir=TB; // Top to bottom layout (default)
+    // Node style: rectangular shape
+    node [shape="rectangle" fontsize="12pt" width="3.0in" fixedsize="true"];
+
+    // Parent nodes
+    Parent [label="বিদ্যমান নির্বাচন-পূর্ব বিচার্য বিষয়বস্তু ও বিচারিক কাঠামো" fixedsize="false" fontsize="16pt" ];
+
+    // Child nodes with fixed width
+    Child1 [label="হাইকোর্ট" height="1.5in"];
+    Child2 [label="নির্বাচনী অনুসন্ধান কমিটি\nযুগ্ম জেলা জজ/সিনিয়র\nসহকারী জজ/সহকারী জজ\n(নির্বাচনের তফসীল ঘোষণার\nপর থেকে ফলাফলের গেজেট\nনা হওয়া পর্যন্ত)" height="1.5in"];
+    Child3 [label="জুডিশিয়াল ম্যাজিস্ট্রেট\n(নির্বাচনের ০২ দিন পূর্বে,\nনির্বাচনের দিন ও নির্বাচনের\nপরের ০২ দিনসহ মোট ০৫\nদিন)" height="1.5in"];
+    Child4 [label="নির্বাহী ম্যাজিস্ট্রেট\n(জুডিশিয়াল ম্যাজিস্ট্রেট নিয়োগের\nপূর্ববর্তী ১০/১৫ দিন থেকে নির্বাচনের\nপর ০২ দিন পর্যন্ত)" height="1.5in"];
+
+    AnotherParent [label="বিচারিক\nবিষয়বস্তু" width="2.0in"];
+
+    // Grandchild nodes
+    Grandchild1 [label="রিট মামলা\n(সংসদীয় আসনের সীমানা,\nপ্রার্থীর মনোনয়নের বৈধতা\nইত্যাদি)" height="1.0in"];
+    Grandchild2 [label="নির্বাচনী অপরাধ ও\nআচরণবিধি তদন্ত বা\nঅনুসন্ধান" height="1.0in"];
+    Grandchild3 [label="নির্বাচনী অপরাধের সংক্ষিপ্ত\nবিচার" height="1.0in"];
+    Grandchild4 [label="মোবাইল কোর্ট আইন, ২০০৯\nঅনুযায়ী আচরণবিধি লংঘনের\nসংক্ষিপ্ত বিচার" height="1.0in"];
+
+    // Another grandparent node
+    AnotherGrandparent [label="পরবর্তী\nপর্যায়" width="2.0in"];
+
+    // Grandchild nodes
+    Grandgrandchild1 [label="নিষ্পত্তি" height="1.5in"];
+    Grandgrandchild2 [label="নির্বাচন কমিশনে\nঅনুসন্ধান প্রতিবেদন প্রেরণ\n(থানায় মামলা করার\nসুপারিশ করা হলে তা\nতদন্তে সাপেক্ষে বিচারের\nজন্য পেন্ডিং থাকে)" height="1.5in"];
+    Grandgrandchild3 [label="নিষ্পত্তি" height="1.5in"];
+    Grandgrandchild4 [label="নিষ্পত্তি" height="1.5in"];
+
+    {rank=same; AnotherParent; Grandchild1} // Ensure "Another Parent" and "Child1" are on the same level
+    {rank=same; AnotherGrandparent; Grandgrandchild1} // Ensure "Another Grandparent" and "Grandchild1" are on the same level
+
+    // Invisible nodes and edges for alignment
+    node [shape=point, width=0, height=0, label=""];
+
+    // Align AnotherParent and AnotherGrandparent
+    AnotherParent -> Invisible1 -> Invisible2 -> AnotherGrandparent [style=invis];
+
+    // Edges from parents to children
+    Parent -> Child1;
+    Parent -> Child2;
+    Parent -> Child3;
+    Parent -> Child4;
+
+    // Edges from children to grandchildren
+    Child1 -> Grandchild1;
+    Child2 -> Grandchild2;
+    Child3 -> Grandchild3;
+    Child4 -> Grandchild4;
+    AnotherParent -> Grandchild1; // Additional parent for Child1
+
+    // Edges from grandchildren to grandgrandchildren
+    Grandchild1 -> Grandgrandchild1;
+    Grandchild2 -> Grandgrandchild2;
+    Grandchild3 -> Grandgrandchild3;
+    Grandchild4 -> Grandgrandchild4;
+
+    // Edge from another grandparent to Grandchild1
+    AnotherGrandparent -> Grandgrandchild1; // Additional parent for Grandchild1
+
+    {rank=same; Child1 -> Child2 -> Child3 -> Child4 [style=invis]}
+    {rank=same; Grandchild1 -> Grandchild2 -> Grandchild3 -> Grandchild4 [style=invis]}
+    {rank=same; Grandgrandchild1 -> Grandgrandchild2 -> Grandgrandchild3 -> Grandgrandchild4 [style=invis]}
+
+    AnotherParent -> AnotherGrandparent [style=invis]
+    
+
+}
