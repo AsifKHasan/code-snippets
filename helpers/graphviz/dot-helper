@@ -1,5 +1,5 @@
 set ENGINE="dot"
 set FMT="svg"
 set RENDERER=""
-set GV_NAME="19-01-existing-judicial-structure"
-dot -K%ENGINE% -T%FMT% -o%GV_NAME%.%ENGINE%.%FMT% %GV_NAME%.gv
+set GV_NAME="19-02-proposed-pre-election-judicial-structure"
+dot -K%ENGINE% -T%FMT% -o./out/%GV_NAME%.%ENGINE%.%FMT% %GV_NAME%.gv

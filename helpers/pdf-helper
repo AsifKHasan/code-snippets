@@ -1,3 +1,7 @@
+pip install pdfsyntax
+python -m pdfsyntax browse "C:\Users\Asif Hasan\Downloads\Report of Electoral Reforms Commission.pdf" > "C:\Users\Asif Hasan\Downloads\inspection_file.html"
+
+
 cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 
 # pdf pages as png

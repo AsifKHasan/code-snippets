@@ -1,0 +1,50 @@
+digraph G {
+    splines=ortho;
+    // Layout settings to position nodes
+    rankdir=TB; // Top to bottom layout (default)
+    // Node style: rectangular shape
+    node [shape="rectangle" fontsize="12pt" width="5.0in" fixedsize="true"];
+
+    // Parent nodes
+    Parent [label="বিদ্যমান নির্বাচন-পরবর্তী বিচার্য বিষয়বস্তু ও বিচারিক কাঠামো" fixedsize="true" fontsize="16pt" width="7.0in" ];
+
+    // Child nodes with fixed width
+    Child1 [label="হাইকোর্ট" height="1.0in"];
+    
+    AnotherParent [label="বিচারিক\nবিষয়বস্তু" width="2.0in"];
+
+    // Grandchild nodes
+    Grandchild1 [label="নির্বাচনী বিরোধ (ভোট কারচুপি, পক্ষপাতিত্ব,\nদুর্নীতিমুলক কাজের মাধ্যমে কোনো প্রার্থীকে পরাজিত\nকরা হয়েছে মর্মে দাবি করা হলে উক্ত অভিযোগে বিজয়ী\nপ্রার্থীর বিরুদ্ধে দায়েরকৃত মামলা)" height="1.5in"];
+
+    // Another grandparent node
+    AnotherGrandparent [label="পরবর্তী\nপর্যায়" width="2.0in"];
+
+    // Grandchild nodes
+    Grand1child1 [label="০৬ (ছয়) মাসের মধ্যে নিষ্পত্তির বিধান থাকলেও\nঅধিকাংশ ক্ষেত্রেই ৩/৪ বছর এমনকি সংসদের মেয়াদ\nঅতিক্রান্ত হওয়ার পরও বিচার সম্পন্ন হয় না।" height="1.5in"];
+
+    {rank=same; AnotherParent; Grandchild1} // Ensure "Another Parent" and "Child1" are on the same level
+    {rank=same; AnotherGrandparent; Grand1child1} // Ensure "Another Grandparent" and "Grandchild1" are on the same level
+
+    // Invisible nodes and edges for alignment
+    node [shape=point, width=0, height=0, label=""];
+
+    // Align AnotherParent and AnotherGrandparent
+    AnotherParent -> Invisible1 -> Invisible2 -> AnotherGrandparent [style=invis];
+
+    // Edges from parents to children
+    Parent -> Child1;
+
+    // Edges from children to grandchildren
+    Child1 -> Grandchild1;
+    AnotherParent -> Grandchild1; // Additional parent for Child1
+
+    // Edges from grandchildren to grandgrandchildren
+    Grandchild1 -> Grand1child1;
+
+    // Edge from another grandparent to Grandchild1
+    AnotherGrandparent -> Grand1child1; // Additional parent for Grandchild1
+
+    AnotherParent -> AnotherGrandparent [style=invis]
+    
+
+}

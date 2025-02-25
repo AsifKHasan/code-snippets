@@ -1,0 +1,77 @@
+digraph G {
+    splines=ortho;
+    // Layout settings to position nodes
+    rankdir=TB; // Top to bottom layout (default)
+    // Node style: rectangular shape
+    node [shape="rectangle" fontsize="12pt" width="4.0in" fixedsize="true"];
+
+    // Parent nodes
+    Parent [label="প্রস্তাবিত নির্বাচন-পূর্ব নির্বাচনী অপরাধ ও আচরণবিধির বিষয়ে অনুসন্ধান ও বিচার" fixedsize="true" fontsize="16pt" width="9.0in" ];
+
+    // Child nodes with fixed width
+    Child1 [label="হাইকোর্ট" height="1.5in"];
+    Child2 [label="নির্বাচনী অনুসন্ধান ও বিচারিক কমিটি\n(Electoral Enquiry and\nAdjudication Committee)\n(সমন্বয়কারী/সভাপতি: ০১ জন এবং\nসদস্য: প্রয়োজনীয় সংখ্যক)" height="1.5in"];
+    Child3 [label="নির্বাহী ম্যাজিস্ট্রেট" height="1.5in"];
+
+    AnotherParent [label="বিচারিক\nবিষয়বস্তু" width="2.0in"];
+
+    // Grandchild nodes
+    Grandchild1 [label="রিট মামলা\n(সংসদীয় আসনের সীমানা,\nপ্রার্থীর মনোনয়নের বৈধতা\nইত্যাদি)" height="1.0in"];
+    Grandchild2 [label="নির্বাচনী অপরাধসমূহ অনুসন্ধান ও সংক্ষিপ্ত\nবিচার" height="1.0in"];
+    Grandchild3 [label="মোবাইল কোর্ট আইন, ২০০৯\nঅনুযায়ী আচরণবিধি লঙ্ঘনের\nসংক্ষিপ্ত বিচার" height="1.0in"];
+
+    // Grandgrandchild nodes
+    Grand1child1 [label="নির্বাচনী কর্মকর্তাদের\nবিরুদ্ধে শুধু অনুসন্ধান" height="1.5in" width="3.0in"];
+    Grand1child2 [label="অপরাপর ব্যক্তিগণের\nক্ষেত্রে সংক্ষিপ্ত বিচার" height="1.5in" width="3.0in"];
+
+
+    // Another grandparent node
+    Grand2parent [label="পরবর্তী\nপর্যায়" width="2.0in"];
+
+    // Grandgrandgrandchild nodes
+    Grand2child1 [label="নিষ্পত্তি" height="1.5in" width="3.0in"];
+    Grand2child2 [label="নির্বাচন কমিশনে\nঅনুসন্ধান প্রতিবেদন\nপ্রেরণ\n(পরবর্তী ব্যবস্থা গ্রহণ\nসাপেক্ষে পেন্ডিং)" height="1.5in" width="3.0in"];
+    Grand2child3 [label="নিষ্পত্তি" height="1.5in" width="3.0in"];
+    Grand2child4 [label="নিষ্পত্তি" height="1.5in" width="3.0in"];
+
+    {rank=same; AnotherParent; Grandchild1} // Ensure "Another Parent" and "Child1" are on the same level
+    {rank=same; Grand2parent; Grand2child1} // Ensure "Another Grandparent" and "Grandchild1" are on the same level
+
+    // Invisible nodes and edges for alignment
+    node [shape=point, width=0, height=0, label=""];
+
+    // Align AnotherParent and AnotherGrandparent
+    AnotherParent -> Invisible1 -> Invisible2 -> Grand2parent [style=invis];
+
+    // Edges from parents to children
+    Parent -> Child1;
+    Parent -> Child2;
+    Parent -> Child3;
+    
+    // Edges from children to grandchildren
+    Child1 -> Grandchild1;
+    Child2 -> Grandchild2;
+    Child3 -> Grandchild3;
+    AnotherParent -> Grandchild1; // Additional parent for Child1
+
+    // Edges from grandchildren to grandgrandchildren
+    Grandchild1 -> Grand2child1;
+    Grandchild2 -> Grand1child1;
+    Grandchild2 -> Grand1child2;
+    Grandchild3 -> Grand2child4;
+
+    // Edges from grandchildren to grandgrandchildren
+    Grand1child1 -> Grand2child2;
+    Grand1child2 -> Grand2child3;
+
+    // Edge from another grandparent to Grandchild1
+    Grand2parent -> Grand2child1; // Additional parent for Grandchild1
+
+    {rank=same; Child1 -> Child2 -> Child3 [style=invis]}
+    {rank=same; Grandchild1 -> Grandchild2 -> Grandchild3 [style=invis]}
+    {rank=same; Grand1child1 -> Grand1child2 [style=invis]}
+    {rank=same; Grand2child1 -> Grand2child2 -> Grand2child3 -> Grand2child4 [style=invis]}
+
+    AnotherParent -> Grand2parent [style=invis]
+    
+}
