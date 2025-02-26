@@ -1,0 +1,24 @@
+<svg width="600" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define an arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Outer rectangle enclosing R1, R2, R3, and connectors (increased height) -->
+  <rect id="R0" x="10" y="10" width="580" height="260" fill="none" stroke="black" stroke-width="2" />
+
+  <!-- Rectangle 1 with id=R1 -->
+  <rect id="R1" x="40" y="40" width="80" height="80" fill="lightblue" stroke="black" stroke-width="2" />
+  <!-- Rectangle 2 with id=R2 -->
+  <rect id="R2" x="230" y="40" width="80" height="80" fill="lightgreen" stroke="black" stroke-width="2" />
+  <!-- Rectangle 3 with id=R3 -->
+  <rect id="R3" x="430" y="40" width="80" height="80" fill="lightcoral" stroke="black" stroke-width="2" />
+
+  <!-- Arrow connecting R1 to R2 -->
+  <line x1="120" y1="80" x2="230" y2="80" stroke="black" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Elbow-shaped connector from bottom of R2 to middle of base of R3 -->
+  <path d="M270,120 V200 H450 V120" stroke="black" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+</svg>
