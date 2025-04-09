@@ -5,6 +5,9 @@
 ‘ ’
 
 
+(^.+) \(([০-৯]+) \)
+
+
 regex = r'উপজেলা/থানা\s*(?P<upazila>.*) \s+ সিটি কর্পোরেশন/ পৌরসভা\s*(?P<city>.*)$'
 m = re.match(regex, line)
 m.group('upazila')
