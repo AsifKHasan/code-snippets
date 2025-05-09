@@ -7,7 +7,7 @@ from helper.logger import *
 def check_and_download(url, output_path='.'):
     # check if the audio is already downloaded or not
     id = get_youtube_id(url)
-    file_path = f"{output_path}/{id}.webm"
+    file_path = f"{output_path}/{id}.m4a"
 
     if os.path.exists(file_path):
         warn(f"The audio '{file_path}' exists ... skipping")
@@ -36,8 +36,9 @@ def get_youtube_id(url):
 def download_audio(url, output_path):
     ydl_opts = {
         'extractaudio': True,
-        'audioformat': 'mp3',
-        'outtmpl': os.path.join(output_path, '%(id)s.%(ext)s'),
+        'audioformat': 'm4a',
+        'format': 'bestaudio',
+        'outtmpl': os.path.join(output_path, '%(id)s.m4a'),
         'verbose': False,
         'quiet': True,
         'starttime': 6,
