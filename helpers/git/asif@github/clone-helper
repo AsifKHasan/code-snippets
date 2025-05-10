@@ -1,5 +1,14 @@
 cd D:\projects\asif@github
 
+git clone git@github.com:AsifKHasan/algorithms-with-games.git
+git clone git@github.com:AsifKHasan/asifkhasan.github.io.git
+git clone git@github.com:AsifKHasan/automatigo.git
+git clone git@github.com:AsifKHasan/bangla-language.git
+git clone git@github.com:AsifKHasan/code-snippets.git
+git clone git@github.com:AsifKHasan/data-driven-documents.git
+git clone git@github.com:AsifKHasan/doculaboration.git
+git clone git@github.com:AsifKHasan/visualization-explorations.git
+
 git clone https://github.com/AsifKHasan/asifkhasan.github.io.git
 git clone https://github.com/AsifKHasan/algorithms-with-games.git
 git clone https://github.com/AsifKHasan/asifkhasan.github.io.git
