@@ -5,17 +5,27 @@ import yt_dlp
 from helper.logger import *
 
 def check_and_download(url, output_path='.'):
+    # get id from url, if there is a file with that id, skip it
+    id_from_url = url.replace("https://www.youtube.com/watch?v=", "")
+    assumed_file_path_=f"{output_path}/{id_from_url}.m4a"
+    if os.path.exists(assumed_file_path_):
+        warn(f"The audio '{assumed_file_path_}' exists ... skipping")
+        return
+
     # check if the audio is already downloaded or not
     id = get_youtube_id(url)
     file_path = f"{output_path}/{id}.m4a"
 
     if os.path.exists(file_path):
         warn(f"The audio '{file_path}' exists ... skipping")
-    else:
-        debug(f"Downloading audio '{file_path}'")
+        return
 
-        if id:
-            download_audio(url, output_path)
+    # download the audio
+    debug(f"Downloading audio '{file_path}'")
+
+    if id:
+        download_audio(url, output_path)
+        # pass
 
 
 def get_youtube_id(url):
