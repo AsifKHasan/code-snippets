@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 
 import os
+import re
 import yt_dlp
 from helper.logger import *
 
 def check_and_download(url, output_path='.'):
     # get id from url, if there is a file with that id, skip it
     id_from_url = url.replace("https://www.youtube.com/watch?v=", "")
+
+    # may have parameters after the id, remove those
+    id_from_url = re.sub(r"&.+", "", id_from_url)
+
     assumed_file_path_=f"{output_path}/{id_from_url}.m4a"
     if os.path.exists(assumed_file_path_):
         warn(f"The audio '{assumed_file_path_}' exists ... skipping")
