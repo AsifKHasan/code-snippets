@@ -88,14 +88,10 @@ def youtube_in_new_tabs(search_queries):
         # time.sleep(10) # Uncomment this if you want to keep the browsers open for a bit to inspect
         # driver.quit()
         print("All searches completed. The browser remains open.")
+        input("Press Enter to close...")
 
 if __name__ == "__main__":
     my_search_list = [
-        "এই শ্রাবণের বুকের ভিতর সুচিত্রা মিত্র",
-        "এখনো গেল না আঁধার সুচিত্রা মিত্র",
-        "এবার নীরব করে দাও হে সুচিত্রা মিত্র",
-        "ও অকূলের কূল সুচিত্রা মিত্র",
-        "ও দেখা দিয়ে যে চলে গেল সুচিত্রা মিত্র"
     ]
 
     youtube_in_new_tabs(my_search_list)
