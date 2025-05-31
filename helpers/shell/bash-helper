@@ -1,3 +1,20 @@
+set_union () {
+   sort $1 $2 | uniq
+}
+
+set_intersection () {
+   sort $1 $2 | uniq -d
+}
+
+set_difference () {
+   sort $1 $2 $2 | uniq -u
+}
+
+set_symmetric_difference() {
+   sort $1 $2 | uniq -u
+}
+
+
 #!/bin/bash
 output=names.out
 filename=names.in
