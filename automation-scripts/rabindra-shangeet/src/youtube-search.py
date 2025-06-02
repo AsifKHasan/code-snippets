@@ -6,6 +6,30 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
 
+search_suffix = ' দেবব্রত বিশ্বাস'
+my_search_list = [
+"তুমি বন্ধু তুমি নাথ",
+"তুমি বাহির থেকে দিলে বিষম তাড়া",
+"তুমি মোর পাও নাই পরিচয়",
+"তুমি যত ভার দিয়েছ সে ভার",
+"তুমি যে এসেছ মোর ভবনে",
+"তুমি যে চেয়ে আছ আকাশ ভরে",
+"তুমি যেয়ো না এখনি",
+"তুমি সন্ধ্যার মেঘমালা",
+"তুমি সুন্দর যৌবনঘন",
+"তুমি হঠাৎ-হাওয়ায় ভেসে-আসা ধন",
+"তুমি হে প্রেমের রবি",
+"তৃষ্ণার শান্তি সুন্দরকান্তি",
+"তোমরা হাসিয়া বহিয়া চলিয়া যাও",
+"তোমাদের একি ভ্রান্তি",
+"তোমায় আমায় মিলন হবে বলে",
+"তোমায় কিছু দেব বলে",
+"তোমায় গান শোনাব তাই তো আমায়",
+"তোমায় নতুন করে পাব বলে",
+"তোমায় যতনে রাখিব হে",
+"তোমায় সাজাব যতনে",
+]
+
 def youtube_in_new_tabs(search_queries):
     """
     Opens YouTube in new browser tabs and searches for each query in the list.
@@ -13,32 +37,32 @@ def youtube_in_new_tabs(search_queries):
     Args:
         search_queries (list): A list of strings, where each string is a search query.
     """
-    # Path to your ChromeDriver
-    chrome_driver_path = '../out/chromedriver'
-
-    # Set up the driver service
-    service = Service(executable_path=chrome_driver_path)
-
-    # Optional: Set options (e.g., maximize window)
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-
-    # Launch Chrome with specified driver
-    driver = webdriver.Chrome(service=service, options=options)
-
-
-    # # Path to your FirefoxDriver
-    # firefox_driver_path = '../out/geckodriver'
+    # # Path to your ChromeDriver
+    # chrome_driver_path = '../out/chromedriver'
 
     # # Set up the driver service
-    # service = Service(executable_path=firefox_driver_path)
+    # service = Service(executable_path=chrome_driver_path)
 
     # # Optional: Set options (e.g., maximize window)
-    # options = webdriver.FirefoxOptions()
+    # options = webdriver.ChromeOptions()
     # options.add_argument("--start-maximized")
 
     # # Launch Chrome with specified driver
-    # driver = webdriver.Firefox(service=service, options=options)
+    # driver = webdriver.Chrome(service=service, options=options)
+
+
+    # Path to your FirefoxDriver
+    firefox_driver_path = '../out/geckodriver'
+
+    # Set up the driver service
+    service = Service(executable_path=firefox_driver_path)
+
+    # Optional: Set options (e.g., maximize window)
+    options = webdriver.FirefoxOptions()
+    options.add_argument("--start-maximized")
+
+    # Launch Chrome with specified driver
+    driver = webdriver.Firefox(service=service, options=options)
 
 
     try:
@@ -48,6 +72,7 @@ def youtube_in_new_tabs(search_queries):
         time.sleep(2)  # Give the page some time to load
 
         for i, query in enumerate(search_queries):
+            query = query + search_suffix
             if i > 0:  # For subsequent queries, open a new tab
                 # Open a new tab using JavaScript
                 driver.execute_script("window.open('');")
@@ -91,7 +116,5 @@ def youtube_in_new_tabs(search_queries):
         input("Press Enter to close...")
 
 if __name__ == "__main__":
-    my_search_list = [
-    ]
 
     youtube_in_new_tabs(my_search_list)
