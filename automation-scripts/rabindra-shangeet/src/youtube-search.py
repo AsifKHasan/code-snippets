@@ -73,7 +73,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver):
                 search_bar.send_keys(query)
                 search_bar.send_keys(Keys.RETURN)
                 print(f"Searching YouTube for: '{query}'")
-                time.sleep(3)  # Wait for search results to load
+                time.sleep(2)  # Wait for search results to load
             except Exception as e:
                 print(f"Could not find search bar or perform search for '{query}': {e}")
                 # If search bar not found, try to go to YouTube home and retry
