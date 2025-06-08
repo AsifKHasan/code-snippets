@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from helper.logger import *
 from helper import logger
 
-def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver):
+def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, delay):
     """
     Opens YouTube in new browser tabs and searches for each query in the list.
 
@@ -73,7 +73,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver):
                 search_bar.send_keys(query)
                 search_bar.send_keys(Keys.RETURN)
                 print(f"Searching YouTube for: '{query}'")
-                time.sleep(2)  # Wait for search results to load
+                time.sleep(delay)  # Wait for search results to load
             except Exception as e:
                 print(f"Could not find search bar or perform search for '{query}': {e}")
                 # If search bar not found, try to go to YouTube home and retry
@@ -104,4 +104,4 @@ if __name__ == "__main__":
     # read config.yml
     config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
     logger.LOG_LEVEL = config.get('log-level', 0)
-    youtube_in_new_tabs(config.get('song-list', []), config.get('search-suffix', ''), config.get('range-start', ''), config.get('range-end', ''), config.get('driver', 'Chrome'))
+    youtube_in_new_tabs(config.get('song-list', []), config.get('search-suffix', ''), config.get('range-start', ''), config.get('range-end', ''), config.get('driver', 'Chrome'), config.get('delay', 2))
