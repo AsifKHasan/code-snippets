@@ -63,7 +63,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                 # Switch to the new tab
                 driver.switch_to.window(driver.window_handles[-1])
                 driver.get("https://www.youtube.com/")
-                print(f"Opened new tab for query: '{query}'")
+                print(f"Opened tab for query : '{query}'")
                 time.sleep(2)  # Give the new tab some time to load
 
             # Find the search bar and perform the search
