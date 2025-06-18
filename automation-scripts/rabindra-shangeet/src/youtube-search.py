@@ -10,7 +10,7 @@ from selenium.webdriver.common.by import By
 from helper.logger import *
 from helper import logger
 
-def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, delay):
+def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, delay, texts_to_find):
     """
     Opens YouTube in new browser tabs and searches for each query in the list.
 
@@ -53,6 +53,8 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
         print("Opened YouTube in the first tab.")
         time.sleep(2)  # Give the page some time to load
 
+        tabs_to_be_closed = []
+
         for i, query in enumerate(search_queries[range_start:range_end]):
             if suffix != '':
                 query = query + ' ' + suffix
@@ -63,7 +65,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                 # Switch to the new tab
                 driver.switch_to.window(driver.window_handles[-1])
                 driver.get("https://www.youtube.com/")
-                print(f"Opened tab for query : '{query}'")
+                print(i, f"Opened tab for query : '{query}'")
                 time.sleep(2)  # Give the new tab some time to load
 
             # Find the search bar and perform the search
@@ -72,7 +74,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                 search_bar.clear()
                 search_bar.send_keys(query)
                 search_bar.send_keys(Keys.RETURN)
-                print(f"Searching YouTube for: '{query}'")
+                print(i, f"Searching YouTube for: '{query}'")
                 time.sleep(delay)  # Wait for search results to load
             except Exception as e:
                 print(f"Could not find search bar or perform search for '{query}': {e}")
@@ -90,6 +92,84 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                     print(f"Retry failed for '{query}': {e_retry}")
 
 
+            # search for the provided text
+            # Find all elements and check their text (more precise, good for user-visible text)
+            # This is often more reliable as it looks at the *rendered* text content.
+            # You can search for specific types of elements, like video titles, descriptions, etc.
+            # Let's try to find it within all elements that are likely to contain video titles or descriptions.
+            
+            # Common elements that might contain relevant text:
+            # 'yt-formatted-string' is a common YouTube custom element for text
+            # 'h3' for video titles, 'div' or 'span' for descriptions
+
+            found_in_element = False
+            
+            # Targeting specific elements where the text might appear
+            # Example: Check video titles (h3 tag with specific ID/class)
+            video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
+            for title_element in video_titles[:3]:
+                # ignore some specific titles
+                ignore = False
+                for text in ['110', 'Sagarmoy', 'Genius']:
+                    if text in title_element.text:
+                        ignore = True
+
+                for text_item in texts_to_find:
+                    if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
+                        print(f"... '{text_item}' found in video title: {title_element.text}")
+                        found_in_element = True
+                        break # Stop after finding the first instance if you only need to confirm presence
+
+                if found_in_element:
+                    break
+
+            if ignore:
+                found_in_element = False
+            
+            if not found_in_element:
+                # If not found in titles, maybe check descriptions or other text areas
+                # You'll need to inspect the Youtube results page to find appropriate selectors
+                # For instance, some description text might be in 'yt-formatted-string' elements
+                description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
+                for desc_element in description_elements[:3]:
+                    for text_item in texts_to_find:
+                        if text_item.lower() in desc_element.text.lower():
+                            print(f"... '{text_item}' found in description/other text: {desc_element.text}")
+                            print()
+                            found_in_element = True
+                            break
+
+                    if found_in_element:
+                        break
+            
+            if not found_in_element:
+                print(f"... FIND terms not found in specific elements after search")
+                print()
+                tabs_to_be_closed.append(driver.current_window_handle)
+                
+        # close all tabs where find terms were not found
+        print(f"Closing [{len(tabs_to_be_closed)}] tabs")
+        for tab in tabs_to_be_closed:
+            driver.switch_to.window(tab)
+            driver.close()
+        
+            # found_any = False
+            # for text_item in texts_to_find:
+            #     for text_item in driver.page_source:
+            #         print(f"Found '{text_item}' in page")
+            #         found_any = True
+            #         break
+
+            #     # If you only need to know if *any* term is found in *this* text_item, you can break here
+            #     if found_any:
+            #         break
+
+            # if found_any:
+            #     print("... At least one search term was found in the list.")
+            # else:
+            #     print("... No search terms were found in the list.")
+
+
     except Exception as e:
         print(f"An error occurred: {e}")
     finally:
@@ -104,4 +184,4 @@ if __name__ == "__main__":
     # read config.yml
     config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
     logger.LOG_LEVEL = config.get('log-level', 0)
-    youtube_in_new_tabs(config.get('song-list', []), config.get('search-suffix', ''), config.get('range-start', ''), config.get('range-end', ''), config.get('driver', 'Chrome'), config.get('delay', 2))
+    youtube_in_new_tabs(config.get('song-list', []), config.get('search-suffix', ''), config.get('range-start', ''), config.get('range-end', ''), config.get('driver', 'Chrome'), config.get('delay', 2), config.get('texts-to-find', []))
