@@ -107,18 +107,20 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
             # Targeting specific elements where the text might appear
             # Example: Check video titles (h3 tag with specific ID/class)
             video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
-            for title_element in video_titles[:3]:
+            for title_element in video_titles[:4]:
+                # print(f"... title [{title_element.text}]")
                 # ignore some specific titles
                 ignore = False
-                for text in ['110', 'Sagarmoy', 'Genius']:
+                for text in []:
                     if text in title_element.text:
                         ignore = True
 
-                for text_item in texts_to_find:
-                    if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
-                        print(f"... '{text_item}' found in video title: {title_element.text}")
-                        found_in_element = True
-                        break # Stop after finding the first instance if you only need to confirm presence
+                if True:
+                    for text_item in texts_to_find:
+                        if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
+                            print(f"... '{text_item}' found in video title: {title_element.text}")
+                            found_in_element = True
+                            break # Stop after finding the first instance if you only need to confirm presence
 
                 if found_in_element:
                     break
@@ -131,13 +133,16 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                 # You'll need to inspect the Youtube results page to find appropriate selectors
                 # For instance, some description text might be in 'yt-formatted-string' elements
                 description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
-                for desc_element in description_elements[:3]:
-                    for text_item in texts_to_find:
-                        if text_item.lower() in desc_element.text.lower():
-                            print(f"... '{text_item}' found in description/other text: {desc_element.text}")
-                            print()
-                            found_in_element = True
-                            break
+                for desc_element in description_elements[:100]:
+                    id = desc_element.get_attribute('id')
+                    if id is None or id != 'corrected':
+                        # print(f"... ... description [{desc_element.text}]")
+                        for text_item in texts_to_find:
+                            if text_item.lower() in desc_element.text.lower():
+                                print(f"... '{text_item}' found in description/other text: {desc_element.text}")
+                                print()
+                                found_in_element = True
+                                break
 
                     if found_in_element:
                         break
