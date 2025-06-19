@@ -10,14 +10,19 @@ from selenium.webdriver.common.by import By
 from helper.logger import *
 from helper import logger
 
-def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, delay, texts_to_find):
-    """
-    Opens YouTube in new browser tabs and searches for each query in the list.
+def youtube_in_new_tabs(config):
+    search_queries = config.get('song-list', [])
+    suffix = config.get('search-suffix', '')
+    range_start = config.get('range-start', '')
+    range_end = config.get('range-end', '')
+    web_driver = config.get('driver', 'Chrome')
+    delay_yt_load = config.get('delay-yt-load', 2)
+    delay_yt_tab = config.get('delay-yt-tab', 2)
+    delay_yt_search = config.get('delay-yt-search', 2)
+    delay_pre_yt_search = config.get('delay-pre-yt-search', 2)
+    texts_to_find = config.get('texts-to-find', [])
 
-    Args:
-        search_queries (list): A list of strings, where each string is a search query.
-    """
-    if driver == 'Chrome':
+    if web_driver == 'Chrome':
         # Path to your ChromeDriver
         chrome_driver_path = '../out/chromedriver'
 
@@ -51,7 +56,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
         # Open the first YouTube tab
         driver.get("https://www.youtube.com/")
         print("Opened YouTube in the first tab.")
-        time.sleep(2)  # Give the page some time to load
+        time.sleep(delay_yt_load)  # Give the page some time to load
 
         tabs_to_be_closed = []
 
@@ -66,7 +71,7 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                 driver.switch_to.window(driver.window_handles[-1])
                 driver.get("https://www.youtube.com/")
                 print(i, f"Opened tab for query : '{query}'")
-                time.sleep(2)  # Give the new tab some time to load
+                time.sleep(delay_yt_tab)  # Give the new tab some time to load
 
             # Find the search bar and perform the search
             try:
@@ -75,19 +80,19 @@ def youtube_in_new_tabs(search_queries, suffix, range_start, range_end, driver, 
                 search_bar.send_keys(query)
                 search_bar.send_keys(Keys.RETURN)
                 print(i, f"Searching YouTube for: '{query}'")
-                time.sleep(delay)  # Wait for search results to load
+                time.sleep(delay_yt_search)  # Wait for search results to load
             except Exception as e:
                 print(f"Could not find search bar or perform search for '{query}': {e}")
                 # If search bar not found, try to go to YouTube home and retry
                 driver.get("https://www.youtube.com/")
-                time.sleep(2)
+                time.sleep(delay_yt_tab)
                 try:
                     search_bar = driver.find_element(By.NAME, "search_query")
                     search_bar.clear()
                     search_bar.send_keys(query)
                     search_bar.send_keys(Keys.RETURN)
                     print(f"Retrying search for: '{query}'")
-                    time.sleep(3)
+                    time.sleep(delay_pre_yt_search)
                 except Exception as e_retry:
                     print(f"Retry failed for '{query}': {e_retry}")
 
@@ -189,4 +194,4 @@ if __name__ == "__main__":
     # read config.yml
     config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
     logger.LOG_LEVEL = config.get('log-level', 0)
-    youtube_in_new_tabs(config.get('song-list', []), config.get('search-suffix', ''), config.get('range-start', ''), config.get('range-end', ''), config.get('driver', 'Chrome'), config.get('delay', 2), config.get('texts-to-find', []))
+    youtube_in_new_tabs(config)
