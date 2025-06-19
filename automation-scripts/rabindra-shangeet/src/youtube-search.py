@@ -55,7 +55,7 @@ def youtube_in_new_tabs(config):
     try:
         # Open the first YouTube tab
         driver.get("https://www.youtube.com/")
-        print("Opened YouTube in the first tab.")
+        info("Opened YouTube in the first tab.")
         time.sleep(delay_yt_load)  # Give the page some time to load
 
         tabs_to_be_closed = []
@@ -70,7 +70,7 @@ def youtube_in_new_tabs(config):
                 # Switch to the new tab
                 driver.switch_to.window(driver.window_handles[-1])
                 driver.get("https://www.youtube.com/")
-                print(i, f"Opened tab for query : '{query}'")
+                info(f"[{i}] Opened tab for: '{query}'")
                 time.sleep(delay_yt_tab)  # Give the new tab some time to load
 
             # Find the search bar and perform the search
@@ -79,10 +79,10 @@ def youtube_in_new_tabs(config):
                 search_bar.clear()
                 search_bar.send_keys(query)
                 search_bar.send_keys(Keys.RETURN)
-                print(i, f"Searching YouTube for: '{query}'")
+                info(f"[{i}] Searching with: '{query}'")
                 time.sleep(delay_yt_search)  # Wait for search results to load
             except Exception as e:
-                print(f"Could not find search bar or perform search for '{query}': {e}")
+                warn(f"Could not find search bar or perform search for '{query}': {e}")
                 # If search bar not found, try to go to YouTube home and retry
                 driver.get("https://www.youtube.com/")
                 time.sleep(delay_yt_tab)
@@ -91,10 +91,10 @@ def youtube_in_new_tabs(config):
                     search_bar.clear()
                     search_bar.send_keys(query)
                     search_bar.send_keys(Keys.RETURN)
-                    print(f"Retrying search for: '{query}'")
+                    warn(f"Retrying search for: '{query}'")
                     time.sleep(delay_pre_yt_search)
                 except Exception as e_retry:
-                    print(f"Retry failed for '{query}': {e_retry}")
+                    error(f"Retry failed for '{query}': {e_retry}")
 
 
             # search for the provided text
@@ -123,7 +123,7 @@ def youtube_in_new_tabs(config):
                 if True:
                     for text_item in texts_to_find:
                         if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
-                            print(f"... '{text_item}' found in video title: {title_element.text}")
+                            debug(f"... '{text_item}' found in video title: {title_element.text}")
                             found_in_element = True
                             break # Stop after finding the first instance if you only need to confirm presence
 
@@ -144,7 +144,7 @@ def youtube_in_new_tabs(config):
                         # print(f"... ... description [{desc_element.text}]")
                         for text_item in texts_to_find:
                             if text_item.lower() in desc_element.text.lower():
-                                print(f"... '{text_item}' found in description/other text: {desc_element.text}")
+                                debug(f"... '{text_item}' found in description/other text: {desc_element.text}")
                                 print()
                                 found_in_element = True
                                 break
@@ -153,40 +153,24 @@ def youtube_in_new_tabs(config):
                         break
             
             if not found_in_element:
-                print(f"... FIND terms not found in specific elements after search")
+                warn(f"... FIND terms not found in specific elements after search")
                 print()
                 tabs_to_be_closed.append(driver.current_window_handle)
                 
         # close all tabs where find terms were not found
-        print(f"Closing [{len(tabs_to_be_closed)}] tabs")
+        info(f"Closing [{len(tabs_to_be_closed)}] tabs")
         for tab in tabs_to_be_closed:
             driver.switch_to.window(tab)
             driver.close()
         
-            # found_any = False
-            # for text_item in texts_to_find:
-            #     for text_item in driver.page_source:
-            #         print(f"Found '{text_item}' in page")
-            #         found_any = True
-            #         break
-
-            #     # If you only need to know if *any* term is found in *this* text_item, you can break here
-            #     if found_any:
-            #         break
-
-            # if found_any:
-            #     print("... At least one search term was found in the list.")
-            # else:
-            #     print("... No search terms were found in the list.")
-
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        error(f"An error occurred: {e}")
     finally:
         # It's good practice to close the browser when done
         # time.sleep(10) # Uncomment this if you want to keep the browsers open for a bit to inspect
         # driver.quit()
-        print("All searches completed. The browser remains open.")
+        debug("All searches completed. The browser remains open.")
         input("Press Enter to close...")
 
 if __name__ == "__main__":
