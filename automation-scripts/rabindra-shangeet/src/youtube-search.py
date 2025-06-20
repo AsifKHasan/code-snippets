@@ -114,7 +114,7 @@ def youtube_in_new_tabs(config):
             # Example: Check video titles (h3 tag with specific ID/class)
             video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
             ignore = False
-            for title_element in video_titles[:4]:
+            for title_element in video_titles[:10]:
                 # print(f"... title [{title_element.text}]")
                 # ignore some specific titles
                 ignore = False
