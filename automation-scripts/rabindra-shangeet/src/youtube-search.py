@@ -21,6 +21,7 @@ def youtube_in_new_tabs(config):
     delay_yt_search = config.get('delay-yt-search', 2)
     delay_pre_yt_search = config.get('delay-pre-yt-search', 2)
     texts_to_find = config.get('texts-to-find', [])
+    texts_to_ignore = config.get('texts-to-ignore', [])
 
     if web_driver == 'Chrome':
         # Path to your ChromeDriver
@@ -112,11 +113,12 @@ def youtube_in_new_tabs(config):
             # Targeting specific elements where the text might appear
             # Example: Check video titles (h3 tag with specific ID/class)
             video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
+            ignore = False
             for title_element in video_titles[:4]:
                 # print(f"... title [{title_element.text}]")
                 # ignore some specific titles
                 ignore = False
-                for text in []:
+                for text in texts_to_ignore:
                     if text in title_element.text:
                         ignore = True
 
@@ -140,7 +142,7 @@ def youtube_in_new_tabs(config):
                 description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
                 for desc_element in description_elements[:100]:
                     id = desc_element.get_attribute('id')
-                    if id is None or id != 'corrected':
+                    if id is None or id != 'corrected-link':
                         # print(f"... ... description [{desc_element.text}]")
                         for text_item in texts_to_find:
                             if text_item.lower() in desc_element.text.lower():
