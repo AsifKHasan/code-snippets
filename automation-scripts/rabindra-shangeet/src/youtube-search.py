@@ -142,16 +142,26 @@ def youtube_in_new_tabs(config):
                 description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
                 for desc_element in description_elements[:100]:
                     id = desc_element.get_attribute('id')
-                    if id is None or id != 'corrected-link':
+                    if id is None or id not in ['corrected', 'corrected-link', 'original']:
                         # print(f"... ... description [{desc_element.text}]")
                         for text_item in texts_to_find:
                             if text_item.lower() in desc_element.text.lower():
-                                debug(f"... '{text_item}' found in description/other text: {desc_element.text}")
+                                # print(f"id is {id}")
+                                # debug(f"... '{text_item}' found in description/other text: {desc_element.text}")
                                 print()
                                 found_in_element = True
                                 break
 
+
                     if found_in_element:
+                        # even if found the class may be original-link, in that case ignore it
+                        the_class = desc_element.get_attribute('class')
+                        if the_class is not None:
+                            # print(f"... ... class [{the_class}]")
+                            if 'original-link' in the_class:
+                                warn(f"... '{text_item}' found in description/other text with class 'original-link': {desc_element.text} ... ignoring it")
+                                found_in_element = False
+                                continue
                         break
             
             if not found_in_element:
