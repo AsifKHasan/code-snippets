@@ -33,7 +33,7 @@ sed 's/./&\n/g'
 
 
 
-# split file contants by SPACE
+# split file contents by SPACE
 cat bgtxtall.txt | sed "s/ /\n/g" | sort > tmp.txt
 
 sort bgtxtall.txt | uniq > tmp.txt
