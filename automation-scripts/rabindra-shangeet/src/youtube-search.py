@@ -6,9 +6,42 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from helper.logger import *
 from helper import logger
+
+# Function to scroll down by "page"
+def scroll_by_page(driver, num_pages=1):
+    for _ in range(num_pages):
+        # driver.find_element(By.TAG_NAME, 'body').send_keys(Keys.PAGE_DOWN)
+        time.sleep(1) # Give time for content to load
+
+
+# function to scroll down
+def scroll_to_bottom(driver):
+    last_height = driver.execute_script("return document.documentElement.scrollHeight")
+    while True:
+        # Scroll down to bottom
+        driver.execute_script("window.scrollTo(0, document.documentElement.scrollHeight);")
+        
+        # Wait to load new content
+        time.sleep(2)  # Adjust this based on your internet speed and YouTube's loading time
+
+        # Calculate new scroll height and compare with last scroll height
+        new_height = driver.execute_script("return document.documentElement.scrollHeight")
+        if new_height == last_height:
+            break  # No more content loaded, reached the end
+        last_height = new_height
+        
+
+# function to scroll down
+def scroll_down(driver, height=1000):
+    driver.execute_script(f"window.scrollTo(0, {height});")
+    # Wait to load new content
+    time.sleep(2)  # Adjust this based on your internet speed and YouTube's loading time
+        
 
 def youtube_in_new_tabs(config):
     search_queries = config.get('song-list', [])
@@ -97,6 +130,11 @@ def youtube_in_new_tabs(config):
                 except Exception as e_retry:
                     error(f"Retry failed for '{query}': {e_retry}")
 
+            # scroll pages
+
+            # scroll to bottom
+            # scroll_to_bottom(driver)
+            scroll_down(driver, 1000)
 
             # search for the provided text
             # Find all elements and check their text (more precise, good for user-visible text)
@@ -118,11 +156,14 @@ def youtube_in_new_tabs(config):
                 # print(f"... title [{title_element.text}]")
                 # ignore some specific titles
                 ignore = False
-                for text in texts_to_ignore:
-                    if text in title_element.text:
+                for ignore_text in texts_to_ignore:
+                    if ignore_text in title_element.text:
+                        warn(f"... '{ignore_text}' found in video title: {title_element.text} ... ignoring it")
                         ignore = True
+                        found_in_element = False
+                        break
 
-                if True:
+                if not ignore:
                     for text_item in texts_to_find:
                         if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
                             debug(f"... '{text_item}' found in video title: {title_element.text}")
@@ -140,7 +181,7 @@ def youtube_in_new_tabs(config):
                 # You'll need to inspect the Youtube results page to find appropriate selectors
                 # For instance, some description text might be in 'yt-formatted-string' elements
                 description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
-                for desc_element in description_elements[:100]:
+                for desc_element in description_elements[0:100]:
                     id = desc_element.get_attribute('id')
                     if id is None or id not in ['corrected', 'corrected-link', 'original']:
                         # print(f"... ... description [{desc_element.text}]")
