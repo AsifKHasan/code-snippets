@@ -134,7 +134,7 @@ def youtube_in_new_tabs(config):
 
             # scroll to bottom
             # scroll_to_bottom(driver)
-            scroll_down(driver, 1000)
+            # scroll_down(driver, 1000)
 
             # search for the provided text
             # Find all elements and check their text (more precise, good for user-visible text)
