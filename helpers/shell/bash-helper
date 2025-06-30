@@ -6,12 +6,12 @@ set_intersection () {
    sort $1 $2 | uniq -d
 }
 
-set_difference () {
-   sort $1 $2 $2 | uniq -u
-}
-
 set_symmetric_difference() {
    sort $1 $2 | uniq -u
+}
+
+set_difference () {
+   sort $1 $2 $2 | uniq -u
 }
 
 set_difference songs files | xclip -sel clipboard
@@ -33,7 +33,7 @@ sed 's/./&\n/g'
 
 
 
-# split file contents by SPACE
+# split file contants by SPACE
 cat bgtxtall.txt | sed "s/ /\n/g" | sort > tmp.txt
 
 sort bgtxtall.txt | uniq > tmp.txt
