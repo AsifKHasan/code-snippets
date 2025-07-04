@@ -2,6 +2,7 @@
 
 import time
 import yaml
+import re
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -46,7 +47,7 @@ def new_tabs(config):
         # Launch Chrome with specified driver
         driver = webdriver.Firefox(service=service, options=options)
 
-
+    outputs = []
     try:
         time.sleep(delay_link_load)  # Give the page some time to load
 
@@ -63,11 +64,28 @@ def new_tabs(config):
             # Give the new tab some time to load
             time.sleep(delay_link_load)
 
-                
+            # 1. Get the full page source
+            page_source = driver.page_source
+
+            # Define your regular expression
+            # Example: Find all email addresses
+            search_pattern = r'পূজা-.+;'
+            matches_in_page = re.findall(search_pattern, page_source)
+
+            if matches_in_page:
+                for found_text in matches_in_page:
+                    debug(f"[{found_text}] found in page source:")
+                    outputs.append((link, found_text))
+            else:
+                warn(f"{search_pattern} not found in page source.")            
+
     except Exception as e:
         error(f"An error occurred: {e}")
     finally:
         debug("All links completed. The browser remains open.")
+        for output in outputs:
+            print(output[0], output[1])
+
         input("Press Enter to close...")
 
 if __name__ == "__main__":
