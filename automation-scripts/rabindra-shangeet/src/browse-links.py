@@ -14,6 +14,7 @@ def new_tabs(config):
     links_to_open = config.get('links-to-open', [])
     range_start = config.get('range-start', '')
     range_end = config.get('range-end', '')
+    search_patterns = config.get('texts-to-find', [])
     web_driver = config.get('driver', 'Chrome')
     delay_link_load = config.get('delay-link-load', 1)
     delay_link_tab = config.get('delay-yt-tab', 1)
@@ -67,17 +68,20 @@ def new_tabs(config):
             # 1. Get the full page source
             page_source = driver.page_source
 
-            # Define your regular expression
-            # Example: Find all email addresses
-            search_pattern = r'পূজা-.+;'
-            matches_in_page = re.findall(search_pattern, page_source)
+            match_found = False
+            for search_pattern in search_patterns:
+                matches_in_page = re.findall(search_pattern, page_source)
 
-            if matches_in_page:
-                for found_text in matches_in_page:
-                    debug(f"[{found_text}] found in page source:")
-                    outputs.append((link, found_text))
-            else:
-                warn(f"{search_pattern} not found in page source.")            
+                if matches_in_page:
+                    for found_text in matches_in_page:
+                        debug(f"[{found_text}] found in page source:")
+                        outputs.append((link, found_text))
+                        match_found = True
+                        break
+
+            if not match_found:
+                    outputs.append((link, ''))
+                    warn(f"no search_pattern found in page source.")            
 
     except Exception as e:
         error(f"An error occurred: {e}")
