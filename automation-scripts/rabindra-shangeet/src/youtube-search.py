@@ -55,6 +55,8 @@ def youtube_in_new_tabs(config):
     delay_pre_yt_search = config.get('delay-pre-yt-search', 2)
     texts_to_find = config.get('texts-to-find', [])
     texts_to_ignore = config.get('texts-to-ignore', [])
+    do_search = config.get('do-search', False)
+    close_tabs = config.get('close-tabs', False)
 
     if web_driver == 'Chrome':
         # Path to your ChromeDriver
@@ -148,73 +150,76 @@ def youtube_in_new_tabs(config):
 
             found_in_element = False
             
-            # Targeting specific elements where the text might appear
-            # Example: Check video titles (h3 tag with specific ID/class)
-            video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
-            ignore = False
-            for title_element in video_titles[:6]:
-                # print(f"... title [{title_element.text}]")
-                # ignore some specific titles
+            # do search
+            if do_search:
+                # Targeting specific elements where the text might appear
+                # Example: Check video titles (h3 tag with specific ID/class)
+                video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
                 ignore = False
-                for ignore_text in texts_to_ignore:
-                    if ignore_text in title_element.text:
-                        warn(f"... '{ignore_text}' found in video title: {title_element.text} ... ignoring it")
-                        ignore = True
-                        found_in_element = False
-                        break
+                for title_element in video_titles[:6]:
+                    # print(f"... title [{title_element.text}]")
+                    # ignore some specific titles
+                    ignore = False
+                    for ignore_text in texts_to_ignore:
+                        if ignore_text in title_element.text:
+                            warn(f"... '{ignore_text}' found in video title: {title_element.text} ... ignoring it")
+                            ignore = True
+                            found_in_element = False
+                            break
 
-                if not ignore:
-                    for text_item in texts_to_find:
-                        if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
-                            debug(f"... '{text_item}' found in video title: {title_element.text}")
-                            found_in_element = True
-                            break # Stop after finding the first instance if you only need to confirm presence
-
-                if found_in_element:
-                    break
-
-            if ignore:
-                found_in_element = False
-            
-            if not found_in_element:
-                # If not found in titles, maybe check descriptions or other text areas
-                # You'll need to inspect the Youtube results page to find appropriate selectors
-                # For instance, some description text might be in 'yt-formatted-string' elements
-                description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
-                for desc_element in description_elements[0:100]:
-                    id = desc_element.get_attribute('id')
-                    if id is None or id not in ['corrected', 'corrected-link', 'original']:
-                        # print(f"... ... description [{desc_element.text}]")
+                    if not ignore:
                         for text_item in texts_to_find:
-                            if text_item.lower() in desc_element.text.lower():
-                                # print(f"id is {id}")
-                                # debug(f"... '{text_item}' found in description/other text: {desc_element.text}")
-                                print()
+                            if text_item.lower() in title_element.text.lower(): # Using .lower() for case-insensitivity
+                                debug(f"... '{text_item}' found in video title: {title_element.text}")
                                 found_in_element = True
-                                break
-
+                                break # Stop after finding the first instance if you only need to confirm presence
 
                     if found_in_element:
-                        # even if found the class may be original-link, in that case ignore it
-                        the_class = desc_element.get_attribute('class')
-                        if the_class is not None:
-                            # print(f"... ... class [{the_class}]")
-                            if 'original-link' in the_class:
-                                warn(f"... '{text_item}' found in description/other text with class 'original-link': {desc_element.text} ... ignoring it")
-                                found_in_element = False
-                                continue
                         break
-            
-            if not found_in_element:
-                warn(f"... FIND terms not found in specific elements after search")
-                print()
-                tabs_to_be_closed.append(driver.current_window_handle)
+
+                if ignore:
+                    found_in_element = False
                 
-        # close all tabs where find terms were not found
-        info(f"Closing [{len(tabs_to_be_closed)}] tabs")
-        for tab in tabs_to_be_closed:
-            driver.switch_to.window(tab)
-            driver.close()
+                if not found_in_element:
+                    # If not found in titles, maybe check descriptions or other text areas
+                    # You'll need to inspect the Youtube results page to find appropriate selectors
+                    # For instance, some description text might be in 'yt-formatted-string' elements
+                    description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
+                    for desc_element in description_elements[0:100]:
+                        id = desc_element.get_attribute('id')
+                        if id is None or id not in ['corrected', 'corrected-link', 'original']:
+                            # print(f"... ... description [{desc_element.text}]")
+                            for text_item in texts_to_find:
+                                if text_item.lower() in desc_element.text.lower():
+                                    # print(f"id is {id}")
+                                    # debug(f"... '{text_item}' found in description/other text: {desc_element.text}")
+                                    print()
+                                    found_in_element = True
+                                    break
+
+
+                        if found_in_element:
+                            # even if found the class may be original-link, in that case ignore it
+                            the_class = desc_element.get_attribute('class')
+                            if the_class is not None:
+                                # print(f"... ... class [{the_class}]")
+                                if 'original-link' in the_class:
+                                    warn(f"... '{text_item}' found in description/other text with class 'original-link': {desc_element.text} ... ignoring it")
+                                    found_in_element = False
+                                    continue
+                            break
+                
+                if not found_in_element:
+                    warn(f"... FIND terms not found in specific elements after search")
+                    print()
+                    tabs_to_be_closed.append(driver.current_window_handle)
+                    
+            # close all tabs where find terms were not found
+            if close_tabs:
+                info(f"Closing [{len(tabs_to_be_closed)}] tabs")
+                for tab in tabs_to_be_closed:
+                    driver.switch_to.window(tab)
+                    driver.close()
         
 
     except Exception as e:
