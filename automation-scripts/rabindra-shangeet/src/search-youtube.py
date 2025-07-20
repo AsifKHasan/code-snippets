@@ -185,7 +185,7 @@ def youtube_in_new_tabs(config):
                     # You'll need to inspect the Youtube results page to find appropriate selectors
                     # For instance, some description text might be in 'yt-formatted-string' elements
                     description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
-                    for desc_element in description_elements[0:100]:
+                    for desc_element in description_elements[0:10]:
                         id = desc_element.get_attribute('id')
                         if id is None or id not in ['corrected', 'corrected-link', 'original']:
                             # print(f"... ... description [{desc_element.text}]")
@@ -214,12 +214,12 @@ def youtube_in_new_tabs(config):
                     print()
                     tabs_to_be_closed.append(driver.current_window_handle)
                     
-            # close all tabs where find terms were not found
-            if close_tabs:
-                info(f"Closing [{len(tabs_to_be_closed)}] tabs")
-                for tab in tabs_to_be_closed:
-                    driver.switch_to.window(tab)
-                    driver.close()
+        # close all tabs where find terms were not found
+        if close_tabs:
+            info(f"Closing [{len(tabs_to_be_closed)}] tabs")
+            for tab in tabs_to_be_closed:
+                driver.switch_to.window(tab)
+                driver.close()
         
 
     except Exception as e:
