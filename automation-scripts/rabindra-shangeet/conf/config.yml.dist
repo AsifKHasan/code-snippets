@@ -8,15 +8,15 @@ delay-pre-yt-search:        1
 range-start:                0
 range-end:                  50
 do-search:                  true
-close-tabs:                 true
+close-tabs:                 false
 texts-to-find:
-- 'আরতি'
-- 'আরতী'
-- 'arati'
-- 'aarti'
-- 'aarati'
+- 'প্রসাদ'
+- 'prasad'
+
 # texts-to-ignore:
-search-suffix:              'আরতি'
+
+search-suffix:              'প্রসাদ সেন'
+
 song-list:
 
 song-list-master:
