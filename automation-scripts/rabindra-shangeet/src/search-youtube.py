@@ -55,6 +55,9 @@ def youtube_in_new_tabs(config):
     delay_pre_yt_search = config.get('delay-pre-yt-search', 2)
     texts_to_find = config.get('texts-to-find', [])
     texts_to_ignore = config.get('texts-to-ignore', [])
+    titles_to_serach = config.get('titles-to-serach', 10)
+    descriptions_to_serach = config.get('descriptions-to-serach', 100)
+    
     do_search = config.get('do-search', False)
     close_tabs = config.get('close-tabs', False)
 
@@ -156,7 +159,7 @@ def youtube_in_new_tabs(config):
                 # Example: Check video titles (h3 tag with specific ID/class)
                 video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
                 ignore = False
-                for title_element in video_titles[:6]:
+                for title_element in video_titles[:titles_to_serach]:
                     # print(f"... title [{title_element.text}]")
                     # ignore some specific titles
                     ignore = False
@@ -185,7 +188,7 @@ def youtube_in_new_tabs(config):
                     # You'll need to inspect the Youtube results page to find appropriate selectors
                     # For instance, some description text might be in 'yt-formatted-string' elements
                     description_elements = driver.find_elements(By.TAG_NAME, "yt-formatted-string")
-                    for desc_element in description_elements[0:10]:
+                    for desc_element in description_elements[0:descriptions_to_serach]:
                         id = desc_element.get_attribute('id')
                         if id is None or id not in ['corrected', 'corrected-link', 'original']:
                             # print(f"... ... description [{desc_element.text}]")
