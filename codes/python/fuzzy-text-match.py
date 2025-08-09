@@ -25,7 +25,8 @@ yml_data = yaml.load(open('./data/fuzzy-text-data.yml', 'r', encoding='utf-8'), 
 
 search_list = yml_data.get('search-list', [])
 text_list = yml_data.get('text-list', [])
+confidence = yml_data.get('confidence', 70)
 
 for i, input_text in enumerate(search_list):
-    match, score = find_best_fuzzy_match(input_text, text_list)
+    match, score = find_best_fuzzy_match(input_text, text_list, threshold=confidence)
     print(f"{i}. {match}, Score: {score}")

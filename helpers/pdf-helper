@@ -8,18 +8,18 @@ cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\.pdf" "C:\Users\Asif\Downloads\personal\abc"
 pdftocairo -png -gray "C:\Users\Asif\Downloads\.pdf" "C:\Users\Asif\Downloads\abc"
 
-pdftocairo -png -r 600 -cropbox "/home/asif/Downloads/.pdf" "/home/asif/Downloads/abc/abc"
+pdftocairo -png -r 600 -cropbox "/home/asifhasan/Downloads/.pdf" "/home/asifhasan/Downloads/abc/abc"
 
 pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 
 # ocr an image for text
-for f in /home/asif/Downloads/abc/abc-*.png;
+for f in /home/asifhasan/Downloads/abc/abc-*.png;
 do
   echo "$f"
   tesseract "$f" "$f" -l ben+eng
 done
 
-tesseract "/home/asif/Downloads/abc/abc-02.png" "/home/asif/Downloads/abc/out/02" -l ben
+tesseract "/home/asifhasan/Downloads/abc/abc-02.png" "/home/asifhasan/Downloads/abc/out/02" -l ben
 tesseract "C:\Users\Asif Hasan\Downloads\abc.png" "C:\Users\Asif Hasan\Downloads\text" -l ben
 
 
