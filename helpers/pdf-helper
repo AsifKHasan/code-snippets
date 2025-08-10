@@ -19,7 +19,7 @@ do
   tesseract "$f" "$f" -l ben+eng
 done
 
-tesseract "/home/asifhasan/Downloads/abc/abc-02.png" "/home/asifhasan/Downloads/abc/out/02" -l ben
+tesseract "/home/asifhasan/Downloads/abc/abc-01.png" "/home/asifhasan/Downloads/abc/out/01" -l ben
 tesseract "C:\Users\Asif Hasan\Downloads\abc.png" "C:\Users\Asif Hasan\Downloads\text" -l ben
 
 
