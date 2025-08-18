@@ -3,8 +3,8 @@
 # import os
 # import json
 import yaml
-# import time
 import argparse
+from pathlib import Path
 
 from youtube.yt_dlp import *
 from helper.logger import *
@@ -12,14 +12,21 @@ from helper import logger
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
-    ap.add_argument("-y", "--youtube", required=True, help="youtube url to download from")
-    ap.add_argument("-o", "--output_dir", required=True, help="output directory")
+    ap.add_argument("-y", "--youtube", required=False, help="youtube url to download from")
     args = vars(ap.parse_args())
 
     # read config.yml
-    config = yaml.load(open('../conf/config.yml', 'r', encoding='utf-8'), Loader=yaml.FullLoader)
+    config_path = '../conf/config.yml'
+    config = yaml.load(open(config_path, 'r', encoding='utf-8'), Loader=yaml.FullLoader)
+    config_path = Path(config_path).resolve()
     logger.LOG_LEVEL = config.get('log-level', 0)
+    # output_directory = f"{config_path.parent}/{config.get('output-dir')}"
+    output_directory = config.get('output-dir')
 
-    video_url = args["youtube"]
-    output_directory = args["output_dir"]
-    check_and_download(video_url, output_directory)
+    if args["youtube"] is not None:
+        video_urls = [args["youtube"]]
+    else:
+        video_urls = config.get('links-to-open', [])
+
+    for video_url in video_urls:
+        check_and_download(video_url, output_directory)

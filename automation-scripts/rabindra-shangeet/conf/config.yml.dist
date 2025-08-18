@@ -1,5 +1,6 @@
 # log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
 log-level:                  1
+output-dir:                 '../out/youtube/'
 driver:                     Firefox
 delay-yt-load:              1
 delay-yt-tab:               1
@@ -153,9 +154,9 @@ song-list:
 - হৃদয়ের এ কূল ও কূল দু কূল
 - হে মোর দেবতা ভরিয়া
 
-song-list-master:
-
 links-to-open:
+
+song-list-master:
 - অকারণে অকালে মোর
 - অগ্নিবীণা বাজাও তুমি কেমন করে
 - অগ্নিশিখা এসো এসো

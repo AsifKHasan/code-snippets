@@ -12,9 +12,9 @@ def check_and_download(url, output_path='.'):
     # may have parameters after the id, remove those
     id_from_url = re.sub(r"&.+", "", id_from_url)
 
-    assumed_file_path_=f"{output_path}{id_from_url}.m4a"
-    if os.path.exists(assumed_file_path_):
-        warn(f"The audio [{assumed_file_path_}] exists ... skipping")
+    assumed_file_path = f"{output_path}{id_from_url}.m4a"
+    if os.path.exists(assumed_file_path):
+        warn(f"The audio [{assumed_file_path}] exists ... skipping")
         return
 
     # check if the audio is already downloaded or not
