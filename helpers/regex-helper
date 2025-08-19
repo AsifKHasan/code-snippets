@@ -1,6 +1,9 @@
 '^[0-9]+\. .+\n'
 '.+ = '
 
+duplicate consecutive lines
+^(.+)$\n^\1$
+
 “ ”
 ‘ ’
 
