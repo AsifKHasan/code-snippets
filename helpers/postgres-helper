@@ -1,2 +1,30 @@
+# startup/check
+sudo systemctl status postgresql
+sudo systemctl restart postgresql
+sudo pg_isready
+
+# if you want to login as postgres user
+sudo -i -u postgres
+psql
+
+
+# you can do it as root user
 psql -U postgres
 psql -d postgres -U postgres
+psql -d cas -U cas
+
+# assign a password for postgres user
+ALTER USER postgres with password 'postgres';
+
+
+# ACAS
+## Current database postgrsql_v13, required v13 or above
+
+create user cas password 'cas';
+drop database if exists cas; 
+create database cas with owner=cas encoding='UTF8';
+
+# do the unzipping and restoration in /tmp
+cd /tmp
+unzip cas__2025-08-19.zip
+time PGPASSWORD='cas' pg_restore --username=cas --dbname=cas --clean --if-exists --exit-on-error --jobs=4 --verbose /tmp/cas__2025-08-19/ &
