@@ -51,8 +51,8 @@ def youtube_in_new_tabs(config):
     web_driver = config.get('driver', 'Chrome')
     delay_yt_load = config.get('delay-yt-load', 2)
     delay_yt_tab = config.get('delay-yt-tab', 2)
-    delay_yt_search = config.get('delay-yt-search', 2)
-    delay_pre_yt_search = config.get('delay-pre-yt-search', 2)
+    delay_yt_query = config.get('delay-yt-query', 2)
+    delay_yt_query_retry = config.get('delay-yt-query-retry', 2)
     texts_to_find = config.get('texts-to-find', [])
     texts_to_ignore = config.get('texts-to-ignore', [])
     titles_to_search = config.get('titles-to-search', 10)
@@ -119,7 +119,7 @@ def youtube_in_new_tabs(config):
                 search_bar.send_keys(query)
                 search_bar.send_keys(Keys.RETURN)
                 info(f"[{i}] Searching with: '{query}'")
-                time.sleep(delay_yt_search)  # Wait for search results to load
+                time.sleep(delay_yt_query)  # Wait for search results to load
             except Exception as e:
                 warn(f"Could not find search bar or perform search for '{query}': {e}")
                 # If search bar not found, try to go to YouTube home and retry
@@ -131,7 +131,7 @@ def youtube_in_new_tabs(config):
                     search_bar.send_keys(query)
                     search_bar.send_keys(Keys.RETURN)
                     warn(f"Retrying search for: '{query}'")
-                    time.sleep(delay_pre_yt_search)
+                    time.sleep(delay_yt_query_retry)
                 except Exception as e_retry:
                     error(f"Retry failed for '{query}': {e_retry}")
 
