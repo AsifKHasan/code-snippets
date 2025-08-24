@@ -8,7 +8,7 @@ from pydub import AudioSegment
 
 from helper.logger import *
 from helper.utils import * 
-from youtube.mutagen import *
+from audio.mutagen import *
 
 def segment_and_tag(data):
 

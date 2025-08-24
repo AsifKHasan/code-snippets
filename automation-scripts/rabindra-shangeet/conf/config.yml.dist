@@ -6,14 +6,14 @@ driver:                     Firefox
 credential-json:            '../conf/credential-spectrum-895-221613.json'
 # credential-json:            '../conf/credential-celloscope-2024-160107.json'
 output-dir:                 '../out/youtube/'
-extract-pool-size:          2
+extract-pool-size:          4
 
 # tag-audio settings
 gsheet:                     'গান-মজুদকরণ-প্রকল্প'
 worksheet:                  'রবীন্দ্রসঙ্গীত-youtube'
 input-audio-dir:            '../out/youtube/'
 tagged-audio-dir:           '../out/tagged/'
-tag-pool-size:              2
+tag-pool-size:              4
 
 delay-yt-load:              1
 delay-yt-tab:               1

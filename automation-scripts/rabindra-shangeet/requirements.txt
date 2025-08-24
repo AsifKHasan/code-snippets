@@ -6,5 +6,6 @@ mutagen
 gspread
 oauth2client
 requests
-# gspread-formatting
+gspread-formatting
 selenium
+ffmpeg-python

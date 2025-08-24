@@ -18,7 +18,7 @@ def add_metadata_to_audio(audio_path, data):
         # Load the MP4 file
         audio = MP4(audio_path)
 
-        # Access the tags and add the metadata
+        # access the tags and add the metadata
         tags = audio.tags
         tags['\xa9nam'] = [data.get('title', '')]       # Title
         tags['\xa9alb'] = [data.get('album', '')]       # Album
