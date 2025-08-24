@@ -7,36 +7,17 @@ import yt_dlp
 
 from helper.logger import *
 
-def check_and_download(url, output_path='.'):
+def check_and_download(data):
 
     # Get the process ID and name
     current_process_id = os.getpid()
     current_process_name = multiprocessing.current_process().name
 
-    # get id from url, if there is a file with that id, skip it
-    id_from_url = url.replace("https://www.youtube.com/watch?v=", "")
-
-    # may have parameters after the id, remove those
-    id_from_url = re.sub(r"&.+", "", id_from_url)
-
-    assumed_file_path = f"{output_path}{id_from_url}.m4a"
-    if os.path.exists(assumed_file_path):
-        warn(f"[{current_process_name}]:[{current_process_id}] - [{assumed_file_path}] exists ... skipping")
-        return
-
-    # check if the audio is already downloaded or not
-    id = get_youtube_id(url)
-    file_path = f"{output_path}{id}.m4a"
-
-    if os.path.exists(file_path):
-        warn(f"[{current_process_name}]:[{current_process_id}] - [{file_path}] exists ... skipping")
-        return
-
     # download the audio
-    debug(f"[{current_process_name}]:[{current_process_id}] - downloading [{file_path}]")
+    debug(f"[{current_process_name}]:[{current_process_id}] - downloading [{data['output-dir']}{data['id']}.m4a]")
 
     if id:
-        download_audio(url, output_path, current_process_name, current_process_id)
+        download_audio(data['url'], data['id'], data['output-dir'], current_process_name, current_process_id)
         # pass
 
 
@@ -55,12 +36,12 @@ def get_youtube_id(url):
         return None
 
 
-def download_audio(url, output_path, current_process_name, current_process_id):
+def download_audio(url, id, output_dir, current_process_name, current_process_id):
     ydl_opts = {
         'extractaudio': True,
         'audioformat': 'm4a',
         'format': 'bestaudio',
-        'outtmpl': os.path.join(output_path, '%(id)s.m4a'),
+        'outtmpl': os.path.join(output_dir, '%(id)s.m4a'),
         'verbose': False,
         'quiet': True,
         'starttime': 6,
@@ -68,7 +49,7 @@ def download_audio(url, output_path, current_process_name, current_process_id):
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             ydl.download([url])
-        info(f"[{current_process_name}]:[{current_process_id}] - downloaded to: [{output_path}]")
+        info(f"[{current_process_name}]:[{current_process_id}] - downloaded  [{output_dir}{id}.m4a]")
 
     except Exception as e:
         error(f"[{current_process_name}]:[{current_process_id}] - an error occurred: {e}")

@@ -47,13 +47,18 @@ if __name__ == '__main__':
             worksheet = g_sheet.worksheet_by_name(worksheet_name)
             values = worksheet.get_values_in_batch(ranges=['A4:P'])
 
-            video_urls = []
+            data_list = []
             for value in values[0]:
                 if value[5] == 'Yes' and value[7] != '':
-                    video_urls.append(value[7])
+                    # get id from url, if there is a file with that id, skip it
+                    id = re.sub(r"&.+", "", value[12])
 
-            process_partial = partial(check_and_download, output_path=output_dir)
+                    output_path = f"{output_dir}{id}.m4a"
+                    if os.path.exists(output_path):
+                        warn(f"[{output_path}] exists ... skipping")
+                    else:
+                        data_list.append({'url': value[7], 'id': id, 'output-dir': output_dir})
 
             with multiprocessing.Pool(processes=extract_pool_size) as pool:
                 # Use pool.map to apply the worker_function to each item
-                results = pool.map(process_partial, video_urls)
+                results = pool.map(check_and_download, data_list)
