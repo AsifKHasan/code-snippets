@@ -1,3 +1,10 @@
+yt_dlp
 pytube
 youtube_dl
-yt_dlp
+pydub
+mutagen
+gspread
+oauth2client
+requests
+# gspread-formatting
+selenium

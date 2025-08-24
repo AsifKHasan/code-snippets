@@ -1,7 +1,20 @@
 # log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
 log-level:                  1
-output-dir:                 '../out/youtube/'
 driver:                     Firefox
+
+# extract-youtube-audio settings
+credential-json:            '../conf/credential-spectrum-895-221613.json'
+# credential-json:            '../conf/credential-celloscope-2024-160107.json'
+output-dir:                 '../out/youtube/'
+extract-pool-size:          2
+
+# tag-audio settings
+gsheet:                     'গান-মজুদকরণ-প্রকল্প'
+worksheet:                  'রবীন্দ্রসঙ্গীত-youtube'
+input-audio-dir:            '../out/youtube/'
+tagged-audio-dir:           '../out/tagged/'
+tag-pool-size:              2
+
 delay-yt-load:              1
 delay-yt-tab:               1
 delay-yt-query:             1
