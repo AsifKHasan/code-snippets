@@ -31,8 +31,10 @@ if __name__ == '__main__':
     extract_pool_size = config.get('extract-pool-size', 2)
 
     if args["youtube"] is not None:
-        video_url = [args["youtube"]]
-        check_and_download(video_url, output_path=output_dir)
+        video_url = args["youtube"]
+        id = video_url.replace('https://www.youtube.com/watch?v=', '')
+        data = {'url': video_url, 'id': id, 'output-dir': output_dir}
+        check_and_download(data)
     else:
         g_service = GoogleService(credential_json)
         try:
