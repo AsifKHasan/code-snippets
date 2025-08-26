@@ -17,16 +17,17 @@ delay-yt-tab:               1
 delay-yt-query:             1
 delay-yt-query-retry:       0
 range-start:                0
-range-end:                  32
+range-end:                  6
 do-search:                  false
-close-tabs:                 true
+close-tabs:                 false
+goto-first-video:           true
 titles-to-search:           10
 descriptions-to-search:     100
 texts-to-find:
-- 'Ghatak'
-- 'ঘটক'
+- 'Maya'
+- 'মায়া'
 # texts-to-ignore:
-search-suffix:              'গীতা ঘটক'
+search-suffix:              'মায়া সেন'
 song-list:
 
 links-to-open:

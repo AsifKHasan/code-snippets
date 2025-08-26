@@ -60,6 +60,7 @@ def youtube_in_new_tabs(config):
     
     do_search = config.get('do-search', False)
     close_tabs = config.get('close-tabs', False)
+    goto_first_video = config.get('goto-first-video', False)
 
     if web_driver == 'Chrome':
         # Path to your ChromeDriver
@@ -223,6 +224,30 @@ def youtube_in_new_tabs(config):
             for tab in tabs_to_be_closed:
                 driver.switch_to.window(tab)
                 driver.close()
+
+        if goto_first_video:
+            # iterate all tabs
+            window_handles = driver.window_handles
+            for i, handle in enumerate(window_handles):
+                driver.switch_to.window(handle)
+                first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
+                # first_video = driver.find_element(By.CSS_SELECTOR, "#ytp-player-content")
+                    
+                # Scroll the element into view if necessary
+                # driver.execute_script("arguments[0].scrollIntoView(true);", first_video)
+
+                # Click the element
+                first_video.click()
+                
+                # print("Successfully clicked the first video link.")
+                
+                # Optional: Wait to see the new page
+                # time.sleep(delay_yt_tab)
+
+                # print(f"\n--- Switched to Tab {i+1} ---")
+                # print(f"Title: {driver.title}")
+                # time.sleep(1)
+                print(f"{i}: {driver.current_url}")
         
 
     except Exception as e:
