@@ -1,3 +1,11 @@
+# pip install ai4bharat-transliteration
+# pip install indic-transliteration
+# pip install pygoogletranslation
+
+# pip install pip==24.0
+# pip install --upgrade pip
+
+
 # -----------------------------------------------------------------------------------
 from ai4bharat.transliteration import XlitEngine
 
@@ -27,15 +35,12 @@ print(f"Bangla Suggestions: {transliterated_word_suggestions['bn']}")
 from indic_transliteration import sanscript
 from indic_transliteration.sanscript import SchemeMap, SCHEMES, transliterate
 
-# The input English sentence
-english_sentence = "Amar nam Rohan."
-
 # Define the scheme map from ITRANS (a phonetic English representation) to Bengali
 # The library supports various schemes, but ITRANS is commonly used for phonetic transliteration.
 # You can also use other schemes like VELTHUIS or a custom map.
 scheme_map = SchemeMap(SCHEMES[sanscript.ITRANS], SCHEMES[sanscript.BENGALI])
 
-# Transliterate the sentence
+# The input English sentence
+english_sentence = "Amar naam Rohan."
 bangla_sentence = transliterate(english_sentence, scheme_map=scheme_map)
-
 print(bangla_sentence)
