@@ -230,24 +230,61 @@ def youtube_in_new_tabs(config):
             window_handles = driver.window_handles
             for i, handle in enumerate(window_handles):
                 driver.switch_to.window(handle)
-                first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
+
+                # Wait for the search results to load
+                try:
+                    first_video = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located((By.CSS_SELECTOR, "ytd-video-renderer"))
+                    )
+                    # first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
+                    # print(first_video)
+                    title_element = first_video.find_element(By.ID, "video-title")
+                    # print(title_element.text)
+
+                    # Within the first video element, locate the description text
+                    try:
+                        description_elements = first_video.find_elements(By.CSS_SELECTOR, "span.yt-formatted-string")
+                        description_element_text = ''
+                        for description_element in description_elements:
+                            description_element_text = description_element_text + description_element.text
+
+                        # print(description_element_text)
+
+                    except Exception:
+                        print("\nNo description found for this video.")
+
+                    # print("Found the first video element.")
+                except Exception as e:
+                    print("Could not find the video element:", e)
+
+
+                # first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
                 # first_video = driver.find_element(By.CSS_SELECTOR, "#ytp-player-content")
                     
                 # Scroll the element into view if necessary
                 # driver.execute_script("arguments[0].scrollIntoView(true);", first_video)
 
-                # Click the element
-                first_video.click()
+                # Click the element only if the video description contains any of the search terms
+                search_term_found = False
                 
-                # print("Successfully clicked the first video link.")
-                
-                # Optional: Wait to see the new page
-                # time.sleep(delay_yt_tab)
+                # video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
+                # print(description_element.text)
+                for text_item in texts_to_find:
+                    if text_item.lower() in title_element.text.lower() or text_item.lower() in description_element_text.lower():
+                        search_term_found = True
+                        break
 
-                # print(f"\n--- Switched to Tab {i+1} ---")
-                # print(f"Title: {driver.title}")
-                # time.sleep(1)
-                print(f"{i}: {driver.current_url}")
+                if search_term_found:
+                    thumbnail = first_video.find_element(By.ID, "thumbnail")
+                    thumbnail.click()
+                    # Optional: Wait to see the new page
+                    # time.sleep(delay_yt_tab)
+
+                    # time.sleep(1)
+                    print(f"{i}: {driver.current_url}")
+
+                else:
+                    print()
         
 
     except Exception as e:

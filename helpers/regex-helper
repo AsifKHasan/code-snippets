@@ -4,6 +4,9 @@
 duplicate consecutive lines
 ^(.+)$\n^\1$
 
+clean youtube link
+^.*(https:.+)\&.+
+
 “ ”
 ‘ ’
 
