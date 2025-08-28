@@ -5,7 +5,10 @@ duplicate consecutive lines
 ^(.+)$\n^\1$
 
 clean youtube link
-^.*(https:.+)[&]*.*
+^.*(https:.+)\&.*
+
+fuzzy output
+^[0-9]+\. (.+), Score.+
 
 “ ”
 ‘ ’
