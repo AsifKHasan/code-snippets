@@ -1,0 +1,15 @@
+# log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
+log-level:                  1
+driver:                     Firefox
+output-dir:                 '../out/'
+root-url:                   'https://www.supremecourt.gov.bd/web/index.php?page=bench_list.php&menu=00&div_id=2'
+# all values from this list must be in case/cause number
+case-search-list:
+- 'Writ Petition'
+- '/2025'
+# any value from this list must be in parties
+party-search-list:
+- 'Bangladesh Bank'
+- 'Agrani Bank'
+- 'DOER'
+- 'Sattar'
