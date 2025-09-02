@@ -3,6 +3,9 @@ log-level:                  1
 driver:                     Firefox
 output-dir:                 '../out/'
 root-url:                   'https://www.supremecourt.gov.bd/web/index.php?page=bench_list.php&menu=00&div_id=2'
+# court ranges to process
+range-start:                 0
+range-end:                   
 # all values from this list must be in case/cause number
 case-search-list:
 - 'Writ Petition'

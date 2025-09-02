@@ -2,6 +2,7 @@
 
 import time
 import yaml
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
@@ -50,6 +51,11 @@ def init(driver, url):
 
 
 def extract_courts(browser):
+    # get the date
+    date_input = browser.find_element('xpath', '//input[@id="date1"]')
+    date_str = date_input.get_attribute("value")
+    court_date = datetime.strptime(date_str, '%d/%m/%Y')
+
     tr_elements = browser.find_elements('xpath', "//table[@class='link_e10r']/tbody/tr")
     # trs = [tr.get_attribute("innerHTML") for tr in browser.find_element('xpath', "//table[@class='link_e10r']/tbody/tr")]
     court_list = []
@@ -81,7 +87,7 @@ def extract_courts(browser):
 
         court_list.append({'court-sl': court_sl, 'court-name': court_name, 'court-url': court_url, 'total-cases': cases, 'results-given': results})
 
-    return court_list
+    return court_list, court_date
 
 
 def extract_cause_list(browser, court_sl, court_name, court_url, cases, results):
@@ -132,9 +138,9 @@ def curate_cause_list(cause_list, case_search_list, party_search_list):
     return curated_cause_list
 
 
-def output_to_file(courts, output_dir):
+def output_to_file(courts, court_date, output_dir, range_start, range_end):
     lines = []
-    for i, court in enumerate(courts, start=1):
+    for i, court in enumerate(courts[range_start:range_end], start=1):
         court_sl, court_name, court_url, cases, results = court['court-sl'], court['court-name'], court['court-url'], court['total-cases'], court['results-given']
         cause_list, curated_cause_list = court.get('cause-list', []), court.get('curated-cause-list', [])
 
@@ -168,7 +174,7 @@ def output_to_file(courts, output_dir):
 
         lines.append('')
 
-    file_name = f"{output_dir}court-cause-list.txt"
+    file_name = f"{output_dir}court-cause-list__{court_date.strftime('%Y-%m-%d')}.txt"
     with open(file_name, 'w') as f:
         f.write('\n'.join(lines))
 
@@ -182,12 +188,14 @@ if __name__ == '__main__':
     root_url = config.get('root-url', None)
     case_search_list = config.get('case-search-list', [])
     party_search_list = config.get('party-search-list', [])
+    range_start = config.get('range-start', 0)
+    range_end = config.get('range-end', '')
 
     browser = init(driver=driver, url=root_url)
 
-    courts = extract_courts(browser)
-    info(f"{len(courts)} courts found")
-    for i, court in enumerate(courts, start=1):
+    courts, court_date = extract_courts(browser)
+    info(f"{len(courts)} courts found, date {court_date.strftime('%Y-%m-%d')}")
+    for i, court in enumerate(courts[range_start:range_end], start=1):
         court_sl, court_name, court_url, cases, results = court.values()
         debug(f"court serial {court_sl}")
         debug(f"  Court   : {court_name}")
@@ -204,13 +212,17 @@ if __name__ == '__main__':
             cause_sl, case_number_lines, parties_lines = cause.values()
             trace(f"    Cause Sl     : {cause_sl}")
 
-            trace(f"    Cause number : ------------")
-            for line in case_number_lines:
-                trace(f"                   {line}")
+            for k, line in enumerate(case_number_lines):
+                if k == 0:
+                    trace(f"    Cause number : {line}")
+                else:
+                    trace(f"                   {line}")
 
-            trace(f"    Parties      : ------------")
-            for line in parties_lines:
-                trace(f"                   {line}")
+            for k, line in enumerate(parties_lines):
+                if k == 0:
+                    trace(f"    Parties      : {line}")
+                else:
+                    trace(f"                   {line}")
 
         court['cause-list'] = cause_list
 
@@ -223,13 +235,16 @@ if __name__ == '__main__':
             cause_sl, case_number_lines, parties_lines = cause.values()
             debug(f"    Cause Sl     : {cause_sl}")
 
-            debug(f"    Cause number : ------------")
-            for line in case_number_lines:
-                debug(f"                   {line}")
+            for k, line in enumerate(case_number_lines):
+                if k == 0:
+                    debug(f"    Cause number : {line}")
+                else:
+                    debug(f"                   {line}")
 
-            debug(f"    Parties      : ------------")
-            for line in parties_lines:
-                debug(f"                   {line}")
+            for k, line in enumerate(parties_lines):
+                if k == 0:
+                    debug(f"    Parties      : {line}")
+                else:
+                    debug(f"                   {line}")
 
-
-    output_to_file(courts=courts, output_dir=output_dir)
+    output_to_file(courts=courts, court_date=court_date, output_dir=output_dir, range_start=range_start, range_end=range_end)
