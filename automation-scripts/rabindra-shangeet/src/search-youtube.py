@@ -41,7 +41,72 @@ def scroll_down(driver, height=1000):
     driver.execute_script(f"window.scrollTo(0, {height});")
     # Wait to load new content
     time.sleep(2)  # Adjust this based on your internet speed and YouTube's loading time
+
+
+# search in the titles to see if there is any match
+def find_the_first_matching_video(driver, videos, texts_to_find, pause_video):
+    # print(f"{len(videos)} videos found")
+    for i, first_video in enumerate(videos, start=1):
+        title_element = first_video.find_element(By.ID, "video-title")
+
+        # Within the first video element, locate the description text
+        try:
+            description_elements = first_video.find_elements(By.CSS_SELECTOR, "span.yt-formatted-string")
+            description_element_text = ''
+            for description_element in description_elements:
+                description_element_text = description_element_text + description_element.text
+
+        except Exception as e:
+            print("No description found for this video.", e)
+
+        # Click the element only if the video description contains any of the search terms
+        search_term_found = False
         
+        # video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
+        # print(i, title_element.text)
+        # print(i, description_element.text)
+        for text_item in texts_to_find:
+            if text_item.lower() in title_element.text.lower() or text_item.lower() in description_element_text.lower():
+                search_term_found = True
+                break
+
+        if search_term_found:
+            try:
+                thumbnail = first_video.find_element(By.ID, "thumbnail")
+                thumbnail.click()
+
+                # wait for the player to be visible
+                video_player = WebDriverWait(driver, 10).until(
+                    EC.visibility_of_element_located((By.CSS_SELECTOR, 'div#player'))
+                )
+
+                if pause_video:
+                    # wait for the controls to appear
+                    time.sleep(1)
+                    video_player.click()
+
+                    # try:
+                    #     # find the pause button. A common selector is based on the aria-label.
+                    #     # Note: The actual selector might vary, so inspect the element on the target website.
+                    #     pause_button = WebDriverWait(driver, 5).until(
+                    #         # EC.element_to_be_clickable((By.CSS_SELECTOR, 'button.ytp-play-button.ytp-button[aria-label="Pause keyboard shortcut k"]'))
+                    #         EC.element_to_be_clickable((By.CSS_SELECTOR, 'button.ytp-play-button'))
+                    #     )
+
+                    #     # Click the pause button
+                    #     if pause_button:
+                    #         pause_button.click()
+
+                    # except Exception as e:
+                    #     warn(f"no pause button for loaded video")
+
+            except Exception as e:
+                warn(f"video could not be loaded")
+
+            return first_video
+
+    return None
+
 
 def youtube_in_new_tabs(config):
     search_queries = config.get('song-list', [])
@@ -234,79 +299,20 @@ def youtube_in_new_tabs(config):
 
                 # Wait for the search results to load
                 try:
-                    first_video = WebDriverWait(driver, 10).until(
+                    # first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
+                    WebDriverWait(driver, 10).until(
                         EC.presence_of_element_located((By.CSS_SELECTOR, "ytd-video-renderer"))
                     )
-                    # first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
-                    # print(first_video)
-                    title_element = first_video.find_element(By.ID, "video-title")
-                    # print(title_element.text)
 
-                    # Within the first video element, locate the description text
-                    try:
-                        description_elements = first_video.find_elements(By.CSS_SELECTOR, "span.yt-formatted-string")
-                        description_element_text = ''
-                        for description_element in description_elements:
-                            description_element_text = description_element_text + description_element.text
+                    videos = driver.find_elements(By.CSS_SELECTOR, "ytd-video-renderer")
+                    first_video = find_the_first_matching_video(driver=driver, videos=videos[:titles_to_search], texts_to_find=texts_to_find, pause_video=pause_video)
+                    if first_video:
+                        print(f"{i}: {driver.current_url}")
+                    else:
+                        print('')
 
-                        # print(description_element_text)
-
-                    except Exception:
-                        print("\nNo description found for this video.")
-
-                    # print("Found the first video element.")
                 except Exception as e:
-                    print("Could not find the video element:", e)
-
-
-                # first_video = driver.find_element(By.CSS_SELECTOR, "#contents ytd-video-renderer:first-of-type a#video-title")
-                # first_video = driver.find_element(By.CSS_SELECTOR, "#ytp-player-content")
-                    
-                # Scroll the element into view if necessary
-                # driver.execute_script("arguments[0].scrollIntoView(true);", first_video)
-
-                # Click the element only if the video description contains any of the search terms
-                search_term_found = False
-                
-                # video_titles = driver.find_elements(By.CSS_SELECTOR, "a#video-title")
-                # print(description_element.text)
-                for text_item in texts_to_find:
-                    if text_item.lower() in title_element.text.lower() or text_item.lower() in description_element_text.lower():
-                        search_term_found = True
-                        break
-
-                if search_term_found:
-                    thumbnail = first_video.find_element(By.ID, "thumbnail")
-                    thumbnail.click()
-
-                    # wait for the player to be visible
-                    video_player = WebDriverWait(driver, 10).until(
-                        EC.visibility_of_element_located((By.CSS_SELECTOR, 'div#player'))
-                    )
-                    # debug(f"video loaded")
-
-                    if pause_video:
-                        # wait for the controls to appear
-                        time.sleep(1)
-
-                        # find the pause button. A common selector is based on the aria-label.
-                        # Note: The actual selector might vary, so inspect the element on the target website.
-                        pause_button = WebDriverWait(driver, 5).until(
-                            EC.element_to_be_clickable((By.CSS_SELECTOR, 'button.ytp-play-button.ytp-button[aria-label="Pause (k)"]'))
-                        )
-
-                        # Click the pause button
-                        if pause_button:
-                            pause_button.click()
-                        else:
-                            warn(f"no pause button for loaded video")
-
-
-                    print(f"{i}: {driver.current_url}")
-
-                else:
-                    print()
-        
+                    print("Could not find any video element:", e)
 
     except Exception as e:
         error(f"An error occurred: {e}")
