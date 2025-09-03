@@ -57,6 +57,7 @@ def youtube_in_new_tabs(config):
     texts_to_ignore = config.get('texts-to-ignore', [])
     titles_to_search = config.get('titles-to-search', 10)
     descriptions_to_search = config.get('descriptions-to-search', 100)
+    pause_video = config.get('pause-video', True)
     
     do_search = config.get('do-search', False)
     close_tabs = config.get('close-tabs', False)
@@ -277,10 +278,30 @@ def youtube_in_new_tabs(config):
                 if search_term_found:
                     thumbnail = first_video.find_element(By.ID, "thumbnail")
                     thumbnail.click()
-                    # Optional: Wait to see the new page
-                    # time.sleep(delay_yt_tab)
 
-                    # time.sleep(1)
+                    # wait for the player to be visible
+                    video_player = WebDriverWait(driver, 10).until(
+                        EC.visibility_of_element_located((By.CSS_SELECTOR, 'div#player'))
+                    )
+                    # debug(f"video loaded")
+
+                    if pause_video:
+                        # wait for the controls to appear
+                        time.sleep(1)
+
+                        # find the pause button. A common selector is based on the aria-label.
+                        # Note: The actual selector might vary, so inspect the element on the target website.
+                        pause_button = WebDriverWait(driver, 5).until(
+                            EC.element_to_be_clickable((By.CSS_SELECTOR, 'button.ytp-play-button.ytp-button[aria-label="Pause (k)"]'))
+                        )
+
+                        # Click the pause button
+                        if pause_button:
+                            pause_button.click()
+                        else:
+                            warn(f"no pause button for loaded video")
+
+
                     print(f"{i}: {driver.current_url}")
 
                 else:
