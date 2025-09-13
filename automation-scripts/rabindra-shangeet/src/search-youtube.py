@@ -317,9 +317,8 @@ def youtube_in_new_tabs(config):
     except Exception as e:
         error(f"An error occurred: {e}")
     finally:
-        # It's good practice to close the browser when done
-        # time.sleep(10) # Uncomment this if you want to keep the browsers open for a bit to inspect
-        # driver.quit()
+        # switch to the first tab
+        driver.switch_to.window(driver.window_handles[0])
         debug("All searches completed. The browser remains open.")
         input("Press Enter to close...")
 
