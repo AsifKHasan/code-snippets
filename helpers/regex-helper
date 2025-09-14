@@ -5,7 +5,7 @@ duplicate consecutive lines
 ^(.+)$\n^\1$
 
 clean youtube link
-.+(https:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9_-]+).+
+.+(https:\/\/www\.youtube\.com\/watch\?v=[a-zA-Z0-9_-]+)\&*.*
 
 fuzzy output
 ^[0-9]+\. (.+), Score.+

@@ -24,11 +24,12 @@ goto-first-video:           true
 pause-video:                true
 titles-to-search:           20
 descriptions-to-search:     100
-search-suffix:              'কৌশিকী'
+search-suffix:              'শিরিন সোরাইয়া'
 texts-to-ignore:            []
 texts-to-find:
-- 'Koushiki'
-- 'কৌশিকী'
+- 'Shirin'
+- 'Soraiya'
+- 'শিরিন'
 song-list:                  # []
 
 links-to-open:              []
