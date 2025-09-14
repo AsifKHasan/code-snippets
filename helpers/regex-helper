@@ -10,6 +10,9 @@ clean youtube link
 fuzzy output
 ^[0-9]+\. (.+), Score.+
 
+keep lines with WORD only
+^(?!.*WORD).*$
+
 “ ”
 ‘ ’
 
