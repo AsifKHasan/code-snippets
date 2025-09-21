@@ -38,7 +38,7 @@ def segment_and_tag(data):
         command.extend(['-to', str(end_time)])
 
     for key, value in data.items():
-        if key in ['title', 'artist', 'album', 'genre', 'date']:
+        if key in ['title', 'artist', 'album', 'genre', 'date', 'comment', 'lyrics']:
             command.extend(['-metadata', f'{key}={value}'])
     
     command.extend([data['output-audio']])

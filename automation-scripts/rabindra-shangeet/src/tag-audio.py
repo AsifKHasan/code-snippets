@@ -50,6 +50,8 @@ if __name__ == '__main__':
         data_list = []
         for value in values[0]:
             if value[5] == 'Yes' and value[7] != '':
+                # TODO: fix lyrics and comment
+                lyrics = 'অকারণে অকালে মোর পড়ল যখন ডাক\n    তখন আমি ছিলেম শয়ন পাতি।'
                 data = {
                     'input-audio': f"{input_audio_dir}{value[12]}.m4a",
                     'output-audio': f"{tagged_audio_dir}{value[15]}.m4a",
@@ -60,7 +62,8 @@ if __name__ == '__main__':
                     'artist': value[8],
                     'album': 'রবীন্দ্রসঙ্গীত',
                     'genre': value[3],
-                    # 'comment': value[15],
+                    'lyrics': lyrics,
+                    'comment': lyrics,
                 }
 
                 data_list.append(data)
