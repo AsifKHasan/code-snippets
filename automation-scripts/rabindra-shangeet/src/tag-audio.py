@@ -18,6 +18,10 @@ from helper.utils import *
 from helper.logger import *
 from helper import logger
 
+def get_the_lyrics():
+    lyrics_dict = {}
+    return lyrics_dict
+
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     args = vars(ap.parse_args())
@@ -48,6 +52,8 @@ if __name__ == '__main__':
         values = worksheet.get_values_in_batch(ranges=['A4:P'])
 
         data_list = []
+        # get the lyrics
+        lyrics_dict = get_the_lyrics(lyrics_file=f"config_path")
         for value in values[0]:
             if value[5] == 'Yes' and value[7] != '':
                 # TODO: fix lyrics and comment
