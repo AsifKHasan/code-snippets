@@ -1,16 +1,19 @@
 # log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
 log-level:                  1
 driver:                     Firefox
+output-dir:                 '../out/'
+# extract-song-lyrics settings, in conf directory
+song-data-file:             '../conf/song-lyrics.json'
 # extract-youtube-audio settings
 credential-json:            '../conf/credential-spectrum-895-221613.json'
-output-dir:                 '../out/youtube/'
-extract-pool-size:          6
+extract-pool-size:          8
+output-audio-dir:           '../out/youtube/'
 # tag-audio settings
 gsheet:                     'গান-মজুদকরণ-প্রকল্প'
 worksheet:                  'রবীন্দ্রসঙ্গীত-youtube'
 input-audio-dir:            '../out/youtube/'
 tagged-audio-dir:           '../out/tagged/'
-tag-pool-size:              6
+tag-pool-size:              8
 # search-youtube settings
 delay-yt-load:              1
 delay-yt-tab:               1
@@ -31,8 +34,7 @@ texts-to-find:
 - 'Imon'
 - 'ইমন'
 song-list:                  # []
-
-links-to-open:              []
+links-to-open:              # []
 song-list-master:
 - অকারণে অকালে মোর
 - অগ্নিবীণা বাজাও তুমি কেমন করে

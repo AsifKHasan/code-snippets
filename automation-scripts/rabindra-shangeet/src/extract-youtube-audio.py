@@ -27,13 +27,13 @@ if __name__ == '__main__':
     credential_json = config['credential-json']
     gsheet_name = config.get('gsheet')
     worksheet_name = config.get('worksheet')
-    output_dir = config.get('output-dir')
+    output_audio_dir = config.get('output-audio-dir')
     extract_pool_size = config.get('extract-pool-size', 2)
 
     if args["youtube"] is not None:
         video_url = args["youtube"]
         id = video_url.replace('https://www.youtube.com/watch?v=', '')
-        data = {'url': video_url, 'id': id, 'output-dir': output_dir}
+        data = {'url': video_url, 'id': id, 'output-dir': output_audio_dir}
         check_and_download(data)
     else:
         g_service = GoogleService(credential_json)
@@ -55,11 +55,11 @@ if __name__ == '__main__':
                     # get id from url, if there is a file with that id, skip it
                     id = re.sub(r"&.+", "", value[12])
 
-                    output_path = f"{output_dir}{id}.m4a"
+                    output_path = f"{output_audio_dir}{id}.m4a"
                     if os.path.exists(output_path):
                         warn(f"[{output_path}] exists ... skipping")
                     else:
-                        data_list.append({'url': value[7], 'id': id, 'output-dir': output_dir})
+                        data_list.append({'url': value[7], 'id': id, 'output-dir': output_audio_dir})
 
             with multiprocessing.Pool(processes=extract_pool_size) as pool:
                 # Use pool.map to apply the worker_function to each item

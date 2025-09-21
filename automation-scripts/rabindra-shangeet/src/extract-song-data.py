@@ -14,6 +14,7 @@ from helper.logger import *
 from helper import logger
 
 def song_from_url(data, attributes):
+    debug(f"extracting lyric from {data['url']}")
     try:
         response = requests.get(data['url'])
         response.raise_for_status()
@@ -59,18 +60,21 @@ if __name__ == '__main__':
     url_list = [{'id': str(n), 'url': f"http://www.gitabitan.net/top.asp?songid={n}"} for n in url_list]
 
     attributes = {'id': ' ccelltd1'}
-    # attributes = {'class': 'ur10'}
     process_partial = partial(song_from_url, attributes=attributes)
     with multiprocessing.Pool(processes=extract_pool_size) as pool:
-        # Use pool.map to apply the worker_function to each item
-        results = pool.map(process_partial, url_list[:4])
+        results = pool.map(process_partial, url_list)
 
-    output_file = f"{output_path}/song-lyrics.txt"
-    with open(output_file, 'w', encoding='utf-8') as f:
-        for song in results:
-            # print(song)
-            f.write(song['id'])
-            f.write('\n')
-            f.write(song['lyric'])
-            f.write('\n')
-            f.write('\n')
+    output_json = {song['id']: song['lyric'] for song in results}
+
+    output_file = f"{output_path}/song-lyrics.json"
+    with open(output_file, 'w') as json_file:
+        json.dump(output_json, json_file, ensure_ascii=False, indent=4)
+    
+    # with open(output_file, 'w', encoding='utf-8') as f:
+    #     for song in results:
+    #         # print(song)
+    #         f.write(song['id'])
+    #         f.write('\n')
+    #         f.write(song['lyric'])
+    #         f.write('\n')
+    #         f.write('\n')

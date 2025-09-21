@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # import os
-# import json
+import json
 import yaml
 import argparse
 import multiprocessing
@@ -17,6 +17,19 @@ from audio.ffmpeg import *
 from helper.utils import *
 from helper.logger import *
 from helper import logger
+
+LYRIC_COL = 0
+ID_COL = 1
+YEAR_COL = 2
+GENRE_COL = 5
+DO_COL = 7
+TITLE_COL = 8
+URL_COL = 9
+ARTIST_COL = 10
+START_COL = 11
+END_COL = 12
+SOURCE_FILE_COL = 14
+TARGET_FILE_COL = 17
 
 def get_the_lyrics():
     lyrics_dict = {}
@@ -37,6 +50,7 @@ if __name__ == '__main__':
     input_audio_dir = config.get('input-audio-dir')
     tagged_audio_dir = config.get('tagged-audio-dir')
     tag_pool_size = config.get('tag-pool-size', 2)
+    song_data_file = config.get('song-data-file')
 
     g_service = GoogleService(credential_json)
     try:
@@ -49,25 +63,27 @@ if __name__ == '__main__':
 
     if g_sheet:
         worksheet = g_sheet.worksheet_by_name(worksheet_name)
-        values = worksheet.get_values_in_batch(ranges=['A4:P'])
+        values = worksheet.get_values_in_batch(ranges=['A4:R'])
 
         data_list = []
         # get the lyrics
-        lyrics_dict = get_the_lyrics(lyrics_file=f"config_path")
+        with open(song_data_file, 'r') as json_file:
+            songs = json.loads(json_file.read())
+
         for value in values[0]:
-            if value[5] == 'Yes' and value[7] != '':
-                # TODO: fix lyrics and comment
-                lyrics = 'অকারণে অকালে মোর পড়ল যখন ডাক\n    তখন আমি ছিলেম শয়ন পাতি।'
+            if value[DO_COL] == 'Yes' and value[URL_COL] != '':
+                # lyrics are keyed by id in column A
+                lyrics = songs.get(value[ID_COL])
                 data = {
-                    'input-audio': f"{input_audio_dir}{value[12]}.m4a",
-                    'output-audio': f"{tagged_audio_dir}{value[15]}.m4a",
-                    'start': str(value[9]),
-                    'end': str(value[10]),
-                    'title': value[6],
-                    'date': str(value[0]),
-                    'artist': value[8],
+                    'input-audio': f"{input_audio_dir}{value[SOURCE_FILE_COL]}.m4a",
+                    'output-audio': f"{tagged_audio_dir}{value[TARGET_FILE_COL]}.m4a",
+                    'start': str(value[START_COL]),
+                    'end': str(value[END_COL]),
+                    'title': value[TITLE_COL],
+                    'date': str(value[YEAR_COL]),
+                    'artist': value[ARTIST_COL],
                     'album': 'রবীন্দ্রসঙ্গীত',
-                    'genre': value[3],
+                    'genre': value[GENRE_COL],
                     'lyrics': lyrics,
                     'comment': lyrics,
                 }
