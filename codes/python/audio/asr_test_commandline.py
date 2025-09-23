@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 """
     given path to audio file and 
     and optional reference text, 
