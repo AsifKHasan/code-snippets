@@ -37,7 +37,7 @@ sudo apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev
 install.packages("languageserver")
 
 # install dplyr
-install.packages("dplyr") 
+install.packages("dplyr")
 
 # install tidyverse
 install.packages("httr")
@@ -48,11 +48,13 @@ install.packages("tidyverse")
 library(dplyr)
 
 # read csv
-df <- read.csv("/home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/mfcc_data_f_Di2ycg6z4.csv", header = FALSE)
+csv_name = 'pbA11fk_4f0'
+csv_path_template = "/home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/mfcc_data__%s.csv"
+df <- read.csv(sprintf(csv_path_template, csv_name), header = FALSE)
 
 # transpose
-df <- t(df)
-df <- as.data.frame(df)
+# df <- t(df)
+# df <- as.data.frame(df)
 
 # Get the number of rows from the data frame
 num_rows <- nrow(df)
@@ -98,21 +100,21 @@ df_long <- df %>%
   )
 
 # time range in seconds
-START_S <- 7.5
-END_S <- 9.0
+START_S <- 11.0
+END_S <- 14.0
 # subticks every 20 ms
 MS_INTERVAL <- 0.02 
 
 # specific MFCC coefficients to plot
-SELECTED_COEFFICIENTS <- c("MFCC_0", "MFCC_1", "MFCC_5", "MFCC_10")
+SELECTED_COEFFICIENTS <- c("MFCC_0", "MFCC_1", "MFCC_2")
 
 # filter the data frame (df_long)
 df_filtered <- df_long %>%
-  # First, filter by the desired time range
+  # filter by the desired time range
   filter(ms >= START_S * 1000 & ms <= END_S * 1000) %>%
-  # Second, filter by the desired MFCC coefficients
+  # filter by the desired MFCC coefficients
   filter(Coefficient %in% SELECTED_COEFFICIENTS) %>%
-  # --- CRITICAL NEW STEP: Create the 'seconds' column ---
+  # the 'seconds' column
   mutate(seconds = ms / 1000)
 
 # sequence of all minor break points (every MS_INTERVAL)
@@ -124,7 +126,7 @@ ggplot(df_filtered, aes(x = seconds, y = Value, color = Coefficient)) +
   # vertical lines for the minor breaks (optional, but very helpful visually)
   geom_vline(xintercept = minor_breaks_seq, color = "gray85", linewidth = 0.2, linetype = "dotted") +
   
-  geom_line(alpha = 0.8, size = 1.2) +
+  geom_line(alpha = 0.8, linewidth = 0.4) +
   
   labs(
     title = paste0("Selected MFCC Coefficients (", START_S, "s - ", END_S, "s)"),
