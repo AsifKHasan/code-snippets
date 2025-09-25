@@ -1,4 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
+
+import csv
+import pandas as pd
 
 def hms_to_ms(hms_string):
     """
@@ -26,3 +29,16 @@ def hms_to_ms(hms_string):
     except (ValueError, IndexError):
         raise ValueError("Invalid time format. Please use hh:mm:ss, mm:ss, or ss.")
 
+
+def save_as_csv(csv_path, data):
+    with open(csv_path, 'w', newline='') as csvfile:
+        csv_writer = csv.writer(csvfile)
+        csv_writer.writerows(data)
+
+
+def save_dict_as_csv(csv_path, data):
+    # Create the DataFrame
+    df = pd.DataFrame(data)
+
+    # save the DataFrame to a CSV file
+    df.to_csv(csv_path, index=False)
