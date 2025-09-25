@@ -30,9 +30,12 @@ def hms_to_ms(hms_string):
         raise ValueError("Invalid time format. Please use hh:mm:ss, mm:ss, or ss.")
 
 
-def save_as_csv(csv_path, data):
+def save_as_csv(csv_path, data, column_names=[]):
     with open(csv_path, 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile)
+        if len(column_names):
+            csv_writer.writerow(column_names)
+            
         csv_writer.writerows(data)
 
 

@@ -90,7 +90,12 @@ def calculate_mfcc(audio_tuple):
     duration = librosa.get_duration(y=y, sr=sr)
 
     # Generate a time axis for the plot
-    time = np.linspace(0, duration, num=n_frames)
+    time = librosa.frames_to_time(np.arange(n_frames), sr=sr, hop_length=hop_length)
+    # time = np.linspace(0, duration, num=n_frames)
+    # print(time.T)
+
+    # append the mfcc to the time series
+    mfccs = np.append([time], mfccs, axis=0)
 
     if mfccs is not None:
         debug(f"{i} {audio_name}: shape of the MFCCs array: {mfccs.shape}", nesting_level=1)
@@ -107,7 +112,8 @@ def calculate_mfcc(audio_tuple):
         # mfcc_spectrogram(mfccs=mfccs, mfcc_indices=mfcc_indices, sr=sr, hop_length=hop_length)
         # mfcc_line(mfccs=mfccs, mfcc_indices=mfcc_indices, time=time[start_row:end_row])
 
-        save_as_csv(csv_path=csv_path.format(audio_name), data=mfccs.T)
+        column_names = ['seconds', 'MFCC_00', 'MFCC_01', 'MFCC_02', 'MFCC_03', 'MFCC_04', 'MFCC_05', 'MFCC_06', 'MFCC_07', 'MFCC_08', 'MFCC_09', 'MFCC_10', 'MFCC_11', 'MFCC_12']
+        save_as_csv(csv_path=csv_path.format(audio_name), data=mfccs.T, column_names=column_names)
         info(f"{i} {audio_name}: data successfully written to {csv_path.format(audio_name)}")
 
 
