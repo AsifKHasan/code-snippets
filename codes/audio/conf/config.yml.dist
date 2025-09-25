@@ -1,0 +1,14 @@
+# log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
+log-level:                  1
+compute-pool-size:          8
+start_s:                    0.0
+end_s:                      30.0
+# subticks every interval_s
+interval_s:                 0.2
+audio-names:                # []
+- pbA11fk_4f0
+- Nk825zFv61o
+- D8-Pmyl6sLs
+- 8Xch2piLOfA
+- 9TDpf_j8-nc
+- L0qqgxEXjaU

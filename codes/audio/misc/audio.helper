@@ -1,0 +1,20 @@
+ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/pbA11fk_4f0.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/pbA11fk_4f0.wav
+ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/Nk825zFv61o.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/Nk825zFv61o.wav
+ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/D8-Pmyl6sLs.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/D8-Pmyl6sLs.wav
+ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/8Xch2piLOfA.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/8Xch2piLOfA.wav
+ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/9TDpf_j8-nc.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/9TDpf_j8-nc.wav
+ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/L0qqgxEXjaU.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/python/audio/out/L0qqgxEXjaU.wav
+
+./mfcc-analysis.R pbA11fk_4f0
+./mfcc-analysis.R Nk825zFv61o
+./mfcc-analysis.R D8-Pmyl6sLs
+./mfcc-analysis.R 8Xch2piLOfA
+./mfcc-analysis.R 9TDpf_j8-nc
+./mfcc-analysis.R L0qqgxEXjaU
+
+./pitch-analysis.R pbA11fk_4f0
+./pitch-analysis.R Nk825zFv61o
+./pitch-analysis.R D8-Pmyl6sLs
+./pitch-analysis.R 8Xch2piLOfA
+./pitch-analysis.R 9TDpf_j8-nc
+./pitch-analysis.R L0qqgxEXjaU
