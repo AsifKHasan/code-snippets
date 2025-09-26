@@ -134,7 +134,7 @@ if __name__ == "__main__":
         # no audio file passed as argument, get file names from config
         compute_pool_size = config.get('compute-pool-size', 2)
 
-        audio_names = config.get('audio-names', [])
+        audio_names = config.get('audio_names', [])
         info(f"processing {len(audio_names)} audio files")
 
         # Use enumerate() to get (index, item) pairs

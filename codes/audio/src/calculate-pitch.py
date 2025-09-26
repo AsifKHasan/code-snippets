@@ -141,7 +141,7 @@ if __name__ == "__main__":
 
         compute_pool_size = config.get('compute-pool-size', 2)
 
-        audio_names = config.get('audio-names', [])
+        audio_names = config.get('audio_names', [])
         # Use enumerate() to get (index, item) pairs
         indexed_items = enumerate(audio_names)
 

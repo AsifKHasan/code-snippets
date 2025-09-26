@@ -1,20 +1,12 @@
-ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/pbA11fk_4f0.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/pbA11fk_4f0.wav
-ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/Nk825zFv61o.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/Nk825zFv61o.wav
-ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/D8-Pmyl6sLs.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/D8-Pmyl6sLs.wav
-ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/8Xch2piLOfA.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/8Xch2piLOfA.wav
-ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/9TDpf_j8-nc.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/9TDpf_j8-nc.wav
-ffmpeg -i /home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/L0qqgxEXjaU.m4a /home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/L0qqgxEXjaU.wav
+# convert audio to wav
+m4a_path="/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/"
+wav_path="/home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/"
 
-./mfcc-analysis.R pbA11fk_4f0
-./mfcc-analysis.R Nk825zFv61o
-./mfcc-analysis.R D8-Pmyl6sLs
-./mfcc-analysis.R 8Xch2piLOfA
-./mfcc-analysis.R 9TDpf_j8-nc
-./mfcc-analysis.R L0qqgxEXjaU
+audio_names=("U8vqzIFdVDI" "XNKkT96P6l8" "n45ROq_gpf4" "4RugUyXkY3Q" "d0Pp1U4tADc" "cozZjdUSpgg" "tJB7_ryda_8" "VNcbRIgpyV0" "LT8xNqWOK9s" "7JUzzYJ-WI0")
 
-./pitch-analysis.R pbA11fk_4f0
-./pitch-analysis.R Nk825zFv61o
-./pitch-analysis.R D8-Pmyl6sLs
-./pitch-analysis.R 8Xch2piLOfA
-./pitch-analysis.R 9TDpf_j8-nc
-./pitch-analysis.R L0qqgxEXjaU
+# Iterate over each element in the array
+for name in "${audio_names[@]}"; do
+  echo "ffmpeg -i ${m4a_path}${name}.m4a ${wav_path}${name}.wav"
+done
+
+

@@ -1,14 +1,37 @@
 # log level (0-TRACE, 1-DEBUG, 2-INFO, 3-WARN, 4-ERROR) below which logs will not be printed
 log-level:                  1
+
+# audio analysis
 compute-pool-size:          8
+
+# plotting
 start_s:                    0.0
 end_s:                      30.0
-# subticks every interval_s
 interval_s:                 0.2
-audio-names:                # []
+
+# mfcc specific
+mfcc_coefficients:
+- MFCC_00
+- MFCC_01
+- MFCC_02
+
+# audio source
+audio_names:                # []
 - pbA11fk_4f0
 - Nk825zFv61o
 - D8-Pmyl6sLs
 - 8Xch2piLOfA
 - 9TDpf_j8-nc
 - L0qqgxEXjaU
+- iNE705INqcc
+- 8WkBRQejNpQ
+- ubLAZyZVJb0
+- cWOhSB_LE70
+- YmduceLOKOE
+- epk85MpP-ow
+- QrXKN8kbmC4
+- SGNHqUxhyLs
+- uPKyoEogYIw
+- Atx7xoVJ8Uc
+- anm_LnblRSU
+- U8vqzIFdVDI
