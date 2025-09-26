@@ -27,7 +27,7 @@ from helper import logger
 warnings.filterwarnings('ignore')
 
 audio_path = '/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/{}.m4a'
-csv_path = '../out/pitch_data__{}.csv'
+csv_path = '../out/csv/pitch/pitch_data__{}.csv'
 frame_duration_s = 0.020
 
 def plot_pitch_contour(times, f0):

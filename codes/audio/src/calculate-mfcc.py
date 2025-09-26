@@ -23,7 +23,7 @@ from helper import logger
 warnings.filterwarnings('ignore')
 
 audio_path = '/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/{}.m4a'
-csv_path = '../out/mfcc_data__{}.csv'
+csv_path = '../out/csv/mfcc/mfcc_data__{}.csv'
 frame_duration_s = 0.020
 n_mfcc = 13
 

@@ -36,8 +36,8 @@ if (!file.exists(CONFIG_PATH)) {
 config <- read_yaml(CONFIG_PATH)
 
 # read csv
-csv_path_template = "../out/pitch_data__%s.csv"
-pdf_path_template = "../out/pitch_plot__%s.pdf"
+csv_path_template = "../out/csv/pitch/pitch_data__%s.csv"
+pdf_path_template = "../out/plot/pitch/pitch_plot__%s.pdf"
 cat(paste0("[", Sys.time(), "] ", "analysing Pitch for ", csv_name, "\n"))
 df <- read.csv(sprintf(csv_path_template, csv_name), header = TRUE)
 

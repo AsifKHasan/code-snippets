@@ -36,8 +36,8 @@ if (!file.exists(CONFIG_PATH)) {
 config <- read_yaml(CONFIG_PATH)
 
 # read csv
-csv_path_template = "../out/mfcc_data__%s.csv"
-pdf_path_template = "../out/mfcc_plot__%s.pdf"
+csv_path_template = "../out/csv/mfcc/mfcc_data__%s.csv"
+pdf_path_template = "../out/plot/mfcc/mfcc_plot__%s.pdf"
 cat(paste0("[", Sys.time(), "] ", "analysing MFCC for ", csv_name, "\n"))
 df <- read.csv(sprintf(csv_path_template, csv_name), header = TRUE)
 
