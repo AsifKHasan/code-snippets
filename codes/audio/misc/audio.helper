@@ -2,11 +2,10 @@
 m4a_path="/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/"
 wav_path="/home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/"
 
-audio_names=("U8vqzIFdVDI" "XNKkT96P6l8" "n45ROq_gpf4" "4RugUyXkY3Q" "d0Pp1U4tADc" "cozZjdUSpgg" "tJB7_ryda_8" "VNcbRIgpyV0" "LT8xNqWOK9s" "7JUzzYJ-WI0")
+audio_names=("L0qqgxEXjaU" "Qs-IFnfgI6A" "NlCitaPcPhE" "1tm18I8huUE" "V6kgtYL4eLE" "GoLSJFhK49w" "nna3RkZwMkY" "Xru0tjP75S4" "OsNyNmy0BEc" "TLcIzHLQE60" "Li6iONaHrLQ" "oa1H2JBx0z4" "TEAB-6VL5_w" "Cq6IiDG15p4" "QtwiIq9P9r8" "Xqk-lAfWjMM" "nWOPkIi_8JU" "ul3kWtm1CBo" "MJjbMd66thg" "U1rrK3XPog4")
 
 # Iterate over each element in the array
 for name in "${audio_names[@]}"; do
   echo "ffmpeg -i ${m4a_path}${name}.m4a ${wav_path}${name}.wav"
 done
-
 

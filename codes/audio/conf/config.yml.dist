@@ -6,7 +6,7 @@ compute-pool-size:          8
 
 # plotting
 start_s:                    0.0
-end_s:                      30.0
+end_s:                      6.0
 interval_s:                 0.2
 
 # mfcc specific
@@ -17,21 +17,23 @@ mfcc_coefficients:
 
 # audio source
 audio_names:                # []
-- pbA11fk_4f0
-- Nk825zFv61o
-- D8-Pmyl6sLs
-- 8Xch2piLOfA
-- 9TDpf_j8-nc
 - L0qqgxEXjaU
-- iNE705INqcc
-- 8WkBRQejNpQ
-- ubLAZyZVJb0
-- cWOhSB_LE70
-- YmduceLOKOE
-- epk85MpP-ow
-- QrXKN8kbmC4
-- SGNHqUxhyLs
-- uPKyoEogYIw
-- Atx7xoVJ8Uc
-- anm_LnblRSU
-- U8vqzIFdVDI
+- Qs-IFnfgI6A
+- NlCitaPcPhE
+- 1tm18I8huUE
+- V6kgtYL4eLE
+- GoLSJFhK49w
+- nna3RkZwMkY
+- Xru0tjP75S4
+- OsNyNmy0BEc
+- TLcIzHLQE60
+- Li6iONaHrLQ
+- oa1H2JBx0z4
+- TEAB-6VL5_w
+- Cq6IiDG15p4
+- QtwiIq9P9r8
+- Xqk-lAfWjMM
+- nWOPkIi_8JU
+- ul3kWtm1CBo
+- MJjbMd66thg
+- U1rrK3XPog4
