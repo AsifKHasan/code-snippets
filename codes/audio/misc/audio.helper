@@ -2,10 +2,22 @@
 m4a_path="/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/"
 wav_path="/home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/"
 
-audio_names=("PyLiiBrcmBk" "tGXGHRQJj5M" "YEWFzQ3dpL4" "ANBdCt8HPRc" "nr9j8jA41rc" "thTtjSVz8Tk" "lZI3wIyLukc" "9CAT-Nam5c8" "dhJgjGkbKhU" "1bt-Wkyxer8" "UGslLeYJprE" "7HX38PtJYCY" "gzLA-qDtiBk" "gzAWH6NMW5c" "9y-ezfklcH4" "cBzLwJ-aGjo" "pYHK0uCMX2Y" "GukQtvrZTh0" "E1Py16DDuM8" "lT_oQvYAo60" "4KFRrVIRsaI" "kg4k-H2ihos" "sY19aHRh4YI" "kCRExK06puQ" "fLZ_iUo2rYs" "S0JxAuyDjLA")
+# read audio_names from config.yml and build bash list
+declare -a audio_names
+while IFS= read -r item; do
+  echo "${item}"
+  audio_names+=("$item")
+done < <(yq -r '.audio_names[]' ../conf/config.yml)
+
+# audio_names=("")
 
 # Iterate over each element in the array
 for name in "${audio_names[@]}"; do
-  ffmpeg -i ${m4a_path}${name}.m4a ${wav_path}${name}.wav
+  output_file=${wav_path}${name}.wav
+  if [ -f "${output_file}" ]; then
+    echo "file ${output_file} exists ..."
+  else
+    ffmpeg -n -i ${m4a_path}${name}.m4a ${output_file}
+  fi
 done
 

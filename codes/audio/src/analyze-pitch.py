@@ -104,15 +104,7 @@ if __name__ == "__main__":
         # Convert the resulting iterator into a list of tuples
         audio_tuples = list(indexed_items)
 
-        audios_to_process = []
-        for i, audio_name in audio_tuples:
-            output_csv = csv_path.format(audio_name)
-            if os.path.exists(output_csv):
-                warn(f"[{output_csv}] exists ... skipping")
-            else:
-                audios_to_process.append((i, audio_name))
-
         process_partial = partial(analyze_pitch, pitch_plots=pitch_plots)
         with multiprocessing.Pool(processes=compute_pool_size) as pool:
-            results = pool.map(process_partial, audios_to_process)
+            results = pool.map(process_partial, audio_tuples)
 

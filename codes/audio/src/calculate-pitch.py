@@ -29,47 +29,7 @@ warnings.filterwarnings('ignore')
 
 audio_path = '/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/{}.m4a'
 csv_path = '../out/csv/pitch/pitch_data__{}.csv'
-spectrogram_path = '../out/plot/pitch/pitch_spectrogram__{}.svg'
 frame_duration_s = 0.020
-
-def plot_pitch_contour(times, f0):
-    fig, ax = plt.subplots(figsize=(10, 5))
-
-    # Plot the F0
-    ax.plot(times, f0, label='F0', color='blue', linewidth=2)
-
-    # Set the plot labels and title
-    ax.set_title('F0 Contour')
-    ax.set_xlabel('Time (s)')
-    ax.set_ylabel('Frequency (Hz)')
-
-    # Add a grid for easier reading
-    ax.grid(True, linestyle='--', alpha=0.6)
-    ax.legend()
-
-    # Display the plot
-    plt.tight_layout()
-
-    plt.show()
-
-
-def plot_pitch_spectrogram(y, times, f0):
-    fig, ax = plt.subplots(figsize=(100, 12))
-
-    # Plot the spectrogram
-    D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
-    img = librosa.display.specshow(D, x_axis='time', y_axis='log', ax=ax)
-    fig.colorbar(img, ax=ax, format='%+2.0f dB')
-
-    # Plot the F0 contour on top of the spectrogram
-    ax.plot(times, f0, label='F0 (PYIN)', color='cyan', linewidth=3)
-
-    ax.set(title='Pitch (F0) analysis with PYIN', xlabel='Time (s)', ylabel='Frequency (Hz)')
-    ax.legend(loc='upper right')
-
-    # plt.show()
-    return plt
-
 
 def calculate_pitch(audio_tuple):
     i, audio_name = audio_tuple
@@ -121,11 +81,6 @@ def calculate_pitch(audio_tuple):
 
     save_dict_as_csv(csv_path=csv_path.format(audio_name), data=data)
 
-    # plot_pitch_contour(times=times, f0=f0)
-    plot = plot_pitch_spectrogram(y=y, times=times, f0=f0)
-    plot.savefig(spectrogram_path.format(audio_name), format='svg')
-
-
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("-a", "--audio", required=False, help="audio name, youtube id", default=argparse.SUPPRESS)
@@ -161,4 +116,3 @@ if __name__ == "__main__":
 
         with multiprocessing.Pool(processes=compute_pool_size) as pool:
             results = pool.map(calculate_pitch, audios_to_process)
-
