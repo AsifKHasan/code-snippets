@@ -2,10 +2,10 @@
 m4a_path="/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/"
 wav_path="/home/asifhasan/projects/asif@github.com/code-snippets/codes/audio/out/wav/"
 
-audio_names=("L0qqgxEXjaU" "Qs-IFnfgI6A" "NlCitaPcPhE" "1tm18I8huUE" "V6kgtYL4eLE" "GoLSJFhK49w" "nna3RkZwMkY" "Xru0tjP75S4" "OsNyNmy0BEc" "TLcIzHLQE60" "Li6iONaHrLQ" "oa1H2JBx0z4" "TEAB-6VL5_w" "Cq6IiDG15p4" "QtwiIq9P9r8" "Xqk-lAfWjMM" "nWOPkIi_8JU" "ul3kWtm1CBo" "MJjbMd66thg" "U1rrK3XPog4")
+audio_names=("PyLiiBrcmBk" "tGXGHRQJj5M" "YEWFzQ3dpL4" "ANBdCt8HPRc" "nr9j8jA41rc" "thTtjSVz8Tk" "lZI3wIyLukc" "9CAT-Nam5c8" "dhJgjGkbKhU" "1bt-Wkyxer8" "UGslLeYJprE" "7HX38PtJYCY" "gzLA-qDtiBk" "gzAWH6NMW5c" "9y-ezfklcH4" "cBzLwJ-aGjo" "pYHK0uCMX2Y" "GukQtvrZTh0" "E1Py16DDuM8" "lT_oQvYAo60" "4KFRrVIRsaI" "kg4k-H2ihos" "sY19aHRh4YI" "kCRExK06puQ" "fLZ_iUo2rYs" "S0JxAuyDjLA")
 
 # Iterate over each element in the array
 for name in "${audio_names[@]}"; do
-  echo "ffmpeg -i ${m4a_path}${name}.m4a ${wav_path}${name}.wav"
+  ffmpeg -i ${m4a_path}${name}.m4a ${wav_path}${name}.wav
 done
 

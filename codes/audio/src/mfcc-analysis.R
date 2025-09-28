@@ -20,7 +20,7 @@ source(script_path)
 
 CONFIG_PATH <- file.path("../conf/config.yml")
 csv_path_template = "../out/csv/mfcc/mfcc_data__%s.csv"
-pdf_path_template = "../out/plot/mfcc/mfcc_plot__%s.pdf"
+pdf_path_template = "../out/plot/mfcc/mfcc_plot__%s.svg"
 
 # create the parser object
 p <- arg_parser("analyze data from an input CSV file")
@@ -59,9 +59,9 @@ for (csv_name in audio_names) {
   ggsave(
     filename = file.path(sprintf(pdf_path_template, csv_name)),
     plot = mfcc_plot, 
-    width = max(END_S - START_S, 20), 
+    width = 2 * max(END_S - START_S, 20), 
     height = 12, 
-    units = "in"
+    units = "in", limitsize = FALSE
   )
   cat(paste0("[", Sys.time(), "] ", "generating output for ", csv_name, "\n"))
 }

@@ -4,6 +4,7 @@
 # conda install -c conda-forge librosa
 
 import os
+import sys
 import math
 import csv
 import argparse
@@ -28,6 +29,7 @@ warnings.filterwarnings('ignore')
 
 audio_path = '/home/asifhasan/projects/asif@github.com/code-snippets/automation-scripts/rabindra-shangeet/out/youtube/{}.m4a'
 csv_path = '../out/csv/pitch/pitch_data__{}.csv'
+spectrogram_path = '../out/plot/pitch/pitch_spectrogram__{}.svg'
 frame_duration_s = 0.020
 
 def plot_pitch_contour(times, f0):
@@ -52,7 +54,7 @@ def plot_pitch_contour(times, f0):
 
 
 def plot_pitch_spectrogram(y, times, f0):
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(100, 12))
 
     # Plot the spectrogram
     D = librosa.amplitude_to_db(np.abs(librosa.stft(y)), ref=np.max)
@@ -65,7 +67,8 @@ def plot_pitch_spectrogram(y, times, f0):
     ax.set(title='Pitch (F0) analysis with PYIN', xlabel='Time (s)', ylabel='Frequency (Hz)')
     ax.legend(loc='upper right')
 
-    plt.show()
+    # plt.show()
+    return plt
 
 
 def calculate_pitch(audio_tuple):
@@ -103,25 +106,25 @@ def calculate_pitch(audio_tuple):
 
         info(f"{i} {audio_name}: successfully calculated Pitch")
 
-
-        # Create a dictionary of the data
-        data = {
-            'time': times,
-            'f0': f0,
-            # Convert boolean to integer (1 or 0)
-            'voiced': voiced_flag.astype(int),
-            'probability': voiced_probs
-        }
-
-        save_dict_as_csv(csv_path=csv_path.format(audio_name), data=data)
-
-        # plot_pitch_contour(times=times, f0=f0)
-        # plot_pitch_spectrogram(y=y, times=times, f0=f0)
-
-
     except Exception as e:
         error(f"{i} {audio_name}: an error occurred: {e}")
+        sys.exit(-1)
         
+    # Create a dictionary of the data
+    data = {
+        'time': times,
+        'f0': f0,
+        # Convert boolean to integer (1 or 0)
+        'voiced': voiced_flag.astype(int),
+        'probability': voiced_probs
+    }
+
+    save_dict_as_csv(csv_path=csv_path.format(audio_name), data=data)
+
+    # plot_pitch_contour(times=times, f0=f0)
+    plot = plot_pitch_spectrogram(y=y, times=times, f0=f0)
+    plot.savefig(spectrogram_path.format(audio_name), format='svg')
+
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -158,3 +161,4 @@ if __name__ == "__main__":
 
         with multiprocessing.Pool(processes=compute_pool_size) as pool:
             results = pool.map(calculate_pitch, audios_to_process)
+
