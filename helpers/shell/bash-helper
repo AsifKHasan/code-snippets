@@ -37,3 +37,14 @@ sed 's/./&\n/g'
 cat bgtxtall.txt | sed "s/ /\n/g" | sort > tmp.txt
 
 sort bgtxtall.txt | uniq > tmp.txt
+
+
+# exiftool
+cd /home/asifhasan/projects/personal/rabeya.basri__gdrive/uploads__2025-09-30/photos/by-year/2002
+
+for f in *.*;
+do
+	out=`exiftool -DateTimeOriginal "${f}"`;
+  echo "${f}" "${out}"
+done
+
