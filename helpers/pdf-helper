@@ -35,6 +35,12 @@ PDF_NAME=
 gs -dNOPAUSE -dQUIET -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -sOutputFile=${PDF_NAME}-1.pdf ${PDF_NAME}.pdf
 
 
+# qpdf commands
+# remove pages from a pdf 
+INPUT="/home/asifhasan/Downloads/2020-01-22__IIMS__contract-agreement-amendment-old"
+OUTPUT="/home/asifhasan/Downloads/2020-01-22__IIMS__contract-agreement-amendment"
+PAGERANGE="19-z"
+qpdf ${INPUT}.pdf --pages . ${PAGERANGE} -- ${OUTPUT}.pdf
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
 qpdf --compression-level=9 --compress-streams=y --recompress-flate --optimize-images --linearize "sophos-xg-series-appliances-brna.pdf" "sophos-xg-series-appliances-brna-new.pdf"
