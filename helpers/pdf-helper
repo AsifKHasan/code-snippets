@@ -19,7 +19,9 @@ do
   tesseract "$f" "$f" -l ben+eng
 done
 
-tesseract "/home/asifhasan/Downloads/abc-01.png" "/home/asifhasan/Downloads/abc-01" -l ben
+IMAGE="/home/asifhasan/Downloads/2026-01-05 23-26-17.png"
+TEXT="/home/asifhasan/Downloads/abc-01"
+tesseract ${IMAGE} ${TEXT} -l ben+eng
 tesseract "C:\Users\Asif Hasan\Downloads\abc.png" "C:\Users\Asif Hasan\Downloads\text" -l ben
 
 
