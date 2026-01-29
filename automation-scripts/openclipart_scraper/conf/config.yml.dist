@@ -1,0 +1,6 @@
+download_dir: out
+
+ssl_verify: false   # ⚠️ only disable if you trust the site
+
+urls:
+  - https://openclipart.org/detail/4560/dark-plastic-edge-gradient
