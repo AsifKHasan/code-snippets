@@ -1,0 +1,3 @@
+# atom keymap for 'custom:reverse-words-in-line' function
+'atom-text-editor':
+  'ctrl-alt-r': 'custom:reverse-words-in-line'
