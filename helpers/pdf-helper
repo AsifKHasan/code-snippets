@@ -39,9 +39,9 @@ gs -dNOPAUSE -dQUIET -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSET
 
 # qpdf commands
 # remove pages from a pdf 
-INPUT="/home/asifhasan/Downloads/2020-01-22__IIMS__contract-agreement-amendment-old"
-OUTPUT="/home/asifhasan/Downloads/2020-01-22__IIMS__contract-agreement-amendment"
-PAGERANGE="19-z"
+INPUT="/home/asifhasan/Downloads/SCEM__126-320"
+OUTPUT="/home/asifhasan/Downloads/SCEM__c__appendix-16"
+PAGERANGE="192-z"
 qpdf ${INPUT}.pdf --pages . ${PAGERANGE} -- ${OUTPUT}.pdf
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
