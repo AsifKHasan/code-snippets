@@ -1,16 +1,17 @@
 pip install pdfsyntax
 python -m pdfsyntax browse "C:\Users\Asif Hasan\Downloads\Report of Electoral Reforms Commission.pdf" > "C:\Users\Asif Hasan\Downloads\inspection_file.html"
 
-
 cd D:\projects\asif@github\code-snippets\automation-scripts\image-to-text
 
+
 # pdf pages as png
-pdftocairo -png -r 300 -f 1 -l 1 "C:\Users\Asif\Downloads\.pdf" "C:\Users\Asif\Downloads\personal\abc"
-pdftocairo -png -gray "C:\Users\Asif\Downloads\.pdf" "C:\Users\Asif\Downloads\abc"
+PDF_FILE="/home/asifhasan/Downloads/scemp-tapp/SCEM__c__appendix-07.pdf"
+IMG_DIR="/home/asifhasan/Downloads/scemp-tapp/abc"
+pdftocairo -png ${PDF_FILE} ${IMG_DIR}
 
-pdftocairo -png -r 600 -cropbox "/home/asifhasan/Downloads/.pdf" "/home/asifhasan/Downloads/abc/abc"
+pdftocairo -png -r 300 -f 1 -l 1 ${PDF_FILE} ${IMG_DIR}
+pdftocairo -png -r 600 -cropbox ${PDF_FILE} ${IMG_DIR}
 
-pdftocairo -png -r 300 -cropbox -gray data/ppa-2006+ppr-2008.pdf data/ppa/ppa
 
 # ocr an image for text
 for f in /home/asifhasan/Downloads/abc/abc-*.png;
