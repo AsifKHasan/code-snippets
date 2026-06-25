@@ -40,9 +40,9 @@ gs -dNOPAUSE -dQUIET -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSET
 
 # qpdf commands
 # remove pages from a pdf 
-INPUT="/home/asifhasan/Downloads/SCEM__126-320"
-OUTPUT="/home/asifhasan/Downloads/SCEM__c__appendix-16"
-PAGERANGE="192-z"
+INPUT="/home/asif/Downloads/personal/ODBL/Origin-And-Development-Of-The-Bengali-Language-Pt1"
+OUTPUT="/home/asif/Downloads/personal/ODBL/Origin-And-Development-Of-The-Bengali-Language-Pt1-new"
+PAGERANGE="5-z"
 qpdf ${INPUT}.pdf --pages . ${PAGERANGE} -- ${OUTPUT}.pdf
 
 qpdf --object-streams=generate --compression-level=9 --recompress-flate --compress-streams=y --optimize-images "ISO9001：2015 Certifite of HUAWEI -FM 669363.pdf" "ISO9001：2015 Certifite of HUAWEI -FM 669363-new.pdf"
@@ -58,3 +58,9 @@ qpdf --empty --pages "Onyx_ETH_UM.pdf" 1201-1622 -- "Onyx_ETH_UM - pages_y.pdf"
 qpdf --empty --pages "Onyx_ETH_UM.pdf" 1201-440 -- "Onyx_ETH_UM - pages_z.pdf"
 
 qpdf --split-pages=10 "NE05E and NE08E V300R005C10 Feature Description 01.pdf" out.pdf
+
+
+
+# pdftk commands
+PDF_NAME=
+pdftk input.pdf cat 5-end output output.pdf
