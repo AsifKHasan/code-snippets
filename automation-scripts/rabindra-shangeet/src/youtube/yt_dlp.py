@@ -35,7 +35,9 @@ def get_youtube_id(url):
         error(f"an error occurred: {e}")
         return None
 
-
+''' this command should be run to create the cookies.txt 
+    yt-dlp --cookies-from-browser firefox --cookies /home/asif/Downloads/cookies.txt
+'''
 def download_audio(url, id, output_dir, current_process_name, current_process_id):
     ydl_opts = {
         'extractaudio': True,
@@ -45,6 +47,7 @@ def download_audio(url, id, output_dir, current_process_name, current_process_id
         'verbose': False,
         'quiet': True,
         'starttime': 6,
+        'cookiefile': '/home/asif/Downloads/cookies.txt',
     }
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
